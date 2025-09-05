@@ -1,8 +1,11 @@
 {
   "name": "passport-ui",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A modern, customizable UI component library with motion primitives and theme support built with React, TypeScript, Tailwind CSS, and shadcn/ui components.",
   "license": "MIT",
+  "types": "./dist/client.d.ts",
+  "main": "./dist/client.js",
+  "module": "./dist/client.mjs",
   "author": "Praveen Thirumurugan <mail@praveent.com>",
   "homepage": "https://github.com/praveentcom/passport-ui",
   "repository": {
