@@ -1,0 +1,100 @@
+{
+  "name": "passport-ui",
+  "version": "1.0.0",
+  "description": "A modern, customizable UI component library with motion primitives and theme support built with React, TypeScript, Tailwind CSS, and shadcn/ui components.",
+  "license": "MIT",
+  "author": "Praveen Thirumurugan <mail@praveent.com>",
+  "homepage": "https://github.com/praveentcom/passport-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/praveentcom/passport-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/praveentcom/passport-ui/issues"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "tailwind",
+    "ui-components",
+    "shadcn",
+    "motion",
+    "theme",
+    "design-system"
+  ],
+  "exports": {
+    "./server": {
+      "types": "./dist/server.d.ts",
+      "import": "./dist/server.mjs",
+      "require": "./dist/server.js"
+    },
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "import": "./dist/client.mjs",
+      "require": "./dist/client.js"
+    },
+    "./styles.css": "./src/styles.css",
+    "./components.json": "./components.json"
+  },
+  "files": [
+    "dist",
+    "src",
+    "components.json",
+    "postcss.config.mjs",
+    "README.md"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "release": "npm run clean && npm run build && npm publish",
+    "version:patch": "npm version patch",
+    "version:minor": "npm version minor",
+    "version:major": "npm version major",
+    "prepublishOnly": "npm run clean && npm run build && npm run type-check && npm run lint"
+  },
+  "peerDependencies": {
+    "@tailwindcss/postcss": "^4.1.12",
+    "next": ">=15.5.2",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0",
+    "tailwindcss": "^4.1.12"
+  },
+  "dependencies": {
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-separator": "^1.1.7",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-toggle": "^1.1.9",
+    "@radix-ui/react-tooltip": "^1.2.8",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.542.0",
+    "motion": "^12.23.12",
+    "next-themes": "^0.4.6",
+    "tailwind-merge": "^3.3.1",
+    "tw-animate-css": "^1.3.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.12",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "eslint-plugin-react": "^7.0.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.13",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
