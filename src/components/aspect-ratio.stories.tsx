@@ -3,7 +3,7 @@ import { AspectRatio } from "@/client";
 import { COMMON_CONTROLS } from "../../.storybook/constants";
 
 const meta: Meta<typeof AspectRatio> = {
-  title: "Components / AspectRatio",
+  title: "Components / Aspect Ratio",
   component: AspectRatio,
   parameters: {
     layout: "centered",

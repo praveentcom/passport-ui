@@ -148,16 +148,16 @@
   }
 
   /* Typography Styles */
-  .passport-ui *:not([class*="text-"]) {
+  .passport-ui * {
     @apply text-sm font-normal;
   }
-  .passport-ui p:not([class*="text-"]) {
+  .passport-ui p {
     @apply text-sm font-normal;
   }
-  .passport-ui span:not([class*="text-"]) {
+  .passport-ui span {
     @apply text-sm font-normal;
   }
-  .passport-ui div:not([class*="text-"]) {
+  .passport-ui div {
     @apply text-sm font-normal;
   }
   .passport-ui h1,

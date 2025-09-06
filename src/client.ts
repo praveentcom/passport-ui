@@ -21,6 +21,14 @@ export { Badge, badgeVariants } from "./components/badge";
 export { Button, buttonVariants } from "./components/button";
 export { Card, CardContent, CardFooter } from "./components/card";
 export {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "./components/carousel";
+export {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
