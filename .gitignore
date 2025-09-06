@@ -170,3 +170,4 @@ build-storybook.log
 
 # Local Netlify folder
 .netlify
+*storybook.log

@@ -4,13 +4,13 @@ import { Monitor, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/dropdown-menu";
 
 export function ThemeToggle({ minimal = false }: { minimal?: boolean }) {
   const { theme, setTheme } = useTheme();
@@ -52,7 +52,7 @@ export function ThemeToggle({ minimal = false }: { minimal?: boolean }) {
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <div className="rounded-xs text-muted-foreground hover:text-foreground p-2 transition-all duration-200 ease-out cursor-pointer hover:bg-card hover:dark:bg-card/50 border border-transparent hover:border-border/75">
+          <div className="rounded-xs text-muted-foreground hover:text-foreground p-2 transition-all duration-200 ease-out cursor-pointer hover:bg-card border border-transparent hover:border-border/85">
             {getIcon()}
           </div>
         </DropdownMenuTrigger>

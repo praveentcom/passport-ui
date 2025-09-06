@@ -1,15 +1,25 @@
-// Client-only exports (components with React hooks, Context, or Radix UI)
-export { Badge, badgeVariants } from "./components/ui/badge";
-export { Button, buttonVariants } from "./components/ui/button";
+// UI components
 export {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "./components/ui/card";
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./components/accordion";
+export { Alert, alertVariants, type AlertProps } from "./components/alert";
+export {
+  AlertDialog,
+  AlertDialogPortal,
+  AlertDialogOverlay,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogFooter,
+  AlertDialogAction,
+  AlertDialogCancel,
+} from "./components/alert-dialog";
+export { AspectRatio } from "./components/aspect-ratio";
+export { Badge, badgeVariants } from "./components/badge";
+export { Button, buttonVariants } from "./components/button";
+export { Card, CardContent, CardFooter } from "./components/card";
 export {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -26,29 +36,39 @@ export {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "./components/ui/dropdown-menu";
-export { Label } from "./components/ui/label";
-export { Separator } from "./components/ui/separator";
-export { Toggle, toggleVariants } from "./components/ui/toggle";
+} from "./components/dropdown-menu";
+export { Label } from "./components/label";
+export { Separator } from "./components/separator";
+export { Toggle, toggleVariants } from "./components/toggle";
 export {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "./components/ui/tooltip";
+} from "./components/tooltip";
+export { StructuredData } from "./page/structured-data";
 
-// Motion Primitives (all client-only)
-export { AnimatedBackground, type AnimatedBackgroundProps } from "./components/motion-primitives/animated-background";
-export { BlurIn } from "./components/motion-primitives/blur-in";
-export { BorderTrail } from "./components/motion-primitives/border-trail";
-export { InView } from "./components/motion-primitives/in-view";
-export { ProgressiveBlur } from "./components/motion-primitives/progressive-blur";
+// Widget Components
+export { BackButton } from "./widgets/back-button";
+export { BulletList } from "./widgets/bullet-list";
+export { MetaContainer } from "./widgets/meta-container";
+export {
+  PlaceholderCard,
+  type PlaceholderCardProps,
+} from "./widgets/placeholder-card";
 
-// Theme Components (client-only)
-export { ThemeProvider } from "./components/theme/theme-provider";
-export { ThemeToggle } from "./components/theme/theme-toggle";
+// Motion Primitives
+export {
+  AnimatedBackground,
+  type AnimatedBackgroundProps,
+} from "./motion-primitives/animated-background";
+export { BlurIn } from "./motion-primitives/blur-in";
+export { BorderTrail } from "./motion-primitives/border-trail";
 
-// Other client components
-export { PageWithStructuredData, BackButton, BulletList, MetaCard } from "./components/ui/page-tools";
-export { PrefetchLink, type PrefetchLinkProps } from "./components/ui/prefetch-link";
-export { PlaceholderCard, type PlaceholderCardProps } from "./components/ui/placeholder-card";
+// Theme Components
+export { ThemeProvider } from "./theme/theme-provider";
+export { ThemeToggle } from "./theme/theme-toggle";
+
+// Page components
+export { PrefetchLink, type PrefetchLinkProps } from "./page/prefetch-link";
+export { StructuredPage } from "./page/structured-page";

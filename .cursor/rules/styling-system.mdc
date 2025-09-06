@@ -1,0 +1,64 @@
+---
+globs: *.css,*.tsx,*.ts
+description: Styling system and Tailwind CSS configuration
+---
+
+# Styling System Guidelines
+
+## Core Styling Architecture
+
+The styling system is built on Tailwind CSS v4 with a comprehensive theme system defined in [src/styles.css](mdc:src/styles.css).
+
+## CSS Structure
+
+### Theme Definition
+- **CSS Custom Properties**: Defined in `:root` and `.dark` selectors
+- **Color System**: Uses OKLCH color space for better color management
+- **Radius System**: Configurable border radius scale (xs, sm, md, lg, xl)
+- **Typography**: Geist Sans and Geist Mono font families
+
+### Layer Organization
+```css
+@layer base {
+  /* Global base styles and reusable page containers */
+}
+
+@layer utilities {
+  /* Custom utility classes for specific patterns */
+}
+```
+
+## Reusable CSS Classes
+
+### Page Layout Classes (defined in [src/styles.css](mdc:src/styles.css))
+- `.page-container`: Main page wrapper with responsive padding
+- `.content-container`: Content grid with consistent spacing
+- `.list-container`: List wrapper with item spacing
+- `.section-container`: Section wrapper for grouped content
+- `.title-container`: Title/heading container with proper spacing
+- `.meta-container`: Metadata container with tight spacing
+- `.hide-on-mobile`: Responsive utility to hide on mobile
+
+### Utility Classes
+- `.bullet-list`: Styled list with custom bullets
+- `.bullet-item`: Individual list item with bullet styling
+- `.bullet-dot`: Custom bullet dot styling
+- `.bullet-text`: Text styling for bullet items
+
+## Theme Integration
+
+### Color System
+All colors use CSS custom properties that automatically switch between light/dark modes:
+- Primary colors: `--primary`, `--primary-foreground`
+- Secondary colors: `--secondary`, `--secondary-foreground`
+- Accent colors: `--accent`, `--accent-foreground`
+- Semantic colors: `--destructive`, `--muted`, `--border`, etc.
+- Chart colors: `--chart-1` through `--chart-5`
+- Sidebar colors: Complete sidebar color system
+
+### Consumer Requirements
+Projects using passport-ui must:
+1. Install `@tailwindcss/postcss` and `tailwindcss` v4
+2. Configure postcss.config with `@tailwindcss/postcss` plugin
+3. Import `passport-ui/styles.css` in their main CSS file
+4. Ensure Tailwind processes the passport-ui styles

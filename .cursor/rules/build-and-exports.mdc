@@ -1,0 +1,83 @@
+---
+globs: package.json,tsup.config.ts,src/index.ts,src/client.ts,src/server.ts
+description: Build system and package exports configuration
+---
+
+# Build System and Package Exports
+
+## Build Configuration
+
+The library uses **tsup** for building with multiple output formats defined in [package.json](mdc:package.json):
+
+### Package Exports Structure
+```json
+{
+  "./server": {
+    "types": "./dist/server.d.ts",
+    "import": "./dist/server.mjs", 
+    "require": "./dist/server.js"
+  },
+  "./client": {
+    "types": "./dist/client.d.ts",
+    "import": "./dist/client.mjs",
+    "require": "./dist/client.js"
+  },
+  "./styles.css": "./src/styles.css",
+  "./components.json": "./components.json"
+}
+```
+
+## Entry Points
+
+### Client Entry ([src/client.ts](mdc:src/client.ts))
+- Client-side React components
+- Motion primitives
+- Theme components
+- Interactive UI components
+
+### Server Entry ([src/server.ts](mdc:src/server.ts)) 
+- Server-safe components
+- Non-interactive components
+- Utility functions
+
+### Main Index ([src/index.ts](mdc:src/index.ts))
+- Complete component exports
+- Type exports
+- Utility function exports
+
+## Consumer Import Patterns
+
+### Components
+```typescript
+import { Button, Card, ThemeProvider } from 'passport-ui/client'
+import { cn } from 'passport-ui/server'
+```
+
+### Styles
+```css
+@source '../../node_modules/passport_ui/src';
+@import 'passport-ui/styles.css';
+```
+
+### Configuration
+```typescript
+import components from 'passport-ui/components.json'
+```
+
+## Development Scripts
+
+- `npm run build`: Production build
+- `npm run dev`: Watch mode development
+- `npm run type-check`: TypeScript validation
+- `npm run lint`: ESLint validation
+- `npm run release`: Clean, build, and publish to npm
+
+## Peer Dependencies
+
+Critical peer dependencies that consuming projects must install:
+- `next`: ">=15.5.2"
+- `react`: ">=18.0.0" 
+- `react-dom`: ">=18.0.0"
+- `tailwindcss`: "^4.1.12"
+- `@tailwindcss/postcss`: "^4.1.12"
+- `motion`: ">=12.0.0"

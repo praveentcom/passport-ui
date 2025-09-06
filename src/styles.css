@@ -1,8 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Custom Variant for Dark Mode */
 @custom-variant dark (&:is(.dark *));
 
+/* Theme Inline for Custom Properties */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -24,7 +26,6 @@
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
-  --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -33,6 +34,14 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-success-foreground: var(--success-foreground);
+  --color-success: var(--success);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-warning: var(--warning);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive: var(--destructive);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -44,117 +53,198 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* Light Mode Colors for Custom Properties */
 :root {
   --radius: 0.625rem;
-  --background: oklch(0.98 0.002 270);
+  --background: oklch(0.97 0.002 270);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.21 0.006 285.885);
+  --primary: oklch(0.2649 0.0018 286.27);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --secondary: oklch(0.9 0.001 286.375);
+  --secondary-foreground: oklch(0.2649 0.0018 286.27);
   --muted: oklch(0.967 0.001 286.375);
   --muted-foreground: oklch(0.38 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
-  --destructive: oklch(0.577 0.245 27.325);
+  --accent: oklch(0.94 0.001 286.375);
+  --accent-foreground: oklch(0.2649 0.0018 286.27);
+  --info: oklch(0.528 0.225 262.55);
+  --info-foreground: oklch(0.985 0 0);
+  --success: oklch(0.5198 0.176858 142.4953);
+  --success-foreground: oklch(0.985 0 0);
+  --warning: oklch(0.6877 0.208 40.13);
+  --warning-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.58 0.24 16);
+  --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(0.92 0.004 286.32);
   --input: oklch(0.92 0.004 286.32);
   --ring: oklch(0.705 0.015 286.067);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --chart-1: oklch(0.528 0.225 262.55);
+  --chart-2: oklch(0.5198 0.176858 142.4953);
+  --chart-3: oklch(0.6877 0.208 40.13);
+  --chart-4: oklch(0.58 0.24 16);
+  --chart-5: oklch(0.6877 0.208 40.13);
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.21 0.006 285.885);
+  --sidebar-primary: oklch(0.2649 0.0018 286.27);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+  --sidebar-accent-foreground: oklch(0.2649 0.0018 286.27);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
 }
 
+/* Dark Mode Colors for Custom Properties */
 .dark {
-  --background: oklch(0.16 0.008 270);
+  --background: oklch(0.235 0 0);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.21 0.006 285.885);
+  --card: oklch(0.2649 0.0018 286.27);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.21 0.006 285.885);
+  --popover: oklch(0.2649 0.0018 286.27);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.92 0.004 286.32);
-  --primary-foreground: oklch(0.21 0.006 285.885);
-  --secondary: oklch(0.274 0.006 286.033);
+  --primary-foreground: oklch(0.2649 0.0018 286.27);
+  --secondary: oklch(0.2983 0.0054 286.07);
   --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.75 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
+  --muted: oklch(0.2983 0.0054 286.07);
+  --muted-foreground: oklch(0.8082 0.015 286.067);
+  --accent: oklch(0.2983 0.0054 286.07);
   --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
+  --info: oklch(0.528 0.225 262.55);
+  --info-foreground: oklch(0.985 0 0);
+  --success: oklch(0.45 0.11 164);
+  --success-foreground: oklch(0.985 0 0);
+  --warning: oklch(0.57 0.19 33);
+  --warning-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.4 0.22 16);
+  --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.552 0.016 285.938);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.006 285.885);
+  --chart-1: oklch(0.528 0.225 262.55);
+  --chart-2: oklch(0.45 0.11 164);
+  --chart-3: oklch(0.57 0.19 33);
+  --chart-4: oklch(0.4 0.22 16);
+  --chart-5: oklch(0.56 0.19 33);
+  --sidebar: oklch(0.2649 0.0018 286.27);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary: oklch(0.2983 0.0054 286.07);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
+  --sidebar-accent: oklch(0.2983 0.0054 286.07);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
+/* Base Layer */
 @layer base {
-  * {
+  .passport-ui * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
+  .passport-ui body {
+    @apply bg-background;
   }
-  .page-container {
+
+  /* Typography Styles */
+  .passport-ui *:not([class*="text-"]) {
+    @apply text-sm font-normal;
+  }
+  .passport-ui p:not([class*="text-"]) {
+    @apply text-sm font-normal;
+  }
+  .passport-ui span:not([class*="text-"]) {
+    @apply text-sm font-normal;
+  }
+  .passport-ui div:not([class*="text-"]) {
+    @apply text-sm font-normal;
+  }
+  .passport-ui h1,
+  .passport-ui h2,
+  .passport-ui h3,
+  .passport-ui h4,
+  .passport-ui h5,
+  .passport-ui h6 {
+    @apply font-medium;
+  }
+  .passport-ui h1,
+  .passport-ui h2,
+  .passport-ui h3,
+  .passport-ui h4 {
+    @apply text-foreground;
+  }
+  .passport-ui h5,
+  .passport-ui h6 {
+    @apply text-muted-foreground;
+  }
+  .passport-ui h1 {
+    @apply text-xl;
+  }
+  .passport-ui h2 {
+    @apply text-lg;
+  }
+  .passport-ui h3 {
+    @apply text-base;
+  }
+  .passport-ui h4 {
+    @apply text-sm;
+  }
+  .passport-ui h5 {
+    @apply text-sm;
+  }
+  .passport-ui h6 {
+    @apply text-xs uppercase tracking-wide;
+  }
+
+  /* Page Container Styles */
+  .passport-ui .page-container {
     @apply container mx-auto px-4 py-4 md:px-0 md:py-0 max-w-3xl min-w-0;
   }
-  .content-container {
-    @apply grid gap-8;
+  .passport-ui .page-container-small {
+    @apply container mx-auto px-4 py-4 md:px-0 md:py-0 max-w-xl min-w-0;
   }
-  .list-container {
-    @apply grid gap-4.5;
+  .passport-ui .page-container-large {
+    @apply container mx-auto px-4 py-4 md:px-0 md:py-0 max-w-6xl min-w-0;
   }
-  .section-container {
-    @apply grid gap-4;
+  .passport-ui .content-container {
+    @apply grid gap-8 text-foreground;
   }
-  .title-container {
-    @apply grid gap-2;
+
+  /* Other Container Styles */
+  .passport-ui .section-container {
+    @apply grid gap-y-5 gap-x-6 text-foreground;
   }
-  .meta-container {
-    @apply grid gap-1;
+  .passport-ui .title-container {
+    @apply grid gap-y-1.5 gap-x-3 text-foreground;
   }
-  .hide-on-mobile {
-    @apply hidden md:block;
+  .passport-ui .meta-container {
+    @apply grid gap-y-1 gap-x-2 text-muted-foreground;
+  }
+  .passport-ui .list-container,
+  .passport-ui .card-container {
+    @apply grid gap-y-3.5 gap-x-4 text-muted-foreground;
   }
 }
 
+/* Layer Utilities */
 @layer utilities {
-  /* List Styles */
-  .bullet-list {
+  /* Common Utility Classes */
+  .passport-ui .hide-on-mobile {
+    @apply hidden md:block;
+  }
+
+  /* Bullet List Styles */
+  .passport-ui .bullet-list {
     @apply space-y-1;
   }
-  .bullet-item {
-    @apply flex items-start gap-1.5;
+  .passport-ui .bullet-item {
+    @apply flex items-start gap-2.5;
   }
-  .bullet-dot {
+  .passport-ui .bullet-dot {
     @apply size-1 bg-primary/50 rounded-full mt-2 flex-shrink-0;
   }
-  .bullet-text {
+  .passport-ui .bullet-text {
     @apply text-muted-foreground text-sm;
   }
 }

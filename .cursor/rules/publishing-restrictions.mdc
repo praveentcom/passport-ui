@@ -1,0 +1,49 @@
+---
+alwaysApply: true
+---
+
+# Publishing and Version Management Restrictions
+
+## Critical Publishing Rules
+
+**NEVER** automatically execute any of the following commands or operations:
+
+### Prohibited Version Commands
+- `npm version patch`
+- `npm version minor` 
+- `npm version major`
+- `npm publish`
+- `npm run release`
+- `npm run version:patch`
+- `npm run version:minor`
+- `npm run version:major`
+
+### Prohibited Git Operations for Releases
+- Creating version tags
+- Pushing tags to remote
+- Creating release commits
+- Merging to main/master for releases
+
+## Version Management Policy
+
+- **Version bumping** must be done manually by the maintainer
+- **Publishing to npm** requires explicit human approval and execution
+- **Release process** should follow the established workflow in [package.json](mdc:package.json)
+- Always ask for explicit permission before suggesting any publishing-related actions
+
+## Safe Operations
+
+The following operations are allowed:
+- `npm run build` - Building the library
+- `npm run dev` - Development mode
+- `npm run lint` - Linting code
+- `npm run type-check` - TypeScript validation
+- `npm run clean` - Cleaning build artifacts
+
+## When Publishing is Discussed
+
+If publishing comes up in conversation:
+1. Suggest reviewing the changes first
+2. Recommend running tests and validation
+3. Ask the user to manually execute publishing commands
+4. Never assume publishing should happen automatically

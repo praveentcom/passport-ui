@@ -4,16 +4,16 @@ on:
   workflow_dispatch:
     inputs:
       version_type:
-        description: 'Version bump type'
+        description: "Version bump type"
         required: true
-        default: 'patch'
+        default: "patch"
         type: choice
         options:
           - patch
           - minor
           - major
       create_pr:
-        description: 'Create Pull Request instead of direct commit'
+        description: "Create Pull Request instead of direct commit"
         required: false
         default: false
         type: boolean
@@ -33,8 +33,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
+          node-version: "18"
+          cache: "npm"
 
       - name: Configure Git
         run: |
@@ -73,16 +73,16 @@ jobs:
           title: "chore: bump version to v${{ steps.version_bump.outputs.new }}"
           body: |
             ## Version Bump
-            
+
             This PR bumps the version from `v${{ steps.current_version.outputs.current }}` to `v${{ steps.version_bump.outputs.new }}`.
-            
+
             ### Changes
             - Bump version in `package.json`
             - Update `package-lock.json`
-            
+
             ### Type
             - **${{ github.event.inputs.version_type }}** version bump
-            
+
             ### Next Steps
             After merging this PR, the package will be automatically published to NPM via the publish workflow.
           branch: version-bump/v${{ steps.version_bump.outputs.new }}

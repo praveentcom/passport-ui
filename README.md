@@ -25,19 +25,26 @@ export default {
 Import the library styles in your main CSS file:
 
 ```css
+@source "../../node_modules/passport-ui/src"
 @import "passport-ui/styles.css";
 ```
 
 ### Import Components
 
 ```tsx
-import { Button, Card, ThemeProvider } from 'passport-ui/client';
+import { Button, Card, ThemeProvider } from "passport-ui/client";
 ```
 
 ### Basic Example
 
 ```tsx
-import { Button, Card, CardContent, CardHeader, CardTitle } from 'passport-ui/client';
+import {
+  Button,
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "passport-ui/client";
 
 function App() {
   return (
@@ -56,7 +63,7 @@ function App() {
 ### With Theme Support
 
 ```tsx
-import { ThemeProvider, ThemeToggle } from 'passport-ui/client';
+import { ThemeProvider, ThemeToggle } from "passport-ui/client";
 
 function App() {
   return (
@@ -73,6 +80,7 @@ function App() {
 ## Components
 
 ### UI Components
+
 - `Button` - Interactive button with variants
 - `Badge` - Status and category indicators
 - `Card` - Content containers with optional border trail
@@ -83,6 +91,7 @@ function App() {
 - `DropdownMenu` - Dropdown menus and actions
 
 ### Motion Primitives
+
 - `AnimatedBackground` - Animated background transitions
 - `BlurIn` - Blur-in animation effects
 - `BorderTrail` - Animated border trails
@@ -90,6 +99,7 @@ function App() {
 - `ProgressiveBlur` - Progressive blur effects
 
 ### Theme Components
+
 - `ThemeProvider` - Theme context provider
 - `ThemeToggle` - Theme switcher component
 
@@ -111,6 +121,7 @@ For Next.js projects, add the PostCSS configuration and import styles in your gl
 For Vite projects, you can use either PostCSS or the Vite plugin:
 
 **Option 1: PostCSS (recommended)**
+
 ```js
 // postcss.config.mjs
 export default {
@@ -119,6 +130,7 @@ export default {
 ```
 
 **Option 2: Vite Plugin**
+
 ```js
 // vite.config.ts
 import { defineConfig } from "vite";
@@ -132,14 +144,16 @@ export default defineConfig({
 ### Tailwind CSS v4 Features
 
 This library leverages Tailwind CSS v4's new features:
+
 - **CSS-first configuration** - No `tailwind.config.js` required
-- **Automatic content detection** - Template files discovered automatically  
+- **Automatic content detection** - Template files discovered automatically
 - **Built-in import support** - No additional PostCSS plugins needed
 - **Modern CSS features** - Uses cascade layers, registered custom properties, and `color-mix()`
 
 ## Development
 
 This package is built with:
+
 - React 18+
 - TypeScript
 - Tailwind CSS

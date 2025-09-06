@@ -3,8 +3,8 @@
 import Link from "next/link";
 import React, { ReactNode } from "react";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/button";
+import { Card, CardContent } from "@/components/card";
 
 export interface PlaceholderCardProps {
   title?: string;
@@ -13,8 +13,8 @@ export interface PlaceholderCardProps {
 }
 
 export function PlaceholderCard({
-  title = "Not published.",
-  subtitle = "This section is not available currently.",
+  title = "Section not found.",
+  subtitle = "This section is currently unavailable.",
   children = (
     <Button asChild>
       <Link href={"/"}>Go home</Link>
@@ -23,7 +23,7 @@ export function PlaceholderCard({
 }: PlaceholderCardProps) {
   return (
     <Card>
-      <CardContent className="text-center py-4">
+      <CardContent className="text-center px-8 py-3 md:px-12">
         <div className="grid items-center justify-center gap-4">
           <div className="grid items-center max-w-md text-sm">
             <h4 className="text-foreground font-medium">{title}</h4>
