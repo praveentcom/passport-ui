@@ -1,0 +1,177 @@
+---
+description: Guide for adding new components from shadcn/ui or creating custom composables
+---
+
+# Component Addition Guide
+
+This rule provides step-by-step instructions for adding new components to the passport-ui library, whether from shadcn/ui or as custom composables.
+
+## Adding shadcn/ui Components
+
+When adding components from [shadcn/ui components](https://ui.shadcn.com/docs/components):
+
+### Step 1: Install the Component
+Use the npx command provided on the shadcn/ui component page:
+```bash
+npx shadcn@latest add [component-name]
+```
+
+### Step 2: Verify and Adapt Styling
+- Check the generated component in [src/components/](mdc:src/components/) 
+- Ensure it follows the project's styling patterns from [src/styles.css](mdc:src/styles.css)
+- Verify it uses the project's CSS custom properties and Tailwind classes
+- It needs to contain `passport-ui` css class in the component root if it has a react portal content.
+- It needs to follow consistent naming pattern and compact in size as followed in `Button`, `Badge` etc.
+
+### Step 3: Add to Client Exports
+Add the component and its sub-components to [src/client.ts](mdc:src/client.ts):
+```typescript
+export {
+  ComponentName,
+  ComponentSubItem,
+  // ... other exports
+} from "./components/component-name";
+```
+
+### Step 4: Create Storybook Stories
+Create a comprehensive stories file at `src/components/[component-name].stories.tsx`:
+
+- Scan through the sdadcn page to understand how the component is supposed to be used and add stories on those lines.
+
+**Required Structure:**
+```typescript
+import type { Meta, StoryObj } from '@storybook/nextjs'
+import { ComponentName } from '@/client'
+import { COMMON_CONTROLS } from '../../.storybook/constants'
+import { action } from 'storybook/actions';
+
+const meta: Meta<typeof ComponentName> = {
+  title: 'Components/ComponentName',
+  component: ComponentName,
+  parameters: {
+    layout: 'centered',
+    docs: {
+      description: {
+        component: 'Brief description of the component purpose.',
+      },
+    },
+  },
+  tags: ['autodocs'],
+  argTypes: {
+    // Document ALL component props with:
+    // - control types
+    // - descriptions
+    // - table metadata (type summary, default values)
+    // - action handlers for callbacks
+    className: COMMON_CONTROLS.className,
+  },
+  args: {
+    // Add action handlers for callback props
+  },
+  render: (args) => <ComponentName {...args} />
+}
+
+export default meta
+type Story = StoryObj<typeof ComponentName>
+
+export const Default: Story = {
+  args: {
+    // Minimal default props
+  }
+}
+```
+
+**Documentation Requirements:**
+- Include comprehensive argTypes for all props
+- Add proper TypeScript type summaries
+- Document default values
+- Add action handlers for callbacks
+- Create multiple story variants showcasing different use cases
+- Follow the established naming conventions (Default, Multiple, FAQ, etc.)
+
+## Adding Custom Composables
+
+When creating custom composable components:
+
+### Step 1: Create the Composable
+Create the component in [src/composables/](mdc:src/composables/):
+- Use existing UI components from [src/components/](mdc:src/components/)
+- Follow the styling system from [src/styles.css](mdc:src/styles.css)
+- Use only project's CSS custom properties and utility classes
+- Include proper TypeScript interfaces
+- Add JSDoc comments for props
+
+**Example Structure:**
+```typescript
+import React, { ReactNode } from "react";
+import { Button } from "@/components/button";
+import { cn } from "@/lib/utils";
+
+export interface ComposableNameProps {
+  // Define props with proper types
+}
+
+/**
+ * Brief description of the composable
+ * @param prop1 - Description of prop1
+ * @returns The composable component
+ */
+export function ComposableName({
+  // props with defaults
+}: ComposableNameProps): ReactNode {
+  return (
+    // Implementation using existing components
+  );
+}
+```
+
+### Step 2: Add to Client Exports
+Add to [src/client.ts](mdc:src/client.ts) under the "Comoosables" section:
+```typescript
+export { ComposableName, type ComposableNameProps } from "./composables/composable-name";
+```
+
+### Step 3: Create Storybook Stories
+Follow the same structure as shadcn/ui components but with title: 'Composables/Composable Name'
+
+## Styling Guidelines
+
+### Colors and Theming
+- Use CSS custom properties: `--primary`, `--secondary`, `--accent`, `--muted`, etc.
+- Leverage existing utility classes from [src/styles.css](mdc:src/styles.css):
+  - `.page-container`, `.content-container`, `.section-container`
+  - `.title-container`, `.meta-container`
+  - `.bullet-list`, `.bullet-item`
+
+### Component Patterns
+- Use `cn()` utility for class merging
+- Include `data-slot` attributes for component identification
+- Follow the established variant patterns with `class-variance-authority`
+- Maintain accessibility standards from Radix UI primitives
+
+## Quality Checklist
+
+Before completing component addition:
+- [ ] Component properly exported in [src/client.ts](mdc:src/client.ts)
+- [ ] Comprehensive Storybook stories created
+- [ ] All props documented with argTypes
+- [ ] Action handlers added for callbacks
+- [ ] Multiple story variants created
+- [ ] TypeScript types properly defined
+- [ ] Styling follows project conventions
+- [ ] No linter errors
+- [ ] Component follows accessibility best practices
+
+## Common Storybook Guidelines
+- Keep the number of stories very minimal and to the point. Do not exceed more than 2 stories per component.
+- If required to add custom layouts to use the component in the stories, use `Card`, `MetaContainer`, etc. and not define own divs. Also, do not apply custom text styles, use h1-h6, span and p tags which already has the styles built-in. If you add a component with text and sub-text or title and sub-title, use `MetaContainer`
+- If required to box the layout, use `w-sm` as the style and not `w-[number]` randomly since it's followed as a standard across the project.
+- Do not create render function in each story. Have it in the meta export object alone.
+
+## Reference Examples
+
+- **UI Component**: [src/components/card.tsx](mdc:src/components/card.tsx) and [src/components/card.stories.tsx](mdc:src/components/card.stories.tsx)
+- **Container Component**: [src/composables/meta-container.tsx](mdc:src/composables/meta-container.tsx) and [src/composables/meta-container.stories.tsx](mdc:src/composables/meta-container.stories.tsx)
+- **Composables Component**: [src/composables/back-button.tsx](mdc:src/composables/back-button.tsx) and [src/composables/back-button.stories.tsx](mdc:src/composables/back-button.stories.tsx)
+- **Export Pattern**: [src/client.ts](mdc:src/client.ts)
+- **Styling System**: [src/styles.css](mdc:src/styles.css)

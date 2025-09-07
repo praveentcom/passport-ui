@@ -9,7 +9,6 @@ lerna-debug.log*
 # Build outputs
 dist/
 build/
-lib/
 es/
 umd/
 cjs/
@@ -171,3 +170,4 @@ build-storybook.log
 
 # Local Netlify folder
 .netlify
+*storybook.log

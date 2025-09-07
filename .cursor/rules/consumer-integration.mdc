@@ -1,0 +1,97 @@
+---
+description: Guidelines for projects consuming passport-ui
+---
+
+# Consumer Integration Guide
+
+## Required Setup for Next.js Projects
+
+Projects consuming passport-ui must complete the following setup steps:
+
+### 1. Install Dependencies
+```bash
+npm install passport-ui
+npm install tailwindcss @tailwindcss/postcss motion next-themes
+```
+
+### 2. PostCSS Configuration
+Create or update `postcss.config.mjs`:
+```javascript
+const config = {
+  plugins: ["@tailwindcss/postcss"],
+};
+export default config;
+```
+
+### 3. Import Styles
+In your main CSS file or `app/globals.css`:
+```css
+@import 'passport-ui/styles.css';
+```
+
+### 4. Theme Provider Setup
+Wrap your app with the theme provider:
+```typescript
+import { ThemeProvider } from 'passport-ui/client'
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  )
+}
+```
+
+## Available Imports
+
+### Component Categories
+```typescript
+// UI Components
+import { Button, Card, Badge, Label } from 'passport-ui/client'
+
+// Motion Primitives  
+import { BlurIn, BorderTrail, AnimatedBackground } from 'passport-ui/client'
+
+// Theme Components
+import { ThemeProvider, ThemeButton } from 'passport-ui/client'
+
+// Page Tools
+import { PageContainer } from 'passport-ui/client'
+
+// Utility Functions
+import { cn } from 'passport-ui/server'
+```
+
+### CSS Classes Available
+The library provides reusable CSS classes defined in the styles:
+- `.page-container`: Main page wrapper
+- `.content-container`: Content grid layout
+- `.list-container`: List wrapper with spacing
+- `.section-container`: Section grouping
+- `.title-container`: Title/heading wrapper
+- `.meta-container`: Metadata wrapper
+- `.bullet-list`, `.bullet-item`: Custom bullet list styling
+
+## Tailwind Integration
+
+The library's styles integrate seamlessly with consuming project's Tailwind setup. The color system and design tokens are automatically available through CSS custom properties.
+
+### Custom Properties Available
+All theme colors and design tokens from [src/styles.css](mdc:src/styles.css) are available:
+- Color system: `--primary`, `--secondary`, `--accent`, etc.
+- Radius system: `--radius-xs` through `--radius-xl`
+- Typography: `--font-sans`, `--font-mono`

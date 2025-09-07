@@ -1,0 +1,71 @@
+---
+globs: *.tsx,*.ts
+description: Component development guidelines and patterns
+---
+
+# Component Development Guidelines
+
+## Component Structure Standards
+
+### UI Components ([src/components/](mdc:src/components/))
+- Use Radix UI primitives as base when available
+- Implement proper TypeScript interfaces
+- Export both component and variant functions (e.g., `Button`, `buttonVariants`)
+- Use `class-variance-authority` for variant management
+- Follow shadcn/ui patterns and conventions
+
+### Motion Primitives ([src/motion-primitives/](mdc:src/motion-primitives/))
+- Use Framer Motion (`motion` package) for animations
+- Export TypeScript props interfaces
+- Provide sensible animation defaults
+- Make animations configurable through props
+
+### Theme Components ([src/theme/](mdc:src/theme/))
+- Use `next-themes` for theme management
+- Support both light and dark modes
+- Integrate with CSS custom properties defined in [src/styles.css](mdc:src/styles.css)
+
+### Placeholders
+- Use text content that is consumable by all type of developers.
+- Names and any placeholder content needs to be diverse and inclusive.
+- Use `placehold` service for image placeholders with required parameters (e.g., `https://placehold.co/600x400`).
+
+## Code Patterns
+
+### Import Structure
+```typescript
+// External dependencies first
+import React from "react"
+import { motion } from "motion"
+
+// Internal utilities
+import { cn } from "@/lib/utils"
+
+// Types
+import type { ComponentProps } from "react"
+```
+
+### Component Export Pattern
+```typescript
+// Component implementation
+const Component = React.forwardRef<HTMLElement, ComponentProps>(...)
+
+// Variants (if applicable)
+const componentVariants = cva(...)
+
+// Exports
+export { Component, componentVariants }
+export type { ComponentProps }
+```
+
+### Styling Approach
+- Use Tailwind CSS classes with `cn()` utility for merging
+- Define CSS custom properties in [src/styles.css](mdc:src/styles.css) for theme values
+- Use `class-variance-authority` for component variants
+- Follow the existing color system and spacing scale
+
+## File Organization
+- Each component should be in its own file
+- Export all components through [src/index.ts](mdc:src/index.ts)
+- Group related components in appropriate subdirectories
+- Include proper TypeScript types for all props

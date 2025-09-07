@@ -1,0 +1,50 @@
+---
+alwaysApply: true
+---
+
+# Passport UI Library - Project Overview
+
+This is **passport-ui**, a modern React UI component library published on npm. It provides a comprehensive set of components and utilities for Next.js applications.
+
+## Library Architecture
+
+- **Package Name**: `passport-ui` (npm)
+- **Target Framework**: Next.js 15+ with React 18+
+- **Styling**: Tailwind CSS v4 with shadcn/ui components
+- **Motion**: Framer Motion primitives
+- **Theme System**: Built-in dark/light theme support
+
+## Key Components Categories
+
+1. **UI Components** ([src/components/](mdc:src/components/))
+   - Atomic components like Button, Card, Badge, etc.
+   - Built on Radix UI primitives
+   - Fully accessible and customizable
+
+2. **Motion Primitives** ([src/motion-primitives/](mdc:src/motion-primitives/))
+   - Animation components using Framer Motion
+   - Includes BlurIn, BorderTrail, AnimatedBackground, etc.
+
+3. **Composables** ([src/composables/](mdc:src/composables/))
+   - Higher-level components for common composables
+   - Usually made with combination of components and utilities
+   - Includes BackButton, etc.
+
+4. **Containers** ([src/containers/](mdc:src/containers/))
+   - Higher-level components for common page patterns
+   - Includes PageContainer, MetaContainer, PlaceholderContainer etc.
+
+## Entry Points
+
+- **Main Export**: [src/index.ts](mdc:src/index.ts) - All component exports
+- **Client Build**: [src/client.ts](mdc:src/client.ts) - Client-side components
+- **Server Build**: [src/server.ts](mdc:src/server.ts) - Server-side components
+- **Styles**: [src/styles.css](mdc:src/styles.css) - Core CSS with Tailwind theme
+
+## Consumer Setup Requirements
+
+Consuming projects must:
+1. Install Tailwind CSS v4 and configure postcss
+2. Import the styles: `import 'passport-ui/styles.css'`
+3. Set up proper postcss config for Tailwind
+4. Configure theme provider for dark/light mode support
