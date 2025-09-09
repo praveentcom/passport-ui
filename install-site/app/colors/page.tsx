@@ -443,9 +443,9 @@ export default function ColorsPage() {
             {tailwindColors.map((color) => (
               <div
                 key={color}
-                className="grid grid-cols-5 md:grid-cols-9 gap-2"
+                className="grid grid-cols-6 md:grid-cols-11 gap-2"
               >
-                {[100, 200, 300, 400, 500, 600, 700, 800, 900].map((weight) => (
+                {[50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950].map((weight) => (
                   <TailwindColorCard
                     key={`${color}-${weight}`}
                     color={`${color}-${weight}`}

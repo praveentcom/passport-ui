@@ -1,4 +1,7 @@
 /* Force include dynamic Tailwind color classes */
+.bg-slate-50 {
+  @apply bg-slate-50;
+}
 .bg-slate-100 {
   @apply bg-slate-100;
 }
@@ -26,7 +29,13 @@
 .bg-slate-900 {
   @apply bg-slate-900;
 }
+.bg-slate-950 {
+  @apply bg-slate-950;
+}
 
+.bg-gray-50 {
+  @apply bg-gray-50;
+}
 .bg-gray-100 {
   @apply bg-gray-100;
 }
@@ -54,7 +63,13 @@
 .bg-gray-900 {
   @apply bg-gray-900;
 }
+.bg-gray-950 {
+  @apply bg-gray-950;
+}
 
+.bg-zinc-50 {
+  @apply bg-zinc-50;
+}
 .bg-zinc-100 {
   @apply bg-zinc-100;
 }
@@ -82,7 +97,13 @@
 .bg-zinc-900 {
   @apply bg-zinc-900;
 }
+.bg-zinc-950 {
+  @apply bg-zinc-950;
+}
 
+.bg-neutral-50 {
+  @apply bg-neutral-50;
+}
 .bg-neutral-100 {
   @apply bg-neutral-100;
 }
@@ -110,7 +131,13 @@
 .bg-neutral-900 {
   @apply bg-neutral-900;
 }
+.bg-neutral-950 {
+  @apply bg-neutral-950;
+}
 
+.bg-stone-50 {
+  @apply bg-stone-50;
+}
 .bg-stone-100 {
   @apply bg-stone-100;
 }
@@ -138,7 +165,13 @@
 .bg-stone-900 {
   @apply bg-stone-900;
 }
+.bg-stone-950 {
+  @apply bg-stone-950;
+}
 
+.bg-red-50 {
+  @apply bg-red-50;
+}
 .bg-red-100 {
   @apply bg-red-100;
 }
@@ -166,7 +199,13 @@
 .bg-red-900 {
   @apply bg-red-900;
 }
+.bg-red-950 {
+  @apply bg-red-950;
+}
 
+.bg-orange-50 {
+  @apply bg-orange-50;
+}
 .bg-orange-100 {
   @apply bg-orange-100;
 }
@@ -194,7 +233,13 @@
 .bg-orange-900 {
   @apply bg-orange-900;
 }
+.bg-orange-950 {
+  @apply bg-orange-950;
+}
 
+.bg-amber-50 {
+  @apply bg-amber-50;
+}
 .bg-amber-100 {
   @apply bg-amber-100;
 }
@@ -222,7 +267,13 @@
 .bg-amber-900 {
   @apply bg-amber-900;
 }
+.bg-amber-950 {
+  @apply bg-amber-950;
+}
 
+.bg-yellow-50 {
+  @apply bg-yellow-50;
+}
 .bg-yellow-100 {
   @apply bg-yellow-100;
 }
@@ -250,7 +301,13 @@
 .bg-yellow-900 {
   @apply bg-yellow-900;
 }
+.bg-yellow-950 {
+  @apply bg-yellow-950;
+}
 
+.bg-lime-50 {
+  @apply bg-lime-50;
+}
 .bg-lime-100 {
   @apply bg-lime-100;
 }
@@ -278,7 +335,13 @@
 .bg-lime-900 {
   @apply bg-lime-900;
 }
+.bg-lime-950 {
+  @apply bg-lime-950;
+}
 
+.bg-green-50 {
+  @apply bg-green-50;
+}
 .bg-green-100 {
   @apply bg-green-100;
 }
@@ -306,7 +369,13 @@
 .bg-green-900 {
   @apply bg-green-900;
 }
+.bg-green-950 {
+  @apply bg-green-950;
+}
 
+.bg-emerald-50 {
+  @apply bg-emerald-50;
+}
 .bg-emerald-100 {
   @apply bg-emerald-100;
 }
@@ -334,7 +403,13 @@
 .bg-emerald-900 {
   @apply bg-emerald-900;
 }
+.bg-emerald-950 {
+  @apply bg-emerald-950;
+}
 
+.bg-teal-50 {
+  @apply bg-teal-50;
+}
 .bg-teal-100 {
   @apply bg-teal-100;
 }
@@ -362,7 +437,13 @@
 .bg-teal-900 {
   @apply bg-teal-900;
 }
+.bg-teal-950 {
+  @apply bg-teal-950;
+}
 
+.bg-cyan-50 {
+  @apply bg-cyan-50;
+}
 .bg-cyan-100 {
   @apply bg-cyan-100;
 }
@@ -390,7 +471,13 @@
 .bg-cyan-900 {
   @apply bg-cyan-900;
 }
+.bg-cyan-950 {
+  @apply bg-cyan-950;
+}
 
+.bg-sky-50 {
+  @apply bg-sky-50;
+}
 .bg-sky-100 {
   @apply bg-sky-100;
 }
@@ -418,7 +505,13 @@
 .bg-sky-900 {
   @apply bg-sky-900;
 }
+.bg-sky-950 {
+  @apply bg-sky-950;
+}
 
+.bg-blue-50 {
+  @apply bg-blue-50;
+}
 .bg-blue-100 {
   @apply bg-blue-100;
 }
@@ -446,7 +539,13 @@
 .bg-blue-900 {
   @apply bg-blue-900;
 }
+.bg-blue-950 {
+  @apply bg-blue-950;
+}
 
+.bg-indigo-50 {
+  @apply bg-indigo-50;
+}
 .bg-indigo-100 {
   @apply bg-indigo-100;
 }
@@ -474,7 +573,13 @@
 .bg-indigo-900 {
   @apply bg-indigo-900;
 }
+.bg-indigo-950 {
+  @apply bg-indigo-950;
+}
 
+.bg-violet-50 {
+  @apply bg-violet-50;
+}
 .bg-violet-100 {
   @apply bg-violet-100;
 }
@@ -502,7 +607,13 @@
 .bg-violet-900 {
   @apply bg-violet-900;
 }
+.bg-violet-950 {
+  @apply bg-violet-950;
+}
 
+.bg-purple-50 {
+  @apply bg-purple-50;
+}
 .bg-purple-100 {
   @apply bg-purple-100;
 }
@@ -530,7 +641,13 @@
 .bg-purple-900 {
   @apply bg-purple-900;
 }
+.bg-purple-950 {
+  @apply bg-purple-950;
+}
 
+.bg-fuchsia-50 {
+  @apply bg-fuchsia-50;
+}
 .bg-fuchsia-100 {
   @apply bg-fuchsia-100;
 }
@@ -558,7 +675,13 @@
 .bg-fuchsia-900 {
   @apply bg-fuchsia-900;
 }
+.bg-fuchsia-950 {
+  @apply bg-fuchsia-950;
+}
 
+.bg-pink-50 {
+  @apply bg-pink-50;
+}
 .bg-pink-100 {
   @apply bg-pink-100;
 }
@@ -586,7 +709,13 @@
 .bg-pink-900 {
   @apply bg-pink-900;
 }
+.bg-pink-950 {
+  @apply bg-pink-950;
+}
 
+.bg-rose-50 {
+  @apply bg-rose-50;
+}
 .bg-rose-100 {
   @apply bg-rose-100;
 }
@@ -613,4 +742,862 @@
 }
 .bg-rose-900 {
   @apply bg-rose-900;
+}
+.bg-rose-950 {
+  @apply bg-rose-950;
+}
+
+/* Text colors */
+.text-slate-50 {
+  @apply text-slate-50;
+}
+.text-slate-100 {
+  @apply text-slate-100;
+}
+.text-slate-200 {
+  @apply text-slate-200;
+}
+.text-slate-300 {
+  @apply text-slate-300;
+}
+.text-slate-400 {
+  @apply text-slate-400;
+}
+.text-slate-500 {
+  @apply text-slate-500;
+}
+.text-slate-600 {
+  @apply text-slate-600;
+}
+.text-slate-700 {
+  @apply text-slate-700;
+}
+.text-slate-800 {
+  @apply text-slate-800;
+}
+.text-slate-900 {
+  @apply text-slate-900;
+}
+.text-slate-950 {
+  @apply text-slate-950;
+}
+
+.text-gray-50 {
+  @apply text-gray-50;
+}
+.text-gray-100 {
+  @apply text-gray-100;
+}
+.text-gray-200 {
+  @apply text-gray-200;
+}
+.text-gray-300 {
+  @apply text-gray-300;
+}
+.text-gray-400 {
+  @apply text-gray-400;
+}
+.text-gray-500 {
+  @apply text-gray-500;
+}
+.text-gray-600 {
+  @apply text-gray-600;
+}
+.text-gray-700 {
+  @apply text-gray-700;
+}
+.text-gray-800 {
+  @apply text-gray-800;
+}
+.text-gray-900 {
+  @apply text-gray-900;
+}
+.text-gray-950 {
+  @apply text-gray-950;
+}
+
+.text-zinc-50 {
+  @apply text-zinc-50;
+}
+.text-zinc-100 {
+  @apply text-zinc-100;
+}
+.text-zinc-200 {
+  @apply text-zinc-200;
+}
+.text-zinc-300 {
+  @apply text-zinc-300;
+}
+.text-zinc-400 {
+  @apply text-zinc-400;
+}
+.text-zinc-500 {
+  @apply text-zinc-500;
+}
+.text-zinc-600 {
+  @apply text-zinc-600;
+}
+.text-zinc-700 {
+  @apply text-zinc-700;
+}
+.text-zinc-800 {
+  @apply text-zinc-800;
+}
+.text-zinc-900 {
+  @apply text-zinc-900;
+}
+.text-zinc-950 {
+  @apply text-zinc-950;
+}
+
+.text-neutral-50 {
+  @apply text-neutral-50;
+}
+.text-neutral-100 {
+  @apply text-neutral-100;
+}
+.text-neutral-200 {
+  @apply text-neutral-200;
+}
+.text-neutral-300 {
+  @apply text-neutral-300;
+}
+.text-neutral-400 {
+  @apply text-neutral-400;
+}
+.text-neutral-500 {
+  @apply text-neutral-500;
+}
+.text-neutral-600 {
+  @apply text-neutral-600;
+}
+.text-neutral-700 {
+  @apply text-neutral-700;
+}
+.text-neutral-800 {
+  @apply text-neutral-800;
+}
+.text-neutral-900 {
+  @apply text-neutral-900;
+}
+.text-neutral-950 {
+  @apply text-neutral-950;
+}
+
+.text-stone-50 {
+  @apply text-stone-50;
+}
+.text-stone-100 {
+  @apply text-stone-100;
+}
+.text-stone-200 {
+  @apply text-stone-200;
+}
+.text-stone-300 {
+  @apply text-stone-300;
+}
+.text-stone-400 {
+  @apply text-stone-400;
+}
+.text-stone-500 {
+  @apply text-stone-500;
+}
+.text-stone-600 {
+  @apply text-stone-600;
+}
+.text-stone-700 {
+  @apply text-stone-700;
+}
+.text-stone-800 {
+  @apply text-stone-800;
+}
+.text-stone-900 {
+  @apply text-stone-900;
+}
+.text-stone-950 {
+  @apply text-stone-950;
+}
+
+.text-red-50 {
+  @apply text-red-50;
+}
+.text-red-100 {
+  @apply text-red-100;
+}
+.text-red-200 {
+  @apply text-red-200;
+}
+.text-red-300 {
+  @apply text-red-300;
+}
+.text-red-400 {
+  @apply text-red-400;
+}
+.text-red-500 {
+  @apply text-red-500;
+}
+.text-red-600 {
+  @apply text-red-600;
+}
+.text-red-700 {
+  @apply text-red-700;
+}
+.text-red-800 {
+  @apply text-red-800;
+}
+.text-red-900 {
+  @apply text-red-900;
+}
+.text-red-950 {
+  @apply text-red-950;
+}
+
+.text-orange-50 {
+  @apply text-orange-50;
+}
+.text-orange-100 {
+  @apply text-orange-100;
+}
+.text-orange-200 {
+  @apply text-orange-200;
+}
+.text-orange-300 {
+  @apply text-orange-300;
+}
+.text-orange-400 {
+  @apply text-orange-400;
+}
+.text-orange-500 {
+  @apply text-orange-500;
+}
+.text-orange-600 {
+  @apply text-orange-600;
+}
+.text-orange-700 {
+  @apply text-orange-700;
+}
+.text-orange-800 {
+  @apply text-orange-800;
+}
+.text-orange-900 {
+  @apply text-orange-900;
+}
+.text-orange-950 {
+  @apply text-orange-950;
+}
+
+.text-amber-50 {
+  @apply text-amber-50;
+}
+.text-amber-100 {
+  @apply text-amber-100;
+}
+.text-amber-200 {
+  @apply text-amber-200;
+}
+.text-amber-300 {
+  @apply text-amber-300;
+}
+.text-amber-400 {
+  @apply text-amber-400;
+}
+.text-amber-500 {
+  @apply text-amber-500;
+}
+.text-amber-600 {
+  @apply text-amber-600;
+}
+.text-amber-700 {
+  @apply text-amber-700;
+}
+.text-amber-800 {
+  @apply text-amber-800;
+}
+.text-amber-900 {
+  @apply text-amber-900;
+}
+.text-amber-950 {
+  @apply text-amber-950;
+}
+
+.text-yellow-50 {
+  @apply text-yellow-50;
+}
+.text-yellow-100 {
+  @apply text-yellow-100;
+}
+.text-yellow-200 {
+  @apply text-yellow-200;
+}
+.text-yellow-300 {
+  @apply text-yellow-300;
+}
+.text-yellow-400 {
+  @apply text-yellow-400;
+}
+.text-yellow-500 {
+  @apply text-yellow-500;
+}
+.text-yellow-600 {
+  @apply text-yellow-600;
+}
+.text-yellow-700 {
+  @apply text-yellow-700;
+}
+.text-yellow-800 {
+  @apply text-yellow-800;
+}
+.text-yellow-900 {
+  @apply text-yellow-900;
+}
+.text-yellow-950 {
+  @apply text-yellow-950;
+}
+
+.text-lime-50 {
+  @apply text-lime-50;
+}
+.text-lime-100 {
+  @apply text-lime-100;
+}
+.text-lime-200 {
+  @apply text-lime-200;
+}
+.text-lime-300 {
+  @apply text-lime-300;
+}
+.text-lime-400 {
+  @apply text-lime-400;
+}
+.text-lime-500 {
+  @apply text-lime-500;
+}
+.text-lime-600 {
+  @apply text-lime-600;
+}
+.text-lime-700 {
+  @apply text-lime-700;
+}
+.text-lime-800 {
+  @apply text-lime-800;
+}
+.text-lime-900 {
+  @apply text-lime-900;
+}
+.text-lime-950 {
+  @apply text-lime-950;
+}
+
+.text-green-50 {
+  @apply text-green-50;
+}
+.text-green-100 {
+  @apply text-green-100;
+}
+.text-green-200 {
+  @apply text-green-200;
+}
+.text-green-300 {
+  @apply text-green-300;
+}
+.text-green-400 {
+  @apply text-green-400;
+}
+.text-green-500 {
+  @apply text-green-500;
+}
+.text-green-600 {
+  @apply text-green-600;
+}
+.text-green-700 {
+  @apply text-green-700;
+}
+.text-green-800 {
+  @apply text-green-800;
+}
+.text-green-900 {
+  @apply text-green-900;
+}
+.text-green-950 {
+  @apply text-green-950;
+}
+
+.text-emerald-50 {
+  @apply text-emerald-50;
+}
+.text-emerald-100 {
+  @apply text-emerald-100;
+}
+.text-emerald-200 {
+  @apply text-emerald-200;
+}
+.text-emerald-300 {
+  @apply text-emerald-300;
+}
+.text-emerald-400 {
+  @apply text-emerald-400;
+}
+.text-emerald-500 {
+  @apply text-emerald-500;
+}
+.text-emerald-600 {
+  @apply text-emerald-600;
+}
+.text-emerald-700 {
+  @apply text-emerald-700;
+}
+.text-emerald-800 {
+  @apply text-emerald-800;
+}
+.text-emerald-900 {
+  @apply text-emerald-900;
+}
+.text-emerald-950 {
+  @apply text-emerald-950;
+}
+
+.text-teal-50 {
+  @apply text-teal-50;
+}
+.text-teal-100 {
+  @apply text-teal-100;
+}
+.text-teal-200 {
+  @apply text-teal-200;
+}
+.text-teal-300 {
+  @apply text-teal-300;
+}
+.text-teal-400 {
+  @apply text-teal-400;
+}
+.text-teal-500 {
+  @apply text-teal-500;
+}
+.text-teal-600 {
+  @apply text-teal-600;
+}
+.text-teal-700 {
+  @apply text-teal-700;
+}
+.text-teal-800 {
+  @apply text-teal-800;
+}
+.text-teal-900 {
+  @apply text-teal-900;
+}
+.text-teal-950 {
+  @apply text-teal-950;
+}
+
+.text-cyan-50 {
+  @apply text-cyan-50;
+}
+.text-cyan-100 {
+  @apply text-cyan-100;
+}
+.text-cyan-200 {
+  @apply text-cyan-200;
+}
+.text-cyan-300 {
+  @apply text-cyan-300;
+}
+.text-cyan-400 {
+  @apply text-cyan-400;
+}
+.text-cyan-500 {
+  @apply text-cyan-500;
+}
+.text-cyan-600 {
+  @apply text-cyan-600;
+}
+.text-cyan-700 {
+  @apply text-cyan-700;
+}
+.text-cyan-800 {
+  @apply text-cyan-800;
+}
+.text-cyan-900 {
+  @apply text-cyan-900;
+}
+.text-cyan-950 {
+  @apply text-cyan-950;
+}
+
+.text-sky-50 {
+  @apply text-sky-50;
+}
+.text-sky-100 {
+  @apply text-sky-100;
+}
+.text-sky-200 {
+  @apply text-sky-200;
+}
+.text-sky-300 {
+  @apply text-sky-300;
+}
+.text-sky-400 {
+  @apply text-sky-400;
+}
+.text-sky-500 {
+  @apply text-sky-500;
+}
+.text-sky-600 {
+  @apply text-sky-600;
+}
+.text-sky-700 {
+  @apply text-sky-700;
+}
+.text-sky-800 {
+  @apply text-sky-800;
+}
+.text-sky-900 {
+  @apply text-sky-900;
+}
+.text-sky-950 {
+  @apply text-sky-950;
+}
+
+.text-blue-50 {
+  @apply text-blue-50;
+}
+.text-blue-100 {
+  @apply text-blue-100;
+}
+.text-blue-200 {
+  @apply text-blue-200;
+}
+.text-blue-300 {
+  @apply text-blue-300;
+}
+.text-blue-400 {
+  @apply text-blue-400;
+}
+.text-blue-500 {
+  @apply text-blue-500;
+}
+.text-blue-600 {
+  @apply text-blue-600;
+}
+.text-blue-700 {
+  @apply text-blue-700;
+}
+.text-blue-800 {
+  @apply text-blue-800;
+}
+.text-blue-900 {
+  @apply text-blue-900;
+}
+.text-blue-950 {
+  @apply text-blue-950;
+}
+
+.text-indigo-50 {
+  @apply text-indigo-50;
+}
+.text-indigo-100 {
+  @apply text-indigo-100;
+}
+.text-indigo-200 {
+  @apply text-indigo-200;
+}
+.text-indigo-300 {
+  @apply text-indigo-300;
+}
+.text-indigo-400 {
+  @apply text-indigo-400;
+}
+.text-indigo-500 {
+  @apply text-indigo-500;
+}
+.text-indigo-600 {
+  @apply text-indigo-600;
+}
+.text-indigo-700 {
+  @apply text-indigo-700;
+}
+.text-indigo-800 {
+  @apply text-indigo-800;
+}
+.text-indigo-900 {
+  @apply text-indigo-900;
+}
+.text-indigo-950 {
+  @apply text-indigo-950;
+}
+
+.text-violet-50 {
+  @apply text-violet-50;
+}
+.text-violet-100 {
+  @apply text-violet-100;
+}
+.text-violet-200 {
+  @apply text-violet-200;
+}
+.text-violet-300 {
+  @apply text-violet-300;
+}
+.text-violet-400 {
+  @apply text-violet-400;
+}
+.text-violet-500 {
+  @apply text-violet-500;
+}
+.text-violet-600 {
+  @apply text-violet-600;
+}
+.text-violet-700 {
+  @apply text-violet-700;
+}
+.text-violet-800 {
+  @apply text-violet-800;
+}
+.text-violet-900 {
+  @apply text-violet-900;
+}
+.text-violet-950 {
+  @apply text-violet-950;
+}
+
+.text-purple-50 {
+  @apply text-purple-50;
+}
+.text-purple-100 {
+  @apply text-purple-100;
+}
+.text-purple-200 {
+  @apply text-purple-200;
+}
+.text-purple-300 {
+  @apply text-purple-300;
+}
+.text-purple-400 {
+  @apply text-purple-400;
+}
+.text-purple-500 {
+  @apply text-purple-500;
+}
+.text-purple-600 {
+  @apply text-purple-600;
+}
+.text-purple-700 {
+  @apply text-purple-700;
+}
+.text-purple-800 {
+  @apply text-purple-800;
+}
+.text-purple-900 {
+  @apply text-purple-900;
+}
+.text-purple-950 {
+  @apply text-purple-950;
+}
+
+.text-fuchsia-50 {
+  @apply text-fuchsia-50;
+}
+.text-fuchsia-100 {
+  @apply text-fuchsia-100;
+}
+.text-fuchsia-200 {
+  @apply text-fuchsia-200;
+}
+.text-fuchsia-300 {
+  @apply text-fuchsia-300;
+}
+.text-fuchsia-400 {
+  @apply text-fuchsia-400;
+}
+.text-fuchsia-500 {
+  @apply text-fuchsia-500;
+}
+.text-fuchsia-600 {
+  @apply text-fuchsia-600;
+}
+.text-fuchsia-700 {
+  @apply text-fuchsia-700;
+}
+.text-fuchsia-800 {
+  @apply text-fuchsia-800;
+}
+.text-fuchsia-900 {
+  @apply text-fuchsia-900;
+}
+.text-fuchsia-950 {
+  @apply text-fuchsia-950;
+}
+
+.text-pink-50 {
+  @apply text-pink-50;
+}
+.text-pink-100 {
+  @apply text-pink-100;
+}
+.text-pink-200 {
+  @apply text-pink-200;
+}
+.text-pink-300 {
+  @apply text-pink-300;
+}
+.text-pink-400 {
+  @apply text-pink-400;
+}
+.text-pink-500 {
+  @apply text-pink-500;
+}
+.text-pink-600 {
+  @apply text-pink-600;
+}
+.text-pink-700 {
+  @apply text-pink-700;
+}
+.text-pink-800 {
+  @apply text-pink-800;
+}
+.text-pink-900 {
+  @apply text-pink-900;
+}
+.text-pink-950 {
+  @apply text-pink-950;
+}
+
+.text-rose-50 {
+  @apply text-rose-50;
+}
+.text-rose-100 {
+  @apply text-rose-100;
+}
+.text-rose-200 {
+  @apply text-rose-200;
+}
+.text-rose-300 {
+  @apply text-rose-300;
+}
+.text-rose-400 {
+  @apply text-rose-400;
+}
+.text-rose-500 {
+  @apply text-rose-500;
+}
+.text-rose-600 {
+  @apply text-rose-600;
+}
+.text-rose-700 {
+  @apply text-rose-700;
+}
+.text-rose-800 {
+  @apply text-rose-800;
+}
+.text-rose-900 {
+  @apply text-rose-900;
+}
+.text-rose-950 {
+  @apply text-rose-950;
+}
+
+/* Border colors - most commonly used */
+.border-slate-200 {
+  @apply border-slate-200;
+}
+.border-slate-300 {
+  @apply border-slate-300;
+}
+.border-slate-400 {
+  @apply border-slate-400;
+}
+.border-slate-500 {
+  @apply border-slate-500;
+}
+.border-slate-600 {
+  @apply border-slate-600;
+}
+.border-slate-700 {
+  @apply border-slate-700;
+}
+.border-slate-800 {
+  @apply border-slate-800;
+}
+
+.border-gray-200 {
+  @apply border-gray-200;
+}
+.border-gray-300 {
+  @apply border-gray-300;
+}
+.border-gray-400 {
+  @apply border-gray-400;
+}
+.border-gray-500 {
+  @apply border-gray-500;
+}
+.border-gray-600 {
+  @apply border-gray-600;
+}
+.border-gray-700 {
+  @apply border-gray-700;
+}
+.border-gray-800 {
+  @apply border-gray-800;
+}
+
+.border-zinc-200 {
+  @apply border-zinc-200;
+}
+.border-zinc-300 {
+  @apply border-zinc-300;
+}
+.border-zinc-400 {
+  @apply border-zinc-400;
+}
+.border-zinc-500 {
+  @apply border-zinc-500;
+}
+.border-zinc-600 {
+  @apply border-zinc-600;
+}
+.border-zinc-700 {
+  @apply border-zinc-700;
+}
+.border-zinc-800 {
+  @apply border-zinc-800;
+}
+
+.border-red-300 {
+  @apply border-red-300;
+}
+.border-red-400 {
+  @apply border-red-400;
+}
+.border-red-500 {
+  @apply border-red-500;
+}
+.border-red-600 {
+  @apply border-red-600;
+}
+
+.border-blue-300 {
+  @apply border-blue-300;
+}
+.border-blue-400 {
+  @apply border-blue-400;
+}
+.border-blue-500 {
+  @apply border-blue-500;
+}
+.border-blue-600 {
+  @apply border-blue-600;
+}
+
+.border-green-300 {
+  @apply border-green-300;
+}
+.border-green-400 {
+  @apply border-green-400;
+}
+.border-green-500 {
+  @apply border-green-500;
+}
+.border-green-600 {
+  @apply border-green-600;
 }
