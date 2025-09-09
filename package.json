@@ -78,7 +78,8 @@
     "deploy-storybook": "npm run build-storybook && cp cloudflare/_headers cloudflare/_redirects storybook-static/",
     "install-site:dev": "cd install-site && npm run dev",
     "install-site:build": "cd install-site && npm run build",
-    "install-site:install": "cd install-site && npm install"
+    "install-site:install": "cd install-site && npm install",
+    "install-site:deploy": "npm run install-site:build && cd install-site && cp _headers _redirects out/ && wrangler pages deploy out --project-name install-passportui"
   },
   "peerDependencies": {
     "@tailwindcss/postcss": "^4.1.12",
