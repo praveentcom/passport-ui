@@ -33,7 +33,7 @@ npm run install-site:build
 This site is configured for static export and can be deployed to any static hosting service like:
 
 - Vercel
-- Netlify 
+- Netlify
 - GitHub Pages
 - Cloudflare Pages
 

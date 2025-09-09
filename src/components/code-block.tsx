@@ -224,20 +224,22 @@ function CodeBlock({
             const lineNumber = index + 1;
             const isFirstLine = index === 0;
             const isLastLine = index === lines.length - 1;
-            const lineNumberPadding = isFirstLine && isLastLine
-              ? " py-1"
-              : isFirstLine
-                ? " pt-1"
-                : isLastLine
-                  ? " pb-1"
-                  : "";
-            const contentPadding = isFirstLine && isLastLine
-              ? " py-1"
-              : isFirstLine
-                ? " pt-1"
-                : isLastLine
-                  ? " pb-1"
-                  : "";
+            const lineNumberPadding =
+              isFirstLine && isLastLine
+                ? " py-1"
+                : isFirstLine
+                  ? " pt-1"
+                  : isLastLine
+                    ? " pb-1"
+                    : "";
+            const contentPadding =
+              isFirstLine && isLastLine
+                ? " py-1"
+                : isFirstLine
+                  ? " pt-1"
+                  : isLastLine
+                    ? " pb-1"
+                    : "";
 
             const highlightedLine = highlightLine(line);
 

@@ -53,19 +53,19 @@ const IntroductionDocs = () => (
     footer={
       <MetaContainer title="Maintained by Praveen Thirumurugan">
         <div className="flex gap-2 items-center">
-        <a
-          href="https://github.com/praveentcom/passport-ui"
-          className="text-primary hover:underline"
-        >
-          GitHub
-        </a>
-        <span>•</span>
-        <a
-          href="https://www.npmjs.com/package/passport-ui"
-          className="text-primary hover:underline"
-        >
-          npm
-        </a>
+          <a
+            href="https://github.com/praveentcom/passport-ui"
+            className="text-primary hover:underline"
+          >
+            GitHub
+          </a>
+          <span>•</span>
+          <a
+            href="https://www.npmjs.com/package/passport-ui"
+            className="text-primary hover:underline"
+          >
+            npm
+          </a>
         </div>
       </MetaContainer>
     }
@@ -77,7 +77,8 @@ const IntroductionDocs = () => (
         <div className="grid">
           <h3>Installation</h3>
           <p>
-            To get started, install the library and its dependencies by following the steps below.
+            To get started, install the library and its dependencies by
+            following the steps below.
           </p>
         </div>
       </MetaContainer>
@@ -86,42 +87,74 @@ const IntroductionDocs = () => (
           <p className="text-xs font-medium">Step 1:</p>
           <p className="text-xs font-normal">Install the passport-ui package</p>
         </div>
-        <CodeBlock filename="zsh/bash" hideLineNumbers code={INSTALLATION_CODE.PACKAGE_INSTALL} />
+        <CodeBlock
+          filename="zsh/bash"
+          hideLineNumbers
+          code={INSTALLATION_CODE.PACKAGE_INSTALL}
+        />
       </MetaContainer>
       <MetaContainer>
         <div className="flex gap-1 items-center">
           <p className="text-xs font-medium">Step 2:</p>
           <p className="text-xs font-normal">Install required dependencies</p>
         </div>
-        <CodeBlock filename="zsh/bash" hideLineNumbers code={INSTALLATION_CODE.DEPENDENCIES_INSTALL} />
+        <CodeBlock
+          filename="zsh/bash"
+          hideLineNumbers
+          code={INSTALLATION_CODE.DEPENDENCIES_INSTALL}
+        />
       </MetaContainer>
       <MetaContainer>
         <div className="flex gap-1 items-center">
           <p className="text-xs font-medium">Step 3:</p>
-          <p className="text-xs font-normal">Configure PostCSS to use tailwindcss</p>
+          <p className="text-xs font-normal">
+            Configure PostCSS to use tailwindcss
+          </p>
         </div>
-        <CodeBlock filename="postcss.config.mjs" language="javascript" code={INSTALLATION_CODE.POSTCSS_SETUP} />
+        <CodeBlock
+          filename="postcss.config.mjs"
+          language="javascript"
+          code={INSTALLATION_CODE.POSTCSS_SETUP}
+        />
       </MetaContainer>
       <MetaContainer>
         <div className="flex gap-1 items-center">
           <p className="text-xs font-medium">Step 4:</p>
-          <p className="text-xs font-normal">Import passport-ui styles in your main stylesheet</p>
+          <p className="text-xs font-normal">
+            Import passport-ui styles in your main stylesheet
+          </p>
         </div>
-        <CodeBlock filename="styles.css" language="css" code={INSTALLATION_CODE.CSS_IMPORT} />
+        <CodeBlock
+          filename="styles.css"
+          language="css"
+          code={INSTALLATION_CODE.CSS_IMPORT}
+        />
       </MetaContainer>
       <MetaContainer>
         <div className="flex gap-1 items-center">
           <p className="text-xs font-medium">Step 5:</p>
-          <p className="text-xs font-normal">Wrap your app with the theme provider (for theme support)</p>
+          <p className="text-xs font-normal">
+            Wrap your app with the theme provider (for theme support)
+          </p>
         </div>
-        <CodeBlock filename="app.tsx" language="typescript" code={INSTALLATION_CODE.THEME_PROVIDER} />
+        <CodeBlock
+          filename="app.tsx"
+          language="typescript"
+          code={INSTALLATION_CODE.THEME_PROVIDER}
+        />
       </MetaContainer>
       <MetaContainer>
         <div className="flex gap-1 items-center">
           <p className="text-xs font-medium">Step 6:</p>
-          <p className="text-xs font-normal">Use the components (example: Button, Card, etc.)</p>
+          <p className="text-xs font-normal">
+            Use the components (example: Button, Card, etc.)
+          </p>
         </div>
-        <CodeBlock filename="app.tsx" language="typescript" code={INSTALLATION_CODE.COMPONENTS_IMPORT} />
+        <CodeBlock
+          filename="app.tsx"
+          language="typescript"
+          code={INSTALLATION_CODE.COMPONENTS_IMPORT}
+        />
       </MetaContainer>
     </div>
   </PageLayout>

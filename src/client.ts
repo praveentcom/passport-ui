@@ -10,6 +10,13 @@ export {
 } from "./components/accordion";
 export { Alert, alertVariants, type AlertProps } from "./components/alert";
 export {
+  Analytics,
+  useAnalytics,
+  type AnalyticsProps,
+  type AnalyticsProviders,
+  type GoogleAnalyticsConfig,
+} from "./components/analytics";
+export {
   AlertDialog,
   AlertDialogPortal,
   AlertDialogOverlay,

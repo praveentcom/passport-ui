@@ -9,6 +9,14 @@ const config: StorybookConfig = {
   ],
   managerHead: (head) => `
     ${head}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3S77KHWEJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Z3S77KHWEJ');
+    </script>
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png" />
     <link rel="shortcut icon" type="image/png" href="https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png" />
@@ -84,6 +92,16 @@ const config: StorybookConfig = {
   `,
   previewHead: (head) => `
     ${head}
+    <!-- Google Analytics - Now using Analytics component in React apps -->
+    <!-- For React apps, use: <Analytics providers={{ googleAnalytics: { trackingId: 'G-Z3S77KHWEJ' } }} /> -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3S77KHWEJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Z3S77KHWEJ');
+    </script>
+    
     <!-- Favicon for preview iframe -->
     <link rel="icon" type="image/png" href="https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png" />
     

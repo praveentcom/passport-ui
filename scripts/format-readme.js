@@ -35,10 +35,13 @@ function extractStoryInfo(filePath) {
     const parts = title.split("/");
     if (parts.length !== 2) return null;
 
-    const [category, componentName] = parts.map(part => part.trim());
+    const [category, componentName] = parts.map((part) => part.trim());
 
     // Generate Storybook documentation URL
-    const storyId = title.toLowerCase().replace(/\s+/g, "-").replace(/\//g, "-");
+    const storyId = title
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/\//g, "-");
     const docUrl = `https://passportui.com/?path=/docs/${storyId}`;
 
     return {

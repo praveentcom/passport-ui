@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
-import { ThemeToggle } from '../../../src/composables/theme-toggle'
-import { MetaContainer } from '../../../src/composables/meta-container'
-import { PageLayout } from '../../../src/layouts/page-layout'
-import { Separator } from '../../../src/components/separator'
-import { SidebarContainer } from '../../../src/layouts/sidebar-container'
-import { getSidebarMenuItems, COLORS_PAGE_DATA } from '../../constants'
+import { ThemeToggle } from "../../../src/composables/theme-toggle";
+import { MetaContainer } from "../../../src/composables/meta-container";
+import { PageLayout } from "../../../src/layouts/page-layout";
+import { Separator } from "../../../src/components/separator";
+import { SidebarContainer } from "../../../src/layouts/sidebar-container";
+import { getSidebarMenuItems, COLORS_PAGE_DATA } from "../../constants";
 
 /**
  * Color Palette for Passport UI
@@ -303,7 +303,7 @@ const sidebar = (
   <SidebarContainer
     menuItems={sidebarMenuItems}
     searchable={true}
-    searchPlaceholder='Search...'
+    searchPlaceholder="Search..."
     sidebarHeader={
       <MetaContainer title="Passport UI">
         Sleek & Compact UI Library
@@ -340,8 +340,8 @@ export default function ColorsPage() {
             <h3>Overview</h3>
             <p className="text-muted-foreground">
               Passport UI uses a comprehensive color system built on{" "}
-              <strong>OKLCH color space</strong>, inspired by shadcn/ui, for better color management and
-              automatic light/dark theme support.
+              <strong>OKLCH color space</strong>, inspired by shadcn/ui, for
+              better color management and automatic light/dark theme support.
             </p>
           </div>
         </div>
@@ -436,23 +436,20 @@ export default function ColorsPage() {
 
         <div className="section-container">
           <MetaContainer title="Built-in Tailwind Colors">
-            In addition to the custom theme colors, you can use all standard Tailwind CSS colors.
+            In addition to the custom theme colors, you can use all standard
+            Tailwind CSS colors.
           </MetaContainer>
           <div className="list-container">
             {tailwindColors.map((color) => (
-              <div key={color} className="grid grid-cols-5 md:grid-cols-9 gap-2">
-                {[
-                  100,
-                  200,
-                  300,
-                  400,
-                  500,
-                  600,
-                  700,
-                  800,
-                  900,
-                ].map((weight) => (
-                  <TailwindColorCard key={`${color}-${weight}`} color={`${color}-${weight}`} />
+              <div
+                key={color}
+                className="grid grid-cols-5 md:grid-cols-9 gap-2"
+              >
+                {[100, 200, 300, 400, 500, 600, 700, 800, 900].map((weight) => (
+                  <TailwindColorCard
+                    key={`${color}-${weight}`}
+                    color={`${color}-${weight}`}
+                  />
                 ))}
               </div>
             ))}
@@ -460,5 +457,5 @@ export default function ColorsPage() {
         </div>
       </div>
     </PageLayout>
-  )
+  );
 }

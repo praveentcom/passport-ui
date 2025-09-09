@@ -39,8 +39,8 @@ Import the library styles in your main CSS file:
 @import "passport-ui/styles.css";
 
 /* Optional styles based on requirement */
-@import 'passport-ui/hljs-themes.css'; /* Optional: for code highlighting */
-@import 'passport-ui/tailwind-colors.css'; /* Optional: dynamic usage of tailwind colors */
+@import "passport-ui/hljs-themes.css"; /* Optional: for code highlighting */
+@import "passport-ui/tailwind-colors.css"; /* Optional: dynamic usage of tailwind colors */
 ```
 
 - For themed syntax highlighting in `CodeBlock` and `Markdown` components, import the theme styles.
@@ -49,11 +49,7 @@ Import the library styles in your main CSS file:
 ### Basic Example
 
 ```tsx
-import {
-  Button,
-  Card,
-  CardContent
-} from "passport-ui/client";
+import { Button, Card, CardContent } from "passport-ui/client";
 
 function App() {
   return (
