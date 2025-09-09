@@ -15,8 +15,22 @@ const meta: Meta<typeof Accordion> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A vertically stacked set of interactive headings that each reveal a section of content.",
+        component: `A vertically stacked set of interactive headings that each reveal a section of content, built on Radix UI Accordion primitives.
+
+## Features
+- Full keyboard navigation support with arrow keys
+- Single or multiple item expansion modes
+- Collapsible items with smooth animations
+- ARIA-compliant accessibility implementation
+- Customizable orientation and reading direction
+- Built-in focus management and state handling
+
+## Composition
+Accordions are composed of multiple components:
+- **Accordion**: Root container with behavior configuration
+- **AccordionItem**: Individual collapsible sections
+- **AccordionTrigger**: Clickable header with chevron indicator
+- **AccordionContent**: Expandable content area with smooth transitions`,
       },
     },
   },
@@ -28,12 +42,9 @@ const meta: Meta<typeof Accordion> = {
       description:
         "Determines whether one or multiple items can be opened at the same time.",
       table: {
-        type: {
-          summary: "single | multiple",
-        },
-        defaultValue: {
-          summary: "single",
-        },
+        type: { summary: '"single" | "multiple"' },
+        defaultValue: { summary: '"single"' },
+        category: "Behavior",
       },
     },
     collapsible: {
@@ -41,12 +52,9 @@ const meta: Meta<typeof Accordion> = {
       description:
         'When type is "single", allows closing content when clicking trigger of an open item.',
       table: {
-        type: {
-          summary: "boolean",
-        },
-        defaultValue: {
-          summary: "false",
-        },
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+        category: "Behavior",
       },
     },
     defaultValue: {
@@ -54,18 +62,16 @@ const meta: Meta<typeof Accordion> = {
       description:
         "The value of the item to expand when initially rendered (uncontrolled).",
       table: {
-        type: {
-          summary: "string",
-        },
+        type: { summary: "string" },
+        category: "State",
       },
     },
     value: {
       control: { type: "text" },
       description: "The controlled value of the item to expand.",
       table: {
-        type: {
-          summary: "string",
-        },
+        type: { summary: "string" },
+        category: "State",
       },
     },
     onValueChange: {
@@ -73,10 +79,8 @@ const meta: Meta<typeof Accordion> = {
       description:
         "Event handler called when the expanded state of an item changes.",
       table: {
-        type: {
-          summary: "(value: string) => void",
-        },
-        category: "Actions",
+        type: { summary: "(value: string) => void" },
+        category: "Events",
       },
     },
     disabled: {
@@ -84,12 +88,9 @@ const meta: Meta<typeof Accordion> = {
       description:
         "When true, prevents the user from interacting with the accordion.",
       table: {
-        type: {
-          summary: "boolean",
-        },
-        defaultValue: {
-          summary: "false",
-        },
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+        category: "State",
       },
     },
     dir: {
@@ -97,12 +98,9 @@ const meta: Meta<typeof Accordion> = {
       options: ["ltr", "rtl"],
       description: "The reading direction of the accordion.",
       table: {
-        type: {
-          summary: "ltr | rtl",
-        },
-        defaultValue: {
-          summary: "ltr",
-        },
+        type: { summary: '"ltr" | "rtl"' },
+        defaultValue: { summary: '"ltr"' },
+        category: "Layout",
       },
     },
     orientation: {
@@ -110,12 +108,9 @@ const meta: Meta<typeof Accordion> = {
       options: ["horizontal", "vertical"],
       description: "The orientation of the accordion.",
       table: {
-        type: {
-          summary: "horizontal | vertical",
-        },
-        defaultValue: {
-          summary: "vertical",
-        },
+        type: { summary: '"horizontal" | "vertical"' },
+        defaultValue: { summary: '"vertical"' },
+        category: "Layout",
       },
     },
     className: COMMON_CONTROLS.className,

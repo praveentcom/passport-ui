@@ -10,56 +10,77 @@ const meta: Meta<typeof Slider> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "An input where the user selects a value from within a given range.",
+        component: `A slider component for selecting numeric values within a specified range, built on Radix UI Slider primitives.
+
+## Features
+- Single or multi-value (range) slider support
+- Keyboard navigation with arrow keys and page up/down
+- Touch and mouse interaction with smooth dragging
+- Customizable min, max, and step values
+- Horizontal and vertical orientations
+- Built-in accessibility with proper ARIA attributes
+- Visual feedback with hover and focus states
+
+## Usage
+Use sliders for:
+- Numeric input within a specific range
+- Volume, brightness, or other continuous controls
+- Price ranges or filtering by numeric values
+- Settings and configuration values
+- Any input where visual feedback of the range is helpful
+
+## Single vs Range
+- Single value: Pass an array with one number \`[50]\`
+- Range selection: Pass an array with two numbers \`[20, 80]\`
+
+## Accessibility
+Sliders provide full keyboard navigation and screen reader support with proper value announcements.`,
       },
     },
   },
   tags: ["autodocs"],
   argTypes: {
-    defaultValue: {
-      control: "object",
-      description: "The default value of the slider",
-      table: {
-        type: { summary: "number[]" },
-      },
-    },
     value: {
       control: "object",
-      description: "The controlled value of the slider",
+      description: "The controlled value(s) of the slider as an array",
       table: {
         type: { summary: "number[]" },
+        category: "State",
       },
     },
-    onValueChange: {
-      control: false,
-      description: "Callback fired when the value changes",
+    defaultValue: {
+      control: "object",
+      description: "The default value(s) when uncontrolled",
       table: {
-        type: { summary: "(value: number[]) => void" },
+        type: { summary: "number[]" },
+        category: "State",
       },
     },
     min: {
-      control: { type: "range", min: 0 },
-      description: "The minimum value",
+      control: { type: "number" },
+      description: "The minimum allowed value",
       table: {
         type: { summary: "number" },
         defaultValue: { summary: "0" },
+        category: "Range",
       },
     },
     max: {
       control: "number",
-      description: "The maximum value",
+      description: "The maximum allowed value",
       table: {
         type: { summary: "number" },
         defaultValue: { summary: "100" },
+        category: "Range",
       },
     },
     step: {
-      control: { type: "range", min: 0 },
-      description: "The step amount",
+      control: { type: "number" },
+      description: "The increment/decrement step amount",
       table: {
         type: { summary: "number" },
         defaultValue: { summary: "1" },
+        category: "Range",
       },
     },
     orientation: {
@@ -69,13 +90,40 @@ const meta: Meta<typeof Slider> = {
       table: {
         type: { summary: '"horizontal" | "vertical"' },
         defaultValue: { summary: '"horizontal"' },
+        category: "Layout",
       },
     },
     disabled: {
       control: "boolean",
-      description: "Whether the slider is disabled",
+      description: "Whether the slider is disabled and non-interactive",
       table: {
         type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+        category: "State",
+      },
+    },
+    name: {
+      control: { type: "text" },
+      description: "The name attribute for form submission",
+      table: {
+        type: { summary: "string" },
+        category: "Form",
+      },
+    },
+    onValueChange: {
+      control: false,
+      description: "Callback fired when the slider value(s) change",
+      table: {
+        type: { summary: "(value: number[]) => void" },
+        category: "Events",
+      },
+    },
+    onValueCommit: {
+      control: false,
+      description: "Callback fired when the user finishes changing the value",
+      table: {
+        type: { summary: "(value: number[]) => void" },
+        category: "Events",
       },
     },
   },

@@ -5,8 +5,9 @@ import {
   InfoIcon,
   AlertTriangleIcon,
 } from "lucide-react";
+import { COMMON_CONTROLS } from "../../.storybook/constants";
 
-import { Alert } from "./alert";
+import { Alert } from "@/client";
 
 const meta: Meta<typeof Alert> = {
   title: "Components/Alert",
@@ -15,8 +16,17 @@ const meta: Meta<typeof Alert> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "Displays a callout for user attention with integrated title and description.",
+        component: `A flexible alert component for displaying important messages to users with various severity levels.
+
+## Features
+- Multiple semantic variants (info, warning, success, destructive)
+- Optional icon support with automatic positioning
+- Built-in accessibility with proper ARIA roles
+- Consistent styling with theme integration
+- Responsive design with proper text scaling
+
+## Usage
+Use alerts to communicate important information that requires user attention. Choose the appropriate variant based on the message type and severity.`,
       },
     },
   },
@@ -25,20 +35,42 @@ const meta: Meta<typeof Alert> = {
     variant: {
       control: { type: "select" },
       options: ["default", "info", "warning", "success", "destructive"],
-      description: "The visual variant of the alert",
+      description:
+        "The visual variant that determines the alert's appearance and semantic meaning",
+      table: {
+        type: {
+          summary: '"default" | "info" | "warning" | "success" | "destructive"',
+        },
+        defaultValue: { summary: '"default"' },
+        category: "Appearance",
+      },
     },
     title: {
       control: { type: "text" },
-      description: "The alert title (required)",
+      description: "The alert title text (required)",
+      table: {
+        type: { summary: "string" },
+        category: "Content",
+      },
     },
     description: {
       control: { type: "text" },
-      description: "The alert description (required)",
+      description: "The alert description text (required)",
+      table: {
+        type: { summary: "string" },
+        category: "Content",
+      },
     },
     icon: {
       control: false,
-      description: "Optional icon to display",
+      description:
+        "Optional React icon element to display alongside the alert content",
+      table: {
+        type: { summary: "React.ReactNode" },
+        category: "Content",
+      },
     },
+    className: COMMON_CONTROLS.className,
   },
   render: (args) => (
     <div className="w-sm">

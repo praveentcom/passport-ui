@@ -139,7 +139,7 @@ Follow the same structure as shadcn/ui components but with title: 'Composables/C
 ### Colors and Theming
 - Use CSS custom properties: `--primary`, `--secondary`, `--accent`, `--muted`, etc.
 - Leverage existing utility classes from [src/styles.css](mdc:src/styles.css):
-  - `.page-container`, `.content-container`, `.section-container`
+  - `.content-container`, `.section-container`
   - `.title-container`, `.meta-container`
   - `.bullet-list`, `.bullet-item`
 
@@ -171,7 +171,7 @@ Before completing component addition:
 ## Reference Examples
 
 - **UI Component**: [src/components/card.tsx](mdc:src/components/card.tsx) and [src/components/card.stories.tsx](mdc:src/components/card.stories.tsx)
-- **Container Component**: [src/composables/meta-container.tsx](mdc:src/composables/meta-container.tsx) and [src/composables/meta-container.stories.tsx](mdc:src/composables/meta-container.stories.tsx)
+- **Layout Component**: [src/layouts/page-layout.tsx](mdc:src/layouts/page-layout.tsx) and [src/layouts/page-layout.stories.tsx](mdc:src/layouts/page-layout.stories.tsx)
 - **Composables Component**: [src/composables/back-button.tsx](mdc:src/composables/back-button.tsx) and [src/composables/back-button.stories.tsx](mdc:src/composables/back-button.stories.tsx)
 - **Export Pattern**: [src/client.ts](mdc:src/client.ts)
 - **Styling System**: [src/styles.css](mdc:src/styles.css)

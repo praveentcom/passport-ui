@@ -9,8 +9,33 @@ const meta: Meta<typeof AspectRatio> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "Displays content within a desired aspect ratio. Built on top of Radix UI AspectRatio primitive.",
+        component: `An aspect ratio container that maintains consistent proportions for content, built on Radix UI AspectRatio primitives.
+
+## Features
+- Maintains consistent aspect ratios regardless of container size
+- Responsive design with automatic scaling
+- Perfect for images, videos, and embedded content
+- Prevents layout shift during content loading
+- CSS-based implementation for optimal performance
+- Works with any content type
+
+## Usage
+Use aspect ratios for:
+- Image galleries and media content
+- Video players and embedded content
+- Card layouts with consistent proportions
+- Responsive design patterns
+- Preventing cumulative layout shift (CLS)
+
+## Common Ratios
+- **16:9** (1.78): Widescreen video, modern displays
+- **4:3** (1.33): Traditional video, older displays
+- **1:1** (1.0): Square images, profile pictures
+- **3:2** (1.5): Photography standard
+- **21:9** (2.33): Ultra-wide displays
+
+## Accessibility
+Aspect ratio containers preserve content accessibility and work seamlessly with screen readers.`,
       },
     },
   },
@@ -18,25 +43,22 @@ const meta: Meta<typeof AspectRatio> = {
   argTypes: {
     ratio: {
       control: { type: "range", min: 0.1, max: 10, step: 0.1 },
-      description: "The desired aspect ratio (width/height).",
+      description:
+        "The desired aspect ratio calculated as width divided by height",
       table: {
-        type: {
-          summary: "number",
-        },
-        defaultValue: {
-          summary: "1",
-        },
+        type: { summary: "number" },
+        defaultValue: { summary: "1" },
+        category: "Layout",
       },
     },
     children: {
       control: { type: "object", disable: true },
-      table: {
-        type: {
-          summary: "ReactNode",
-        },
-      },
       description:
-        "The content to be displayed within the aspect ratio container.",
+        "The content to be displayed within the aspect ratio container",
+      table: {
+        type: { summary: "React.ReactNode" },
+        category: "Content",
+      },
     },
     className: COMMON_CONTROLS.className,
   },

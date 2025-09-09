@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 General Questions & Discussion
+    url: https://github.com/praveentcom/passport-ui/discussions
+    about: Ask questions, share ideas, or discuss passport-ui with the community
+  - name: 🔒 Security Vulnerabilities
+    url: https://github.com/praveentcom/passport-ui/issues
+    about: Please report security vulnerabilities privately via email
+  - name: 📖 Documentation
+    url: https://github.com/praveentcom/passport-ui#readme
+    about: Check out our documentation and examples

@@ -46,8 +46,41 @@ const meta: Meta<typeof Combobox> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "Autocomplete input and command palette with a list of suggestions.",
+        component: `A searchable combobox component that combines input and dropdown functionality with autocomplete and filtering capabilities.
+
+## Features
+- Real-time search and filtering of options
+- Keyboard navigation with arrow keys and Enter selection
+- Type-ahead search with instant filtering
+- Customizable placeholder and empty state messages
+- Built-in accessibility with proper ARIA attributes
+- Portal-based dropdown for proper layering
+- Smooth animations and visual feedback
+- Support for large option lists with virtual scrolling
+
+## Usage
+Use comboboxes for:
+- Searchable dropdowns with many options
+- Autocomplete inputs for forms
+- Command palettes and quick actions
+- Location, category, or tag selection
+- Any selection that benefits from search filtering
+
+## Interaction
+- Click to open dropdown
+- Type to filter options
+- Arrow keys to navigate
+- Enter to select
+- Escape to close
+
+## Best Practices
+- Provide clear placeholder text
+- Use descriptive labels for options
+- Consider grouping for large option sets
+- Provide helpful empty state messages
+
+## Accessibility
+Comboboxes provide full keyboard navigation, screen reader support, and proper option announcements for accessible selection.`,
       },
     },
   },
@@ -55,56 +88,63 @@ const meta: Meta<typeof Combobox> = {
   argTypes: {
     options: {
       control: "object",
-      description: "Array of options with value and label",
+      description:
+        "Array of selectable options with value and label properties",
       table: {
         type: { summary: "ComboboxOption[]" },
+        category: "Content",
       },
     },
     value: {
       control: "text",
-      description: "Currently selected value",
+      description: "The controlled selected value",
       table: {
         type: { summary: "string" },
-        defaultValue: { summary: "undefined" },
+        category: "State",
       },
     },
     onValueChange: {
       action: "onValueChange",
-      description: "Callback when selection changes",
+      description: "Callback fired when the selected value changes",
       table: {
         type: { summary: "(value: string) => void" },
+        category: "Events",
       },
     },
     placeholder: {
       control: "text",
-      description: "Text shown when no selection",
+      description: "Text displayed when no option is selected",
       table: {
         type: { summary: "string" },
         defaultValue: { summary: '"Select option..."' },
+        category: "Content",
       },
     },
     searchPlaceholder: {
       control: "text",
-      description: "Placeholder for search input",
+      description: "Placeholder text for the search input field",
       table: {
         type: { summary: "string" },
         defaultValue: { summary: '"Search options..."' },
+        category: "Content",
       },
     },
     emptyText: {
       control: "text",
-      description: "Text shown when no options match search",
+      description: "Text shown when no options match the search query",
       table: {
         type: { summary: "string" },
         defaultValue: { summary: '"No option found."' },
+        category: "Content",
       },
     },
     disabled: {
       control: "boolean",
-      description: "Whether the combobox is disabled",
+      description: "Whether the combobox is disabled and non-interactive",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: "false" },
+        category: "State",
       },
     },
     className: COMMON_CONTROLS.className,

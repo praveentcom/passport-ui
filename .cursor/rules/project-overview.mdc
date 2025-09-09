@@ -30,9 +30,9 @@ This is **passport-ui**, a modern React UI component library published on npm. I
    - Usually made with combination of components and utilities
    - Includes BackButton, etc.
 
-4. **Containers** ([src/containers/](mdc:src/containers/))
+4. **Layouts** ([src/layouts/](mdc:src/layouts/))
    - Higher-level components for common page patterns
-   - Includes PageContainer, MetaContainer, PlaceholderContainer etc.
+   - Includes PageLayout, ContentContainer, SidebarContainer etc.
 
 ## Entry Points
 

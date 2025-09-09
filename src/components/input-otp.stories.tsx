@@ -17,8 +17,41 @@ const meta: Meta<typeof InputOTP> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A one-time password input component built on top of input-otp. Perfect for authentication flows and verification codes.",
+        component: `A specialized one-time password (OTP) input component optimized for authentication flows and verification codes, built on input-otp.
+
+## Features
+- Individual character slots with automatic focus progression
+- Paste support with intelligent text distribution
+- Customizable slot count and grouping
+- Built-in validation and completion detection
+- Password manager compatibility strategies
+- Keyboard navigation between slots
+- Built-in accessibility with proper ARIA attributes
+- Mobile-optimized input behavior
+
+## Composition
+OTP inputs are composed of multiple components:
+- **InputOTP**: Root container with state management
+- **InputOTPGroup**: Grouped slots for visual organization
+- **InputOTPSlot**: Individual character input slots
+- **InputOTPSeparator**: Visual separators between groups
+
+## Usage
+Use OTP inputs for:
+- Two-factor authentication codes
+- Email and SMS verification
+- Account activation codes
+- Password reset verification
+- Any multi-digit security codes
+
+## Best Practices
+- Group digits logically (e.g., 3-3 for 6-digit codes)
+- Provide clear instructions about code source
+- Auto-submit when complete for better UX
+- Support paste for user convenience
+
+## Accessibility
+OTP inputs provide proper keyboard navigation and screen reader support with individual slot announcements.`,
       },
     },
   },
@@ -26,70 +59,80 @@ const meta: Meta<typeof InputOTP> = {
   argTypes: {
     maxLength: {
       control: { type: "range", min: 1, max: 10 },
-      description: "Maximum number of characters",
+      description: "Maximum number of characters/slots in the OTP input",
       table: {
         type: { summary: "number" },
         defaultValue: { summary: "6" },
+        category: "Configuration",
       },
     },
     value: {
       control: "text",
-      description: "The current value of the OTP input",
+      description: "The controlled current value of the OTP input",
       table: {
         type: { summary: "string" },
+        category: "State",
       },
     },
     disabled: {
       control: "boolean",
-      description: "Whether the input is disabled",
+      description: "Whether the OTP input is disabled and non-interactive",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: "false" },
-      },
-    },
-    onChange: {
-      action: "onChange",
-      description: "Callback fired when the value changes",
-      table: {
-        type: { summary: "(value: string) => void" },
-      },
-    },
-    onComplete: {
-      action: "onComplete",
-      description: "Callback fired when all slots are filled",
-      table: {
-        type: { summary: "(value: string) => void" },
+        category: "State",
       },
     },
     textAlign: {
       control: { type: "select" },
       options: ["left", "center", "right"],
-      description: "The text alignment of the OTP input",
+      description: "Text alignment within each OTP slot",
       table: {
-        type: { summary: "string" },
-        defaultValue: { summary: "center" },
+        type: { summary: '"left" | "center" | "right"' },
+        defaultValue: { summary: '"center"' },
+        category: "Appearance",
       },
     },
     pushPasswordManagerStrategy: {
       control: { type: "select" },
       options: ["increase-width", "none"],
-      description:
-        "The strategy to push the password manager to increase the width of the OTP input",
+      description: "Strategy for handling password manager interactions",
       table: {
-        type: { summary: "string" },
-        defaultValue: { summary: "increase-width" },
+        type: { summary: '"increase-width" | "none"' },
+        defaultValue: { summary: '"increase-width"' },
+        category: "Behavior",
+      },
+    },
+    onChange: {
+      action: "onChange",
+      description: "Callback fired when the OTP value changes",
+      table: {
+        type: { summary: "(value: string) => void" },
+        category: "Events",
+      },
+    },
+    onComplete: {
+      action: "onComplete",
+      description: "Callback fired when all OTP slots are filled",
+      table: {
+        type: { summary: "(value: string) => void" },
+        category: "Events",
       },
     },
     pasteTransformer: {
-      description: "The function to transform the pasted text",
+      control: false,
+      description:
+        "Function to transform pasted text before distribution to slots",
       table: {
         type: { summary: "(pasted: string) => string" },
+        category: "Behavior",
       },
     },
     className: COMMON_CONTROLS.className,
     containerClassName: {
       ...COMMON_CONTROLS.className,
       name: "containerClassName",
+      description: "Additional CSS classes for the OTP container",
     },
   },
   args: {

@@ -31,7 +31,6 @@ The styling system is built on Tailwind CSS v4 with a comprehensive theme system
 ## Reusable CSS Classes
 
 ### Page Layout Classes (defined in [src/styles.css](mdc:src/styles.css))
-- `.page-container`: Main page wrapper with responsive padding
 - `.content-container`: Content grid with consistent spacing
 - `.list-container`: List wrapper with item spacing
 - `.section-container`: Section wrapper for grouped content

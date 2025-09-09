@@ -17,8 +17,39 @@ const meta: Meta<typeof Carousel> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A carousel with motion and swipe built using Embla Carousel.",
+        component: `A responsive carousel component with touch/swipe support and smooth animations, built on Embla Carousel.
+
+## Features
+- Touch and mouse drag support for mobile and desktop
+- Smooth animations with momentum scrolling
+- Horizontal and vertical orientations
+- Keyboard navigation with arrow keys
+- Loop and autoplay capabilities via options
+- Plugin system for extended functionality
+- Responsive design with flexible item sizing
+- Built-in accessibility with proper ARIA attributes
+
+## Composition
+Carousels are composed of multiple components:
+- **Carousel**: Root container with Embla configuration
+- **CarouselContent**: Scrollable container for carousel items
+- **CarouselItem**: Individual slide/item wrapper
+- **CarouselPrevious**: Previous navigation button
+- **CarouselNext**: Next navigation button
+
+## Usage
+Use carousels for:
+- Image galleries and media showcases
+- Product listings and showcases
+- Testimonials and reviews
+- Feature highlights and promotions
+- Any content that benefits from horizontal scrolling
+
+## Customization
+Extensive customization through Embla options and plugins for advanced features like autoplay, infinite loop, and custom animations.
+
+## Accessibility
+Carousels provide keyboard navigation and screen reader support with proper slide announcements.`,
       },
     },
   },
@@ -27,32 +58,46 @@ const meta: Meta<typeof Carousel> = {
     orientation: {
       control: "select",
       options: ["horizontal", "vertical"],
-      description: "The orientation of the carousel",
+      description: "The scroll direction of the carousel",
       table: {
         type: { summary: '"horizontal" | "vertical"' },
-        defaultValue: { summary: "horizontal" },
+        defaultValue: { summary: '"horizontal"' },
+        category: "Layout",
       },
     },
     opts: {
       control: "object",
-      description: "Options for the Embla carousel",
+      description:
+        "Embla carousel configuration options (loop, autoplay, etc.)",
       table: {
         type: { summary: "CarouselOptions" },
-        defaultValue: { summary: "{}" },
+        category: "Configuration",
       },
     },
     plugins: {
       control: false,
-      description: "Embla carousel plugins",
+      description: "Embla carousel plugins for extended functionality",
       table: {
-        type: { summary: "CarouselPlugin" },
+        type: { summary: "CarouselPlugin[]" },
+        category: "Configuration",
       },
     },
     setApi: {
       action: "setApi",
-      description: "Callback to get the carousel API instance",
+      description:
+        "Callback to receive the carousel API instance for programmatic control",
       table: {
         type: { summary: "(api: CarouselApi) => void" },
+        category: "Events",
+      },
+    },
+    children: {
+      control: { type: "object", disable: true },
+      description:
+        "Carousel composition with CarouselContent, CarouselItem, and navigation components",
+      table: {
+        type: { summary: "React.ReactNode" },
+        category: "Content",
       },
     },
     className: COMMON_CONTROLS.className,

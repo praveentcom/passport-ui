@@ -1,0 +1,142 @@
+name: 🐛 Bug Report
+description: Report a bug or unexpected behavior
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report! Please provide as much detail as possible.
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      description: Please confirm the following before submitting your bug report
+      options:
+        - label: I have searched existing issues to make sure this bug hasn't been reported yet
+          required: true
+        - label: I am using the latest version of passport-ui
+          required: true
+        - label: I have read the documentation and troubleshooting guide
+          required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: passport-ui Version
+      description: Which version of passport-ui are you using?
+      placeholder: e.g., 1.0.5
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      description: What environment are you using?
+      options:
+        - Next.js
+        - Vite
+        - Other (please specify in description)
+    validations:
+      required: true
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node.js Version
+      description: Which version of Node.js are you using?
+      placeholder: e.g., 22.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: react-version
+    attributes:
+      label: React Version
+      description: Which version of React are you using?
+      placeholder: e.g., 18.2.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: Describe what happened and what you expected to happen
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Provide step-by-step instructions to reproduce the bug
+      placeholder: |
+        1. Install passport-ui
+        2. Import component '...'
+        3. Use component with props '...'
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: Describe the expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+      placeholder: Describe what actually happened
+    validations:
+      required: true
+
+  - type: textarea
+    id: code-sample
+    attributes:
+      label: Code Sample
+      description: Please provide a minimal code sample that reproduces the issue
+      render: typescript
+      placeholder: |
+        import { Button } from 'passport-ui/client'
+
+        export default function MyComponent() {
+          return <Button>Click me</Button>
+        }
+
+  - type: textarea
+    id: error-logs
+    attributes:
+      label: Error Logs
+      description: Please include any relevant error messages or console logs
+      render: shell
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here, including screenshots if applicable
+
+  - type: checkboxes
+    id: component-affected
+    attributes:
+      label: Which component(s) are affected?
+      description: Select all that apply
+      options:
+        - label: Button
+        - label: Card
+        - label: Form components (Input, Select, etc.)
+        - label: Navigation components
+        - label: Motion primitives
+        - label: Theme/styling
+        - label: Build/TypeScript
+        - label: Other (please specify in description)

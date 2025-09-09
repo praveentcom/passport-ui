@@ -10,8 +10,32 @@ const meta: Meta<typeof BlurIn> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A motion component that animates elements into view with a blur and fade effect.",
+        component: `A motion primitive that creates an elegant entrance animation with blur and fade effects, powered by Framer Motion.
+
+## Features
+- Smooth blur-to-clear transition with opacity fade
+- Configurable Y-axis movement for dynamic entry
+- Customizable timing with delay and duration controls
+- CSS blur filter animation with performance optimization
+- Staggered animation support for multiple elements
+- Zero-config defaults for immediate use
+
+## Animation Details
+The BlurIn component animates three properties simultaneously:
+1. **Blur**: Starts with specified blur amount, animates to 0
+2. **Opacity**: Fades from 0 to 1 for smooth appearance
+3. **Y Position**: Moves from yOffset to final position
+
+## Performance
+Uses CSS transforms and filters for hardware acceleration. The animation is optimized for smooth 60fps playback across devices.
+
+## Use Cases
+Perfect for:
+- Page entrance animations
+- Staggered content reveals
+- Hero section animations
+- Card and component entrances
+- Sequential content loading effects`,
       },
     },
   },
@@ -19,59 +43,49 @@ const meta: Meta<typeof BlurIn> = {
   argTypes: {
     children: {
       control: { type: "text" },
-      description: "The content to animate with blur-in effect.",
+      description: "The content to animate with the blur-in effect",
       table: {
-        type: {
-          summary: "ReactNode",
-        },
+        type: { summary: "React.ReactNode" },
+        category: "Content",
       },
     },
     delay: {
       control: { type: "range", min: 0, max: 2, step: 0.1 },
-      description: "Delay before the animation starts (in seconds).",
+      description:
+        "Delay before the animation starts (in seconds) - useful for staggered animations",
       table: {
-        type: {
-          summary: "number",
-        },
-        defaultValue: {
-          summary: "0",
-        },
+        type: { summary: "number" },
+        defaultValue: { summary: "0" },
+        category: "Timing",
       },
     },
     duration: {
       control: { type: "range", min: 0.1, max: 2, step: 0.1 },
-      description: "Duration of the animation (in seconds).",
+      description: "Duration of the entire animation (in seconds)",
       table: {
-        type: {
-          summary: "number",
-        },
-        defaultValue: {
-          summary: "0.2",
-        },
+        type: { summary: "number" },
+        defaultValue: { summary: "0.2" },
+        category: "Timing",
       },
     },
     blur: {
       control: { type: "text" },
-      description: "Initial blur amount (CSS blur value).",
+      description:
+        "Initial blur amount using CSS blur syntax (e.g., '4px', '10px')",
       table: {
-        type: {
-          summary: "string",
-        },
-        defaultValue: {
-          summary: '"4px"',
-        },
+        type: { summary: "string" },
+        defaultValue: { summary: '"4px"' },
+        category: "Animation",
       },
     },
     yOffset: {
       control: { type: "range", min: 0, max: 50 },
-      description: "Initial Y offset for the element (in pixels).",
+      description:
+        "Initial Y offset in pixels - element moves from this offset to its final position",
       table: {
-        type: {
-          summary: "number",
-        },
-        defaultValue: {
-          summary: "12",
-        },
+        type: { summary: "number" },
+        defaultValue: { summary: "12" },
+        category: "Animation",
       },
     },
     className: COMMON_CONTROLS.className,

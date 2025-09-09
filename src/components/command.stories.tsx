@@ -30,8 +30,40 @@ const meta: Meta<typeof Command> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "Fast, composable, unstyled command menu for React. Built with cmdk.",
+        component: `A fast, accessible command menu component with search and keyboard navigation, built on cmdk.
+
+## Features
+- Lightning-fast fuzzy search with instant results
+- Full keyboard navigation with arrow keys and Enter
+- Grouping and categorization of commands
+- Keyboard shortcuts display and handling
+- Command palette and dialog modes
+- Custom filtering and scoring functions
+- Built-in accessibility with proper ARIA attributes
+- Composable architecture with flexible layouts
+
+## Composition
+Command menus are composed of multiple components:
+- **Command**: Root container with search and filtering
+- **CommandInput**: Search input with instant filtering
+- **CommandList**: Scrollable list of command results
+- **CommandEmpty**: Empty state when no results match
+- **CommandGroup**: Grouped sections with headings
+- **CommandItem**: Individual selectable commands
+- **CommandSeparator**: Visual dividers between sections
+- **CommandShortcut**: Keyboard shortcut display
+- **CommandDialog**: Modal command palette mode
+
+## Usage
+Use command menus for:
+- Application command palettes (Cmd+K)
+- Quick action menus and shortcuts
+- Search interfaces with actions
+- Navigation and menu systems
+- Any interface requiring fast command access
+
+## Accessibility
+Command menus provide full keyboard navigation and screen reader support with proper command announcements.`,
       },
     },
   },

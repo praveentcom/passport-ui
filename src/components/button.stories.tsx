@@ -9,14 +9,25 @@ const meta: Meta<typeof Button> = {
     layout: "centered",
     docs: {
       description: {
-        component: "A button component that can be used to trigger an action.",
+        component: `A versatile button component built on Radix UI Slot with comprehensive styling variants and accessibility features.
+
+## Features
+- Multiple visual variants (primary, destructive, outline, secondary, ghost, link)
+- Three size options (regular, medium, large)
+- Built-in focus management and keyboard navigation
+- Icon support with automatic sizing
+- Polymorphic rendering with asChild prop
+- Full accessibility compliance with ARIA attributes
+
+## Usage
+Use buttons for triggering actions, navigation, and form submissions. Choose the appropriate variant based on the action's importance and context within your interface.`,
       },
     },
   },
   tags: ["autodocs"],
   argTypes: {
     variant: {
-      type: "string",
+      control: { type: "select" },
       options: [
         "primary",
         "destructive",
@@ -25,31 +36,62 @@ const meta: Meta<typeof Button> = {
         "ghost",
         "link",
       ],
-      control: { type: "select" },
+      description:
+        "The visual style variant that determines the button's appearance and semantic meaning",
       table: {
-        defaultValue: {
-          summary: "outline",
-        },
         type: {
-          summary: "string",
+          summary:
+            '"primary" | "destructive" | "outline" | "secondary" | "ghost" | "link"',
         },
+        defaultValue: { summary: '"outline"' },
+        category: "Appearance",
       },
-      description: "The variant of the button.",
     },
     size: {
-      type: "string",
-      options: ["regular", "medium", "large"],
       control: { type: "select" },
+      options: ["regular", "medium", "large"],
+      description:
+        "The size variant that controls padding, height, and text size",
       table: {
-        defaultValue: {
-          summary: "regular",
-        },
+        type: { summary: '"regular" | "medium" | "large"' },
+        defaultValue: { summary: '"regular"' },
+        category: "Appearance",
       },
-      description: "The size of the button.",
     },
     children: {
       control: { type: "text" },
-      description: "The content of the button.",
+      description: "The button content - text, icons, or other React elements",
+      table: {
+        type: { summary: "React.ReactNode" },
+        category: "Content",
+      },
+    },
+    disabled: {
+      control: { type: "boolean" },
+      description: "Whether the button is disabled and non-interactive",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+        category: "State",
+      },
+    },
+    type: {
+      control: { type: "select" },
+      options: ["button", "submit", "reset"],
+      description: "The HTML button type attribute",
+      table: {
+        type: { summary: '"button" | "submit" | "reset"' },
+        defaultValue: { summary: '"button"' },
+        category: "Behavior",
+      },
+    },
+    onClick: {
+      control: false,
+      description: "Click event handler function",
+      table: {
+        type: { summary: "(event: React.MouseEvent) => void" },
+        category: "Events",
+      },
     },
     asChild: COMMON_CONTROLS.asChild,
     className: COMMON_CONTROLS.className,

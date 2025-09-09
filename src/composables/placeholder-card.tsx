@@ -5,14 +5,16 @@ import React, { ReactNode } from "react";
 
 import { Button } from "@/components/button";
 import { Card, CardContent } from "@/components/card";
+import { cn } from "@/server";
 
-export interface PlaceholderContainerProps {
+export interface PlaceholderCardProps {
   title?: string;
   subtitle?: string;
   children?: ReactNode;
+  className?: string;
 }
 
-export function PlaceholderContainer({
+export function PlaceholderCard({
   title = "Section not found.",
   subtitle = "This section is currently unavailable.",
   children = (
@@ -20,9 +22,10 @@ export function PlaceholderContainer({
       <Link href={"/"}>Go home</Link>
     </Button>
   ),
-}: PlaceholderContainerProps) {
+  className,
+}: PlaceholderCardProps) {
   return (
-    <Card>
+    <Card className={cn(className)}>
       <CardContent className="text-center px-8 py-3 md:px-12">
         <div className="grid items-center justify-center gap-4">
           <div className="grid items-center max-w-md text-sm">
@@ -38,4 +41,4 @@ export function PlaceholderContainer({
   );
 }
 
-export default PlaceholderContainer;
+export default PlaceholderCard;

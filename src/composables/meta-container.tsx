@@ -18,7 +18,7 @@ export function MetaContainer({
 }): ReactNode {
   return (
     <div className={cn("title-container h-min", className)}>
-      {title && <h4>{title}</h4>}
+      {title && <h4 className="leading-tight">{title}</h4>}
       <div className="meta-container h-min">{children}</div>
     </div>
   );

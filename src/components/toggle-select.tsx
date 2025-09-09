@@ -31,8 +31,8 @@ const toggleSelectItemVariants = cva(
         outline: "bg-transparent",
       },
       size: {
-        regular: "h-6 rounded-xs px-2",
-        medium: "h-8 rounded-xs px-2.5",
+        regular: "h-5 rounded-xs px-2",
+        medium: "h-7 rounded-xs px-2.5",
         large: "h-9 rounded-sm px-3",
       },
     },

@@ -23,8 +23,37 @@ const meta: Meta<typeof Sheet> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "Extends the Dialog component to display content that complements the main content of the screen.",
+        component: `A sheet component that extends Dialog to display complementary content from screen edges, built on Radix UI Dialog primitives.
+
+## Features
+- Slides in from screen edges (top, right, bottom, left)
+- Modal and non-modal modes with backdrop overlay
+- Focus management with focus trap and restoration
+- Keyboard navigation (Escape to close, Tab cycling)
+- Portal-based rendering for proper layering
+- Built-in accessibility with ARIA attributes
+- Scroll lock when modal is open
+
+## Composition
+Sheets are composed of multiple components:
+- **Sheet**: Root container with state management
+- **SheetTrigger**: Element that opens the sheet
+- **SheetContent**: The main sheet container with slide animation
+- **SheetHeader**: Header area with title and description
+- **SheetTitle**: Accessible title for the sheet
+- **SheetDescription**: Optional description text
+- **SheetFooter**: Footer area for actions
+- **SheetClose**: Elements that close the sheet
+
+## Usage
+Use sheets for:
+- Side navigation menus
+- Form panels and settings
+- Filters and search options
+- Additional content that complements the main view
+- Mobile-friendly overlay content
+
+Sheets work well for content that doesn't need full attention like dialogs.`,
       },
     },
   },
@@ -35,28 +64,44 @@ const meta: Meta<typeof Sheet> = {
       description: "The controlled open state of the sheet",
       table: {
         type: { summary: "boolean" },
-      },
-    },
-    onOpenChange: {
-      control: false,
-      description: "Callback fired when the open state changes",
-      table: {
-        type: { summary: "(open: boolean) => void" },
+        category: "State",
       },
     },
     defaultOpen: {
       control: "boolean",
-      description: "The default open state (uncontrolled)",
+      description:
+        "The default open state when initially rendered (uncontrolled)",
       table: {
         type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+        category: "State",
       },
     },
     modal: {
       control: "boolean",
-      description: "Whether the sheet is modal",
+      description:
+        "Whether the sheet is modal (blocks interaction with content behind)",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: "true" },
+        category: "Behavior",
+      },
+    },
+    onOpenChange: {
+      control: false,
+      description: "Callback fired when the sheet open state changes",
+      table: {
+        type: { summary: "(open: boolean) => void" },
+        category: "Events",
+      },
+    },
+    children: {
+      control: { type: "object", disable: true },
+      description:
+        "Sheet composition with SheetTrigger, SheetContent, and other sheet components",
+      table: {
+        type: { summary: "React.ReactNode" },
+        category: "Content",
       },
     },
   },

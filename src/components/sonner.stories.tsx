@@ -8,8 +8,49 @@ const meta: Meta<typeof Toaster> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "An opinionated toast component for React. Add the Toaster component to your app and use the toast function to display notifications.",
+        component: `A modern toast notification system built on Sonner for displaying temporary messages and alerts with rich customization options.
+
+## Features
+- Multiple toast types (default, success, error, warning, info)
+- Configurable positioning (6 screen positions)
+- Rich content support with actions and descriptions
+- Automatic dismissal with customizable timing
+- Stack management with hover expansion
+- Built-in accessibility with proper ARIA announcements
+- Smooth animations and visual feedback
+- Promise-based toasts for async operations
+
+## Setup
+Add the Toaster component to your app root and use the toast function throughout your application:
+
+\`\`\`tsx
+// In your app root
+<Toaster />
+
+// Anywhere in your app
+toast("Hello world")
+toast.success("Success message")
+toast.error("Error occurred")
+\`\`\`
+
+## Toast Types
+- **Default**: General notifications
+- **Success**: Positive confirmations
+- **Error**: Error messages and failures
+- **Warning**: Important warnings
+- **Info**: Informational messages
+- **Promise**: Loading states with resolution
+
+## Usage
+Use toasts for:
+- Form submission confirmations
+- Error and success notifications
+- Background process updates
+- User action feedback
+- System status messages
+
+## Accessibility
+Toasts provide proper screen reader announcements and respect user motion preferences.`,
       },
     },
   },
@@ -25,34 +66,52 @@ const meta: Meta<typeof Toaster> = {
         "bottom-center",
         "bottom-right",
       ],
-      description: "Position of the toast notifications",
+      description: "Screen position where toast notifications appear",
       table: {
-        type: { summary: "string" },
+        type: {
+          summary:
+            '"top-left" | "top-center" | "top-right" | "bottom-left" | "bottom-center" | "bottom-right"',
+        },
         defaultValue: { summary: '"bottom-right"' },
+        category: "Layout",
       },
     },
     expand: {
       control: "boolean",
-      description: "Whether to expand toasts on hover",
+      description:
+        "Whether to expand stacked toasts on hover for better visibility",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: "false" },
+        category: "Behavior",
       },
     },
     richColors: {
       control: "boolean",
-      description: "Whether to use rich colors for different toast types",
+      description:
+        "Whether to use rich semantic colors for different toast types",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: "false" },
+        category: "Appearance",
       },
     },
     closeButton: {
       control: "boolean",
-      description: "Whether to show close button on toasts",
+      description: "Whether to show close button on toast notifications",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: "false" },
+        category: "Behavior",
+      },
+    },
+    duration: {
+      control: { type: "number" },
+      description: "Default duration in milliseconds before auto-dismissal",
+      table: {
+        type: { summary: "number" },
+        defaultValue: { summary: "4000" },
+        category: "Timing",
       },
     },
   },

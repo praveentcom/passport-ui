@@ -10,40 +10,92 @@ const meta: Meta<typeof RadioGroup> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.",
+        component: `A radio group component for single-selection from multiple options, built on Radix UI RadioGroup primitives.
+
+## Features
+- Single selection from multiple mutually exclusive options
+- Full keyboard navigation with arrow keys
+- Built-in accessibility with proper ARIA attributes and roles
+- Controlled and uncontrolled modes for flexible state management
+- Individual item disable support
+- Form integration with proper value handling
+- Screen reader compatible with group labeling
+
+## Composition
+Radio groups are composed of multiple components:
+- **RadioGroup**: Root container with state management and keyboard navigation
+- **RadioGroupItem**: Individual radio button options
+- **Label**: Associated labels for each option (recommended for accessibility)
+
+## Usage
+Use radio groups when users need to select exactly one option from a list. Each option should be mutually exclusive. Always provide clear labels for each option and consider the logical order of options.
+
+## Accessibility
+Radio groups provide built-in keyboard navigation and screen reader support. Always associate labels with radio items for the best accessibility experience.`,
       },
     },
   },
   tags: ["autodocs"],
   argTypes: {
-    defaultValue: {
-      control: { type: "text" },
-      description: "The default selected value",
-      table: {
-        type: { summary: "string" },
-      },
-    },
     value: {
       control: { type: "text" },
-      description: "The controlled selected value",
+      description:
+        "The controlled selected value matching a RadioGroupItem value",
       table: {
         type: { summary: "string" },
+        category: "State",
+      },
+    },
+    defaultValue: {
+      control: { type: "text" },
+      description: "The default selected value when uncontrolled",
+      table: {
+        type: { summary: "string" },
+        category: "State",
       },
     },
     onValueChange: {
       action: "value-changed",
-      description: "Callback fired when the value changes",
+      description: "Callback fired when the selected value changes",
       table: {
         type: { summary: "(value: string) => void" },
+        category: "Events",
       },
     },
     disabled: {
       control: { type: "boolean" },
-      description: "Whether the radio group is disabled",
+      description: "Whether the entire radio group is disabled",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: "false" },
+        category: "State",
+      },
+    },
+    required: {
+      control: { type: "boolean" },
+      description: "Whether the radio group is required for form submission",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+        category: "Validation",
+      },
+    },
+    name: {
+      control: { type: "text" },
+      description: "The name attribute for form submission",
+      table: {
+        type: { summary: "string" },
+        category: "Form",
+      },
+    },
+    orientation: {
+      control: { type: "select" },
+      options: ["horizontal", "vertical"],
+      description: "The orientation of the radio group for keyboard navigation",
+      table: {
+        type: { summary: '"horizontal" | "vertical"' },
+        defaultValue: { summary: '"vertical"' },
+        category: "Layout",
       },
     },
     className: COMMON_CONTROLS.className,

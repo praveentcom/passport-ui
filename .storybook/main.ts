@@ -2,7 +2,11 @@ import type { StorybookConfig } from "@storybook/react-webpack5";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
-  addons: ["@storybook/addon-webpack5-compiler-swc", "@storybook/addon-docs"],
+  addons: [
+    "@storybook/addon-webpack5-compiler-swc",
+    "@storybook/addon-docs",
+    "@storybook/addon-a11y",
+  ],
   framework: {
     name: "@storybook/react-webpack5",
     options: {},
@@ -65,6 +69,11 @@ const config: StorybookConfig = {
           },
         },
       ],
+    });
+
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif|svg)$/i,
+      type: "asset/resource",
     });
 
     return config;
