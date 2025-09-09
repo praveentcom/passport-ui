@@ -93,10 +93,10 @@ jobs:
           # Verify build outputs exist
           ls -la dist/
           test -f dist/client.js
-          test -f dist/client.mjs
+          test -f dist/client.cjs
           test -f dist/client.d.ts
           test -f dist/server.js
-          test -f dist/server.mjs
+          test -f dist/server.cjs
           test -f dist/server.d.ts
 
   bump-version:
