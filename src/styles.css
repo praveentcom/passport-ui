@@ -207,7 +207,7 @@
 
   /* Other Container Styles */
   .passport-ui .section-container {
-    @apply grid gap-y-5 gap-x-5 text-foreground;
+    @apply grid gap-y-6 gap-x-6 text-foreground;
   }
   .passport-ui .list-container {
     @apply grid gap-y-3 gap-x-3 text-muted-foreground;
