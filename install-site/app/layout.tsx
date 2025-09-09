@@ -3,8 +3,70 @@ import { ThemeProvider } from '../../src/providers/theme-provider'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Install Passport UI',
-  description: 'Installation guide and documentation for Passport UI component library',
+  title: 'Install Passport UI - Setup Guide & Documentation',
+  description: 'Complete installation guide and documentation for Passport UI - a sleek and compact React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.',
+  keywords: [
+    'Passport UI',
+    'React Components',
+    'Tailwind CSS',
+    'Radix UI',
+    'Framer Motion',
+    'Next.js',
+    'Component Library',
+    'Design System',
+    'Installation Guide',
+    'Documentation'
+  ],
+  authors: [{ name: 'Praveen Thirumurugan', url: 'https://github.com/praveentcom' }],
+  creator: 'Praveen Thirumurugan',
+  publisher: 'Passport UI',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://install.passportui.com'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Install Passport UI - Setup Guide & Documentation',
+    description: 'Complete installation guide and documentation for Passport UI - a sleek and compact React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.',
+    url: 'https://install.passportui.com',
+    siteName: 'Install Passport UI',
+    images: [
+      {
+        url: 'https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png',
+        width: 1200,
+        height: 630,
+        alt: 'Passport UI - Installation Guide',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Install Passport UI - Setup Guide & Documentation',
+    description: 'Complete installation guide and documentation for Passport UI component library.',
+    images: ['https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: 'https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png',
+    shortcut: 'https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png',
+    apple: 'https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png',
+  },
 }
 
 export default function RootLayout({

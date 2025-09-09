@@ -4,8 +4,8 @@ import { ThemeToggle } from '../../src/composables/theme-toggle'
 import { MetaContainer } from '../../src/composables/meta-container'
 import { PageLayout } from '../../src/layouts/page-layout'
 import { CodeBlock } from '../../src/components/code-block'
-import { SidebarContainer, SidebarContainerMenuItem } from '../../src/layouts/sidebar-container'
-import { Home, Palette } from 'lucide-react'
+import { SidebarContainer } from '../../src/layouts/sidebar-container'
+import { getSidebarMenuItems, INSTALLATION_PAGE_DATA, SITE_CONFIG } from '../constants'
 
 const INSTALLATION_CODE = {
   PACKAGE_INSTALL: `npm install passport-ui`,
@@ -45,20 +45,7 @@ function App() {
 }`,
 };
 
-const sidebarMenuItems: SidebarContainerMenuItem[] = [
-  {
-    title: "Installation",
-    href: "/",
-    isActive: true,
-    icon: Home,
-  },
-  {
-    title: "Color System",
-    href: "/colors",
-    isActive: false,
-    icon: Palette
-  },
-];
+const sidebarMenuItems = getSidebarMenuItems("/");
 
 const sidebar = (
   <SidebarContainer
@@ -78,6 +65,7 @@ export default function IntroductionPage() {
     <PageLayout
       sidebar={sidebar}
       contentVariant="relaxed"
+      structuredData={INSTALLATION_PAGE_DATA}
       header={
         <div className="flex justify-between items-center gap-4">
           <h2>Passport UI</h2>
@@ -88,14 +76,14 @@ export default function IntroductionPage() {
         <MetaContainer title="Maintained by Praveen Thirumurugan">
           <div className="flex gap-2 items-center">
             <a
-              href="https://github.com/praveentcom/passport-ui"
+              href={SITE_CONFIG.repository}
               className="text-primary hover:underline"
             >
               GitHub
             </a>
             <span>•</span>
             <a
-              href="https://www.npmjs.com/package/passport-ui"
+              href={SITE_CONFIG.npm}
               className="text-primary hover:underline"
             >
               npm

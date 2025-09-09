@@ -4,8 +4,8 @@ import { ThemeToggle } from '../../../src/composables/theme-toggle'
 import { MetaContainer } from '../../../src/composables/meta-container'
 import { PageLayout } from '../../../src/layouts/page-layout'
 import { Separator } from '../../../src/components/separator'
-import { SidebarContainer, SidebarContainerMenuItem } from '../../../src/layouts/sidebar-container'
-import { Home, Palette } from 'lucide-react'
+import { SidebarContainer } from '../../../src/layouts/sidebar-container'
+import { getSidebarMenuItems, COLORS_PAGE_DATA } from '../../constants'
 
 /**
  * Color Palette for Passport UI
@@ -297,20 +297,7 @@ const TailwindColorCard = ({ color }: { color: string }) => (
   </div>
 );
 
-const sidebarMenuItems: SidebarContainerMenuItem[] = [
-  {
-    title: "Installation",
-    href: "/",
-    isActive: false,
-    icon: Home,
-  },
-  {
-    title: "Color System",
-    href: "/colors",
-    isActive: true,
-    icon: Palette
-  },
-];
+const sidebarMenuItems = getSidebarMenuItems("/colors");
 
 const sidebar = (
   <SidebarContainer
@@ -330,6 +317,7 @@ export default function ColorsPage() {
     <PageLayout
       sidebar={sidebar}
       contentVariant="relaxed"
+      structuredData={COLORS_PAGE_DATA}
       header={
         <div className="flex justify-between items-center gap-4">
           <h2>Color System</h2>
