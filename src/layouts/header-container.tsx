@@ -13,7 +13,7 @@ const headerContainerVariants = cva(
         false: "relative",
       },
       blurred: {
-        true: "backdrop-blur-md bg-sidebar/80",
+        true: "backdrop-blur-md bg-sidebar/75",
         false: "bg-sidebar",
       },
     },
@@ -24,7 +24,7 @@ const headerContainerVariants = cva(
   },
 );
 
-const headerContentVariants = cva("p-4", {
+const headerContentVariants = cva("px-4 py-3.5", {
   variants: {
     variant: {
       /**

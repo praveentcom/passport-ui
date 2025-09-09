@@ -62,12 +62,12 @@ For themed syntax highlighting, import the theme styles in your CSS:
         category: "Content",
       },
     },
-    showLineNumbers: {
+    hideLineNumbers: {
       control: { type: "boolean" },
-      description: "Whether to show line numbers",
+      description: "Whether to hide line numbers",
       table: {
         type: { summary: "boolean" },
-        defaultValue: { summary: "true" },
+        defaultValue: { summary: "false" },
         category: "Appearance",
       },
     },
@@ -115,7 +115,7 @@ export const Default: Story = {
   args: {
     code: sampleCode,
     language: "javascript",
-    showLineNumbers: true,
+    hideLineNumbers: false,
   },
 };
 
@@ -124,7 +124,7 @@ export const FilenameHeader: Story = {
     code: sampleCode,
     language: "javascript",
     filename: "example.js",
-    showLineNumbers: true,
+    hideLineNumbers: false,
   },
 };
 
@@ -134,7 +134,7 @@ export const GitHubTheme: Story = {
     language: "javascript",
     filename: "github-theme.js",
     theme: "github",
-    showLineNumbers: true,
+    hideLineNumbers: false,
   },
 };
 
@@ -144,7 +144,7 @@ export const AtomOneTheme: Story = {
     language: "javascript",
     filename: "atom-one-theme.js",
     theme: "atom-one",
-    showLineNumbers: true,
+    hideLineNumbers: false,
   },
 };
 
@@ -154,7 +154,7 @@ export const VSTheme: Story = {
     language: "javascript",
     filename: "vs-theme.js",
     theme: "vs",
-    showLineNumbers: true,
+    hideLineNumbers: false,
   },
 };
 
@@ -164,7 +164,7 @@ export const MonokaiTheme: Story = {
     language: "javascript",
     filename: "monokai-theme.js",
     theme: "monokai",
-    showLineNumbers: true,
+    hideLineNumbers: false,
   },
 };
 
@@ -174,7 +174,7 @@ export const DraculaTheme: Story = {
     language: "javascript",
     filename: "dracula-theme.js",
     theme: "dracula",
-    showLineNumbers: true,
+    hideLineNumbers: false,
   },
 };
 
@@ -184,7 +184,7 @@ export const NordTheme: Story = {
     language: "javascript",
     filename: "nord-theme.js",
     theme: "nord",
-    showLineNumbers: true,
+    hideLineNumbers: false,
   },
 };
 
@@ -194,6 +194,6 @@ export const TokyoNightTheme: Story = {
     language: "javascript",
     filename: "tokyo-night-theme.js",
     theme: "tokyo-night",
-    showLineNumbers: true,
+    hideLineNumbers: false,
   },
 };

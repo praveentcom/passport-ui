@@ -5,7 +5,8 @@ A modern, customizable UI component library with motion primitives and theme sup
 ## Installation
 
 ```bash
-npm install passport-ui @tailwindcss/postcss tailwindcss
+npm install passport-ui
+npm install tailwindcss @tailwindcss/postcss
 ```
 
 ## Usage
@@ -41,29 +42,18 @@ For themed syntax highlighting in `CodeBlock` and `Markdown` components, import 
 
 Available themes: `github`, `atom-one`, `vs`, `monokai`, `dracula`, `nord`, `tokyo-night`, `default`
 
-### Import Components
-
-```tsx
-import { Button, Card, ThemeProvider } from "passport-ui/client";
-```
-
 ### Basic Example
 
 ```tsx
 import {
   Button,
   Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
+  CardContent
 } from "passport-ui/client";
 
 function App() {
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Welcome</CardTitle>
-      </CardHeader>
       <CardContent>
         <Button>Click me</Button>
       </CardContent>

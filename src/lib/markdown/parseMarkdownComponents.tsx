@@ -21,7 +21,7 @@ interface CodeBlockData {
     code: string;
     language?: string;
     filename?: string;
-    showLineNumbers: boolean;
+    hideLineNumbers: boolean;
   };
 }
 
@@ -221,7 +221,7 @@ export function extractCodeBlocks(content: string): {
           code: code.trim(),
           language: lang,
           filename: filename,
-          showLineNumbers: true,
+          hideLineNumbers: false,
         },
       });
 

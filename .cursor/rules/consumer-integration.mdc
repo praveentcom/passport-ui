@@ -69,8 +69,8 @@ import { BlurIn, BorderTrail, AnimatedBackground } from 'passport-ui/client'
 // Theme Components
 import { ThemeProvider, ThemeButton } from 'passport-ui/client'
 
-// Page Tools
-import { ContentContainer } from 'passport-ui/client'
+// Page Layouts
+import { PageLayout } from 'passport-ui/client'
 
 // Utility Functions
 import { cn } from 'passport-ui/server'

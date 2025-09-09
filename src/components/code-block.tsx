@@ -111,9 +111,9 @@ export interface CodeBlockProps extends React.ComponentProps<"div"> {
   filename?: string;
   /**
    * Whether to show line numbers
-   * @default true
+   * @default false
    */
-  showLineNumbers?: boolean;
+  hideLineNumbers?: boolean;
   /**
    * Highlight.js theme to use
    * @default "github"
@@ -140,7 +140,7 @@ export interface CodeBlockProps extends React.ComponentProps<"div"> {
  * @param code - The code content to display
  * @param language - Programming language for syntax highlighting
  * @param filename - Optional filename to show in header
- * @param showLineNumbers - Whether to display line numbers
+ * @param hideLineNumbers - Whether to display line numbers
  * @param theme - Highlight.js theme to use (requires hljs-themes.css import)
  * @param className - Additional CSS classes
  */
@@ -148,7 +148,7 @@ function CodeBlock({
   code,
   language,
   filename,
-  showLineNumbers = true,
+  hideLineNumbers = false,
   theme = "github",
   className,
   ...props
@@ -196,7 +196,7 @@ function CodeBlock({
     <div
       data-slot="code-block"
       className={cn(
-        "passport-ui relative bg-card border border-border rounded-sm overflow-hidden mb-3 group w-full break-inside-avoid",
+        "passport-ui relative bg-card border border-border rounded-sm overflow-hidden group w-full break-inside-avoid",
         `hljs-theme-${theme}`,
         className,
       )}
@@ -205,14 +205,14 @@ function CodeBlock({
       {filename && (
         <div
           data-slot="code-block-header"
-          className="flex items-center gap-2 px-3 py-1.5 bg-border border-b border-border text-xs font-medium text-foreground"
+          className="flex justify-between items-center gap-2 px-2 py-0.5 bg-sidebar border-b border-border text-xs text-muted-foreground/60"
         >
+          <>{filename}</>
           <div
             dangerouslySetInnerHTML={{
               __html: `${getFileIcon(filename)}`,
             }}
           />
-          <>{filename}</>
         </div>
       )}
       <pre
@@ -224,22 +224,26 @@ function CodeBlock({
             const lineNumber = index + 1;
             const isFirstLine = index === 0;
             const isLastLine = index === lines.length - 1;
-            const lineNumberPadding = isFirstLine
-              ? " pt-2"
-              : isLastLine
-                ? " pb-2"
-                : "";
-            const contentPadding = isFirstLine
-              ? " pt-2"
-              : isLastLine
-                ? " pb-2"
-                : "";
+            const lineNumberPadding = isFirstLine && isLastLine
+              ? " py-1"
+              : isFirstLine
+                ? " pt-1"
+                : isLastLine
+                  ? " pb-1"
+                  : "";
+            const contentPadding = isFirstLine && isLastLine
+              ? " py-1"
+              : isFirstLine
+                ? " pt-1"
+                : isLastLine
+                  ? " pb-1"
+                  : "";
 
             const highlightedLine = highlightLine(line);
 
             return (
               <div key={index} className="flex items-center">
-                {showLineNumbers && (
+                {!hideLineNumbers && (
                   <span
                     className={cn(
                       "line-number",
