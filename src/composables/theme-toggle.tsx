@@ -23,9 +23,9 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
   }
 
   const themes = [
-    { id: "light", icon: Sun },
-    { id: "dark", icon: Moon },
-    { id: "system", icon: Monitor },
+    { id: "light", icon: Sun, label: "Light theme" },
+    { id: "dark", icon: Moon, label: "Dark theme" },
+    { id: "system", icon: Monitor, label: "System theme" },
   ];
 
   return (
@@ -38,8 +38,8 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
         }
       }}
     >
-      {themes.map(({ id, icon: Icon }) => (
-        <ToggleSelectItem value={id} key={id}>
+      {themes.map(({ id, icon: Icon, label }) => (
+        <ToggleSelectItem value={id} key={id} aria-label={label}>
           <Icon className="size-4" />
         </ToggleSelectItem>
       ))}
