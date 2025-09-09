@@ -1,0 +1,8 @@
+# Cloudflare Pages Redirects Configuration
+# This file configures redirects for the Storybook deployment
+
+# Redirect all 404s to the main Storybook page
+/* /index.html 200
+
+# Redirect www to non-www
+https://www.passportui.com/* https://passportui.com/:splat 301!

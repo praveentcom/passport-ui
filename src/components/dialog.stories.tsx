@@ -18,8 +18,34 @@ const meta: Meta<typeof Dialog> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A modal dialog that interrupts the user with important content and expects a response.",
+        component: `A modal dialog component that interrupts the user workflow with important content and expects a response, built on Radix UI Dialog primitives.
+
+## Features
+- Modal and non-modal modes with backdrop overlay
+- Focus management with focus trap and restoration
+- Keyboard navigation (Escape to close, Tab cycling)
+- Portal-based rendering for proper layering
+- Customizable positioning and animations
+- Built-in accessibility with ARIA attributes
+- Scroll lock when modal is open
+
+## Composition
+Dialogs are composed of multiple components:
+- **Dialog**: Root container with state management
+- **DialogTrigger**: Element that opens the dialog
+- **DialogContent**: The main dialog container with content
+- **DialogClose**: Elements that close the dialog
+- **DialogFooter**: Footer area for actions and buttons
+
+## Usage
+Use dialogs for:
+- Confirmation actions (delete, save changes)
+- Form inputs that require focus
+- Important information that needs acknowledgment
+- Settings and configuration panels
+- Multi-step workflows
+
+Always provide clear actions and escape routes for users.`,
       },
     },
   },
@@ -30,28 +56,44 @@ const meta: Meta<typeof Dialog> = {
       description: "The controlled open state of the dialog",
       table: {
         type: { summary: "boolean" },
-      },
-    },
-    onOpenChange: {
-      control: false,
-      description: "Callback fired when the open state changes",
-      table: {
-        type: { summary: "(open: boolean) => void" },
+        category: "State",
       },
     },
     defaultOpen: {
       control: "boolean",
-      description: "The default open state (uncontrolled)",
+      description:
+        "The default open state when initially rendered (uncontrolled)",
       table: {
         type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+        category: "State",
       },
     },
     modal: {
       control: "boolean",
-      description: "Whether the dialog is modal",
+      description:
+        "Whether the dialog is modal (blocks interaction with content behind)",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: "true" },
+        category: "Behavior",
+      },
+    },
+    onOpenChange: {
+      control: false,
+      description: "Callback fired when the dialog open state changes",
+      table: {
+        type: { summary: "(open: boolean) => void" },
+        category: "Events",
+      },
+    },
+    children: {
+      control: { type: "object", disable: true },
+      description:
+        "Dialog composition with DialogTrigger, DialogContent, and other dialog components",
+      table: {
+        type: { summary: "React.ReactNode" },
+        category: "Content",
       },
     },
   },

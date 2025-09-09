@@ -1,4 +1,5 @@
 @import "../src/styles.css";
+@import "../src/hljs-themes.css";
 
 .docs-story {
   background: var(--background) !important;

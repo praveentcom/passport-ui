@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import { Card, CardContent } from "../components/card";
-import { MetaContainer, PageContainer } from "@/client";
+import { MetaContainer, ContentContainer } from "@/client";
 import { BackButton } from "@/client";
 
 const meta: Meta<typeof BackButton> = {
@@ -13,8 +13,33 @@ const meta: Meta<typeof BackButton> = {
     },
     docs: {
       description: {
-        component:
-          "A common back button component that provides navigation to a previous page or section.",
+        component: `A reusable back button component that provides consistent navigation to previous pages or sections with proper accessibility.
+
+## Features
+- Consistent back navigation pattern across applications
+- Customizable destination URLs and labels
+- Built-in accessibility with proper ARIA labels
+- Integration with Next.js routing system
+- Semantic button styling with theme integration
+- Keyboard navigation support
+- Screen reader compatible with clear navigation context
+
+## Usage
+Use back buttons for:
+- Breadcrumb-style navigation
+- Form multi-step workflows
+- Detail page navigation back to listings
+- Modal and overlay dismissal
+- Any interface requiring clear "go back" functionality
+
+## Best Practices
+- Always provide clear, descriptive labels
+- Ensure the destination makes logical sense
+- Consider the navigation context and user expectations
+- Place consistently in your interface layout
+
+## Accessibility
+Back buttons provide proper navigation semantics and clear context for screen reader users about where the navigation leads.`,
       },
     },
   },
@@ -59,7 +84,7 @@ export const Default: Story = {
 
 export const PageContext: Story = {
   render: (args) => (
-    <PageContainer>
+    <ContentContainer>
       <BackButton {...args} />
       <Card>
         <CardContent>
@@ -72,7 +97,7 @@ export const PageContext: Story = {
           </MetaContainer>
         </CardContent>
       </Card>
-    </PageContainer>
+    </ContentContainer>
   ),
   args: {
     href: "/dashboard",

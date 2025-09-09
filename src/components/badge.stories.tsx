@@ -9,16 +9,25 @@ const meta: Meta<typeof Badge> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A versatile badge component with multiple variants for displaying status, labels, and notifications.",
+        component: `A versatile badge component for displaying status, labels, and notifications with semantic color variants.
+
+## Features
+- Multiple semantic variants (default, secondary, outline, info, success, warning, destructive)
+- Polymorphic rendering with asChild prop for custom elements
+- Consistent sizing and spacing with icon support
+- Built-in hover states for interactive badges
+- Focus management and accessibility compliance
+- Responsive design with proper text scaling
+
+## Usage
+Use badges to highlight important information, show status, or provide quick visual cues. Choose variants based on the semantic meaning of the content.`,
       },
     },
   },
   tags: ["autodocs"],
   argTypes: {
     variant: {
-      type: "string",
-      description: "The variant of the badge.",
+      control: { type: "select" },
       options: [
         "default",
         "secondary",
@@ -28,16 +37,24 @@ const meta: Meta<typeof Badge> = {
         "success",
         "warning",
       ],
-      control: { type: "select" },
+      description:
+        "The visual variant that determines the badge's appearance and semantic meaning",
       table: {
-        defaultValue: {
-          summary: "default",
+        type: {
+          summary:
+            '"default" | "secondary" | "outline" | "destructive" | "info" | "success" | "warning"',
         },
+        defaultValue: { summary: '"default"' },
+        category: "Appearance",
       },
     },
     children: {
       control: { type: "text" },
-      description: "The content of the badge",
+      description: "The badge content - text, icons, or other React elements",
+      table: {
+        type: { summary: "React.ReactNode" },
+        category: "Content",
+      },
     },
     asChild: COMMON_CONTROLS.asChild,
     className: COMMON_CONTROLS.className,

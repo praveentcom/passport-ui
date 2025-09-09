@@ -10,8 +10,18 @@ const meta: Meta<typeof Checkbox> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A control that allows the user to toggle between checked and not checked.",
+        component: `A binary control that allows users to toggle between checked and unchecked states, built on Radix UI primitives.
+
+## Features
+- Three states: checked, unchecked, and indeterminate
+- Full keyboard navigation and accessibility support
+- Smooth animations and visual feedback
+- Consistent styling with theme integration
+- Form integration with proper value handling
+- Screen reader compatible with ARIA attributes
+
+## Usage
+Use checkboxes for binary choices, multiple selections, or to indicate agreement. Always pair with descriptive labels and consider grouping related options.`,
       },
     },
   },
@@ -21,7 +31,8 @@ const meta: Meta<typeof Checkbox> = {
       control: { type: "boolean" },
       description: "The controlled checked state of the checkbox",
       table: {
-        type: { summary: "boolean" },
+        type: { summary: "boolean | 'indeterminate'" },
+        category: "State",
       },
     },
     defaultChecked: {
@@ -29,14 +40,41 @@ const meta: Meta<typeof Checkbox> = {
       description: "The default checked state when uncontrolled",
       table: {
         type: { summary: "boolean" },
+        category: "State",
       },
     },
     disabled: {
       control: { type: "boolean" },
-      description: "Whether the checkbox is disabled",
+      description: "Whether the checkbox is disabled and non-interactive",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: "false" },
+        category: "State",
+      },
+    },
+    required: {
+      control: { type: "boolean" },
+      description: "Whether the checkbox is required for form submission",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+        category: "Validation",
+      },
+    },
+    name: {
+      control: { type: "text" },
+      description: "The name attribute for form submission",
+      table: {
+        type: { summary: "string" },
+        category: "Form",
+      },
+    },
+    value: {
+      control: { type: "text" },
+      description: "The value attribute for form submission",
+      table: {
+        type: { summary: "string" },
+        category: "Form",
       },
     },
     onCheckedChange: {
@@ -44,6 +82,7 @@ const meta: Meta<typeof Checkbox> = {
       description: "Event handler called when the checked state changes",
       table: {
         type: { summary: "(checked: boolean | 'indeterminate') => void" },
+        category: "Events",
       },
     },
     className: COMMON_CONTROLS.className,

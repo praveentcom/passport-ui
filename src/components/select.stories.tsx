@@ -18,8 +18,25 @@ const meta: Meta<typeof Select> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "Displays a list of options for the user to pick from—triggered by a button.",
+        component: `A dropdown selection component that displays a list of options for users to choose from, built on Radix UI Select primitives.
+
+## Features
+- Full keyboard navigation with arrow keys and type-ahead search
+- Controlled and uncontrolled modes for flexible state management
+- Grouping support with labeled sections
+- Built-in accessibility with ARIA attributes and screen reader support
+- Smooth animations and visual feedback
+- Consistent styling with theme integration
+- Portal-based dropdown positioning for proper layering
+
+## Composition
+Select components work together:
+- **Select**: Root container with state management
+- **SelectTrigger**: Button that opens the dropdown
+- **SelectValue**: Displays the selected value with placeholder support
+- **SelectContent**: Dropdown container with positioning
+- **SelectItem**: Individual selectable options
+- **SelectGroup/SelectLabel**: For organizing options into labeled groups`,
       },
     },
   },
@@ -27,9 +44,10 @@ const meta: Meta<typeof Select> = {
   argTypes: {
     defaultValue: {
       control: { type: "text" },
-      description: "The default selected value",
+      description: "The default selected value when uncontrolled",
       table: {
         type: { summary: "string" },
+        category: "State",
       },
     },
     value: {
@@ -37,28 +55,57 @@ const meta: Meta<typeof Select> = {
       description: "The controlled selected value",
       table: {
         type: { summary: "string" },
+        category: "State",
       },
     },
     onValueChange: {
       action: "value-changed",
-      description: "Callback fired when the value changes",
+      description: "Callback fired when the selected value changes",
       table: {
         type: { summary: "(value: string) => void" },
+        category: "Events",
       },
     },
     disabled: {
       control: { type: "boolean" },
-      description: "Whether the select is disabled",
+      description: "Whether the select is disabled and non-interactive",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: "false" },
+        category: "State",
+      },
+    },
+    required: {
+      control: { type: "boolean" },
+      description: "Whether the select is required for form submission",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+        category: "Validation",
+      },
+    },
+    name: {
+      control: { type: "text" },
+      description: "The name attribute for form submission",
+      table: {
+        type: { summary: "string" },
+        category: "Form",
       },
     },
     open: {
       control: { type: "boolean" },
-      description: "Whether the select is open (controlled)",
+      description: "Whether the select dropdown is open (controlled)",
       table: {
         type: { summary: "boolean" },
+        category: "State",
+      },
+    },
+    onOpenChange: {
+      action: "open-changed",
+      description: "Callback fired when the dropdown open state changes",
+      table: {
+        type: { summary: "(open: boolean) => void" },
+        category: "Events",
       },
     },
   },

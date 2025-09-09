@@ -30,6 +30,22 @@ const preview: Preview = {
         },
       },
     },
+    options: {
+      storySort: {
+        order: [
+          "Introduction",
+          "Color System",
+          "Layouts",
+          "Layouts/PageLayout",
+          "Layouts/ContentContainer",
+          "Layouts/SidebarContainer",
+          "Layouts/*",
+          "Components",
+          "Composables",
+          "Motion Primitives",
+        ],
+      },
+    },
   },
 };
 

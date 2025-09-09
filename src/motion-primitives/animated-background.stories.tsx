@@ -11,8 +11,33 @@ const meta: Meta<typeof AnimatedBackground> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "An animated background component that highlights the active element with smooth transitions.",
+        component: `An animated background component that creates smooth highlighting effects for interactive elements, powered by Framer Motion.
+
+## Features
+- Smooth animated background that follows active elements
+- Support for both hover and click interactions
+- Automatic size and position calculation
+- Customizable transition timing and easing
+- Zero-config setup with intelligent defaults
+- Accessible interaction patterns
+
+## Animation Details
+The AnimatedBackground creates a moving highlight that:
+1. **Tracks**: Automatically follows the active element
+2. **Sizes**: Matches the dimensions of the target element
+3. **Transitions**: Smoothly animates between positions and sizes
+4. **Responds**: To both hover and click interactions
+
+## Implementation
+Each child element must have a unique \`data-id\` attribute for the component to track and animate between elements.
+
+## Use Cases
+Perfect for:
+- Tab navigation with active indicators
+- Toggle switches and radio button groups
+- Menu item highlighting
+- Segmented controls
+- Any multi-option selector interface`,
       },
     },
   },
@@ -21,46 +46,41 @@ const meta: Meta<typeof AnimatedBackground> = {
     children: {
       control: { type: "object", disable: true },
       description:
-        "Elements to render with animated background. Each child must have a data-id prop.",
+        "Interactive elements to render. Each child must have a unique data-id prop for tracking",
       table: {
-        type: {
-          summary: "ReactNode",
-        },
-      },
-    },
-    onValueChangeAction: {
-      action: "onValueChangeAction",
-      description: "Callback fired when the active element changes.",
-      table: {
-        type: {
-          summary: "(newActiveId: string | null) => void",
-        },
-        category: "Actions",
-      },
-    },
-    className: COMMON_CONTROLS.className,
-    transition: {
-      control: { type: "object" },
-      description:
-        "Custom transition configuration for the animated background.",
-      table: {
-        type: {
-          summary: "Transition",
-        },
+        type: { summary: "React.ReactNode" },
+        category: "Content",
       },
     },
     enableHover: {
       control: { type: "boolean" },
-      description: "Enable hover interaction instead of click interaction.",
+      description:
+        "Enable hover interaction mode instead of click-to-select behavior",
       table: {
-        type: {
-          summary: "boolean",
-        },
-        defaultValue: {
-          summary: "false",
-        },
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+        category: "Interaction",
       },
     },
+    transition: {
+      control: { type: "object" },
+      description:
+        "Framer Motion transition configuration for the background animation",
+      table: {
+        type: { summary: "Transition" },
+        category: "Animation",
+      },
+    },
+    onValueChangeAction: {
+      action: "onValueChangeAction",
+      description:
+        "Callback fired when the active element changes, receives the new active data-id",
+      table: {
+        type: { summary: "(newActiveId: string | null) => void" },
+        category: "Events",
+      },
+    },
+    className: COMMON_CONTROLS.className,
   },
   args: {
     onValueChangeAction(newActiveId) {

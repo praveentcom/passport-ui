@@ -1,15 +1,33 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import { Card, CardContent, MetaContainer } from "@/client";
+import { COMMON_CONTROLS } from "../../.storybook/constants";
 
 const meta: Meta<typeof MetaContainer> = {
-  title: "Containers/MetaContainer",
+  title: "Composables/MetaContainer",
   component: MetaContainer,
   parameters: {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A container component for displaying metadata with an optional title and structured content layout.",
+        component: `A versatile container component for displaying structured metadata, information, and content with optional title and consistent spacing.
+
+## Features
+- Optional title with semantic heading structure
+- Consistent spacing and typography from design system
+- Flexible content layout supporting various data types
+- Integration with cards and other container components
+- Responsive design with proper text flow
+- Clean visual hierarchy for metadata presentation
+
+## Usage
+Perfect for displaying:
+- User information and profiles
+- Project metadata and statistics
+- Contact details and structured data
+- Any content requiring title-content organization
+- Information cards and data presentation
+
+The component automatically handles spacing and typography to maintain consistency across your application.`,
       },
     },
   },
@@ -17,22 +35,23 @@ const meta: Meta<typeof MetaContainer> = {
   argTypes: {
     title: {
       control: { type: "text" },
-      description: "Optional title displayed above the content.",
+      description:
+        "Optional title displayed above the content with proper heading semantics",
       table: {
-        type: {
-          summary: "string",
-        },
+        type: { summary: "string" },
+        category: "Content",
       },
     },
     children: {
       control: { type: "text" },
-      description: "The content to display within the container.",
+      description:
+        "The content to display within the container - text, elements, or complex structures",
       table: {
-        type: {
-          summary: "ReactNode",
-        },
+        type: { summary: "React.ReactNode" },
+        category: "Content",
       },
     },
+    className: COMMON_CONTROLS.className,
   },
 };
 

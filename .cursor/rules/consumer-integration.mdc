@@ -70,7 +70,7 @@ import { BlurIn, BorderTrail, AnimatedBackground } from 'passport-ui/client'
 import { ThemeProvider, ThemeButton } from 'passport-ui/client'
 
 // Page Tools
-import { PageContainer } from 'passport-ui/client'
+import { ContentContainer } from 'passport-ui/client'
 
 // Utility Functions
 import { cn } from 'passport-ui/server'
@@ -78,7 +78,6 @@ import { cn } from 'passport-ui/server'
 
 ### CSS Classes Available
 The library provides reusable CSS classes defined in the styles:
-- `.page-container`: Main page wrapper
 - `.content-container`: Content grid layout
 - `.list-container`: List wrapper with spacing
 - `.section-container`: Section grouping

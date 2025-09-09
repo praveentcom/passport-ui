@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
-import { StructuredData } from "./structured-data";
-import { Card, CardContent } from "./card";
-import { MetaContainer } from "@/client";
+import { MetaContainer, Card, CardContent } from "@/client";
+import { StructuredData } from "@/server";
 
 const meta: Meta<typeof StructuredData> = {
   title: "Components/StructuredData",
@@ -11,15 +10,63 @@ const meta: Meta<typeof StructuredData> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A component that injects structured data (JSON-LD) into the page head for SEO purposes. Supports any Schema.org structured data format.",
+        component: `A SEO-optimized component that injects Schema.org structured data as JSON-LD into the page head for enhanced search engine visibility.
+
+## Features
+- Automatic JSON-LD script injection into document head
+- Support for all Schema.org structured data types
+- SEO optimization for rich search results
+- Type-safe structured data handling
+- Automatic script cleanup on unmount
+- Zero visual impact (head-only injection)
+- Google Search Console compatible
+
+## Supported Schema Types
+- **Article**: Blog posts, news articles, documentation
+- **Organization**: Company and business information
+- **Person**: Author and profile information
+- **Product**: E-commerce product details
+- **WebSite**: Website and search action markup
+- **BreadcrumbList**: Navigation breadcrumb markup
+- **FAQ**: Frequently asked questions
+- **Event**: Events and meetups
+- And many more Schema.org types
+
+## SEO Benefits
+- Enhanced search result snippets
+- Rich search features (ratings, prices, etc.)
+- Better content understanding by search engines
+- Improved click-through rates
+- Knowledge panel eligibility
+
+## Usage
+Use structured data for:
+- Blog articles and content pages
+- Product and service pages
+- Organization and contact information
+- Events and announcements
+- Any content that benefits from rich search results
+
+## Best Practices
+- Use appropriate Schema.org types for your content
+- Provide complete and accurate information
+- Test with Google's Rich Results Test tool
+- Include required properties for each schema type
+
+## Implementation
+The component automatically injects JSON-LD scripts into the document head without affecting page rendering.`,
       },
     },
   },
   argTypes: {
     data: {
       control: "object",
-      description: "The structured data object to inject as JSON-LD",
+      description:
+        "The Schema.org structured data object to inject as JSON-LD markup",
+      table: {
+        type: { summary: "Record<string, any>" },
+        category: "SEO",
+      },
     },
   },
   tags: ["autodocs"],

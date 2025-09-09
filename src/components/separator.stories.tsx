@@ -11,8 +11,31 @@ const meta: Meta<typeof Separator> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A separator component that can be used to separate content.",
+        component: `A visual separator component for dividing content sections, built on Radix UI Separator primitives.
+
+## Features
+- Horizontal and vertical orientation support
+- Semantic separation with proper ARIA attributes
+- Decorative and non-decorative modes for accessibility
+- Consistent styling with theme integration
+- Flexible positioning and sizing
+- Screen reader compatibility with role management
+
+## Usage
+Use separators to:
+- Visually divide content sections
+- Create clear boundaries between related groups
+- Improve content organization and readability
+- Provide semantic structure for assistive technologies
+
+## Accessibility
+- **Decorative**: Purely visual, hidden from screen readers (default)
+- **Non-decorative**: Semantic separator announced to screen readers
+- Choose based on whether the separation has meaning beyond visual presentation
+
+## Orientation
+- **Horizontal**: Divides content vertically (most common)
+- **Vertical**: Divides content horizontally (for side-by-side layouts)`,
       },
     },
   },
@@ -21,28 +44,21 @@ const meta: Meta<typeof Separator> = {
     orientation: {
       control: { type: "select" },
       options: ["horizontal", "vertical"],
-      description: "The orientation of the separator.",
+      description: "The orientation of the separator line",
       table: {
-        defaultValue: {
-          summary: "horizontal",
-        },
-        type: {
-          summary: "horizontal | vertical",
-        },
+        type: { summary: '"horizontal" | "vertical"' },
+        defaultValue: { summary: '"horizontal"' },
+        category: "Layout",
       },
     },
     decorative: {
       control: { type: "boolean" },
-      options: [true, false],
       description:
-        "Whether or not the component is purely decorative. When true, accessibility-related attributes are updated so that that the rendered element is removed from the accessibility tree.",
+        "Whether the separator is purely visual (true) or has semantic meaning (false)",
       table: {
-        defaultValue: {
-          summary: "true",
-        },
-        type: {
-          summary: "boolean",
-        },
+        type: { summary: "boolean" },
+        defaultValue: { summary: "true" },
+        category: "Accessibility",
       },
     },
     className: COMMON_CONTROLS.className,

@@ -8,8 +8,18 @@ const meta: Meta<typeof BulletList> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A styled bullet list component with custom bullet points and consistent spacing.",
+        component: `A styled bullet list component with custom bullet points, consistent spacing, and flexible content support.
+
+## Features
+- Custom bullet point styling with theme integration
+- Consistent spacing and typography
+- Flexible content support (strings, arrays, or mixed content)
+- Responsive design with proper text flow
+- Semantic HTML structure for accessibility
+- Integration with the design system's spacing scale
+
+## Usage
+Use for displaying lists of related items, features, or any content that benefits from bullet point formatting. The component handles both simple string arrays and more complex content structures.`,
       },
     },
   },
@@ -18,11 +28,10 @@ const meta: Meta<typeof BulletList> = {
     items: {
       control: { type: "object" },
       description:
-        "Array of strings to display as list items, or a single string.",
+        "Array of strings to display as list items, or a single string for a one-item list",
       table: {
-        type: {
-          summary: "string[] | string",
-        },
+        type: { summary: "string[] | string" },
+        category: "Content",
       },
     },
   },

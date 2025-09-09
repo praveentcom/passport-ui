@@ -11,8 +11,25 @@ const meta: Meta<typeof Tooltip> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A tooltip component that can be used to display content when hovering over an element.",
+        component: `A tooltip component for displaying contextual information when hovering or focusing on an element, built on Radix UI primitives.
+
+## Features
+- Hover and focus trigger support with customizable delay
+- Multiple positioning options (top, bottom, left, right)
+- Portal-based rendering for proper layering
+- Keyboard navigation and accessibility compliance
+- Configurable hover behavior and timing
+- Smooth animations and visual feedback
+- Screen reader compatible with ARIA attributes
+
+## Composition
+Tooltips are composed of multiple components:
+- **Tooltip**: Root container with behavior configuration
+- **TooltipTrigger**: Element that triggers the tooltip (can be any focusable element)
+- **TooltipContent**: The tooltip content with positioning and styling
+
+## Usage
+Use tooltips to provide additional context or help text for UI elements. Keep content concise and ensure the tooltip doesn't interfere with user interactions.`,
       },
     },
   },
@@ -20,76 +37,61 @@ const meta: Meta<typeof Tooltip> = {
   argTypes: {
     children: {
       control: { type: "object", disable: true },
+      description:
+        "Tooltip composition with TooltipTrigger and TooltipContent components",
       table: {
         type: {
-          summary: "ReactNode",
+          summary: "React.ReactNode",
           detail: "TooltipTrigger | TooltipContent",
         },
+        category: "Content",
       },
-      description: "Contents of the tooltip.",
     },
     open: {
       control: { type: "boolean" },
-      description: "The controlled open state of the tooltip.",
+      description: "The controlled open state of the tooltip",
       table: {
-        type: {
-          summary: "boolean",
-        },
-        defaultValue: {
-          summary: "false",
-        },
+        type: { summary: "boolean" },
+        category: "State",
       },
     },
     defaultOpen: {
       control: { type: "boolean" },
-      description: "The default open state when initially rendered.",
+      description:
+        "The default open state when initially rendered (uncontrolled)",
       table: {
-        type: {
-          summary: "boolean",
-        },
-        defaultValue: {
-          summary: "false",
-        },
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+        category: "State",
       },
     },
     delayDuration: {
       control: { type: "number" },
       description:
-        "The duration from when the pointer enters the trigger until the tooltip gets opened.",
+        "Duration in milliseconds from when the pointer enters the trigger until the tooltip opens",
       table: {
-        type: {
-          summary: "number",
-        },
-        defaultValue: {
-          summary: "700",
-        },
+        type: { summary: "number" },
+        defaultValue: { summary: "700" },
+        category: "Behavior",
       },
     },
     disableHoverableContent: {
       control: { type: "boolean" },
       description:
-        "When true, trying to hover the content will result in the tooltip closing as the pointer leaves the trigger.",
+        "When true, hovering the content will close the tooltip as the pointer leaves the trigger",
       table: {
-        type: {
-          summary: "boolean",
-        },
-        defaultValue: {
-          summary: "false",
-        },
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+        category: "Behavior",
       },
     },
     onOpenChange: {
       action: "onOpenChange",
       description:
-        "Event handler called when the open state of the tooltip changes.",
+        "Event handler called when the open state of the tooltip changes",
       table: {
-        type: {
-          summary: "(open: boolean) => void",
-        },
-        defaultValue: {
-          summary: "() => {}",
-        },
-        category: "Actions",
+        type: { summary: "(open: boolean) => void" },
+        category: "Events",
       },
     },
   },

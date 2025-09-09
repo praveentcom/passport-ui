@@ -12,8 +12,38 @@ const meta: Meta<typeof Calendar> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A date field component that allows users to enter and edit dates. Built on top of React DayPicker with full customization support.",
+        component: `A comprehensive calendar component for date selection with multiple modes and full customization, built on React DayPicker.
+
+## Features
+- Multiple selection modes: single date, multiple dates, or date ranges
+- Full keyboard navigation with arrow keys
+- Customizable month/year navigation with dropdown options
+- Disabled dates and date matching functions
+- Outside day display and navigation
+- Flexible styling and theming support
+- Built-in accessibility with proper ARIA attributes
+- Responsive design with mobile optimization
+
+## Selection Modes
+- **Single**: Select one date at a time
+- **Multiple**: Select multiple individual dates
+- **Range**: Select a continuous date range with start and end
+
+## Navigation
+- **Label**: Simple month/year labels with arrow navigation
+- **Dropdown**: Dropdown selectors for month and year
+- **Dropdown-years**: Enhanced dropdown with year range selection
+
+## Usage
+Use calendars for:
+- Date pickers in forms
+- Event scheduling and booking
+- Date range selection for filters
+- Availability and booking systems
+- Any date-based user input
+
+## Accessibility
+Calendars provide full keyboard navigation, screen reader support, and proper date announcements for accessible date selection.`,
       },
     },
   },
@@ -22,43 +52,49 @@ const meta: Meta<typeof Calendar> = {
     mode: {
       control: { type: "select" },
       options: ["single", "multiple", "range"],
-      description: "The selection mode of the calendar",
+      description:
+        "The selection mode that determines how dates can be selected",
       table: {
-        type: { summary: "single | multiple | range" },
-        defaultValue: { summary: "single" },
+        type: { summary: '"single" | "multiple" | "range"' },
+        defaultValue: { summary: '"single"' },
+        category: "Behavior",
       },
     },
     selected: {
       control: false,
-      description: "The selected date(s)",
+      description: "The currently selected date(s) - type depends on mode",
       table: {
         type: { summary: "Date | Date[] | DateRange | undefined" },
+        category: "State",
       },
     },
     onSelect: {
       action: "selected",
-      description: "Event handler called when a date is selected",
+      description: "Event handler called when date selection changes",
       table: {
         type: {
           summary: "(date: Date | Date[] | DateRange | undefined) => void",
         },
+        category: "Events",
       },
     },
     captionLayout: {
       control: { type: "select" },
       options: ["label", "dropdown", "dropdown-years"],
-      description: "Layout for the caption (month/year navigation)",
+      description: "Layout style for the month/year navigation caption",
       table: {
-        type: { summary: "label | dropdown | dropdown-years" },
-        defaultValue: { summary: "label" },
+        type: { summary: '"label" | "dropdown" | "dropdown-years"' },
+        defaultValue: { summary: '"label"' },
+        category: "Appearance",
       },
     },
     showOutsideDays: {
       control: { type: "boolean" },
-      description: "Show days outside the current month",
+      description: "Whether to show days from adjacent months",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: "true" },
+        category: "Appearance",
       },
     },
     buttonVariant: {
@@ -71,37 +107,45 @@ const meta: Meta<typeof Calendar> = {
         "ghost",
         "link",
       ],
-      description: "Button variant for navigation buttons",
+      description: "Button variant for navigation arrows and controls",
       table: {
         type: {
-          summary: "default | destructive | outline | secondary | ghost | link",
+          summary:
+            '"default" | "destructive" | "outline" | "secondary" | "ghost" | "link"',
         },
-        defaultValue: { summary: "ghost" },
+        defaultValue: { summary: '"ghost"' },
+        category: "Appearance",
       },
     },
     disabled: {
       control: false,
-      description: "Disabled dates or date matcher function",
+      description:
+        "Dates to disable - can be single date, array, or matcher function",
       table: {
         type: { summary: "Date | Date[] | Matcher | undefined" },
+        category: "Validation",
       },
     },
     autoNavigateOnOutsideClick: {
       control: { type: "boolean" },
       description:
-        "Automatically navigate to the month when clicking on outside dates",
+        "Automatically navigate to month when clicking outside dates",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: "false" },
+        category: "Behavior",
       },
     },
     weekSpacing: {
       control: { type: "select" },
       options: ["mt-0", "mt-0.5", "mt-1", "mt-1.5", "mt-2", "mt-3"],
-      description: "Vertical spacing between week rows",
+      description: "Vertical spacing between calendar week rows",
       table: {
-        type: { summary: "mt-0 | mt-0.5 | mt-1 | mt-1.5 | mt-2 | mt-3" },
-        defaultValue: { summary: "mt-2" },
+        type: {
+          summary: '"mt-0" | "mt-0.5" | "mt-1" | "mt-1.5" | "mt-2" | "mt-3"',
+        },
+        defaultValue: { summary: '"mt-2"' },
+        category: "Layout",
       },
     },
     className: COMMON_CONTROLS.className,

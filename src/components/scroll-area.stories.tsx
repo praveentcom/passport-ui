@@ -10,12 +10,52 @@ const meta: Meta<typeof ScrollArea> = {
     layout: "centered",
     docs: {
       description: {
-        component: "A scrollable area component with custom scrollbars.",
+        component: `A custom scrollable area component with styled scrollbars and smooth scrolling behavior, built on Radix UI ScrollArea primitives.
+
+## Features
+- Custom-styled scrollbars that match your theme
+- Smooth scrolling with momentum on supported devices
+- Horizontal and vertical scrolling support
+- Configurable scrollbar visibility and behavior
+- Built-in accessibility with proper scroll announcements
+- Cross-browser consistent scrollbar appearance
+- Touch-friendly scrolling on mobile devices
+
+## Usage
+Use scroll areas for:
+- Content that exceeds container dimensions
+- Fixed-height containers with overflow content
+- Custom scrollbar styling requirements
+- Consistent scrolling experience across browsers
+- Lists, menus, and content areas with limited space
+
+## Benefits Over Native Scrolling
+- Consistent appearance across all browsers and operating systems
+- Customizable scrollbar styling to match your design
+- Better control over scrollbar behavior and visibility
+- Enhanced accessibility features
+
+## Best Practices
+- Set appropriate container heights for the content
+- Consider content length and user experience
+- Ensure scrollbar visibility when needed
+- Test scrolling behavior on various devices
+
+## Accessibility
+Scroll areas provide proper keyboard navigation and screen reader support with scroll position announcements.`,
       },
     },
   },
   tags: ["autodocs"],
   argTypes: {
+    children: {
+      control: { type: "object", disable: true },
+      description: "The scrollable content to display within the scroll area",
+      table: {
+        type: { summary: "React.ReactNode" },
+        category: "Content",
+      },
+    },
     className: COMMON_CONTROLS.className,
   },
   render: (args) => (

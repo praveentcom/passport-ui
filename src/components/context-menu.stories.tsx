@@ -23,18 +23,61 @@ const meta: Meta<typeof ContextMenu> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A context menu component that displays a menu triggered by right-clicking on an element. Built on top of Radix UI Context Menu primitives.",
+        component: `A context menu component that displays contextual actions triggered by right-clicking, built on Radix UI ContextMenu primitives.
+
+## Features
+- Right-click triggered contextual menus
+- Full keyboard navigation with arrow keys
+- Nested submenus with hover and keyboard support
+- Multiple item types: regular, checkbox, radio, separator
+- Keyboard shortcuts display and handling
+- Built-in accessibility with proper ARIA attributes
+- Portal-based rendering for proper layering
+- Automatic positioning with collision detection
+
+## Composition
+Context menus are composed of multiple components:
+- **ContextMenu**: Root container with trigger detection
+- **ContextMenuTrigger**: Element that triggers the context menu
+- **ContextMenuContent**: The menu container with positioning
+- **ContextMenuItem**: Individual menu actions
+- **ContextMenuCheckboxItem**: Checkable menu items
+- **ContextMenuRadioGroup/RadioItem**: Radio button groups
+- **ContextMenuSub**: Nested submenu containers
+- **ContextMenuSeparator**: Visual dividers
+- **ContextMenuLabel**: Section labels
+- **ContextMenuShortcut**: Keyboard shortcut display
+
+## Usage
+Use context menus for:
+- Right-click actions on elements
+- Contextual operations and shortcuts
+- File and item management actions
+- Quick access to relevant commands
+- Alternative to dropdown menus for specific contexts
+
+## Accessibility
+Context menus provide full keyboard navigation and screen reader support with proper menu semantics.`,
       },
     },
   },
   tags: ["autodocs"],
   argTypes: {
     children: {
-      description: "The content of the context menu",
+      description:
+        "Context menu composition with ContextMenuTrigger and ContextMenuContent",
       control: false,
       table: {
-        type: { summary: "ReactNode" },
+        type: { summary: "React.ReactNode" },
+        category: "Content",
+      },
+    },
+    onOpenChange: {
+      control: false,
+      description: "Callback fired when the context menu open state changes",
+      table: {
+        type: { summary: "(open: boolean) => void" },
+        category: "Events",
       },
     },
   },

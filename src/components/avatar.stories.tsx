@@ -9,14 +9,42 @@ const meta: Meta<typeof Avatar> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "An image element with a fallback for representing the user.",
+        component: `A user avatar component with automatic fallback support, built on Radix UI Avatar primitives.
+
+## Features
+- Automatic fallback when image fails to load
+- Consistent circular styling with theme integration
+- Accessible image loading with proper alt text
+- Composable architecture with image and fallback components
+- Support for stacking and grouping patterns
+- Responsive sizing with CSS custom properties
+
+## Composition
+Avatars are composed of multiple components:
+- **Avatar**: Root container with consistent sizing and styling
+- **AvatarImage**: The primary image with loading and error handling
+- **AvatarFallback**: Fallback content (usually initials) displayed when image fails
+
+## Usage
+Use avatars to represent users, accounts, or entities throughout your interface. Always provide meaningful fallback content for accessibility and reliability.
+
+## Accessibility
+Avatars include proper image alt text and fallback content for screen readers.`,
       },
     },
   },
   tags: ["autodocs"],
   argTypes: {
     className: COMMON_CONTROLS.className,
+    children: {
+      control: { type: "object", disable: true },
+      description:
+        "Avatar composition with AvatarImage and AvatarFallback components",
+      table: {
+        type: { summary: "React.ReactNode" },
+        category: "Content",
+      },
+    },
   },
   render: (args) => (
     <Avatar {...args}>

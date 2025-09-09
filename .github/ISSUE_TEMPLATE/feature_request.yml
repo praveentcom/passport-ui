@@ -1,0 +1,127 @@
+name: ✨ Feature Request
+description: Suggest a new feature or enhancement
+title: "[Feature]: "
+labels: ["enhancement", "needs-discussion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your interest in improving passport-ui! Please provide details about your feature request.
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      description: Please confirm the following before submitting your feature request
+      options:
+        - label: I have searched existing issues to make sure this feature hasn't been requested yet
+          required: true
+        - label: I have checked the roadmap and documentation
+          required: true
+        - label: This feature would benefit the broader community, not just my specific use case
+          required: true
+
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature Type
+      description: What type of feature are you requesting?
+      options:
+        - New Component
+        - Component Enhancement
+        - New Motion Primitive
+        - Styling/Theme Enhancement
+        - Developer Experience
+        - Documentation
+        - Build/Tooling
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What problem does this feature solve? What is the current limitation?
+      placeholder: Describe the problem or limitation you're facing
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe your proposed solution in detail
+      placeholder: Explain how you think this feature should work
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: What alternatives have you considered? Why is this the best solution?
+      placeholder: Describe any alternative solutions or workarounds you've considered
+
+  - type: textarea
+    id: api-design
+    attributes:
+      label: API Design (if applicable)
+      description: If this is a new component or API, show how you envision it being used
+      render: typescript
+      placeholder: |
+        // Example usage
+        import { NewComponent } from 'passport-ui/client'
+
+        <NewComponent variant="primary" size="lg">
+          Content
+        </NewComponent>
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: Use Cases
+      description: Provide specific use cases where this feature would be helpful
+      placeholder: |
+        1. When building a dashboard, I need...
+        2. For e-commerce sites, this would help...
+        3. Mobile responsive layouts would benefit from...
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: complexity
+    attributes:
+      label: Implementation Complexity
+      description: How complex do you think this feature would be to implement?
+      options:
+        - label: Low - Simple addition or modification
+        - label: Medium - Requires some design and implementation work
+        - label: High - Major feature requiring significant design and development
+
+  - type: checkboxes
+    id: breaking-changes
+    attributes:
+      label: Breaking Changes
+      description: Would this feature require breaking changes?
+      options:
+        - label: This feature could be implemented without breaking changes
+        - label: This feature might require breaking changes
+        - label: I'm not sure about breaking changes
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, mockups, or examples about the feature request here
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Would you be interested in contributing to this feature?
+      options:
+        - label: I would be interested in implementing this feature
+        - label: I would be interested in helping with design/planning
+        - label: I would be interested in testing this feature
+        - label: I would prefer someone else implements this

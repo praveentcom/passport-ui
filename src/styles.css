@@ -10,13 +10,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
   --color-chart-5: var(--chart-5);
   --color-chart-4: var(--chart-4);
@@ -75,7 +68,7 @@
   --secondary: oklch(0.9 0.001 286.375);
   --secondary-foreground: oklch(0.2649 0.0018 286.27);
   --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.38 0.016 285.938);
+  --muted-foreground: oklch(0.4 0.016 285.938);
   --accent: oklch(0.94 0.001 286.375);
   --accent-foreground: oklch(0.2649 0.0018 286.27);
   --info: oklch(0.528 0.225 262.55);
@@ -103,13 +96,6 @@
   --chart-4: oklch(0.58 0.24 16);
   --chart-5: oklch(0.6877 0.208 40.13);
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.2649 0.0018 286.27);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.2649 0.0018 286.27);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.705 0.015 286.067);
 }
 
 /* Dark Mode Colors for Custom Properties */
@@ -125,7 +111,7 @@
   --secondary: oklch(0.2983 0.0054 286.07);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.2983 0.0054 286.07);
-  --muted-foreground: oklch(0.8082 0.015 286.067);
+  --muted-foreground: oklch(0.75 0.015 286.067);
   --accent: oklch(0.2983 0.0054 286.07);
   --accent-foreground: oklch(0.985 0 0);
   --info: oklch(0.528 0.225 262.55);
@@ -140,8 +126,8 @@
   --warning-muted: oklch(0.2088 0.0537 35.01);
   --warning-foreground: oklch(0.985 0 0);
   --warning-muted-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.412 0.165 18.92);
-  --destructive-muted: oklch(0.1537 0.0617 5.97);
+  --destructive: oklch(0.7 0.15 20);
+  --destructive-muted: oklch(0.1969 0.0632 25.11);
   --destructive-foreground: oklch(0.985 0 0);
   --destructive-muted-foreground: oklch(0.985 0 0);
   --border: oklch(1 0 0 / 10%);
@@ -150,16 +136,9 @@
   --chart-1: oklch(0.528 0.225 262.55);
   --chart-2: oklch(0.45 0.11 164);
   --chart-3: oklch(0.57 0.19 33);
-  --chart-4: oklch(0.412 0.165 18.92);
+  --chart-4: oklch(0.7 0.15 20);
   --chart-5: oklch(0.56 0.19 33);
   --sidebar: oklch(0.2649 0.0018 286.27);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.2983 0.0054 286.07);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.2983 0.0054 286.07);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
 /* Base Layer */
@@ -168,7 +147,7 @@
     @apply border-border outline-ring/50;
   }
   .passport-ui body {
-    @apply bg-background;
+    @apply bg-background text-foreground;
   }
 
   /* Typography Styles */
@@ -203,13 +182,13 @@
     @apply text-muted-foreground;
   }
   .passport-ui h1 {
-    @apply text-xl;
+    @apply text-xl leading-relaxed;
   }
   .passport-ui h2 {
-    @apply text-lg;
+    @apply text-lg leading-relaxed;
   }
   .passport-ui h3 {
-    @apply text-base;
+    @apply text-base leading-relaxed;
   }
   .passport-ui h4 {
     @apply text-sm;
@@ -222,31 +201,22 @@
   }
 
   /* Page Container Styles */
-  .passport-ui .page-container {
-    @apply container mx-auto px-4 py-4 md:px-0 md:py-0 max-w-3xl min-w-0;
-  }
-  .passport-ui .page-container-small {
-    @apply container mx-auto px-4 py-4 md:px-0 md:py-0 max-w-xl min-w-0;
-  }
-  .passport-ui .page-container-large {
-    @apply container mx-auto px-4 py-4 md:px-0 md:py-0 max-w-6xl min-w-0;
-  }
   .passport-ui .content-container {
-    @apply grid gap-8 text-foreground;
+    @apply grid gap-8 p-4 text-foreground mx-auto;
   }
 
   /* Other Container Styles */
   .passport-ui .section-container {
-    @apply grid gap-y-5 gap-x-6 text-foreground;
+    @apply grid gap-y-5 gap-x-4 text-foreground;
   }
   .passport-ui .title-container {
-    @apply grid gap-y-0.75 gap-x-1.5 text-foreground;
+    @apply grid gap-y-1 gap-x-1.5 text-foreground;
   }
   .passport-ui .meta-container {
-    @apply grid gap-y-0.75 gap-x-1.5 text-muted-foreground;
+    @apply grid gap-y-1 gap-x-1.5 text-muted-foreground;
   }
   .passport-ui .list-container {
-    @apply grid gap-y-3 gap-x-4 text-muted-foreground;
+    @apply grid gap-y-3 gap-x-3 text-muted-foreground;
   }
 }
 
@@ -270,4 +240,37 @@
   .passport-ui .bullet-text {
     @apply text-muted-foreground text-sm;
   }
+
+  /* Markdown Article Styles */
+  .passport-ui .article-base {
+    @apply text-foreground leading-relaxed;
+  }
+  .passport-ui .article-muted {
+    @apply text-muted-foreground;
+  }
+
+  /* Code Block Styles */
+  .passport-ui .hljs {
+    @apply bg-transparent text-xs font-mono;
+  }
+  .passport-ui .line-number {
+    @apply text-xs text-muted-foreground/60 font-mono select-none px-2 text-right border-r border-border bg-accent flex-shrink-0;
+  }
+  .passport-ui .line-content {
+    @apply text-xs px-3 flex-1 min-w-0;
+  }
+  .passport-ui .line-content span,
+  .passport-ui .line-content pre {
+    @apply text-xs;
+  }
+
+  /*
+   * Highlight.js Theme Styles
+   * 
+   * For syntax highlighting themes in CodeBlock components, import the separate theme file:
+   * @import 'passport-ui/hljs-themes.css';
+   * 
+   * This provides themed colors for GitHub, Atom One, VS, Monokai, Dracula, Nord, 
+   * Tokyo Night, and Default themes with automatic light/dark mode support.
+   */
 }

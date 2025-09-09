@@ -29,6 +29,18 @@ Import the library styles in your main CSS file:
 @import "passport-ui/styles.css";
 ```
 
+### Optional: Syntax Highlighting Themes
+
+For themed syntax highlighting in `CodeBlock` and `Markdown` components, import the theme styles:
+
+```css
+@source "../../node_modules/passport-ui/src"
+@import "passport-ui/styles.css";
+@import "passport-ui/hljs-themes.css"; /* Optional: for syntax highlighting themes */
+```
+
+Available themes: `github`, `atom-one`, `vs`, `monokai`, `dracula`, `nord`, `tokyo-night`, `default`
+
 ### Import Components
 
 ```tsx

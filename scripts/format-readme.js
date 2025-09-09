@@ -14,11 +14,11 @@ const readmePath = join(rootDir, "README.md");
  * List of categories to scan
  */
 const categories = [
+  { dir: "layouts", name: "Layouts" },
   { dir: "components", name: "Components" },
   { dir: "motion-primitives", name: "Motion Primitives" },
   { dir: "composables", name: "Composables" },
   { dir: "providers", name: "Providers" },
-  { dir: "containers", name: "Containers" },
 ];
 
 /**
@@ -143,7 +143,6 @@ function updateReadme() {
     }
   } catch (error) {
     console.error("Error updating README: ", error.message);
-    process.exit(1);
   }
 }
 

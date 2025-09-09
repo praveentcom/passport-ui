@@ -1,0 +1,218 @@
+/**
+ * Highlight.js Theme System for passport-ui
+ * 
+ * This file contains all the highlight.js theme definitions for the CodeBlock component.
+ * Import this file in your CSS if you want to use themed syntax highlighting.
+ * 
+ * Usage:
+ * @import 'passport-ui/hljs-themes.css';
+ * 
+ * Or in your CSS file:
+ * @source '../../node_modules/passport-ui/src';
+ * @import 'passport-ui/hljs-themes.css';
+ */
+
+/* GitHub Theme (Light/Dark) */
+.passport-ui.hljs-theme-github .hljs,
+.passport-ui .hljs-theme-github .hljs {
+  --hljs-bg: #ffffff;
+  --hljs-color: #24292e;
+  --hljs-comment: #6a737d;
+  --hljs-keyword: #d73a49;
+  --hljs-string: #032f62;
+  --hljs-number: #005cc5;
+  --hljs-function: #6f42c1;
+  --hljs-variable: #e36209;
+  --hljs-built-in: #005cc5;
+  --hljs-literal: #005cc5;
+}
+
+.dark .passport-ui.hljs-theme-github .hljs,
+.dark .passport-ui .hljs-theme-github .hljs {
+  --hljs-bg: #0d1117;
+  --hljs-color: #c9d1d9;
+  --hljs-comment: #8b949e;
+  --hljs-keyword: #ff7b72;
+  --hljs-string: #a5d6ff;
+  --hljs-number: #79c0ff;
+  --hljs-function: #d2a8ff;
+  --hljs-variable: #ffa657;
+  --hljs-built-in: #79c0ff;
+  --hljs-literal: #79c0ff;
+}
+
+/* Atom One Theme (Light/Dark) */
+.passport-ui.hljs-theme-atom-one .hljs,
+.passport-ui .hljs-theme-atom-one .hljs {
+  --hljs-bg: #fafafa;
+  --hljs-color: #383a42;
+  --hljs-comment: #a0a1a7;
+  --hljs-keyword: #a626a4;
+  --hljs-string: #50a14f;
+  --hljs-number: #986801;
+  --hljs-function: #4078f2;
+  --hljs-variable: #e45649;
+  --hljs-built-in: #c18401;
+  --hljs-literal: #0184bb;
+}
+
+.dark .passport-ui.hljs-theme-atom-one .hljs,
+.dark .passport-ui .hljs-theme-atom-one .hljs {
+  --hljs-bg: #282c34;
+  --hljs-color: #abb2bf;
+  --hljs-comment: #5c6370;
+  --hljs-keyword: #c678dd;
+  --hljs-string: #98c379;
+  --hljs-number: #d19a66;
+  --hljs-function: #61afef;
+  --hljs-variable: #e06c75;
+  --hljs-built-in: #e6c07b;
+  --hljs-literal: #56b6c2;
+}
+
+/* VS Theme (Light/Dark) */
+.passport-ui.hljs-theme-vs .hljs,
+.passport-ui .hljs-theme-vs .hljs {
+  --hljs-bg: #ffffff;
+  --hljs-color: #000000;
+  --hljs-comment: #008000;
+  --hljs-keyword: #0000ff;
+  --hljs-string: #a31515;
+  --hljs-number: #098658;
+  --hljs-function: #795e26;
+  --hljs-variable: #001080;
+  --hljs-built-in: #0000ff;
+  --hljs-literal: #0000ff;
+}
+
+.dark .passport-ui.hljs-theme-vs .hljs,
+.dark .passport-ui .hljs-theme-vs .hljs {
+  --hljs-bg: #1e1e1e;
+  --hljs-color: #d4d4d4;
+  --hljs-comment: #6a9955;
+  --hljs-keyword: #569cd6;
+  --hljs-string: #ce9178;
+  --hljs-number: #b5cea8;
+  --hljs-function: #dcdcaa;
+  --hljs-variable: #9cdcfe;
+  --hljs-built-in: #4ec9b0;
+  --hljs-literal: #569cd6;
+}
+
+/* Monokai Theme */
+.passport-ui.hljs-theme-monokai .hljs,
+.passport-ui .hljs-theme-monokai .hljs {
+  --hljs-bg: #272822;
+  --hljs-color: #f8f8f2;
+  --hljs-comment: #75715e;
+  --hljs-keyword: #f92672;
+  --hljs-string: #e6db74;
+  --hljs-number: #ae81ff;
+  --hljs-function: #a6e22e;
+  --hljs-variable: #fd971f;
+  --hljs-built-in: #66d9ef;
+  --hljs-literal: #ae81ff;
+}
+
+/* Dracula Theme */
+.passport-ui.hljs-theme-dracula .hljs,
+.passport-ui .hljs-theme-dracula .hljs {
+  --hljs-bg: #282a36;
+  --hljs-color: #f8f8f2;
+  --hljs-comment: #6272a4;
+  --hljs-keyword: #ff79c6;
+  --hljs-string: #f1fa8c;
+  --hljs-number: #bd93f9;
+  --hljs-function: #50fa7b;
+  --hljs-variable: #ffb86c;
+  --hljs-built-in: #8be9fd;
+  --hljs-literal: #bd93f9;
+}
+
+/* Nord Theme */
+.passport-ui.hljs-theme-nord .hljs,
+.passport-ui .hljs-theme-nord .hljs {
+  --hljs-bg: #2e3440;
+  --hljs-color: #d8dee9;
+  --hljs-comment: #616e88;
+  --hljs-keyword: #81a1c1;
+  --hljs-string: #a3be8c;
+  --hljs-number: #b48ead;
+  --hljs-function: #88c0d0;
+  --hljs-variable: #d08770;
+  --hljs-built-in: #5e81ac;
+  --hljs-literal: #81a1c1;
+}
+
+/* Tokyo Night Theme */
+.passport-ui.hljs-theme-tokyo-night .hljs,
+.passport-ui .hljs-theme-tokyo-night .hljs {
+  --hljs-bg: #1a1b26;
+  --hljs-color: #c0caf5;
+  --hljs-comment: #565f89;
+  --hljs-keyword: #bb9af7;
+  --hljs-string: #9ece6a;
+  --hljs-number: #ff9e64;
+  --hljs-function: #7aa2f7;
+  --hljs-variable: #f7768e;
+  --hljs-built-in: #e0af68;
+  --hljs-literal: #bb9af7;
+}
+
+/* Default Theme (fallback) */
+.passport-ui.hljs-theme-default .hljs,
+.passport-ui .hljs-theme-default .hljs {
+  --hljs-bg: transparent;
+  --hljs-color: inherit;
+}
+
+/* Apply theme colors to hljs classes */
+.passport-ui .hljs {
+  background: var(--hljs-bg) !important;
+  color: var(--hljs-color) !important;
+}
+
+.passport-ui .hljs-comment,
+.passport-ui .hljs-quote {
+  color: var(--hljs-comment) !important;
+  font-style: italic;
+}
+
+.passport-ui .hljs-keyword,
+.passport-ui .hljs-selector-tag,
+.passport-ui .hljs-literal {
+  color: var(--hljs-keyword) !important;
+  font-weight: bold;
+}
+
+.passport-ui .hljs-string,
+.passport-ui .hljs-doctag {
+  color: var(--hljs-string) !important;
+}
+
+.passport-ui .hljs-number,
+.passport-ui .hljs-regexp,
+.passport-ui .hljs-link {
+  color: var(--hljs-number) !important;
+}
+
+.passport-ui .hljs-function,
+.passport-ui .hljs-title {
+  color: var(--hljs-function) !important;
+}
+
+.passport-ui .hljs-variable,
+.passport-ui .hljs-template-variable {
+  color: var(--hljs-variable) !important;
+}
+
+.passport-ui .hljs-built_in,
+.passport-ui .hljs-type {
+  color: var(--hljs-built-in) !important;
+}
+
+.passport-ui .hljs-meta,
+.passport-ui .hljs-name,
+.passport-ui .hljs-attribute {
+  color: var(--hljs-literal) !important;
+}

@@ -16,7 +16,7 @@ const switchVariants = cva(
         info: "data-[state=checked]:bg-info",
       },
       size: {
-        regular: "h-5 w-9",
+        regular: "h-4 w-7",
         large: "h-6 w-11",
       },
     },
@@ -28,7 +28,7 @@ const switchVariants = cva(
 );
 
 const switchThumbVariants = cva(
-  "pointer-events-none block rounded-full shadow-sm ring-0 transition-transform data-[state=unchecked]:bg-background",
+  "pointer-events-none block rounded-full shadow-xs ring-0 transition-transform data-[state=unchecked]:bg-card",
   {
     variants: {
       variant: {
@@ -40,7 +40,7 @@ const switchThumbVariants = cva(
       },
       size: {
         regular:
-          "size-4 data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0",
+          "size-3 data-[state=checked]:translate-x-3 data-[state=unchecked]:translate-x-0",
         large:
           "size-5 data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0",
       },

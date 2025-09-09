@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import { ThemeProvider } from "next-themes";
 
-import { ThemeButton } from "./theme-button";
+import { ThemeButton } from "@/client";
 
 const meta: Meta<typeof ThemeButton> = {
   title: "Composables/ThemeButton",
@@ -10,8 +10,36 @@ const meta: Meta<typeof ThemeButton> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A theme switch button component that allows users to switch between light, dark, and system theme preferences. Uses next-themes for theme management.",
+        component: `A streamlined theme switching button component with dropdown menu for theme selection, built with next-themes integration.
+
+## Features
+- Quick theme switching with dropdown menu
+- Three theme options: light, dark, and system
+- Minimal and full display modes
+- Multiple button variants and styling options
+- Built-in accessibility with proper ARIA labels
+- Automatic system theme detection
+- Persistent theme preferences
+- Smooth transitions between themes
+
+## Variants
+- **Minimal**: Icon-only button for compact layouts
+- **Full**: Button with text labels for clarity
+
+## Usage
+Use theme buttons for:
+- Header navigation and toolbars
+- Settings panels and user preferences
+- Quick access theme switching
+- Any location where users need theme control
+
+The component automatically syncs with system preferences when "system" is selected.
+
+## Dependencies
+Requires \`next-themes\` ThemeProvider to be configured in your app root with \`attribute="class"\` and \`enableSystem\` props.
+
+## Accessibility
+Theme buttons provide full keyboard navigation and screen reader support with clear theme option announcements.`,
       },
     },
   },
@@ -30,12 +58,16 @@ const meta: Meta<typeof ThemeButton> = {
   argTypes: {
     minimal: {
       control: "boolean",
-      description: "Whether to show the minimal version without text labels",
-      defaultValue: false,
+      description:
+        "Whether to show the minimal icon-only version without text labels",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+        category: "Appearance",
+      },
     },
     variant: {
       control: "select",
-      description: "The variant of the button",
       options: [
         "ghost",
         "outline",
@@ -44,13 +76,25 @@ const meta: Meta<typeof ThemeButton> = {
         "destructive",
         "link",
       ],
-      defaultValue: "ghost",
+      description: "The visual variant of the theme button",
+      table: {
+        type: {
+          summary:
+            '"ghost" | "outline" | "secondary" | "primary" | "destructive" | "link"',
+        },
+        defaultValue: { summary: '"ghost"' },
+        category: "Appearance",
+      },
     },
     align: {
       control: "select",
-      description: "The alignment of the button",
       options: ["start", "end"],
-      defaultValue: "end",
+      description: "The alignment of the dropdown menu content",
+      table: {
+        type: { summary: '"start" | "end"' },
+        defaultValue: { summary: '"end"' },
+        category: "Layout",
+      },
     },
   },
   tags: ["autodocs"],

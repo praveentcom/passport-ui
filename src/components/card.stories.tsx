@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs";
 import { Card, CardContent, CardFooter, Progress } from "@/client";
 import { Button } from "@/client";
 import { MetaContainer } from "@/client";
+import { COMMON_CONTROLS } from "../../.storybook/constants";
 
 const meta: Meta<typeof Card> = {
   title: "Components/Card",
@@ -10,8 +11,22 @@ const meta: Meta<typeof Card> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A card component that can be used to display content in a card format. It accepts the `CardContent` and `CardFooter` components to get rendered. Optionally, accepts `borderTrail` param to show a running border trail over hover.",
+        component: `A flexible card container component with optional animated border trail effect.
+
+## Features
+- Clean, accessible card layout with proper semantic structure
+- Optional animated border trail on hover using Framer Motion
+- Flexible content composition with CardContent and CardFooter components
+- Consistent spacing and styling with theme integration
+- Responsive design with proper mobile adaptations
+
+## Composition
+Cards are designed to be composed with child components:
+- **CardContent**: Main content area with proper padding and spacing
+- **CardFooter**: Footer area for actions or metadata
+
+## Border Trail
+The optional border trail creates an engaging hover effect with customizable animations, perfect for highlighting interactive cards.`,
       },
     },
   },
@@ -19,26 +34,33 @@ const meta: Meta<typeof Card> = {
   argTypes: {
     children: {
       control: { type: "object", disable: true },
+      description:
+        "Card content, typically CardContent and/or CardFooter components",
       table: {
         type: {
-          summary: "ReactNode",
-          detail: "CardContent | CardFooter",
+          summary: "React.ReactNode",
+          detail: "CardContent | CardFooter | React.ReactNode[]",
         },
+        category: "Content",
       },
-      description: "Contents of the card.",
     },
     borderTrail: {
       control: { type: "boolean" },
-      options: [true, false],
-      type: "boolean",
-      description: "Whether to show a border trail.",
+      description:
+        "Enables animated border trail effect on hover. Can be boolean or BorderTrailProps object for custom configuration",
       table: {
-        defaultValue: {
-          summary: "false",
-        },
-        type: {
-          summary: "boolean | BorderTrailProps",
-        },
+        type: { summary: "boolean | BorderTrailProps" },
+        defaultValue: { summary: "false" },
+        category: "Animation",
+      },
+    },
+    className: COMMON_CONTROLS.className,
+    onClick: {
+      control: false,
+      description: "Click event handler for interactive cards",
+      table: {
+        type: { summary: "(event: React.MouseEvent) => void" },
+        category: "Events",
       },
     },
   },

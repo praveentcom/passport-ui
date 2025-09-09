@@ -1,0 +1,93 @@
+import React, { ReactNode } from "react";
+import { cn } from "@/lib/utils";
+import { cva } from "class-variance-authority";
+
+export type FooterContainerVariant = "compact" | "relaxed" | "full";
+
+const footerContainerVariants = cva(
+  "w-full z-50 transition-all duration-200 ease-in-out border-t border-border",
+  {
+    variants: {
+      sticky: {
+        true: "sticky bottom-0",
+        false: "relative",
+      },
+      blurred: {
+        true: "backdrop-blur-md bg-sidebar/80",
+        false: "bg-sidebar",
+      },
+    },
+    defaultVariants: {
+      sticky: false,
+      blurred: false,
+    },
+  },
+);
+
+const footerContentVariants = cva("p-4", {
+  variants: {
+    variant: {
+      /**
+       * Used when the user wants to show compact version of the footer
+       * such as with margins on either side of the page.
+       */
+      compact: "max-w-sm mx-auto",
+      relaxed: "max-w-3xl mx-auto",
+      full: "w-full",
+    },
+  },
+  defaultVariants: {
+    variant: "full",
+  },
+});
+
+export interface FooterContainerProps {
+  /**
+   * The footer content to display
+   */
+  children: ReactNode;
+  /**
+   * Additional class names for the footer wrapper
+   */
+  className?: string;
+  /**
+   * The variant of the footer container - controls max width
+   */
+  variant?: FooterContainerVariant;
+  /**
+   * Whether the footer should stick to the bottom on scroll
+   */
+  sticky?: boolean;
+  /**
+   * Whether the footer should have a blurred background on scroll
+   */
+  blurred?: boolean;
+}
+
+/**
+ * Footer container component for page footers.
+ * Provides consistent footer styling with optional sticky positioning and blur effects.
+ * Designed to complement ContentContainer inside SidebarInset.
+ *
+ * @param children - The footer content to display
+ * @param className - Additional CSS classes
+ * @param variant - Controls the max width of the footer (compact, relaxed, full)
+ * @param sticky - Whether the footer should stick to the bottom on scroll
+ * @param blurred - Whether the footer should have a blurred background effect
+ * @returns The footer container component
+ */
+export function FooterContainer({
+  children,
+  className,
+  variant = "full",
+  sticky = false,
+  blurred = false,
+}: FooterContainerProps): ReactNode {
+  return (
+    <footer
+      className={cn(footerContainerVariants({ sticky, blurred }), className)}
+    >
+      <div className={footerContentVariants({ variant })}>{children}</div>
+    </footer>
+  );
+}
