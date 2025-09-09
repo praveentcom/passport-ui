@@ -37,7 +37,10 @@ For themed syntax highlighting in `CodeBlock` and `Markdown` components, import 
 ```css
 @source "../../node_modules/passport-ui/src"
 @import "passport-ui/styles.css";
-@import "passport-ui/hljs-themes.css"; /* Optional: for syntax highlighting themes */
+
+/* Optional styles based on requirement */
+@import 'passport-ui/hljs-themes.css'; /* Optional: for code highlighting */
+@import 'passport-ui/tailwind-colors.css'; /* Optional: dynamic usage of tailwind colors */
 ```
 
 Available themes: `github`, `atom-one`, `vs`, `monokai`, `dracula`, `nord`, `tokyo-night`, `default`

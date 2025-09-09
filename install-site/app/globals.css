@@ -1,0 +1,4 @@
+@source '../..';
+@import '../../src/styles.css';
+@import '../../src/hljs-themes.css';
+@import '../../src/tailwind-colors.css';

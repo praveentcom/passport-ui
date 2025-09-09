@@ -12,7 +12,10 @@ const INSTALLATION_CODE = {
 };`,
   CSS_IMPORT: `@source '../../node_modules/passport-ui/src';
 @import 'passport-ui/styles.css';
-@import 'passport-ui/hljs-themes.css'; /* Optional: for code highlighting */`,
+
+/* Optional styles based on requirement */
+@import 'passport-ui/hljs-themes.css'; /* Optional: for code highlighting */
+@import 'passport-ui/tailwind-colors.css'; /* Optional: dynamic usage of tailwind colors */`,
   THEME_PROVIDER: `import { ThemeProvider } from "passport-ui/client";
 
 function App() {

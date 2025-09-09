@@ -9,6 +9,11 @@ const config: StorybookConfig = {
   ],
   managerHead: (head) => `
     ${head}
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png" />
+    <link rel="shortcut icon" type="image/png" href="https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png" />
+    <link rel="apple-touch-icon" href="https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png" />
+    
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Passport UI - Sleek and compact UI component library" />
     <meta property="og:description" content="Sleek and compact UI component library built with Tailwind CSS, Radix UI, and Framer Motion. Comprehensive collection of accessible components for Next.js applications." />
@@ -79,6 +84,9 @@ const config: StorybookConfig = {
   `,
   previewHead: (head) => `
     ${head}
+    <!-- Favicon for preview iframe -->
+    <link rel="icon" type="image/png" href="https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png" />
+    
     <!-- Preview-specific meta tags -->
     <meta name="description" content="Passport UI Component Library - Interactive component preview" />
     <meta name="robots" content="index, follow" />

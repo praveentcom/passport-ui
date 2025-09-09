@@ -24,15 +24,15 @@ const footerContainerVariants = cva(
   },
 );
 
-const footerContentVariants = cva("px-4 py-3.5", {
+const footerContentVariants = cva("px-4 py-3.5 mx-auto", {
   variants: {
     variant: {
       /**
        * Used when the user wants to show compact version of the footer
        * such as with margins on either side of the page.
        */
-      compact: "max-w-sm mx-auto",
-      relaxed: "max-w-3xl mx-auto",
+      compact: "max-w-sm w-full",
+      relaxed: "max-w-3xl w-full",
       full: "w-full",
     },
   },

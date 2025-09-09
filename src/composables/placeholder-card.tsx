@@ -28,7 +28,7 @@ export function PlaceholderCard({
     <Card className={cn(className)}>
       <CardContent className="text-center px-8 py-3 md:px-12">
         <div className="grid items-center justify-center gap-4">
-          <div className="grid items-center max-w-md text-sm">
+          <div className="grid items-center max-w-md w-full text-sm">
             <h4 className="text-foreground font-medium">{title}</h4>
             <p className="text-muted-foreground">{subtitle}</p>
           </div>

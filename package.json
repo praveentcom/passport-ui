@@ -38,6 +38,7 @@
     },
     "./styles.css": "./src/styles.css",
     "./hljs-themes.css": "./src/hljs-themes.css",
+    "./tailwind-colors.css": "./src/tailwind-colors.css",
     "./components.json": "./components.json"
   },
   "files": [
@@ -74,14 +75,17 @@
     "prepublishOnly": "npm run clean && npm run build && npm run type-check && npm run lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "deploy-storybook": "npm run build-storybook && cp cloudflare/_headers cloudflare/_redirects storybook-static/"
+    "deploy-storybook": "npm run build-storybook && cp cloudflare/_headers cloudflare/_redirects storybook-static/",
+    "install-site:dev": "cd install-site && npm run dev",
+    "install-site:build": "cd install-site && npm run build",
+    "install-site:install": "cd install-site && npm install"
   },
   "peerDependencies": {
     "@tailwindcss/postcss": "^4.1.12",
     "motion": ">=12.0.0",
-    "next": ">=15.5.2",
-    "react": ">=18.0.0",
-    "react-dom": ">=18.0.0",
+    "next": "^15.5.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "tailwindcss": "^4.1.12"
   },
   "dependencies": {

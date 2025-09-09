@@ -11,8 +11,8 @@ const contentContainerVariants = cva("content-container mx-auto", {
        * Used when the user wants to show compact version of the page
        * such as with margins on either side of the page.
        */
-      compact: "max-w-sm",
-      relaxed: "max-w-3xl",
+      compact: "max-w-sm w-full",
+      relaxed: "max-w-3xl w-full",
       full: "w-full",
     },
   },
