@@ -22,7 +22,7 @@ const categories = [
 ];
 
 /**
- * Extract title & description using regex from storybook stories
+ * Extract title from storybook stories and generate documentation link
  */
 function extractStoryInfo(filePath) {
   try {
@@ -32,20 +32,19 @@ function extractStoryInfo(filePath) {
     if (!titleMatch) return null;
 
     const title = titleMatch[1];
-    const parts = title.split(" / ");
+    const parts = title.split("/");
     if (parts.length !== 2) return null;
 
-    const [category, componentName] = parts;
+    const [category, componentName] = parts.map(part => part.trim());
 
-    const descMatch = content.match(
-      /docs:\s*\{[\s\S]*?description:\s*\{[\s\S]*?component:\s*["']([^"']+)["']/,
-    );
-    const description = descMatch ? descMatch[1] : `${componentName} component`;
+    // Generate Storybook documentation URL
+    const storyId = title.toLowerCase().replace(/\s+/g, "-").replace(/\//g, "-");
+    const docUrl = `https://passportui.com/?path=/docs/${storyId}`;
 
     return {
       category,
       componentName,
-      description,
+      docUrl,
     };
   } catch (error) {
     console.warn(`Could not parse ${filePath}:`, error.message);
@@ -73,7 +72,7 @@ function scanCategory(categoryDir, categoryName) {
       ) {
         components.push({
           name: info.componentName,
-          description: info.description,
+          docUrl: info.docUrl,
         });
       }
     }
@@ -96,8 +95,8 @@ function generateComponentsSection() {
     if (components.length > 0) {
       output += `### ${name}\n\n`;
 
-      for (const { name: componentName, description } of components) {
-        output += `- \`${componentName}\` - ${description}\n`;
+      for (const { name: componentName, docUrl } of components) {
+        output += `- [\`${componentName}\`](${docUrl})\n`;
       }
 
       output += "\n";

@@ -8,7 +8,7 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:storybook/recommended",
   ],
-  ignorePatterns: ["dist", ".eslintrc.js", "cloudflare/_headers", "cloudflare/_redirects", "storybook-static"],
+  ignorePatterns: ["dist", ".eslintrc.cjs", "install-site", "cloudflare/_headers", "cloudflare/_redirects", "storybook-static"],
   parser: "@typescript-eslint/parser",
   plugins: ["react", "@typescript-eslint"],
   rules: {
