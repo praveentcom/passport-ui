@@ -83,17 +83,17 @@ PageLayout provides comprehensive accessibility features including proper semant
         category: "Content",
       },
     },
-    structuredData: {
-      control: "object",
-      description: "SEO structured data object",
+    leftSidebar: {
+      control: false,
+      description: "The left sidebar content - should include SidebarContainer",
       table: {
-        type: { summary: "object" },
-        category: "SEO",
+        type: { summary: "ReactNode" },
+        category: "Sidebar",
       },
     },
-    sidebar: {
+    rightSidebar: {
       control: false,
-      description: "The sidebar content - should include SidebarContainer",
+      description: "The right sidebar content - should include SidebarContainer",
       table: {
         type: { summary: "ReactNode" },
         category: "Sidebar",
@@ -188,9 +188,10 @@ PageLayout provides comprehensive accessibility features including proper semant
 export default meta;
 type Story = StoryObj<typeof PageLayout>;
 
-const sampleSidebar: ReactNode = (
+const sampleLeftSidebar: ReactNode = (
   <SidebarContainer
     menuItems={SAMPLE_SIDEBAR_MENU_ITEMS}
+    side="left"
     sidebarHeader={
       <MetaContainer title="Passport UI">
         <p>Version 1.1.0</p>
@@ -202,24 +203,38 @@ const sampleSidebar: ReactNode = (
         Support
       </Button>
     }
+    searchable={true}
+    searchPlaceholder="Search navigation..."
+    autoInferActiveItem={true}
   />
 );
 
-const structuredDataSample = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "Dashboard",
-  description: "Main application dashboard",
-  url: "https://example.com/dashboard",
-};
+const sampleRightSidebar: ReactNode = (
+  <SidebarContainer
+    menuItems={SAMPLE_SIDEBAR_MENU_ITEMS.slice(0, 3)}
+    side="right"
+    sidebarHeader={
+      <MetaContainer title="Tools">
+        <p>Quick Actions</p>
+      </MetaContainer>
+    }
+    sidebarFooter={
+      <Button>
+        <Mail className="size-3.5" />
+        Help
+      </Button>
+    }
+    searchable={false}
+    autoInferActiveItem={true}
+  />
+);
 
 export const Default: Story = {
   args: {
     children: SAMPLE_CONTENT_CONTAINER,
-    sidebar: sampleSidebar,
+    leftSidebar: sampleLeftSidebar,
     header: SAMPLE_HEADER_CONTENT,
     footer: SAMPLE_FOOTER_CONTENT,
-    structuredData: structuredDataSample,
     contentVariant: "full",
     headerVariant: "full",
     headerSticky: true,
@@ -227,5 +242,53 @@ export const Default: Story = {
     footerVariant: "full",
     footerSticky: true,
     footerBlurred: true,
+  },
+};
+
+export const RightSidebar: Story = {
+  args: {
+    children: SAMPLE_CONTENT_CONTAINER,
+    rightSidebar: sampleRightSidebar,
+    header: SAMPLE_HEADER_CONTENT,
+    footer: SAMPLE_FOOTER_CONTENT,
+    contentVariant: "full",
+    headerVariant: "full",
+    headerSticky: true,
+    headerBlurred: true,
+    footerVariant: "full",
+    footerSticky: false,
+    footerBlurred: false,
+  },
+};
+
+export const DualSidebars: Story = {
+  args: {
+    children: SAMPLE_CONTENT_CONTAINER,
+    leftSidebar: sampleLeftSidebar,
+    rightSidebar: sampleRightSidebar,
+    header: SAMPLE_HEADER_CONTENT,
+    footer: SAMPLE_FOOTER_CONTENT,
+    contentVariant: "full",
+    headerVariant: "full",
+    headerSticky: true,
+    headerBlurred: true,
+    footerVariant: "full",
+    footerSticky: false,
+    footerBlurred: false,
+  },
+};
+
+export const NoSidebar: Story = {
+  args: {
+    children: SAMPLE_CONTENT_CONTAINER,
+    header: SAMPLE_HEADER_CONTENT,
+    footer: SAMPLE_FOOTER_CONTENT,
+    contentVariant: "full",
+    headerVariant: "full",
+    headerSticky: true,
+    headerBlurred: true,
+    footerVariant: "full",
+    footerSticky: false,
+    footerBlurred: false,
   },
 };

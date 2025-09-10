@@ -64,6 +64,10 @@ export interface FooterContainerProps {
    * Whether the footer should have a blurred background on scroll
    */
   blurred?: boolean;
+  /**
+   * Optional id for the footer element
+   */
+  id?: string;
 }
 
 /**
@@ -84,9 +88,11 @@ export function FooterContainer({
   variant = "full",
   sticky = false,
   blurred = false,
+  id,
 }: FooterContainerProps): ReactNode {
   return (
     <footer
+      id={id}
       data-slot="footer-container"
       className={cn(footerContainerVariants({ sticky, blurred }), className)}
     >

@@ -20,9 +20,13 @@ export interface PageLayoutProps
    */
   children: ReactNode;
   /**
-   * The sidebar content - should include SidebarContainer
+   * The left sidebar content - should include SidebarContainer
    */
-  sidebar?: ReactNode;
+  leftSidebar?: ReactNode;
+  /**
+   * The right sidebar content - should include SidebarContainer
+   */
+  rightSidebar?: ReactNode;
   /**
    * The header content - will be wrapped in HeaderContainer
    */
@@ -87,7 +91,8 @@ export interface PageLayoutProps
  *
  * @param className - Additional CSS classes
  * @param children - The page content (can include SidebarContainer, ContentContainer, etc.)
- * @param sidebar - The sidebar content (will be wrapped in SidebarProvider)
+ * @param leftSidebar - The left sidebar content (will be wrapped in SidebarProvider)
+ * @param rightSidebar - The right sidebar content (will be wrapped in SidebarProvider)
  * @param header - The header content (will be wrapped in HeaderContainer)
  * @param footer - The footer content (will be wrapped in FooterContainer)
  * @param contentVariant - The variant of the content container
@@ -103,7 +108,8 @@ export interface PageLayoutProps
 export function PageLayout({
   className,
   children,
-  sidebar,
+  leftSidebar,
+  rightSidebar,
   header,
   footer,
   contentVariant = "full",
@@ -117,21 +123,125 @@ export function PageLayout({
   showSkipLinks = true,
   skipLinks,
 }: PageLayoutProps): ReactNode {
-  const [isSidebarOpen, setSidebarOpen] = useState(Boolean(sidebar));
-
-  const handleSidebarOpenChange = (newOpen: boolean) => {
-    setSidebarOpen(newOpen);
+  const [leftSidebarOpen, setLeftSidebarOpen] = useState(true);
+  const [rightSidebarOpen, setRightSidebarOpen] = useState(true);
+  
+  const defaultSkipLinks = [
+    { href: "#main-content", label: "Skip to main content" },
+    ...(leftSidebar ? [{ href: "#left-sidebar", label: "Skip to left navigation" }] : []),
+    ...(rightSidebar ? [{ href: "#right-sidebar", label: "Skip to right navigation" }] : []),
+    ...(header ? [{ href: "#header", label: "Skip to header" }] : []),
+    ...(footer ? [{ href: "#footer", label: "Skip to footer" }] : []),
+  ];
+  const finalSkipLinks = skipLinks || defaultSkipLinks;
+  const getRightPadding = () => {
+    if (!rightSidebar) return "";
+    return rightSidebarOpen ? "md:pr-[16rem]" : "md:pr-[3rem]";
   };
 
-  const defaultSkipLinks = [
-      { href: "#main-content", label: "Skip to main content" },
-      ...(sidebar ? [{ href: "#sidebar", label: "Skip to navigation" }] : []),
-      ...(header ? [{ href: "#header", label: "Skip to header" }] : []),
-      ...(footer ? [{ href: "#footer", label: "Skip to footer" }] : []),
-    ],
-    finalSkipLinks = skipLinks || defaultSkipLinks;
+  const renderMainContent = () => (
+    <>
+      {header && (
+        <HeaderContainer
+          id="header"
+          variant={headerVariant}
+          sticky={headerSticky}
+          blurred={headerBlurred}
+        >
+          {header}
+        </HeaderContainer>
+      )}
+      <main id="main-content" className="flex-1">
+        {contentVariant === 'custom' ? children : (
+          <ContentContainer className={className} variant={contentVariant} blurIn={contentBlurIn}>
+            {children}
+          </ContentContainer>
+        )}
+      </main>
+      {footer && (
+        <FooterContainer
+          id="footer"
+          variant={footerVariant}
+          sticky={footerSticky}
+          blurred={footerBlurred}
+        >
+          {footer}
+        </FooterContainer>
+      )}
+    </>
+  );
 
-  const layoutContent = (
+  const renderRightSidebar = () => (
+    <div 
+      id="right-sidebar" 
+      role="navigation" 
+      aria-label="Right navigation"
+      className="fixed right-0 top-0 h-full"
+    >
+      <SidebarProvider 
+        defaultOpen={true}
+        open={rightSidebarOpen}
+        onOpenChange={setRightSidebarOpen}
+      >
+        {rightSidebar}
+      </SidebarProvider>
+    </div>
+  );
+
+  const contentClasses = `flex flex-col flex-1 max-h-screen overflow-y-auto overflow-x-hidden transition-[padding] duration-200 ${getRightPadding()}`;
+  let layoutStructure: ReactNode;
+
+  if (leftSidebar && rightSidebar) {
+    layoutStructure = (
+      <SidebarProvider 
+        defaultOpen={true}
+        open={leftSidebarOpen}
+        onOpenChange={setLeftSidebarOpen}
+      >
+        <div id="left-sidebar" role="navigation" aria-label="Left navigation">
+          {leftSidebar}
+        </div>
+        <SidebarInset className="flex min-h-screen">
+          <div className={contentClasses}>
+            {renderMainContent()}
+          </div>
+          {renderRightSidebar()}
+        </SidebarInset>
+      </SidebarProvider>
+    );
+  } else if (leftSidebar && !rightSidebar) {
+    layoutStructure = (
+      <SidebarProvider 
+        defaultOpen={true}
+        open={leftSidebarOpen}
+        onOpenChange={setLeftSidebarOpen}
+      >
+        <div id="left-sidebar" role="navigation" aria-label="Left navigation">
+          {leftSidebar}
+        </div>
+        <SidebarInset className="flex flex-col max-h-screen overflow-y-auto overflow-x-hidden">
+          {renderMainContent()}
+        </SidebarInset>
+      </SidebarProvider>
+    );
+  } else if (!leftSidebar && rightSidebar) {
+    layoutStructure = (
+      <div className="flex min-h-screen">
+        <div className={contentClasses}>
+          {renderMainContent()}
+        </div>
+        {renderRightSidebar()}
+      </div>
+    );
+  } else {
+    layoutStructure = (
+      <div className="flex flex-col min-h-screen max-h-screen overflow-y-auto overflow-x-hidden">
+        {renderMainContent()}
+      </div>
+    );
+  }
+
+  return (
     <Fragment>
       {showSkipLinks && finalSkipLinks.length > 0 && (
         <div className="sr-only focus-within:not-sr-only">
@@ -146,56 +256,9 @@ export function PageLayout({
           ))}
         </div>
       )}
-      <div
-        data-slot="page-layout"
-        className="min-h-screen w-full max-h-screen overflow-hidden"
-      >
-        <SidebarProvider
-          open={isSidebarOpen}
-          onOpenChange={handleSidebarOpenChange}
-        >
-          {sidebar ? (
-            <div id="sidebar" role="navigation" aria-label="Main navigation">
-              {sidebar}
-            </div>
-          ) : null}
-          <SidebarInset className="max-h-screen overflow-y-auto overflow-x-hidden">
-            {header && (
-              <div id="header">
-                <HeaderContainer
-                  variant={headerVariant}
-                  sticky={headerSticky}
-                  blurred={headerBlurred}
-                >
-                  {header}
-                </HeaderContainer>
-              </div>
-            )}
-            <main id="main-content">
-              {
-                contentVariant === 'custom' ? children : (
-                  <ContentContainer className={className} variant={contentVariant} blurIn={contentBlurIn}>
-                    {children}
-                  </ContentContainer>
-                )
-              }
-            </main>
-            {footer && (
-              <div id="footer">
-                <FooterContainer
-                  variant={footerVariant}
-                  sticky={footerSticky}
-                  blurred={footerBlurred}
-                >
-                  {footer}
-                </FooterContainer>
-              </div>
-            )}
-          </SidebarInset>
-        </SidebarProvider>
+      <div data-slot="page-layout" className="min-h-screen w-full">
+        {layoutStructure}
       </div>
     </Fragment>
   );
-
-  return layoutContent;
 }

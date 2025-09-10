@@ -100,7 +100,6 @@ export const SAMPLE_SIDEBAR_MENU_ITEMS: SidebarContainerMenuItem[] = [
     title: "Dashboard",
     icon: Home,
     href: "#dashboard",
-    isActive: true,
   },
   {
     title: "Users",
@@ -113,7 +112,6 @@ export const SAMPLE_SIDEBAR_MENU_ITEMS: SidebarContainerMenuItem[] = [
       {
         title: "Active Users",
         href: "#users/active",
-        isActive: true,
       },
       {
         title: "Inactive Users",

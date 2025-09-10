@@ -64,6 +64,10 @@ export interface HeaderContainerProps {
    * Whether the header should have a blurred background on scroll
    */
   blurred?: boolean;
+  /**
+   * Optional id for the header element
+   */
+  id?: string;
 }
 
 /**
@@ -84,9 +88,11 @@ export function HeaderContainer({
   variant = "full",
   sticky = false,
   blurred = false,
+  id,
 }: HeaderContainerProps): ReactNode {
   return (
     <header
+      id={id}
       data-slot="header-container"
       className={cn(headerContainerVariants({ sticky, blurred }), className)}
     >

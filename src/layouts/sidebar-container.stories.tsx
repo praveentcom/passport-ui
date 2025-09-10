@@ -154,6 +154,14 @@ SidebarContainer requires SidebarProvider for state management and works seamles
       },
     },
     className: COMMON_CONTROLS.className,
+    autoInferActiveItem: {
+      control: "boolean",
+      description: "Whether to automatically infer active state from current URL",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
   },
   render: (args) => {
     const [open, setOpen] = useState(true);
@@ -164,7 +172,7 @@ SidebarContainer requires SidebarProvider for state management and works seamles
     };
 
     return (
-      <div className="h-120">
+      <div className="h-screen">
         <SidebarProvider open={open} onOpenChange={handleOpenChange}>
           <SidebarContainer {...args} />
         </SidebarProvider>
@@ -183,19 +191,16 @@ export const Default: Story = {
     searchable: true,
     searchPlaceholder: "Search navigation...",
     sidebarHeader: (
-      <div className="p-2">
-        <MetaContainer title="Passport UI">
-          <p>Version 1.1.0</p>
-        </MetaContainer>
-      </div>
+      <MetaContainer title="Passport UI">
+        <p>Version 1.1.0</p>
+      </MetaContainer>
     ),
     sidebarFooter: (
-      <div className="p-2">
-        <Button>
-          <Mail className="size-3.5" />
-          Support
-        </Button>
-      </div>
+      <Button>
+        <Mail className="size-3.5" />
+        Support
+      </Button>
     ),
+    autoInferActiveItem: true,
   },
 };

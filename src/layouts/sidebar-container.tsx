@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useState, useMemo } from "react";
 
 import {
   Sidebar,
@@ -19,6 +19,15 @@ import {
   SidebarTrigger,
   useSidebar,
 } from "@/components/sidebar";
+
+/**
+ * Simple URL matching utility
+ */
+function isUrlMatch(href: string | undefined, currentUrl: string): boolean {
+  if (!href || !currentUrl) return false;
+
+  return currentUrl === href || (currentUrl.startsWith(href) && href !== "/" && href !== "#");
+}
 
 export type SidebarContainerMenuItem = {
   title: string;
@@ -63,6 +72,10 @@ export interface SidebarContainerProps {
    */
   searchPlaceholder?: string;
   /**
+   * Whether to automatically infer active state from current URL
+   */
+  autoInferActiveItem?: boolean;
+  /**
    * Whether the sidebar should be open by default
    */
   defaultOpen?: boolean;
@@ -103,6 +116,7 @@ export interface SidebarContainerProps {
  * @param sidebarGroups - Additional sidebar groups with custom content
  * @param searchable - Whether to show a search input for filtering menu items
  * @param searchPlaceholder - Placeholder text for the search input
+ * @param autoInferActiveItem - Whether to automatically infer active state from current URL (matches exact paths and parent routes)
  * @param variant - Sidebar variant (sidebar, floating, inset)
  * @param side - Sidebar side (left, right)
  * @param collapsible - Whether the sidebar can collapse to icon-only mode (true) or remain fixed (false)
@@ -116,6 +130,7 @@ export function SidebarContainer({
   sidebarGroups = [],
   searchable = false,
   searchPlaceholder = "Search...",
+  autoInferActiveItem = false,
   variant = "sidebar",
   side = "left",
   collapsible = true,
@@ -128,6 +143,34 @@ export function SidebarContainer({
 
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
   const [searchQuery, setSearchQuery] = useState<string>("");
+
+  const currentUrl = useMemo(() => {
+    if (typeof window !== "undefined") {
+      return window.location.hash || window.location.pathname;
+    }
+    return "";
+  }, []);
+
+  const processedMenuItems = useMemo(() => {
+    if (!autoInferActiveItem) return menuItems;
+
+    return menuItems.map((item) => {
+      const isItemActive = item.isActive ?? isUrlMatch(item.href, currentUrl);
+      
+      const processedSubItems = item.subItems?.map((subItem) => ({
+        ...subItem,
+        isActive: subItem.isActive ?? isUrlMatch(subItem.href, currentUrl),
+      }));
+
+      const hasActiveSubItem = processedSubItems?.some((subItem) => subItem.isActive);
+
+      return {
+        ...item,
+        isActive: isItemActive || hasActiveSubItem,
+        subItems: processedSubItems,
+      };
+    });
+  }, [menuItems, autoInferActiveItem, currentUrl]);
 
   const toggleExpanded = (itemTitle: string) => {
     setExpandedItems((prev) => {
@@ -156,7 +199,7 @@ export function SidebarContainer({
 
   const filteredMenuItems =
     searchable && searchQuery
-      ? menuItems.filter((item) => {
+      ? processedMenuItems.filter((item) => {
           const matchesTitle = item.title
             .toLowerCase()
             .includes(searchQuery.toLowerCase());
@@ -165,7 +208,7 @@ export function SidebarContainer({
           );
           return matchesTitle || matchesSubItems;
         })
-      : menuItems;
+      : processedMenuItems;
 
   return (
     <Sidebar
@@ -183,17 +226,13 @@ export function SidebarContainer({
 
       <SidebarContent>
         {searchable && (
-          <SidebarGroup>
-            <SidebarGroupContent>
-              <SidebarInput
-                type="search"
-                placeholder={searchPlaceholder}
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="group-data-[state=collapsed]:hidden"
-              />
-            </SidebarGroupContent>
-          </SidebarGroup>
+          <SidebarInput
+            type="search"
+            placeholder={searchPlaceholder}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="group-data-[state=collapsed]:hidden"
+          />
         )}
 
         {filteredMenuItems.length > 0 && (
