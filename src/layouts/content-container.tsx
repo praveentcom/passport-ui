@@ -3,6 +3,7 @@ import React, { ReactNode } from "react";
 import { cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
+import { BlurIn } from "../motion-primitives/blur-in";
 
 export type ContentContainerVariant = "compact" | "relaxed" | "full";
 
@@ -24,6 +25,7 @@ export interface ContentContainerProps {
   children: ReactNode;
   className?: string;
   variant?: ContentContainerVariant;
+  blurIn?: boolean;
 }
 
 /**
@@ -37,13 +39,20 @@ export function ContentContainer({
   children,
   className,
   variant,
+  blurIn,
 }: ContentContainerProps): ReactNode {
   return (
     <div
       data-slot="content-container"
       className={cn(contentContainerVariants({ variant }), className)}
     >
-      {children}
+      {
+        !blurIn ? children : (
+          <BlurIn>
+            {children}
+          </BlurIn>
+        )
+      }
     </div>
   );
 }

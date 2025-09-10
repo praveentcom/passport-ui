@@ -317,7 +317,6 @@ export default function ColorsPage() {
     <PageLayout
       sidebar={sidebar}
       contentVariant="relaxed"
-      structuredData={COLORS_PAGE_DATA}
       header={
         <div className="flex justify-between items-center gap-4">
           <h2>Color System</h2>

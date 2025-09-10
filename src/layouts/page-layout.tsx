@@ -3,7 +3,6 @@ import React, { Fragment, ReactNode, useState } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 
 import { SidebarInset, SidebarProvider } from "@/components/sidebar";
-import { StructuredData } from "@/components/structured-data";
 
 import {
   ContentContainer,
@@ -33,17 +32,17 @@ export interface PageLayoutProps
    */
   footer?: ReactNode;
   /**
-   * Structured data for SEO
-   */
-  structuredData?: object;
-  /**
    * Additional class names for the layout wrapper
    */
   className?: string;
   /**
    * The variant of the content container
    */
-  contentVariant?: ContentContainerVariant;
+  contentVariant?: ContentContainerVariant | 'custom';
+  /**
+   * Show blurIn animation for the content container
+   */
+  contentBlurIn?: boolean;
   /**
    * The variant of the header container
    */
@@ -84,7 +83,6 @@ export interface PageLayoutProps
 
 /**
  * A top-level page layout component that provides structure for any page content.
- * Handles structured data, animations, and responsive max-width constraints.
  * Users can compose SidebarContainer, HeaderContainer, FooterContainer, and ContentContainer as children.
  *
  * @param className - Additional CSS classes
@@ -92,8 +90,8 @@ export interface PageLayoutProps
  * @param sidebar - The sidebar content (will be wrapped in SidebarProvider)
  * @param header - The header content (will be wrapped in HeaderContainer)
  * @param footer - The footer content (will be wrapped in FooterContainer)
- * @param structuredData - SEO structured data object
  * @param contentVariant - The variant of the content container
+ * @param contentBlurIn - Show blurIn animation for the content container
  * @param headerVariant - The variant of the header container
  * @param headerSticky - Whether the header should stick to the top on scroll
  * @param headerBlurred - Whether the header should have a blurred background effect
@@ -108,8 +106,8 @@ export function PageLayout({
   sidebar,
   header,
   footer,
-  structuredData,
   contentVariant = "full",
+  contentBlurIn = false,
   headerVariant = "full",
   headerSticky = true,
   headerBlurred = true,
@@ -125,19 +123,16 @@ export function PageLayout({
     setSidebarOpen(newOpen);
   };
 
-  // Default skip links
   const defaultSkipLinks = [
-    { href: "#main-content", label: "Skip to main content" },
-    ...(sidebar ? [{ href: "#sidebar", label: "Skip to navigation" }] : []),
-    ...(header ? [{ href: "#header", label: "Skip to header" }] : []),
-    ...(footer ? [{ href: "#footer", label: "Skip to footer" }] : []),
-  ];
-
-  const finalSkipLinks = skipLinks || defaultSkipLinks;
+      { href: "#main-content", label: "Skip to main content" },
+      ...(sidebar ? [{ href: "#sidebar", label: "Skip to navigation" }] : []),
+      ...(header ? [{ href: "#header", label: "Skip to header" }] : []),
+      ...(footer ? [{ href: "#footer", label: "Skip to footer" }] : []),
+    ],
+    finalSkipLinks = skipLinks || defaultSkipLinks;
 
   const layoutContent = (
     <Fragment>
-      {structuredData && <StructuredData data={structuredData} />}
       {showSkipLinks && finalSkipLinks.length > 0 && (
         <div className="sr-only focus-within:not-sr-only">
           {finalSkipLinks.map((link) => (
@@ -177,9 +172,13 @@ export function PageLayout({
               </div>
             )}
             <main id="main-content">
-              <ContentContainer className={className} variant={contentVariant}>
-                {children}
-              </ContentContainer>
+              {
+                contentVariant === 'custom' ? children : (
+                  <ContentContainer className={className} variant={contentVariant} blurIn={contentBlurIn}>
+                    {children}
+                  </ContentContainer>
+                )
+              }
             </main>
             {footer && (
               <div id="footer">

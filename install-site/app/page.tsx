@@ -69,7 +69,6 @@ export default function IntroductionPage() {
     <PageLayout
       sidebar={sidebar}
       contentVariant="relaxed"
-      structuredData={INSTALLATION_PAGE_DATA}
       header={
         <div className="flex justify-between items-center gap-4">
           <h2>Passport UI</h2>

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import {
   BorderTrail,
   BorderTrailProps,
-} from "@/motion-primitives/border-trail";
+} from "../motion-primitives/border-trail";
 
 export interface CardProps extends React.ComponentProps<"div"> {
   borderTrail?: boolean | BorderTrailProps;
