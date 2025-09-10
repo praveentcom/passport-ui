@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { CodeBlock } from "@/client";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { CodeBlock } from "../../src";
 
 const meta: Meta<typeof CodeBlock> = {
   title: "Components/CodeBlock",

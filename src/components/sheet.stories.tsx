@@ -1,20 +1,22 @@
+import * as React from "react";
+
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import { action } from "storybook/actions";
-import * as React from "react";
+
 import {
-  Sheet,
-  SheetTrigger,
-  SheetClose,
-  SheetContent,
-  SheetHeader,
-  SheetFooter,
-  SheetTitle,
-  SheetDescription,
   Button,
   Input,
   Label,
   MetaContainer,
-} from "@/client";
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "../../src";
 
 const meta: Meta<typeof Sheet> = {
   title: "Components/Sheet",

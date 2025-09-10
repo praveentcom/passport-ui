@@ -1,6 +1,8 @@
 import React, { ReactNode } from "react";
-import { cn } from "@/lib/utils";
+
 import { cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
 
 export type FooterContainerVariant = "compact" | "relaxed" | "full";
 
@@ -21,7 +23,7 @@ const footerContainerVariants = cva(
       sticky: false,
       blurred: false,
     },
-  },
+  }
 );
 
 const footerContentVariants = cva("px-4 py-3.5 mx-auto", {
@@ -85,6 +87,7 @@ export function FooterContainer({
 }: FooterContainerProps): ReactNode {
   return (
     <footer
+      data-slot="footer-container"
       className={cn(footerContainerVariants({ sticky, blurred }), className)}
     >
       <div className={footerContentVariants({ variant })}>{children}</div>

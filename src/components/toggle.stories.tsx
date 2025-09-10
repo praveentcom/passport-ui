@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Toggle } from "@/client";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
-
 import { action } from "storybook/actions";
+
+import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Toggle } from "../../src";
 
 const meta: Meta<typeof Toggle> = {
   title: "Components/Toggle",

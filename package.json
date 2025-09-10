@@ -4,9 +4,9 @@
   "type": "module",
   "description": "A modern, customizable UI component library with motion primitives and theme support built with React, TypeScript, Tailwind CSS, and shadcn/ui components.",
   "license": "MIT",
-  "types": "./dist/client.d.ts",
-  "main": "./dist/client.cjs",
-  "module": "./dist/client.js",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "author": "Praveen Thirumurugan <mail@praveent.com>",
   "homepage": "https://github.com/praveentcom/passport-ui",
   "repository": {
@@ -27,15 +27,10 @@
     "design-system"
   ],
   "exports": {
-    "./server": {
-      "types": "./dist/server.d.ts",
-      "import": "./dist/server.js",
-      "require": "./dist/server.cjs"
-    },
-    "./client": {
-      "types": "./dist/client.d.ts",
-      "import": "./dist/client.js",
-      "require": "./dist/client.cjs"
+    "./index": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./styles.css": "./src/styles.css",
     "./hljs-themes.css": "./src/hljs-themes.css",
@@ -145,6 +140,7 @@
     "@storybook/addon-webpack5-compiler-swc": "^4.0.1",
     "@storybook/react-webpack5": "^9.1.4",
     "@tailwindcss/postcss": "^4.1.12",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/node": "^20.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",

@@ -1,11 +1,13 @@
 "use client";
 
+import * as React from "react";
+import { ReactNode } from "react";
+
 import Link from "next/link";
-import React, { ReactNode } from "react";
 
 import { Button } from "@/components/button";
 import { Card, CardContent } from "@/components/card";
-import { cn } from "@/server";
+import { cn } from "@/lib/utils";
 
 export interface PlaceholderCardProps {
   title?: string;
@@ -25,7 +27,7 @@ export function PlaceholderCard({
   className,
 }: PlaceholderCardProps) {
   return (
-    <Card className={cn(className)}>
+    <Card data-slot="placeholder-card" className={cn(className)}>
       <CardContent className="text-center px-8 py-3 md:px-12">
         <div className="grid items-center justify-center gap-4">
           <div className="grid items-center max-w-md w-full text-sm">

@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { BlurIn } from "@/client";
-import { Button, Card, CardContent, MetaContainer } from "@/client";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { BlurIn } from "../../src";
+import { Button, Card, CardContent, MetaContainer } from "../../src";
 
 const meta: Meta<typeof BlurIn> = {
   title: "Motion Primitives/BlurIn",

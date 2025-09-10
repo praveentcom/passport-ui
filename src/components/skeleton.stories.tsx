@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Skeleton } from "@/client";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Skeleton } from "../../src";
 
 const meta: Meta<typeof Skeleton> = {
   title: "Components/Skeleton",

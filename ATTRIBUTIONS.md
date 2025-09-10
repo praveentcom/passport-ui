@@ -74,7 +74,7 @@ This project (`passport-ui`) uses the following open source libraries and tools.
 ### Code Highlighting
 
 - **[highlight.js](https://highlightjs.org/)** - BSD-3-Clause License - Syntax highlighting for the Web
-- **[isomorphic-dompurify](https://github.com/kkomelin/isomorphic-dompurify)** - MPL-2.0 License - Isomorphic DOMPurify for server and client
+- **[isomorphic-dompurify](https://github.com/kkomelin/isomorphic-dompurify)** - MPL-2.0 License - Isomorphic DOMPurify
 
 ### Emotion (Styling Runtime)
 

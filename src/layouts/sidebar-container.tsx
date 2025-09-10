@@ -1,18 +1,5 @@
 import React, { ReactNode, useState } from "react";
 
-export type SidebarContainerMenuItem = {
-  title: string;
-  icon?: React.ComponentType<{ className?: string }>;
-  href?: string;
-  onClick?: () => void;
-  isActive?: boolean;
-  subItems?: Array<{
-    title: string;
-    href?: string;
-    onClick?: () => void;
-    isActive?: boolean;
-  }>;
-};
 import {
   Sidebar,
   SidebarContent,
@@ -32,6 +19,20 @@ import {
   SidebarTrigger,
   useSidebar,
 } from "@/components/sidebar";
+
+export type SidebarContainerMenuItem = {
+  title: string;
+  icon?: React.ComponentType<{ className?: string }>;
+  href?: string;
+  onClick?: () => void;
+  isActive?: boolean;
+  subItems?: Array<{
+    title: string;
+    href?: string;
+    onClick?: () => void;
+    isActive?: boolean;
+  }>;
+};
 
 export interface SidebarContainerProps {
   /**
@@ -160,7 +161,7 @@ export function SidebarContainer({
             .toLowerCase()
             .includes(searchQuery.toLowerCase());
           const matchesSubItems = item.subItems?.some((subItem) =>
-            subItem.title.toLowerCase().includes(searchQuery.toLowerCase()),
+            subItem.title.toLowerCase().includes(searchQuery.toLowerCase())
           );
           return matchesTitle || matchesSubItems;
         })
@@ -168,6 +169,7 @@ export function SidebarContainer({
 
   return (
     <Sidebar
+      data-slot="sidebar-container"
       variant={variant}
       side={side}
       collapsible={collapsible}

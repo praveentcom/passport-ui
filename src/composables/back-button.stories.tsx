@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+
+import { ContentContainer, MetaContainer } from "../../src";
+import { BackButton } from "../../src";
 import { Card, CardContent } from "../components/card";
-import { MetaContainer, ContentContainer } from "@/client";
-import { BackButton } from "@/client";
 
 const meta: Meta<typeof BackButton> = {
   title: "Composables/BackButton",

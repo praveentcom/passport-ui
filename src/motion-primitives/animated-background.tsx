@@ -1,13 +1,9 @@
 "use client";
 
-import { AnimatePresence, motion, Transition } from "motion/react";
-import React, {
-  Children,
-  cloneElement,
-  ReactElement,
-  useId,
-  useState,
-} from "react";
+import * as React from "react";
+import { Children, ReactElement, cloneElement, useId, useState } from "react";
+
+import { AnimatePresence, Transition, motion } from "motion/react";
 
 import { cn } from "@/lib/utils";
 
@@ -90,7 +86,7 @@ export function AnimatedBackground({
           )}
         </AnimatePresence>
         <div className="relative z-50">{child.props.children}</div>
-      </>,
+      </>
     );
   });
 }

@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { action } from "storybook/actions";
+
 import {
+  MetaContainer,
   Select,
   SelectContent,
   SelectGroup,
@@ -7,9 +10,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-  MetaContainer,
-} from "@/client";
-import { action } from "storybook/actions";
+} from "../../src";
 
 const meta: Meta<typeof Select> = {
   title: "Components/Select",

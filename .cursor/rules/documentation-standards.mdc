@@ -1,0 +1,265 @@
+# Documentation Standards for passport-ui
+
+## Story File Documentation Template
+
+All Storybook story files should follow this comprehensive documentation pattern to ensure consistency and usability.
+
+### Standard Structure
+
+```typescript
+import type { Meta, StoryObj } from "@storybook/nextjs";
+import { ComponentName } from "../../src";
+import { COMMON_CONTROLS } from "../../.storybook/constants";
+
+const meta: Meta<typeof ComponentName> = {
+  title: "Category/ComponentName",
+  component: ComponentName,
+  parameters: {
+    layout: "centered", // or "fullscreen", "padded"
+    docs: {
+      description: {
+        component: `[COMPONENT_DESCRIPTION_TEMPLATE]`,
+      },
+    },
+  },
+  tags: ["autodocs"],
+  argTypes: {
+    // [ARGTYPES_TEMPLATE]
+  },
+  render: (args) => <ComponentName {...args} />,
+};
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+// [STORY_EXAMPLES_TEMPLATE]
+```
+
+### Component Description Template
+
+Use this template for the component description in the `docs.description.component` field:
+
+```markdown
+A [brief description] component for [primary use case] with [key features].
+
+## Features
+- [Feature 1 with brief explanation]
+- [Feature 2 with brief explanation]
+- [Feature 3 with brief explanation]
+- [Additional features...]
+
+## Composition (for complex components only)
+[Component name] is composed of multiple components:
+- **SubComponent1**: [Purpose and usage]
+- **SubComponent2**: [Purpose and usage]
+- **SubComponent3**: [Purpose and usage]
+
+## Usage
+Use [component name] for:
+- [Use case 1]
+- [Use case 2]
+- [Use case 3]
+- [Additional use cases...]
+
+## Best Practices (optional)
+- [Best practice 1]
+- [Best practice 2]
+- [Best practice 3]
+
+## Accessibility
+[Component name] provides [accessibility features] with [specific ARIA attributes, keyboard navigation, screen reader support, etc.].
+```
+
+### ArgTypes Categories
+
+Organize argTypes into these standard categories:
+
+- **Appearance**: Visual variants, sizes, styling options
+- **Content**: Text content, children, icons
+- **State**: Controlled/uncontrolled states, disabled, loading
+- **Behavior**: HTML attributes that affect behavior
+- **Layout**: Positioning, spacing, orientation
+- **Validation**: Form validation related props
+- **Events**: Event handlers and callbacks
+- **Form**: Form-specific attributes (name, value, etc.)
+- **Association**: Props that associate with other elements (htmlFor, etc.)
+- **Accessibility**: ARIA attributes and accessibility props
+
+### ArgTypes Template
+
+```typescript
+argTypes: {
+  variant: {
+    control: { type: "select" },
+    options: ["option1", "option2", "option3"],
+    description: "The visual variant that determines the [component]'s appearance and semantic meaning",
+    table: {
+      type: { summary: '"option1" | "option2" | "option3"' },
+      defaultValue: { summary: '"option1"' },
+      category: "Appearance",
+    },
+  },
+  children: {
+    control: { type: "text" },
+    description: "The [component] content - text, icons, or other React elements",
+    table: {
+      type: { summary: "React.ReactNode" },
+      category: "Content",
+    },
+  },
+  disabled: {
+    control: { type: "boolean" },
+    description: "Whether the [component] is disabled and non-interactive",
+    table: {
+      type: { summary: "boolean" },
+      defaultValue: { summary: "false" },
+      category: "State",
+    },
+  },
+  onClick: {
+    action: "onClick",
+    description: "Callback fired when the [component] is clicked",
+    table: {
+      type: { summary: "(event: MouseEvent) => void" },
+      category: "Events",
+    },
+  },
+  className: COMMON_CONTROLS.className,
+}
+```
+
+## JSDoc Standards for Utility Functions
+
+All utility functions, hooks, and helper functions should include comprehensive JSDoc comments:
+
+### JSDoc Template
+
+```typescript
+/**
+ * [Brief one-line description of the function]
+ * 
+ * [Detailed description explaining what the function does, how it works,
+ * and any important implementation details. Include context about when
+ * and why someone would use this function.]
+ * 
+ * @param paramName - [Description of parameter, including type info if not obvious]
+ * @param optionalParam - [Description] (optional)
+ * @returns [Description of return value and type]
+ * 
+ * @example
+ * ```tsx
+ * // Basic usage example
+ * const result = functionName(param1, param2);
+ * 
+ * // More complex usage example
+ * const complexResult = functionName(
+ *   complexParam,
+ *   { option: true }
+ * );
+ * ```
+ * 
+ * @remarks (optional)
+ * - [Important note 1]
+ * - [Important note 2]
+ * - [Performance considerations]
+ * - [Browser compatibility notes]
+ * 
+ * @see [Related functions or documentation links] (optional)
+ * @since [Version when added] (optional)
+ * @deprecated [Deprecation notice] (optional)
+ */
+```
+
+## Import Standards
+
+### Story File Imports
+
+Always use relative imports in story files to avoid circular dependencies:
+
+```typescript
+// ✅ Correct
+import { Button } from "../../src";
+import { Card, CardContent } from "../../src";
+
+// ❌ Incorrect
+import { Button } from "@";
+import { Card, CardContent } from "@";
+```
+
+### Component File Imports
+
+Use absolute imports in component files for consistency:
+
+```typescript
+// ✅ Correct
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/button";
+
+// ❌ Incorrect  
+import { cn } from "../lib/utils";
+import { Button } from "./button";
+```
+
+## Story Examples Standards
+
+### Default Story
+
+Always include a Default story that showcases the component in its most common configuration:
+
+```typescript
+export const Default: Story = {
+  args: {
+    children: "Default content",
+    variant: "default", // Use the actual default variant
+  },
+};
+```
+
+### Variant Stories
+
+For components with variants, create individual stories for each major variant:
+
+```typescript
+export const Primary: Story = {
+  args: {
+    variant: "primary",
+    children: "Primary Button",
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: "secondary", 
+    children: "Secondary Button",
+  },
+};
+```
+
+### Complex Examples
+
+For components that benefit from real-world usage examples, create comprehensive example stories:
+
+```typescript
+export const ComplexExample: Story = {
+  render: () => (
+    <div className="section-container">
+      <Component variant="primary">Example 1</Component>
+      <Component variant="secondary" disabled>Example 2</Component>
+    </div>
+  ),
+};
+```
+
+## Quality Checklist
+
+Before submitting documentation, ensure:
+
+- [ ] Component description follows the standard template
+- [ ] All argTypes are properly categorized and documented
+- [ ] Import statements use the correct pattern (relative for stories)
+- [ ] JSDoc comments are complete for utility functions
+- [ ] Examples are practical and demonstrate real usage
+- [ ] Accessibility information is included
+- [ ] No spelling or grammar errors
+- [ ] Consistent terminology throughout
+- [ ] Links and references are accurate

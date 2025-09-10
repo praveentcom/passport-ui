@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import * as React from "react";
 
-import { motion, Transition } from "motion/react";
+import { Transition, motion } from "motion/react";
 
 import { cn } from "@/lib/utils";
 

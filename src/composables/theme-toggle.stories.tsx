@@ -1,8 +1,9 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
 import { ThemeProvider } from "next-themes";
 
-import { ThemeToggle } from "@/client";
+import type { Meta, StoryObj } from "@storybook/nextjs";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { ThemeToggle } from "../../src";
 
 const meta: Meta<typeof ThemeToggle> = {
   title: "Composables/ThemeToggle",

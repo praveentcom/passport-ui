@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Toaster, toast, Button } from "@/client";
+
+import { Button, Toaster, toast } from "../../src";
 
 const meta: Meta<typeof Toaster> = {
   title: "Components/Sonner",

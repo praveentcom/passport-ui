@@ -1,12 +1,13 @@
 import React from "react";
+
 import { Blockquote } from "@/components/blockquote";
 import {
   Table,
-  TableHeader,
   TableBody,
-  TableHead,
-  TableRow,
   TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
 } from "@/components/table";
 
 interface BlockquoteData {
@@ -117,7 +118,7 @@ export function extractBlockquotes(content: string): {
  * Process blockquote lines into React content
  */
 function processBlockquoteLines(
-  lines: { level: number; content: string }[],
+  lines: { level: number; content: string }[]
 ): React.ReactNode {
   if (lines.length === 0) return null;
 
@@ -136,13 +137,13 @@ function processBlockquoteLines(
           openElements[openElements.length - 1].push(
             <Blockquote key={`nested-${i}`} nested>
               {children}
-            </Blockquote>,
+            </Blockquote>
           );
         } else {
           elements.push(
             <Blockquote key={`root-${i}`} nested>
               {children}
-            </Blockquote>,
+            </Blockquote>
           );
         }
       }
@@ -169,7 +170,7 @@ function processBlockquoteLines(
         // Add line break if not the last line
         if (i < lines.length - 1) {
           openElements[openElements.length - 1].push(
-            <br key={`br-after-${i}`} />,
+            <br key={`br-after-${i}`} />
           );
         }
       } else {
@@ -189,7 +190,7 @@ function processBlockquoteLines(
         openElements[openElements.length - 1].push(
           <Blockquote key={`final-nested-${openElements.length}`} nested>
             {children}
-          </Blockquote>,
+          </Blockquote>
         );
       } else {
         elements.push(<Blockquote key={`final-root`}>{children}</Blockquote>);
@@ -227,7 +228,7 @@ export function extractCodeBlocks(content: string): {
 
       codeBlockCounter++;
       return placeholder;
-    },
+    }
   );
 
   return { content: processedContent, codeBlocks };

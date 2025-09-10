@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { BorderTrail } from "@/client";
-import { MetaContainer } from "@/client";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
-
 import { action } from "storybook/actions";
+
+import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { BorderTrail } from "../../src";
+import { MetaContainer } from "../../src";
 
 const meta: Meta<typeof BorderTrail> = {
   title: "Motion Primitives/BorderTrail",

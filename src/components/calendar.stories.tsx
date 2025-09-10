@@ -1,9 +1,11 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
 import React from "react";
-import { Calendar } from "@/client";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
-import { action } from "storybook/actions";
+
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import { DateRange } from "react-day-picker";
+import { action } from "storybook/actions";
+
+import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Calendar } from "../../src";
 
 const meta: Meta<typeof Calendar> = {
   title: "Components/Calendar",
@@ -156,16 +158,16 @@ Calendars provide full keyboard navigation, screen reader support, and proper da
   },
   render: (args) => {
     const [singleDate, setSingleDate] = React.useState<Date | undefined>(
-      new Date(),
+      new Date()
     );
     const [multipleDates, setMultipleDates] = React.useState<Date[]>([]);
     const [rangeDate, setRangeDate] = React.useState<DateRange | undefined>(
-      undefined,
+      undefined
     );
     const [month, setMonth] = React.useState<Date>(new Date());
 
     const handleSelect = (
-      selectedDate: Date | Date[] | DateRange | undefined,
+      selectedDate: Date | Date[] | DateRange | undefined
     ) => {
       if (args.mode === "multiple") {
         setMultipleDates((selectedDate as Date[]) || []);

@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-
-import { readFileSync, writeFileSync, readdirSync } from "fs";
-import { join, dirname } from "path";
+import { readFileSync, readdirSync, writeFileSync } from "fs";
+import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -113,19 +112,19 @@ function updateReadme() {
   try {
     const readmeContent = readFileSync(readmePath, "utf8"),
       availableComponentsIndex = readmeContent.indexOf(
-        "## Available Components",
+        "## Available Components"
       );
 
     if (availableComponentsIndex === -1) {
       console.error(
-        'Could not find "## Available Components" section in README.md',
+        'Could not find "## Available Components" section in README.md'
       );
       return;
     }
 
     const beforeComponents = readmeContent.substring(
         0,
-        availableComponentsIndex,
+        availableComponentsIndex
       ),
       componentsSection = generateComponentsSection(),
       newReadmeContent = beforeComponents + componentsSection + "\n";
@@ -133,7 +132,7 @@ function updateReadme() {
     writeFileSync(readmePath, newReadmeContent);
 
     console.log(
-      "✅ README.md has been updated with current component information",
+      "✅ README.md has been updated with current component information"
     );
 
     console.log("\nComponents found:");

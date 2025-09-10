@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+
+import { COMMON_CONTROLS } from "../../.storybook/constants";
 import {
   Table,
   TableBody,
@@ -8,8 +10,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/client";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
+} from "../../src";
 
 const meta: Meta<typeof Table> = {
   title: "Components/Table",

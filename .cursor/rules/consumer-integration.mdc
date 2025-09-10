@@ -32,7 +32,7 @@ In your main CSS file or `app/globals.css`:
 ### 4. Theme Provider Setup
 Wrap your app with the theme provider:
 ```typescript
-import { ThemeProvider } from 'passport-ui/client'
+import { ThemeProvider } from 'passport-ui'
 
 export default function RootLayout({
   children,
@@ -61,19 +61,16 @@ export default function RootLayout({
 ### Component Categories
 ```typescript
 // UI Components
-import { Button, Card, Badge, Label } from 'passport-ui/client'
+import { Button, Card, Badge, Label } from 'passport-ui'
 
 // Motion Primitives  
-import { BlurIn, BorderTrail, AnimatedBackground } from 'passport-ui/client'
+import { BlurIn, BorderTrail, AnimatedBackground } from 'passport-ui'
 
 // Theme Components
-import { ThemeProvider, ThemeButton } from 'passport-ui/client'
+import { ThemeProvider, ThemeButton } from 'passport-ui'
 
 // Page Layouts
-import { PageLayout } from 'passport-ui/client'
-
-// Utility Functions
-import { cn } from 'passport-ui/server'
+import { PageLayout } from 'passport-ui'
 ```
 
 ### CSS Classes Available

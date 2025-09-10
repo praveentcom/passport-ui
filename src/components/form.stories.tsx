@@ -1,9 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
-import { z } from "zod";
 import { action } from "storybook/actions";
+import { z } from "zod";
+
 import {
   Form,
   FormControl,
@@ -13,21 +14,21 @@ import {
   FormLabel,
   FormMessage,
   Separator,
-} from "@/client";
-import { Button } from "@/client";
-import { Input } from "@/client";
-import { Textarea } from "@/client";
-import { Checkbox } from "@/client";
+} from "../../src";
+import { Button } from "../../src";
+import { Input } from "../../src";
+import { Textarea } from "../../src";
+import { Checkbox } from "../../src";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/client";
-import { RadioGroup, RadioGroupItem } from "@/client";
-import { Switch } from "@/client";
-import { MetaContainer } from "@/client";
+} from "../../src";
+import { RadioGroup, RadioGroupItem } from "../../src";
+import { Switch } from "../../src";
+import { MetaContainer } from "../../src";
 
 const meta: Meta<typeof Form> = {
   title: "Components/Form",

@@ -71,7 +71,7 @@ body:
       render: typescript
       placeholder: |
         // Example usage
-        import { NewComponent } from 'passport-ui/client'
+        import { NewComponent } from 'passport-ui'
 
         <NewComponent variant="primary" size="lg">
           Content

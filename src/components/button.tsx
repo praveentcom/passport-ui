@@ -1,6 +1,7 @@
-import { Slot } from "@radix-ui/react-slot";
-import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
+
+import { Slot } from "@radix-ui/react-slot";
+import { type VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
@@ -30,24 +31,63 @@ const buttonVariants = cva(
       variant: "outline",
       size: "regular",
     },
-  },
+  }
 );
+
+export interface ButtonProps
+  extends React.ComponentProps<"button">,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+  /**
+   * Accessible label for the button when content isn't descriptive
+   */
+  "aria-label"?: string;
+  /**
+   * ID of the element that labels this button
+   */
+  "aria-labelledby"?: string;
+  /**
+   * ID of the element that describes this button
+   */
+  "aria-describedby"?: string;
+  /**
+   * Whether the button represents an expanded state (for collapsible content)
+   */
+  "aria-expanded"?: boolean | "true" | "false";
+  /**
+   * Whether the button controls another element
+   */
+  "aria-controls"?: string;
+  /**
+   * Whether the button represents a pressed state (for toggle buttons)
+   */
+  "aria-pressed"?: boolean | "true" | "false" | "mixed";
+}
 
 function Button({
   className,
   variant,
   size,
   asChild = false,
+  "aria-label": ariaLabel,
+  "aria-labelledby": ariaLabelledBy,
+  "aria-describedby": ariaDescribedBy,
+  "aria-expanded": ariaExpanded,
+  "aria-controls": ariaControls,
+  "aria-pressed": ariaPressed,
   ...props
-}: React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean;
-  }) {
+}: ButtonProps) {
   const Comp = asChild ? Slot : "button";
 
   return (
     <Comp
       data-slot="button"
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
+      aria-describedby={ariaDescribedBy}
+      aria-expanded={ariaExpanded}
+      aria-controls={ariaControls}
+      aria-pressed={ariaPressed}
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     />

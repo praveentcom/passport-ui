@@ -1,7 +1,11 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
 import Link from "next/link";
+
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react";
+
+import { COMMON_CONTROLS } from "../../.storybook/constants";
 import {
+  MetaContainer,
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
@@ -9,9 +13,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-  MetaContainer,
-} from "@/client";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
+} from "../../src";
 
 const components: { title: string; href: string; description: string }[] = [
   {

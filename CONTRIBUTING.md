@@ -63,8 +63,6 @@ passport-ui/
 │   ├── containers/          # Page-level containers
 │   ├── theme/              # Theme components and utilities
 │   ├── lib/                # Utility functions
-│   ├── client.ts           # Client-side exports
-│   ├── server.ts           # Server-side exports
 │   ├── index.ts            # Main exports
 │   └── styles.css          # Global styles and theme
 ├── .storybook/             # Storybook configuration
@@ -180,7 +178,7 @@ passport-ui/
    - Add documentation and controls
 
 4. **Export the component**
-   - Add to appropriate entry files (`client.ts`, `server.ts`, `index.ts`)
+   - Add to appropriate entry file (`index.ts`)
    - Follow the existing export patterns
 
 ### Styling Guidelines

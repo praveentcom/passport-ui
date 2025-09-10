@@ -1,6 +1,8 @@
-import React from "react";
+import * as React from "react";
+
 import DOMPurify from "isomorphic-dompurify";
 
+import { CodeBlock, type HighlightTheme } from "@/components/code-block";
 import parseMarkdown from "@/lib/markdown/parseMarkdown";
 import {
   extractBlockquotes,
@@ -8,7 +10,6 @@ import {
   extractTables,
   renderTable,
 } from "@/lib/markdown/parseMarkdownComponents";
-import { CodeBlock, type HighlightTheme } from "@/components/code-block";
 import { cn } from "@/lib/utils";
 
 export interface MarkdownProps {
@@ -182,11 +183,12 @@ export function Markdown({
 
   return (
     <article
+      data-slot="markdown"
       className={cn(
         "passport-ui",
         "article-base",
         muted && "article-muted",
-        className,
+        className
       )}
     >
       {renderContent()}

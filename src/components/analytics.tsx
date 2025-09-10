@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import * as React from "react";
 
 /**
  * Google Analytics configuration
@@ -73,9 +73,9 @@ const GoogleAnalyticsScript: React.FC<{
         (event) =>
           `gtag('event', '${event.action}', ${JSON.stringify(
             Object.fromEntries(
-              Object.entries(event).filter(([key]) => key !== "action"),
-            ),
-          )});`,
+              Object.entries(event).filter(([key]) => key !== "action")
+            )
+          )});`
       )
       .join("\n    ")}
   `.trim();
@@ -164,7 +164,7 @@ export const useAnalytics = () => {
         window.gtag("event", action, parameters);
       }
     },
-    [],
+    []
   );
 
   const trackPageView = React.useCallback(
@@ -176,7 +176,7 @@ export const useAnalytics = () => {
         });
       }
     },
-    [],
+    []
   );
 
   const setUserProperties = React.useCallback(
@@ -187,7 +187,7 @@ export const useAnalytics = () => {
         });
       }
     },
-    [],
+    []
   );
 
   return {

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/client";
-import { Button } from "@/client";
-
 import { action } from "storybook/actions";
+
+import { Tooltip, TooltipContent, TooltipTrigger } from "../../src";
+import { Button } from "../../src";
 
 const meta: Meta<typeof Tooltip> = {
   title: "Components/Tooltip",

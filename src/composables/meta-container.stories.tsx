@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Card, CardContent, MetaContainer } from "@/client";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Card, CardContent, MetaContainer } from "../../src";
 
 const meta: Meta<typeof MetaContainer> = {
   title: "Composables/MetaContainer",

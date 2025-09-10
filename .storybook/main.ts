@@ -143,7 +143,7 @@ const config: StorybookConfig = {
       }),
       new webpack.ProvidePlugin({
         process: "process/browser",
-      }),
+      })
     );
 
     /**

@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Breadcrumb } from "@/client";
 import { Slash } from "lucide-react";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Breadcrumb } from "../../src";
 
 const meta: Meta<typeof Breadcrumb> = {
   title: "Components/Breadcrumb",

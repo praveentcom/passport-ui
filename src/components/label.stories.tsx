@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Label } from "@/client";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Label } from "../../src";
 
 const meta: Meta<typeof Label> = {
   title: "Components/Label",

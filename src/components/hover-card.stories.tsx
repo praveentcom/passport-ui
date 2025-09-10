@@ -1,12 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import { action } from "storybook/actions";
+
 import {
+  Button,
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-  Button,
   MetaContainer,
-} from "@/client";
+} from "../../src";
 
 const meta: Meta<typeof HoverCard> = {
   title: "Components/HoverCard",

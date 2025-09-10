@@ -1,8 +1,11 @@
 "use client";
 
-import { Monitor, Moon, Sun } from "lucide-react";
+import * as React from "react";
+import { useEffect, useState } from "react";
+
 import { useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
+
+import { Monitor, Moon, Sun } from "lucide-react";
 
 import { ToggleSelect, ToggleSelectItem } from "@/components/toggle-select";
 

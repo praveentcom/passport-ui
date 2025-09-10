@@ -1,14 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import { action } from "storybook/actions";
+
+import { COMMON_CONTROLS } from "../../.storybook/constants";
 import {
   InputOTP,
   InputOTPGroup,
-  InputOTPSlot,
   InputOTPSeparator,
+  InputOTPSlot,
   Label,
   MetaContainer,
-} from "@/client";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
+} from "../../src";
 
 const meta: Meta<typeof InputOTP> = {
   title: "Components/InputOTP",

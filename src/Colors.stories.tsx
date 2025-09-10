@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { ThemeToggle } from "@/composables/theme-toggle";
-import { MetaContainer } from "@/composables/meta-container";
-import { PageLayout } from "@/layouts/page-layout";
-import { Separator } from "./client";
+
+import { Separator } from ".";
+import { MetaContainer } from "./composables/meta-container";
+import { ThemeToggle } from "./composables/theme-toggle";
+import { PageLayout } from "./layouts/page-layout";
 
 /**
  * Color Palette for Passport UI
@@ -420,12 +421,14 @@ const ColorsDocs = () => (
         <div className="list-container">
           {tailwindColors.map((color) => (
             <div key={color} className="grid grid-cols-6 md:grid-cols-11 gap-2">
-              {[50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950].map((weight) => (
-                <TailwindColorCard
-                  key={`${color}-${weight}`}
-                  color={`${color}-${weight}`}
-                />
-              ))}
+              {[50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950].map(
+                (weight) => (
+                  <TailwindColorCard
+                    key={`${color}-${weight}`}
+                    color={`${color}-${weight}`}
+                  />
+                )
+              )}
             </div>
           ))}
         </div>

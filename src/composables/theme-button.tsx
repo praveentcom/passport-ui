@@ -1,8 +1,12 @@
 "use client";
 
-import { Monitor, Moon, Sun } from "lucide-react";
+import * as React from "react";
+import { useEffect, useState } from "react";
+
 import { useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
+
+import { type VariantProps } from "class-variance-authority";
+import { Monitor, Moon, Sun } from "lucide-react";
 
 import { Button, buttonVariants } from "@/components/button";
 import {
@@ -11,7 +15,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/dropdown-menu";
-import { type VariantProps } from "class-variance-authority";
 
 export function ThemeButton({
   minimal = false,
@@ -59,6 +62,7 @@ export function ThemeButton({
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
+          data-slot="theme-button"
           variant={variant}
           title={`Current: ${getLabel()}. Click to change theme.`}
         >

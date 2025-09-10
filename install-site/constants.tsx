@@ -1,4 +1,5 @@
 import { Home, Palette } from "lucide-react";
+
 import { SidebarContainerMenuItem } from "../src/layouts/sidebar-container";
 
 // Base URLs and site info
@@ -158,7 +159,7 @@ export const COLORS_PAGE_DATA = createPageStructuredData({
 
 // Helper functions to get sidebar items with active state
 export const getSidebarMenuItems = (
-  activePath: string,
+  activePath: string
 ): SidebarContainerMenuItem[] => {
   return SIDEBAR_MENU_ITEMS.map((item) => ({
     ...item,

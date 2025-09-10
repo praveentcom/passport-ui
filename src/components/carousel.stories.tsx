@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+
+import { COMMON_CONTROLS } from "../../.storybook/constants";
 import {
   Carousel,
   CarouselContent,
@@ -6,9 +8,8 @@ import {
   CarouselNext,
   CarouselPrevious,
   MetaContainer,
-} from "@/client";
-import { Card, CardContent } from "@/client";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
+} from "../../src";
+import { Card, CardContent } from "../../src";
 
 const meta: Meta<typeof Carousel> = {
   title: "Components/Carousel",

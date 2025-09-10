@@ -1,6 +1,6 @@
 import type { Preview } from "@storybook/react-webpack5";
-import { withTheme } from "./decorators";
 
+import { withTheme } from "./decorators";
 import "./storybook.css";
 
 const preview: Preview = {

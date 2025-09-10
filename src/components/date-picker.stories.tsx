@@ -1,9 +1,11 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
 import React from "react";
-import { DatePicker, DateRangePicker } from "@/client";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
-import { action } from "storybook/actions";
+
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import { DateRange } from "react-day-picker";
+import { action } from "storybook/actions";
+
+import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { DatePicker, DateRangePicker } from "../../src";
 
 const meta: Meta<typeof DatePicker> = {
   title: "Components/DatePicker",
@@ -115,7 +117,7 @@ export const Default: Story = {
 export const DropdownRange: Story = {
   render: () => {
     const [dateRange, setDateRange] = React.useState<DateRange | undefined>(
-      undefined,
+      undefined
     );
 
     return (

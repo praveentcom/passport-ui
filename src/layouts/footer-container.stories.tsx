@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
-import { FooterContainer } from "./footer-container";
 import { SAMPLE_FOOTER_CONTENT } from "../../.storybook/constants";
+import { FooterContainer } from "./footer-container";
 
 const meta: Meta<typeof FooterContainer> = {
   title: "Layouts/FooterContainer",

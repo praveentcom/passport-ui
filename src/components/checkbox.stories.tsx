@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Checkbox, Label, Card, MetaContainer } from "@/client";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
 import { action } from "storybook/actions";
+
+import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Card, Checkbox, Label, MetaContainer } from "../../src";
 
 const meta: Meta<typeof Checkbox> = {
   title: "Components/Checkbox",

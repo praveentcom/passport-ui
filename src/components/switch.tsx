@@ -1,6 +1,7 @@
 import * as React from "react";
+
 import * as SwitchPrimitives from "@radix-ui/react-switch";
-import { cva, type VariantProps } from "class-variance-authority";
+import { type VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
@@ -24,7 +25,7 @@ const switchVariants = cva(
       variant: "default",
       size: "regular",
     },
-  },
+  }
 );
 
 const switchThumbVariants = cva(
@@ -49,24 +50,57 @@ const switchThumbVariants = cva(
       variant: "default",
       size: "regular",
     },
-  },
+  }
 );
+
+export interface SwitchProps
+  extends React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>,
+    VariantProps<typeof switchVariants> {
+  /**
+   * Accessible label for the switch when no visible label is present
+   */
+  "aria-label"?: string;
+  /**
+   * ID of the element that labels this switch
+   */
+  "aria-labelledby"?: string;
+  /**
+   * ID of the element that describes this switch
+   */
+  "aria-describedby"?: string;
+}
 
 const Switch = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
-  React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> &
-    VariantProps<typeof switchVariants>
->(({ className, variant, size, ...props }, ref) => (
-  <SwitchPrimitives.Root
-    className={cn(switchVariants({ variant, size, className }))}
-    {...props}
-    ref={ref}
-  >
-    <SwitchPrimitives.Thumb
-      className={cn(switchThumbVariants({ variant, size }))}
-    />
-  </SwitchPrimitives.Root>
-));
+  SwitchProps
+>(
+  (
+    {
+      className,
+      variant,
+      size,
+      "aria-label": ariaLabel,
+      "aria-labelledby": ariaLabelledBy,
+      "aria-describedby": ariaDescribedBy,
+      ...props
+    },
+    ref
+  ) => (
+    <SwitchPrimitives.Root
+      data-slot="switch"
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
+      aria-describedby={ariaDescribedBy}
+      className={cn(switchVariants({ variant, size, className }))}
+      {...props}
+      ref={ref}
+    >
+      <SwitchPrimitives.Thumb
+        className={cn(switchThumbVariants({ variant, size }))}
+      />
+    </SwitchPrimitives.Root>
+  )
+);
 Switch.displayName = SwitchPrimitives.Root.displayName;
 
 export { Switch, switchVariants };

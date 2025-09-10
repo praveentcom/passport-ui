@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Switch } from "@/client";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Switch } from "../../src";
 
 const meta: Meta<typeof Switch> = {
   title: "Components/Switch",

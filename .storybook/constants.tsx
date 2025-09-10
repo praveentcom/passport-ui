@@ -1,15 +1,17 @@
+import { ReactNode } from "react";
+
+import { FileText, Home, Plus, Settings, Users } from "lucide-react";
+import { action } from "storybook/internal/actions";
+import { InputType } from "storybook/internal/csf";
+
 import {
+  Badge,
+  Button,
   Card,
   CardContent,
   MetaContainer,
   SidebarContainerMenuItem,
-  Button,
-  Badge,
-} from "@/client";
-import { FileText, Home, Settings, Users, Plus } from "lucide-react";
-import { ReactNode } from "react";
-import { action } from "storybook/internal/actions";
-import { InputType } from "storybook/internal/csf";
+} from "../src";
 
 export const COMMON_CONTROLS: Record<string, InputType> = {
   asChild: {

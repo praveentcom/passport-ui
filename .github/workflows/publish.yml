@@ -92,12 +92,9 @@ jobs:
         run: |
           # Verify build outputs exist
           ls -la dist/
-          test -f dist/client.js
-          test -f dist/client.cjs
-          test -f dist/client.d.ts
-          test -f dist/server.js
-          test -f dist/server.cjs
-          test -f dist/server.d.ts
+          test -f dist/index.js
+          test -f dist/index.cjs
+          test -f dist/index.d.ts
 
   bump-version:
     runs-on: ubuntu-latest

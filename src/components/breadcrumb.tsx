@@ -1,15 +1,17 @@
 import * as React from "react";
+
 import { Slot } from "@radix-ui/react-slot";
-import { ChevronRight, MoreHorizontal, type LucideIcon } from "lucide-react";
+import { ChevronRight, type LucideIcon, MoreHorizontal } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { PrefetchLink } from "./prefetch-link";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./dropdown-menu";
+import { PrefetchLink } from "./prefetch-link";
 
 function BreadcrumbBase({ ...props }: React.ComponentProps<"nav">) {
   return <nav aria-label="breadcrumb" data-slot="breadcrumb" {...props} />;
@@ -26,7 +28,7 @@ function BreadcrumbList({
       className={cn(
         "text-muted-foreground flex flex-wrap items-center text-sm break-words",
         spacing,
-        className,
+        className
       )}
       {...props}
     />

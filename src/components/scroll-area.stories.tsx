@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { CardContent, ScrollArea } from "@/client";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
-import { Card, MetaContainer } from "@/client";
+import { CardContent, ScrollArea } from "../../src";
+import { Card, MetaContainer } from "../../src";
 
 const meta: Meta<typeof ScrollArea> = {
   title: "Components/ScrollArea",

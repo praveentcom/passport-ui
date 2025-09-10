@@ -23,8 +23,8 @@ npx shadcn@latest add [component-name]
 - It needs to contain `passport-ui` css class in the component root if it has a react portal content.
 - It needs to follow consistent naming pattern and compact in size as followed in `Button`, `Badge` etc.
 
-### Step 3: Add to Client Exports
-Add the component and its sub-components to [src/client.ts](mdc:src/client.ts):
+### Step 3: Add to Component Exports
+Add the component and its sub-components to [src/index.ts](mdc:src/index.ts):
 ```typescript
 export {
   ComponentName,
@@ -41,7 +41,7 @@ Create a comprehensive stories file at `src/components/[component-name].stories.
 **Required Structure:**
 ```typescript
 import type { Meta, StoryObj } from '@storybook/nextjs'
-import { ComponentName } from '@/client'
+import { ComponentName } from '../../src'
 import { COMMON_CONTROLS } from '../../.storybook/constants'
 import { action } from 'storybook/actions';
 
@@ -125,8 +125,8 @@ export function ComposableName({
 }
 ```
 
-### Step 2: Add to Client Exports
-Add to [src/client.ts](mdc:src/client.ts) under the "Comoosables" section:
+### Step 2: Add to Component Exports
+Add to [src/index.ts](mdc:src/index.ts) under the "Comoosables" section:
 ```typescript
 export { ComposableName, type ComposableNameProps } from "./composables/composable-name";
 ```
@@ -152,7 +152,7 @@ Follow the same structure as shadcn/ui components but with title: 'Composables/C
 ## Quality Checklist
 
 Before completing component addition:
-- [ ] Component properly exported in [src/client.ts](mdc:src/client.ts)
+- [ ] Component properly exported in [src/index.ts](mdc:src/index.ts)
 - [ ] Comprehensive Storybook stories created
 - [ ] All props documented with argTypes
 - [ ] Action handlers added for callbacks
@@ -173,5 +173,5 @@ Before completing component addition:
 - **UI Component**: [src/components/card.tsx](mdc:src/components/card.tsx) and [src/components/card.stories.tsx](mdc:src/components/card.stories.tsx)
 - **Layout Component**: [src/layouts/page-layout.tsx](mdc:src/layouts/page-layout.tsx) and [src/layouts/page-layout.stories.tsx](mdc:src/layouts/page-layout.stories.tsx)
 - **Composables Component**: [src/composables/back-button.tsx](mdc:src/composables/back-button.tsx) and [src/composables/back-button.stories.tsx](mdc:src/composables/back-button.stories.tsx)
-- **Export Pattern**: [src/client.ts](mdc:src/client.ts)
+- **Export Pattern**: [src/index.ts](mdc:src/index.ts)
 - **Styling System**: [src/styles.css](mdc:src/styles.css)

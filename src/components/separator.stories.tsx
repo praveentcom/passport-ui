@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Separator } from "@/client";
-import { Card, CardContent } from "@/client";
-import { MetaContainer } from "@/client";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Separator } from "../../src";
+import { Card, CardContent } from "../../src";
+import { MetaContainer } from "../../src";
 
 const meta: Meta<typeof Separator> = {
   title: "Components/Separator",

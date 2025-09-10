@@ -1,8 +1,10 @@
 "use client";
 
+import * as React from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -76,7 +78,7 @@ export function PrefetchLink({
       {
         rootMargin: "50px",
         threshold: 0.1,
-      },
+      }
     );
 
     observer.observe(linkRef.current);
@@ -93,6 +95,7 @@ export function PrefetchLink({
     <Link
       ref={linkRef}
       href={href}
+      data-slot="prefetch-link"
       className={cn(className)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

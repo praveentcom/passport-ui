@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Blockquote } from "@/client";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Blockquote } from "../../src";
 
 const meta: Meta<typeof Blockquote> = {
   title: "Components/Blockquote",

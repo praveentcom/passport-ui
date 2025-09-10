@@ -73,7 +73,7 @@ function processBlockquotes(content: string): string {
  * @returns The processed HTML
  */
 function processBlockquoteLines(
-  lines: { level: number; content: string }[],
+  lines: { level: number; content: string }[]
 ): string {
   if (lines.length === 0) return "";
 

@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
 import * as React from "react";
+
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import {
   Calculator,
   Calendar,
@@ -8,6 +9,9 @@ import {
   Smile,
   User,
 } from "lucide-react";
+import { action } from "storybook/actions";
+
+import { COMMON_CONTROLS } from "../../.storybook/constants";
 import {
   Command,
   CommandDialog,
@@ -18,10 +22,8 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/client";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
-import { action } from "storybook/actions";
-import { Button } from "@/client";
+} from "../../src";
+import { Button } from "../../src";
 
 const meta: Meta<typeof Command> = {
   title: "Components/Command",

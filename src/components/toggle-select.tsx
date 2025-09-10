@@ -1,15 +1,11 @@
 "use client";
 
+import * as React from "react";
+import { createContext, useContext, useEffect, useId, useState } from "react";
+
 import * as TogglePrimitive from "@radix-ui/react-toggle";
-import { cva, type VariantProps } from "class-variance-authority";
-import { AnimatePresence, motion, Transition } from "motion/react";
-import React, {
-  createContext,
-  useContext,
-  useId,
-  useState,
-  useEffect,
-} from "react";
+import { type VariantProps, cva } from "class-variance-authority";
+import { AnimatePresence, Transition, motion } from "motion/react";
 
 import { cn } from "@/lib/utils";
 
@@ -40,7 +36,7 @@ const toggleSelectItemVariants = cva(
       variant: "transparent",
       size: "regular",
     },
-  },
+  }
 );
 
 const toggleSelectItemTextVariants = cva("text-foreground", {
@@ -63,6 +59,14 @@ export interface ToggleSelectProps {
   className?: string;
   transition?: Transition;
   defaultValue?: string | null;
+  /**
+   * Accessible label for the toggle group
+   */
+  "aria-label"?: string;
+  /**
+   * ID of the element that labels this toggle group
+   */
+  "aria-labelledby"?: string;
 }
 
 export function ToggleSelect({
@@ -72,9 +76,11 @@ export function ToggleSelect({
   className,
   transition,
   defaultValue = null,
+  "aria-label": ariaLabel,
+  "aria-labelledby": ariaLabelledBy,
 }: ToggleSelectProps) {
   const [selectedValue, setSelectedValue] = useState<string | null>(
-    value ?? defaultValue,
+    value ?? defaultValue
   );
   const uniqueId = useId();
 
@@ -101,9 +107,13 @@ export function ToggleSelect({
   return (
     <ToggleSelectContext.Provider value={contextValue}>
       <div
+        role="group"
+        data-slot="toggle-select"
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
         className={cn(
           "inline-flex items-center rounded-sm border bg-card p-1 relative",
-          className,
+          className
         )}
       >
         {children}
@@ -146,6 +156,7 @@ export function ToggleSelectItem({
 
   return (
     <TogglePrimitive.Root
+      data-slot="toggle-select-item"
       className={cn(toggleSelectItemVariants({ variant, size, className }))}
       pressed={isSelected}
       onClick={handleClick}

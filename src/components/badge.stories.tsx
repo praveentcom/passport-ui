@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Badge } from "@/client";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Badge } from "../../src";
 
 const meta: Meta<typeof Badge> = {
   title: "Components/Badge",

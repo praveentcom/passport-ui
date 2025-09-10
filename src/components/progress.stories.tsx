@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Progress } from "@/client";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Progress } from "../../src";
 
 const meta: Meta<typeof Progress> = {
   title: "Components/Progress",

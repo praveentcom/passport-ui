@@ -110,7 +110,7 @@ function processTables(content: string): { content: string; tables: string[] } {
 
       tables.push(tableHTML);
       result.push(
-        `<table-placeholder-${tables.length - 1}></table-placeholder-${tables.length - 1}>`,
+        `<table-placeholder-${tables.length - 1}></table-placeholder-${tables.length - 1}>`
       );
     } else {
       result.push(line);

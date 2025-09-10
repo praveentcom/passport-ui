@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Markdown } from "@/client";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Markdown } from "../../src";
 
 const meta: Meta<typeof Markdown> = {
   title: "Components/Markdown",

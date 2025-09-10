@@ -1,5 +1,5 @@
 ---
-globs: package.json,tsup.config.ts,src/index.ts,src/client.ts,src/server.ts
+globs: package.json,tsup.config.ts,src/index.ts
 description: Build system and package exports configuration
 ---
 
@@ -12,15 +12,10 @@ The library uses **tsup** for building with multiple output formats defined in [
 ### Package Exports Structure
 ```json
 {
-  "./server": {
-    "types": "./dist/server.d.ts",
-    "import": "./dist/server.js", 
-    "require": "./dist/server.cjs"
-  },
-  "./client": {
-    "types": "./dist/client.d.ts",
-    "import": "./dist/client.js",
-    "require": "./dist/client.cjs"
+  "./index": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js", 
+    "require": "./dist/index.cjs"
   },
   "./styles.css": "./src/styles.css",
   "./hljs-themes.css": "./src/hljs-themes.css",
@@ -31,17 +26,6 @@ The library uses **tsup** for building with multiple output formats defined in [
 
 ## Entry Points
 
-### Client Entry ([src/client.ts](mdc:src/client.ts))
-- Client-side React components
-- Motion primitives
-- Theme components
-- Interactive UI components
-
-### Server Entry ([src/server.ts](mdc:src/server.ts)) 
-- Server-safe components
-- Non-interactive components
-- Utility functions
-
 ### Main Index ([src/index.ts](mdc:src/index.ts))
 - Complete component exports
 - Type exports
@@ -51,8 +35,7 @@ The library uses **tsup** for building with multiple output formats defined in [
 
 ### Components
 ```typescript
-import { Button, Card, ThemeProvider } from 'passport-ui/client'
-import { cn } from 'passport-ui/server'
+import { Button, Card, ThemeProvider } from 'passport-ui'
 ```
 
 ### Styles

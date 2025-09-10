@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { RadioGroup, RadioGroupItem, Label, MetaContainer } from "@/client";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
 import { action } from "storybook/actions";
+
+import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Label, MetaContainer, RadioGroup, RadioGroupItem } from "../../src";
 
 const meta: Meta<typeof RadioGroup> = {
   title: "Components/RadioGroup",

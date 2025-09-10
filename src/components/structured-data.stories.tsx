@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
-import { MetaContainer, Card, CardContent } from "@/client";
-import { StructuredData } from "@/server";
+import { Card, CardContent, MetaContainer } from "../../src";
+import { StructuredData } from "../../src";
 
 const meta: Meta<typeof StructuredData> = {
   title: "Components/StructuredData",

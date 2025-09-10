@@ -30,7 +30,7 @@ function parseMarkdown(content: string): string {
       escapeMap.set(placeholder, char);
       escapeCounter++;
       return placeholder;
-    },
+    }
   );
 
   /**
@@ -44,7 +44,7 @@ function parseMarkdown(content: string): string {
     (match, id, definition) => {
       footnotes.set(id, definition.trim());
       return "";
-    },
+    }
   );
 
   processedContent = processedContent.replace(
@@ -58,7 +58,7 @@ function parseMarkdown(content: string): string {
         return `<sup><a href="#footnote-${id}" id="footnote-ref-${id}" class="text-primary hover:underline text-xs">${index}</a></sup>`;
       }
       return match;
-    },
+    }
   );
 
   /**
@@ -73,11 +73,11 @@ function parseMarkdown(content: string): string {
     (match, content) => {
       const placeholder = `{{CODESPAN${codeSpanCounter}}}`;
       codeSpans.push(
-        `<code class="bg-border/50 px-1 py-0.5 rounded border border-border text-xs font-mono">${content}</code>`,
+        `<code class="bg-border/50 px-1 py-0.5 rounded border border-border text-xs font-mono">${content}</code>`
       );
       codeSpanCounter++;
       return placeholder;
-    },
+    }
   );
 
   /**
@@ -90,17 +90,17 @@ function parseMarkdown(content: string): string {
     .replace(/~~(.*?)~~/g, '<del class="line-through opacity-75">$1</del>')
     .replace(
       /!\[([^\]]*)\]\(([^)]+)\)/g,
-      '<img src="$2" alt="$1" class="rounded-sm max-w-full h-auto my-3 border border-border block" />',
+      '<img src="$2" alt="$1" class="rounded-sm max-w-full h-auto my-3 border border-border block" />'
     )
     .replace(
       /\[([^\]]+)\]\(([^)]+)\)/g,
-      '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium inline-flex items-center gap-1">$1<svg class="size-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>',
+      '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium inline-flex items-center gap-1">$1<svg class="size-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>'
     )
     .replace(/^---$/gm, '<hr class="my-4 border-t border-border" />')
     .replace(/ {2}$/gm, "<br />")
     .replace(
       /\[\[([^\]]+)\]\]/g,
-      '<kbd class="px-1 py-0.5 text-xs font-mono bg-border/50 border border-border rounded">$1</kbd>',
+      '<kbd class="px-1 py-0.5 text-xs font-mono bg-border/50 border border-border rounded">$1</kbd>'
     );
 
   /**
@@ -128,7 +128,7 @@ function parseMarkdown(content: string): string {
   codeSpans.forEach((codeSpan, index) => {
     processedContent = processedContent.replace(
       new RegExp(`{{CODESPAN${index}}}`, "g"),
-      codeSpan,
+      codeSpan
     );
   });
 
@@ -138,7 +138,7 @@ function parseMarkdown(content: string): string {
   escapeMap.forEach((char, placeholder) => {
     processedContent = processedContent.replace(
       new RegExp(placeholder.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g"),
-      char,
+      char
     );
   });
 

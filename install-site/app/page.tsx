@@ -1,14 +1,14 @@
 "use client";
 
-import { ThemeToggle } from "../../src/composables/theme-toggle";
-import { MetaContainer } from "../../src/composables/meta-container";
-import { PageLayout } from "../../src/layouts/page-layout";
 import { CodeBlock } from "../../src/components/code-block";
+import { MetaContainer } from "../../src/composables/meta-container";
+import { ThemeToggle } from "../../src/composables/theme-toggle";
+import { PageLayout } from "../../src/layouts/page-layout";
 import { SidebarContainer } from "../../src/layouts/sidebar-container";
 import {
-  getSidebarMenuItems,
   INSTALLATION_PAGE_DATA,
   SITE_CONFIG,
+  getSidebarMenuItems,
 } from "../constants";
 
 const INSTALLATION_CODE = {
@@ -23,7 +23,7 @@ const INSTALLATION_CODE = {
 /* Optional styles based on requirement */
 @import 'passport-ui/hljs-themes.css'; /* Optional: for code highlighting */
 @import 'passport-ui/tailwind-colors.css'; /* Optional: dynamic usage of tailwind colors */`,
-  THEME_PROVIDER: `import { ThemeProvider } from "passport-ui/client";
+  THEME_PROVIDER: `import { ThemeProvider } from "passport-ui";
 
 function App() {
   return (
@@ -36,7 +36,7 @@ function App() {
   Button,
   Card,
   CardContent
-} from "passport-ui/client";
+} from "passport-ui";
 
 function App() {
   return (

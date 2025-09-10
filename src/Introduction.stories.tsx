@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { ThemeToggle } from "@/composables/theme-toggle";
-import { MetaContainer } from "@/composables/meta-container";
-import { PageLayout } from "@/layouts/page-layout";
-import { CodeBlock } from "./client";
+
+import { CodeBlock } from ".";
+import { MetaContainer } from "./composables/meta-container";
+import { ThemeToggle } from "./composables/theme-toggle";
+import { PageLayout } from "./layouts/page-layout";
 
 const INSTALLATION_CODE = {
   PACKAGE_INSTALL: `npm install passport-ui`,
@@ -16,7 +17,7 @@ const INSTALLATION_CODE = {
 /* Optional styles based on requirement */
 @import 'passport-ui/hljs-themes.css'; /* Optional: for code highlighting */
 @import 'passport-ui/tailwind-colors.css'; /* Optional: dynamic usage of tailwind colors */`,
-  THEME_PROVIDER: `import { ThemeProvider } from "passport-ui/client";
+  THEME_PROVIDER: `import { ThemeProvider } from "passport-ui";
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
   Button,
   Card,
   CardContent
-} from "passport-ui/client";
+} from "passport-ui";
 
 function App() {
   return (

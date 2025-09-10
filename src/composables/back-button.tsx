@@ -1,5 +1,7 @@
+import * as React from "react";
+import { ReactNode } from "react";
+
 import Link from "next/link";
-import React, { ReactNode } from "react";
 
 import { Button } from "@/components/button";
 
@@ -17,7 +19,7 @@ export function BackButton({
   label?: string;
 }): ReactNode {
   return (
-    <div className="mb-5">
+    <div data-slot="back-button" className="mb-5">
       <Button asChild>
         <Link href={href} className="flex items-center gap-1">
           &larr; {label}

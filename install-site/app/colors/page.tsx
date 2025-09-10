@@ -1,11 +1,11 @@
 "use client";
 
-import { ThemeToggle } from "../../../src/composables/theme-toggle";
-import { MetaContainer } from "../../../src/composables/meta-container";
-import { PageLayout } from "../../../src/layouts/page-layout";
 import { Separator } from "../../../src/components/separator";
+import { MetaContainer } from "../../../src/composables/meta-container";
+import { ThemeToggle } from "../../../src/composables/theme-toggle";
+import { PageLayout } from "../../../src/layouts/page-layout";
 import { SidebarContainer } from "../../../src/layouts/sidebar-container";
-import { getSidebarMenuItems, COLORS_PAGE_DATA } from "../../constants";
+import { COLORS_PAGE_DATA, getSidebarMenuItems } from "../../constants";
 
 /**
  * Color Palette for Passport UI
@@ -445,12 +445,14 @@ export default function ColorsPage() {
                 key={color}
                 className="grid grid-cols-6 md:grid-cols-11 gap-2"
               >
-                {[50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950].map((weight) => (
-                  <TailwindColorCard
-                    key={`${color}-${weight}`}
-                    color={`${color}-${weight}`}
-                  />
-                ))}
+                {[50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950].map(
+                  (weight) => (
+                    <TailwindColorCard
+                      key={`${color}-${weight}`}
+                      color={`${color}-${weight}`}
+                    />
+                  )
+                )}
               </div>
             ))}
           </div>

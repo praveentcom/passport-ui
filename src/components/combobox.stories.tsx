@@ -1,8 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Combobox } from "@/client";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
-import { action } from "storybook/actions";
 import { useState } from "react";
+
+import type { Meta, StoryObj } from "@storybook/nextjs";
+import { action } from "storybook/actions";
+
+import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Combobox } from "../../src";
 
 const frameworks = [
   {

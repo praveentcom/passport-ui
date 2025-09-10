@@ -1,13 +1,15 @@
+import React, { useState } from "react";
+
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { SidebarContainer, SidebarProvider } from "@/client";
+import { Mail } from "lucide-react";
+import { action } from "storybook/actions";
+
 import {
   COMMON_CONTROLS,
   SAMPLE_SIDEBAR_MENU_ITEMS,
 } from "../../.storybook/constants";
-import { action } from "storybook/actions";
-import { Mail } from "lucide-react";
-import { MetaContainer, Button } from "@/client";
-import React, { useState } from "react";
+import { SidebarContainer, SidebarProvider } from "../../src";
+import { Button, MetaContainer } from "../../src";
 
 const meta: Meta<typeof SidebarContainer> = {
   title: "Layouts/SidebarContainer",

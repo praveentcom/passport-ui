@@ -1,7 +1,9 @@
 "use client";
 
-import { motion, Transition } from "motion/react";
-import React, { ReactNode, useEffect, useState } from "react";
+import * as React from "react";
+import { ReactNode, useEffect, useState } from "react";
+
+import { Transition, motion } from "motion/react";
 
 export type BlurInProps = {
   children: ReactNode;

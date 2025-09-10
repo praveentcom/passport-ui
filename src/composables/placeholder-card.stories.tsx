@@ -1,7 +1,9 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
-import { PlaceholderCard, Button } from "@/client";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
 import Link from "next/link";
+
+import type { Meta, StoryObj } from "@storybook/nextjs";
+
+import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Button, PlaceholderCard } from "../../src";
 
 const meta: Meta<typeof PlaceholderCard> = {
   title: "Composables/PlaceholderCard",

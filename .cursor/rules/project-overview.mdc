@@ -37,8 +37,6 @@ This is **passport-ui**, a modern React UI component library published on npm. I
 ## Entry Points
 
 - **Main Export**: [src/index.ts](mdc:src/index.ts) - All component exports
-- **Client Build**: [src/client.ts](mdc:src/client.ts) - Client-side components
-- **Server Build**: [src/server.ts](mdc:src/server.ts) - Server-side components
 - **Styles**: [src/styles.css](mdc:src/styles.css) - Core CSS with Tailwind theme
 
 ## Consumer Setup Requirements

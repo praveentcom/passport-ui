@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
+
 import { Check, ChevronsUpDown } from "lucide-react";
 
-import { cn } from "@/lib/utils";
 import {
   Command,
   CommandEmpty,
@@ -13,6 +13,7 @@ import {
   CommandList,
 } from "@/components/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/popover";
+import { cn } from "@/lib/utils";
 
 export interface ComboboxOption {
   value: string;
@@ -62,10 +63,11 @@ export function Combobox({
         <button
           role="combobox"
           aria-expanded={open}
+          data-slot="combobox"
           className={cn(
             "border-input data-[placeholder]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 dark:bg-input/30 bg-card flex h-8 w-full items-center justify-between gap-2 rounded-sm border px-2 py-1.5 text-sm shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50",
             !selectedOption && "text-muted-foreground",
-            className,
+            className
           )}
           disabled={disabled}
         >
@@ -95,7 +97,7 @@ export function Combobox({
                   <Check
                     className={cn(
                       "ml-auto",
-                      value === option.value ? "opacity-100" : "opacity-0",
+                      value === option.value ? "opacity-100" : "opacity-0"
                     )}
                   />
                 </CommandItem>

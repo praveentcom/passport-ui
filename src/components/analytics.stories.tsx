@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+
 import { Analytics } from "./analytics";
 
 const meta = {

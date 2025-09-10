@@ -1,4 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { action } from "storybook/actions";
+
+import { COMMON_CONTROLS } from "../../.storybook/constants";
 import {
   Pagination,
   PaginationContent,
@@ -7,9 +10,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/client";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
-import { action } from "storybook/actions";
+} from "../../src";
 
 const meta: Meta<typeof Pagination> = {
   title: "Components/Pagination",

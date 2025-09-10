@@ -1,8 +1,9 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
 import React from "react";
 
-import { ToggleSelect, ToggleSelectItem } from "@/client";
+import type { Meta, StoryObj } from "@storybook/nextjs";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { ToggleSelect, ToggleSelectItem } from "../../src";
 
 const meta: Meta<typeof ToggleSelect> = {
   title: "Components/ToggleSelect",

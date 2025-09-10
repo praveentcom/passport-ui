@@ -1,5 +1,6 @@
-import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
+
+import { type VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
@@ -18,7 +19,7 @@ const alertVariants = cva(
     defaultVariants: {
       variant: "default",
     },
-  },
+  }
 );
 
 const textVariants = cva("text-sm", {
@@ -49,6 +50,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     <div
       ref={ref}
       role="alert"
+      data-slot="alert"
       className={cn(alertVariants({ variant }), className)}
       {...props}
     >
@@ -56,7 +58,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         <div
           className={cn(
             textVariants({ variant }),
-            "absolute left-4 top-3.75 [&>svg]:size-3.5",
+            "absolute left-4 top-3.75 [&>svg]:size-3.5"
           )}
         >
           {icon}
@@ -73,7 +75,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         </div>
       </div>
     </div>
-  ),
+  )
 );
 Alert.displayName = "Alert";
 

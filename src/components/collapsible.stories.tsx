@@ -1,14 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { ChevronsUpDown } from "lucide-react";
+import { action } from "storybook/actions";
+
+import { COMMON_CONTROLS } from "../../.storybook/constants";
 import {
+  Button,
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-  Button,
   MetaContainer,
-} from "@/client";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
-import { action } from "storybook/actions";
-import { ChevronsUpDown } from "lucide-react";
+} from "../../src";
 
 const meta: Meta<typeof Collapsible> = {
   title: "Components/Collapsible",

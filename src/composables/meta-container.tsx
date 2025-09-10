@@ -1,4 +1,6 @@
-import React, { ReactNode } from "react";
+import * as React from "react";
+import { ReactNode } from "react";
+
 import { cn } from "@/lib/utils";
 
 /**
@@ -17,7 +19,10 @@ export function MetaContainer({
   className?: string;
 }): ReactNode {
   return (
-    <div className={cn("title-container h-min", className)}>
+    <div
+      data-slot="meta-container"
+      className={cn("title-container h-min", className)}
+    >
       {title && <h4 className="leading-tight">{title}</h4>}
       <div className="meta-container h-min">{children}</div>
     </div>

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
-import { ContentContainer } from "@/client";
 import { SAMPLE_CONTENT_CONTAINER } from "../../.storybook/constants";
+import { ContentContainer } from "../../src";
 
 const meta: Meta<typeof ContentContainer> = {
   title: "Layouts/ContentContainer",

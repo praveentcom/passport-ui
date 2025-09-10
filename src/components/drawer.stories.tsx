@@ -1,15 +1,17 @@
+import * as React from "react";
+
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import { action } from "storybook/actions";
-import * as React from "react";
+
 import {
+  Button,
   Drawer,
   DrawerClose,
   DrawerContent,
   DrawerFooter,
   DrawerTrigger,
-  Button,
   MetaContainer,
-} from "@/client";
+} from "../../src";
 
 const meta: Meta<typeof Drawer> = {
   title: "Components/Drawer",

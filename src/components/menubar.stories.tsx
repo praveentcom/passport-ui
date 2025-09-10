@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+
+import { COMMON_CONTROLS } from "../../.storybook/constants";
 import {
   Menubar,
   MenubarCheckboxItem,
@@ -13,8 +15,7 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from "@/client";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
+} from "../../src";
 
 const meta: Meta<typeof Menubar> = {
   title: "Components/Menubar",

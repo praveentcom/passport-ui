@@ -1,4 +1,5 @@
-import React, { ReactNode } from "react";
+import * as React from "react";
+import { ReactNode } from "react";
 
 /**
  * Common bullet list component
@@ -15,7 +16,7 @@ export function BulletList({ items }: { items: string[] | string }): ReactNode {
   }
 
   return (
-    <ul className="bullet-list">
+    <ul data-slot="bullet-list" className="bullet-list">
       {items.map((item, index) => (
         <li key={index} className="bullet-item">
           <div className="bullet-dot" />

@@ -1,14 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import { action } from "storybook/actions";
+
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
   Button,
   Input,
   Label,
   MetaContainer,
-} from "@/client";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "../../src";
 
 const meta: Meta<typeof Popover> = {
   title: "Components/Popover",

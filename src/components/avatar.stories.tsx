@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Avatar, AvatarImage, AvatarFallback } from "@/client";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Avatar, AvatarFallback, AvatarImage } from "../../src";
 
 const meta: Meta<typeof Avatar> = {
   title: "Components/Avatar",

@@ -1,4 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { Menu } from "lucide-react";
+import { action } from "storybook/actions";
+
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -8,11 +11,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/client";
-import { Button } from "@/client";
-import { Menu } from "lucide-react";
-
-import { action } from "storybook/actions";
+} from "../../src";
+import { Button } from "../../src";
 
 const meta: Meta<typeof DropdownMenu> = {
   title: "Components/DropdownMenu",

@@ -1,6 +1,8 @@
 import React, { ReactNode } from "react";
-import { cn } from "@/lib/utils";
+
 import { cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
 
 export type ContentContainerVariant = "compact" | "relaxed" | "full";
 
@@ -37,7 +39,10 @@ export function ContentContainer({
   variant,
 }: ContentContainerProps): ReactNode {
   return (
-    <div className={cn(contentContainerVariants({ variant }), className)}>
+    <div
+      data-slot="content-container"
+      className={cn(contentContainerVariants({ variant }), className)}
+    >
       {children}
     </div>
   );

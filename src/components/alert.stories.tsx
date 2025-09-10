@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import {
   AlertCircleIcon,
+  AlertTriangleIcon,
   CheckCircleIcon,
   InfoIcon,
-  AlertTriangleIcon,
 } from "lucide-react";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
 
-import { Alert } from "@/client";
+import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Alert } from "../../src";
 
 const meta: Meta<typeof Alert> = {
   title: "Components/Alert",

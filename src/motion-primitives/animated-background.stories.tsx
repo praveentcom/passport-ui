@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { AnimatedBackground } from "@/client";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
-
 import { action } from "storybook/actions";
+
+import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { AnimatedBackground } from "../../src";
 
 const meta: Meta<typeof AnimatedBackground> = {
   title: "Motion Primitives/AnimatedBackground",

@@ -1,15 +1,17 @@
+import { ReactNode } from "react";
+
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { PageLayout, SidebarContainer, Button } from "@/client";
+import { Mail } from "lucide-react";
+
 import {
   COMMON_CONTROLS,
   SAMPLE_CONTENT_CONTAINER,
-  SAMPLE_SIDEBAR_MENU_ITEMS,
-  SAMPLE_HEADER_CONTENT,
   SAMPLE_FOOTER_CONTENT,
+  SAMPLE_HEADER_CONTENT,
+  SAMPLE_SIDEBAR_MENU_ITEMS,
 } from "../../.storybook/constants";
-import { Mail } from "lucide-react";
-import { MetaContainer } from "@/client";
-import { ReactNode } from "react";
+import { Button, PageLayout, SidebarContainer } from "../../src";
+import { MetaContainer } from "../../src";
 
 const meta: Meta<typeof PageLayout> = {
   title: "Layouts/PageLayout",

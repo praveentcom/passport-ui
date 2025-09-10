@@ -107,7 +107,7 @@ body:
       description: Please provide a minimal code sample that reproduces the issue
       render: typescript
       placeholder: |
-        import { Button } from 'passport-ui/client'
+        import { Button } from 'passport-ui'
 
         export default function MyComponent() {
           return <Button>Click me</Button>

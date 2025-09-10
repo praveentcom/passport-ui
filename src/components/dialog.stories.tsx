@@ -1,15 +1,17 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
 import * as React from "react";
+
+import type { Meta, StoryObj } from "@storybook/nextjs";
+import { action } from "storybook/actions";
+
 import {
+  Button,
   Dialog,
   DialogClose,
   DialogContent,
   DialogFooter,
   DialogTrigger,
-  Button,
   MetaContainer,
-} from "@/client";
-import { action } from "storybook/actions";
+} from "../../src";
 
 const meta: Meta<typeof Dialog> = {
   title: "Components/Dialog",

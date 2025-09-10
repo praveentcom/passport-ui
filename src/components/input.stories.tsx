@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import { action } from "storybook/actions";
-import { Input, Label, MetaContainer } from "@/client";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Input, Label, MetaContainer } from "../../src";
 
 const meta: Meta<typeof Input> = {
   title: "Components/Input",

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Textarea } from "@/client";
+
 import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { Textarea } from "../../src";
 
 const meta: Meta<typeof Textarea> = {
   title: "Components/Textarea",

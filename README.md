@@ -49,7 +49,7 @@ Import the library styles in your main CSS file:
 ### Basic Example
 
 ```tsx
-import { Button, Card, CardContent } from "passport-ui/client";
+import { Button, Card, CardContent } from "passport-ui";
 
 function App() {
   return (
@@ -65,7 +65,7 @@ function App() {
 ### With Theme Support
 
 ```tsx
-import { ThemeProvider, ThemeButton } from "passport-ui/client";
+import { ThemeButton, ThemeProvider } from "passport-ui";
 
 function App() {
   return (
@@ -107,8 +107,8 @@ export default {
 
 ```js
 // vite.config.ts
-import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [tailwindcss()],

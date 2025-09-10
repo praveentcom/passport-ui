@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { BulletList } from "@/client";
+
+import { BulletList } from "../../src";
 
 const meta: Meta<typeof BulletList> = {
   title: "Composables/BulletList",

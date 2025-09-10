@@ -1,7 +1,9 @@
+import { useState } from "react";
+
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import { action } from "storybook/actions";
-import { Slider, MetaContainer, Label } from "@/client";
-import { useState } from "react";
+
+import { Label, MetaContainer, Slider } from "../../src";
 
 const meta: Meta<typeof Slider> = {
   title: "Components/Slider",

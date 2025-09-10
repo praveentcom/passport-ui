@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { action } from "storybook/actions";
+
 import {
   ContextMenu,
   ContextMenuCheckboxItem,
@@ -13,8 +15,7 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from "@/client";
-import { action } from "storybook/actions";
+} from "../../src";
 
 const meta: Meta<typeof ContextMenu> = {
   title: "Components/ContextMenu",

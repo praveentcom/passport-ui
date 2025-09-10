@@ -1,19 +1,41 @@
 import * as React from "react";
 
+import { cn } from "@/lib/utils";
 import {
   BorderTrail,
   BorderTrailProps,
 } from "@/motion-primitives/border-trail";
-import { cn } from "@/lib/utils";
 
-interface CardProps extends React.ComponentProps<"div"> {
+export interface CardProps extends React.ComponentProps<"div"> {
   borderTrail?: boolean | BorderTrailProps;
+  /**
+   * Makes the card interactive (clickable)
+   */
+  interactive?: boolean;
+  /**
+   * Accessible label for interactive cards
+   */
+  "aria-label"?: string;
+  /**
+   * ID of the element that labels this card
+   */
+  "aria-labelledby"?: string;
+  /**
+   * ID of the element that describes this card
+   */
+  "aria-describedby"?: string;
 }
 
 function Card({
   className,
   borderTrail = false,
+  interactive = false,
   children,
+  "aria-label": ariaLabel,
+  "aria-labelledby": ariaLabelledBy,
+  "aria-describedby": ariaDescribedBy,
+  onClick,
+  onKeyDown,
   ...props
 }: CardProps) {
   let borderTrailProps: BorderTrailProps | undefined;
@@ -31,17 +53,41 @@ function Card({
     borderTrailProps = borderTrail;
   }
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (interactive && (event.key === "Enter" || event.key === " ")) {
+      event.preventDefault();
+      const syntheticEvent = {
+        currentTarget: event.currentTarget,
+        target: event.target,
+        type: "click",
+        preventDefault: () => {},
+        stopPropagation: () => {},
+      } as React.MouseEvent<HTMLDivElement>;
+      onClick?.(syntheticEvent);
+    }
+    onKeyDown?.(event);
+  };
+
   const cardContent = (
     <div
       data-slot="card"
+      role={interactive ? "button" : undefined}
+      tabIndex={interactive ? 0 : undefined}
+      aria-label={interactive ? ariaLabel : undefined}
+      aria-labelledby={ariaLabelledBy}
+      aria-describedby={ariaDescribedBy}
       className={cn(
         "text-card-foreground rounded-md relative",
         "border border-border/85 bg-card",
         "h-min py-4 group",
         "transition-all duration-100",
+        interactive &&
+          "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
         className,
-        borderTrail ? "hover:bg-card/85" : "",
+        borderTrail ? "hover:bg-card/85" : ""
       )}
+      onClick={interactive ? onClick : undefined}
+      onKeyDown={interactive ? handleKeyDown : onKeyDown}
       {...props}
     >
       {borderTrail && (

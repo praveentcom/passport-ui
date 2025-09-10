@@ -1,6 +1,8 @@
 import React, { ReactNode } from "react";
-import { cn } from "@/lib/utils";
+
 import { cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
 
 export type HeaderContainerVariant = "compact" | "relaxed" | "full";
 
@@ -21,7 +23,7 @@ const headerContainerVariants = cva(
       sticky: false,
       blurred: false,
     },
-  },
+  }
 );
 
 const headerContentVariants = cva("px-4 py-3.5 mx-auto", {
@@ -85,6 +87,7 @@ export function HeaderContainer({
 }: HeaderContainerProps): ReactNode {
   return (
     <header
+      data-slot="header-container"
       className={cn(headerContainerVariants({ sticky, blurred }), className)}
     >
       <div className={headerContentVariants({ variant })}>{children}</div>
