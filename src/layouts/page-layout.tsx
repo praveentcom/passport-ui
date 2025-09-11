@@ -62,6 +62,10 @@ export interface PageLayoutProps
    */
   headerBlurred?: boolean;
   /**
+   * Whether to show header border and background only on scroll
+   */
+  headerRevealStylesOnScroll?: boolean;
+  /**
    * The variant of the footer container
    */
   footerVariant?: FooterContainerVariant;
@@ -102,6 +106,7 @@ export interface PageLayoutProps
  * @param headerVariant - The variant of the header container
  * @param headerSticky - Whether the header should stick to the top on scroll
  * @param headerBlurred - Whether the header should have a blurred background effect
+ * @param headerRevealStylesOnScroll - Whether to show header border and background only on scroll
  * @param footerVariant - The variant of the footer container
  * @param footerSticky - Whether the footer should stick to the bottom on scroll
  * @param footerBlurred - Whether the footer should have a blurred background effect
@@ -119,6 +124,7 @@ export function PageLayout({
   headerVariant = "full",
   headerSticky = true,
   headerBlurred = true,
+  headerRevealStylesOnScroll = false,
   footerVariant = "full",
   footerSticky = false,
   footerBlurred = false,
@@ -153,6 +159,7 @@ export function PageLayout({
           variant={headerVariant}
           sticky={headerSticky}
           blurred={headerBlurred}
+          revealStylesOnScroll={headerRevealStylesOnScroll}
         >
           {header}
         </HeaderContainer>

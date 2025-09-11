@@ -187,8 +187,7 @@ export {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-  NavigationMenuViewport,
+  NavigationMenuViewport
 } from "./components/navigation-menu";
 export {
   Pagination,
@@ -344,3 +343,4 @@ export { BorderTrail } from "./motion-primitives/border-trail";
 
 // Hooks
 export { useIsMobile } from "./hooks/use-mobile";
+export { useScroll } from "./hooks/use-scroll";

@@ -12,7 +12,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "../../src";
 
 const components: { title: string; href: string; description: string }[] = [
@@ -158,7 +157,7 @@ Navigation menus provide full keyboard navigation and screen reader support with
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+          <NavigationMenuLink asChild>
             <Link href="/docs">Docs</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
@@ -198,5 +197,6 @@ type Story = StoryObj<typeof NavigationMenu>;
 export const Default: Story = {
   args: {
     viewport: false,
+    className: 'h-120'
   },
 };

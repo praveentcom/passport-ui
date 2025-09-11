@@ -74,14 +74,14 @@ const backgroundColors = [
     border: true,
   },
   {
-    name: "Accent",
-    variable: "accent",
-    bg: "bg-accent",
-    text: "text-accent-foreground",
-    class: "bg-accent",
-    description: "Highlight color",
+    name: "Muted Foreground",
+    variable: "muted-foreground",
+    bg: "bg-muted-foreground",
+    text: "text-muted",
+    class: "bg-muted-foreground",
+    description: "Text on muted",
     border: true,
-  },
+  }
 ];
 
 const semanticColors = [
@@ -194,7 +194,6 @@ const interfaceColors = [
     class: "border-border",
     description: "Element borders",
     border: true,
-    isBorder: true,
   },
 ];
 
@@ -277,7 +276,7 @@ const tailwindColors = [
 const ColorCard = ({ color }: { color: Record<string, any> }) => (
   <div className="space-y-2">
     <div
-      className={`w-full h-12 ${color.bg} rounded-sm ${color.border ? "border" : ""} ${color.isBorder ? "border-2" : ""} flex items-center justify-center`}
+      className={`w-full h-12 ${color.bg} rounded-sm ${color.border ? "border" : ""} flex items-center justify-center`}
     />
     <div>
       <div className="text-xs font-mono">{color.variable}</div>

@@ -153,6 +153,16 @@ PageLayout provides comprehensive accessibility features including proper semant
         category: "Header",
       },
     },
+    headerRevealStylesOnScroll: {
+      control: { type: "boolean" },
+      description:
+        "Whether to show header border and background only on scroll",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+        category: "Header",
+      },
+    },
     footerVariant: {
       control: "select",
       options: ["compact", "relaxed", "full"],

@@ -88,6 +88,6 @@ The library's styles integrate seamlessly with consuming project's Tailwind setu
 
 ### Custom Properties Available
 All theme colors and design tokens from [src/styles.css](mdc:src/styles.css) are available:
-- Color system: `--primary`, `--secondary`, `--accent`, etc.
+- Color system: `--primary`, `--secondary`, etc.
 - Radius system: `--radius-xs` through `--radius-xl`
 - Typography: `--font-sans`, `--font-mono`

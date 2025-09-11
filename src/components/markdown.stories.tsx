@@ -140,7 +140,7 @@ function greet(name) {
 // Call the function
 const message = greet("World");
 \`\`\`
-
+  
 And a TypeScript example:
 
 \`\`\`typescript filename="types.ts"

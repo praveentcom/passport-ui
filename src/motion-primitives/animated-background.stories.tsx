@@ -100,7 +100,7 @@ export const Default: Story = {
       <div
         key={item}
         data-id={item}
-        className="mx-2 px-2.5 py-1 cursor-pointer"
+        className="px-2 py-1 cursor-pointer"
       >
         <p>{item}</p>
       </div>
@@ -113,7 +113,7 @@ export const Click: Story = {
     className: "bg-border rounded-sm",
     enableHover: false,
     children: ["Male", "Female"].map((item) => (
-      <div key={item} data-id={item} className="px-2.5 py-1 cursor-pointer">
+      <div key={item} data-id={item} className="px-2 py-1 cursor-pointer">
         <p>{item}</p>
       </div>
     )),

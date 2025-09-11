@@ -137,7 +137,7 @@ Follow the same structure as shadcn/ui components but with title: 'Composables/C
 ## Styling Guidelines
 
 ### Colors and Theming
-- Use CSS custom properties: `--primary`, `--secondary`, `--accent`, `--muted`, etc.
+- Use CSS custom properties: `--primary`, `--secondary`, `--muted`, etc.
 - Leverage existing utility classes from [src/styles.css](mdc:src/styles.css):
   - `.content-container`, `.section-container`
   - `.title-container`, `.meta-container`

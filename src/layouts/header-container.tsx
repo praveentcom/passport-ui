@@ -1,13 +1,16 @@
+"use client";
+
 import React, { ReactNode } from "react";
 
 import { cva } from "class-variance-authority";
 
+import { useScroll } from "@/hooks/use-scroll";
 import { cn } from "@/lib/utils";
 
 export type HeaderContainerVariant = "compact" | "relaxed" | "full";
 
 const headerContainerVariants = cva(
-  "w-full z-50 transition-all duration-200 ease-in-out border-b border-border",
+  "w-full z-50 transition-all ease-in-out border-b",
   {
     variants: {
       sticky: {
@@ -15,13 +18,18 @@ const headerContainerVariants = cva(
         false: "relative",
       },
       blurred: {
-        true: "backdrop-blur-md bg-sidebar/75",
+        true: "backdrop-blur-md bg-sidebar/80",
         false: "bg-sidebar",
+      },
+      bordered: {
+        true: "border-border",
+        false: "border-transparent",
       },
     },
     defaultVariants: {
       sticky: false,
       blurred: false,
+      bordered: true,
     },
   }
 );
@@ -44,29 +52,12 @@ const headerContentVariants = cva("px-4 py-3.5 mx-auto", {
 });
 
 export interface HeaderContainerProps {
-  /**
-   * The header content to display
-   */
   children: ReactNode;
-  /**
-   * Additional class names for the header wrapper
-   */
   className?: string;
-  /**
-   * The variant of the header container - controls max width
-   */
   variant?: HeaderContainerVariant;
-  /**
-   * Whether the header should stick to the top on scroll
-   */
   sticky?: boolean;
-  /**
-   * Whether the header should have a blurred background on scroll
-   */
   blurred?: boolean;
-  /**
-   * Optional id for the header element
-   */
+  revealStylesOnScroll?: boolean;
   id?: string;
 }
 
@@ -80,6 +71,7 @@ export interface HeaderContainerProps {
  * @param variant - Controls the max width of the header (compact, relaxed, full)
  * @param sticky - Whether the header should stick to the top on scroll
  * @param blurred - Whether the header should have a blurred background effect
+ * @param revealStylesOnScroll - Whether to reveal border and background styles only on scroll
  * @returns The header container component
  */
 export function HeaderContainer({
@@ -88,13 +80,28 @@ export function HeaderContainer({
   variant = "full",
   sticky = false,
   blurred = false,
+  revealStylesOnScroll = false,
   id,
 }: HeaderContainerProps): ReactNode {
+  const hasScrolled = useScroll();
+
+  const shouldShowStyles = revealStylesOnScroll ? hasScrolled : true;
+  const effectiveBlurred = shouldShowStyles ? blurred : false;
+  const effectiveBordered = shouldShowStyles;
+
   return (
     <header
       id={id}
       data-slot="header-container"
-      className={cn(headerContainerVariants({ sticky, blurred }), className)}
+      className={cn(
+        headerContainerVariants({
+          sticky,
+          blurred: effectiveBlurred,
+          bordered: effectiveBordered,
+        }),
+        revealStylesOnScroll && !hasScrolled && "bg-transparent",
+        className
+      )}
     >
       <div className={headerContentVariants({ variant })}>{children}</div>
     </header>

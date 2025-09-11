@@ -8,8 +8,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
   --color-sidebar: var(--sidebar);
   --color-chart-5: var(--chart-5);
   --color-chart-4: var(--chart-4);
@@ -19,8 +17,6 @@
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -69,8 +65,6 @@
   --secondary-foreground: oklch(0.2649 0.0018 286.27);
   --muted: oklch(0.967 0.001 286.375);
   --muted-foreground: oklch(0.4 0.016 285.938);
-  --accent: oklch(0.94 0.001 286.375);
-  --accent-foreground: oklch(0.2649 0.0018 286.27);
   --info: oklch(0.528 0.225 262.55);
   --info-muted: oklch(0.964 0.0141 268.49);
   --info-foreground: oklch(0.985 0 0);
@@ -112,8 +106,6 @@
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.2983 0.0054 286.07);
   --muted-foreground: oklch(0.75 0.015 286.067);
-  --accent: oklch(0.2983 0.0054 286.07);
-  --accent-foreground: oklch(0.985 0 0);
   --info: oklch(0.528 0.225 262.55);
   --info-muted: oklch(0.1974 0.0667 262.88);
   --info-foreground: oklch(0.985 0 0);
@@ -209,6 +201,9 @@
   .passport-ui .section-container {
     @apply grid gap-y-6 gap-x-6 text-foreground;
   }
+  .passport-ui .secondary-section-container {
+    @apply grid gap-y-4 gap-x-4 text-foreground;
+  }
   .passport-ui .list-container {
     @apply grid gap-y-3 gap-x-3 text-muted-foreground;
   }
@@ -254,7 +249,7 @@
     @apply bg-transparent text-xs font-mono;
   }
   .passport-ui .line-number {
-    @apply text-xs text-muted-foreground/60 font-mono select-none pr-2 text-right border-r border-border bg-sidebar flex-shrink-0;
+    @apply text-xs text-muted-foreground/80 font-mono select-none pr-2 text-right border-r border-border bg-sidebar flex-shrink-0;
   }
   .passport-ui .line-content {
     @apply text-xs px-2.5 flex-1 min-w-0;

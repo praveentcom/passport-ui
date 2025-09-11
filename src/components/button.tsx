@@ -11,18 +11,18 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-primary text-primary-foreground shadow-s hover:bg-primary/85",
+          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/85",
         destructive:
-          "bg-destructive text-destructive-foreground shadow-s hover:bg-destructive/85",
+          "bg-destructive text-destructive-foreground shadow-xs hover:bg-destructive/85",
         outline:
-          "border border-input bg-background shadow-s hover:bg-accent text-muted-foreground hover:text-foreground",
+          "border border-input bg-background shadow-xs hover:bg-border text-muted-foreground hover:text-foreground",
         secondary:
-          "bg-card text-secondary-foreground shadow-s hover:bg-secondary",
+          "bg-card text-secondary-foreground shadow-xs hover:bg-secondary",
         ghost: "hover:bg-border text-muted-foreground hover:text-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        regular: "h-6 rounded-xs px-2 py-1.5 has-[>svg]:px-1.5 text-xs",
+        regular: "h-6 rounded-xs px-2 py-1 has-[>svg]:px-1.5 text-xs",
         medium: "h-8 rounded-xs px-2.5 py-1.5 has-[>svg]:px-2 text-sm",
         large: "h-9 rounded-sm gap-1.5 px-3 has-[>svg]:px-2.5 text-sm",
       },

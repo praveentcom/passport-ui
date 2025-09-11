@@ -206,7 +206,7 @@ function CodeBlock({
       {filename && (
         <div
           data-slot="code-block-header"
-          className="flex justify-between items-center gap-2 px-2 py-0.5 bg-sidebar border-b border-border text-xs text-muted-foreground/60"
+          className="flex font-mono justify-between items-center gap-2 px-2 py-0.5 bg-sidebar border-b border-border text-xs text-muted-foreground/80"
         >
           <>{filename}</>
           <div

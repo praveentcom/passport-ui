@@ -55,8 +55,8 @@ export default function IntroductionPage() {
       </MetaContainer>
       <MetaContainer>
         <div className="flex gap-1 items-center">
-          <p className="text-xs font-medium">Step 1:</p>
-          <p className="text-xs font-normal">Install the passport-ui package</p>
+          <p className="text-sm font-medium">Step 1:</p>
+          <p className="text-sm font-normal">Install the passport-ui package</p>
         </div>
         <CodeBlock
           filename="zsh/bash"
@@ -66,8 +66,8 @@ export default function IntroductionPage() {
       </MetaContainer>
       <MetaContainer>
         <div className="flex gap-1 items-center">
-          <p className="text-xs font-medium">Step 2:</p>
-          <p className="text-xs font-normal">Install required dependencies</p>
+          <p className="text-sm font-medium">Step 2:</p>
+          <p className="text-sm font-normal">Install required dependencies</p>
         </div>
         <CodeBlock
           filename="zsh/bash"
@@ -77,8 +77,8 @@ export default function IntroductionPage() {
       </MetaContainer>
       <MetaContainer>
         <div className="flex gap-1 items-center">
-          <p className="text-xs font-medium">Step 3:</p>
-          <p className="text-xs font-normal">
+          <p className="text-sm font-medium">Step 3:</p>
+          <p className="text-sm font-normal">
             Configure PostCSS to use tailwindcss
           </p>
         </div>
@@ -90,8 +90,8 @@ export default function IntroductionPage() {
       </MetaContainer>
       <MetaContainer>
         <div className="flex gap-1 items-center">
-          <p className="text-xs font-medium">Step 4:</p>
-          <p className="text-xs font-normal">
+          <p className="text-sm font-medium">Step 4:</p>
+          <p className="text-sm font-normal">
             Import passport-ui styles in your main stylesheet
           </p>
         </div>
@@ -103,8 +103,8 @@ export default function IntroductionPage() {
       </MetaContainer>
       <MetaContainer>
         <div className="flex gap-1 items-center">
-          <p className="text-xs font-medium">Step 5:</p>
-          <p className="text-xs font-normal">
+          <p className="text-sm font-medium">Step 5:</p>
+          <p className="text-sm font-normal">
             Wrap your app with the theme provider (for theme support)
           </p>
         </div>
@@ -116,8 +116,8 @@ export default function IntroductionPage() {
       </MetaContainer>
       <MetaContainer>
         <div className="flex gap-1 items-center">
-          <p className="text-xs font-medium">Step 6:</p>
-          <p className="text-xs font-normal">
+          <p className="text-sm font-medium">Step 6:</p>
+          <p className="text-sm font-normal">
             Use the components (example: Button, Card, etc.)
           </p>
         </div>

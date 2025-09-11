@@ -15,7 +15,6 @@ The styling system is built on Tailwind CSS v4 with a comprehensive theme system
 - **CSS Custom Properties**: Defined in `:root` and `.dark` selectors
 - **Color System**: Uses OKLCH color space for better color management
 - **Radius System**: Configurable border radius scale (xs, sm, md, lg, xl)
-- **Typography**: Geist Sans and Geist Mono font families
 
 ### Layer Organization
 ```css
@@ -50,7 +49,6 @@ The styling system is built on Tailwind CSS v4 with a comprehensive theme system
 All colors use CSS custom properties that automatically switch between light/dark modes:
 - Primary colors: `--primary`, `--primary-foreground`
 - Secondary colors: `--secondary`, `--secondary-foreground`
-- Accent colors: `--accent`, `--accent-foreground`
 - Semantic colors: `--destructive`, `--muted`, `--border`, etc.
 - Chart colors: `--chart-1` through `--chart-5`
 - Sidebar colors: Complete sidebar color system

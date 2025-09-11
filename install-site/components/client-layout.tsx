@@ -2,33 +2,27 @@
 
 import React from "react";
 
-import { Home, Palette } from "lucide-react";
-
 import { MetaContainer } from "../../src/composables/meta-container";
 import { ThemeToggle } from "../../src/composables/theme-toggle";
 import { PageLayout } from "../../src/layouts/page-layout";
 import { SidebarContainer } from "../../src/layouts/sidebar-container";
 import { SITE_CONFIG } from "../constants";
+import { PRIMARY_NAVIGATION_PAGES } from "../constants/components";
+import { usePathname } from "next/navigation";
+
+const getPageTitle = (path: string) => {
+  const page = PRIMARY_NAVIGATION_PAGES.find((page) => page.href === path);
+  return page?.title;
+};
 
 export function ClientLayout({ children }: { children: React.ReactNode }) {
-  const sidebarMenuItems = [
-    {
-      title: "Installation",
-      href: "/",
-      icon: Home,
-    },
-    {
-      title: "Color System",
-      href: "/colors",
-      icon: Palette,
-    },
-  ];
+  const pathname = usePathname();
 
   return (
     <PageLayout
       leftSidebar={
         <SidebarContainer
-          menuItems={sidebarMenuItems}
+          menuItems={PRIMARY_NAVIGATION_PAGES}
           searchable={true}
           searchPlaceholder="Search..."
           sidebarHeader={
@@ -42,7 +36,9 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
       contentVariant="relaxed"
       header={
         <div className="flex justify-between items-center gap-4">
-          <h2>Passport UI</h2>
+          <h2>
+            {getPageTitle(pathname)}
+          </h2>
           <ThemeToggle />
         </div>
       }
