@@ -20,6 +20,7 @@ import {
 
 import { SAMPLE_HEADER_CONTENT } from "../../.storybook/constants";
 import { HeaderContainer } from "./header-container";
+import { ThemeButton } from "@/composables/theme-button";
 
 const meta: Meta<typeof HeaderContainer> = {
   title: "Layouts/HeaderContainer",
@@ -193,31 +194,32 @@ export const ProfileHeader: Story = {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Drawer direction="left" modal onOpenChange={() => {}}>
-              <DrawerTrigger className="md:hidden" asChild>
-                <Button variant="ghost" className="py-3.5">
-                  <MenuIcon className="size-5" />
+              <DrawerTrigger asChild>
+                <Button variant="ghost" size="medium" className="md:hidden">
+                  <MenuIcon />
                 </Button>
               </DrawerTrigger>
               <DrawerContent>
                 <div className="mx-auto w-full max-w-sm secondary-section-container">
                   <div className="flex items-center justify-between">
                     <h3>{profile.fullName}</h3>
-                    <DrawerClose asChild>
-                      <Button variant="ghost">
-                        <XIcon className="text-muted-foreground" />
+                    <DrawerClose>
+                      <Button variant="ghost" size="medium">
+                        <XIcon />
                       </Button>
                     </DrawerClose>
                   </div>
                   <div className="list-container">
                     {links.map((link, index) => {
                       return (
-                        <Button
-                          size="medium"
-                          asChild
+                        <Link
                           key={`mobile-menu-item-${index}`}
+                          href={link.href}
                         >
-                          <Link href={link.href}>{link.label}</Link>
-                        </Button>
+                          <Button size="medium" className="w-full">
+                            {link.label}
+                          </Button>
+                        </Link>
                       );
                     })}
                   </div>
@@ -230,19 +232,22 @@ export const ProfileHeader: Story = {
             </Avatar>
             <h3>{profile.fullName}</h3>
           </div>
-          <NavigationMenu className="hidden md:block">
-            <NavigationMenuList className="gap-2">
-              {links.map((link, index) => {
-                return (
-                  <NavigationMenuItem key={`desktop-menu-item-${index}`}>
-                    <NavigationMenuLink asChild>
-                      <Link href={link.href}>{link.label}</Link>
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                );
-              })}
-            </NavigationMenuList>
-          </NavigationMenu>
+          <div className="flex items-center gap-3">
+            <NavigationMenu className="hidden md:block">
+              <NavigationMenuList className="gap-2">
+                {links.map((link, index) => {
+                  return (
+                    <NavigationMenuItem key={`desktop-menu-item-${index}`}>
+                      <NavigationMenuLink href={link.href}>
+                        {link.label}
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                  );
+                })}
+              </NavigationMenuList>
+            </NavigationMenu>
+            <ThemeButton minimal variant="outline" align="end" size="medium" />
+          </div>
         </div>
       );
     })(),

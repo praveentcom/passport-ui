@@ -198,7 +198,7 @@ export const Default: Story = {
     ),
     sidebarFooter: (
       <Button>
-        <Mail className="size-3.5" />
+        <Mail />
         Support
       </Button>
     ),

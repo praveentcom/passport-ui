@@ -20,6 +20,7 @@ export function ThemeButton({
   minimal = false,
   align = "end",
   variant = "ghost",
+  size = "regular",
 }: { minimal?: boolean; align?: "start" | "end" } & VariantProps<
   typeof buttonVariants
 >) {
@@ -37,12 +38,12 @@ export function ThemeButton({
   const getIcon = () => {
     switch (theme) {
       case "light":
-        return <Sun className="size-3.5" />;
+        return <Sun />;
       case "dark":
-        return <Moon className="size-3.5" />;
+        return <Moon />;
       case "system":
       default:
-        return <Monitor className="size-3.5" />;
+        return <Monitor />;
     }
   };
 
@@ -65,6 +66,7 @@ export function ThemeButton({
           data-slot="theme-button"
           variant={variant}
           title={`Current: ${getLabel()}. Click to change theme.`}
+          size={size}
         >
           {getIcon()}
           {!minimal && <span>{getLabel()}</span>}
@@ -86,7 +88,7 @@ export function ThemeButton({
           onClick={() => setTheme("dark")}
         >
           <Moon className="size-3" />
-          <span className="text-muted-foreground">Dark</span>
+          <span>Dark</span>
         </DropdownMenuItem>
         <DropdownMenuItem
           className="flex gap-2"

@@ -165,11 +165,11 @@ export const SAMPLE_HEADER_CONTENT: ReactNode = (
     </MetaContainer>
     <div className="flex items-center gap-2">
       <Button variant="outline" size="regular">
-        <Settings className="size-3.5" />
+        <Settings />
         Settings
       </Button>
       <Button size="regular">
-        <Plus className="size-3.5" />
+        <Plus />
         New Project
       </Button>
     </div>

@@ -210,7 +210,7 @@ const sampleLeftSidebar: ReactNode = (
     }
     sidebarFooter={
       <Button>
-        <Mail className="size-3.5" />
+        <Mail />
         Support
       </Button>
     }
@@ -231,7 +231,7 @@ const sampleRightSidebar: ReactNode = (
     }
     sidebarFooter={
       <Button>
-        <Mail className="size-3.5" />
+        <Mail />
         Help
       </Button>
     }

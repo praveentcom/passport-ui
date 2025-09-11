@@ -76,15 +76,12 @@ export function useLiveRegion(politeness: "polite" | "assertive" = "polite") {
   const timeoutRef = React.useRef<NodeJS.Timeout>();
 
   const announce = React.useCallback((newMessage: string, delay = 100) => {
-    // Clear any existing timeout
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
 
-    // Clear the message first to ensure it's announced even if it's the same
     setMessage("");
 
-    // Set the new message after a small delay
     timeoutRef.current = setTimeout(() => {
       setMessage(newMessage);
     }, delay);
@@ -97,7 +94,6 @@ export function useLiveRegion(politeness: "polite" | "assertive" = "polite") {
     setMessage("");
   }, []);
 
-  // Cleanup on unmount
   React.useEffect(() => {
     return () => {
       if (timeoutRef.current) {
