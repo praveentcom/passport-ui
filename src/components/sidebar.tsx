@@ -473,7 +473,7 @@ function SidebarMenuItem({ className, ...props }: React.ComponentProps<"li">) {
 }
 
 const sidebarMenuButtonVariants = cva(
-  "peer/menu-button cursor-pointer flex w-full items-center gap-2 overflow-hidden rounded-sm px-2 py-1 text-left text-sm outline-hidden ring-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-border active:text-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-border data-[active=true]:text-foreground data-[state=open]:hover:bg-border data-[state=open]:hover:text-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0",
+  "peer/menu-button cursor-pointer flex w-full items-center gap-2 overflow-hidden rounded-sm px-2 py-1 text-left text-sm outline-hidden ring-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-border active:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:cursor-not-allowed aria-disabled:opacity-50 data-[active=true]:bg-border data-[active=true]:text-foreground data-[state=open]:hover:bg-border data-[state=open]:hover:text-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -673,7 +673,7 @@ function SidebarMenuSubButton({
       data-sidebar="menu-sub-button"
       data-active={isActive}
       className={cn(
-        "text-muted-foreground ring-ring hover:bg-border hover:text-foreground active:bg-border active:text-foreground [&>svg]:text-muted-foreground flex h-7 min-w-0 -translate-x-px items-center gap-2 overflow-hidden rounded-sm px-2 outline-hidden focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0",
+        "text-muted-foreground ring-ring hover:bg-border hover:text-foreground active:bg-border active:text-foreground [&>svg]:text-muted-foreground flex h-7 min-w-0 -translate-x-px items-center gap-2 overflow-hidden rounded-sm px-2 outline-hidden focus-visible:ring-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0",
         "data-[active=true]:bg-border data-[active=true]:text-foreground",
         size === "sm" && "text-xs",
         size === "md" && "text-sm",

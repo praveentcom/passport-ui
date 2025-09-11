@@ -9,6 +9,7 @@ import { SidebarContainer } from "../../src/layouts/sidebar-container";
 import { SITE_CONFIG } from "../constants";
 import { PRIMARY_NAVIGATION_PAGES } from "../constants/components";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const getPageTitle = (path: string) => {
   const page = PRIMARY_NAVIGATION_PAGES.find((page) => page.href === path);
@@ -45,16 +46,21 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
       footer={
         <MetaContainer title="Maintained by Praveen Thirumurugan">
           <div className="flex gap-2 items-center">
-            <a
+            <Link
+              target="_blank"
               href={SITE_CONFIG.repository}
               className="text-primary hover:underline"
             >
               GitHub
-            </a>
+            </Link>
             <span>•</span>
-            <a href={SITE_CONFIG.npm} className="text-primary hover:underline">
+            <Link
+              target="_blank"
+              href={SITE_CONFIG.npm}
+              className="text-primary hover:underline"
+            >
               npm
-            </a>
+            </Link>
           </div>
         </MetaContainer>
       }

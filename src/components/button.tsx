@@ -2,11 +2,12 @@ import * as React from "react";
 
 import { Slot } from "@radix-ui/react-slot";
 import { type VariantProps, cva } from "class-variance-authority";
+import { Loader2 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center cursor-pointer justify-center gap-1.5 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 aria-invalid:border-destructive",
+  "inline-flex items-center cursor-pointer justify-center gap-1.5 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 aria-invalid:border-destructive",
   {
     variants: {
       variant: {
@@ -39,6 +40,14 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   /**
+   * Whether the button is in a loading state
+   */
+  loading?: boolean;
+  /**
+   * Custom loading text to display (optional)
+   */
+  loadingText?: string;
+  /**
    * Accessible label for the button when content isn't descriptive
    */
   "aria-label"?: string;
@@ -69,6 +78,10 @@ function Button({
   variant,
   size,
   asChild = false,
+  loading = false,
+  loadingText,
+  children,
+  disabled,
   "aria-label": ariaLabel,
   "aria-labelledby": ariaLabelledBy,
   "aria-describedby": ariaDescribedBy,
@@ -88,9 +101,17 @@ function Button({
       aria-expanded={ariaExpanded}
       aria-controls={ariaControls}
       aria-pressed={ariaPressed}
+      aria-busy={loading}
+      disabled={disabled || loading}
+      aria-disabled={disabled || loading}
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
-    />
+    >
+      {loading && (
+        <Loader2 className="animate-spin" aria-hidden="true" />
+      )}
+      {loading && loadingText ? loadingText : children}
+    </Comp>
   );
 }
 

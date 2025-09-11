@@ -16,9 +16,12 @@ const contentContainerVariants = cva("content-container", {
        * such as with margins on either side of the page.
        */
       compact: "max-w-sm w-full",
-      relaxed: "max-w-3xl w-full",
+      relaxed: "max-w-5xl w-full",
       full: "w-full",
     },
+  },
+  defaultVariants: {
+    variant: "full",
   },
 });
 

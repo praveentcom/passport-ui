@@ -272,9 +272,9 @@ const tailwindColors = [
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ColorCard = ({ color }: { color: Record<string, any> }) => (
-  <div className="space-y-2">
+  <div className="space-y-1">
     <div
-      className={`w-full h-12 ${color.bg} rounded-sm ${color.border ? "border" : ""} flex items-center justify-center`}
+      className={`w-full h-12 ${color.bg} rounded-xs ${color.border ? "border" : ""} flex items-center justify-center`}
     />
     <div>
       <div className="text-xs font-mono">{color.variable}</div>
@@ -286,8 +286,8 @@ const ColorCard = ({ color }: { color: Record<string, any> }) => (
 );
 
 const TailwindColorCard = ({ color }: { color: string }) => (
-  <div className="space-y-2">
-    <div className={`w-full h-12 bg-${color} rounded-sm border`} />
+  <div className="space-y-1">
+    <div className={`w-full h-12 bg-${color} rounded-xs border`} />
     <div className="text-xs text-center font-mono">{color}</div>
   </div>
 );
@@ -314,12 +314,12 @@ export default function ColorsPage() {
           hierarchy.
         </MetaContainer>
         <div className="list-container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
             {designColors.map((color) => (
               <ColorCard key={color.name} color={color} />
             ))}
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
             {backgroundColors.map((color) => (
               <ColorCard key={color.name} color={color} />
             ))}
@@ -334,12 +334,12 @@ export default function ColorsPage() {
           Colors that convey meaning and state information to users.
         </MetaContainer>
         <div className="list-container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
             {semanticColors.map((color) => (
               <ColorCard key={color.name} color={color} />
             ))}
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
             {mutedSemanticColors.map((color) => (
               <ColorCard key={color.name} color={color} />
             ))}
@@ -354,7 +354,7 @@ export default function ColorsPage() {
           Specialized colors for specific component types.
         </MetaContainer>
         <div className="list-container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
             {interfaceColors.map((color) => (
               <ColorCard key={color.name} color={color} />
             ))}
@@ -384,7 +384,7 @@ export default function ColorsPage() {
           Specialized colors for sidebar and navigation components.
         </MetaContainer>
         <div className="list-container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
             {sidebarColors.map((color) => (
               <ColorCard key={color.name} color={color} />
             ))}

@@ -15,13 +15,15 @@ const meta: Meta<typeof Button> = {
 ## Features
 - Multiple visual variants (primary, destructive, outline, secondary, ghost, link)
 - Three size options (regular, medium, large)
+- Built-in loading state with animated spinner
+- Custom loading text support
 - Built-in focus management and keyboard navigation
 - Icon support with automatic sizing
 - Polymorphic rendering with asChild prop
 - Full accessibility compliance with ARIA attributes
 
 ## Usage
-Use buttons for triggering actions, navigation, and form submissions. Choose the appropriate variant based on the action's importance and context within your interface.`,
+Use buttons for triggering actions, navigation, and form submissions. Choose the appropriate variant based on the action's importance and context within your interface. The loading state automatically disables the button and shows a spinning loader icon to indicate async operations.`,
       },
     },
   },
@@ -73,6 +75,23 @@ Use buttons for triggering actions, navigation, and form submissions. Choose the
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: "false" },
+        category: "State",
+      },
+    },
+    loading: {
+      control: { type: "boolean" },
+      description: "Whether the button is in a loading state with spinner animation",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+        category: "State",
+      },
+    },
+    loadingText: {
+      control: { type: "text" },
+      description: "Custom text to display when button is loading",
+      table: {
+        type: { summary: "string" },
         category: "State",
       },
     },
@@ -169,6 +188,31 @@ export const LargeSize: Story = {
       </Button>
       <Button variant="link" size="large">
         Link
+      </Button>
+    </div>
+  ),
+};
+
+export const LoadingState: Story = {
+  render: () => (
+    <div className="w-sm list-container grid-cols-2">
+      <Button variant="primary" loading loadingText="Saving...">
+        Save Changes
+      </Button>
+      <Button variant="destructive" loading loadingText="Deleting...">
+        Delete Item
+      </Button>
+      <Button variant="outline" loading loadingText="Processing...">
+        Process Data
+      </Button>
+      <Button variant="secondary" loading loadingText="Loading...">
+        Load More
+      </Button>
+      <Button variant="ghost" loading loadingText="Fetching...">
+        Fetch Data
+      </Button>
+      <Button variant="link" loading loadingText="Connecting...">
+        Connect
       </Button>
     </div>
   ),
