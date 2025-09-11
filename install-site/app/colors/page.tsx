@@ -1,11 +1,6 @@
-"use client";
-
+import { ContentContainer } from "@/layouts/content-container";
 import { Separator } from "../../../src/components/separator";
 import { MetaContainer } from "../../../src/composables/meta-container";
-import { ThemeToggle } from "../../../src/composables/theme-toggle";
-import { PageLayout } from "../../../src/layouts/page-layout";
-import { SidebarContainer } from "../../../src/layouts/sidebar-container";
-import { COLORS_PAGE_DATA, getSidebarMenuItems } from "../../constants";
 
 /**
  * Color Palette for Passport UI
@@ -297,43 +292,9 @@ const TailwindColorCard = ({ color }: { color: string }) => (
   </div>
 );
 
-const sidebarMenuItems = getSidebarMenuItems("/colors");
-
-const sidebar = (
-  <SidebarContainer
-    menuItems={sidebarMenuItems}
-    searchable={true}
-    searchPlaceholder="Search..."
-    sidebarHeader={
-      <MetaContainer title="Passport UI">
-        Sleek & Compact UI Library
-      </MetaContainer>
-    }
-  />
-);
-
 export default function ColorsPage() {
   return (
-    <PageLayout
-      sidebar={sidebar}
-      contentVariant="relaxed"
-      header={
-        <div className="flex justify-between items-center gap-4">
-          <h2>Color System</h2>
-          <ThemeToggle />
-        </div>
-      }
-      footer={
-        <MetaContainer title="Color System Documentation">
-          <p className="text-sm text-muted-foreground">
-            All colors support automatic light/dark theme switching
-          </p>
-        </MetaContainer>
-      }
-      footerSticky
-      footerBlurred
-    >
-      <div className="section-container">
+    <ContentContainer blurIn>
         <div className="section-container">
           <div className="grid">
             <h3>Overview</h3>
@@ -456,7 +417,6 @@ export default function ColorsPage() {
             ))}
           </div>
         </div>
-      </div>
-    </PageLayout>
+      </ContentContainer>
   );
 }

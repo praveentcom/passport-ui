@@ -1,7 +1,3 @@
-import { Home, Palette } from "lucide-react";
-
-import { SidebarContainerMenuItem } from "../src/layouts/sidebar-container";
-
 // Base URLs and site info
 export const SITE_CONFIG = {
   baseUrl: "https://install.passportui.com",
@@ -22,22 +18,6 @@ export const SITE_CONFIG = {
     logo: "https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png",
   },
 } as const;
-
-// Sidebar menu items
-export const SIDEBAR_MENU_ITEMS: SidebarContainerMenuItem[] = [
-  {
-    title: "Installation",
-    href: "/",
-    isActive: false, // Will be overridden per page
-    icon: Home,
-  },
-  {
-    title: "Color System",
-    href: "/colors",
-    isActive: false, // Will be overridden per page
-    icon: Palette,
-  },
-];
 
 // Base structured data for the software application
 export const BASE_SOFTWARE_APPLICATION = {
@@ -156,13 +136,3 @@ export const COLORS_PAGE_DATA = createPageStructuredData({
     ],
   },
 });
-
-// Helper functions to get sidebar items with active state
-export const getSidebarMenuItems = (
-  activePath: string
-): SidebarContainerMenuItem[] => {
-  return SIDEBAR_MENU_ITEMS.map((item) => ({
-    ...item,
-    isActive: item.href === activePath,
-  }));
-};

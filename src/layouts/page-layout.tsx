@@ -1,3 +1,5 @@
+"use client";
+
 import React, { Fragment, ReactNode, useState } from "react";
 
 import { VariantProps, cva } from "class-variance-authority";

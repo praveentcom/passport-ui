@@ -7,7 +7,7 @@ import { BlurIn } from "../motion-primitives/blur-in";
 
 export type ContentContainerVariant = "compact" | "relaxed" | "full";
 
-const contentContainerVariants = cva("content-container mx-auto", {
+const contentContainerVariants = cva("content-container", {
   variants: {
     variant: {
       /**
@@ -41,15 +41,21 @@ export function ContentContainer({
   variant,
   blurIn,
 }: ContentContainerProps): ReactNode {
+  const Comp = (
+    <div className="section-container">
+      {children}
+    </div>
+  );
+
   return (
     <div
       data-slot="content-container"
       className={cn(contentContainerVariants({ variant }), className)}
     >
       {
-        !blurIn ? children : (
+        !blurIn ? Comp : (
           <BlurIn>
-            {children}
+            {Comp}
           </BlurIn>
         )
       }

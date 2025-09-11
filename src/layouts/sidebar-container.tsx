@@ -1,4 +1,6 @@
-import React, { ReactNode, useState, useMemo } from "react";
+"use client";
+
+import React, { ReactNode, useState, useMemo, useEffect } from "react";
 
 import {
   Sidebar,
@@ -143,12 +145,12 @@ export function SidebarContainer({
 
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [currentUrl, setCurrentUrl] = useState<string>("");
 
-  const currentUrl = useMemo(() => {
+  useEffect(() => {
     if (typeof window !== "undefined") {
-      return window.location.hash || window.location.pathname;
+      setCurrentUrl(window.location.hash || window.location.pathname);
     }
-    return "";
   }, []);
 
   const processedMenuItems = useMemo(() => {

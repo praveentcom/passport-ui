@@ -202,7 +202,7 @@
 
   /* Page Container Styles */
   .passport-ui .content-container {
-    @apply grid gap-8 px-4 py-3.5 text-foreground mx-auto;
+    @apply px-4 py-3.5 text-foreground mx-auto;
   }
 
   /* Other Container Styles */

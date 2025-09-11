@@ -1,8 +1,10 @@
+import "./globals.css";
+
 import type { Metadata } from "next";
 
 import { Analytics } from "../../src/components/analytics";
 import { ThemeProvider } from "../../src/providers/theme-provider";
-import "./globals.css";
+import { ClientLayout } from "../components/client-layout";
 
 export const metadata: Metadata = {
   title: "Install Passport UI - Setup Guide & Documentation",
@@ -103,7 +105,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <ClientLayout>{children}</ClientLayout>
         </ThemeProvider>
       </body>
     </html>
