@@ -112,7 +112,7 @@ export function ToggleSelect({
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
         className={cn(
-          "inline-flex items-center rounded-sm border bg-card px-1 py-0.5 relative",
+          "inline-flex items-center rounded-sm border bg-card p-0.75 relative",
           className
         )}
       >
