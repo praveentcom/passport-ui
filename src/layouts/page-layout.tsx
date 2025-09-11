@@ -44,7 +44,7 @@ export interface PageLayoutProps
   /**
    * The variant of the content container
    */
-  contentVariant?: ContentContainerVariant | 'custom';
+  contentVariant?: ContentContainerVariant | "custom";
   /**
    * Show blurIn animation for the content container
    */
@@ -127,11 +127,15 @@ export function PageLayout({
 }: PageLayoutProps): ReactNode {
   const [leftSidebarOpen, setLeftSidebarOpen] = useState(true);
   const [rightSidebarOpen, setRightSidebarOpen] = useState(true);
-  
+
   const defaultSkipLinks = [
     { href: "#main-content", label: "Skip to main content" },
-    ...(leftSidebar ? [{ href: "#left-sidebar", label: "Skip to left navigation" }] : []),
-    ...(rightSidebar ? [{ href: "#right-sidebar", label: "Skip to right navigation" }] : []),
+    ...(leftSidebar
+      ? [{ href: "#left-sidebar", label: "Skip to left navigation" }]
+      : []),
+    ...(rightSidebar
+      ? [{ href: "#right-sidebar", label: "Skip to right navigation" }]
+      : []),
     ...(header ? [{ href: "#header", label: "Skip to header" }] : []),
     ...(footer ? [{ href: "#footer", label: "Skip to footer" }] : []),
   ];
@@ -154,8 +158,14 @@ export function PageLayout({
         </HeaderContainer>
       )}
       <main id="main-content" className="flex-1">
-        {contentVariant === 'custom' ? children : (
-          <ContentContainer className={className} variant={contentVariant} blurIn={contentBlurIn}>
+        {contentVariant === "custom" ? (
+          children
+        ) : (
+          <ContentContainer
+            className={className}
+            variant={contentVariant}
+            blurIn={contentBlurIn}
+          >
             {children}
           </ContentContainer>
         )}
@@ -174,13 +184,13 @@ export function PageLayout({
   );
 
   const renderRightSidebar = () => (
-    <div 
-      id="right-sidebar" 
-      role="navigation" 
+    <div
+      id="right-sidebar"
+      role="navigation"
       aria-label="Right navigation"
       className="fixed right-0 top-0 h-full"
     >
-      <SidebarProvider 
+      <SidebarProvider
         defaultOpen={true}
         open={rightSidebarOpen}
         onOpenChange={setRightSidebarOpen}
@@ -195,7 +205,7 @@ export function PageLayout({
 
   if (leftSidebar && rightSidebar) {
     layoutStructure = (
-      <SidebarProvider 
+      <SidebarProvider
         defaultOpen={true}
         open={leftSidebarOpen}
         onOpenChange={setLeftSidebarOpen}
@@ -204,16 +214,14 @@ export function PageLayout({
           {leftSidebar}
         </div>
         <SidebarInset className="flex min-h-screen">
-          <div className={contentClasses}>
-            {renderMainContent()}
-          </div>
+          <div className={contentClasses}>{renderMainContent()}</div>
           {renderRightSidebar()}
         </SidebarInset>
       </SidebarProvider>
     );
   } else if (leftSidebar && !rightSidebar) {
     layoutStructure = (
-      <SidebarProvider 
+      <SidebarProvider
         defaultOpen={true}
         open={leftSidebarOpen}
         onOpenChange={setLeftSidebarOpen}
@@ -229,9 +237,7 @@ export function PageLayout({
   } else if (!leftSidebar && rightSidebar) {
     layoutStructure = (
       <div className="flex min-h-screen">
-        <div className={contentClasses}>
-          {renderMainContent()}
-        </div>
+        <div className={contentClasses}>{renderMainContent()}</div>
         {renderRightSidebar()}
       </div>
     );

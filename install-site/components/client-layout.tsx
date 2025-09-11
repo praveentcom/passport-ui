@@ -1,15 +1,16 @@
 "use client";
 
 import React from "react";
+
 import { Home, Palette } from "lucide-react";
 
-import { PageLayout } from "../../src/layouts/page-layout";
-import { SidebarContainer } from "../../src/layouts/sidebar-container";
 import { MetaContainer } from "../../src/composables/meta-container";
 import { ThemeToggle } from "../../src/composables/theme-toggle";
+import { PageLayout } from "../../src/layouts/page-layout";
+import { SidebarContainer } from "../../src/layouts/sidebar-container";
 import { SITE_CONFIG } from "../constants";
 
-export function ClientLayout({ children }: { children: React.ReactNode }) {  
+export function ClientLayout({ children }: { children: React.ReactNode }) {
   const sidebarMenuItems = [
     {
       title: "Installation",

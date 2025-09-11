@@ -1,10 +1,9 @@
-import "./globals.css";
-
 import type { Metadata } from "next";
 
 import { Analytics } from "../../src/components/analytics";
 import { ThemeProvider } from "../../src/providers/theme-provider";
 import { ClientLayout } from "../components/client-layout";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Install Passport UI - Setup Guide & Documentation",

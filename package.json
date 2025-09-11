@@ -27,7 +27,7 @@
     "design-system"
   ],
   "exports": {
-    "./index": {
+    ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"

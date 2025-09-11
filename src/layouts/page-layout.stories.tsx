@@ -93,7 +93,8 @@ PageLayout provides comprehensive accessibility features including proper semant
     },
     rightSidebar: {
       control: false,
-      description: "The right sidebar content - should include SidebarContainer",
+      description:
+        "The right sidebar content - should include SidebarContainer",
       table: {
         type: { summary: "ReactNode" },
         category: "Sidebar",

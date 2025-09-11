@@ -1,4 +1,5 @@
 import { ContentContainer } from "@/layouts/content-container";
+
 import { Separator } from "../../../src/components/separator";
 import { MetaContainer } from "../../../src/composables/meta-container";
 
@@ -295,128 +296,125 @@ const TailwindColorCard = ({ color }: { color: string }) => (
 export default function ColorsPage() {
   return (
     <ContentContainer blurIn>
-        <div className="section-container">
-          <div className="grid">
-            <h3>Overview</h3>
-            <p className="text-muted-foreground">
-              Passport UI uses a comprehensive color system built on{" "}
-              <strong>OKLCH color space</strong>, inspired by shadcn/ui, for
-              better color management and automatic light/dark theme support.
-            </p>
-          </div>
+      <div className="section-container">
+        <div className="grid">
+          <h3>Overview</h3>
+          <p className="text-muted-foreground">
+            Passport UI uses a comprehensive color system built on{" "}
+            <strong>OKLCH color space</strong>, inspired by shadcn/ui, for
+            better color management and automatic light/dark theme support.
+          </p>
         </div>
+      </div>
 
-        <Separator />
+      <Separator />
 
-        <div className="section-container">
-          <MetaContainer title="Core Design Colors">
-            These are the primary colors that define your brand and interface
-            hierarchy.
-          </MetaContainer>
-          <div className="list-container">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
-              {designColors.map((color) => (
-                <ColorCard key={color.name} color={color} />
-              ))}
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
-              {backgroundColors.map((color) => (
-                <ColorCard key={color.name} color={color} />
-              ))}
-            </div>
+      <div className="section-container">
+        <MetaContainer title="Core Design Colors">
+          These are the primary colors that define your brand and interface
+          hierarchy.
+        </MetaContainer>
+        <div className="list-container">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
+            {designColors.map((color) => (
+              <ColorCard key={color.name} color={color} />
+            ))}
           </div>
-        </div>
-
-        <Separator />
-
-        <div className="section-container">
-          <MetaContainer title="Semantic Colors">
-            Colors that convey meaning and state information to users.
-          </MetaContainer>
-          <div className="list-container">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
-              {semanticColors.map((color) => (
-                <ColorCard key={color.name} color={color} />
-              ))}
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
-              {mutedSemanticColors.map((color) => (
-                <ColorCard key={color.name} color={color} />
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <Separator />
-
-        <div className="section-container">
-          <MetaContainer title="Component Colors">
-            Specialized colors for specific component types.
-          </MetaContainer>
-          <div className="list-container">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
-              {interfaceColors.map((color) => (
-                <ColorCard key={color.name} color={color} />
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <Separator />
-
-        <div className="section-container">
-          <MetaContainer title="Chart Colors">
-            A curated palette for data visualization and charts.
-          </MetaContainer>
-          <div className="list-container">
-            <div className="grid grid-cols-5 gap-4">
-              {chartColors.map((color) => (
-                <ColorCard key={color.name} color={color} />
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <Separator />
-
-        <div className="section-container">
-          <MetaContainer title="Sidebar Colors">
-            Specialized colors for sidebar and navigation components.
-          </MetaContainer>
-          <div className="list-container">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
-              {sidebarColors.map((color) => (
-                <ColorCard key={color.name} color={color} />
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <Separator />
-
-        <div className="section-container">
-          <MetaContainer title="Built-in Tailwind Colors">
-            In addition to the custom theme colors, you can use all standard
-            Tailwind CSS colors.
-          </MetaContainer>
-          <div className="list-container">
-            {tailwindColors.map((color) => (
-              <div
-                key={color}
-                className="grid grid-cols-6 md:grid-cols-11 gap-2"
-              >
-                {[50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950].map(
-                  (weight) => (
-                    <TailwindColorCard
-                      key={`${color}-${weight}`}
-                      color={`${color}-${weight}`}
-                    />
-                  )
-                )}
-              </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
+            {backgroundColors.map((color) => (
+              <ColorCard key={color.name} color={color} />
             ))}
           </div>
         </div>
-      </ContentContainer>
+      </div>
+
+      <Separator />
+
+      <div className="section-container">
+        <MetaContainer title="Semantic Colors">
+          Colors that convey meaning and state information to users.
+        </MetaContainer>
+        <div className="list-container">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
+            {semanticColors.map((color) => (
+              <ColorCard key={color.name} color={color} />
+            ))}
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
+            {mutedSemanticColors.map((color) => (
+              <ColorCard key={color.name} color={color} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <Separator />
+
+      <div className="section-container">
+        <MetaContainer title="Component Colors">
+          Specialized colors for specific component types.
+        </MetaContainer>
+        <div className="list-container">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
+            {interfaceColors.map((color) => (
+              <ColorCard key={color.name} color={color} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <Separator />
+
+      <div className="section-container">
+        <MetaContainer title="Chart Colors">
+          A curated palette for data visualization and charts.
+        </MetaContainer>
+        <div className="list-container">
+          <div className="grid grid-cols-5 gap-4">
+            {chartColors.map((color) => (
+              <ColorCard key={color.name} color={color} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <Separator />
+
+      <div className="section-container">
+        <MetaContainer title="Sidebar Colors">
+          Specialized colors for sidebar and navigation components.
+        </MetaContainer>
+        <div className="list-container">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
+            {sidebarColors.map((color) => (
+              <ColorCard key={color.name} color={color} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <Separator />
+
+      <div className="section-container">
+        <MetaContainer title="Built-in Tailwind Colors">
+          In addition to the custom theme colors, you can use all standard
+          Tailwind CSS colors.
+        </MetaContainer>
+        <div className="list-container">
+          {tailwindColors.map((color) => (
+            <div key={color} className="grid grid-cols-6 md:grid-cols-11 gap-2">
+              {[50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950].map(
+                (weight) => (
+                  <TailwindColorCard
+                    key={`${color}-${weight}`}
+                    color={`${color}-${weight}`}
+                  />
+                )
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </ContentContainer>
   );
 }

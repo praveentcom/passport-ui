@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactNode, useState, useMemo, useEffect } from "react";
+import React, { ReactNode, useEffect, useMemo, useState } from "react";
 
 import {
   Sidebar,
@@ -28,7 +28,10 @@ import {
 function isUrlMatch(href: string | undefined, currentUrl: string): boolean {
   if (!href || !currentUrl) return false;
 
-  return currentUrl === href || (currentUrl.startsWith(href) && href !== "/" && href !== "#");
+  return (
+    currentUrl === href ||
+    (currentUrl.startsWith(href) && href !== "/" && href !== "#")
+  );
 }
 
 export type SidebarContainerMenuItem = {
@@ -158,13 +161,15 @@ export function SidebarContainer({
 
     return menuItems.map((item) => {
       const isItemActive = item.isActive ?? isUrlMatch(item.href, currentUrl);
-      
+
       const processedSubItems = item.subItems?.map((subItem) => ({
         ...subItem,
         isActive: subItem.isActive ?? isUrlMatch(subItem.href, currentUrl),
       }));
 
-      const hasActiveSubItem = processedSubItems?.some((subItem) => subItem.isActive);
+      const hasActiveSubItem = processedSubItems?.some(
+        (subItem) => subItem.isActive
+      );
 
       return {
         ...item,

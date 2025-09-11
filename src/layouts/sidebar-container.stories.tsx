@@ -156,7 +156,8 @@ SidebarContainer requires SidebarProvider for state management and works seamles
     className: COMMON_CONTROLS.className,
     autoInferActiveItem: {
       control: "boolean",
-      description: "Whether to automatically infer active state from current URL",
+      description:
+        "Whether to automatically infer active state from current URL",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: "false" },
