@@ -94,43 +94,43 @@
 
 /* Dark Mode Colors for Custom Properties */
 .dark {
-  --background: oklch(0.235 0 0);
+  --background: oklch(0.18 0 0);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.2649 0.0018 286.27);
+  --card: oklch(0.22 0.0018 286.27);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.2649 0.0018 286.27);
+  --popover: oklch(0.22 0.0018 286.27);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.92 0.004 286.32);
-  --primary-foreground: oklch(0.2649 0.0018 286.27);
-  --secondary: oklch(0.2983 0.0054 286.07);
+  --primary-foreground: oklch(0.22 0.0018 286.27);
+  --secondary: oklch(0.24 0.0018 286.27);
   --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.2983 0.0054 286.07);
-  --muted-foreground: oklch(0.75 0.015 286.067);
+  --muted: oklch(0.24 0.0018 286.27);
+  --muted-foreground: oklch(0.8 0.015 286.067);
   --info: oklch(0.528 0.225 262.55);
-  --info-muted: oklch(0.1974 0.0667 262.88);
+  --info-muted: oklch(0.18 0.0018 286.27);
   --info-foreground: oklch(0.985 0 0);
   --info-muted-foreground: oklch(0.985 0 0);
   --success: oklch(0.45 0.11 164);
-  --success-muted: oklch(0.1782 0.035 170.78);
+  --success-muted: oklch(0.18 0.0018 286.27);
   --success-foreground: oklch(0.985 0 0);
   --success-muted-foreground: oklch(0.985 0 0);
   --warning: oklch(0.57 0.19 33);
-  --warning-muted: oklch(0.2088 0.0537 35.01);
+  --warning-muted: oklch(0.18 0.0018 286.27);
   --warning-foreground: oklch(0.985 0 0);
   --warning-muted-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.6256 0.1933 23.03);
-  --destructive-muted: oklch(0.1969 0.0632 25.11);
+  --destructive-muted: oklch(0.18 0.0018 286.27);
   --destructive-foreground: oklch(0.985 0 0);
   --destructive-muted-foreground: oklch(0.985 0 0);
-  --border: oklch(0.329 0 0);
-  --input: oklch(0.3715 0 0);
-  --ring: oklch(0.552 0.016 285.938);
+  --border: oklch(0.28 0.002 270);
+  --input: oklch(0.32 0 0);
+  --ring: oklch(0.48 0.016 285.938);
   --chart-1: oklch(0.528 0.225 262.55);
   --chart-2: oklch(0.45 0.11 164);
   --chart-3: oklch(0.57 0.19 33);
   --chart-4: oklch(0.6256 0.1933 23.03);
   --chart-5: oklch(0.56 0.19 33);
-  --sidebar: oklch(0.2649 0.0018 286.27);
+  --sidebar: oklch(0.22 0.0018 286.27);
 }
 
 /* Base Layer */
@@ -185,7 +185,7 @@
 
   /* Container Styles */
   .passport-ui .content-container {
-    @apply px-4 py-3.5 grid gap-y-8 gap-x-8 text-foreground mx-auto;
+    @apply p-4 grid gap-y-8 gap-x-8 text-foreground mx-auto;
   }
   .passport-ui .section-container {
     @apply grid gap-y-6 gap-x-6 text-foreground;

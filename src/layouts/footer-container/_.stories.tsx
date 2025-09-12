@@ -13,7 +13,7 @@ const meta: Meta<typeof FooterContainer> = {
         component: `A flexible footer container component designed to complement ContentContainer inside SidebarInset. Provides consistent footer styling with advanced positioning and visual effects.
 
 ## Features
-- Responsive width variants (compact, relaxed, full)
+- Responsive width variants (compact, relaxed, broad, full)
 - Optional sticky positioning for persistent footer visibility
 - Backdrop blur effect for enhanced visual hierarchy
 - Seamless integration with the layout system
@@ -30,6 +30,7 @@ When \`blurred={true}\`, the footer gains a backdrop blur effect with semi-trans
 ## Variants
 - **compact**: Maximum width of 384px (24rem) with centered alignment
 - **relaxed**: Maximum width of 768px (48rem) with centered alignment  
+- **broad**: Maximum width of 1152px (72rem) with centered alignment
 - **full**: Full width spanning the entire container
 
 ## Usage
@@ -64,10 +65,10 @@ FooterContainer is designed to work seamlessly with PageLayout and ContentContai
     },
     variant: {
       control: { type: "select" },
-      options: ["compact", "relaxed", "full"],
+      options: ["compact", "relaxed", "broad", "full"],
       description: "Controls the maximum width of the footer container",
       table: {
-        type: { summary: "compact | relaxed | full" },
+        type: { summary: "compact | relaxed | broad | full" },
         defaultValue: { summary: "full" },
         category: "Layout",
       },

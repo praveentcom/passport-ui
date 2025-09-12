@@ -5,7 +5,7 @@ import { cva } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 import { BlurIn } from "../../motion-primitives/blur-in";
 
-export type ContentContainerVariant = "compact" | "relaxed" | "full";
+export type ContentContainerVariant = "compact" | "relaxed" | "broad" | "full";
 
 const contentContainerVariants = cva("content-container", {
   variants: {
@@ -16,6 +16,7 @@ const contentContainerVariants = cva("content-container", {
        */
       compact: "max-w-sm w-full",
       relaxed: "max-w-3xl w-full",
+      broad: "max-w-5xl w-full",
       full: "w-full",
     },
   },

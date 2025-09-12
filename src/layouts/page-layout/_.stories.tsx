@@ -29,7 +29,7 @@ const meta: Meta<typeof PageLayout> = {
 - Built-in SidebarProvider integration for seamless sidebar functionality
 - Sticky and blurred header/footer support with smooth animations
 - Automatic SEO structured data (JSON-LD) injection for enhanced search visibility
-- Responsive content container variants (compact, relaxed, full)
+- Responsive content container variants (compact, relaxed, broad, full)
 - Theme-aware styling with dark/light mode support
 - Hardware-accelerated animations and transitions
 - Built-in accessibility with proper semantic markup and ARIA support
@@ -120,7 +120,7 @@ PageLayout provides comprehensive accessibility features including proper semant
     },
     headerVariant: {
       control: "select",
-      options: ["compact", "relaxed", "full"],
+      options: ["compact", "relaxed", "broad", "full"],
       description: "The variant of the header container",
       table: {
         type: { summary: "HeaderContainerVariant" },
@@ -158,7 +158,7 @@ PageLayout provides comprehensive accessibility features including proper semant
     },
     footerVariant: {
       control: "select",
-      options: ["compact", "relaxed", "full"],
+      options: ["compact", "relaxed", "broad", "full"],
       description: "The variant of the footer container",
       table: {
         type: { summary: "FooterContainerVariant" },

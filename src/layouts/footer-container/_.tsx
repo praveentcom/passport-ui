@@ -4,7 +4,7 @@ import { cva } from "class-variance-authority";
 
 import { cn } from "../../lib/utils";
 
-export type FooterContainerVariant = "compact" | "relaxed" | "full";
+export type FooterContainerVariant = "compact" | "relaxed" | "broad" | "full";
 
 const footerContainerVariants = cva(
   "w-full z-50 transition-all duration-200 ease-in-out border-t border-border",
@@ -35,6 +35,7 @@ const footerContentVariants = cva("px-4 py-3.5 mx-auto", {
        */
       compact: "max-w-sm w-full",
       relaxed: "max-w-3xl w-full",
+      broad: "max-w-5xl w-full",
       full: "w-full",
     },
   },
@@ -77,7 +78,7 @@ export interface FooterContainerProps {
  *
  * @param children - The footer content to display
  * @param className - Additional CSS classes
- * @param variant - Controls the max width of the footer (compact, relaxed, full)
+ * @param variant - Controls the max width of the footer (compact, relaxed, broad, full)
  * @param sticky - Whether the footer should stick to the bottom on scroll
  * @param blurred - Whether the footer should have a blurred background effect
  * @returns The footer container component

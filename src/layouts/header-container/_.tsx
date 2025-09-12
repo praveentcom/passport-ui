@@ -7,7 +7,7 @@ import { cva } from "class-variance-authority";
 import { useScroll } from "../../hooks/use-scroll";
 import { cn } from "../../lib/utils";
 
-export type HeaderContainerVariant = "compact" | "relaxed" | "full";
+export type HeaderContainerVariant = "compact" | "relaxed" | "broad" | "full";
 
 const headerContainerVariants = cva(
   "w-full z-50 transition-all ease-in-out border-b",
@@ -43,6 +43,7 @@ const headerContentVariants = cva("px-4 py-3.5 mx-auto", {
        */
       compact: "max-w-sm w-full",
       relaxed: "max-w-3xl w-full",
+      broad: "max-w-5xl w-full",
       full: "w-full",
     },
   },
@@ -68,7 +69,7 @@ export interface HeaderContainerProps {
  *
  * @param children - The header content to display
  * @param className - Additional CSS classes
- * @param variant - Controls the max width of the header (compact, relaxed, full)
+ * @param variant - Controls the max width of the header (compact, relaxed, broad, full)
  * @param sticky - Whether the header should stick to the top on scroll
  * @param blurred - Whether the header should have a blurred background effect
  * @param revealStylesOnScroll - Whether to reveal border and background styles only on scroll
