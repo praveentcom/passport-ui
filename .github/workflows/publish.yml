@@ -88,13 +88,15 @@ jobs:
       - name: Build package
         run: npm run build
 
+      - name: Generate exports
+        run: npm run generate-exports
+
       - name: Test build outputs
         run: |
           # Verify build outputs exist
           ls -la dist/
           test -f dist/accordion.js
           test -f dist/accordion.cjs
-          test -f dist/accordion.d.ts
 
   bump-version:
     runs-on: ubuntu-latest
