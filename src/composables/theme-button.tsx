@@ -80,21 +80,21 @@ export function ThemeButton({
           className="flex gap-2"
           onClick={() => setTheme("light")}
         >
-          <Sun className="size-3" />
+          <Sun />
           <span>Light</span>
         </DropdownMenuItem>
         <DropdownMenuItem
           className="flex gap-2"
           onClick={() => setTheme("dark")}
         >
-          <Moon className="size-3" />
+          <Moon />
           <span>Dark</span>
         </DropdownMenuItem>
         <DropdownMenuItem
           className="flex gap-2"
           onClick={() => setTheme("system")}
         >
-          <Monitor className="size-3" />
+          <Monitor />
           <span>System</span>
         </DropdownMenuItem>
       </DropdownMenuContent>

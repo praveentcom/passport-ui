@@ -80,7 +80,8 @@ Use buttons for triggering actions, navigation, and form submissions. Choose the
     },
     loading: {
       control: { type: "boolean" },
-      description: "Whether the button is in a loading state with spinner animation",
+      description:
+        "Whether the button is in a loading state with spinner animation",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: "false" },

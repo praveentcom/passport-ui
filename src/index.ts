@@ -187,7 +187,7 @@ export {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport
+  NavigationMenuViewport,
 } from "./components/navigation-menu";
 export {
   Pagination,

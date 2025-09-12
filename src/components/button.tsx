@@ -23,9 +23,12 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        regular: "h-6 rounded-xs px-2 py-1 has-[>svg]:px-1.5 text-xs [&_svg:not([class*='size-'])]:size-3.5",
-        medium: "h-8 rounded-xs px-2.5 py-1.5 has-[>svg]:px-2 text-sm [&_svg:not([class*='size-'])]:size-4",
-        large: "h-9 rounded-sm gap-1.5 px-3 has-[>svg]:px-2.5 text-sm [&_svg:not([class*='size-'])]:size-5",
+        regular:
+          "h-6 rounded-xs px-2 py-1 has-[>svg]:px-1.5 text-xs [&_svg:not([class*='size-'])]:size-3.5",
+        medium:
+          "h-8 rounded-xs px-2.5 py-1.5 has-[>svg]:px-2 text-sm [&_svg:not([class*='size-'])]:size-4",
+        large:
+          "h-9 rounded-sm gap-1.5 px-3 has-[>svg]:px-2.5 text-sm [&_svg:not([class*='size-'])]:size-5",
       },
     },
     defaultVariants: {
@@ -107,9 +110,7 @@ function Button({
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     >
-      {loading && (
-        <Loader2 className="animate-spin" aria-hidden="true" />
-      )}
+      {loading && <Loader2 className="animate-spin" aria-hidden="true" />}
       {loading && loadingText ? loadingText : children}
     </Comp>
   );

@@ -2,14 +2,15 @@
 
 import React from "react";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import { MetaContainer } from "../../src/composables/meta-container";
 import { ThemeToggle } from "../../src/composables/theme-toggle";
 import { PageLayout } from "../../src/layouts/page-layout";
 import { SidebarContainer } from "../../src/layouts/sidebar-container";
 import { SITE_CONFIG } from "../constants";
 import { PRIMARY_NAVIGATION_PAGES } from "../constants/components";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
 
 const getPageTitle = (path: string) => {
   const page = PRIMARY_NAVIGATION_PAGES.find((page) => page.href === path);
@@ -37,9 +38,7 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
       contentVariant="relaxed"
       header={
         <div className="flex justify-between items-center gap-4">
-          <h2>
-            {getPageTitle(pathname)}
-          </h2>
+          <h2>{getPageTitle(pathname)}</h2>
           <ThemeToggle />
         </div>
       }

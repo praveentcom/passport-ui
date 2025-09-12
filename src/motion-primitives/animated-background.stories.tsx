@@ -97,11 +97,7 @@ export const Default: Story = {
     className: "bg-border rounded-sm",
     enableHover: true,
     children: ["One", "Two", "Three"].map((item) => (
-      <div
-        key={item}
-        data-id={item}
-        className="px-2 py-1 cursor-pointer"
-      >
+      <div key={item} data-id={item} className="px-2 py-1 cursor-pointer">
         <p>{item}</p>
       </div>
     )),

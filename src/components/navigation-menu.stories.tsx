@@ -197,6 +197,6 @@ type Story = StoryObj<typeof NavigationMenu>;
 export const Default: Story = {
   args: {
     viewport: false,
-    className: 'h-120'
+    className: "h-120",
   },
 };

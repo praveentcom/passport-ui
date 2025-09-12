@@ -79,7 +79,7 @@ const backgroundColors = [
     class: "bg-muted-foreground",
     description: "Text on muted",
     border: true,
-  }
+  },
 ];
 
 const semanticColors = [
