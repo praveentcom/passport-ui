@@ -199,7 +199,7 @@ export const ProfileHeader: Story = {
                 </Button>
               </DrawerTrigger>
               <DrawerContent>
-                <div className="mx-auto w-full max-w-sm secondary-section-container">
+                <div className="mx-auto w-full max-w-sm list-container">
                   <div className="flex items-center justify-between">
                     <h3>{profile.fullName}</h3>
                     <DrawerClose>
