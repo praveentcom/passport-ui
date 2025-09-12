@@ -133,16 +133,6 @@ export {
   DropdownMenuTrigger,
 } from "./components/dropdown-menu";
 export {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-  useFormField,
-} from "./components/form";
-export {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,

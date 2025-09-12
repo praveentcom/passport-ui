@@ -13,12 +13,12 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-  Separator,
-} from "../../src";
+} from "../../src/form";
 import { Button } from "../../src";
 import { Input } from "../../src";
 import { Textarea } from "../../src";
 import { Checkbox } from "../../src";
+import { Separator } from "../../src";
 import {
   Select,
   SelectContent,

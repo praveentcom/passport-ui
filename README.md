@@ -79,6 +79,52 @@ function App() {
 }
 ```
 
+### Form Components (Client-Only)
+
+Form components that depend on `react-hook-form` are exported separately to ensure React Server Components compatibility:
+
+```tsx
+"use client";
+
+import { Button } from "passport-ui";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "passport-ui/form";
+import { useForm } from "react-hook-form";
+
+function LoginForm() {
+  const form = useForm();
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)}>
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Email</FormLabel>
+              <FormControl>
+                <input {...field} type="email" />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type="submit">Submit</Button>
+      </form>
+    </Form>
+  );
+}
+```
+
+> **Note:** Form components must be used in client components (with `"use client"` directive) due to their dependency on `react-hook-form`.
+
 ## Framework Integration
 
 ### Next.js

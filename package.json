@@ -32,6 +32,11 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./form": {
+      "types": "./dist/form.d.ts",
+      "import": "./dist/form.js",
+      "require": "./dist/form.cjs"
+    },
     "./styles.css": "./src/styles.css",
     "./hljs-themes.css": "./src/hljs-themes.css",
     "./tailwind-colors.css": "./src/tailwind-colors.css",
