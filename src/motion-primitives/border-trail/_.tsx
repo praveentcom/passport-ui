@@ -4,7 +4,7 @@ import React from "react";
 
 import { Transition, motion } from "motion/react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 
 export type BorderTrailProps = {
   className?: string;

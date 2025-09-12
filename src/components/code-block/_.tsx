@@ -32,8 +32,8 @@ import typescript from "highlight.js/lib/languages/typescript";
 import xml from "highlight.js/lib/languages/xml";
 import yaml from "highlight.js/lib/languages/yaml";
 
-import getFileIcon from "@/lib/markdown/getFileIcon";
-import { cn } from "@/lib/utils";
+import getFileIcon from "../../lib/markdown/getFileIcon";
+import { cn } from "../../lib/utils";
 
 // Register languages for highlight.js
 hljs.registerLanguage("javascript", javascript);

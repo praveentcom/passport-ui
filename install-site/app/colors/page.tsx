@@ -1,7 +1,6 @@
-import { ContentContainer } from "@/layouts/content-container";
-
 import { Separator } from "../../../src/components/separator";
 import { MetaContainer } from "../../../src/composables/meta-container";
+import { ContentContainer } from "../../../src/layouts/content-container";
 
 /**
  * Color Palette for Passport UI

@@ -8,14 +8,14 @@ All Storybook story files should follow this comprehensive documentation pattern
 
 ```typescript
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { ComponentName } from "./_";
+import { ComponentName } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 
 const meta: Meta<typeof ComponentName> = {
   title: "Category/ComponentName",
   component: ComponentName,
   parameters: {
-    layout: "centered", // or "fullscreen", "padded"
+    layout: "full",
     docs: {
       description: {
         component: `[COMPONENT_DESCRIPTION_TEMPLATE]`,
@@ -177,27 +177,8 @@ All utility functions, hooks, and helper functions should include comprehensive 
 Always use relative imports in story files to avoid circular dependencies:
 
 ```typescript
-// ✅ Correct
-import { Button } from "./_";
-import { Card, CardContent } from "./_";
-
-// ❌ Incorrect
-import { Button } from "@";
-import { Card, CardContent } from "@";
-```
-
-### Component File Imports
-
-Use absolute imports in component files for consistency:
-
-```typescript
-// ✅ Correct
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/button";
-
-// ❌ Incorrect  
-import { cn } from "../lib/utils";
-import { Button } from "./button";
+import { Button } from "../button";
+import { Card, CardContent } from "../card";
 ```
 
 ## Story Examples Standards
@@ -210,7 +191,7 @@ Always include a Default story that showcases the component in its most common c
 export const Default: Story = {
   args: {
     children: "Default content",
-    variant: "default", // Use the actual default variant
+    variant: "default",
   },
 };
 ```

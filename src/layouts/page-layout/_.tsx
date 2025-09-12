@@ -4,12 +4,7 @@ import React, { Fragment, ReactNode, useState } from "react";
 
 import { VariantProps, cva } from "class-variance-authority";
 
-import { SidebarInset, SidebarProvider } from "@/components/sidebar";
-
-import {
-  ContentContainer,
-  ContentContainerVariant,
-} from "../content-container";
+import { SidebarInset, SidebarProvider } from "../../components/sidebar";
 import { FooterContainer, FooterContainerVariant } from "../footer-container";
 import { HeaderContainer, HeaderContainerVariant } from "../header-container";
 
@@ -41,14 +36,6 @@ export interface PageLayoutProps
    * Additional class names for the layout wrapper
    */
   className?: string;
-  /**
-   * The variant of the content container
-   */
-  contentVariant?: ContentContainerVariant | "custom";
-  /**
-   * Show blurIn animation for the content container
-   */
-  contentBlurIn?: boolean;
   /**
    * The variant of the header container
    */
@@ -119,8 +106,6 @@ export function PageLayout({
   rightSidebar,
   header,
   footer,
-  contentVariant = "full",
-  contentBlurIn = false,
   headerVariant = "full",
   headerSticky = true,
   headerBlurred = true,
@@ -165,17 +150,7 @@ export function PageLayout({
         </HeaderContainer>
       )}
       <main id="main-content" className="flex-1">
-        {contentVariant === "custom" ? (
-          children
-        ) : (
-          <ContentContainer
-            className={className}
-            variant={contentVariant}
-            blurIn={contentBlurIn}
-          >
-            {children}
-          </ContentContainer>
-        )}
+        <div className={className}>{children}</div>
       </main>
       {footer && (
         <FooterContainer

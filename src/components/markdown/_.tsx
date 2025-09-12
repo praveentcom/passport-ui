@@ -2,15 +2,15 @@ import React from "react";
 
 import DOMPurify from "isomorphic-dompurify";
 
-import { CodeBlock, type HighlightTheme } from "@/components/code-block";
-import parseMarkdown from "@/lib/markdown/parseMarkdown";
+import parseMarkdown from "../../lib/markdown/parseMarkdown";
 import {
   extractBlockquotes,
   extractCodeBlocks,
   extractTables,
   renderTable,
-} from "@/lib/markdown/parseMarkdownComponents";
-import { cn } from "@/lib/utils";
+} from "../../lib/markdown/parseMarkdownComponents";
+import { cn } from "../../lib/utils";
+import { CodeBlock, type HighlightTheme } from "../code-block";
 
 export interface MarkdownProps {
   /**

@@ -2,8 +2,7 @@ import React, { ReactNode } from "react";
 
 import { cva } from "class-variance-authority";
 
-import { cn } from "@/lib/utils";
-
+import { cn } from "../../lib/utils";
 import { BlurIn } from "../../motion-primitives/blur-in";
 
 export type ContentContainerVariant = "compact" | "relaxed" | "full";

@@ -8,13 +8,13 @@ import { useTheme } from "next-themes";
 import { type VariantProps } from "class-variance-authority";
 import { Monitor, Moon, Sun } from "lucide-react";
 
-import { Button, buttonVariants } from "@/components/button";
+import { Button, buttonVariants } from "../../components/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/dropdown-menu";
+} from "../../components/dropdown-menu";
 
 export type ThemeButtonProps = {
   minimal?: boolean;

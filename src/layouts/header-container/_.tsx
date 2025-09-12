@@ -4,8 +4,8 @@ import React, { ReactNode } from "react";
 
 import { cva } from "class-variance-authority";
 
-import { useScroll } from "@/hooks/use-scroll";
-import { cn } from "@/lib/utils";
+import { useScroll } from "../../hooks/use-scroll";
+import { cn } from "../../lib/utils";
 
 export type HeaderContainerVariant = "compact" | "relaxed" | "full";
 

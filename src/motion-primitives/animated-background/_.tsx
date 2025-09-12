@@ -5,7 +5,7 @@ import { Children, ReactElement, cloneElement, useId, useState } from "react";
 
 import { AnimatePresence, Transition, motion } from "motion/react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 
 export type AnimatedBackgroundProps = {
   children:

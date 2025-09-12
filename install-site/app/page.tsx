@@ -1,7 +1,6 @@
-import { ContentContainer } from "@/layouts/content-container";
-
 import { CodeBlock } from "../../src/components/code-block";
 import { MetaContainer } from "../../src/composables/meta-container";
+import { ContentContainer } from "../../src/layouts/content-container";
 
 const INSTALLATION_CODE = {
   PACKAGE_INSTALL: `npm install passport-ui`,

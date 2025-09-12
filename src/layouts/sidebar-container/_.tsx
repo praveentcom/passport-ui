@@ -20,7 +20,7 @@ import {
   SidebarRail,
   SidebarTrigger,
   useSidebar,
-} from "@/components/sidebar";
+} from "../../components/sidebar";
 
 /**
  * Simple URL matching utility

@@ -7,7 +7,7 @@ import * as TogglePrimitive from "@radix-ui/react-toggle";
 import { type VariantProps, cva } from "class-variance-authority";
 import { AnimatePresence, Transition, motion } from "motion/react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 
 interface ToggleSelectContextType {
   selectedValue: string | null;

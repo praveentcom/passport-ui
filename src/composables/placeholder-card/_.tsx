@@ -5,8 +5,8 @@ import { ReactNode } from "react";
 
 import Link from "next/link";
 
-import { Button } from "@/components/button";
-import { Card, CardContent } from "@/components/card";
+import { Button } from "../../components/button";
+import { Card, CardContent } from "../../components/card";
 
 export interface PlaceholderCardProps {
   title?: string;

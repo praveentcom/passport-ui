@@ -18,12 +18,6 @@
       }
     ],
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["./app/*", "../src/*"],
-      "@/components/*": ["./components/*", "../src/components/*"],
-      "@/lib/*": ["../src/lib/*"],
-      "@/hooks/*": ["../src/hooks/*"]
-    },
     "target": "ES2017"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

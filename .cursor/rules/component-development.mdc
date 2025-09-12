@@ -39,7 +39,7 @@ import React from "react"
 import { motion } from "motion"
 
 // Internal utilities
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
 
 // Types
 import type { ComponentProps } from "react"

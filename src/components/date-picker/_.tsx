@@ -6,9 +6,9 @@ import { format } from "date-fns";
 import { Calendar as CalendarIcon, ChevronDownIcon } from "lucide-react";
 import { DateRange } from "react-day-picker";
 
-import { Calendar } from "@/components/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/popover";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
+import { Calendar } from "../calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "../popover";
 
 export interface DatePickerInputProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {

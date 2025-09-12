@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Blockquote } from "@/components/blockquote";
+import { Blockquote } from "../../components/blockquote";
 import {
   Table,
   TableBody,
@@ -8,7 +8,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/table";
+} from "../../components/table";
 
 interface BlockquoteData {
   type: "blockquote";

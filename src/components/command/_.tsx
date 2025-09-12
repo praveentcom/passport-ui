@@ -5,10 +5,9 @@ import React from "react";
 import { Command as CommandPrimitive } from "cmdk";
 import { SearchIcon } from "lucide-react";
 
-import { Dialog, DialogContent } from "@/components/dialog";
-import { cn } from "@/lib/utils";
-
 import { MetaContainer } from "../../composables/meta-container";
+import { cn } from "../../lib/utils";
+import { Dialog, DialogContent } from "../dialog";
 
 function Command({
   className,

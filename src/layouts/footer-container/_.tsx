@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 
 import { cva } from "class-variance-authority";
 
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 
 export type FooterContainerVariant = "compact" | "relaxed" | "full";
 

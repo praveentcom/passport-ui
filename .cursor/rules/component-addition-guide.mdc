@@ -104,8 +104,8 @@ Create the component in [src/composables/](mdc:src/composables/):
 **Example Structure:**
 ```typescript
 import React, { ReactNode } from "react";
-import { Button } from "@/components/button";
-import { cn } from "@/lib/utils";
+import { Button } from "../components/button";
+import { cn } from "../lib/utils";
 
 export interface ComposableNameProps {
   // Define props with proper types
