@@ -92,9 +92,9 @@ jobs:
         run: |
           # Verify build outputs exist
           ls -la dist/
-          test -f dist/index.js
-          test -f dist/index.cjs
-          test -f dist/index.d.ts
+          test -f dist/accordion.js
+          test -f dist/accordion.cjs
+          test -f dist/accordion.d.ts
 
   bump-version:
     runs-on: ubuntu-latest
@@ -159,9 +159,6 @@ jobs:
           CURRENT_VERSION=$(node -p "require('./package.json').version")
           echo "version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
           echo "Publishing version: $CURRENT_VERSION"
-
-      - name: Build package
-        run: npm run build
 
       - name: Publish to NPM
         run: npm publish

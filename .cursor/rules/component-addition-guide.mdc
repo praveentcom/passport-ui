@@ -41,8 +41,8 @@ Create a comprehensive stories file at `src/components/[component-name].stories.
 **Required Structure:**
 ```typescript
 import type { Meta, StoryObj } from '@storybook/nextjs'
-import { ComponentName } from '../../src'
-import { COMMON_CONTROLS } from '../../.storybook/constants'
+import { ComponentName } from './_'
+import { COMMON_CONTROLS } from '../../../.storybook/constants'
 import { action } from 'storybook/actions';
 
 const meta: Meta<typeof ComponentName> = {

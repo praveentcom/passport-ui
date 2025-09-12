@@ -20,6 +20,24 @@ npm install tailwindcss @tailwindcss/postcss
 
 ## Usage
 
+### Import Pattern
+
+Passport UI uses **individual component exports** for optimal tree-shaking and React Server Components compatibility. Import components individually:
+
+```tsx
+import { Button } from "passport-ui/button";
+import { Card, CardContent } from "passport-ui/card";
+import { ThemeProvider } from "passport-ui/theme-provider";
+```
+
+**Available Import Paths:**
+
+- **Components**: `passport-ui/button`, `passport-ui/card`, `passport-ui/dialog`, etc.
+- **Composables**: `passport-ui/theme-button`, `passport-ui/back-button`, etc.
+- **Motion Primitives**: `passport-ui/blur-in`, `passport-ui/border-trail`, etc.
+- **Layouts**: `passport-ui/page-layout`, `passport-ui/content-container`, etc.
+- **Utilities**: `passport-ui/utils`
+
 ### Setup PostCSS
 
 Add the PostCSS plugin to your `postcss.config.mjs`:
@@ -49,7 +67,8 @@ Import the library styles in your main CSS file:
 ### Basic Example
 
 ```tsx
-import { Button, Card, CardContent } from "passport-ui";
+import { Button } from "passport-ui/button";
+import { Card, CardContent } from "passport-ui/card";
 
 function App() {
   return (
@@ -65,7 +84,8 @@ function App() {
 ### With Theme Support
 
 ```tsx
-import { ThemeButton, ThemeProvider } from "passport-ui";
+import { ThemeButton } from "passport-ui/theme-button";
+import { ThemeProvider } from "passport-ui/theme-provider";
 
 function App() {
   return (
@@ -86,7 +106,7 @@ Form components that depend on `react-hook-form` are exported separately to ensu
 ```tsx
 "use client";
 
-import { Button } from "passport-ui";
+import { Button } from "passport-ui/button";
 import {
   Form,
   FormControl,

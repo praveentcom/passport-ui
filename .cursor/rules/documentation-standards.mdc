@@ -8,8 +8,8 @@ All Storybook story files should follow this comprehensive documentation pattern
 
 ```typescript
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { ComponentName } from "../../src";
-import { COMMON_CONTROLS } from "../../.storybook/constants";
+import { ComponentName } from "./_";
+import { COMMON_CONTROLS } from "../../../.storybook/constants";
 
 const meta: Meta<typeof ComponentName> = {
   title: "Category/ComponentName",
@@ -178,8 +178,8 @@ Always use relative imports in story files to avoid circular dependencies:
 
 ```typescript
 // ✅ Correct
-import { Button } from "../../src";
-import { Card, CardContent } from "../../src";
+import { Button } from "./_";
+import { Card, CardContent } from "./_";
 
 // ❌ Incorrect
 import { Button } from "@";

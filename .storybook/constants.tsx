@@ -4,14 +4,11 @@ import { FileText, Home, Plus, Settings, Users } from "lucide-react";
 import { action } from "storybook/internal/actions";
 import { InputType } from "storybook/internal/csf";
 
-import {
-  Badge,
-  Button,
-  Card,
-  CardContent,
-  MetaContainer,
-  SidebarContainerMenuItem,
-} from "../src";
+import { Badge } from "../src/components/badge";
+import { Button } from "../src/components/button";
+import { Card, CardContent } from "../src/components/card";
+import { MetaContainer } from "../src/composables/meta-container";
+import { SidebarContainerMenuItem } from "../src/layouts/sidebar-container";
 
 export const COMMON_CONTROLS: Record<string, InputType> = {
   asChild: {
