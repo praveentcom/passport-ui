@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 
 import { Transition, motion } from "framer-motion";
 

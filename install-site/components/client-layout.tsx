@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import Link from "next/link";
@@ -33,7 +35,6 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
           autoInferActiveItem
         />
       }
-      contentVariant="relaxed"
       header={
         <div className="flex justify-between items-center gap-4">
           <h2>{getPageTitle(pathname)}</h2>

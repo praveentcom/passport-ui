@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import { Children, ReactElement, cloneElement, useId, useState } from "react";
+import React, { Children, ReactElement, cloneElement, useId, useState } from "react";
 
 import { AnimatePresence, Transition, motion } from "framer-motion";
 

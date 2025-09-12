@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import { createContext, useContext, useEffect, useId, useState } from "react";
+import React, { createContext, useContext, useEffect, useId, useState } from "react";
 
 import * as TogglePrimitive from "@radix-ui/react-toggle";
 import { type VariantProps, cva } from "class-variance-authority";
