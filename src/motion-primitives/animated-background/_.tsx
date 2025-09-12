@@ -3,7 +3,7 @@
 import React from "react";
 import { Children, ReactElement, cloneElement, useId, useState } from "react";
 
-import { AnimatePresence, Transition, motion } from "motion/react";
+import { AnimatePresence, Transition, motion } from "framer-motion";
 
 import { cn } from "../../lib/utils";
 

@@ -3,7 +3,7 @@
 import React from "react";
 import { ReactNode, useEffect, useState } from "react";
 
-import { Transition, motion } from "motion/react";
+import { Transition, motion } from "framer-motion";
 
 export type BlurInProps = {
   children: ReactNode;

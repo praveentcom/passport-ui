@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Transition, motion } from "motion/react";
+import { Transition, motion } from "framer-motion";
 
 import { cn } from "../../lib/utils";
 

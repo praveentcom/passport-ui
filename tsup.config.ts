@@ -53,26 +53,24 @@ function generateEntryPoints(): Record<string, string> {
 
 const entrypoints = generateEntryPoints();
 
-export default defineConfig(
-  Object.keys(entrypoints).map((entry) => ({
-    entry: {
-      [entry]: entrypoints[entry],
-    },
-    format: ["cjs", "esm"],
-    dts: true,
-    sourcemap: true,
-    splitting: true,
-    treeshake: true,
-    clean: true,
-    external: [
-      "react",
-      "react-dom",
-      "tailwindcss",
-      "next",
-      "next/navigation",
-      "next/link",
-      "next-themes",
-      "@radix-ui/*",
-    ],
-  }))
-);
+export default defineConfig({
+  entry: entrypoints,
+  format: ["cjs", "esm"],
+  dts: true,
+  sourcemap: true,
+  splitting: true,
+  treeshake: true,
+  clean: true,
+  external: [
+    "react",
+    "react-dom",
+    "tailwindcss",
+    "next",
+    "next/navigation",
+    "next/link",
+    "next-themes",
+    "@radix-ui/*",
+    "framer-motion",
+  ],
+  minify: true
+});
