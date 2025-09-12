@@ -143,16 +143,7 @@
   }
 
   /* Typography Styles */
-  .passport-ui * {
-    @apply text-sm font-normal;
-  }
-  .passport-ui p {
-    @apply text-sm font-normal;
-  }
-  .passport-ui span {
-    @apply text-sm font-normal;
-  }
-  .passport-ui div {
+  .passport-ui *, .passport-ui p, .passport-ui span, .passport-ui div {
     @apply text-sm font-normal;
   }
   .passport-ui h1,
@@ -174,10 +165,10 @@
     @apply text-muted-foreground;
   }
   .passport-ui h1 {
-    @apply text-xl leading-relaxed;
+    @apply text-2xl leading-relaxed;
   }
   .passport-ui h2 {
-    @apply text-lg leading-relaxed;
+    @apply text-xl leading-relaxed;
   }
   .passport-ui h3 {
     @apply text-base leading-relaxed;
@@ -192,12 +183,10 @@
     @apply text-xs uppercase tracking-wide;
   }
 
-  /* Page Container Styles */
+  /* Container Styles */
   .passport-ui .content-container {
     @apply px-4 py-3.5 text-foreground mx-auto;
   }
-
-  /* Other Container Styles */
   .passport-ui .section-container {
     @apply grid gap-y-6 gap-x-6 text-foreground;
   }
@@ -208,7 +197,7 @@
     @apply grid gap-y-3 gap-x-3 text-muted-foreground;
   }
   .passport-ui .meta-container {
-    @apply grid gap-y-2 gap-x-2 text-muted-foreground;
+    @apply grid gap-y-1 gap-x-2 text-muted-foreground;
   }
   .passport-ui .title-container {
     @apply grid gap-y-0.75 gap-x-1.5 text-foreground;
