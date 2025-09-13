@@ -84,7 +84,7 @@ function SheetHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="sheet-header"
-      className={cn("title-container p-4", className)}
+      className={cn("meta-container p-4", className)}
       {...props}
     />
   );

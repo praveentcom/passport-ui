@@ -33,7 +33,6 @@ The styling system is built on Tailwind CSS v4 with a comprehensive theme system
 - `.content-container`: Content grid with consistent spacing
 - `.list-container`: List wrapper with item spacing
 - `.section-container`: Section wrapper for grouped content
-- `.title-container`: Title/heading container with proper spacing
 - `.meta-container`: Metadata container with tight spacing
 - `.hide-on-mobile`: Responsive utility to hide on mobile
 

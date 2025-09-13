@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs";
 import { Separator } from "../components/separator";
 import { MetaContainer } from "../composables/meta-container";
 import { ThemeToggle } from "../composables/theme-toggle";
+import { ContentContainer } from "../layouts/content-container";
 import { PageLayout } from "../layouts/page-layout";
 
 /**
@@ -310,16 +311,14 @@ const ColorsDocs = () => (
     footerSticky
     footerBlurred
   >
-    <div className="section-container">
-      <div className="section-container">
-        <div className="grid">
-          <h3>Overview</h3>
-          <p className="text-muted-foreground">
-            Passport UI uses a comprehensive color system built on{" "}
-            <strong>OKLCH color space</strong>, inspired by shadcn/ui, for
-            better color management and automatic light/dark theme support.
-          </p>
-        </div>
+    <ContentContainer variant="relaxed" blurIn>
+      <div className="grid">
+        <h3>Overview</h3>
+        <p className="text-muted-foreground">
+          Passport UI uses a comprehensive color system built on{" "}
+          <strong>OKLCH color space</strong>, inspired by shadcn/ui, for better
+          color management and automatic light/dark theme support.
+        </p>
       </div>
 
       <Separator />
@@ -430,7 +429,7 @@ const ColorsDocs = () => (
           ))}
         </div>
       </div>
-    </div>
+    </ContentContainer>
   </PageLayout>
 );
 

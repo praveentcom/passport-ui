@@ -358,7 +358,7 @@ function CareerFormExample() {
                     onCheckedChange={field.onChange}
                   />
                 </FormControl>
-                <div className="title-container leading-none">
+                <div className="meta-container leading-none">
                   <FormLabel>Newsletter Subscription</FormLabel>
                   <FormDescription>
                     Receive updates about new opportunities.
@@ -381,7 +381,7 @@ function CareerFormExample() {
                     onCheckedChange={field.onChange}
                   />
                 </FormControl>
-                <div className="title-container leading-none">
+                <div className="meta-container leading-none">
                   <FormLabel>Accept Terms and Conditions</FormLabel>
                   <FormDescription>
                     You agree to our terms of service and privacy policy.

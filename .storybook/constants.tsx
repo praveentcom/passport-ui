@@ -8,6 +8,7 @@ import { Badge } from "../src/components/badge";
 import { Button } from "../src/components/button";
 import { Card, CardContent } from "../src/components/card";
 import { MetaContainer } from "../src/composables/meta-container";
+import { ContentContainer } from "../src/layouts/content-container";
 import { SidebarContainerMenuItem } from "../src/layouts/sidebar-container";
 
 export const COMMON_CONTROLS: Record<string, InputType> = {
@@ -42,54 +43,58 @@ export const COMMON_CONTROLS: Record<string, InputType> = {
 };
 
 export const SAMPLE_CONTENT_CONTAINER: ReactNode = (
-  <div className="section-container">
-    <MetaContainer title="Welcome to Passport UI">
-      A modern React component library for Next.js applications
-    </MetaContainer>
-    <div className="list-container md:grid-cols-2">
-      <Card>
-        <CardContent>
-          <MetaContainer title="Accessible Components">
-            Built on Radix UI primitives with full keyboard navigation and
-            screen reader support.
-          </MetaContainer>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardContent>
-          <MetaContainer title="Theme System">
-            Complete dark/light mode support with CSS custom properties.
-          </MetaContainer>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardContent>
-          <MetaContainer title="Motion Primitives">
-            Beautiful animations powered by Framer Motion.
-          </MetaContainer>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardContent>
-          <MetaContainer title="TypeScript First">
-            Fully typed components with excellent developer experience.
-          </MetaContainer>
-        </CardContent>
-      </Card>
+  <ContentContainer variant="relaxed" blurIn>
+    <div className="section-container">
+      <MetaContainer title="Welcome to Passport UI">
+        A modern React component library for Next.js applications
+      </MetaContainer>
+      <div className="list-container md:grid-cols-2">
+        <Card>
+          <CardContent>
+            <MetaContainer title="Accessible Components">
+              Built on Radix UI primitives with full keyboard navigation and
+              screen reader support.
+            </MetaContainer>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent>
+            <MetaContainer title="Theme System">
+              Complete dark/light mode support with CSS custom properties.
+            </MetaContainer>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent>
+            <MetaContainer title="Motion Primitives">
+              Beautiful animations powered by Framer Motion.
+            </MetaContainer>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent>
+            <MetaContainer title="TypeScript First">
+              Fully typed components with excellent developer experience.
+            </MetaContainer>
+          </CardContent>
+        </Card>
+      </div>
     </div>
-    <MetaContainer title="The page contains long list of elements">
-      Helps validate long page structures.
-    </MetaContainer>
-    {Array.from({ length: 100 }).map((_, index) => (
-      <Card key={index}>
-        <CardContent>
-          <MetaContainer title={`Element ${index + 1}`}>
-            This is a long list of elements.
-          </MetaContainer>
-        </CardContent>
-      </Card>
-    ))}
-  </div>
+    <div className="section-container">
+      <MetaContainer title="The page contains long list of elements">
+        Helps validate long page structures.
+      </MetaContainer>
+      {Array.from({ length: 100 }).map((_, index) => (
+        <Card key={index}>
+          <CardContent>
+            <MetaContainer title={`Element ${index + 1}`}>
+              This is a long list of elements.
+            </MetaContainer>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </ContentContainer>
 );
 
 export const SAMPLE_SIDEBAR_MENU_ITEMS: SidebarContainerMenuItem[] = [

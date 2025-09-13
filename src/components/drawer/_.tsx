@@ -3,6 +3,7 @@ import React from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
 
 import { cn } from "../../lib/utils";
+import { VisuallyHidden } from "../visually-hidden";
 
 function Drawer({
   ...props
@@ -32,6 +33,12 @@ function DrawerClose({
       {...props}
     />
   );
+}
+
+function DrawerTitle({
+  ...props
+}: React.ComponentProps<typeof DrawerPrimitive.Title>) {
+  return <DrawerPrimitive.Title data-slot="drawer-title" {...props} />;
 }
 
 function DrawerOverlay({
@@ -71,6 +78,9 @@ function DrawerContent({
         {...props}
       >
         <div className="bg-border mx-auto mb-6 hidden h-1.75 w-[100px] shrink-0 rounded-full group-data-[vaul-drawer-direction=bottom]/drawer-content:block" />
+        <VisuallyHidden>
+          <DrawerTitle>Drawer</DrawerTitle>
+        </VisuallyHidden>
         {children}
       </DrawerPrimitive.Content>
     </DrawerPortal>

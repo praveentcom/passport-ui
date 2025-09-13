@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs";
 import { CodeBlock } from "../components/code-block";
 import { MetaContainer } from "../composables/meta-container";
 import { ThemeToggle } from "../composables/theme-toggle";
+import { ContentContainer } from "../layouts/content-container";
 import { PageLayout } from "../layouts/page-layout";
 
 const INSTALLATION_CODE = {
@@ -73,7 +74,7 @@ const IntroductionDocs = () => (
     footerSticky
     footerBlurred
   >
-    <div className="section-container">
+    <ContentContainer variant="relaxed" blurIn>
       <MetaContainer>
         <div className="grid">
           <h3>Installation</h3>
@@ -157,7 +158,7 @@ const IntroductionDocs = () => (
           code={INSTALLATION_CODE.COMPONENTS_IMPORT}
         />
       </MetaContainer>
-    </div>
+    </ContentContainer>
   </PageLayout>
 );
 

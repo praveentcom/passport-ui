@@ -78,7 +78,6 @@ The library provides reusable CSS classes defined in the styles:
 - `.content-container`: Content grid layout
 - `.list-container`: List wrapper with spacing
 - `.section-container`: Section grouping
-- `.title-container`: Title/heading wrapper
 - `.meta-container`: Metadata wrapper
 - `.bullet-list`, `.bullet-item`: Custom bullet list styling
 

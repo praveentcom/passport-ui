@@ -22,10 +22,10 @@ export function MetaContainer({
   return (
     <div
       data-slot="meta-container"
-      className={cn("title-container h-min", className)}
+      className={cn("meta-container h-min text-sm", className)}
     >
-      {title && <h4 className="leading-tight">{title}</h4>}
-      <div className="meta-container h-min">{children}</div>
+      {title && <h3>{title}</h3>}
+      {children}
     </div>
   );
 }

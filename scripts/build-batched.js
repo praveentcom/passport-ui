@@ -1,8 +1,7 @@
 #!/usr/bin/env node
-
+import { spawn } from "child_process";
 import { existsSync, readdirSync, statSync } from "fs";
 import { join } from "path";
-import { spawn } from "child_process";
 import process from "process";
 
 /**
@@ -61,7 +60,7 @@ function runTsup(entries, batchIndex, totalBatches) {
     const tsconfigFlag = "--tsconfig=tsconfig.json";
     const externalFlags = [
       "--external=react",
-      "--external=react-dom", 
+      "--external=react-dom",
       "--external=tailwindcss",
       "--external=next",
       "--external=next/navigation",
@@ -69,26 +68,34 @@ function runTsup(entries, batchIndex, totalBatches) {
       "--external=next-themes",
       "--external=@radix-ui/*",
       "--external=framer-motion",
-      "--external=motion"
+      "--external=motion",
     ].join(" ");
 
     const cmd = `npx tsup ${entryArgs} ${cleanFlag} ${dtsFlag} ${formatFlag} ${sourcemapFlag} ${minifyFlag} ${targetFlag} ${tsconfigFlag} ${externalFlags}`;
-    
-    console.log(`\n🔨 Building batch ${batchIndex + 1}/${totalBatches} (${Object.keys(entries).length} entries):`);
-    console.log(`   ${Object.keys(entries).join(', ')}`);
-    
-    const child = spawn(cmd, { shell: true, stdio: 'inherit', env: { ...process.env, NODE_OPTIONS: '--max-old-space-size=8192' } });
-    
-    child.on('close', (code) => {
+
+    console.log(
+      `\n🔨 Building batch ${batchIndex + 1}/${totalBatches} (${Object.keys(entries).length} entries):`
+    );
+    console.log(`   ${Object.keys(entries).join(", ")}`);
+
+    const child = spawn(cmd, {
+      shell: true,
+      stdio: "inherit",
+      env: { ...process.env, NODE_OPTIONS: "--max-old-space-size=8192" },
+    });
+
+    child.on("close", (code) => {
       if (code === 0) {
         console.log(`✅ Batch ${batchIndex + 1} completed successfully`);
         resolve();
       } else {
-        reject(new Error(`Batch ${batchIndex + 1} failed with exit code ${code}`));
+        reject(
+          new Error(`Batch ${batchIndex + 1} failed with exit code ${code}`)
+        );
       }
     });
 
-    child.on('error', (error) => {
+    child.on("error", (error) => {
       reject(error);
     });
   });
@@ -100,18 +107,18 @@ function runTsup(entries, batchIndex, totalBatches) {
 function createBatches(entries, batchSize = 10) {
   const entryPairs = Object.entries(entries);
   const batches = [];
-  
+
   for (let i = 0; i < entryPairs.length; i += batchSize) {
     const batch = {};
     const batchEntries = entryPairs.slice(i, i + batchSize);
-    
+
     batchEntries.forEach(([key, value]) => {
       batch[key] = value;
     });
-    
+
     batches.push(batch);
   }
-  
+
   return batches;
 }
 
@@ -119,34 +126,35 @@ function createBatches(entries, batchSize = 10) {
  * Main build function
  */
 async function buildBatched() {
-  console.log('🚀 Starting batched build process...');
-  
+  console.log("🚀 Starting batched build process...");
+
   const allEntries = generateEntryPoints();
   const totalEntries = Object.keys(allEntries).length;
-  
+
   console.log(`📦 Found ${totalEntries} entry points to build`);
-  
+
   // Create batches of 8 entries each to avoid memory issues
   const batches = createBatches(allEntries, 8);
-  
+
   console.log(`📊 Split into ${batches.length} batches`);
-  
+
   try {
     for (let i = 0; i < batches.length; i++) {
       await runTsup(batches[i], i, batches.length);
     }
-    
-    console.log('\n🎉 All batches completed successfully!');
-    console.log(`📦 Built ${totalEntries} components in ${batches.length} batches`);
-    
+
+    console.log("\n🎉 All batches completed successfully!");
+    console.log(
+      `📦 Built ${totalEntries} components in ${batches.length} batches`
+    );
   } catch (error) {
-    console.error('\n❌ Build failed:', error.message);
+    console.error("\n❌ Build failed:", error.message);
     process.exit(1);
   }
 }
 
 // Run the batched build
 buildBatched().catch((error) => {
-  console.error('❌ Fatal error:', error);
+  console.error("❌ Fatal error:", error);
   process.exit(1);
 });

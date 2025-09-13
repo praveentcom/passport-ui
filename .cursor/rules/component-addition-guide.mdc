@@ -140,7 +140,7 @@ Follow the same structure as shadcn/ui components but with title: 'Composables/C
 - Use CSS custom properties: `--primary`, `--secondary`, `--muted`, etc.
 - Leverage existing utility classes from [src/styles.css](mdc:src/styles.css):
   - `.content-container`, `.section-container`
-  - `.title-container`, `.meta-container`
+  - `.meta-container`, `.list-container`
   - `.bullet-list`, `.bullet-item`
 
 ### Component Patterns

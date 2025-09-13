@@ -155,7 +155,7 @@ export const CardExample: Story = {
 export const ExampleMultiple: Story = {
   render: () => (
     <div className="section-container">
-      <div className="title-container">
+      <div className="meta-container">
         <BlurIn delay={0}>
           <h3>Title appears first</h3>
         </BlurIn>

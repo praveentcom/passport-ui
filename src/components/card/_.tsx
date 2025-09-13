@@ -81,7 +81,7 @@ function Card({
       className={cn(
         "text-card-foreground rounded-md relative",
         "border border-border/85 bg-card",
-        "h-min py-4 group",
+        "h-min py-3.5 group",
         "transition-all duration-100",
         interactive &&
           "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
@@ -114,14 +114,4 @@ function CardContent({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
-function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="card-footer"
-      className={cn("flex items-center px-4 [.border-t]:pt-4", className)}
-      {...props}
-    />
-  );
-}
-
-export { Card, CardContent, CardFooter };
+export { Card, CardContent };

@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
-import { Card, CardContent, CardFooter } from ".";
+import { Card, CardContent } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { MetaContainer } from "../../composables/meta-container";
-import { Button } from "../button";
 import { Progress } from "../progress";
 
 const meta: Meta<typeof Card> = {
@@ -18,14 +17,13 @@ const meta: Meta<typeof Card> = {
 ## Features
 - Clean, accessible card layout with proper semantic structure
 - Optional animated border trail on hover using Framer Motion
-- Flexible content composition with CardContent and CardFooter components
+- Flexible content composition with CardContent component
 - Consistent spacing and styling with theme integration
 - Responsive design with proper mobile adaptations
 
 ## Composition
 Cards are designed to be composed with child components:
 - **CardContent**: Main content area with proper padding and spacing
-- **CardFooter**: Footer area for actions or metadata
 
 ## Border Trail
 The optional border trail creates an engaging hover effect with customizable animations, perfect for highlighting interactive cards.`,
@@ -36,12 +34,11 @@ The optional border trail creates an engaging hover effect with customizable ani
   argTypes: {
     children: {
       control: { type: "object", disable: true },
-      description:
-        "Card content, typically CardContent and/or CardFooter components",
+      description: "Card content, typically CardContent component",
       table: {
         type: {
           summary: "React.ReactNode",
-          detail: "CardContent | CardFooter | React.ReactNode[]",
+          detail: "CardContent | React.ReactNode[]",
         },
         category: "Content",
       },
@@ -81,9 +78,6 @@ export const Default: Story = {
           This is the main content of the card. You can put any content here.
         </MetaContainer>
       </CardContent>,
-      <CardFooter key="footer">
-        <Button>Action</Button>
-      </CardFooter>,
     ],
   },
 };
@@ -104,12 +98,6 @@ export const ExampleProject: Story = {
           <Progress value={75} />
         </MetaContainer>
       </CardContent>,
-      <CardFooter key="footer">
-        <div className="flex gap-2">
-          <Button variant="outline">View</Button>
-          <Button>Edit</Button>
-        </div>
-      </CardFooter>,
     ],
   },
 };
@@ -125,11 +113,6 @@ export const ExampleProfile: Story = {
           <div>🏢 Tech Corp Inc.</div>
         </MetaContainer>
       </CardContent>,
-      <CardFooter key="footer">
-        <Button variant="outline" size="medium" className="w-full">
-          View Profile
-        </Button>
-      </CardFooter>,
     ],
   },
 };

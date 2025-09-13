@@ -1,10 +1,10 @@
-import React, { ReactNode } from "react";
+import React, { Fragment, ReactNode } from "react";
 
 import { cva } from "class-variance-authority";
 
+import { BackButton, BackButtonProps } from "../../composables/back-button";
 import { cn } from "../../lib/utils";
 import { BlurIn } from "../../motion-primitives/blur-in";
-import { BackButton, BackButtonProps } from "../../composables/back-button";
 
 export type ContentContainerVariant = "compact" | "relaxed" | "broad" | "full";
 
@@ -31,7 +31,7 @@ export interface ContentContainerProps {
   className?: string;
   variant?: ContentContainerVariant;
   blurIn?: boolean;
-  backButton?: BackButtonProps
+  backButton?: BackButtonProps;
 }
 
 /**
@@ -46,19 +46,23 @@ export function ContentContainer({
   className,
   variant,
   blurIn,
-  backButton
+  backButton,
 }: ContentContainerProps): ReactNode {
-  const Comp = <>
-    {backButton && <BackButton {...backButton} className="-mb-4" />}
-    {children}
-  </>;
+  const Comp = (
+    <Fragment>
+      {backButton && <BackButton {...backButton} className="-mb-4" />}
+      {children}
+    </Fragment>
+  );
+
+  const Parent = blurIn ? BlurIn : "div";
 
   return (
-    <div
+    <Parent
       data-slot="content-container"
       className={cn(contentContainerVariants({ variant }), className)}
     >
-      {!blurIn ? Comp : <BlurIn>{Comp}</BlurIn>}
-    </div>
+      {Comp}
+    </Parent>
   );
 }

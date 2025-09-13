@@ -12,6 +12,7 @@ import {
 } from ".";
 import { MetaContainer } from "../../composables/meta-container";
 import { Button } from "../button";
+import { Separator } from "../separator";
 
 const meta: Meta<typeof Dialog> = {
   title: "Components/Dialog",
@@ -114,6 +115,7 @@ Always provide clear actions and escape routes for users.`,
           <MetaContainer title="Account Settings">
             Manage your account settings and preferences here.
           </MetaContainer>
+          <Separator />
           <MetaContainer title="Profile Information">
             Update your personal details and contact information
           </MetaContainer>
