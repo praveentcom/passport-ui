@@ -81,7 +81,7 @@ function Card({
       className={cn(
         "text-card-foreground rounded-md relative",
         "border border-border/85 bg-card",
-        "h-min py-3.5 group",
+        "h-min pt-3.5 pb-4 group",
         "transition-all duration-100",
         interactive &&
           "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
@@ -108,7 +108,7 @@ function CardContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-content"
-      className={cn("px-4 section-container", className)}
+      className={cn("px-4 card-container", className)}
       {...props}
     />
   );
