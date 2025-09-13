@@ -170,7 +170,7 @@
     @apply text-2xl leading-relaxed;
   }
   .passport-ui h2 {
-    @apply text-xl leading-relaxed;
+    @apply text-lg leading-relaxed;
   }
   .passport-ui h3 {
     @apply text-base leading-relaxed;
@@ -187,7 +187,7 @@
 
   /* Container Styles */
   .passport-ui .content-container {
-    @apply p-4 grid gap-y-8 gap-x-8 text-foreground mx-auto;
+    @apply px-4 pt-3.5 pb-8 grid gap-y-8 gap-x-8 text-foreground mx-auto;
   }
   .passport-ui .section-container {
     @apply grid gap-y-5 gap-x-5 text-foreground;

@@ -49,7 +49,7 @@ export function ContentContainer({
   backButton
 }: ContentContainerProps): ReactNode {
   const Comp = <>
-    {backButton && <BackButton {...backButton} />}
+    {backButton && <BackButton {...backButton} className="-mb-4" />}
     {children}
   </>;
 

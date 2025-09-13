@@ -3,10 +3,12 @@ import React from "react";
 import Link from "next/link";
 
 import { Button } from "../../components/button";
+import { cn } from "../../lib/utils";
 
 export type BackButtonProps = {
   href?: string;
   label?: string;
+  className?: string;
 };
 
 /**
@@ -18,10 +20,11 @@ export type BackButtonProps = {
 export function BackButton({
   href = "/",
   label = "Back to Home",
+  className,
 }: BackButtonProps) {
   return (
     <div data-slot="back-button">
-      <Link href={href} className="flex items-center gap-1">
+      <Link href={href} className={cn("flex items-center gap-1", className)}>
         <Button>&larr; {label}</Button>
       </Link>
     </div>
