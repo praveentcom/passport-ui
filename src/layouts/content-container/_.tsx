@@ -48,10 +48,10 @@ export function ContentContainer({
   blurIn,
   backButton
 }: ContentContainerProps): ReactNode {
-  const Comp = <div className="content-container">
+  const Comp = <>
     {backButton && <BackButton {...backButton} />}
     {children}
-  </div>;
+  </>;
 
   return (
     <div
