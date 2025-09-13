@@ -150,9 +150,11 @@
   .passport-ui h2,
   .passport-ui h3,
   .passport-ui h4,
-  .passport-ui h5,
-  .passport-ui h6 {
+  .passport-ui h5 {
     @apply font-medium;
+  }
+  .passport-ui h6 {
+    @apply font-semibold;
   }
   .passport-ui h1,
   .passport-ui h2,
@@ -188,13 +190,13 @@
     @apply p-4 grid gap-y-8 gap-x-8 text-foreground mx-auto;
   }
   .passport-ui .section-container {
-    @apply grid gap-y-6 gap-x-6 text-foreground;
+    @apply grid gap-y-5 gap-x-5 text-foreground;
   }
   .passport-ui .list-container {
-    @apply grid gap-y-4 gap-x-4 text-muted-foreground;
+    @apply grid gap-y-3.5 gap-x-3.5 text-muted-foreground;
   }
   .passport-ui .meta-container {
-    @apply grid gap-y-1.5 gap-x-3 text-muted-foreground;
+    @apply grid gap-y-1.5 gap-x-2.5 text-muted-foreground;
   }
   .passport-ui .title-container {
     @apply grid gap-y-0.75 gap-x-1.5 text-foreground;

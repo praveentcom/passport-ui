@@ -20,7 +20,7 @@ export function BackButton({
   label = "Back to Home",
 }: BackButtonProps) {
   return (
-    <div data-slot="back-button" className="mb-5">
+    <div data-slot="back-button">
       <Link href={href} className="flex items-center gap-1">
         <Button>&larr; {label}</Button>
       </Link>

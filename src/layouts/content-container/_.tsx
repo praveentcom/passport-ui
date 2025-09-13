@@ -4,6 +4,7 @@ import { cva } from "class-variance-authority";
 
 import { cn } from "../../lib/utils";
 import { BlurIn } from "../../motion-primitives/blur-in";
+import { BackButton, BackButtonProps } from "../../composables/back-button";
 
 export type ContentContainerVariant = "compact" | "relaxed" | "broad" | "full";
 
@@ -30,6 +31,7 @@ export interface ContentContainerProps {
   className?: string;
   variant?: ContentContainerVariant;
   blurIn?: boolean;
+  backButton?: BackButtonProps
 }
 
 /**
@@ -44,8 +46,12 @@ export function ContentContainer({
   className,
   variant,
   blurIn,
+  backButton
 }: ContentContainerProps): ReactNode {
-  const Comp = <div className="section-container">{children}</div>;
+  const Comp = <div className="content-container">
+    {backButton && <BackButton {...backButton} />}
+    {children}
+  </div>;
 
   return (
     <div
