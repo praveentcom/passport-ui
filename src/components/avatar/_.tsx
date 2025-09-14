@@ -4,19 +4,29 @@ import * as AvatarPrimitive from "@radix-ui/react-avatar";
 
 import { cn } from "../../lib/utils";
 
+interface AvatarProps extends React.ComponentProps<typeof AvatarPrimitive.Root> {
+  monochrome?: boolean;
+}
+
+const AvatarContext = React.createContext<{ monochrome?: boolean }>({});
+
 function Avatar({
   className,
+  monochrome,
   ...props
-}: React.ComponentProps<typeof AvatarPrimitive.Root>) {
+}: AvatarProps) {
   return (
-    <AvatarPrimitive.Root
-      data-slot="avatar"
-      className={cn(
-        "relative flex size-8 shrink-0 overflow-hidden rounded-full",
-        className
-      )}
-      {...props}
-    />
+    <AvatarContext.Provider value={{ monochrome }}>
+      <AvatarPrimitive.Root
+        data-slot="avatar"
+        className={cn(
+          "relative flex size-8 shrink-0 overflow-hidden rounded-full",
+          monochrome && "group",
+          className
+        )}
+        {...props}
+      />
+    </AvatarContext.Provider>
   );
 }
 
@@ -24,10 +34,20 @@ function AvatarImage({
   className,
   ...props
 }: React.ComponentProps<typeof AvatarPrimitive.Image>) {
+  const { monochrome } = React.useContext(AvatarContext);
+  
   return (
     <AvatarPrimitive.Image
       data-slot="avatar-image"
-      className={cn("aspect-square size-full", className)}
+      className={cn(
+        "aspect-square size-full",
+        monochrome && [
+          "grayscale",
+          "transition-all duration-200 ease-in-out",
+          "group-hover:grayscale-0"
+        ],
+        className
+      )}
       {...props}
     />
   );
@@ -50,3 +70,4 @@ function AvatarFallback({
 }
 
 export { Avatar, AvatarImage, AvatarFallback };
+export type { AvatarProps };
