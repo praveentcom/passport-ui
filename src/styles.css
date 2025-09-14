@@ -138,7 +138,7 @@
   .passport-ui * {
     @apply border-border outline-ring/50;
   }
-  .passport-ui body {
+  .passport-ui {
     @apply bg-background text-foreground text-sm font-normal;
   }
   .passport-ui h1,
