@@ -180,7 +180,7 @@ export function Markdown({
       data-slot="markdown"
       className={cn(
         "passport-ui",
-        "article-base",
+        "article-base text-sm",
         muted && "article-muted",
         className
       )}
