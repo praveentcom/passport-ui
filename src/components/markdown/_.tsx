@@ -1,3 +1,6 @@
+"use client";
+
+
 import React from "react";
 
 import DOMPurify from "isomorphic-dompurify";

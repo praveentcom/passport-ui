@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import hljs from "highlight.js/lib/core";
