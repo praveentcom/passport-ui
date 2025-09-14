@@ -221,7 +221,7 @@
 
   /* Markdown Article Styles */
   .passport-ui .article-base {
-    @apply text-foreground leading-relaxed;
+    @apply text-foreground;
   }
   .passport-ui .article-muted {
     @apply text-muted-foreground;
