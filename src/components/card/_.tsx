@@ -1,15 +1,8 @@
-"use client";
-
 import React from "react";
 
 import { cn } from "../../lib/utils";
-import {
-  BorderTrail,
-  BorderTrailProps,
-} from "../../motion-primitives/border-trail";
 
 export interface CardProps extends React.ComponentProps<"div"> {
-  borderTrail?: boolean | BorderTrailProps;
   /**
    * Makes the card interactive (clickable)
    */
@@ -30,7 +23,6 @@ export interface CardProps extends React.ComponentProps<"div"> {
 
 function Card({
   className,
-  borderTrail = false,
   interactive = false,
   children,
   "aria-label": ariaLabel,
@@ -40,21 +32,6 @@ function Card({
   onKeyDown,
   ...props
 }: CardProps) {
-  let borderTrailProps: BorderTrailProps | undefined;
-  if (borderTrail === true) {
-    borderTrailProps = {
-      className: "bg-gradient-to-r from-primary/0 via-primary/5 to-primary/20",
-      size: 80,
-      transition: {
-        repeat: Infinity,
-        duration: 4,
-        ease: "linear",
-      },
-    };
-  } else if (borderTrail) {
-    borderTrailProps = borderTrail;
-  }
-
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (interactive && (event.key === "Enter" || event.key === " ")) {
       event.preventDefault();
@@ -86,17 +63,11 @@ function Card({
         interactive &&
           "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
         className,
-        borderTrail ? "hover:bg-card/85" : ""
       )}
       onClick={interactive ? onClick : undefined}
       onKeyDown={interactive ? handleKeyDown : onKeyDown}
       {...props}
     >
-      {borderTrail && (
-        <div className="opacity-0 rounded-md group-hover:opacity-100 transition-opacity duration-200">
-          <BorderTrail {...borderTrailProps} />
-        </div>
-      )}
       <div className="flex flex-col gap-5">{children}</div>
     </div>
   );

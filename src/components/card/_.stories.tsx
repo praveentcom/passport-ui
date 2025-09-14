@@ -43,16 +43,6 @@ The optional border trail creates an engaging hover effect with customizable ani
         category: "Content",
       },
     },
-    borderTrail: {
-      control: { type: "boolean" },
-      description:
-        "Enables animated border trail effect on hover. Can be boolean or BorderTrailProps object for custom configuration",
-      table: {
-        type: { summary: "boolean | BorderTrailProps" },
-        defaultValue: { summary: "false" },
-        category: "Animation",
-      },
-    },
     className: COMMON_CONTROLS.className,
     onClick: {
       control: false,
@@ -71,7 +61,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    borderTrail: false,
     children: [
       <CardContent key="content">
         <MetaContainer title="Card Title">
@@ -84,7 +73,6 @@ export const Default: Story = {
 
 export const ExampleProject: Story = {
   args: {
-    borderTrail: false,
     children: [
       <CardContent key="content">
         <MetaContainer title="Project Alpha">
@@ -104,7 +92,6 @@ export const ExampleProject: Story = {
 
 export const ExampleProfile: Story = {
   args: {
-    borderTrail: false,
     children: [
       <CardContent key="content">
         <MetaContainer>
