@@ -179,9 +179,6 @@
   .passport-ui h6 {
     @apply text-xs uppercase tracking-wide;
   }
-  .passport-ui p, .passport-ui span, .passport-ui li, .passport-ui a {
-    @apply text-sm;
-  }
 
   /* Container Styles */
   .passport-ui .content-container {
