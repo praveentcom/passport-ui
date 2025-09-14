@@ -53,9 +53,9 @@
 /* Light Mode Colors for Custom Properties */
 :root {
   --radius: 0.625rem;
-  --background: oklch(0.97 0.002 270);
+  --background: oklch(0.98 0.002 270);
   --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(0.95 0 0);
+  --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823);
@@ -96,12 +96,12 @@
 .dark {
   --background: oklch(0.18 0 0);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.22 0.0018 286.27);
+  --card: oklch(0.2 0.0018 286.27);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.22 0.0018 286.27);
+  --popover: oklch(0.2 0.0018 286.27);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.92 0.004 286.32);
-  --primary-foreground: oklch(0.22 0.0018 286.27);
+  --primary-foreground: oklch(0.2 0.0018 286.27);
   --secondary: oklch(0.24 0.0018 286.27);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.24 0.0018 286.27);
@@ -130,7 +130,7 @@
   --chart-3: oklch(0.57 0.19 33);
   --chart-4: oklch(0.6256 0.1933 23.03);
   --chart-5: oklch(0.56 0.19 33);
-  --sidebar: oklch(0.22 0.0018 286.27);
+  --sidebar: oklch(0.2 0.0018 286.27);
 }
 
 /* Base Layer */

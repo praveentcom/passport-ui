@@ -49,7 +49,7 @@ function ListItem({
 }: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
   return (
     <li {...props}>
-      <NavigationMenuLink asChild>
+      <NavigationMenuLink className="bg-transparent" asChild>
         <Link href={href}>
           <div className="passport-ui p-1">
             <MetaContainer title={title}>
@@ -166,19 +166,19 @@ Navigation menus provide full keyboard navigation and screen reader support with
           <NavigationMenuContent>
             <MetaContainer>
               <NavigationMenuLink asChild>
-                <Link href="#" className="flex-row items-center gap-2">
+                <Link href="#" className="flex-row items-center justify-start gap-2 pr-4">
                   <CircleHelpIcon />
                   Backlog
                 </Link>
               </NavigationMenuLink>
               <NavigationMenuLink asChild>
-                <Link href="#" className="flex-row items-center gap-2">
+                <Link href="#" className="flex-row items-center justify-start gap-2 pr-4">
                   <CircleIcon />
                   To Do
                 </Link>
               </NavigationMenuLink>
               <NavigationMenuLink asChild>
-                <Link href="#" className="flex-row items-center gap-2">
+                <Link href="#" className="flex-row items-center justify-start gap-2 pr-4">
                   <CircleCheckIcon />
                   Done
                 </Link>

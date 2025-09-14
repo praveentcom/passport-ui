@@ -60,7 +60,7 @@ function NavigationMenuItem({
 }
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex w-max items-center justify-center rounded-xs px-2 py-1 text-sm hover:bg-border hover:text-foreground focus:bg-border focus:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-[state=open]:hover:bg-border data-[state=open]:text-foreground data-[state=open]:focus:bg-border data-[state=open]:bg-border/50 focus-visible:ring-ring/50 outline-none transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1"
+  "group inline-flex w-max items-center justify-center rounded-xs px-2 py-1 text-sm text-muted-foreground font-medium hover:bg-border hover:text-foreground focus:bg-border focus:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-[state=open]:hover:bg-border data-[state=open]:text-foreground data-[state=open]:focus:bg-border data-[state=open]:bg-border/50 focus-visible:ring-ring/50 outline-none transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1"
 );
 
 function NavigationMenuTrigger({
@@ -130,7 +130,7 @@ function NavigationMenuLink({
     <NavigationMenuPrimitive.Link
       data-slot="navigation-menu-link"
       className={cn(
-        "data-[active=true]:focus:bg-border data-[active=true]:hover:bg-border data-[active=true]:bg-border/50 data-[active=true]:text-foreground hover:bg-border hover:text-foreground focus:bg-border focus:text-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground hover:[&_svg:not([class*='text-'])]:text-foreground focus:[&_svg:not([class*='text-'])]:text-foreground data-[active=true]:[&_svg:not([class*='text-'])]:text-foreground inline-flex items-center justify-center gap-1 rounded-xs px-2 py-1 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
+        "data-[active=true]:focus:bg-border data-[active=true]:hover:bg-border data-[active=true]:bg-border/50 data-[active=true]:text-foreground hover:bg-border hover:text-foreground focus:bg-border focus:text-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground hover:[&_svg:not([class*='text-'])]:text-foreground focus:[&_svg:not([class*='text-'])]:text-foreground data-[active=true]:[&_svg:not([class*='text-'])]:text-foreground text-muted-foreground inline-flex items-center justify-center gap-1 rounded-xs px-2 py-1 text-sm font-medium transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}
