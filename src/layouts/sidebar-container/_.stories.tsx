@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";

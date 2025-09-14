@@ -1,5 +1,3 @@
-"use client";
-
 import React, { ReactNode } from "react";
 
 import { cva } from "class-variance-authority";
