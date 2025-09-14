@@ -293,7 +293,7 @@ const TailwindColorCard = ({ color }: { color: string }) => (
 
 export default function ColorsPage() {
   return (
-    <ContentContainer variant="relaxed" blurIn>
+    <ContentContainer variant="relaxed">
       <div className="section-container">
         <div className="grid">
           <h3>Overview</h3>

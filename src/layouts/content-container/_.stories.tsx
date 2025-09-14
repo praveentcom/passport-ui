@@ -14,7 +14,6 @@ const meta: Meta<typeof ContentContainer> = {
 
 ## Features
 - Automatic structured data (JSON-LD) injection for SEO
-- Optional blur-in entrance animation for smooth page transitions
 - Consistent page layout with proper spacing and structure
 - Built-in accessibility with proper page semantics
 - Integration with theme system and responsive design
@@ -29,7 +28,6 @@ const meta: Meta<typeof ContentContainer> = {
 - Improved content understanding by search engines
 
 ## Animation System
-- Optional blur-in animation powered by Framer Motion
 - Smooth page entrance effects
 - Configurable animation timing and behavior
 - Respects user motion preferences

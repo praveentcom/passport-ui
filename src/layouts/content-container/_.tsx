@@ -1,12 +1,9 @@
-"use client";
-
 import React, { Fragment, ReactNode } from "react";
 
 import { cva } from "class-variance-authority";
 
 import { BackButton, BackButtonProps } from "../../composables/back-button";
 import { cn } from "../../lib/utils";
-import { BlurIn } from "../../motion-primitives/blur-in";
 
 export type ContentContainerVariant = "compact" | "relaxed" | "broad" | "full";
 
@@ -32,7 +29,6 @@ export interface ContentContainerProps {
   children: ReactNode;
   className?: string;
   variant?: ContentContainerVariant;
-  blurIn?: boolean;
   backButton?: BackButtonProps;
 }
 
@@ -47,7 +43,6 @@ export function ContentContainer({
   children,
   className,
   variant,
-  blurIn,
   backButton,
 }: ContentContainerProps): ReactNode {
   const Comp = (
@@ -57,14 +52,12 @@ export function ContentContainer({
     </Fragment>
   );
 
-  const Parent = blurIn ? BlurIn : "div";
-
   return (
-    <Parent
+    <div
       data-slot="content-container"
       className={cn(contentContainerVariants({ variant }), className)}
     >
       {Comp}
-    </Parent>
+    </div>
   );
 }

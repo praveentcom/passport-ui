@@ -74,7 +74,7 @@ const IntroductionDocs = () => (
     footerSticky
     footerBlurred
   >
-    <ContentContainer variant="relaxed" blurIn>
+    <ContentContainer variant="relaxed">
       <MetaContainer>
         <div className="grid">
           <h3>Installation</h3>

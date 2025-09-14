@@ -311,7 +311,7 @@ const ColorsDocs = () => (
     footerSticky
     footerBlurred
   >
-    <ContentContainer variant="relaxed" blurIn>
+    <ContentContainer variant="relaxed">
       <div className="grid">
         <h3>Overview</h3>
         <p className="text-muted-foreground">

@@ -89,7 +89,6 @@ export interface PageLayoutProps
  * @param header - The header content (will be wrapped in HeaderContainer)
  * @param footer - The footer content (will be wrapped in FooterContainer)
  * @param contentVariant - The variant of the content container
- * @param contentBlurIn - Show blurIn animation for the content container
  * @param headerVariant - The variant of the header container
  * @param headerSticky - Whether the header should stick to the top on scroll
  * @param headerBlurred - Whether the header should have a blurred background effect

@@ -42,7 +42,7 @@ function App() {
 
 export default function IntroductionPage() {
   return (
-    <ContentContainer variant="relaxed" blurIn>
+    <ContentContainer variant="relaxed">
       <MetaContainer>
         <div className="grid">
           <h3>Installation</h3>

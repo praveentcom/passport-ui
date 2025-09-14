@@ -43,7 +43,7 @@ export const COMMON_CONTROLS: Record<string, InputType> = {
 };
 
 export const SAMPLE_CONTENT_CONTAINER: ReactNode = (
-  <ContentContainer variant="relaxed" blurIn>
+  <ContentContainer variant="relaxed">
     <div className="section-container">
       <MetaContainer title="Welcome to Passport UI">
         A modern React component library for Next.js applications
