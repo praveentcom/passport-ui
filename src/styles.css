@@ -139,7 +139,7 @@
     @apply border-border outline-ring/50;
   }
   .passport-ui {
-    @apply bg-background text-foreground text-sm font-normal;
+    @apply bg-background text-foreground text-sm font-normal leading-normal;
   }
   .passport-ui h1,
   .passport-ui h2,
@@ -182,16 +182,16 @@
 
   /* Container Styles */
   .passport-ui .content-container {
-    @apply px-4 pt-5 pb-8 grid gap-y-8 gap-x-8 text-foreground mx-auto;
+    @apply px-4 pt-5 pb-8 grid gap-y-8 gap-x-8 mx-auto;
   }
   .passport-ui .section-container {
-    @apply grid gap-y-5 gap-x-5 text-foreground;
+    @apply grid gap-y-5 gap-x-5;
   }
   .passport-ui .list-container {
-    @apply grid gap-y-3 gap-x-3 text-muted-foreground;
+    @apply grid gap-y-3.5 gap-x-3.5;
   }
   .passport-ui .card-container {
-    @apply grid gap-y-2.5 gap-x-2.5 text-foreground;
+    @apply grid gap-y-2.5 gap-x-2.5;
   }
   .passport-ui .meta-container {
     @apply grid gap-y-0.5 gap-x-2 text-muted-foreground;
