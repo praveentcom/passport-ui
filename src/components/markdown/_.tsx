@@ -182,8 +182,7 @@ export function Markdown({
     <article
       data-slot="markdown"
       className={cn(
-        "passport-ui",
-        "article-base text-sm",
+        "article-base text-sm grid",
         muted && "article-muted",
         className
       )}

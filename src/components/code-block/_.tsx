@@ -199,7 +199,7 @@ function CodeBlock({
     <div
       data-slot="code-block"
       className={cn(
-        "passport-ui relative bg-card border border-border rounded-sm overflow-hidden group w-full break-inside-avoid",
+        "relative bg-card border border-border rounded-sm overflow-hidden group w-full break-inside-avoid",
         `hljs-theme-${theme}`,
         className
       )}
