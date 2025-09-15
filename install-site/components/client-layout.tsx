@@ -28,8 +28,8 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
           searchable={true}
           searchPlaceholder="Search..."
           sidebarHeader={
-            <MetaContainer title="Passport UI">
-              Sleek & Compact UI Library
+            <MetaContainer title="Passport UI" clampTitle>
+              <p className="line-clamp-1">Sleek & Compact UI Library</p>
             </MetaContainer>
           }
           autoInferActiveItem

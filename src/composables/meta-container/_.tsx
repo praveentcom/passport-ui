@@ -4,6 +4,7 @@ import { cn } from "../../lib/utils";
 
 export type MetaContainerProps = {
   title?: string;
+  clampTitle?: boolean;
   children: ReactNode;
   className?: string;
 };
@@ -16,6 +17,7 @@ export type MetaContainerProps = {
  */
 export function MetaContainer({
   title,
+  clampTitle = false,
   children,
   className,
 }: MetaContainerProps) {
@@ -24,7 +26,7 @@ export function MetaContainer({
       data-slot="meta-container"
       className={cn("meta-container h-min text-sm", className)}
     >
-      {title && <h3>{title}</h3>}
+      {title && <h3 className={cn(clampTitle && "line-clamp-1")}>{title}</h3>}
       {children}
     </div>
   );

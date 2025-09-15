@@ -144,7 +144,7 @@ export function SidebarContainer({
   SidebarContainerProps,
   "defaultOpen" | "open" | "onOpenChange"
 >): ReactNode {
-  const { state, setOpen } = useSidebar();
+  const { state, setOpen, isMobile, setOpenMobile } = useSidebar();
 
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -197,10 +197,16 @@ export function SidebarContainer({
         setOpen(true);
       }
       toggleExpanded(item.title);
-    } else if (item.onClick) {
-      item.onClick();
-    } else if (item.href) {
-      window.location.href = item.href;
+    } else {
+      if (isMobile) {
+        setOpenMobile(false);
+      }
+      
+      if (item.onClick) {
+        item.onClick();
+      } else if (item.href) {
+        window.location.href = item.href;
+      }
     }
   };
 
@@ -304,7 +310,12 @@ export function SidebarContainer({
                               <SidebarMenuSubButton
                                 asChild={!!subItem.href}
                                 isActive={subItem.isActive}
-                                onClick={subItem.onClick}
+                                onClick={() => {
+                                  if (isMobile) {
+                                    setOpenMobile(false);
+                                  }
+                                  subItem.onClick?.();
+                                }}
                               >
                                 {subItem.href ? (
                                   <a href={subItem.href}>{subItem.title}</a>

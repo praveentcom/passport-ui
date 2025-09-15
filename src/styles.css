@@ -89,7 +89,7 @@
   --chart-3: oklch(0.6877 0.208 40.13);
   --chart-4: oklch(0.557 0.1974 25.17);
   --chart-5: oklch(0.6877 0.208 40.13);
-  --sidebar: oklch(0.985 0 0);
+  --sidebar: oklch(0.98 0.003 270);
 }
 
 /* Dark Mode Colors for Custom Properties */
@@ -182,10 +182,10 @@
 
   /* Container Styles */
   .passport-ui .content-container {
-    @apply pt-3 md:pt-5 pb-8 px-4 grid gap-y-8 gap-x-8 mx-auto;
+    @apply mx-auto pt-3 md:pt-5 pb-8 px-4 grid gap-y-6 md:gap-y-8 gap-x-6 md:gap-x-8;
   }
   .passport-ui .section-container {
-    @apply grid gap-y-5 gap-x-5;
+    @apply grid gap-y-4 md:gap-y-5 gap-x-4 md:gap-x-5;
   }
   .passport-ui .list-container {
     @apply grid gap-y-3.5 gap-x-3.5;
