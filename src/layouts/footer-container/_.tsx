@@ -7,7 +7,7 @@ import { cn } from "../../lib/utils";
 export type FooterContainerVariant = "compact" | "relaxed" | "broad" | "full";
 
 const footerContainerVariants = cva(
-  "w-full z-50 transition-all duration-200 ease-in-out border-t border-border",
+  "w-full z-50 transition-all duration-200 border-t border-border",
   {
     variants: {
       sticky: {

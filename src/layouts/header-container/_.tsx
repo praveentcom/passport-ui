@@ -10,7 +10,7 @@ import { cn } from "../../lib/utils";
 export type HeaderContainerVariant = "compact" | "relaxed" | "broad" | "full";
 
 const headerContainerVariants = cva(
-  "w-full z-50 transition-all ease-in-out border-b",
+  "w-full z-50 transition-all duration-200 border-b",
   {
     variants: {
       sticky: {
@@ -34,7 +34,7 @@ const headerContainerVariants = cva(
   }
 );
 
-const headerContentVariants = cva("px-4 py-3.5 mx-auto", {
+const headerContentVariants = cva("px-4 py-3 md:py-3.5 mx-auto", {
   variants: {
     variant: {
       /**

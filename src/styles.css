@@ -53,7 +53,7 @@
 /* Light Mode Colors for Custom Properties */
 :root {
   --radius: 0.625rem;
-  --background: oklch(0.98 0.002 270);
+  --background: oklch(0.99 0.002 270);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
@@ -182,7 +182,7 @@
 
   /* Container Styles */
   .passport-ui .content-container {
-    @apply px-4 pt-5 pb-8 grid gap-y-8 gap-x-8 mx-auto;
+    @apply pt-3 md:pt-5 pb-8 px-4 grid gap-y-8 gap-x-8 mx-auto;
   }
   .passport-ui .section-container {
     @apply grid gap-y-5 gap-x-5;
@@ -203,6 +203,20 @@
   /* Common Utility Classes */
   .passport-ui .hide-on-mobile {
     @apply hidden md:block;
+  }
+
+  /* Prevent Bouncy Scroll on Mobile */
+  .passport-ui .no-bounce {
+    overscroll-behavior: contain;
+  }
+  .passport-ui .no-bounce-x {
+    overscroll-behavior-x: contain;
+  }
+  .passport-ui .no-bounce-y {
+    overscroll-behavior-y: contain;
+  }
+  .passport-ui .no-bounce-none {
+    overscroll-behavior: none;
   }
 
   /* Bullet List Styles */

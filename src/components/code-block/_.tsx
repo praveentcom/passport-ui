@@ -152,7 +152,7 @@ function CodeBlock({
   language,
   filename,
   hideLineNumbers = false,
-  theme = "github",
+  theme = "vs",
   className,
   ...props
 }: CodeBlockProps) {
@@ -208,7 +208,7 @@ function CodeBlock({
       {filename && (
         <div
           data-slot="code-block-header"
-          className="flex font-mono justify-between items-center gap-2 px-2 py-0.5 bg-sidebar border-b border-border text-xs text-muted-foreground/80"
+          className="flex font-mono justify-between items-center gap-2 px-2.5 py-1.5 bg-sidebar border-b border-border text-xs text-muted-foreground/80"
         >
           <>{filename}</>
           <div
@@ -229,19 +229,19 @@ function CodeBlock({
             const isLastLine = index === lines.length - 1;
             const lineNumberPadding =
               isFirstLine && isLastLine
-                ? " py-1"
+                ? " py-1.5"
                 : isFirstLine
-                  ? " pt-1"
+                  ? " pt-1.5"
                   : isLastLine
-                    ? " pb-1"
+                    ? " pb-1.5"
                     : "";
             const contentPadding =
               isFirstLine && isLastLine
-                ? " py-1"
+                ? " py-1.5"
                 : isFirstLine
-                  ? " pt-1"
+                  ? " pt-1.5"
                   : isLastLine
-                    ? " pb-1"
+                    ? " pb-1.5"
                     : "";
 
             const highlightedLine = highlightLine(line);
