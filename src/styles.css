@@ -1,6 +1,55 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Open Runde Font Face Declarations */
+@font-face {
+  font-family: "Open Runde";
+  src:
+    url("https://storage.googleapis.com/praveentcom-public/fonts/open-runde/web/regular.woff2")
+      format("woff2"),
+    url("https://storage.googleapis.com/praveentcom-public/fonts/open-runde/web/regular.woff")
+      format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Runde";
+  src:
+    url("https://storage.googleapis.com/praveentcom-public/fonts/open-runde/web/medium.woff2")
+      format("woff2"),
+    url("https://storage.googleapis.com/praveentcom-public/fonts/open-runde/web/medium.woff")
+      format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Runde";
+  src:
+    url("https://storage.googleapis.com/praveentcom-public/fonts/open-runde/web/semibold.woff2")
+      format("woff2"),
+    url("https://storage.googleapis.com/praveentcom-public/fonts/open-runde/web/semibold.woff")
+      format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Runde";
+  src:
+    url("https://storage.googleapis.com/praveentcom-public/fonts/open-runde/web/bold.woff2")
+      format("woff2"),
+    url("https://storage.googleapis.com/praveentcom-public/fonts/open-runde/web/bold.woff")
+      format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Custom Variant for Dark Mode */
 @custom-variant dark (&:is(.dark *));
 
@@ -48,6 +97,12 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --font-sans:
+    "Open Runde", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono:
+    ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
 /* Light Mode Colors for Custom Properties */
@@ -136,10 +191,10 @@
 /* Base Layer */
 @layer base {
   .passport-ui * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 leading-normal;
   }
   .passport-ui {
-    @apply bg-background text-foreground text-sm font-normal leading-normal;
+    @apply bg-background text-foreground text-sm font-normal font-sans;
   }
   .passport-ui h1,
   .passport-ui h2,
@@ -194,7 +249,7 @@
     @apply grid gap-y-2.5 gap-x-2.5;
   }
   .passport-ui .meta-container {
-    @apply grid gap-y-0.5 gap-x-2 text-muted-foreground;
+    @apply grid gap-y-0.25 gap-x-2 text-muted-foreground;
   }
 }
 

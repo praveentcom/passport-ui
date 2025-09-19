@@ -25,7 +25,7 @@ const alertVariants = cva(
 const textVariants = cva("text-sm", {
   variants: {
     variant: {
-      default: "text-foreground",
+      default: "text-foreground [&>svg]:text-foreground",
       info: "text-info-muted-foreground [&>svg]:text-info-muted-foreground",
       warning:
         "text-warning-muted-foreground [&>svg]:text-warning-muted-foreground",

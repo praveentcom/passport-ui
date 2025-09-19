@@ -10,7 +10,10 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
     >
       <table
         data-slot="table"
-        className={cn("w-full caption-bottom text-sm", className)}
+        className={cn(
+          "w-full caption-bottom text-sm border-separate border-spacing-y-1",
+          className
+        )}
         {...props}
       />
     </div>
@@ -21,7 +24,7 @@ function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
   return (
     <thead
       data-slot="table-header"
-      className={cn("[&_tr]:border-b bg-border/50", className)}
+      className={cn("bg-border rounded-sm", className)}
       {...props}
     />
   );
@@ -42,7 +45,7 @@ function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
     <tfoot
       data-slot="table-footer"
       className={cn(
-        "bg-border/50 border-t font-medium [&>tr]:last:border-b-0",
+        "bg-border rounded-sm font-medium [&>tr]:last:border-b-0 [&>tr>td:first-child]:rounded-bl-sm [&>tr>td:first-child]:rounded-tl-sm [&>tr>td:last-child]:rounded-br-sm [&>tr>td:last-child]:rounded-tr-sm",
         className
       )}
       {...props}
@@ -55,7 +58,7 @@ function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
     <tr
       data-slot="table-row"
       className={cn(
-        "hover:bg-border/50 data-[state=selected]:bg-border border-b transition-colors",
+        "hover:bg-border/75 data-[state=selected]:bg-border border-b transition-colors [thead_&]:border-b-0 [tbody_&>td:first-child]:rounded-l-sm [tbody_&>td:last-child]:rounded-r-sm",
         className
       )}
       {...props}
@@ -68,7 +71,7 @@ function TableHead({ className, ...props }: React.ComponentProps<"th">) {
     <th
       data-slot="table-head"
       className={cn(
-        "text-muted-foreground h-7 px-2 py-1 text-left align-middle text-sm font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+        "text-foreground h-7 px-2 py-1 text-left align-middle text-sm font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] first:rounded-tl-sm first:rounded-bl-sm last:rounded-tr-sm last:rounded-br-sm",
         className
       )}
       {...props}

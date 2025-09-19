@@ -166,19 +166,28 @@ Navigation menus provide full keyboard navigation and screen reader support with
           <NavigationMenuContent>
             <MetaContainer>
               <NavigationMenuLink asChild>
-                <Link href="#" className="flex-row items-center justify-start gap-2 pr-4">
+                <Link
+                  href="#"
+                  className="flex-row items-center justify-start gap-2 pr-4"
+                >
                   <CircleHelpIcon />
                   Backlog
                 </Link>
               </NavigationMenuLink>
               <NavigationMenuLink asChild>
-                <Link href="#" className="flex-row items-center justify-start gap-2 pr-4">
+                <Link
+                  href="#"
+                  className="flex-row items-center justify-start gap-2 pr-4"
+                >
                   <CircleIcon />
                   To Do
                 </Link>
               </NavigationMenuLink>
               <NavigationMenuLink asChild>
-                <Link href="#" className="flex-row items-center justify-start gap-2 pr-4">
+                <Link
+                  href="#"
+                  className="flex-row items-center justify-start gap-2 pr-4"
+                >
                   <CircleCheckIcon />
                   Done
                 </Link>

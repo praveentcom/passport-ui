@@ -13,7 +13,7 @@ function Menubar({
     <MenubarPrimitive.Root
       data-slot="menubar"
       className={cn(
-        "bg-card flex h-8 items-center gap-1 rounded-sm border p-1 shadow-xs",
+        "bg-card flex h-7 items-center gap-1 rounded-sm border px-0.75 py-1 shadow-xs",
         className
       )}
       {...props}
@@ -55,7 +55,7 @@ function MenubarTrigger({
     <MenubarPrimitive.Trigger
       data-slot="menubar-trigger"
       className={cn(
-        "cursor-pointer hover:bg-border focus:bg-border focus:text-foreground data-[state=open]:bg-border data-[state=open]:text-foreground flex items-center rounded-xs px-2 py-1 text-xs font-medium outline-hidden select-none",
+        "cursor-pointer hover:bg-border focus:bg-border focus:text-foreground data-[state=open]:bg-border data-[state=open]:text-foreground flex items-center rounded-xs px-2.5 py-0.25 text-xs font-medium outline-hidden select-none",
         className
       )}
       {...props}
@@ -234,7 +234,7 @@ function MenubarSubTrigger({
       {...props}
     >
       {children}
-      <ChevronRightIcon className="ml-auto h-4 w-4" />
+      <ChevronRightIcon className="ml-auto h-3.5 w-3.5" />
     </MenubarPrimitive.SubTrigger>
   );
 }

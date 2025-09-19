@@ -2,35 +2,15 @@
 @import "../src/hljs-themes.css";
 @import "../src/tailwind-colors.css";
 
-/* Import fonts for Storybook */
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
-/* Define font CSS variables for Storybook */
-:root {
-  --font-geist-sans:
-    "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  --font-geist-mono:
-    "Geist Mono", "SF Mono", "Monaco", "Inconsolata", "Fira Code", "Fira Mono",
-    "Roboto Mono", "Lucida Console", Monaco, monospace;
-  --font-inter:
-    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-}
-
 .docs-story {
   background: var(--background) !important;
 }
 
 /* Ensure font-mono works in Storybook */
 .font-mono {
-  font-family: var(--font-geist-mono) !important;
+  font-family: var(--font-mono) !important;
 }
 
 .font-sans {
-  font-family: var(--font-inter) !important;
+  font-family: var(--font-sans) !important;
 }

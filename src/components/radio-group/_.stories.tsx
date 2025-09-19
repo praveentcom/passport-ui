@@ -112,15 +112,21 @@ Radio groups provide built-in keyboard navigation and screen reader support. Alw
       <RadioGroup {...args} id="radio">
         <div className="flex items-center gap-2">
           <RadioGroupItem value="option_1" id="option_1" />
-          <Label htmlFor="option_1">Option 1</Label>
+          <Label htmlFor="option_1" className="text-muted-foreground">
+            Option 1
+          </Label>
         </div>
         <div className="flex items-center gap-2">
           <RadioGroupItem value="option_2" id="option_2" />
-          <Label htmlFor="option_2">Option 2</Label>
+          <Label htmlFor="option_2" className="text-muted-foreground">
+            Option 2
+          </Label>
         </div>
         <div className="flex items-center gap-2">
           <RadioGroupItem value="option_3" id="option_3" />
-          <Label htmlFor="option_3">Option 3</Label>
+          <Label htmlFor="option_3" className="text-muted-foreground">
+            Option 3
+          </Label>
         </div>
       </RadioGroup>
     </MetaContainer>

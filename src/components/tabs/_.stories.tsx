@@ -1,10 +1,11 @@
 import React from "react";
+
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
-import { Tabs, TabsList, TabsDropdown, TabsTrigger, TabsContent } from ".";
-import { Card, CardContent } from "../card";
-import { Button } from "../button";
+import { Tabs, TabsContent, TabsDropdown, TabsList, TabsTrigger } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
+import { Button } from "../button";
+import { Card, CardContent } from "../card";
 
 const meta: Meta<typeof Tabs> = {
   title: "Components/Tabs",
@@ -95,7 +96,7 @@ Tabs provide full keyboard navigation, screen reader support, and proper focus m
   },
   render: (args) => {
     const [activeTab, setActiveTab] = React.useState("overview");
-    
+
     const tabTriggers = [
       { value: "overview", label: "Overview" },
       { value: "analytics", label: "Analytics" },
@@ -103,7 +104,12 @@ Tabs provide full keyboard navigation, screen reader support, and proper focus m
     ];
 
     return (
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-sm" {...args}>
+      <Tabs
+        value={activeTab}
+        onValueChange={setActiveTab}
+        className="w-sm"
+        {...args}
+      >
         {/* Desktop tabs */}
         <TabsList variant={args.variant}>
           <TabsTrigger value="overview" variant={args.variant}>
@@ -116,32 +122,33 @@ Tabs provide full keyboard navigation, screen reader support, and proper focus m
             Settings
           </TabsTrigger>
         </TabsList>
-        
+
         {/* Mobile dropdown */}
-        <TabsDropdown 
+        <TabsDropdown
           variant={args.variant}
           value={activeTab}
           onValueChange={setActiveTab}
           triggers={tabTriggers}
         />
-        
+
         <TabsContent value="overview" variant={args.variant}>
           <Card>
             <CardContent>
-            <h3 className="text-lg font-semibold">Project Overview</h3>
-            <p className="text-sm text-muted-foreground mt-2">
-              View your project&apos;s current status, recent activity, and key metrics all in one place.
-            </p>
-            <div className="mt-4 space-y-2">
-              <div className="flex justify-between text-sm">
-                <span>Active tasks:</span>
-                <span className="font-medium">12</span>
+              <h3 className="text-lg font-semibold">Project Overview</h3>
+              <p className="text-sm text-muted-foreground mt-2">
+                View your project&apos;s current status, recent activity, and
+                key metrics all in one place.
+              </p>
+              <div className="mt-4 space-y-2">
+                <div className="flex justify-between text-sm">
+                  <span>Active tasks:</span>
+                  <span className="font-medium">12</span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span>Completed this week:</span>
+                  <span className="font-medium">8</span>
+                </div>
               </div>
-              <div className="flex justify-between text-sm">
-                <span>Completed this week:</span>
-                <span className="font-medium">8</span>
-              </div>
-            </div>
             </CardContent>
           </Card>
         </TabsContent>
@@ -149,7 +156,8 @@ Tabs provide full keyboard navigation, screen reader support, and proper focus m
           <Card className="p-4">
             <h3 className="text-lg font-semibold">Analytics Dashboard</h3>
             <p className="text-sm text-muted-foreground mt-2">
-              Track performance metrics, user engagement, and growth trends over time.
+              Track performance metrics, user engagement, and growth trends over
+              time.
             </p>
             <div className="mt-4 grid grid-cols-2 gap-4">
               <div className="text-center">
@@ -167,16 +175,21 @@ Tabs provide full keyboard navigation, screen reader support, and proper focus m
           <Card className="p-4">
             <h3 className="text-lg font-semibold">Project Settings</h3>
             <p className="text-sm text-muted-foreground mt-2">
-              Configure your project preferences, team permissions, and integration settings.
+              Configure your project preferences, team permissions, and
+              integration settings.
             </p>
             <div className="mt-4 space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-sm">Email notifications</span>
-                <Button size="regular" variant="outline">Enable</Button>
+                <Button size="regular" variant="outline">
+                  Enable
+                </Button>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-sm">Auto-save changes</span>
-                <Button size="regular" variant="outline">Configure</Button>
+                <Button size="regular" variant="outline">
+                  Configure
+                </Button>
               </div>
             </div>
           </Card>
@@ -217,7 +230,11 @@ export const AllVariants: Story = {
         {/* Default Variant */}
         <div>
           <h4 className="text-sm font-medium mb-4">Default</h4>
-          <Tabs value={defaultTab} onValueChange={setDefaultTab} className="w-full">
+          <Tabs
+            value={defaultTab}
+            onValueChange={setDefaultTab}
+            className="w-full"
+          >
             <TabsList variant="default">
               <TabsTrigger value="tab1" variant="default">
                 Account
@@ -303,7 +320,12 @@ export const VerticalOrientation: Story = {
     return (
       <div className="w-lg">
         <h4 className="text-sm font-medium mb-4">Vertical Orientation</h4>
-        <Tabs value={activeTab} onValueChange={setActiveTab} orientation="vertical" className="w-full">
+        <Tabs
+          value={activeTab}
+          onValueChange={setActiveTab}
+          orientation="vertical"
+          className="w-full"
+        >
           <TabsList variant="default">
             <TabsTrigger value="tab1" variant="default">
               Dashboard

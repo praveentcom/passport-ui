@@ -62,7 +62,7 @@ function Card({
         "transition-all duration-100",
         interactive &&
           "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-        className,
+        className
       )}
       onClick={interactive ? onClick : undefined}
       onKeyDown={interactive ? handleKeyDown : onKeyDown}

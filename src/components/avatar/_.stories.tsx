@@ -40,8 +40,7 @@ Avatars include proper image alt text and fallback content for screen readers.`,
     className: COMMON_CONTROLS.className,
     monochrome: {
       control: { type: "boolean" },
-      description:
-        "Display avatar in grayscale with color revealed on hover",
+      description: "Display avatar in grayscale with color revealed on hover",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: "false" },
@@ -108,22 +107,32 @@ export const Monochrome: Story = {
   parameters: {
     docs: {
       description: {
-        story: "Avatar with monochrome effect that reveals color on hover. Great for reducing visual noise while maintaining interactivity.",
+        story:
+          "Avatar with monochrome effect that reveals color on hover. Great for reducing visual noise while maintaining interactivity.",
       },
     },
   },
   render: (args) => (
     <div className="flex gap-4">
       <Avatar {...args}>
-        <AvatarImage src="https://placehold.co/100x100/4338ca/ffffff?text=AS" alt="Avatar" />
+        <AvatarImage
+          src="https://placehold.co/100x100/4338ca/ffffff?text=AS"
+          alt="Avatar"
+        />
         <AvatarFallback>AS</AvatarFallback>
       </Avatar>
       <Avatar {...args}>
-        <AvatarImage src="https://placehold.co/100x100/dc2626/ffffff?text=MJ" alt="Avatar" />
+        <AvatarImage
+          src="https://placehold.co/100x100/dc2626/ffffff?text=MJ"
+          alt="Avatar"
+        />
         <AvatarFallback>MJ</AvatarFallback>
       </Avatar>
       <Avatar {...args}>
-        <AvatarImage src="https://placehold.co/100x100/059669/ffffff?text=RL" alt="Avatar" />
+        <AvatarImage
+          src="https://placehold.co/100x100/059669/ffffff?text=RL"
+          alt="Avatar"
+        />
         <AvatarFallback>RL</AvatarFallback>
       </Avatar>
     </div>
@@ -138,22 +147,32 @@ export const MonochromeGroup: Story = {
   parameters: {
     docs: {
       description: {
-        story: "Stacked avatars with monochrome effect. Each avatar reveals its color independently on hover.",
+        story:
+          "Stacked avatars with monochrome effect. Each avatar reveals its color independently on hover.",
       },
     },
   },
   render: (args) => (
     <div className="flex -space-x-3">
       <Avatar {...args}>
-        <AvatarImage src="https://placehold.co/100x100/7c3aed/ffffff?text=TK" alt="Avatar" />
+        <AvatarImage
+          src="https://placehold.co/100x100/7c3aed/ffffff?text=TK"
+          alt="Avatar"
+        />
         <AvatarFallback>TK</AvatarFallback>
       </Avatar>
       <Avatar {...args}>
-        <AvatarImage src="https://placehold.co/100x100/ea580c/ffffff?text=SL" alt="Avatar" />
+        <AvatarImage
+          src="https://placehold.co/100x100/ea580c/ffffff?text=SL"
+          alt="Avatar"
+        />
         <AvatarFallback>SL</AvatarFallback>
       </Avatar>
       <Avatar {...args}>
-        <AvatarImage src="https://placehold.co/100x100/0891b2/ffffff?text=JP" alt="Avatar" />
+        <AvatarImage
+          src="https://placehold.co/100x100/0891b2/ffffff?text=JP"
+          alt="Avatar"
+        />
         <AvatarFallback>JP</AvatarFallback>
       </Avatar>
     </div>

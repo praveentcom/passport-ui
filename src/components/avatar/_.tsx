@@ -4,17 +4,14 @@ import * as AvatarPrimitive from "@radix-ui/react-avatar";
 
 import { cn } from "../../lib/utils";
 
-interface AvatarProps extends React.ComponentProps<typeof AvatarPrimitive.Root> {
+interface AvatarProps
+  extends React.ComponentProps<typeof AvatarPrimitive.Root> {
   monochrome?: boolean;
 }
 
 const AvatarContext = React.createContext<{ monochrome?: boolean }>({});
 
-function Avatar({
-  className,
-  monochrome,
-  ...props
-}: AvatarProps) {
+function Avatar({ className, monochrome, ...props }: AvatarProps) {
   return (
     <AvatarContext.Provider value={{ monochrome }}>
       <AvatarPrimitive.Root
@@ -35,7 +32,7 @@ function AvatarImage({
   ...props
 }: React.ComponentProps<typeof AvatarPrimitive.Image>) {
   const { monochrome } = React.useContext(AvatarContext);
-  
+
   return (
     <AvatarPrimitive.Image
       data-slot="avatar-image"
@@ -44,7 +41,7 @@ function AvatarImage({
         monochrome && [
           "grayscale",
           "transition-all duration-200 ease-in-out",
-          "group-hover:grayscale-0"
+          "group-hover:grayscale-0",
         ],
         className
       )}

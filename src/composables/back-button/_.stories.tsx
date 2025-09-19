@@ -1,9 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { BackButton } from ".";
-import { Card, CardContent } from "../../components/card";
-import { ContentContainer } from "../../layouts/content-container";
-import { MetaContainer } from "../meta-container";
 
 const meta: Meta<typeof BackButton> = {
   title: "Composables/BackButton",
@@ -81,31 +78,5 @@ export const Default: Story = {
   args: {
     href: "/",
     label: "Back to Home",
-  },
-};
-
-export const PageContext: Story = {
-  render: (args) => (
-    <ContentContainer>
-      <BackButton {...args} />
-      <Card>
-        <CardContent>
-          <MetaContainer title="Project Details">
-            <p>
-              This is an example of how the BackButton component would appear in
-              a typical page layout. The button provides a clear way for users
-              to navigate back to the previous page.
-            </p>
-          </MetaContainer>
-        </CardContent>
-      </Card>
-    </ContentContainer>
-  ),
-  args: {
-    href: "/dashboard",
-    label: "Back to Dashboard",
-  },
-  parameters: {
-    layout: "fullscreen",
   },
 };

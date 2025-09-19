@@ -4,7 +4,13 @@ import * as TabsPrimitive from "@radix-ui/react-tabs";
 import { type VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "../../lib/utils";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../select";
 
 const tabsVariants = cva(
   "flex data-[orientation=horizontal]:flex-col data-[orientation=vertical]:flex-row",
@@ -38,20 +44,17 @@ const tabsListVariants = cva(
   }
 );
 
-const tabsDropdownVariants = cva(
-  "md:hidden block w-full",
-  {
-    variants: {
-      variant: {
-        default: "mb-2",
-        pills: "mb-3",
-      },
+const tabsDropdownVariants = cva("md:hidden block w-full", {
+  variants: {
+    variant: {
+      default: "mb-2",
+      pills: "mb-3",
     },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-);
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
 
 const tabsTriggerVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-ring focus-visible:ring-[3px] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-foreground",
@@ -75,8 +78,10 @@ const tabsContentVariants = cva(
   {
     variants: {
       variant: {
-        default: "data-[orientation=horizontal]:mt-3 data-[orientation=vertical]:ml-4",
-        pills: "data-[orientation=horizontal]:mt-3 data-[orientation=vertical]:ml-4",
+        default:
+          "data-[orientation=horizontal]:mt-3 data-[orientation=vertical]:ml-4",
+        pills:
+          "data-[orientation=horizontal]:mt-3 data-[orientation=vertical]:ml-4",
       },
     },
     defaultVariants: {
@@ -172,29 +177,32 @@ const TabsList = React.forwardRef<
 ));
 TabsList.displayName = TabsPrimitive.List.displayName;
 
-const TabsDropdown = React.forwardRef<
-  HTMLDivElement,
-  TabsDropdownProps
->(({ className, variant, value, onValueChange, triggers, ...props }, ref) => (
-  <div ref={ref} className={cn(tabsDropdownVariants({ variant }), className)} {...props}>
-    <Select value={value} onValueChange={onValueChange}>
-      <SelectTrigger className="w-full">
-        <SelectValue placeholder="Select a tab" />
-      </SelectTrigger>
-      <SelectContent>
-        {triggers.map((trigger) => (
-          <SelectItem 
-            key={trigger.value} 
-            value={trigger.value}
-            disabled={trigger.disabled}
-          >
-            {trigger.label}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
-  </div>
-));
+const TabsDropdown = React.forwardRef<HTMLDivElement, TabsDropdownProps>(
+  ({ className, variant, value, onValueChange, triggers, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn(tabsDropdownVariants({ variant }), className)}
+      {...props}
+    >
+      <Select value={value} onValueChange={onValueChange}>
+        <SelectTrigger className="w-full">
+          <SelectValue placeholder="Select a tab" />
+        </SelectTrigger>
+        <SelectContent>
+          {triggers.map((trigger) => (
+            <SelectItem
+              key={trigger.value}
+              value={trigger.value}
+              disabled={trigger.disabled}
+            >
+              {trigger.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+    </div>
+  )
+);
 TabsDropdown.displayName = "TabsDropdown";
 
 const TabsTrigger = React.forwardRef<
@@ -223,4 +231,15 @@ const TabsContent = React.forwardRef<
 ));
 TabsContent.displayName = TabsPrimitive.Content.displayName;
 
-export { Tabs, TabsList, TabsDropdown, TabsTrigger, TabsContent, tabsVariants, tabsListVariants, tabsDropdownVariants, tabsTriggerVariants, tabsContentVariants };
+export {
+  Tabs,
+  TabsList,
+  TabsDropdown,
+  TabsTrigger,
+  TabsContent,
+  tabsVariants,
+  tabsListVariants,
+  tabsDropdownVariants,
+  tabsTriggerVariants,
+  tabsContentVariants,
+};

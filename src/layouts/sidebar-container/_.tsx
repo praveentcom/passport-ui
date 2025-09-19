@@ -201,7 +201,7 @@ export function SidebarContainer({
       if (isMobile) {
         setOpenMobile(false);
       }
-      
+
       if (item.onClick) {
         item.onClick();
       } else if (item.href) {

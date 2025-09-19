@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { spawn, execSync } from "child_process";
+import { execSync, spawn } from "child_process";
 import { existsSync, readdirSync, statSync } from "fs";
 import { join } from "path";
 import process from "process";
@@ -87,14 +87,16 @@ function runTsup(entries, batchIndex, totalBatches) {
     child.on("close", (code) => {
       if (code === 0) {
         console.log(`✅ Batch ${batchIndex + 1} completed successfully`);
-        
+
         try {
           console.log(`🔧 Preserving "use client" directives...`);
           execSync("node scripts/preserve-directives.js", { stdio: "inherit" });
         } catch (error) {
-          console.warn(`⚠️ Warning: Failed to preserve directives: ${error.message}`);
+          console.warn(
+            `⚠️ Warning: Failed to preserve directives: ${error.message}`
+          );
         }
-        
+
         resolve();
       } else {
         reject(
