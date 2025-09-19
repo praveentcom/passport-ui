@@ -138,10 +138,7 @@ Follow the same structure as shadcn/ui components but with title: 'Composables/C
 
 ### Colors and Theming
 - Use CSS custom properties: `--primary`, `--secondary`, `--muted`, etc.
-- Leverage existing utility classes from [src/styles.css](mdc:src/styles.css):
-  - `.content-container`, `.section-container`
-  - `.meta-container`, `.list-container`
-  - `.bullet-list`, `.bullet-item`
+- Leverage existing utility classes from [src/styles.css](mdc:src/styles.css)
 
 ### Component Patterns
 - Use `cn()` utility for class merging
@@ -167,11 +164,3 @@ Before completing component addition:
 - If required to add custom layouts to use the component in the stories, use `Card`, `MetaContainer`, etc. and not define own divs. Also, do not apply custom text styles, use h1-h6, span and p tags which already has the styles built-in. If you add a component with text and sub-text or title and sub-title, use `MetaContainer`
 - If required to box the layout, use `w-sm` as the style and not `w-[number]` randomly since it's followed as a standard across the project.
 - Do not create render function in each story. Have it in the meta export object alone.
-
-## Reference Examples
-
-- **UI Component**: [src/components/card.tsx](mdc:src/components/card.tsx) and [src/components/card.stories.tsx](mdc:src/components/card.stories.tsx)
-- **Layout Component**: [src/layouts/page-layout.tsx](mdc:src/layouts/page-layout.tsx) and [src/layouts/page-layout.stories.tsx](mdc:src/layouts/page-layout.stories.tsx)
-- **Composables Component**: [src/composables/back-button.tsx](mdc:src/composables/back-button.tsx) and [src/composables/back-button.stories.tsx](mdc:src/composables/back-button.stories.tsx)
-- **Export Pattern**: [src/index.ts](mdc:src/index.ts)
-- **Styling System**: [src/styles.css](mdc:src/styles.css)

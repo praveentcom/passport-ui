@@ -6,7 +6,6 @@ import type { Meta, StoryObj } from "@storybook/nextjs";
 import { action } from "storybook/actions";
 
 import { Slider } from ".";
-import { MetaContainer } from "../../composables/meta-container";
 import { Label } from "../label";
 
 const meta: Meta<typeof Slider> = {
@@ -146,13 +145,13 @@ Sliders provide full keyboard navigation and screen reader support with proper v
 
     return (
       <div className="w-sm">
-        <MetaContainer>
+        <div className="meta-container">
           <Label>Slider</Label>
           <Slider {...args} value={value} onValueChange={handleValueChange} />
           <p>
             Current value: {Array.isArray(value) ? value.join(", ") : value}
           </p>
-        </MetaContainer>
+        </div>
       </div>
     );
   },

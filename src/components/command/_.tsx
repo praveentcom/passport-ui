@@ -5,7 +5,6 @@ import React from "react";
 import { Command as CommandPrimitive } from "cmdk";
 import { SearchIcon } from "lucide-react";
 
-import { MetaContainer } from "../../composables/meta-container";
 import { cn } from "../../lib/utils";
 import { Dialog, DialogContent } from "../dialog";
 
@@ -42,9 +41,10 @@ function CommandDialog({
 }: CommandDialogProps) {
   return (
     <Dialog {...props}>
-      <MetaContainer className="sr-only" title={title}>
-        {description}
-      </MetaContainer>
+      <div className="meta-container sr-only">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
       <DialogContent
         className={cn("overflow-hidden p-0", className)}
         showCloseButton={showCloseButton}

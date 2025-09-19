@@ -14,7 +14,6 @@ import {
   FormLabel,
   FormMessage,
 } from ".";
-import { MetaContainer } from "../../composables/meta-container";
 import { Button } from "../button";
 import { Checkbox } from "../checkbox";
 import { Input } from "../input";
@@ -138,9 +137,10 @@ function BasicFormExample() {
 
   return (
     <div className="w-sm section-container">
-      <MetaContainer title="User Profile">
-        Enter your profile information below.
-      </MetaContainer>
+      <div className="meta-container">
+        <h3>User Profile</h3>
+        <p>Enter your profile information below.</p>
+      </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormField
@@ -211,9 +211,10 @@ function CareerFormExample() {
 
   return (
     <div className="w-sm section-container">
-      <MetaContainer title="Join Our Team">
-        Fill out this form to apply for a position.
-      </MetaContainer>
+      <div className="meta-container">
+        <h3>Join Our Team</h3>
+        <p>Fill out this form to apply for a position.</p>
+      </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <div className="list-container grid-cols-2">

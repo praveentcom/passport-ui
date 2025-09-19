@@ -12,7 +12,6 @@ import {
   DialogFooter,
   DialogTrigger,
 } from ".";
-import { MetaContainer } from "../../composables/meta-container";
 import { Button } from "../button";
 import { Separator } from "../separator";
 
@@ -114,16 +113,19 @@ Always provide clear actions and escape routes for users.`,
           <Button onClick={() => setOpen(true)}>Open Dialog</Button>
         </DialogTrigger>
         <DialogContent className="w-sm">
-          <MetaContainer title="Account Settings">
-            Manage your account settings and preferences here.
-          </MetaContainer>
+          <div className="meta-container">
+            <h3>Account Settings</h3>
+            <p>Manage your account settings and preferences here.</p>
+          </div>
           <Separator />
-          <MetaContainer title="Profile Information">
-            Update your personal details and contact information
-          </MetaContainer>
-          <MetaContainer title="Security Settings">
-            Configure password, two-factor authentication, and login preferences
-          </MetaContainer>
+          <div className="meta-container">
+            <h3>Profile Information</h3>
+            <p>Update your personal details and contact information</p>
+          </div>
+          <div className="meta-container">
+            <h3>Security Settings</h3>
+            <p>Configure password, two-factor authentication, and login preferences</p>
+          </div>
           <DialogFooter>
             <DialogClose asChild>
               <Button variant="ghost" onClick={() => setOpen(false)}>

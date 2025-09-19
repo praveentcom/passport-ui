@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { CodeBlock } from "../components/code-block";
-import { MetaContainer } from "../composables/meta-container";
 import { ThemeToggle } from "../composables/theme-toggle";
 import { ContentContainer } from "../layouts/content-container";
 import { PageLayout } from "../layouts/page-layout";
@@ -53,7 +52,8 @@ const IntroductionDocs = () => (
       </div>
     }
     footer={
-      <MetaContainer title="Maintained by Praveen Thirumurugan">
+      <div className="meta-container">
+        <h3>Maintained by Praveen Thirumurugan</h3>
         <div className="flex gap-2 items-center">
           <a
             href="https://github.com/praveentcom/passport-ui"
@@ -69,13 +69,13 @@ const IntroductionDocs = () => (
             npm
           </a>
         </div>
-      </MetaContainer>
+      </div>
     }
     footerSticky
     footerBlurred
   >
-    <ContentContainer variant="relaxed">
-      <MetaContainer>
+    <ContentContainer variant="broad">
+      <div className="meta-container">
         <div className="grid">
           <h3>Installation</h3>
           <p>
@@ -83,8 +83,8 @@ const IntroductionDocs = () => (
             following the steps below.
           </p>
         </div>
-      </MetaContainer>
-      <MetaContainer>
+      </div>
+      <div className="meta-container">
         <div className="flex gap-1 items-center">
           <p className="text-sm font-medium">Step 1:</p>
           <p className="text-sm font-normal">Install the passport-ui package</p>
@@ -94,8 +94,8 @@ const IntroductionDocs = () => (
           hideLineNumbers
           code={INSTALLATION_CODE.PACKAGE_INSTALL}
         />
-      </MetaContainer>
-      <MetaContainer>
+      </div>
+      <div className="meta-container">
         <div className="flex gap-1 items-center">
           <p className="text-sm font-medium">Step 2:</p>
           <p className="text-sm font-normal">Install required dependencies</p>
@@ -105,8 +105,8 @@ const IntroductionDocs = () => (
           hideLineNumbers
           code={INSTALLATION_CODE.DEPENDENCIES_INSTALL}
         />
-      </MetaContainer>
-      <MetaContainer>
+      </div>
+      <div className="meta-container">
         <div className="flex gap-1 items-center">
           <p className="text-sm font-medium">Step 3:</p>
           <p className="text-sm font-normal">
@@ -118,8 +118,8 @@ const IntroductionDocs = () => (
           language="javascript"
           code={INSTALLATION_CODE.POSTCSS_SETUP}
         />
-      </MetaContainer>
-      <MetaContainer>
+      </div>
+      <div className="meta-container">
         <div className="flex gap-1 items-center">
           <p className="text-sm font-medium">Step 4:</p>
           <p className="text-sm font-normal">
@@ -131,8 +131,8 @@ const IntroductionDocs = () => (
           language="css"
           code={INSTALLATION_CODE.CSS_IMPORT}
         />
-      </MetaContainer>
-      <MetaContainer>
+      </div>
+      <div className="meta-container">
         <div className="flex gap-1 items-center">
           <p className="text-sm font-medium">Step 5:</p>
           <p className="text-sm font-normal">
@@ -144,8 +144,8 @@ const IntroductionDocs = () => (
           language="typescript"
           code={INSTALLATION_CODE.THEME_PROVIDER}
         />
-      </MetaContainer>
-      <MetaContainer>
+      </div>
+      <div className="meta-container">
         <div className="flex gap-1 items-center">
           <p className="text-sm font-medium">Step 6:</p>
           <p className="text-sm font-normal">
@@ -157,7 +157,7 @@ const IntroductionDocs = () => (
           language="typescript"
           code={INSTALLATION_CODE.COMPONENTS_IMPORT}
         />
-      </MetaContainer>
+      </div>
     </ContentContainer>
   </PageLayout>
 );

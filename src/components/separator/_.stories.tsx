@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { Separator } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
-import { MetaContainer } from "../../composables/meta-container";
 import { Card, CardContent } from "../card";
 
 const meta: Meta<typeof Separator> = {
@@ -84,10 +83,10 @@ export const ExampleCard: Story = {
   render: () => (
     <Card>
       <CardContent>
-        <MetaContainer>
+        <div className="meta-container">
           <h4>Project Alpha</h4>
           <p>A modern web application built with React and TypeScript.</p>
-        </MetaContainer>
+        </div>
         <Separator />
         <p>Current progress: 75%</p>
       </CardContent>

@@ -8,7 +8,6 @@ import {
   AlertDialogFooter,
   AlertDialogTrigger,
 } from ".";
-import { MetaContainer } from "../../composables/meta-container";
 import { Button } from "../button";
 
 const meta: Meta<typeof AlertDialog> = {
@@ -100,10 +99,11 @@ Alert dialogs provide enhanced accessibility with alert role and proper focus ma
         <Button variant="outline">Show Dialog</Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
-        <MetaContainer title="Are you absolutely sure?">
-          This action cannot be undone. This will permanently delete your
-          account and remove your data from our servers.
-        </MetaContainer>
+        <div className="meta-container">
+          <h3>Are you absolutely sure?</h3>
+          <p>This action cannot be undone. This will permanently delete your
+          account and remove your data from our servers.</p>
+        </div>
         <AlertDialogFooter>
           <AlertDialogCancel variant="ghost">Cancel</AlertDialogCancel>
           <AlertDialogAction>Continue</AlertDialogAction>
@@ -128,10 +128,11 @@ export const Destructive: Story = {
         <Button variant="destructive">Delete Account</Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
-        <MetaContainer title="Delete Account">
-          This will permanently delete your account and all associated data.
-          This action cannot be undone.
-        </MetaContainer>
+        <div className="meta-container">
+          <h3>Delete Account</h3>
+          <p>This will permanently delete your account and all associated data.
+          This action cannot be undone.</p>
+        </div>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
           <AlertDialogAction variant="destructive">

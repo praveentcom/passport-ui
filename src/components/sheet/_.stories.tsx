@@ -13,7 +13,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from ".";
-import { MetaContainer } from "../../composables/meta-container";
 import { Button } from "../button";
 import { Input } from "../input";
 import { Label } from "../label";
@@ -123,14 +122,14 @@ Sheets work well for content that doesn't need full attention like dialogs.`,
           </SheetDescription>
         </SheetHeader>
         <div className="section-container px-4">
-          <MetaContainer>
+          <div className="meta-container">
             <Label htmlFor="name">Full Name</Label>
             <Input id="name" defaultValue="Praveen Thirumurugan" />
-          </MetaContainer>
-          <MetaContainer>
+          </div>
+          <div className="meta-container">
             <Label htmlFor="username">Username</Label>
             <Input id="username" defaultValue="@praveentcom" />
-          </MetaContainer>
+          </div>
         </div>
         <SheetFooter>
           <Button type="submit" variant="primary">

@@ -10,7 +10,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from ".";
-import { MetaContainer } from "../../composables/meta-container";
 import { Label } from "../label";
 
 const meta: Meta<typeof Select> = {
@@ -115,7 +114,7 @@ Select components work together:
     onValueChange: action("value-changed"),
   },
   render: (args) => (
-    <MetaContainer>
+    <div className="meta-container">
       <Label htmlFor="select">Select vegetable</Label>
       <Select {...args}>
         <SelectTrigger className="w-sm">
@@ -140,7 +139,7 @@ Select components work together:
           </SelectGroup>
         </SelectContent>
       </Select>
-    </MetaContainer>
+    </div>
   ),
 };
 

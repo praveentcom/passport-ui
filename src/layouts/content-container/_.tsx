@@ -2,7 +2,7 @@ import React, { Fragment, ReactNode } from "react";
 
 import { cva } from "class-variance-authority";
 
-import { BackButton, BackButtonProps } from "../../composables/back-button";
+import { NavigationBackButton, NavigationBackButtonProps } from "../../composables/navigation-back-button";
 import { cn } from "../../lib/utils";
 
 export type ContentContainerVariant = "compact" | "relaxed" | "broad" | "full";
@@ -29,7 +29,7 @@ export interface ContentContainerProps {
   children: ReactNode;
   className?: string;
   variant?: ContentContainerVariant;
-  backButton?: BackButtonProps;
+  navigationBackButton?: NavigationBackButtonProps;
 }
 
 /**
@@ -43,11 +43,11 @@ export function ContentContainer({
   children,
   className,
   variant,
-  backButton,
+  navigationBackButton,
 }: ContentContainerProps): ReactNode {
   const Comp = (
     <Fragment>
-      {backButton && <BackButton {...backButton} className="-mb-4" />}
+      {navigationBackButton && <NavigationBackButton {...navigationBackButton} className="-mb-4" />}
       {children}
     </Fragment>
   );

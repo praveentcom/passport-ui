@@ -5,7 +5,6 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { MetaContainer } from "../../src/composables/meta-container";
 import { ThemeToggle } from "../../src/composables/theme-toggle";
 import { PageLayout } from "../../src/layouts/page-layout";
 import { SidebarContainer } from "../../src/layouts/sidebar-container";
@@ -28,9 +27,10 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
           searchable={true}
           searchPlaceholder="Search..."
           sidebarHeader={
-            <MetaContainer title="Passport UI" clampTitle>
+            <div className="meta-container">
+              <h3 className="line-clamp-1">Passport UI</h3>
               <p className="line-clamp-1">Sleek & Compact UI Library</p>
-            </MetaContainer>
+            </div>
           }
           autoInferActiveItem
         />
@@ -42,7 +42,8 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
         </div>
       }
       footer={
-        <MetaContainer title="Maintained by Praveen Thirumurugan">
+        <div className="meta-container">
+          <h3>Maintained by Praveen Thirumurugan</h3>
           <div className="flex gap-2 items-center">
             <Link
               target="_blank"
@@ -60,7 +61,7 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
               npm
             </Link>
           </div>
-        </MetaContainer>
+        </div>
       }
       footerSticky
       footerBlurred

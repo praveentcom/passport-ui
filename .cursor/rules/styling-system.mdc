@@ -36,12 +36,6 @@ The styling system is built on Tailwind CSS v4 with a comprehensive theme system
 - `.meta-container`: Metadata container with tight spacing
 - `.hide-on-mobile`: Responsive utility to hide on mobile
 
-### Utility Classes
-- `.bullet-list`: Styled list with custom bullets
-- `.bullet-item`: Individual list item with bullet styling
-- `.bullet-dot`: Custom bullet dot styling
-- `.bullet-text`: Text styling for bullet items
-
 ## Theme Integration
 
 ### Color System

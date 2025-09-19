@@ -12,7 +12,6 @@ import {
   NavigationMenuTrigger,
 } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
-import { MetaContainer } from "../../composables/meta-container";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -52,9 +51,10 @@ function ListItem({
       <NavigationMenuLink className="bg-transparent" asChild>
         <Link href={href}>
           <div className="passport-ui p-1">
-            <MetaContainer title={title}>
+            <div>
+              <h3>{title}</h3>
               <p className="line-clamp-2">{children}</p>
-            </MetaContainer>
+            </div>
           </div>
         </Link>
       </NavigationMenuLink>
@@ -164,7 +164,7 @@ Navigation menus provide full keyboard navigation and screen reader support with
         <NavigationMenuItem>
           <NavigationMenuTrigger>With Icons</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <MetaContainer>
+            <div className="meta-container">
               <NavigationMenuLink asChild>
                 <Link
                   href="#"
@@ -192,7 +192,7 @@ Navigation menus provide full keyboard navigation and screen reader support with
                   Done
                 </Link>
               </NavigationMenuLink>
-            </MetaContainer>
+            </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
       </NavigationMenuList>

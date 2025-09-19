@@ -3,7 +3,6 @@ import { action } from "storybook/actions";
 
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
-import { MetaContainer } from "../../composables/meta-container";
 import { Label } from "../label";
 
 const meta: Meta<typeof InputOTP> = {
@@ -151,7 +150,7 @@ OTP inputs provide proper keyboard navigation and screen reader support with ind
 
     return (
       <div className="w-sm">
-        <MetaContainer>
+        <div className="meta-container">
           <Label>Verification Code</Label>
           <InputOTP
             maxLength={maxLength}
@@ -177,7 +176,7 @@ OTP inputs provide proper keyboard navigation and screen reader support with ind
               <InputOTPSlot index={5} />
             </InputOTPGroup>
           </InputOTP>
-        </MetaContainer>
+        </div>
       </div>
     );
   },

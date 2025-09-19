@@ -3,7 +3,6 @@ import { action } from "storybook/actions";
 
 import { RadioGroup, RadioGroupItem } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
-import { MetaContainer } from "../../composables/meta-container";
 import { Label } from "../label";
 
 const meta: Meta<typeof RadioGroup> = {
@@ -107,7 +106,7 @@ Radio groups provide built-in keyboard navigation and screen reader support. Alw
     onValueChange: action("value-changed"),
   },
   render: (args) => (
-    <MetaContainer>
+    <div className="meta-container">
       <Label htmlFor="radio">Choose an option</Label>
       <RadioGroup {...args} id="radio">
         <div className="flex items-center gap-2">
@@ -129,7 +128,7 @@ Radio groups provide built-in keyboard navigation and screen reader support. Alw
           </Label>
         </div>
       </RadioGroup>
-    </MetaContainer>
+    </div>
   ),
 };
 

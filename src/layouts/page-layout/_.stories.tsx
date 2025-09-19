@@ -12,7 +12,6 @@ import {
   SAMPLE_SIDEBAR_MENU_ITEMS,
 } from "../../../.storybook/constants";
 import { Button } from "../../components/button";
-import { MetaContainer } from "../../composables/meta-container";
 import { SidebarContainer } from "../sidebar-container";
 
 const meta: Meta<typeof PageLayout> = {
@@ -197,9 +196,10 @@ const sampleLeftSidebar: ReactNode = (
     menuItems={SAMPLE_SIDEBAR_MENU_ITEMS}
     side="left"
     sidebarHeader={
-      <MetaContainer title="Passport UI">
+      <div className="meta-container">
+        <h3>Passport UI</h3>
         <p>Version 1.1.0</p>
-      </MetaContainer>
+      </div>
     }
     sidebarFooter={
       <Button>
@@ -218,9 +218,10 @@ const sampleRightSidebar: ReactNode = (
     menuItems={SAMPLE_SIDEBAR_MENU_ITEMS.slice(0, 3)}
     side="right"
     sidebarHeader={
-      <MetaContainer title="Tools">
+      <div className="meta-container">
+        <h3>Tools</h3>
         <p>Quick Actions</p>
-      </MetaContainer>
+      </div>
     }
     sidebarFooter={
       <Button>

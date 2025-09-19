@@ -3,7 +3,6 @@ import { action } from "storybook/actions";
 
 import { Checkbox } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
-import { MetaContainer } from "../../composables/meta-container";
 import { Card } from "../card";
 import { Label } from "../label";
 
@@ -117,10 +116,10 @@ export const WithLabel: Story = {
         </div>
         <div className="flex items-start gap-3">
           <Checkbox id="notifications" defaultChecked />
-          <MetaContainer>
+          <div className="meta-container">
             <Label htmlFor="notifications">Enable notifications</Label>
             <p>You can enable or disable notifications at any time.</p>
-          </MetaContainer>
+          </div>
         </div>
         <div className="flex items-start gap-3">
           <Checkbox id="disabled" disabled />

@@ -13,7 +13,6 @@ import {
 } from "../../../.storybook/constants";
 import { Button } from "../../components/button";
 import { SidebarProvider } from "../../components/sidebar";
-import { MetaContainer } from "../../composables/meta-container";
 
 const meta: Meta<typeof SidebarContainer> = {
   title: "Layouts/SidebarContainer",
@@ -196,9 +195,10 @@ export const Default: Story = {
     searchable: true,
     searchPlaceholder: "Search navigation...",
     sidebarHeader: (
-      <MetaContainer title="Passport UI">
+      <div className="meta-container">
+        <h3>Passport UI</h3>
         <p>Version 1.1.0</p>
-      </MetaContainer>
+      </div>
     ),
     sidebarFooter: (
       <Button>

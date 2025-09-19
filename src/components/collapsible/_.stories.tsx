@@ -4,7 +4,6 @@ import { action } from "storybook/actions";
 
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
-import { MetaContainer } from "../../composables/meta-container";
 import { Button } from "../button";
 
 const meta: Meta<typeof Collapsible> = {
@@ -108,10 +107,10 @@ Collapsibles provide full keyboard navigation and screen reader support with pro
         </CollapsibleTrigger>
       </div>
       <CollapsibleContent className="flex flex-col gap-2">
-        <MetaContainer>
+        <div className="meta-container">
           <p>Today&apos;s date is {new Date().toLocaleDateString()}.</p>
           <p>The current time is {new Date().toLocaleTimeString()}.</p>
-        </MetaContainer>
+        </div>
       </CollapsibleContent>
     </Collapsible>
   ),

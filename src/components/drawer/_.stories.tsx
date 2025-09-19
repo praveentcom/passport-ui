@@ -10,7 +10,6 @@ import {
   DrawerFooter,
   DrawerTrigger,
 } from ".";
-import { MetaContainer } from "../../composables/meta-container";
 import { Button } from "../button";
 
 const meta: Meta<typeof Drawer> = {
@@ -113,10 +112,11 @@ Drawers provide full keyboard navigation and screen reader support with proper f
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm section-container">
-          <MetaContainer title="Drawer component">
-            Add your content here. Use Drawer to confirm actions, and this looks
-            better in mobile layouts.
-          </MetaContainer>
+          <div className="meta-container">
+            <h3>Drawer component</h3>
+            <p>Add your content here. Use Drawer to confirm actions, and this looks
+            better in mobile layouts.</p>
+          </div>
           <DrawerFooter>
             <Button>Submit</Button>
             <DrawerClose asChild>

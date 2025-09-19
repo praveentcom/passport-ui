@@ -1,5 +1,4 @@
 import { Separator } from "../../../src/components/separator";
-import { MetaContainer } from "../../../src/composables/meta-container";
 import { ContentContainer } from "../../../src/layouts/content-container";
 
 /**
@@ -293,9 +292,9 @@ const TailwindColorCard = ({ color }: { color: string }) => (
 
 export default function ColorsPage() {
   return (
-    <ContentContainer variant="relaxed">
+    <ContentContainer variant="broad">
       <div className="section-container">
-        <div className="grid">
+        <div className="meta-container">
           <h3>Overview</h3>
           <p className="text-muted-foreground">
             Passport UI uses a comprehensive color system built on{" "}
@@ -308,10 +307,13 @@ export default function ColorsPage() {
       <Separator />
 
       <div className="section-container">
-        <MetaContainer title="Core Design Colors">
+        <div className="meta-container">
+          <h3>Core Design Colors</h3>
+          <p>
           These are the primary colors that define your brand and interface
           hierarchy.
-        </MetaContainer>
+          </p>
+        </div>
         <div className="list-container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
             {designColors.map((color) => (
@@ -329,9 +331,12 @@ export default function ColorsPage() {
       <Separator />
 
       <div className="section-container">
-        <MetaContainer title="Semantic Colors">
+        <div className="meta-container">
+          <h3>Semantic Colors</h3>
+          <p>
           Colors that convey meaning and state information to users.
-        </MetaContainer>
+          </p>
+        </div>
         <div className="list-container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
             {semanticColors.map((color) => (
@@ -349,9 +354,12 @@ export default function ColorsPage() {
       <Separator />
 
       <div className="section-container">
-        <MetaContainer title="Component Colors">
+        <div className="meta-container">
+          <h3>Component Colors</h3>
+          <p>
           Specialized colors for specific component types.
-        </MetaContainer>
+          </p>
+        </div>
         <div className="list-container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
             {interfaceColors.map((color) => (
@@ -364,9 +372,12 @@ export default function ColorsPage() {
       <Separator />
 
       <div className="section-container">
-        <MetaContainer title="Chart Colors">
+        <div className="meta-container">
+          <h3>Chart Colors</h3>
+          <p>
           A curated palette for data visualization and charts.
-        </MetaContainer>
+          </p>
+        </div>
         <div className="list-container">
           <div className="grid grid-cols-5 gap-4">
             {chartColors.map((color) => (
@@ -379,9 +390,12 @@ export default function ColorsPage() {
       <Separator />
 
       <div className="section-container">
-        <MetaContainer title="Sidebar Colors">
+        <div className="meta-container">
+          <h3>Sidebar Colors</h3>
+          <p>
           Specialized colors for sidebar and navigation components.
-        </MetaContainer>
+          </p>
+        </div>
         <div className="list-container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
             {sidebarColors.map((color) => (
@@ -394,10 +408,13 @@ export default function ColorsPage() {
       <Separator />
 
       <div className="section-container">
-        <MetaContainer title="Built-in Tailwind Colors">
+        <div className="meta-container">
+          <h3>Built-in Tailwind Colors</h3>
+          <p>
           In addition to the custom theme colors, you can use all standard
           Tailwind CSS colors.
-        </MetaContainer>
+          </p>
+        </div>
         <div className="list-container">
           {tailwindColors.map((color) => (
             <div key={color} className="grid grid-cols-6 md:grid-cols-11 gap-2">

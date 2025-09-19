@@ -2,13 +2,13 @@ import Link from "next/link";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
-import { PlaceholderCard } from ".";
+import { EmptyStateCard } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Button } from "../../components/button";
 
-const meta: Meta<typeof PlaceholderCard> = {
-  title: "Composables/PlaceholderCard",
-  component: PlaceholderCard,
+const meta: Meta<typeof EmptyStateCard> = {
+  title: "Composables/EmptyStateCard",
+  component: EmptyStateCard,
   parameters: {
     layout: "centered",
     docs: {
@@ -76,12 +76,12 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: (args) => <PlaceholderCard {...args} />,
+  render: (args) => <EmptyStateCard {...args} />,
 };
 
 export const ErrorState: Story = {
   render: (args) => (
-    <PlaceholderCard
+    <EmptyStateCard
       {...args}
       title="Something went wrong"
       subtitle="We encountered an error while processing your request. Please try again later."
@@ -92,25 +92,25 @@ export const ErrorState: Story = {
           <Button variant="outline">Contact Support</Button>
         </Link>
       </div>
-    </PlaceholderCard>
+    </EmptyStateCard>
   ),
 };
 
 export const EmptyState: Story = {
   render: (args) => (
-    <PlaceholderCard
+    <EmptyStateCard
       {...args}
       title="No items found"
       subtitle="You haven't added any items yet. Start by creating your first item."
     >
       <Button>Create Item</Button>
-    </PlaceholderCard>
+    </EmptyStateCard>
   ),
 };
 
 export const MaintenanceMode: Story = {
   render: (args) => (
-    <PlaceholderCard
+    <EmptyStateCard
       {...args}
       title="Under Maintenance"
       subtitle="We're performing scheduled maintenance. This feature will be back online shortly."
@@ -118,13 +118,13 @@ export const MaintenanceMode: Story = {
       <Link href="/status">
         <Button variant="outline">Check Status</Button>
       </Link>
-    </PlaceholderCard>
+    </EmptyStateCard>
   ),
 };
 
 export const NoPermission: Story = {
   render: (args) => (
-    <PlaceholderCard
+    <EmptyStateCard
       {...args}
       title="Access Denied"
       subtitle="You don't have permission to view this content. Contact your administrator for access."
@@ -137,13 +137,13 @@ export const NoPermission: Story = {
           <Button variant="outline">Contact Support</Button>
         </Link>
       </div>
-    </PlaceholderCard>
+    </EmptyStateCard>
   ),
 };
 
 export const WithoutActions: Story = {
   render: (args) => (
-    <PlaceholderCard
+    <EmptyStateCard
       {...args}
       title="Loading content..."
       subtitle="Please wait while we fetch your data."

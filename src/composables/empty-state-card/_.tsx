@@ -4,16 +4,15 @@ import Link from "next/link";
 
 import { Button } from "../../components/button";
 import { Card, CardContent } from "../../components/card";
-import { MetaContainer } from "../meta-container";
 
-export interface PlaceholderCardProps {
+export interface EmptyStateCardProps {
   title?: string;
   subtitle?: string;
   children?: ReactNode;
   className?: string;
 }
 
-export function PlaceholderCard({
+export function EmptyStateCard({
   title = "Section not found.",
   subtitle = "This section is currently unavailable.",
   children = (
@@ -22,15 +21,15 @@ export function PlaceholderCard({
     </Link>
   ),
   className,
-}: PlaceholderCardProps) {
+}: EmptyStateCardProps) {
   return (
-    <Card data-slot="placeholder-card" className={className}>
+    <Card data-slot="empty-placeholder-card" className={className}>
       <CardContent className="text-center px-8 py-3 md:px-12">
         <div className="grid items-center justify-center gap-4">
-          <MetaContainer className="grid items-center">
+          <div className="meta-container items-center">
             <h4>{title}</h4>
             <p className="text-muted-foreground">{subtitle}</p>
-          </MetaContainer>
+          </div>
           {children ? (
             <div className="flex gap-1.5 mx-auto">{children}</div>
           ) : null}
@@ -40,4 +39,4 @@ export function PlaceholderCard({
   );
 }
 
-export default PlaceholderCard;
+export default EmptyStateCard;

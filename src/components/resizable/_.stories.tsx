@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
-import { MetaContainer } from "../../composables/meta-container";
 import { Card } from "../card";
 
 const meta: Meta<typeof ResizablePanelGroup> = {
@@ -76,17 +75,19 @@ Resizable panels provide keyboard navigation and screen reader support with prop
       <ResizablePanelGroup {...args}>
         <ResizablePanel defaultSize={50}>
           <Card className="h-full rounded-none flex items-center justify-center">
-            <MetaContainer title="Panel One">
+            <div className="meta-container">
+              <h3>Panel One</h3>
               <p>This panel can be resized</p>
-            </MetaContainer>
+            </div>
           </Card>
         </ResizablePanel>
         <ResizableHandle withHandle />
         <ResizablePanel defaultSize={50}>
           <Card className="h-full rounded-none flex items-center justify-center">
-            <MetaContainer title="Panel Two">
+            <div className="meta-container">
+              <h3>Panel Two</h3>
               <p>Drag the handle to resize</p>
-            </MetaContainer>
+            </div>
           </Card>
         </ResizablePanel>
       </ResizablePanelGroup>

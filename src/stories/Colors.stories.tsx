@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { Separator } from "../components/separator";
-import { MetaContainer } from "../composables/meta-container";
 import { ThemeToggle } from "../composables/theme-toggle";
 import { ContentContainer } from "../layouts/content-container";
 import { PageLayout } from "../layouts/page-layout";
@@ -304,14 +303,15 @@ const ColorsDocs = () => (
       </div>
     }
     footer={
-      <MetaContainer title="Color System Documentation">
-        All colors support automatic light/dark theme switching
-      </MetaContainer>
+      <div className="meta-container">
+        <h3>Color System Documentation</h3>
+        <p>All colors support automatic light/dark theme switching</p>
+      </div>
     }
     footerSticky
     footerBlurred
   >
-    <ContentContainer variant="relaxed">
+    <ContentContainer variant="broad">
       <div className="grid">
         <h3>Overview</h3>
         <p className="text-muted-foreground">
@@ -324,10 +324,13 @@ const ColorsDocs = () => (
       <Separator />
 
       <div className="section-container">
-        <MetaContainer title="Core Design Colors">
+        <div className="meta-container">
+          <h3>Core Design Colors</h3>
+          <p>
           These are the primary colors that define your brand and interface
           hierarchy.
-        </MetaContainer>
+          </p>
+        </div>
         <div className="list-container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
             {designColors.map((color) => (
@@ -345,9 +348,10 @@ const ColorsDocs = () => (
       <Separator />
 
       <div className="section-container">
-        <MetaContainer title="Semantic Colors">
-          Colors that convey meaning and state information to users.
-        </MetaContainer>
+        <div className="meta-container">
+          <h3>Semantic Colors</h3>
+          <p>Colors that convey meaning and state information to users.</p>
+        </div>
         <div className="list-container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
             {semanticColors.map((color) => (
@@ -365,9 +369,10 @@ const ColorsDocs = () => (
       <Separator />
 
       <div className="section-container">
-        <MetaContainer title="Component Colors">
-          Specialized colors for specific component types.
-        </MetaContainer>
+        <div className="meta-container" title="Component Colors">
+          <h3>Component Colors</h3>
+          <p>Specialized colors for specific component types.</p>
+        </div>
         <div className="list-container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
             {interfaceColors.map((color) => (
@@ -380,9 +385,10 @@ const ColorsDocs = () => (
       <Separator />
 
       <div className="section-container">
-        <MetaContainer title="Chart Colors">
-          A curated palette for data visualization and charts.
-        </MetaContainer>
+        <div className="meta-container" title="Chart Colors">
+          <h3>Chart Colors</h3>
+          <p>A curated palette for data visualization and charts.</p>
+        </div>
         <div className="list-container">
           <div className="grid grid-cols-5 gap-4">
             {chartColors.map((color) => (
@@ -395,9 +401,10 @@ const ColorsDocs = () => (
       <Separator />
 
       <div className="section-container">
-        <MetaContainer title="Sidebar Colors">
-          Specialized colors for sidebar and navigation components.
-        </MetaContainer>
+        <div className="meta-container">
+            <h3>Sidebar Colors</h3>
+          <p>Specialized colors for sidebar and navigation components.</p>
+        </div>
         <div className="list-container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
             {sidebarColors.map((color) => (
@@ -410,10 +417,11 @@ const ColorsDocs = () => (
       <Separator />
 
       <div className="section-container">
-        <MetaContainer title="Built-in Tailwind Colors">
-          In addition to the custom theme colors, you can use all standard
-          Tailwind CSS colors.
-        </MetaContainer>
+        <div className="meta-container">
+          <h3>Tailwind Colors</h3>
+          <p>In addition to the custom theme colors, you can use all standard
+          Tailwind CSS colors.</p>
+        </div>
         <div className="list-container">
           {tailwindColors.map((color) => (
             <div key={color} className="grid grid-cols-6 md:grid-cols-11 gap-2">

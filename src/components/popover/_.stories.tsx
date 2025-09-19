@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/nextjs";
 import { action } from "storybook/actions";
 
 import { Popover, PopoverContent, PopoverTrigger } from ".";
-import { MetaContainer } from "../../composables/meta-container";
 import { Button } from "../button";
 import { Input } from "../input";
 import { Label } from "../label";
@@ -101,9 +100,10 @@ Popovers are less intrusive than dialogs and work well for supplementary content
       </PopoverTrigger>
       <PopoverContent className="w-sm">
         <div className="section-container">
-          <MetaContainer title="Dimensions">
-            Set the dimensions for the layer.
-          </MetaContainer>
+          <div className="meta-container">
+            <h3>Dimensions</h3>
+            <p>Set the dimensions for the layer.</p>
+          </div>
           <div className="grid gap-2">
             <div className="grid grid-cols-3 items-center gap-4">
               <Label htmlFor="width">Width</Label>

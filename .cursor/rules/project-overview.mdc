@@ -21,16 +21,11 @@ This is **passport-ui**, a modern React UI component library published on npm. I
    - Built on Radix UI primitives
    - Fully accessible and customizable
 
-2. **Motion Primitives** ([src/motion-primitives/](mdc:src/motion-primitives/))
-   - Animation components using Framer Motion
-   - Includes BlurIn, BorderTrail, AnimatedBackground, etc.
-
-3. **Composables** ([src/composables/](mdc:src/composables/))
+2. **Composables** ([src/composables/](mdc:src/composables/))
    - Higher-level components for common composables
    - Usually made with combination of components and utilities
-   - Includes BackButton, etc.
 
-4. **Layouts** ([src/layouts/](mdc:src/layouts/))
+3. **Layouts** ([src/layouts/](mdc:src/layouts/))
    - Higher-level components for common page patterns
    - Includes PageLayout, ContentContainer, SidebarContainer etc.
 

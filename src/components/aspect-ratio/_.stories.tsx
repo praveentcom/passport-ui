@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { AspectRatio } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
-import { MetaContainer } from "../../composables/meta-container";
 import { Card, CardContent } from "../card";
 
 const meta: Meta<typeof AspectRatio> = {
@@ -81,7 +80,10 @@ export const Default: Story = {
     children: (
       <Card className="h-full">
         <CardContent>
-          <MetaContainer title="Aspect Ratio">16:9</MetaContainer>
+          <div className="meta-container">
+            <h3>Aspect Ratio</h3>
+            <p>16:9</p>
+          </div>
         </CardContent>
       </Card>
     ),
@@ -94,7 +96,10 @@ export const Square: Story = {
     children: (
       <Card className="h-full">
         <CardContent>
-          <MetaContainer title="Aspect Ratio">1:1</MetaContainer>
+          <div className="meta-container">
+            <h3>Aspect Ratio</h3>
+            <p>1:1</p>
+          </div>
         </CardContent>
       </Card>
     ),

@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/nextjs";
 import { action } from "storybook/actions";
 
 import { HoverCard, HoverCardContent, HoverCardTrigger } from ".";
-import { MetaContainer } from "../../composables/meta-container";
 import { Button } from "../button";
 
 const meta: Meta<typeof HoverCard> = {
@@ -109,7 +108,10 @@ Hover cards work with both mouse hover and keyboard focus, ensuring accessibilit
         <Button variant="link">Passport UI</Button>
       </HoverCardTrigger>
       <HoverCardContent className="w-sm">
-        <MetaContainer title="Maintainer">Praveen Thirumurugan</MetaContainer>
+        <div className="meta-container">
+          <h3>Maintainer</h3>
+          <p>Praveen Thirumurugan</p>
+        </div>
       </HoverCardContent>
     </HoverCard>
   ),

@@ -8,7 +8,6 @@ import {
   CarouselPrevious,
 } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
-import { MetaContainer } from "../../composables/meta-container";
 import { Card, CardContent } from "../card";
 
 const meta: Meta<typeof Carousel> = {
@@ -113,9 +112,10 @@ Carousels provide keyboard navigation and screen reader support with proper slid
             <CarouselItem key={index}>
               <Card>
                 <CardContent>
-                  <MetaContainer title={`Slide ${index + 1}`}>
-                    Move using buttons
-                  </MetaContainer>
+                  <div className="meta-container">
+                    <h3>Slide {index + 1}</h3>
+                    <p>Move using buttons</p>
+                  </div>
                 </CardContent>
               </Card>
             </CarouselItem>

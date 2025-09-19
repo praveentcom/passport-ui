@@ -15,7 +15,6 @@ const readmePath = join(rootDir, "README.md");
 const categories = [
   { dir: "layouts", name: "Layouts" },
   { dir: "components", name: "Components" },
-  { dir: "motion-primitives", name: "Motion Primitives" },
   { dir: "composables", name: "Composables" },
   { dir: "providers", name: "Providers" },
 ];

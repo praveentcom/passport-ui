@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
-import { BackButton } from ".";
+import { NavigationBackButton } from ".";
 
-const meta: Meta<typeof BackButton> = {
-  title: "Composables/BackButton",
-  component: BackButton,
+const meta: Meta<typeof NavigationBackButton> = {
+  title: "Composables/NavigationBackButton",
+  component: NavigationBackButton,
   parameters: {
     layout: "centered",
     nextjs: {

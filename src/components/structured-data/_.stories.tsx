@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { StructuredData } from ".";
-import { MetaContainer } from "../../composables/meta-container";
 import { Card, CardContent } from "../card";
 
 const meta: Meta<typeof StructuredData> = {
@@ -118,16 +117,18 @@ export const Article: Story = {
       <div className="w-sm">
         <Card>
           <CardContent>
-            <MetaContainer title="Structured Data">
-              Helps search engines understand article content, author
+            <div className="meta-container">
+              <h3>Structured Data</h3>
+              <p>Helps search engines understand article content, author
               information, publication dates, and enables rich snippets in
-              search results.
-            </MetaContainer>
-            <MetaContainer title="Example">
-              This component injects Article schema markup for blog posts and
+              search results.</p>
+            </div>
+            <div className="meta-container">
+              <h3>Example</h3>
+              <p>This component injects Article schema markup for blog posts and
               articles. Check the browser&apos;s developer tools to see the
-              JSON-LD script tag.
-            </MetaContainer>
+              JSON-LD script tag.</p>
+            </div>
           </CardContent>
         </Card>
         <Story />

@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { Card, CardContent } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
-import { MetaContainer } from "../../composables/meta-container";
 import { Progress } from "../progress";
 
 const meta: Meta<typeof Card> = {
@@ -63,9 +62,10 @@ export const Default: Story = {
   args: {
     children: [
       <CardContent key="content">
-        <MetaContainer title="Card Title">
-          This is the main content of the card. You can put any content here.
-        </MetaContainer>
+        <div className="meta-container">
+          <h3>Card Title</h3>
+          <p>This is the main content of the card. You can put any content here.</p>
+        </div>
       </CardContent>,
     ],
   },
@@ -75,16 +75,17 @@ export const ExampleProject: Story = {
   args: {
     children: [
       <CardContent key="content">
-        <MetaContainer title="Project Alpha">
-          A modern web application built with React and TypeScript.
-        </MetaContainer>
-        <MetaContainer>
+        <div className="meta-container">
+          <h3>Project Alpha</h3>
+          <p>A modern web application built with React and TypeScript.</p>
+        </div>
+        <div className="meta-container">
           <div className="flex justify-between text-sm">
             <span>Progress</span>
             <span>75%</span>
           </div>
           <Progress value={75} />
-        </MetaContainer>
+        </div>
       </CardContent>,
     ],
   },
@@ -94,11 +95,11 @@ export const ExampleProfile: Story = {
   args: {
     children: [
       <CardContent key="content">
-        <MetaContainer>
-          <div>📧 john.doe@example.com</div>
-          <div>📍 San Francisco, CA</div>
-          <div>🏢 Tech Corp Inc.</div>
-        </MetaContainer>
+        <div className="meta-container">
+          <p>📧 john.doe@example.com</p>
+          <p>📍 San Francisco, CA</p>
+          <p>🏢 Tech Corp Inc.</p>
+        </div>
       </CardContent>,
     ],
   },

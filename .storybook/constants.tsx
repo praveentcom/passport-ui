@@ -7,7 +7,6 @@ import { InputType } from "storybook/internal/csf";
 import { Badge } from "../src/components/badge";
 import { Button } from "../src/components/button";
 import { Card, CardContent } from "../src/components/card";
-import { MetaContainer } from "../src/composables/meta-container";
 import { ContentContainer } from "../src/layouts/content-container";
 import { SidebarContainerMenuItem } from "../src/layouts/sidebar-container";
 
@@ -43,53 +42,62 @@ export const COMMON_CONTROLS: Record<string, InputType> = {
 };
 
 export const SAMPLE_CONTENT_CONTAINER: ReactNode = (
-  <ContentContainer variant="relaxed">
+  <ContentContainer variant="broad">
     <div className="section-container">
-      <MetaContainer title="Welcome to Passport UI">
-        A modern React component library for Next.js applications
-      </MetaContainer>
+      <div className="meta-container">
+        <h3>Welcome to Passport UI</h3>
+        <p>A modern React component library for Next.js applications</p>
+      </div>
       <div className="list-container md:grid-cols-2">
         <Card>
           <CardContent>
-            <MetaContainer title="Accessible Components">
+            <div className="meta-container">
+              <h3>Accessible Components</h3>
+              <p>
               Built on Radix UI primitives with full keyboard navigation and
               screen reader support.
-            </MetaContainer>
+              </p>
+            </div>
           </CardContent>
         </Card>
         <Card>
           <CardContent>
-            <MetaContainer title="Theme System">
-              Complete dark/light mode support with CSS custom properties.
-            </MetaContainer>
+            <div className="meta-container">
+              <h3>Theme System</h3>
+              <p>Complete dark/light mode support with CSS custom properties.</p>
+            </div>
           </CardContent>
         </Card>
         <Card>
           <CardContent>
-            <MetaContainer title="Motion Primitives">
-              Beautiful animations powered by Framer Motion.
-            </MetaContainer>
+            <div className="meta-container">
+              <h3>Motion Primitives</h3>
+              <p>Beautiful animations powered by Framer Motion.</p>
+            </div>
           </CardContent>
         </Card>
         <Card>
           <CardContent>
-            <MetaContainer title="TypeScript First">
-              Fully typed components with excellent developer experience.
-            </MetaContainer>
+            <div className="meta-container">
+              <h3>TypeScript First</h3>
+              <p>Fully typed components with excellent developer experience.</p>
+            </div>
           </CardContent>
         </Card>
       </div>
     </div>
     <div className="section-container">
-      <MetaContainer title="The page contains long list of elements">
-        Helps validate long page structures.
-      </MetaContainer>
+      <div className="meta-container">
+        <h3>The page contains long list of elements</h3>
+        <p>Helps validate long page structures.</p>
+      </div>
       {Array.from({ length: 100 }).map((_, index) => (
         <Card key={index}>
           <CardContent>
-            <MetaContainer title={`Element ${index + 1}`}>
-              This is a long list of elements.
-            </MetaContainer>
+            <div className="meta-container">
+              <h3>Element {index + 1}</h3>
+              <p>This is a long list of elements.</p>
+            </div>
           </CardContent>
         </Card>
       ))}
@@ -162,9 +170,10 @@ export const SAMPLE_SIDEBAR_MENU_ITEMS: SidebarContainerMenuItem[] = [
 
 export const SAMPLE_HEADER_CONTENT: ReactNode = (
   <div className="flex items-center justify-between">
-    <MetaContainer title="Dashboard">
-      Last updated: {new Date().toLocaleDateString()}
-    </MetaContainer>
+    <div className="meta-container">
+      <h3>Dashboard</h3>
+      <p>Last updated: {new Date().toLocaleDateString()}</p>
+    </div>
     <div className="flex items-center gap-2">
       <Button variant="outline" size="regular">
         <Settings />

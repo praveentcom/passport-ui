@@ -1,5 +1,4 @@
 import { CodeBlock } from "../../src/components/code-block";
-import { MetaContainer } from "../../src/composables/meta-container";
 import { ContentContainer } from "../../src/layouts/content-container";
 
 const INSTALLATION_CODE = {
@@ -42,17 +41,15 @@ function App() {
 
 export default function IntroductionPage() {
   return (
-    <ContentContainer variant="relaxed">
-      <MetaContainer>
-        <div className="grid">
-          <h3>Installation</h3>
-          <p>
-            To get started, install the library and its dependencies by
-            following the steps below.
-          </p>
-        </div>
-      </MetaContainer>
-      <MetaContainer>
+    <ContentContainer variant="broad">
+      <div className="meta-container">
+        <h3>Installation</h3>
+        <p>
+          To get started, install the library and its dependencies by
+          following the steps below.
+        </p>
+      </div>
+      <div className="meta-container">
         <div className="flex gap-1 items-center">
           <p className="text-sm font-medium">Step 1:</p>
           <p className="text-sm font-normal">Install the passport-ui package</p>
@@ -62,8 +59,8 @@ export default function IntroductionPage() {
           hideLineNumbers
           code={INSTALLATION_CODE.PACKAGE_INSTALL}
         />
-      </MetaContainer>
-      <MetaContainer>
+      </div>
+      <div className="meta-container">
         <div className="flex gap-1 items-center">
           <p className="text-sm font-medium">Step 2:</p>
           <p className="text-sm font-normal">Install required dependencies</p>
@@ -73,8 +70,8 @@ export default function IntroductionPage() {
           hideLineNumbers
           code={INSTALLATION_CODE.DEPENDENCIES_INSTALL}
         />
-      </MetaContainer>
-      <MetaContainer>
+      </div>
+      <div className="meta-container">
         <div className="flex gap-1 items-center">
           <p className="text-sm font-medium">Step 3:</p>
           <p className="text-sm font-normal">
@@ -86,8 +83,8 @@ export default function IntroductionPage() {
           language="javascript"
           code={INSTALLATION_CODE.POSTCSS_SETUP}
         />
-      </MetaContainer>
-      <MetaContainer>
+      </div>
+      <div className="meta-container">
         <div className="flex gap-1 items-center">
           <p className="text-sm font-medium">Step 4:</p>
           <p className="text-sm font-normal">
@@ -99,8 +96,8 @@ export default function IntroductionPage() {
           language="css"
           code={INSTALLATION_CODE.CSS_IMPORT}
         />
-      </MetaContainer>
-      <MetaContainer>
+      </div>
+      <div className="meta-container">
         <div className="flex gap-1 items-center">
           <p className="text-sm font-medium">Step 5:</p>
           <p className="text-sm font-normal">
@@ -112,8 +109,8 @@ export default function IntroductionPage() {
           language="typescript"
           code={INSTALLATION_CODE.THEME_PROVIDER}
         />
-      </MetaContainer>
-      <MetaContainer>
+      </div>
+      <div className="meta-container">
         <div className="flex gap-1 items-center">
           <p className="text-sm font-medium">Step 6:</p>
           <p className="text-sm font-normal">
@@ -125,7 +122,7 @@ export default function IntroductionPage() {
           language="typescript"
           code={INSTALLATION_CODE.COMPONENTS_IMPORT}
         />
-      </MetaContainer>
+      </div>
     </ContentContainer>
   );
 }

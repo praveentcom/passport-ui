@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { ScrollArea } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
-import { MetaContainer } from "../../composables/meta-container";
 import { Card, CardContent } from "../card";
 
 const meta: Meta<typeof ScrollArea> = {
@@ -67,13 +66,14 @@ Scroll areas provide proper keyboard navigation and screen reader support with s
           {Array.from({ length: 20 }, (_, i) => (
             <Card key={i}>
               <CardContent>
-                <MetaContainer title={`Item ${i + 1}`}>
+                <div className="meta-container">
+                  <h3>Item {i + 1}</h3>
                   <p>
                     This is item number {i + 1} in the scrollable list. The
                     scroll area allows for smooth scrolling through content that
                     exceeds the container height.
                   </p>
-                </MetaContainer>
+                </div>
               </CardContent>
             </Card>
           ))}

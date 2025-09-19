@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs";
 import { BulletList } from ".";
 
 const meta: Meta<typeof BulletList> = {
-  title: "Composables/BulletList",
+  title: "Components/BulletList",
   component: BulletList,
   parameters: {
     layout: "centered",

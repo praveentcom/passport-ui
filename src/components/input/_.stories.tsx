@@ -3,7 +3,6 @@ import { action } from "storybook/actions";
 
 import { Input } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
-import { MetaContainer } from "../../composables/meta-container";
 import { Label } from "../label";
 
 const meta: Meta<typeof Input> = {
@@ -129,10 +128,10 @@ Use inputs for collecting user data in forms. Always pair with proper labels for
   },
   render: (args) => (
     <div className="w-sm">
-      <MetaContainer>
+      <div className="meta-container">
         <Label htmlFor="demo-input">Email Address</Label>
         <Input id="demo-input" {...args} />
-      </MetaContainer>
+      </div>
     </div>
   ),
 };

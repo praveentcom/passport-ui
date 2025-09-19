@@ -17,8 +17,7 @@ const switchVariants = cva(
         info: "data-[state=checked]:bg-info",
       },
       size: {
-        regular: "h-4 w-7",
-        large: "h-6 w-11",
+        regular: "h-6 w-11"
       },
     },
     defaultVariants: {
@@ -41,8 +40,6 @@ const switchThumbVariants = cva(
       },
       size: {
         regular:
-          "size-3 data-[state=checked]:translate-x-3 data-[state=unchecked]:translate-x-0",
-        large:
           "size-5 data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0",
       },
     },

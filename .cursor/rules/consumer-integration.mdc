@@ -56,30 +56,12 @@ export default function RootLayout({
 }
 ```
 
-## Available Imports
-
-### Component Categories
-```typescript
-// UI Components
-import { Button, Card, Badge, Label } from 'passport-ui'
-
-// Motion Primitives  
-import { BlurIn, BorderTrail, AnimatedBackground } from 'passport-ui'
-
-// Theme Components
-import { ThemeProvider, ThemeButton } from 'passport-ui'
-
-// Page Layouts
-import { PageLayout } from 'passport-ui'
-```
-
 ### CSS Classes Available
 The library provides reusable CSS classes defined in the styles:
 - `.content-container`: Content grid layout
 - `.list-container`: List wrapper with spacing
 - `.section-container`: Section grouping
 - `.meta-container`: Metadata wrapper
-- `.bullet-list`, `.bullet-item`: Custom bullet list styling
 
 ## Tailwind Integration
 

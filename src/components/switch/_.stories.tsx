@@ -14,7 +14,6 @@ const meta: Meta<typeof Switch> = {
 
 ## Features
 - Semantic color variants (default, success, warning, destructive, info)
-- Two size options (regular, large)
 - Smooth toggle animations with visual feedback
 - Built-in accessibility with proper ARIA attributes
 - Keyboard navigation support (Space to toggle)
@@ -38,16 +37,6 @@ Use switches for settings, preferences, or any binary toggle functionality. Swit
           summary: '"default" | "success" | "warning" | "destructive" | "info"',
         },
         defaultValue: { summary: '"default"' },
-        category: "Appearance",
-      },
-    },
-    size: {
-      control: "select",
-      options: ["regular", "large"],
-      description: "The size variant that controls the switch dimensions",
-      table: {
-        type: { summary: '"regular" | "large"' },
-        defaultValue: { summary: '"regular"' },
         category: "Appearance",
       },
     },

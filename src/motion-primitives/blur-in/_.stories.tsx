@@ -4,7 +4,6 @@ import { BlurIn } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Button } from "../../components/button";
 import { Card, CardContent } from "../../components/card";
-import { MetaContainer } from "../../composables/meta-container";
 
 const meta: Meta<typeof BlurIn> = {
   title: "Motion Primitives/BlurIn",
@@ -136,12 +135,13 @@ export const CardExample: Story = {
     <BlurIn {...args}>
       <Card>
         <CardContent>
-          <MetaContainer title="Personal Information">
+          <div className="meta-container">
+            <h3>Personal Information</h3>
             <div>
               <p>Jane Smith</p>
               <p>jane.smith@company.com</p>
             </div>
-          </MetaContainer>
+          </div>
         </CardContent>
       </Card>
     </BlurIn>
