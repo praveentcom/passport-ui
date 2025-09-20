@@ -23,16 +23,6 @@ const meta: Meta<typeof PageLayout> = {
       description: {
         component: `A comprehensive page layout component that orchestrates the entire application structure, providing a complete foundation for modern web applications with integrated sidebar, header, footer, and content management.
 
-## Features
-- Complete application layout orchestration with automatic component integration
-- Built-in SidebarProvider integration for seamless sidebar functionality
-- Sticky and blurred header/footer support with smooth animations
-- Automatic SEO structured data (JSON-LD) injection for enhanced search visibility
-- Responsive content container variants (compact, relaxed, broad, full)
-- Theme-aware styling with dark/light mode support
-- Hardware-accelerated animations and transitions
-- Built-in accessibility with proper semantic markup and ARIA support
-
 ## Layout Architecture
 - **Sidebar Integration**: Automatic SidebarProvider wrapping for sidebar functionality
 - **Header Management**: Optional sticky positioning with backdrop blur effects
@@ -44,29 +34,7 @@ const meta: Meta<typeof PageLayout> = {
 - Automatic structured data injection for enhanced search engine visibility
 - Support for all Schema.org types (WebPage, Article, Organization, etc.)
 - Rich search result snippets and improved content understanding
-- Zero-config SEO optimization with customizable structured data objects
-
-## Animation System
-- Smooth page transitions with Framer Motion integration
-- Configurable header/footer blur effects with backdrop filters
-- Respects user motion preferences and accessibility settings
-- Performance-optimized animations with hardware acceleration
-
-## Usage
-Use PageLayout for:
-- Complete application shells with sidebar navigation
-- Dashboard and admin panel layouts
-- Content management interfaces
-- Any application requiring integrated header/sidebar/footer structure
-- Pages that benefit from structured data and SEO optimization
-
-## Best Practices
-- Always provide appropriate structured data for your page type
-- Use sticky headers/footers judiciously to avoid interface clutter
-- Choose appropriate content variants based on content type and density
-- Ensure sidebar content is well-organized and accessible
-- Test structured data with Google's Rich Results Test
-- Consider mobile responsiveness when configuring variants
+- Zero-config SEO optimization with customizable structured data object.
 
 ## Accessibility
 PageLayout provides comprehensive accessibility features including proper semantic markup, ARIA labels, keyboard navigation support, and screen reader compatibility across all integrated components.`,
@@ -117,69 +85,21 @@ PageLayout provides comprehensive accessibility features including proper semant
         category: "Footer",
       },
     },
-    headerVariant: {
-      control: "select",
-      options: ["compact", "relaxed", "broad", "full"],
-      description: "The variant of the header container",
+    headerOptions: {
+      control: { type: "object" },
+      description: "Header configuration options (variant, sticky, blurred, revealStylesOnScroll)",
       table: {
-        type: { summary: "HeaderContainerVariant" },
-        defaultValue: { summary: '"full"' },
+        type: { summary: "HeaderOptions" },
+        defaultValue: { summary: '{ variant: "full", sticky: true, blurred: true, revealStylesOnScroll: false }' },
         category: "Header",
       },
     },
-    headerSticky: {
-      control: { type: "boolean" },
-      description: "Whether the header should stick to the top on scroll",
+    footerOptions: {
+      control: { type: "object" },
+      description: "Footer configuration options (variant, sticky, blurred)",
       table: {
-        type: { summary: "boolean" },
-        defaultValue: { summary: "true" },
-        category: "Header",
-      },
-    },
-    headerBlurred: {
-      control: { type: "boolean" },
-      description: "Whether the header should have a blurred background effect",
-      table: {
-        type: { summary: "boolean" },
-        defaultValue: { summary: "true" },
-        category: "Header",
-      },
-    },
-    headerRevealStylesOnScroll: {
-      control: { type: "boolean" },
-      description:
-        "Whether to show header border and background only on scroll",
-      table: {
-        type: { summary: "boolean" },
-        defaultValue: { summary: "false" },
-        category: "Header",
-      },
-    },
-    footerVariant: {
-      control: "select",
-      options: ["compact", "relaxed", "broad", "full"],
-      description: "The variant of the footer container",
-      table: {
-        type: { summary: "FooterContainerVariant" },
-        defaultValue: { summary: '"full"' },
-        category: "Footer",
-      },
-    },
-    footerSticky: {
-      control: { type: "boolean" },
-      description: "Whether the footer should stick to the bottom on scroll",
-      table: {
-        type: { summary: "boolean" },
-        defaultValue: { summary: "false" },
-        category: "Footer",
-      },
-    },
-    footerBlurred: {
-      control: { type: "boolean" },
-      description: "Whether the footer should have a blurred background effect",
-      table: {
-        type: { summary: "boolean" },
-        defaultValue: { summary: "false" },
+        type: { summary: "FooterOptions" },
+        defaultValue: { summary: '{ variant: "full", sticky: false, blurred: false }' },
         category: "Footer",
       },
     },
@@ -240,12 +160,17 @@ export const Default: Story = {
     leftSidebar: sampleLeftSidebar,
     header: SAMPLE_HEADER_CONTENT,
     footer: SAMPLE_FOOTER_CONTENT,
-    headerVariant: "full",
-    headerSticky: true,
-    headerBlurred: true,
-    footerVariant: "full",
-    footerSticky: true,
-    footerBlurred: true,
+    headerOptions: {
+      variant: "full",
+      sticky: true,
+      blurred: true,
+      revealStylesOnScroll: false,
+    },
+    footerOptions: {
+      variant: "full",
+      sticky: true,
+      blurred: true,
+    },
   },
 };
 
@@ -255,12 +180,17 @@ export const RightSidebar: Story = {
     rightSidebar: sampleRightSidebar,
     header: SAMPLE_HEADER_CONTENT,
     footer: SAMPLE_FOOTER_CONTENT,
-    headerVariant: "full",
-    headerSticky: true,
-    headerBlurred: true,
-    footerVariant: "full",
-    footerSticky: false,
-    footerBlurred: false,
+    headerOptions: {
+      variant: "full",
+      sticky: true,
+      blurred: true,
+      revealStylesOnScroll: false,
+    },
+    footerOptions: {
+      variant: "full",
+      sticky: false,
+      blurred: false,
+    },
   },
 };
 
@@ -271,12 +201,17 @@ export const DualSidebars: Story = {
     rightSidebar: sampleRightSidebar,
     header: SAMPLE_HEADER_CONTENT,
     footer: SAMPLE_FOOTER_CONTENT,
-    headerVariant: "full",
-    headerSticky: true,
-    headerBlurred: true,
-    footerVariant: "full",
-    footerSticky: false,
-    footerBlurred: false,
+    headerOptions: {
+      variant: "full",
+      sticky: true,
+      blurred: true,
+      revealStylesOnScroll: false,
+    },
+    footerOptions: {
+      variant: "full",
+      sticky: false,
+      blurred: false,
+    },
   },
 };
 
@@ -285,11 +220,16 @@ export const NoSidebar: Story = {
     children: SAMPLE_CONTENT_CONTAINER,
     header: SAMPLE_HEADER_CONTENT,
     footer: SAMPLE_FOOTER_CONTENT,
-    headerVariant: "full",
-    headerSticky: true,
-    headerBlurred: true,
-    footerVariant: "full",
-    footerSticky: false,
-    footerBlurred: false,
+    headerOptions: {
+      variant: "full",
+      sticky: true,
+      blurred: true,
+      revealStylesOnScroll: false,
+    },
+    footerOptions: {
+      variant: "full",
+      sticky: false,
+      blurred: false,
+    },
   },
 };

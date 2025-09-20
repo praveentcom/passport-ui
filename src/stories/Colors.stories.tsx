@@ -308,8 +308,10 @@ const ColorsDocs = () => (
         <p>All colors support automatic light/dark theme switching</p>
       </div>
     }
-    footerSticky
-    footerBlurred
+    footerOptions={{
+      sticky: true,
+      blurred: true,
+    }}
   >
     <ContentContainer variant="broad">
       <div className="section-container">

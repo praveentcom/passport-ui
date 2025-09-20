@@ -70,8 +70,10 @@ const IntroductionDocs = () => (
         </div>
       </div>
     }
-    footerSticky
-    footerBlurred
+    footerOptions={{
+      sticky: true,
+      blurred: true,
+    }}
   >
     <ContentContainer variant="broad">
       <div className="meta-container">
@@ -84,10 +86,10 @@ const IntroductionDocs = () => (
         </div>
       </div>
       <div className="meta-container">
-        <div className="flex gap-1 items-center">
-          <p className="text-sm font-medium">Step 1:</p>
-          <p className="text-sm font-normal">Install the passport-ui package</p>
-        </div>
+        <p className="text-sm">
+          <span className="font-medium">Step 1:</span>{" "}
+          <span className="font-normal">Install the passport-ui package</span>
+        </p>
         <CodeBlock
           filename="zsh/bash"
           hideLineNumbers
@@ -95,12 +97,12 @@ const IntroductionDocs = () => (
         />
       </div>
       <div className="meta-container">
-        <div className="flex gap-1 items-center">
-          <p className="text-sm font-medium">Step 2:</p>
-          <p className="text-sm font-normal">
+        <p className="text-sm">
+          <span className="font-medium">Step 2:</span>{" "}
+          <span className="font-normal">
             Configure PostCSS to use tailwindcss
-          </p>
-        </div>
+          </span>
+        </p>
         <CodeBlock
           filename="postcss.config.mjs"
           language="javascript"
@@ -108,12 +110,12 @@ const IntroductionDocs = () => (
         />
       </div>
       <div className="meta-container">
-        <div className="flex gap-1 items-center">
-          <p className="text-sm font-medium">Step 3:</p>
-          <p className="text-sm font-normal">
+        <p className="text-sm">
+          <span className="font-medium">Step 3:</span>{" "}
+          <span className="font-normal">
             Import passport-ui styles in your main stylesheet
-          </p>
-        </div>
+          </span>
+        </p>
         <CodeBlock
           filename="styles.css"
           language="css"
@@ -121,12 +123,12 @@ const IntroductionDocs = () => (
         />
       </div>
       <div className="meta-container">
-        <div className="flex gap-1 items-center">
-          <p className="text-sm font-medium">Step 4:</p>
-          <p className="text-sm font-normal">
-            Wrap your app with the theme provider (for theme support)
-          </p>
-        </div>
+        <p className="text-sm">
+          <span className="font-medium">Step 4:</span>{" "}
+          <span className="font-normal">
+            Wrap your app with the theme provider
+          </span>
+        </p>
         <CodeBlock
           filename="app.tsx"
           language="typescript"
@@ -134,12 +136,12 @@ const IntroductionDocs = () => (
         />
       </div>
       <div className="meta-container">
-        <div className="flex gap-1 items-center">
-          <p className="text-sm font-medium">Step 5:</p>
-          <p className="text-sm font-normal">
+        <p className="text-sm">
+          <span className="font-medium">Step 5:</span>{" "}
+          <span className="font-normal">
             Use the components (example: Button, Card, etc.)
-          </p>
-        </div>
+          </span>
+        </p>
         <CodeBlock
           filename="app.tsx"
           language="typescript"

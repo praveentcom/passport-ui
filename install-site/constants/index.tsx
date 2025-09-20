@@ -138,10 +138,10 @@ export const COLORS_PAGE_DATA = createPageStructuredData({
 });
 
 export const FONTS_PAGE_DATA = createPageStructuredData({
-  name: "Passport UI - Font System",
+  name: "Passport UI - Font & Typography",
   description:
     "Complete font system documentation for Passport UI component library. Explore font weights, font sizes, and font families with automatic light/dark theme support.",
   url: SITE_CONFIG.baseUrl + "/fonts/",
-  breadcrumbName: "Font System",
+  breadcrumbName: "Font & Typography",
   breadcrumbUrl: SITE_CONFIG.baseUrl + "/fonts/",
 });

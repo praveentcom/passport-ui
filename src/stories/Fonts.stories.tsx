@@ -80,7 +80,7 @@ const FontsDocs = () => {
     <PageLayout
       header={
         <div className="flex justify-between items-center gap-4">
-          <h2>Font System</h2>
+          <h2>Font & Typography</h2>
           <ThemeToggle />
         </div>
       }
@@ -93,8 +93,10 @@ const FontsDocs = () => {
           </p>
         </div>
       }
-      footerSticky
-      footerBlurred
+      footerOptions={{
+        sticky: true,
+        blurred: true,
+      }}
     >
       <ContentContainer variant="broad">
         <div className="section-container">
@@ -107,7 +109,7 @@ const FontsDocs = () => {
               rendering across all devices.
             </p>
           </div>
-          <div className="meta-container max-w-64">
+          <div className="meta-container flex">
             <Button asChild>
               <a
                 href="https://github.com/lauridskern/open-runde"
@@ -131,7 +133,7 @@ const FontsDocs = () => {
               the typeface Inter) by Rasmus Andersson ({"\u0040rsms"}).
             </p>
           </div>
-          <div className="meta-container max-w-64">
+          <div className="meta-container flex">
             <Button variant="outline" asChild>
               <a
                 href="https://github.com/rsms"
@@ -197,7 +199,7 @@ const FontsDocs = () => {
             </p>
           </div>
           <div className="meta-container max-w-64">
-            <Label>Enter Preview Text</Label>
+            <Label>Preview Text</Label>
             <Input
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -282,7 +284,7 @@ const FontsDocs = () => {
 };
 
 const meta: Meta<typeof FontsDocs> = {
-  title: "Font System",
+  title: "Font & Typography",
   component: FontsDocs,
   parameters: {
     layout: "fullscreen",

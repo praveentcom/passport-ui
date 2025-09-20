@@ -10,6 +10,40 @@ import { HeaderContainer, HeaderContainerVariant } from "../header-container";
 
 const pageLayoutVariants = cva("min-h-screen w-full");
 
+export interface HeaderOptions {
+  /**
+   * The variant of the header container
+   */
+  variant?: HeaderContainerVariant;
+  /**
+   * Whether the header should stick to the top on scroll
+   */
+  sticky?: boolean;
+  /**
+   * Whether the header should have a blurred background effect
+   */
+  blurred?: boolean;
+  /**
+   * Whether to show header border and background only on scroll
+   */
+  revealStylesOnScroll?: boolean;
+}
+
+export interface FooterOptions {
+  /**
+   * The variant of the footer container
+   */
+  variant?: FooterContainerVariant;
+  /**
+   * Whether the footer should stick to the bottom on scroll
+   */
+  sticky?: boolean;
+  /**
+   * Whether the footer should have a blurred background effect
+   */
+  blurred?: boolean;
+}
+
 export interface PageLayoutProps
   extends VariantProps<typeof pageLayoutVariants> {
   /**
@@ -37,33 +71,13 @@ export interface PageLayoutProps
    */
   className?: string;
   /**
-   * The variant of the header container
+   * Header configuration options
    */
-  headerVariant?: HeaderContainerVariant;
+  headerOptions?: HeaderOptions;
   /**
-   * Whether the header should stick to the top on scroll
+   * Footer configuration options
    */
-  headerSticky?: boolean;
-  /**
-   * Whether the header should have a blurred background effect
-   */
-  headerBlurred?: boolean;
-  /**
-   * Whether to show header border and background only on scroll
-   */
-  headerRevealStylesOnScroll?: boolean;
-  /**
-   * The variant of the footer container
-   */
-  footerVariant?: FooterContainerVariant;
-  /**
-   * Whether the footer should stick to the bottom on scroll
-   */
-  footerSticky?: boolean;
-  /**
-   * Whether the footer should have a blurred background effect
-   */
-  footerBlurred?: boolean;
+  footerOptions?: FooterOptions;
   /**
    * Whether to show skip links for accessibility
    * @default true
@@ -88,14 +102,10 @@ export interface PageLayoutProps
  * @param rightSidebar - The right sidebar content (will be wrapped in SidebarProvider)
  * @param header - The header content (will be wrapped in HeaderContainer)
  * @param footer - The footer content (will be wrapped in FooterContainer)
- * @param contentVariant - The variant of the content container
- * @param headerVariant - The variant of the header container
- * @param headerSticky - Whether the header should stick to the top on scroll
- * @param headerBlurred - Whether the header should have a blurred background effect
- * @param headerRevealStylesOnScroll - Whether to show header border and background only on scroll
- * @param footerVariant - The variant of the footer container
- * @param footerSticky - Whether the footer should stick to the bottom on scroll
- * @param footerBlurred - Whether the footer should have a blurred background effect
+ * @param headerOptions - Header configuration options (variant, sticky, blurred, revealStylesOnScroll)
+ * @param footerOptions - Footer configuration options (variant, sticky, blurred)
+ * @param showSkipLinks - Whether to show skip links for accessibility
+ * @param skipLinks - Custom skip link configuration
  * @returns The complete page layout
  */
 export function PageLayout({
@@ -105,13 +115,17 @@ export function PageLayout({
   rightSidebar,
   header,
   footer,
-  headerVariant = "full",
-  headerSticky = true,
-  headerBlurred = true,
-  headerRevealStylesOnScroll = false,
-  footerVariant = "full",
-  footerSticky = false,
-  footerBlurred = false,
+  headerOptions = {
+    variant: "full",
+    sticky: true,
+    blurred: true,
+    revealStylesOnScroll: false,
+  },
+  footerOptions = {
+    variant: "full",
+    sticky: false,
+    blurred: false,
+  },
   showSkipLinks = true,
   skipLinks,
 }: PageLayoutProps): ReactNode {
@@ -140,10 +154,10 @@ export function PageLayout({
       {header && (
         <HeaderContainer
           id="header"
-          variant={headerVariant}
-          sticky={headerSticky}
-          blurred={headerBlurred}
-          revealStylesOnScroll={headerRevealStylesOnScroll}
+          variant={headerOptions.variant}
+          sticky={headerOptions.sticky}
+          blurred={headerOptions.blurred}
+          revealStylesOnScroll={headerOptions.revealStylesOnScroll}
         >
           {header}
         </HeaderContainer>
@@ -154,9 +168,9 @@ export function PageLayout({
       {footer && (
         <FooterContainer
           id="footer"
-          variant={footerVariant}
-          sticky={footerSticky}
-          blurred={footerBlurred}
+          variant={footerOptions.variant}
+          sticky={footerOptions.sticky}
+          blurred={footerOptions.blurred}
         >
           {footer}
         </FooterContainer>

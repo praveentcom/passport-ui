@@ -89,7 +89,7 @@ export default function FontsPage() {
             rendering across all devices.
           </p>
         </div>
-        <div className="meta-container max-w-64">
+        <div className="meta-container flex">
           <Button asChild>
             <a
               href="https://github.com/lauridskern/open-runde"
@@ -113,7 +113,7 @@ export default function FontsPage() {
             the typeface Inter) by Rasmus Andersson ({"\u0040rsms"}).
           </p>
         </div>
-        <div className="meta-container max-w-64">
+        <div className="meta-container flex">
           <Button variant="outline" asChild>
             <a
               href="https://github.com/rsms"
@@ -179,7 +179,7 @@ export default function FontsPage() {
           </p>
         </div>
         <div className="meta-container max-w-64">
-          <Label>Enter Preview Text</Label>
+          <Label>Preview Text</Label>
           <Input
             value={input}
             onChange={(e) => setInput(e.target.value)}

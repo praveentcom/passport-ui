@@ -5,6 +5,7 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { MobileSidebarTrigger } from "../../src/composables/mobile-sidebar-trigger";
 import { ThemeToggle } from "../../src/composables/theme-toggle";
 import { PageLayout } from "../../src/layouts/page-layout";
 import { SidebarContainer } from "../../src/layouts/sidebar-container";
@@ -37,7 +38,10 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
       }
       header={
         <div className="flex justify-between items-center gap-4">
-          <h2>{getPageTitle(pathname)}</h2>
+          <div className="flex items-center gap-3">
+            <MobileSidebarTrigger />
+            <h2>{getPageTitle(pathname)}</h2>
+          </div>
           <ThemeToggle />
         </div>
       }
@@ -63,8 +67,10 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       }
-      footerSticky
-      footerBlurred
+      footerOptions={{
+        sticky: true,
+        blurred: true,
+      }}
     >
       {children}
     </PageLayout>

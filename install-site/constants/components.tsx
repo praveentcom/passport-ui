@@ -12,7 +12,7 @@ export const PRIMARY_NAVIGATION_PAGES = [
     icon: Palette,
   },
   {
-    title: "Font System",
+    title: "Font & Typography",
     href: "/fonts/",
     icon: Text,
   },
