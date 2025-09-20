@@ -145,7 +145,7 @@ export const WithoutActions: Story = {
   render: (args) => (
     <EmptyStateCard
       {...args}
-      title="Loading content..."
+      title="Loading content…"
       subtitle="Please wait while we fetch your data."
     />
   ),

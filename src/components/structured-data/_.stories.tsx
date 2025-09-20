@@ -119,15 +119,19 @@ export const Article: Story = {
           <CardContent>
             <div className="meta-container">
               <h3>Structured Data</h3>
-              <p>Helps search engines understand article content, author
-              information, publication dates, and enables rich snippets in
-              search results.</p>
+              <p>
+                Helps search engines understand article content, author
+                information, publication dates, and enables rich snippets in
+                search results.
+              </p>
             </div>
             <div className="meta-container">
               <h3>Example</h3>
-              <p>This component injects Article schema markup for blog posts and
-              articles. Check the browser&apos;s developer tools to see the
-              JSON-LD script tag.</p>
+              <p>
+                This component injects Article schema markup for blog posts and
+                articles. Check the browser&apos;s developer tools to see the
+                JSON-LD script tag.
+              </p>
             </div>
           </CardContent>
         </Card>

@@ -312,23 +312,12 @@ const ColorsDocs = () => (
     footerBlurred
   >
     <ContentContainer variant="broad">
-      <div className="grid">
-        <h3>Overview</h3>
-        <p className="text-muted-foreground">
-          Passport UI uses a comprehensive color system built on{" "}
-          <strong>OKLCH color space</strong>, inspired by shadcn/ui, for better
-          color management and automatic light/dark theme support.
-        </p>
-      </div>
-
-      <Separator />
-
       <div className="section-container">
         <div className="meta-container">
           <h3>Core Design Colors</h3>
           <p>
-          These are the primary colors that define your brand and interface
-          hierarchy.
+            These are the primary colors that define your brand and interface
+            hierarchy.
           </p>
         </div>
         <div className="list-container">
@@ -402,7 +391,7 @@ const ColorsDocs = () => (
 
       <div className="section-container">
         <div className="meta-container">
-            <h3>Sidebar Colors</h3>
+          <h3>Sidebar Colors</h3>
           <p>Specialized colors for sidebar and navigation components.</p>
         </div>
         <div className="list-container">
@@ -419,8 +408,10 @@ const ColorsDocs = () => (
       <div className="section-container">
         <div className="meta-container">
           <h3>Tailwind Colors</h3>
-          <p>In addition to the custom theme colors, you can use all standard
-          Tailwind CSS colors.</p>
+          <p>
+            In addition to the custom theme colors, you can use all standard
+            Tailwind CSS colors.
+          </p>
         </div>
         <div className="list-container">
           {tailwindColors.map((color) => (
@@ -448,26 +439,7 @@ const meta: Meta<typeof ColorsDocs> = {
     layout: "fullscreen",
     docs: {
       description: {
-        component: `Comprehensive guide to Passport UI's color system, built on OKLCH color space for better color management and automatic light/dark theme support.
-
-## Color Categories
-
-- **Core Design Colors**: Primary, secondary, background, and surface colors
-- **Semantic Colors**: Status colors for success, warning, error, and info states  
-- **Component Colors**: Specialized colors for cards, popovers, inputs, and borders
-- **Chart Colors**: Curated palette for data visualization
-- **Sidebar Colors**: Navigation-specific color system
-- **Tailwind Colors**: Full access to standard Tailwind CSS color palette
-
-## Key Features
-
-- **OKLCH Color Space**: Better color perception and consistency
-- **Automatic Theme Switching**: Seamless light/dark mode support
-- **Accessibility First**: Proper contrast ratios built-in
-- **Semantic Meaning**: Colors that convey clear intent and state
-- **Developer Experience**: Easy-to-use CSS classes with TypeScript support
-
-Use this documentation to understand when and how to use different color approaches in your Passport UI applications.`,
+        component: `Comprehensive guide to Passport UI's color system, built on OKLCH color space for better color management and automatic light/dark theme support. Use this documentation to understand when and how to use different color approaches in your Passport UI applications.`,
       },
     },
   },

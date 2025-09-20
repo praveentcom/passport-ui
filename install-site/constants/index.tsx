@@ -1,8 +1,8 @@
 // Base URLs and site info
 export const SITE_CONFIG = {
   baseUrl: "https://install.passportui.com",
-  name: "Install Passport UI",
-  title: "Install Passport UI - Setup Guide & Documentation",
+  name: "Passport UI",
+  title: "Passport UI - Setup Guide",
   description:
     "Complete installation guide and documentation for Passport UI - a sleek and compact React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
   author: {
@@ -91,16 +91,16 @@ export const createPageStructuredData = (pageData: {
 
 // Page-specific structured data
 export const INSTALLATION_PAGE_DATA = createPageStructuredData({
-  name: "Install Passport UI - Installation Guide",
+  name: "Passport UI - Installation",
   description:
     "Complete installation guide for Passport UI - a sleek and compact React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
   url: SITE_CONFIG.baseUrl + "/",
-  breadcrumbName: "Installation Guide",
+  breadcrumbName: "Installation",
   breadcrumbUrl: SITE_CONFIG.baseUrl + "/",
 });
 
 export const COLORS_PAGE_DATA = createPageStructuredData({
-  name: "Passport UI Color System - Design Documentation",
+  name: "Passport UI - Color System",
   description:
     "Complete color system documentation for Passport UI component library. Explore design colors, semantic colors, component colors, and chart colors with automatic light/dark theme support.",
   url: SITE_CONFIG.baseUrl + "/colors/",
@@ -108,7 +108,7 @@ export const COLORS_PAGE_DATA = createPageStructuredData({
   breadcrumbUrl: SITE_CONFIG.baseUrl + "/colors/",
   mainEntity: {
     "@type": "Article",
-    headline: "Passport UI Color System Documentation",
+    headline: "Passport UI - Color System",
     description:
       "Comprehensive guide to Passport UI's color system built on OKLCH color space for better color management and automatic light/dark theme support.",
     author: {
@@ -135,4 +135,13 @@ export const COLORS_PAGE_DATA = createPageStructuredData({
       "UI Components",
     ],
   },
+});
+
+export const FONTS_PAGE_DATA = createPageStructuredData({
+  name: "Passport UI - Font System",
+  description:
+    "Complete font system documentation for Passport UI component library. Explore font weights, font sizes, and font families with automatic light/dark theme support.",
+  url: SITE_CONFIG.baseUrl + "/fonts/",
+  breadcrumbName: "Font System",
+  breadcrumbUrl: SITE_CONFIG.baseUrl + "/fonts/",
 });

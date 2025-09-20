@@ -38,7 +38,7 @@ const meta: Meta<typeof SidebarContainer> = {
 - **Menu Items**: Hierarchical navigation with support for nested sub-items
 - **Search Integration**: Real-time filtering of menu items with customizable placeholder
 - **Collapsible Groups**: Parent menu items can expand/collapse child items
-- **Icon Support**: Full Lucide React icon integration for visual navigation cues
+- **Icon Support**: Full Lucide icon integration for visual navigation cues
 - **Active States**: Automatic highlighting of current page/section
 
 ## Layout Integration
@@ -126,7 +126,7 @@ SidebarContainer requires SidebarProvider for state management and works seamles
       description: "Placeholder text for the search input",
       table: {
         type: { summary: "string" },
-        defaultValue: { summary: '"Search..."' },
+        defaultValue: { summary: '"Search…"' },
       },
     },
     variant: {
@@ -193,7 +193,7 @@ export const Default: Story = {
     menuItems: SAMPLE_SIDEBAR_MENU_ITEMS,
     collapsible: true,
     searchable: true,
-    searchPlaceholder: "Search navigation...",
+    searchPlaceholder: "Search navigation…",
     sidebarHeader: (
       <div className="meta-container">
         <h3>Passport UI</h3>

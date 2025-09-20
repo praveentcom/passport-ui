@@ -197,22 +197,22 @@ export const LargeSize: Story = {
 export const LoadingState: Story = {
   render: () => (
     <div className="w-sm list-container grid-cols-2">
-      <Button variant="primary" loading loadingText="Saving...">
+      <Button variant="primary" loading loadingText="Saving…">
         Save Changes
       </Button>
-      <Button variant="destructive" loading loadingText="Deleting...">
+      <Button variant="destructive" loading loadingText="Deleting…">
         Delete Item
       </Button>
-      <Button variant="outline" loading loadingText="Processing...">
+      <Button variant="outline" loading loadingText="Processing…">
         Process Data
       </Button>
-      <Button variant="secondary" loading loadingText="Loading...">
+      <Button variant="secondary" loading loadingText="Loading…">
         Load More
       </Button>
-      <Button variant="ghost" loading loadingText="Fetching...">
+      <Button variant="ghost" loading loadingText="Fetching…">
         Fetch Data
       </Button>
-      <Button variant="link" loading loadingText="Connecting...">
+      <Button variant="link" loading loadingText="Connecting…">
         Connect
       </Button>
     </div>

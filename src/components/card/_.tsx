@@ -68,11 +68,44 @@ function Card({
       onKeyDown={interactive ? handleKeyDown : onKeyDown}
       {...props}
     >
-      <div className="flex flex-col gap-5">{children}</div>
+      <div className="flex flex-col gap-2">{children}</div>
     </div>
   );
 
   return cardContent;
+}
+
+function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-header"
+      className={cn("px-4 meta-container", className)}
+      {...props}
+    />
+  );
+}
+
+function CardTitle({ className, ...props }: React.ComponentProps<"h3">) {
+  return (
+    <h3
+      data-slot="card-title"
+      className={cn(
+        "text-lg font-semibold leading-none tracking-tight",
+        className
+      )}
+      {...props}
+    />
+  );
+}
+
+function CardDescription({ className, ...props }: React.ComponentProps<"p">) {
+  return (
+    <p
+      data-slot="card-description"
+      className={cn("text-sm text-muted-foreground", className)}
+      {...props}
+    />
+  );
 }
 
 function CardContent({ className, ...props }: React.ComponentProps<"div">) {
@@ -85,4 +118,4 @@ function CardContent({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
-export { Card, CardContent };
+export { Card, CardHeader, CardTitle, CardDescription, CardContent };

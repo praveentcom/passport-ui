@@ -1,5 +1,7 @@
 import { Separator } from "../../../src/components/separator";
+import { StructuredData } from "../../../src/components/structured-data";
 import { ContentContainer } from "../../../src/layouts/content-container";
+import { COLORS_PAGE_DATA } from "../../constants";
 
 /**
  * Color Palette for Passport UI
@@ -293,13 +295,14 @@ const TailwindColorCard = ({ color }: { color: string }) => (
 export default function ColorsPage() {
   return (
     <ContentContainer variant="broad">
+      <StructuredData data={COLORS_PAGE_DATA} />
       <div className="section-container">
         <div className="meta-container">
           <h3>Overview</h3>
           <p className="text-muted-foreground">
-            Passport UI uses a comprehensive color system built on{" "}
-            <strong>OKLCH color space</strong>, inspired by shadcn/ui, for
-            better color management and automatic light/dark theme support.
+            Passport UI uses a comprehensive color system built on OKLCH color
+            space, inspired by shadcn/ui, for better color management and
+            automatic light/dark theme support.
           </p>
         </div>
       </div>
@@ -310,8 +313,8 @@ export default function ColorsPage() {
         <div className="meta-container">
           <h3>Core Design Colors</h3>
           <p>
-          These are the primary colors that define your brand and interface
-          hierarchy.
+            These are the primary colors that define your brand and interface
+            hierarchy.
           </p>
         </div>
         <div className="list-container">
@@ -333,9 +336,7 @@ export default function ColorsPage() {
       <div className="section-container">
         <div className="meta-container">
           <h3>Semantic Colors</h3>
-          <p>
-          Colors that convey meaning and state information to users.
-          </p>
+          <p>Colors that convey meaning and state information to users.</p>
         </div>
         <div className="list-container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
@@ -356,9 +357,7 @@ export default function ColorsPage() {
       <div className="section-container">
         <div className="meta-container">
           <h3>Component Colors</h3>
-          <p>
-          Specialized colors for specific component types.
-          </p>
+          <p>Specialized colors for specific component types.</p>
         </div>
         <div className="list-container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
@@ -374,9 +373,7 @@ export default function ColorsPage() {
       <div className="section-container">
         <div className="meta-container">
           <h3>Chart Colors</h3>
-          <p>
-          A curated palette for data visualization and charts.
-          </p>
+          <p>A curated palette for data visualization and charts.</p>
         </div>
         <div className="list-container">
           <div className="grid grid-cols-5 gap-4">
@@ -392,9 +389,7 @@ export default function ColorsPage() {
       <div className="section-container">
         <div className="meta-container">
           <h3>Sidebar Colors</h3>
-          <p>
-          Specialized colors for sidebar and navigation components.
-          </p>
+          <p>Specialized colors for sidebar and navigation components.</p>
         </div>
         <div className="list-container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
@@ -411,8 +406,8 @@ export default function ColorsPage() {
         <div className="meta-container">
           <h3>Built-in Tailwind Colors</h3>
           <p>
-          In addition to the custom theme colors, you can use all standard
-          Tailwind CSS colors.
+            In addition to the custom theme colors, you can use all standard
+            Tailwind CSS colors.
           </p>
         </div>
         <div className="list-container">

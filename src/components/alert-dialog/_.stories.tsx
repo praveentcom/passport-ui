@@ -101,8 +101,10 @@ Alert dialogs provide enhanced accessibility with alert role and proper focus ma
       <AlertDialogContent>
         <div className="meta-container">
           <h3>Are you absolutely sure?</h3>
-          <p>This action cannot be undone. This will permanently delete your
-          account and remove your data from our servers.</p>
+          <p>
+            This action cannot be undone. This will permanently delete your
+            account and remove your data from our servers.
+          </p>
         </div>
         <AlertDialogFooter>
           <AlertDialogCancel variant="ghost">Cancel</AlertDialogCancel>
@@ -130,8 +132,10 @@ export const Destructive: Story = {
       <AlertDialogContent>
         <div className="meta-container">
           <h3>Delete Account</h3>
-          <p>This will permanently delete your account and all associated data.
-          This action cannot be undone.</p>
+          <p>
+            This will permanently delete your account and all associated data.
+            This action cannot be undone.
+          </p>
         </div>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>

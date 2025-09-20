@@ -15,7 +15,6 @@ Access Storybook via [passportui.com](https://passportui.com) to play with the a
 
 ```bash
 npm install passport-ui
-npm install tailwindcss @tailwindcss/postcss
 ```
 
 ## Usage

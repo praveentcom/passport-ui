@@ -136,7 +136,7 @@ function createBatches(entries, batchSize = 10) {
  * Main build function
  */
 async function buildBatched() {
-  console.log("🚀 Starting batched build process...");
+  console.log("🚀 Starting batched build process…");
 
   const allEntries = generateEntryPoints();
   const totalEntries = Object.keys(allEntries).length;

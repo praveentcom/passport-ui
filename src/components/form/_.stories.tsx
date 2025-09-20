@@ -271,10 +271,7 @@ function CareerFormExample() {
               <FormItem>
                 <FormLabel>Bio</FormLabel>
                 <FormControl>
-                  <Textarea
-                    placeholder="Tell us about yourself..."
-                    {...field}
-                  />
+                  <Textarea placeholder="Tell us about yourself…" {...field} />
                 </FormControl>
                 <FormDescription>
                   Brief description of your background and experience.

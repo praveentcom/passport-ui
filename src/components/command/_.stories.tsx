@@ -117,7 +117,7 @@ Command menus provide full keyboard navigation and screen reader support with pr
   },
   render: (args) => (
     <Command {...args} className="w-sm border">
-      <CommandInput placeholder="Type a command or search..." />
+      <CommandInput placeholder="Type a command or search…" />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">
@@ -175,7 +175,7 @@ export const Dialog: Story = {
       <>
         <Button onClick={() => setOpen(true)}>Open Command Palette</Button>
         <CommandDialog open={open} onOpenChange={setOpen}>
-          <CommandInput placeholder="Type a command or search..." />
+          <CommandInput placeholder="Type a command or search…" />
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup heading="Suggestions">

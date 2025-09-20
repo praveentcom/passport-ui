@@ -27,7 +27,7 @@ const prefersDarkMode =
 addons.setConfig({
   theme: prefersDarkMode ? darkTheme : lightTheme,
   sidebar: {
-    showRoots: false,
+    showRoots: true,
   },
 });
 

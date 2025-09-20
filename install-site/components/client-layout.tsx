@@ -25,7 +25,7 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
         <SidebarContainer
           menuItems={PRIMARY_NAVIGATION_PAGES}
           searchable={true}
-          searchPlaceholder="Search..."
+          searchPlaceholder="Search…"
           sidebarHeader={
             <div className="meta-container">
               <h3 className="line-clamp-1">Passport UI</h3>

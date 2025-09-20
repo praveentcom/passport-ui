@@ -17,7 +17,7 @@ const switchVariants = cva(
         info: "data-[state=checked]:bg-info",
       },
       size: {
-        regular: "h-6 w-11"
+        regular: "h-6 w-11",
       },
     },
     defaultVariants: {

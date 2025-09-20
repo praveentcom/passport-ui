@@ -92,7 +92,6 @@ export function extractBlockquotes(content: string): {
         }
       }
 
-      // Process the collected blockquote lines into React content
       const processedContent = processBlockquoteLines(blockquoteLines);
 
       const placeholder = `{{BLOCKQUOTE${blockquoteCounter}}}`;

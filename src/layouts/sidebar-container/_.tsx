@@ -134,7 +134,7 @@ export function SidebarContainer({
   menuItems = [],
   sidebarGroups = [],
   searchable = false,
-  searchPlaceholder = "Search...",
+  searchPlaceholder = "Search…",
   autoInferActiveItem = false,
   variant = "sidebar",
   side = "left",

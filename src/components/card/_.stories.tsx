@@ -64,7 +64,9 @@ export const Default: Story = {
       <CardContent key="content">
         <div className="meta-container">
           <h3>Card Title</h3>
-          <p>This is the main content of the card. You can put any content here.</p>
+          <p>
+            This is the main content of the card. You can put any content here.
+          </p>
         </div>
       </CardContent>,
     ],

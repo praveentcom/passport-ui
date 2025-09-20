@@ -124,7 +124,10 @@ Always provide clear actions and escape routes for users.`,
           </div>
           <div className="meta-container">
             <h3>Security Settings</h3>
-            <p>Configure password, two-factor authentication, and login preferences</p>
+            <p>
+              Configure password, two-factor authentication, and login
+              preferences
+            </p>
           </div>
           <DialogFooter>
             <DialogClose asChild>

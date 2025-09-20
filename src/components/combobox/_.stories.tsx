@@ -120,7 +120,7 @@ Comboboxes provide full keyboard navigation, screen reader support, and proper o
       description: "Text displayed when no option is selected",
       table: {
         type: { summary: "string" },
-        defaultValue: { summary: '"Select option..."' },
+        defaultValue: { summary: '"Select option…"' },
         category: "Content",
       },
     },
@@ -129,7 +129,7 @@ Comboboxes provide full keyboard navigation, screen reader support, and proper o
       description: "Placeholder text for the search input field",
       table: {
         type: { summary: "string" },
-        defaultValue: { summary: '"Search options..."' },
+        defaultValue: { summary: '"Search options…"' },
         category: "Content",
       },
     },
@@ -178,8 +178,8 @@ type Story = StoryObj<typeof Combobox>;
 export const Default: Story = {
   args: {
     options: frameworks,
-    placeholder: "Select framework...",
-    searchPlaceholder: "Search framework...",
+    placeholder: "Select framework…",
+    searchPlaceholder: "Search framework…",
     emptyText: "No framework found.",
   },
 };
@@ -187,8 +187,8 @@ export const Default: Story = {
 export const Languages: Story = {
   args: {
     options: languages,
-    placeholder: "Select language...",
-    searchPlaceholder: "Search language...",
+    placeholder: "Select language…",
+    searchPlaceholder: "Search language…",
     emptyText: "No language found.",
   },
 };

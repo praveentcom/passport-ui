@@ -114,8 +114,10 @@ Drawers provide full keyboard navigation and screen reader support with proper f
         <div className="mx-auto w-full max-w-sm section-container">
           <div className="meta-container">
             <h3>Drawer component</h3>
-            <p>Add your content here. Use Drawer to confirm actions, and this looks
-            better in mobile layouts.</p>
+            <p>
+              Add your content here. Use Drawer to confirm actions, and this
+              looks better in mobile layouts.
+            </p>
           </div>
           <DrawerFooter>
             <Button>Submit</Button>

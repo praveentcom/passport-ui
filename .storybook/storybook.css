@@ -2,7 +2,9 @@
 @import "../src/hljs-themes.css";
 @import "../src/tailwind-colors.css";
 
-.docs-story, #storybook-root, .sb-show-main {
+.docs-story,
+#storybook-root,
+.sb-show-main {
   background: var(--background) !important;
 }
 

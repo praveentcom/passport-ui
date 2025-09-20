@@ -208,7 +208,7 @@ const sampleLeftSidebar: ReactNode = (
       </Button>
     }
     searchable={true}
-    searchPlaceholder="Search navigation..."
+    searchPlaceholder="Search navigation…"
     autoInferActiveItem={true}
   />
 );

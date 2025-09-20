@@ -72,7 +72,7 @@ When using passport-ui in your projects:
 2. **Monitor Security Advisories**: Watch our repository for security announcements
 3. **Validate User Input**: Always validate and sanitize user input in your applications
 4. **Use HTTPS**: Ensure your applications use HTTPS in production
-5. **Follow React Security Best Practices**: Avoid dangerouslySetInnerHTML and validate props
+5. **Follow Security Best Practices**: Avoid dangerouslySetInnerHTML and validate props
 
 ## Contact
 

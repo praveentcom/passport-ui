@@ -16,17 +16,17 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground shadow-xs hover:bg-destructive/85",
         outline:
-          "border border-input bg-background shadow-xs hover:bg-border text-muted-foreground hover:text-foreground",
+          "border border-input bg-background shadow-xs hover:bg-border/50 text-muted-foreground hover:text-foreground",
         secondary:
           "bg-card text-secondary-foreground shadow-xs hover:bg-secondary",
         ghost: "hover:bg-border text-muted-foreground hover:text-foreground",
-        link: "text-primary hover:underline underline-offset-3 decoration-muted-foreground",
+        link: "!px-0 text-primary hover:underline underline-offset-3 decoration-muted-foreground",
       },
       size: {
         regular:
           "h-7 rounded-xs px-2.5 py-1 has-[>svg]:px-2 text-xs [&_svg:not([class*='size-'])]:size-3.5",
         medium:
-          "h-8 rounded-xs px-2.5 py-1.5 has-[>svg]:px-2 text-sm [&_svg:not([class*='size-'])]:size-4",
+          "h-8 rounded-xs px-2.5 py-2 has-[>svg]:px-2 text-sm [&_svg:not([class*='size-'])]:size-4",
         large:
           "h-9 rounded-sm gap-1.5 px-3 has-[>svg]:px-2.5 text-sm [&_svg:not([class*='size-'])]:size-5",
       },
@@ -95,6 +95,13 @@ function Button({
 }: ButtonProps) {
   const Comp = asChild ? Slot : "button";
 
+  const buttonContent = (
+    <>
+      {loading && <Loader2 className="animate-spin" aria-hidden="true" />}
+      {loading && loadingText ? loadingText : children}
+    </>
+  );
+
   return (
     <Comp
       data-slot="button"
@@ -110,8 +117,7 @@ function Button({
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     >
-      {loading && <Loader2 className="animate-spin" aria-hidden="true" />}
-      {loading && loadingText ? loadingText : children}
+      {asChild ? <span>{buttonContent}</span> : buttonContent}
     </Comp>
   );
 }

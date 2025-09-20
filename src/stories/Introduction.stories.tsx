@@ -7,7 +7,6 @@ import { PageLayout } from "../layouts/page-layout";
 
 const INSTALLATION_CODE = {
   PACKAGE_INSTALL: `npm install passport-ui`,
-  DEPENDENCIES_INSTALL: `npm install tailwindcss @tailwindcss/postcss`,
   POSTCSS_SETUP: `export default {
   plugins: ["@tailwindcss/postcss"],
 };`,
@@ -15,8 +14,8 @@ const INSTALLATION_CODE = {
 @import 'passport-ui/styles.css';
 
 /* Optional styles based on requirement */
-@import 'passport-ui/hljs-themes.css'; /* Optional: for code highlighting */
-@import 'passport-ui/tailwind-colors.css'; /* Optional: dynamic usage of tailwind colors */`,
+@import 'passport-ui/hljs-themes.css'; /* for code highlighting */
+@import 'passport-ui/tailwind-colors.css'; /* for dynamic construction of colors */`,
   THEME_PROVIDER: `import { ThemeProvider } from "passport-ui";
 
 function App() {
@@ -98,17 +97,6 @@ const IntroductionDocs = () => (
       <div className="meta-container">
         <div className="flex gap-1 items-center">
           <p className="text-sm font-medium">Step 2:</p>
-          <p className="text-sm font-normal">Install required dependencies</p>
-        </div>
-        <CodeBlock
-          filename="zsh/bash"
-          hideLineNumbers
-          code={INSTALLATION_CODE.DEPENDENCIES_INSTALL}
-        />
-      </div>
-      <div className="meta-container">
-        <div className="flex gap-1 items-center">
-          <p className="text-sm font-medium">Step 3:</p>
           <p className="text-sm font-normal">
             Configure PostCSS to use tailwindcss
           </p>
@@ -121,7 +109,7 @@ const IntroductionDocs = () => (
       </div>
       <div className="meta-container">
         <div className="flex gap-1 items-center">
-          <p className="text-sm font-medium">Step 4:</p>
+          <p className="text-sm font-medium">Step 3:</p>
           <p className="text-sm font-normal">
             Import passport-ui styles in your main stylesheet
           </p>
@@ -134,7 +122,7 @@ const IntroductionDocs = () => (
       </div>
       <div className="meta-container">
         <div className="flex gap-1 items-center">
-          <p className="text-sm font-medium">Step 5:</p>
+          <p className="text-sm font-medium">Step 4:</p>
           <p className="text-sm font-normal">
             Wrap your app with the theme provider (for theme support)
           </p>
@@ -147,7 +135,7 @@ const IntroductionDocs = () => (
       </div>
       <div className="meta-container">
         <div className="flex gap-1 items-center">
-          <p className="text-sm font-medium">Step 6:</p>
+          <p className="text-sm font-medium">Step 5:</p>
           <p className="text-sm font-normal">
             Use the components (example: Button, Card, etc.)
           </p>
@@ -169,19 +157,7 @@ const meta: Meta<typeof IntroductionDocs> = {
     layout: "fullscreen",
     docs: {
       description: {
-        component: `Welcome to Passport UI - a modern, customizable UI component library built for Next.js applications.
-
-Built on top of shadcn/ui, Tailwind CSS v4, and Framer Motion, Passport UI provides compact, minimal components that speed up your development process.
-
-## Key Features
-
-- **Modern Stack**: React 18+, TypeScript, Tailwind CSS v4
-- **Accessibility First**: WCAG compliant with keyboard navigation
-- **Theme System**: Automatic light/dark mode with OKLCH colors
-- **Motion Primitives**: Smooth animations with Framer Motion
-- **Developer Experience**: Full TypeScript support and IntelliSense
-
-Explore the documentation to discover components, learn about theming, and see motion primitives in action.`,
+        component: `Welcome to Passport UI - a modern, customizable UI component library built for Next.js applications. Built on top of shadcn/ui, Tailwind CSS v4, and Framer Motion, the component library provides compact, minimal components that speed up your development process.`,
       },
     },
   },

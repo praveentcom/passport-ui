@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const MOBILE_BREAKPOINT = 768;
 
 /**
- * Custom React hook to detect if the current viewport is mobile-sized
+ * Custom hook to detect if the current viewport is mobile-sized
  *
  * This hook uses the matchMedia API to detect viewport changes and determine
  * if the current screen size is below the mobile breakpoint (768px).

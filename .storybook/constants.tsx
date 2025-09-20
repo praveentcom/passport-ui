@@ -54,8 +54,8 @@ export const SAMPLE_CONTENT_CONTAINER: ReactNode = (
             <div className="meta-container">
               <h3>Accessible Components</h3>
               <p>
-              Built on Radix UI primitives with full keyboard navigation and
-              screen reader support.
+                Built on Radix UI primitives with full keyboard navigation and
+                screen reader support.
               </p>
             </div>
           </CardContent>
@@ -64,7 +64,9 @@ export const SAMPLE_CONTENT_CONTAINER: ReactNode = (
           <CardContent>
             <div className="meta-container">
               <h3>Theme System</h3>
-              <p>Complete dark/light mode support with CSS custom properties.</p>
+              <p>
+                Complete dark/light mode support with CSS custom properties.
+              </p>
             </div>
           </CardContent>
         </Card>

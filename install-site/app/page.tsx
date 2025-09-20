@@ -1,9 +1,10 @@
 import { CodeBlock } from "../../src/components/code-block";
+import { StructuredData } from "../../src/components/structured-data";
 import { ContentContainer } from "../../src/layouts/content-container";
+import { INSTALLATION_PAGE_DATA } from "../constants";
 
 const INSTALLATION_CODE = {
   PACKAGE_INSTALL: `npm install passport-ui`,
-  DEPENDENCIES_INSTALL: `npm install tailwindcss @tailwindcss/postcss`,
   POSTCSS_SETUP: `export default {
   plugins: ["@tailwindcss/postcss"],
 };`,
@@ -42,11 +43,12 @@ function App() {
 export default function IntroductionPage() {
   return (
     <ContentContainer variant="broad">
+      <StructuredData data={INSTALLATION_PAGE_DATA} />
       <div className="meta-container">
         <h3>Installation</h3>
         <p>
-          To get started, install the library and its dependencies by
-          following the steps below.
+          To get started, install the library and its dependencies by following
+          the steps below.
         </p>
       </div>
       <div className="meta-container">
@@ -63,17 +65,6 @@ export default function IntroductionPage() {
       <div className="meta-container">
         <div className="flex gap-1 items-center">
           <p className="text-sm font-medium">Step 2:</p>
-          <p className="text-sm font-normal">Install required dependencies</p>
-        </div>
-        <CodeBlock
-          filename="zsh/bash"
-          hideLineNumbers
-          code={INSTALLATION_CODE.DEPENDENCIES_INSTALL}
-        />
-      </div>
-      <div className="meta-container">
-        <div className="flex gap-1 items-center">
-          <p className="text-sm font-medium">Step 3:</p>
           <p className="text-sm font-normal">
             Configure PostCSS to use tailwindcss
           </p>
@@ -86,7 +77,7 @@ export default function IntroductionPage() {
       </div>
       <div className="meta-container">
         <div className="flex gap-1 items-center">
-          <p className="text-sm font-medium">Step 4:</p>
+          <p className="text-sm font-medium">Step 3:</p>
           <p className="text-sm font-normal">
             Import passport-ui styles in your main stylesheet
           </p>
@@ -99,7 +90,7 @@ export default function IntroductionPage() {
       </div>
       <div className="meta-container">
         <div className="flex gap-1 items-center">
-          <p className="text-sm font-medium">Step 5:</p>
+          <p className="text-sm font-medium">Step 4:</p>
           <p className="text-sm font-normal">
             Wrap your app with the theme provider (for theme support)
           </p>
@@ -112,7 +103,7 @@ export default function IntroductionPage() {
       </div>
       <div className="meta-container">
         <div className="flex gap-1 items-center">
-          <p className="text-sm font-medium">Step 6:</p>
+          <p className="text-sm font-medium">Step 5:</p>
           <p className="text-sm font-normal">
             Use the components (example: Button, Card, etc.)
           </p>
