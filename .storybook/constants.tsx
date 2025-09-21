@@ -54,8 +54,7 @@ export const SAMPLE_CONTENT_CONTAINER: ReactNode = (
             <div className="meta-container">
               <h3>Accessible Components</h3>
               <p>
-                Built on Radix UI primitives with keyboard and screen reader
-                support.
+                Built on Radix UI primitives with accessibility support.
               </p>
             </div>
           </CardContent>

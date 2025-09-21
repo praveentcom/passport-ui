@@ -1,16 +1,25 @@
 import React, { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Mail } from "lucide-react";
+import { FileText, Home, Mail, Settings, Users } from "lucide-react";
 import { action } from "storybook/actions";
 
 import { SidebarContainer } from ".";
-import {
-  COMMON_CONTROLS,
-  SAMPLE_SIDEBAR_MENU_ITEMS,
-} from "../../../.storybook/constants";
+import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Button } from "../../components/button";
-import { SidebarProvider } from "../../components/sidebar";
+import {
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
+  SidebarProvider,
+} from "../../components/sidebar";
+import { PrefetchLink } from "../../components/prefetch-link";
 
 const meta: Meta<typeof SidebarContainer> = {
   title: "Layouts/SidebarContainer",
@@ -51,39 +60,18 @@ Requires SidebarProvider wrapper.`,
         type: { summary: "ReactNode" },
       },
     },
-    menuItems: {
-      control: "object",
-      description:
-        "Array of menu items to display in the sidebar (supports nested sub-items with collapsible parents)",
-      table: {
-        type: {
-          summary: "SidebarContainerMenuItem",
-        },
-        defaultValue: { summary: "[]" },
-      },
-    },
-    sidebarGroups: {
+    children: {
       control: false,
-      description: "Additional sidebar groups with custom content",
+      description: "Main sidebar content - client constructs their own sidebar structure",
       table: {
-        type: { summary: "Array<{ label?: string; content: ReactNode }>" },
-        defaultValue: { summary: "[]" },
+        type: { summary: "ReactNode" },
       },
     },
-    searchable: {
-      control: "boolean",
-      description: "Whether to show a search input for filtering menu items",
+    searchConfig: {
+      control: false,
+      description: "Search configuration object with searchText, setSearchText, and optional placeholder",
       table: {
-        type: { summary: "boolean" },
-        defaultValue: { summary: "false" },
-      },
-    },
-    searchPlaceholder: {
-      control: "text",
-      description: "Placeholder text for the search input",
-      table: {
-        type: { summary: "string" },
-        defaultValue: { summary: '"Search…"' },
+        type: { summary: "SearchConfig" },
       },
     },
     variant: {
@@ -114,15 +102,6 @@ Requires SidebarProvider wrapper.`,
       },
     },
     className: COMMON_CONTROLS.className,
-    autoInferActiveItem: {
-      control: "boolean",
-      description:
-        "Whether to automatically infer active state from current URL",
-      table: {
-        type: { summary: "boolean" },
-        defaultValue: { summary: "false" },
-      },
-    },
   },
   render: (args) => {
     const [open, setOpen] = useState(true);
@@ -145,12 +124,94 @@ Requires SidebarProvider wrapper.`,
 export default meta;
 type Story = StoryObj<typeof SidebarContainer>;
 
+function DefaultSidebar({ searchText = "" }: { searchText?: string }) {
+
+  // Sample menu data
+  const menuItems = [
+    { title: "Dashboard", icon: Home, href: "#dashboard" },
+    { title: "Users", icon: Users, subItems: ["All Users", "Active Users", "Inactive Users"] },
+    { title: "Documents", icon: FileText, subItems: ["Recent", "Shared", "Archived"] },
+    { title: "Settings", icon: Settings, subItems: ["Profile", "Preferences", "Security"] },
+  ];
+
+  // Filter menu items based on search
+  const filteredItems = menuItems.filter(item =>
+    item.title.toLowerCase().includes(searchText.toLowerCase()) ||
+    item.subItems?.some(sub => sub.toLowerCase().includes(searchText.toLowerCase()))
+  );
+
+  return (
+    <>
+      <SidebarGroup>
+        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            {filteredItems.map((item) => (
+              <SidebarMenuItem key={item.title}>
+                <SidebarMenuButton asChild={!!item.href}>
+                  {item.href ? (
+                    <PrefetchLink href={item.href}>
+                      <item.icon className="size-4" />
+                      {item.title}
+                    </PrefetchLink>
+                  ) : (
+                    <>
+                      <item.icon className="size-4" />
+                      {item.title}
+                    </>
+                  )}
+                </SidebarMenuButton>
+                {item.subItems && (
+                  <SidebarMenuSub>
+                    {item.subItems.map((subItem) => (
+                      <SidebarMenuSubItem key={subItem}>
+                        <SidebarMenuSubButton asChild>
+                          <PrefetchLink href={`#${item.title.toLowerCase()}/${subItem.toLowerCase().replace(' ', '-')}`}>
+                            {subItem}
+                          </PrefetchLink>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                    ))}
+                  </SidebarMenuSub>
+                )}
+              </SidebarMenuItem>
+            ))}
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </>
+  );
+}
+
 export const Default: Story = {
+  render: (args) => {
+    const [open, setOpen] = useState(true);
+    const [searchText, setSearchText] = useState("");
+
+    const handleOpenChange = (newOpen: boolean) => {
+      setOpen(newOpen);
+      action("sidebar-toggle")(newOpen);
+    };
+
+    return (
+      <div className="h-screen">
+        <SidebarProvider open={open} onOpenChange={handleOpenChange}>
+          <SidebarContainer
+            {...args}
+            searchConfig={{
+              searchText,
+              setSearchText,
+              placeholder: "Search navigation…",
+            }}
+          >
+            <DefaultSidebar searchText={searchText} />
+          </SidebarContainer>
+        </SidebarProvider>
+      </div>
+    );
+  },
   args: {
-    menuItems: SAMPLE_SIDEBAR_MENU_ITEMS,
     collapsible: true,
-    searchable: true,
-    searchPlaceholder: "Search navigation…",
     sidebarHeader: (
       <div className="meta-container">
         <h3>Passport UI</h3>
@@ -163,6 +224,5 @@ export const Default: Story = {
         Support
       </Button>
     ),
-    autoInferActiveItem: true,
   },
 };

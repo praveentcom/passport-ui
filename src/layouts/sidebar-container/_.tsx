@@ -1,53 +1,32 @@
 "use client";
 
-import React, { ReactNode, useEffect, useMemo, useState } from "react";
+import React, { ReactNode } from "react";
 
-import { PrefetchLink } from "../../components/prefetch-link";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarInput,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
   SidebarRail,
   SidebarTrigger,
   useSidebar,
 } from "../../components/sidebar";
 
-/**
- * Simple URL matching utility
- */
-function isUrlMatch(href: string | undefined, currentUrl: string): boolean {
-  if (!href || !currentUrl) return false;
-
-  return (
-    currentUrl === href ||
-    (currentUrl.startsWith(href) && href !== "/" && href !== "#")
-  );
+export interface SearchConfig {
+  /**
+   * Current search text value
+   */
+  searchText: string;
+  /**
+   * Callback to update search text
+   */
+  setSearchText: (text: string) => void;
+  /**
+   * Placeholder text for the search input
+   */
+  placeholder?: string;
 }
-
-export type SidebarContainerMenuItem = {
-  title: string;
-  icon?: React.ComponentType<{ className?: string }>;
-  href?: string;
-  onClick?: () => void;
-  isActive?: boolean;
-  subItems?: Array<{
-    title: string;
-    href?: string;
-    onClick?: () => void;
-    isActive?: boolean;
-  }>;
-};
 
 export interface SidebarContainerProps {
   /**
@@ -59,28 +38,13 @@ export interface SidebarContainerProps {
    */
   sidebarFooter?: ReactNode;
   /**
-   * Menu items to display in the sidebar
+   * Main content for the sidebar - client constructs their own sidebar structure
    */
-  menuItems?: SidebarContainerMenuItem[];
+  children?: ReactNode;
   /**
-   * Additional sidebar groups with custom content
+   * Search configuration - when provided, shows a search input
    */
-  sidebarGroups?: Array<{
-    label?: string;
-    content: ReactNode;
-  }>;
-  /**
-   * Whether to show a search input for filtering menu items
-   */
-  searchable?: boolean;
-  /**
-   * Placeholder text for the search input
-   */
-  searchPlaceholder?: string;
-  /**
-   * Whether to automatically infer active state from current URL
-   */
-  autoInferActiveItem?: boolean;
+  searchConfig?: SearchConfig;
   /**
    * Whether the sidebar should be open by default
    */
@@ -118,11 +82,8 @@ export interface SidebarContainerProps {
  *
  * @param sidebarHeader - Optional header content (hidden in icon mode with fixed height)
  * @param sidebarFooter - Optional footer content (hidden in icon mode, trigger remains visible)
- * @param menuItems - Array of menu items to display in the sidebar (supports nested sub-items with collapsible parents and badges)
- * @param sidebarGroups - Additional sidebar groups with custom content
- * @param searchable - Whether to show a search input for filtering menu items
- * @param searchPlaceholder - Placeholder text for the search input
- * @param autoInferActiveItem - Whether to automatically infer active state from current URL (matches exact paths and parent routes)
+ * @param children - Main sidebar content - client constructs their own sidebar structure
+ * @param searchConfig - Search configuration object with searchText, setSearchText, and optional placeholder
  * @param variant - Sidebar variant (sidebar, floating, inset)
  * @param side - Sidebar side (left, right)
  * @param collapsible - Whether the sidebar can collapse to icon-only mode (true) or remain fixed (false)
@@ -132,11 +93,8 @@ export interface SidebarContainerProps {
 export function SidebarContainer({
   sidebarHeader,
   sidebarFooter,
-  menuItems = [],
-  sidebarGroups = [],
-  searchable = false,
-  searchPlaceholder = "Search…",
-  autoInferActiveItem = false,
+  children,
+  searchConfig,
   variant = "sidebar",
   side = "left",
   collapsible = true,
@@ -145,84 +103,7 @@ export function SidebarContainer({
   SidebarContainerProps,
   "defaultOpen" | "open" | "onOpenChange"
 >): ReactNode {
-  const { state, setOpen, isMobile, setOpenMobile } = useSidebar();
-
-  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
-  const [searchQuery, setSearchQuery] = useState<string>("");
-  const [currentUrl, setCurrentUrl] = useState<string>("");
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setCurrentUrl(window.location.hash || window.location.pathname);
-    }
-  }, []);
-
-  const processedMenuItems = useMemo(() => {
-    if (!autoInferActiveItem) return menuItems;
-
-    return menuItems.map((item) => {
-      const isItemActive = item.isActive ?? isUrlMatch(item.href, currentUrl);
-
-      const processedSubItems = item.subItems?.map((subItem) => ({
-        ...subItem,
-        isActive: subItem.isActive ?? isUrlMatch(subItem.href, currentUrl),
-      }));
-
-      const hasActiveSubItem = processedSubItems?.some(
-        (subItem) => subItem.isActive
-      );
-
-      return {
-        ...item,
-        isActive: isItemActive || hasActiveSubItem,
-        subItems: processedSubItems,
-      };
-    });
-  }, [menuItems, autoInferActiveItem, currentUrl]);
-
-  const toggleExpanded = (itemTitle: string) => {
-    setExpandedItems((prev) => {
-      const newSet = new Set(prev);
-      if (newSet.has(itemTitle)) {
-        newSet.delete(itemTitle);
-      } else {
-        newSet.add(itemTitle);
-      }
-      return newSet;
-    });
-  };
-
-  const handleMenuItemClick = (item: SidebarContainerMenuItem) => {
-    if (item.subItems && item.subItems.length > 0) {
-      if (state === "collapsed") {
-        setOpen(true);
-      }
-      toggleExpanded(item.title);
-    } else {
-      if (isMobile) {
-        setOpenMobile(false);
-      }
-
-      if (item.onClick) {
-        item.onClick();
-      } else if (item.href) {
-        window.location.href = item.href;
-      }
-    }
-  };
-
-  const filteredMenuItems =
-    searchable && searchQuery
-      ? processedMenuItems.filter((item) => {
-          const matchesTitle = item.title
-            .toLowerCase()
-            .includes(searchQuery.toLowerCase());
-          const matchesSubItems = item.subItems?.some((subItem) =>
-            subItem.title.toLowerCase().includes(searchQuery.toLowerCase())
-          );
-          return matchesTitle || matchesSubItems;
-        })
-      : processedMenuItems;
+  useSidebar();
 
   return (
     <Sidebar
@@ -239,113 +120,17 @@ export function SidebarContainer({
       )}
 
       <SidebarContent>
-        {searchable && (
+        {searchConfig && (
           <SidebarInput
             type="search"
-            placeholder={searchPlaceholder}
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder={searchConfig.placeholder || "Search…"}
+            value={searchConfig.searchText}
+            onChange={(e) => searchConfig.setSearchText(e.target.value)}
             className="group-data-[state=collapsed]:hidden"
           />
         )}
 
-        {filteredMenuItems.length > 0 && (
-          <SidebarGroup>
-            <SidebarGroupContent>
-              <SidebarMenu>
-                {filteredMenuItems.map((item, index) => {
-                  const hasSubItems = item.subItems && item.subItems.length > 0;
-                  const isExpanded = expandedItems.has(item.title);
-
-                  return (
-                    <SidebarMenuItem key={`${item.title}-${index}`}>
-                      <SidebarMenuButton
-                        asChild={
-                          !hasSubItems && !!item.href && state === "expanded"
-                        }
-                        isActive={item.isActive}
-                        onClick={() => handleMenuItemClick(item)}
-                        data-state={
-                          hasSubItems
-                            ? isExpanded
-                              ? "open"
-                              : "closed"
-                            : undefined
-                        }
-                      >
-                        {!hasSubItems && item.href && state === "expanded" ? (
-                          <PrefetchLink href={item.href}>
-                            {item.icon && <item.icon className="size-3.5" />}
-                            {item.title}
-                          </PrefetchLink>
-                        ) : (
-                          <>
-                            {item.icon && <item.icon className="size-3.5" />}
-                            {item.title}
-                            {hasSubItems && (
-                              <svg
-                                className={`size-3 ml-auto transition-transform ${
-                                  isExpanded ? "rotate-90" : ""
-                                }`}
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M9 5l7 7-7 7"
-                                />
-                              </svg>
-                            )}
-                          </>
-                        )}
-                      </SidebarMenuButton>
-                      {hasSubItems && isExpanded && (
-                        <SidebarMenuSub>
-                          {item.subItems!.map((subItem, subIndex) => (
-                            <SidebarMenuSubItem
-                              key={`${subItem.title}-${subIndex}`}
-                            >
-                              <SidebarMenuSubButton
-                                asChild={!!subItem.href}
-                                isActive={subItem.isActive}
-                                onClick={() => {
-                                  if (isMobile) {
-                                    setOpenMobile(false);
-                                  }
-                                  subItem.onClick?.();
-                                }}
-                              >
-                                {subItem.href ? (
-                                  <PrefetchLink href={subItem.href}>
-                                    {subItem.title}
-                                  </PrefetchLink>
-                                ) : (
-                                  subItem.title
-                                )}
-                              </SidebarMenuSubButton>
-                            </SidebarMenuSubItem>
-                          ))}
-                        </SidebarMenuSub>
-                      )}
-                    </SidebarMenuItem>
-                  );
-                })}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
-        )}
-
-        {sidebarGroups.map((group, index) => (
-          <SidebarGroup key={`group-${index}`}>
-            {group.label && (
-              <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
-            )}
-            <SidebarGroupContent>{group.content}</SidebarGroupContent>
-          </SidebarGroup>
-        ))}
+        {children}
       </SidebarContent>
 
       <SidebarFooter>

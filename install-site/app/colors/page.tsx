@@ -1,7 +1,9 @@
+import { Metadata } from "next";
 import { Separator } from "../../../src/components/separator";
 import { StructuredData } from "../../../src/components/structured-data";
 import { ContentContainer } from "../../../src/layouts/content-container";
-import { COLORS_PAGE_DATA } from "../../constants";
+import { createPageStructuredData } from "../../constants";
+import { SITE_CONFIG } from "../../constants";
 
 /**
  * Color Palette for Passport UI
@@ -295,7 +297,14 @@ const TailwindColorCard = ({ color }: { color: string }) => (
 export default function ColorsPage() {
   return (
     <ContentContainer variant="broad">
-      <StructuredData data={COLORS_PAGE_DATA} />
+      <StructuredData data={createPageStructuredData({
+  name: "Passport UI - Color System",
+  description:
+    "Color system documentation for Passport UI component library with automatic light/dark theme support.",
+  url: SITE_CONFIG.baseUrl + "/colors/",
+  breadcrumbName: "Color System",
+  breadcrumbUrl: SITE_CONFIG.baseUrl + "/colors/"
+})} />
       <div className="section-container">
         <div className="meta-container">
           <h3>Overview</h3>
@@ -428,3 +437,9 @@ export default function ColorsPage() {
     </ContentContainer>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Passport UI - Color System",
+  description:
+    "Color system documentation for Passport UI component library with automatic light/dark theme support.",
+};

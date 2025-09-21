@@ -4,6 +4,7 @@ import { CodeBlock } from "../components/code-block";
 import { ThemeToggle } from "../composables/theme-toggle";
 import { ContentContainer } from "../layouts/content-container";
 import { PageLayout } from "../layouts/page-layout";
+import { PrefetchLink } from "../components/prefetch-link";
 
 const INSTALLATION_CODE = {
   PACKAGE_INSTALL: `npm install passport-ui`,
@@ -54,19 +55,19 @@ const IntroductionDocs = () => (
       <div className="meta-container">
         <h3>Maintained by Praveen Thirumurugan</h3>
         <div className="flex gap-2 items-center">
-          <a
+          <PrefetchLink
             href="https://github.com/praveentcom/passport-ui"
             className="text-primary hover:underline"
           >
             GitHub
-          </a>
+          </PrefetchLink>
           <span>•</span>
-          <a
+          <PrefetchLink
             href="https://www.npmjs.com/package/passport-ui"
             className="text-primary hover:underline"
           >
             npm
-          </a>
+          </PrefetchLink>
         </div>
       </div>
     }

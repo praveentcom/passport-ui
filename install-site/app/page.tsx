@@ -1,7 +1,7 @@
 import { CodeBlock } from "../../src/components/code-block";
 import { StructuredData } from "../../src/components/structured-data";
 import { ContentContainer } from "../../src/layouts/content-container";
-import { INSTALLATION_PAGE_DATA } from "../constants";
+import { createPageStructuredData, SITE_CONFIG } from "../constants";
 
 const INSTALLATION_CODE = {
   PACKAGE_INSTALL: `npm install passport-ui`,
@@ -43,7 +43,14 @@ function App() {
 export default function IntroductionPage() {
   return (
     <ContentContainer variant="broad">
-      <StructuredData data={INSTALLATION_PAGE_DATA} />
+      <StructuredData data={createPageStructuredData({
+  name: "Passport UI - Installation",
+  description:
+    "Installation guide for Passport UI - a React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
+  url: SITE_CONFIG.baseUrl + "/",
+  breadcrumbName: "Installation",
+  breadcrumbUrl: SITE_CONFIG.baseUrl + "/",
+})} />
       <div className="meta-container">
         <h3>Installation</h3>
         <p>

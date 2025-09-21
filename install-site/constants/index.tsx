@@ -2,7 +2,7 @@
 export const SITE_CONFIG = {
   baseUrl: "https://install.passportui.com",
   name: "Passport UI",
-  title: "Passport UI - Setup Guide",
+  title: "Passport UI - Docs",
   description:
     "Installation guide for Passport UI - a React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
   author: {
@@ -86,61 +86,4 @@ export const createPageStructuredData = (pageData: {
       },
     ],
   },
-});
-
-// Page-specific structured data
-export const INSTALLATION_PAGE_DATA = createPageStructuredData({
-  name: "Passport UI - Installation",
-  description:
-    "Installation guide for Passport UI - a React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
-  url: SITE_CONFIG.baseUrl + "/",
-  breadcrumbName: "Installation",
-  breadcrumbUrl: SITE_CONFIG.baseUrl + "/",
-});
-
-export const COLORS_PAGE_DATA = createPageStructuredData({
-  name: "Passport UI - Color System",
-  description:
-    "Color system documentation for Passport UI component library with automatic light/dark theme support.",
-  url: SITE_CONFIG.baseUrl + "/colors/",
-  breadcrumbName: "Color System",
-  breadcrumbUrl: SITE_CONFIG.baseUrl + "/colors/",
-  mainEntity: {
-    "@type": "Article",
-    headline: "Passport UI - Color System",
-    description:
-      "Guide to Passport UI's color system with automatic light/dark theme support.",
-    author: {
-      "@type": "Person",
-      name: SITE_CONFIG.author.name,
-      url: SITE_CONFIG.author.url,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Passport UI",
-      url: SITE_CONFIG.mainSite,
-    },
-    datePublished: "2024-01-15",
-    dateModified: "2024-01-15",
-    articleSection: "Documentation",
-    keywords: [
-      "Color System",
-      "Design Tokens",
-      "OKLCH Colors",
-      "Theme System",
-      "Dark Mode",
-      "Light Mode",
-      "Accessibility",
-      "UI Components",
-    ],
-  },
-});
-
-export const FONTS_PAGE_DATA = createPageStructuredData({
-  name: "Passport UI - Font & Typography",
-  description:
-    "Font system documentation for Passport UI component library with font weights, sizes, and families.",
-  url: SITE_CONFIG.baseUrl + "/fonts/",
-  breadcrumbName: "Font & Typography",
-  breadcrumbUrl: SITE_CONFIG.baseUrl + "/fonts/",
 });

@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Mail } from "lucide-react";
+import { FileText, Home, Mail, Settings, Users } from "lucide-react";
 
 import { PageLayout } from ".";
 import {
@@ -9,10 +9,21 @@ import {
   SAMPLE_CONTENT_CONTAINER,
   SAMPLE_FOOTER_CONTENT,
   SAMPLE_HEADER_CONTENT,
-  SAMPLE_SIDEBAR_MENU_ITEMS,
 } from "../../../.storybook/constants";
 import { Button } from "../../components/button";
+import {
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
+} from "../../components/sidebar";
 import { SidebarContainer } from "../sidebar-container";
+import { PrefetchLink } from "../../components/prefetch-link";
 
 const meta: Meta<typeof PageLayout> = {
   title: "Layouts/PageLayout",
@@ -107,31 +118,86 @@ const meta: Meta<typeof PageLayout> = {
 export default meta;
 type Story = StoryObj<typeof PageLayout>;
 
-const sampleLeftSidebar: ReactNode = (
-  <SidebarContainer
-    menuItems={SAMPLE_SIDEBAR_MENU_ITEMS}
-    side="left"
-    sidebarHeader={
-      <div className="meta-container">
-        <h3>Passport UI</h3>
-        <p>Version 1.1.0</p>
-      </div>
-    }
-    sidebarFooter={
-      <Button>
-        <Mail />
-        Support
-      </Button>
-    }
-    searchable={true}
-    searchPlaceholder="Search navigation…"
-    autoInferActiveItem={true}
-  />
-);
+function SampleLeftSidebar() {
+  const [searchText, setSearchText] = useState("");
+
+  // Filter menu items based on search
+  const filteredItems = [
+    { title: "Dashboard", icon: Home, href: "#dashboard" },
+    { title: "Users", icon: Users, subItems: ["All Users", "Active Users", "Inactive Users"] },
+    { title: "Documents", icon: FileText, subItems: ["Recent", "Shared", "Archived"] },
+    { title: "Settings", icon: Settings, subItems: ["Profile", "Preferences", "Security"] },
+  ].filter(item =>
+    item.title.toLowerCase().includes(searchText.toLowerCase()) ||
+    item.subItems?.some(sub => sub.toLowerCase().includes(searchText.toLowerCase()))
+  );
+
+  return (
+    <SidebarContainer
+      side="left"
+      sidebarHeader={
+        <div className="meta-container">
+          <h3>Passport UI</h3>
+          <p>Version 1.1.0</p>
+        </div>
+      }
+      sidebarFooter={
+        <Button>
+          <Mail />
+          Support
+        </Button>
+      }
+      searchConfig={{
+        searchText,
+        setSearchText,
+        placeholder: "Search navigation…",
+      }}
+    >
+      <SidebarGroup>
+        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            {filteredItems.map((item) => (
+              <SidebarMenuItem key={item.title}>
+                <SidebarMenuButton asChild={!!item.href}>
+                  {item.href ? (
+                    <PrefetchLink href={item.href}>
+                      <item.icon className="size-4" />
+                      {item.title}
+                    </PrefetchLink>
+                  ) : (
+                    <>
+                      <item.icon className="size-4" />
+                      {item.title}
+                    </>
+                  )}
+                </SidebarMenuButton>
+                {item.subItems && (
+                  <SidebarMenuSub>
+                    {item.subItems.map((subItem) => (
+                      <SidebarMenuSubItem key={subItem}>
+                        <SidebarMenuSubButton asChild>
+                          <PrefetchLink href={`#${item.title.toLowerCase()}/${subItem.toLowerCase().replace(' ', '-')}`}>
+                            {subItem}
+                          </PrefetchLink>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                    ))}
+                  </SidebarMenuSub>
+                )}
+              </SidebarMenuItem>
+            ))}
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContainer>
+  );
+}
+
+const sampleLeftSidebar: ReactNode = <SampleLeftSidebar />;
 
 const sampleRightSidebar: ReactNode = (
   <SidebarContainer
-    menuItems={SAMPLE_SIDEBAR_MENU_ITEMS.slice(0, 3)}
     side="right"
     sidebarHeader={
       <div className="meta-container">
@@ -145,9 +211,39 @@ const sampleRightSidebar: ReactNode = (
         Help
       </Button>
     }
-    searchable={false}
-    autoInferActiveItem={true}
-  />
+  >
+    <SidebarGroup>
+      <SidebarGroupLabel>Quick Actions</SidebarGroupLabel>
+      <SidebarGroupContent>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild>
+              <PrefetchLink href="#dashboard">
+                <Home className="size-4" />
+                Dashboard
+              </PrefetchLink>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild>
+              <PrefetchLink href="#users">
+                <Users className="size-4" />
+                Users
+              </PrefetchLink>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild>
+              <PrefetchLink href="#documents">
+                <FileText className="size-4" />
+                Documents
+              </PrefetchLink>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarGroupContent>
+    </SidebarGroup>
+  </SidebarContainer>
 );
 
 export const Default: Story = {

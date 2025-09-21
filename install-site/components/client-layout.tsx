@@ -1,40 +1,96 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { MobileSidebarTrigger } from "../../src/composables/mobile-sidebar-trigger";
 import { ThemeToggle } from "../../src/composables/theme-toggle";
+import {
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+} from "../../src/components/sidebar";
 import { PageLayout } from "../../src/layouts/page-layout";
 import { SidebarContainer } from "../../src/layouts/sidebar-container";
 import { SITE_CONFIG } from "../constants";
 import { PRIMARY_NAVIGATION_PAGES } from "../constants/components";
 
+type NavigationGroup = {
+  label: string;
+  items: Array<{
+    title: string;
+    href: string;
+    icon: React.ComponentType<{ className?: string }>;
+  }>;
+};
+
+const NAVIGATION_GROUPS: NavigationGroup[] = [
+  {
+    label: "Getting Started",
+    items: PRIMARY_NAVIGATION_PAGES,
+  },
+];
+
 const getPageTitle = (path: string) => {
-  const page = PRIMARY_NAVIGATION_PAGES.find((page) => page.href === path);
-  return page?.title;
+  for (const group of NAVIGATION_GROUPS) {
+    const page = group.items.find((page) => page.href === path);
+    if (page) return page.title;
+  }
+  return undefined;
 };
 
 export function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const [searchText, setSearchText] = useState("");
+
+  const filteredGroups = NAVIGATION_GROUPS.map(group => ({
+    ...group,
+    items: group.items.filter(item =>
+      item.title.toLowerCase().includes(searchText.toLowerCase())
+    ),
+  })).filter(group => group.items.length > 0);
 
   return (
     <PageLayout
       leftSidebar={
         <SidebarContainer
-          menuItems={PRIMARY_NAVIGATION_PAGES}
-          searchable={true}
-          searchPlaceholder="Search…"
+          searchConfig={{
+            searchText,
+            setSearchText,
+            placeholder: "Search…",
+          }}
           sidebarHeader={
             <div className="meta-container">
               <h3 className="line-clamp-1">Passport UI</h3>
               <p className="line-clamp-1">Sleek & Compact UI Library</p>
             </div>
           }
-          autoInferActiveItem
-        />
+        >
+          {filteredGroups.map((group) => (
+            <SidebarGroup key={group.label}>
+              <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {group.items.map((item) => (
+                    <SidebarMenuItem key={item.href}>
+                      <SidebarMenuButton asChild isActive={pathname === item.href}>
+                        <Link href={item.href}>
+                          <item.icon className="size-4" />
+                          {item.title}
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  ))}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          ))}
+        </SidebarContainer>
       }
       header={
         <div className="flex justify-between items-center gap-4">

@@ -8,6 +8,7 @@ import {
 
 import { cn } from "../../lib/utils";
 import { Button, buttonVariants } from "../button";
+import { PrefetchLink } from "../prefetch-link";
 
 function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
   return (
@@ -41,7 +42,7 @@ function PaginationItem({ ...props }: React.ComponentProps<"li">) {
 type PaginationLinkProps = {
   isActive?: boolean;
 } & Pick<React.ComponentProps<typeof Button>, "size"> &
-  React.ComponentProps<"a">;
+  React.ComponentProps<typeof PrefetchLink>;
 
 function PaginationLink({
   className,
@@ -50,7 +51,7 @@ function PaginationLink({
   ...props
 }: PaginationLinkProps) {
   return (
-    <a
+    <PrefetchLink
       aria-current={isActive ? "page" : undefined}
       data-slot="pagination-link"
       data-active={isActive}
@@ -62,7 +63,9 @@ function PaginationLink({
         className
       )}
       {...props}
-    />
+    >
+      {props.children}
+    </PrefetchLink>
   );
 }
 
