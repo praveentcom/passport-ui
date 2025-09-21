@@ -39,7 +39,7 @@
     "**/*.css"
   ],
   "engines": {
-    "node": ">=22.0.0"
+    "node": "^22.0.0"
   },
   "scripts": {
     "dev": "tsup --watch",
