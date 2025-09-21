@@ -71,7 +71,9 @@ Pagination provides full keyboard navigation and screen reader support with prop
     <Pagination {...args}>
       <PaginationContent>
         <PaginationItem>
-          <PaginationPrevious href="#" onClick={action("previous-clicked")} />
+          <PaginationPrevious href="#" onClick={action("previous-clicked")}>
+            <span>Previous</span>
+          </PaginationPrevious>
         </PaginationItem>
         <PaginationItem>
           <PaginationLink href="#" onClick={action("page-1-clicked")}>
@@ -92,7 +94,9 @@ Pagination provides full keyboard navigation and screen reader support with prop
           <PaginationEllipsis />
         </PaginationItem>
         <PaginationItem>
-          <PaginationNext href="#" onClick={action("next-clicked")} />
+          <PaginationNext href="#" onClick={action("next-clicked")}>
+            <span>Next</span>
+          </PaginationNext>
         </PaginationItem>
       </PaginationContent>
     </Pagination>
@@ -112,7 +116,9 @@ export const Simple: Story = {
     <Pagination {...args}>
       <PaginationContent>
         <PaginationItem>
-          <PaginationPrevious href="#" onClick={action("previous-clicked")} />
+          <PaginationPrevious href="#" onClick={action("previous-clicked")}>
+            <span>Previous</span>
+          </PaginationPrevious>
         </PaginationItem>
         <PaginationItem>
           <PaginationLink href="#" onClick={action("page-1-clicked")}>
@@ -130,7 +136,9 @@ export const Simple: Story = {
           </PaginationLink>
         </PaginationItem>
         <PaginationItem>
-          <PaginationNext href="#" onClick={action("next-clicked")} />
+          <PaginationNext href="#" onClick={action("next-clicked")}>
+            <span>Next</span>
+          </PaginationNext>
         </PaginationItem>
       </PaginationContent>
     </Pagination>

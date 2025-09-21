@@ -8,7 +8,7 @@ import { Badge } from "../src/components/badge";
 import { Button } from "../src/components/button";
 import { Card, CardContent } from "../src/components/card";
 import { ContentContainer } from "../src/layouts/content-container";
-import { SidebarContainerMenuItem } from "../src/layouts/sidebar-container";
+import { SidebarContainerProps } from "src/layouts/sidebar-container";
 
 export const COMMON_CONTROLS: Record<string, InputType> = {
   asChild: {
@@ -104,7 +104,7 @@ export const SAMPLE_CONTENT_CONTAINER: ReactNode = (
   </ContentContainer>
 );
 
-export const SAMPLE_SIDEBAR_MENU_ITEMS: SidebarContainerMenuItem[] = [
+export const SAMPLE_SIDEBAR_MENU_ITEMS = [
   {
     title: "Dashboard",
     icon: Home,
