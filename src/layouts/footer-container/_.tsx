@@ -26,7 +26,7 @@ const footerContainerVariants = cva(
   }
 );
 
-const footerContentVariants = cva("px-4 py-3.5 mx-auto", {
+const footerContentVariants = cva("px-4 py-4 mx-auto", {
   variants: {
     variant: {
       /**

@@ -8,7 +8,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Passport UI - Docs",
   description:
-    "Complete installation guide and documentation for Passport UI - a sleek and compact React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
+    "Complete documentation for Passport UI - a React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
   keywords: [
     "Passport UI",
     "React Components",
@@ -31,22 +31,22 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://install.passportui.com"),
+  metadataBase: new URL("https://passportui.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Passport UI - Docs",
     description:
-      "Complete installation guide and documentation for Passport UI - a sleek and compact React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
-    url: "https://install.passportui.com",
+      "Complete documentation for Passport UI - a React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
+    url: "https://passportui.com",
     siteName: "Passport UI",
     images: [
       {
         url: "https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png",
         width: 1200,
         height: 630,
-        alt: "Passport UI - Installation Guide",
+        alt: "Passport UI - Docs",
       },
     ],
     locale: "en_US",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Passport UI - Docs",
     description:
-      "Complete installation guide and documentation for Passport UI component library.",
+      "Complete documentation for Passport UI component library.",
     images: [
       "https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png",
     ],

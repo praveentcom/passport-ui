@@ -1,9 +1,9 @@
-name = "install-passportui"
+name = "passportui"
 compatibility_date = "2024-01-15"
 
 [env.production]
-name = "install-passportui"
+name = "passportui"
 
 [[env.production.routes]]
-pattern = "install.passportui.com/*"
+pattern = "passportui.com/*"
 zone_name = "passportui.com"

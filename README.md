@@ -9,7 +9,7 @@
 
 A React UI component library with motion primitives and theme support built with TypeScript, Tailwind CSS v4, and shadcn/ui components.
 
-View components and documentation at [passportui.com](https://passportui.com). Installation guide available at [install.passportui.com](https://install.passportui.com).
+View components and documentation at [storybook.passportui.com](https://storybook.passportui.com). Installation guide available at [passportui.com](https://passportui.com).
 
 ## Installation
 

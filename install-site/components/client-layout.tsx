@@ -65,10 +65,12 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
             placeholder: "Search…",
           }}
           sidebarHeader={
-            <div className="meta-container">
-              <h3 className="line-clamp-1">Passport UI</h3>
-              <p className="line-clamp-1">Sleek & Compact UI Library</p>
-            </div>
+            <Link href="/">
+              <div className="meta-container">
+                <h3 className="line-clamp-1">Passport UI</h3>
+                <p className="line-clamp-1">Sleek & Compact UI Library</p>
+              </div>
+            </Link>
           }
         >
           {filteredGroups.map((group) => (
@@ -103,22 +105,27 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
       }
       footer={
         <div className="meta-container">
-          <h3>Maintained by Praveen Thirumurugan</h3>
-          <div className="flex gap-2 items-center">
-            <Link
-              target="_blank"
-              href={SITE_CONFIG.repository}
-              className="text-primary hover:underline"
-            >
-              GitHub
-            </Link>
-            <span>•</span>
+          <div className="flex gap-4 items-center">
             <Link
               target="_blank"
               href={SITE_CONFIG.npm}
               className="text-primary hover:underline"
             >
-              npm
+              Storybook {"\u2197"}
+            </Link>
+            <Link
+              target="_blank"
+              href={SITE_CONFIG.repository}
+              className="text-primary hover:underline"
+            >
+              GitHub {"\u2197"}
+            </Link>
+            <Link
+              target="_blank"
+              href={SITE_CONFIG.storybook}
+              className="text-primary hover:underline"
+            >
+              npm {"\u2197"}
             </Link>
           </div>
         </div>

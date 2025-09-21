@@ -35,7 +35,7 @@ export function MobileSidebarTrigger({
   return (
     <Button
       data-slot="mobile-sidebar-trigger"
-      variant="ghost"
+      variant="outline"
       size="medium"
       className={cn("md:hidden", !isMobile && "invisible", className)}
       onClick={(event) => {
