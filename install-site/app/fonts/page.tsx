@@ -84,9 +84,7 @@ export default function FontsPage() {
           <h3>Default Typography</h3>
           <p>
             Passport UI uses &quot;Open Runde&quot; as the default typeface, a
-            modern sans-serif font optimized for digital interfaces. The font
-            stack includes comprehensive fallbacks to ensure consistent
-            rendering across all devices.
+            modern sans-serif font optimized for digital interfaces.
           </p>
         </div>
         <div className="meta-container flex">
@@ -109,12 +107,21 @@ export default function FontsPage() {
           <h3>Attribution</h3>
           <p>
             Special thanks to the creators of the fonts that inspire our
-            typography system. This includes Open Runde (a rounded variant of
-            the typeface Inter) by Rasmus Andersson ({"\u0040rsms"}).
+            typography system. Open Runde is a rounded variant of the typeface
+            Inter by Rasmus Andersson ({"\u0040rsms"}).
           </p>
         </div>
         <div className="meta-container flex">
-          <Button variant="outline" asChild>
+          <Button asChild>
+            <a
+              href="https://github.com/lauridskern"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Laurids Kern {"\u2197"}
+            </a>
+          </Button>
+          <Button asChild>
             <a
               href="https://github.com/rsms"
               target="_blank"

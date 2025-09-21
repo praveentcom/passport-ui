@@ -11,32 +11,19 @@ const meta: Meta<typeof Toggle> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A toggle button component for binary on/off states with visual feedback, built on Radix UI Toggle primitives.
+        component: `Toggle button for binary on/off states.
 
 ## Features
-- Binary pressed/unpressed state management
-- Multiple visual variants (transparent, outline)
-- Three size options (regular, medium, large)
-- Built-in accessibility with proper ARIA attributes
-- Keyboard navigation support (Space/Enter to toggle)
-- Controlled and uncontrolled modes
-- Visual feedback with hover and pressed states
-
-## Usage
-Use toggles for:
-- Binary settings and preferences
-- Toolbar button states (bold, italic, etc.)
-- Feature activation/deactivation
-- Filter and view options
-- Any on/off functionality that needs visual state
+- Binary pressed/unpressed states
+- Variants: transparent, outline
+- Sizes: regular, medium, large
+- Keyboard navigation (Space/Enter)
+- Controlled/uncontrolled modes
 
 ## Toggle vs Switch vs Checkbox
-- **Toggle**: Button-like appearance for immediate actions
-- **Switch**: Slider-like for settings that take effect immediately  
-- **Checkbox**: For form selections and multi-select scenarios
-
-## Accessibility
-Toggles provide full keyboard navigation and screen reader support with proper pressed state announcements.`,
+- **Toggle**: Button-like for immediate actions
+- **Switch**: Slider-like for settings
+- **Checkbox**: For form selections`,
       },
     },
   },

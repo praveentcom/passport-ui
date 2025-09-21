@@ -10,28 +10,17 @@ const meta: Meta<typeof Avatar> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A user avatar component with automatic fallback support, built on Radix UI Avatar primitives.
+        component: `User avatar with automatic fallback support.
+
+## Components
+- **Avatar**: Root container
+- **AvatarImage**: Primary image
+- **AvatarFallback**: Fallback content (usually initials)
 
 ## Features
-- Automatic fallback when image fails to load
-- Consistent circular styling with theme integration
-- Accessible image loading with proper alt text
-- Composable architecture with image and fallback components
-- Support for stacking and grouping patterns
-- Responsive sizing with CSS custom properties
-- Optional monochrome mode with hover-to-reveal color effect
-
-## Composition
-Avatars are composed of multiple components:
-- **Avatar**: Root container with consistent sizing and styling
-- **AvatarImage**: The primary image with loading and error handling
-- **AvatarFallback**: Fallback content (usually initials) displayed when image fails
-
-## Usage
-Use avatars to represent users, accounts, or entities throughout your interface. Always provide meaningful fallback content for accessibility and reliability.
-
-## Accessibility
-Avatars include proper image alt text and fallback content for screen readers.`,
+- Automatic fallback when image fails
+- Circular styling
+- Optional monochrome mode`,
       },
     },
   },

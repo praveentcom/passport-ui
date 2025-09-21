@@ -12,32 +12,16 @@ const meta: Meta<typeof BlurIn> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A motion primitive that creates an elegant entrance animation with blur and fade effects, powered by Framer Motion.
+        component: `Motion primitive with blur and fade entrance effects.
 
 ## Features
-- Smooth blur-to-clear transition with opacity fade
-- Configurable Y-axis movement for dynamic entry
-- Customizable timing with delay and duration controls
-- CSS blur filter animation with performance optimization
-- Staggered animation support for multiple elements
-- Zero-config defaults for immediate use
+- Blur-to-clear transition
+- Configurable Y-axis movement
+- Customizable timing and delay
+- Staggered animation support
 
-## Animation Details
-The BlurIn component animates three properties simultaneously:
-1. **Blur**: Starts with specified blur amount, animates to 0
-2. **Opacity**: Fades from 0 to 1 for smooth appearance
-3. **Y Position**: Moves from yOffset to final position
-
-## Performance
-Uses CSS transforms and filters for hardware acceleration. The animation is optimized for smooth 60fps playback across devices.
-
-## Use Cases
-Perfect for:
-- Page entrance animations
-- Staggered content reveals
-- Hero section animations
-- Card and component entrances
-- Sequential content loading effects`,
+## Animation Properties
+Animates blur (amount to 0), opacity (0 to 1), and Y position.`,
       },
     },
   },

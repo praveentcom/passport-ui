@@ -87,10 +87,7 @@ const FontsDocs = () => {
       footer={
         <div className="meta-container">
           <h3>Font System Documentation</h3>
-          <p>
-            Open Runde is the default typeface with comprehensive customization
-            options
-          </p>
+          <p>Open Runde is the default typeface with customization options</p>
         </div>
       }
       footerOptions={{
@@ -104,9 +101,7 @@ const FontsDocs = () => {
             <h3>Default Typography</h3>
             <p>
               Passport UI uses &quot;Open Runde&quot; as the default typeface, a
-              modern sans-serif font optimized for digital interfaces. The font
-              stack includes comprehensive fallbacks to ensure consistent
-              rendering across all devices.
+              modern sans-serif font optimized for digital interfaces.
             </p>
           </div>
           <div className="meta-container flex">
@@ -129,12 +124,21 @@ const FontsDocs = () => {
             <h3>Attribution</h3>
             <p>
               Special thanks to the creators of the fonts that inspire our
-              typography system. This includes Open Runde (a rounded variant of
-              the typeface Inter) by Rasmus Andersson ({"\u0040rsms"}).
+              typography system. Open Runde is a rounded variant of the typeface
+              Inter by Rasmus Andersson ({"\u0040rsms"}).
             </p>
           </div>
           <div className="meta-container flex">
-            <Button variant="outline" asChild>
+            <Button asChild>
+              <a
+                href="https://github.com/lauridskern"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Laurids Kern {"\u2197"}
+              </a>
+            </Button>
+            <Button asChild>
               <a
                 href="https://github.com/rsms"
                 target="_blank"
@@ -152,8 +156,7 @@ const FontsDocs = () => {
           <div className="meta-container">
             <h3>Font Weights</h3>
             <p>
-              Open Runde includes four carefully selected weights for optimal
-              hierarchy and readability.
+              Open Runde includes four weights for hierarchy and readability.
             </p>
           </div>
           <div className="meta-container max-w-64">
@@ -256,9 +259,8 @@ const FontsDocs = () => {
           <div className="meta-container">
             <h3>Using Custom Fonts</h3>
             <p>
-              You can easily override the default fonts in your project using
-              several approaches. Choose the method that best fits your project
-              setup.
+              You can override the default fonts in your project using CSS
+              custom properties.
             </p>
           </div>
           <div className="list-container">
@@ -290,7 +292,7 @@ const meta: Meta<typeof FontsDocs> = {
     layout: "fullscreen",
     docs: {
       description: {
-        component: `Comprehensive guide to Passport UI's typography system, featuring Open Runde as the default typeface with extensive customization options. Learn how to override fonts, implement custom font loading, and maintain consistent typography across your application.`,
+        component: `Guide to Passport UI's typography system using Open Runde as the default typeface with customization options.`,
       },
     },
   },

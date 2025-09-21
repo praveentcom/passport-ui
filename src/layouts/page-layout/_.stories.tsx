@@ -21,23 +21,13 @@ const meta: Meta<typeof PageLayout> = {
     layout: "fullscreen",
     docs: {
       description: {
-        component: `A comprehensive page layout component that orchestrates the entire application structure, providing a complete foundation for modern web applications with integrated sidebar, header, footer, and content management.
+        component: `Page layout combining sidebar, header, footer, and content with SEO optimization.
 
-## Layout Architecture
-- **Sidebar Integration**: Automatic SidebarProvider wrapping for sidebar functionality
-- **Header Management**: Optional sticky positioning with backdrop blur effects
-- **Footer Management**: Configurable footer with positioning and visual effects
-- **Content Container**: Flexible content area with variant-based width control
-- **Structured Data**: Automatic Schema.org JSON-LD injection for SEO benefits
-
-## SEO Integration
-- Automatic structured data injection for enhanced search engine visibility
-- Support for all Schema.org types (WebPage, Article, Organization, etc.)
-- Rich search result snippets and improved content understanding
-- Zero-config SEO optimization with customizable structured data object.
-
-## Accessibility
-PageLayout provides comprehensive accessibility features including proper semantic markup, ARIA labels, keyboard navigation support, and screen reader compatibility across all integrated components.`,
+## Features
+- Integrated sidebar
+- Optional sticky header/footer
+- Content container with width variants
+- Schema.org structured data injection`,
       },
     },
   },
@@ -87,10 +77,14 @@ PageLayout provides comprehensive accessibility features including proper semant
     },
     headerOptions: {
       control: { type: "object" },
-      description: "Header configuration options (variant, sticky, blurred, revealStylesOnScroll)",
+      description:
+        "Header configuration options (variant, sticky, blurred, revealStylesOnScroll)",
       table: {
         type: { summary: "HeaderOptions" },
-        defaultValue: { summary: '{ variant: "full", sticky: true, blurred: true, revealStylesOnScroll: false }' },
+        defaultValue: {
+          summary:
+            '{ variant: "full", sticky: true, blurred: true, revealStylesOnScroll: false }',
+        },
         category: "Header",
       },
     },
@@ -99,7 +93,9 @@ PageLayout provides comprehensive accessibility features including proper semant
       description: "Footer configuration options (variant, sticky, blurred)",
       table: {
         type: { summary: "FooterOptions" },
-        defaultValue: { summary: '{ variant: "full", sticky: false, blurred: false }' },
+        defaultValue: {
+          summary: '{ variant: "full", sticky: false, blurred: false }',
+        },
         category: "Footer",
       },
     },

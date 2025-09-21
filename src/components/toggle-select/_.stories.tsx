@@ -12,32 +12,20 @@ const meta: Meta<typeof ToggleSelect> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A toggle-based selection component that allows users to choose between multiple exclusive options with visual toggle states.
+        component: `Toggle-based selection for multiple exclusive options.
+
+## Components
+- **ToggleSelect**: Root container
+- **ToggleSelectItem**: Individual toggle options
 
 ## Features
-- Single selection from multiple toggle options
+- Single selection from multiple options
 - Visual feedback with pressed/unpressed states
-- Keyboard navigation with arrow keys and Enter
-- Built-in accessibility with proper ARIA attributes
-- Controlled and uncontrolled modes
-- Consistent styling with theme integration
-- Smooth state transitions
-
-## Composition
-Toggle selects are composed of multiple components:
-- **ToggleSelect**: Root container with state management
-- **ToggleSelectItem**: Individual selectable toggle options
-
-## Usage
-Use toggle selects for:
-- View mode selection (grid, list, card)
-- Filter options and sorting preferences
-- Settings with exclusive choices
-- Tab-like functionality with toggle appearance
-- Any single-choice selection that benefits from toggle styling
+- Keyboard navigation with arrows and Enter
 
 ## Toggle Select vs Radio Group
-- **ToggleSelect**: Button-like appearance for immediate visual feedback
+- **ToggleSelect**: Button-like appearance
+- **Radio Group**: Traditional radio appearance
 - **RadioGroup**: Traditional radio button styling for forms
 
 ## Accessibility

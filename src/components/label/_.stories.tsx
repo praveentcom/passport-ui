@@ -10,21 +10,11 @@ const meta: Meta<typeof Label> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A semantic label component for form elements with proper accessibility integration and consistent styling.
+        component: `Semantic label for form elements.
 
 ## Features
-- Semantic HTML label element for accessibility
-- Automatic association with form controls via htmlFor
-- Consistent typography and styling with design system
-- Screen reader compatible with proper labeling
-- Click-to-focus behavior for associated form elements
-- Integration with form validation and error states
-
-## Usage
-Always use labels with form inputs for accessibility. The label should clearly describe the purpose of the associated form control. Use the \`htmlFor\` prop to associate the label with the input's \`id\`.
-
-## Accessibility
-Labels are essential for accessibility - they provide context for screen readers and enable click-to-focus functionality for better user experience.`,
+- Association with form controls via htmlFor
+- Click-to-focus behavior`,
       },
     },
   },

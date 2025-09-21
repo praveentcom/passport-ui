@@ -10,30 +10,21 @@ const meta: Meta<typeof CodeBlock> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A syntax-highlighted code block component with optional filename header and line numbers.
+        component: `Syntax-highlighted code block with optional filename and line numbers.
 
 ## Features
-- Syntax highlighting with highlight.js for 30+ languages
-- Configurable themes (GitHub, Atom One, VS, Monokai, Dracula, Nord, Tokyo Night, Default)
-- Automatic light/dark mode support for compatible themes
-- Line numbers with smart width calculation
-- File icons in header based on filename extension
+- Syntax highlighting for 30+ languages
+- Configurable themes with light/dark mode
+- Line numbers
+- File icons in header
 
 ## Theme Setup
-For themed syntax highlighting, import the theme styles in your CSS:
 \`\`\`css
 @import 'passport-ui/hljs-themes.css';
 \`\`\`
 
-## Available Themes
-- **GitHub**: Clean, professional GitHub-style (light/dark)
-- **Atom One**: Popular Atom editor theme (light/dark)
-- **VS**: Visual Studio theme (light/dark)
-- **Monokai**: Classic dark theme with vibrant colors
-- **Dracula**: Popular purple-tinted dark theme
-- **Nord**: Minimalist Arctic-inspired theme
-- **Tokyo Night**: Modern dark theme with blue accents
-- **Default**: Fallback theme with basic colors`,
+## Themes
+GitHub, Atom One, VS, Monokai, Dracula, Nord, Tokyo Night, Default`,
       },
     },
   },

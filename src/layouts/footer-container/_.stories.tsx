@@ -10,47 +10,20 @@ const meta: Meta<typeof FooterContainer> = {
     layout: "fullscreen",
     docs: {
       description: {
-        component: `A flexible footer container component designed to complement ContentContainer inside SidebarInset. Provides consistent footer styling with advanced positioning and visual effects.
-
-## Features
-- Responsive width variants (compact, relaxed, broad, full)
-- Optional sticky positioning for persistent footer visibility
-- Backdrop blur effect for enhanced visual hierarchy
-- Seamless integration with the layout system
-- Built-in accessibility with proper semantic markup
-- Consistent spacing and styling with other layout components
-- Uses sidebar background colors for visual consistency
-
-## Sticky Positioning
-When \`sticky={true}\`, the footer remains visible at the bottom of the viewport during scroll, providing persistent access to footer information or actions.
-
-## Blur Effect
-When \`blurred={true}\`, the footer gains a backdrop blur effect with semi-transparent background, creating visual depth while maintaining content visibility above.
+        component: `Footer container with width variants, sticky positioning, and visual effects.
 
 ## Variants
-- **compact**: Maximum width of 384px (24rem) with centered alignment
-- **relaxed**: Maximum width of 768px (48rem) with centered alignment  
-- **broad**: Maximum width of 1152px (72rem) with centered alignment
-- **full**: Full width spanning the entire container
+- **compact**: Max width 384px
+- **relaxed**: Max width 768px
+- **broad**: Max width 1152px
+- **full**: Full width
+
+## Features
+- Optional sticky positioning
+- Backdrop blur effect
 
 ## Usage
-Use FooterContainer for:
-- Copyright and legal information
-- Site navigation links
-- Contact information
-- Social media links
-- Action buttons or secondary navigation
-- Any footer content that needs consistent styling
-
-## Best Practices
-- Use sticky footers sparingly to avoid overwhelming the interface
-- Combine blur effects with sticky positioning for modern glass-morphism aesthetics
-- Ensure footer content remains accessible and doesn't obstruct main content
-- Consider mobile responsiveness when using compact variants
-- Keep footer content concise and relevant
-
-## Integration
-FooterContainer is designed to work seamlessly with PageLayout and ContentContainer, providing a complete layout solution for modern web applications.`,
+Use for copyright, navigation, contact info, social links.`,
       },
     },
   },

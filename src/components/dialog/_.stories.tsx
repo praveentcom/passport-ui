@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
@@ -22,34 +20,19 @@ const meta: Meta<typeof Dialog> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A modal dialog component that interrupts the user workflow with important content and expects a response, built on Radix UI Dialog primitives.
+        component: `Modal dialog for important content that expects a response.
+
+## Components
+- **Dialog**: Root container
+- **DialogTrigger**: Opens dialog
+- **DialogContent**: Main container
+- **DialogClose**: Closes dialog
+- **DialogFooter**: Footer for actions
 
 ## Features
-- Modal and non-modal modes with backdrop overlay
-- Focus management with focus trap and restoration
-- Keyboard navigation (Escape to close, Tab cycling)
-- Portal-based rendering for proper layering
-- Customizable positioning and animations
-- Built-in accessibility with ARIA attributes
-- Scroll lock when modal is open
-
-## Composition
-Dialogs are composed of multiple components:
-- **Dialog**: Root container with state management
-- **DialogTrigger**: Element that opens the dialog
-- **DialogContent**: The main dialog container with content
-- **DialogClose**: Elements that close the dialog
-- **DialogFooter**: Footer area for actions and buttons
-
-## Usage
-Use dialogs for:
-- Confirmation actions (delete, save changes)
-- Form inputs that require focus
-- Important information that needs acknowledgment
-- Settings and configuration panels
-- Multi-step workflows
-
-Always provide clear actions and escape routes for users.`,
+- Modal/non-modal modes
+- Focus trap
+- Keyboard navigation (Escape, Tab)`,
       },
     },
   },

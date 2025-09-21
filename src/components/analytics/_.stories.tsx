@@ -9,54 +9,24 @@ const meta = {
     layout: "centered",
     docs: {
       description: {
-        component: `
-A flexible analytics component that supports multiple providers. Currently supports Google Analytics with easy extensibility for other providers.
+        component: `Analytics component supporting multiple providers.
 
 ## Features
-
-- **Multiple Provider Support**: Designed to support Google Analytics, Facebook Pixel, Mixpanel, etc.
-- **Type Safety**: Full TypeScript support with comprehensive interfaces
-- **CSP Compliance**: Supports nonce for Content Security Policy
-- **Development Friendly**: Can be disabled during development
-- **Custom Events**: Support for custom tracking events
-- **Hook Integration**: Includes \`useAnalytics\` hook for programmatic tracking
+- Multiple providers: Google Analytics, Facebook Pixel, Mixpanel
+- TypeScript support
+- CSP compliance with nonce
+- Can be disabled during development
+- \`useAnalytics\` hook
 
 ## useAnalytics Hook
-
-The \`useAnalytics\` hook provides programmatic access to analytics functionality:
-
 \`\`\`typescript
 const { trackEvent, trackPageView, setUserProperties } = useAnalytics()
-
-// Track custom events
-trackEvent('button_click', {
-  category: 'ui',
-  label: 'demo_button',
-  value: 1,
-})
-
-// Track page views
-trackPageView('/demo-page', 'Analytics Demo Page')
-
-// Set user properties
-setUserProperties({
-  user_type: 'premium_user',
-  subscription_status: 'active',
-})
+trackEvent('button_click', { category: 'ui' })
+trackPageView('/demo-page')
 \`\`\`
 
-### Hook Methods
-
-- **trackEvent(eventName, parameters?)**: Track custom events with optional parameters
-- **trackPageView(path, title?)**: Track page views with path and optional title
-- **setUserProperties(properties)**: Set user properties for enhanced tracking
-
 ## Usage
-
-The component renders analytics scripts in the document head. It's designed to be placed once in your app's root layout or _app component.
-
-**Note**: In Storybook, the analytics scripts are disabled by default to prevent tracking during development.
-        `,
+Place once in app root. Disabled by default in Storybook.`,
       },
     },
   },

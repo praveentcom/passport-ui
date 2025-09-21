@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
@@ -15,28 +13,18 @@ const meta: Meta<typeof Slider> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A slider component for selecting numeric values within a specified range, built on Radix UI Slider primitives.
+        component: `Slider for selecting numeric values within a range.
 
 ## Features
-- Single or multi-value (range) slider support
-- Keyboard navigation with arrow keys and page up/down
-- Touch and mouse interaction with smooth dragging
-- Customizable min, max, and step values
-- Horizontal and vertical orientations
-- Built-in accessibility with proper ARIA attributes
-- Visual feedback with hover and focus states
-
-## Usage
-Use sliders for:
-- Numeric input within a specific range
-- Volume, brightness, or other continuous controls
-- Price ranges or filtering by numeric values
-- Settings and configuration values
-- Any input where visual feedback of the range is helpful
+- Single or multi-value (range) support
+- Keyboard navigation with arrows and page up/down
+- Touch and mouse interaction
+- Customizable min, max, step values
+- Horizontal/vertical orientations
 
 ## Single vs Range
-- Single value: Pass an array with one number \`[50]\`
-- Range selection: Pass an array with two numbers \`[20, 80]\`
+- Single: \`[50]\`
+- Range: \`[20, 80]\`
 
 ## Accessibility
 Sliders provide full keyboard navigation and screen reader support with proper value announcements.`,

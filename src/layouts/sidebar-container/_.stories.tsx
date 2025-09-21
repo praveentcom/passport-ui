@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
@@ -21,58 +19,17 @@ const meta: Meta<typeof SidebarContainer> = {
     layout: "fullscreen",
     docs: {
       description: {
-        component: `A comprehensive sidebar navigation component built on shadcn/ui's sidebar primitives, providing flexible navigation with advanced features like search, collapsible states, and customizable content areas.
+        component: `Sidebar navigation with collapsible states, search, and nested menu items.
 
 ## Features
-- Built on robust shadcn/ui sidebar primitives with full accessibility support
-- Collapsible sidebar with icon-only mode for space efficiency
-- Integrated search functionality with real-time menu item filtering
-- Flexible header and footer content areas with responsive visibility
-- Support for nested menu items with collapsible parent groups
-- Multiple sidebar variants (sidebar, floating, inset) for different layouts
-- Left/right positioning support for flexible layout arrangements
-- Custom sidebar groups for additional content organization
-- Theme-aware styling with seamless dark/light mode transitions
-
-## Navigation System
-- **Menu Items**: Hierarchical navigation with support for nested sub-items
-- **Search Integration**: Real-time filtering of menu items with customizable placeholder
-- **Collapsible Groups**: Parent menu items can expand/collapse child items
-- **Icon Support**: Full Lucide icon integration for visual navigation cues
-- **Active States**: Automatic highlighting of current page/section
-
-## Layout Integration
-- **SidebarProvider**: Requires SidebarProvider wrapper for state management
-- **PageLayout**: Seamlessly integrates with PageLayout for complete app structure
-- **Responsive Design**: Adapts to different screen sizes with appropriate behaviors
-- **Content Areas**: Header and footer areas with intelligent visibility in collapsed mode
-
-## Customization Options
-- **Variants**: Choose from sidebar, floating, or inset display modes
-- **Positioning**: Left or right sidebar placement
-- **Collapsible States**: Control whether sidebar can collapse to icon-only mode
-- **Search Functionality**: Optional search with customizable placeholder text
-- **Custom Groups**: Additional content areas for specialized navigation elements
+- Collapsible with icon-only mode
+- Search with real-time filtering
+- Nested menu items
+- Variants: sidebar, floating, inset
+- Left/right positioning
 
 ## Usage
-Use SidebarContainer for:
-- Primary application navigation in dashboards and admin panels
-- Multi-level navigation structures with categories and subcategories
-- Applications requiring persistent navigation with search capabilities
-- Layouts that benefit from collapsible navigation for content focus
-- Any interface where organized, searchable navigation improves user experience
-
-## Best Practices
-- Organize menu items logically with clear hierarchies and groupings
-- Use meaningful icons that enhance navigation understanding
-- Keep search placeholders descriptive and context-appropriate
-- Consider mobile experience when designing collapsible behaviors
-- Ensure header/footer content remains useful in collapsed icon mode
-- Test navigation accessibility with keyboard and screen readers
-- Group related functionality using custom sidebar groups
-
-## Integration
-SidebarContainer requires SidebarProvider for state management and works seamlessly with PageLayout. When used independently, wrap both sidebar and content areas with SidebarProvider for proper functionality.`,
+Requires SidebarProvider wrapper.`,
       },
     },
   },

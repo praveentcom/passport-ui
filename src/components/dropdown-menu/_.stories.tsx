@@ -21,37 +21,22 @@ const meta: Meta<typeof DropdownMenu> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A dropdown menu component that displays a list of actions or options triggered by a button, built on Radix UI DropdownMenu primitives.
+        component: `Dropdown menu with list of actions triggered by button.
+
+## Components
+- **DropdownMenu**: Root container
+- **DropdownMenuTrigger**: Opens menu
+- **DropdownMenuContent**: Menu container
+- **DropdownMenuItem**: Menu actions
+- **DropdownMenuCheckboxItem**: Checkable items
+- **DropdownMenuGroup**: Grouped sections
+- **DropdownMenuLabel**: Section labels
+- **DropdownMenuSeparator**: Dividers
 
 ## Features
-- Full keyboard navigation with arrow keys and type-ahead
-- Multiple item types (regular, checkbox, radio, separator)
-- Grouping support with labels and separators
-- Portal-based rendering for proper layering
-- Automatic positioning with collision detection
-- Built-in accessibility with ARIA attributes and roles
-- Support for icons, shortcuts, and destructive actions
-
-## Composition
-Dropdown menus are composed of multiple components:
-- **DropdownMenu**: Root container with state management
-- **DropdownMenuTrigger**: Element that opens the menu
-- **DropdownMenuContent**: The menu container with positioning
-- **DropdownMenuItem**: Individual menu actions
-- **DropdownMenuCheckboxItem**: Checkable menu items
-- **DropdownMenuGroup**: Grouped menu sections
-- **DropdownMenuLabel**: Section labels
-- **DropdownMenuSeparator**: Visual dividers
-
-## Usage
-Use dropdown menus for:
-- Action menus (edit, delete, share)
-- User account menus
-- Context-sensitive options
-- Settings and preferences
-- Navigation shortcuts
-
-Organize items logically and use separators to group related actions.`,
+- Keyboard navigation with arrows and type-ahead
+- Item types: regular, checkbox, radio, separator
+- Icons, shortcuts, destructive actions`,
       },
     },
   },

@@ -21,8 +21,8 @@ export function PrefetchLink({
   href,
   children,
   className,
-  prefetchOnHover = true,
-  prefetchOnVisible = false,
+  prefetchOnHover = false,
+  prefetchOnVisible = true,
   prefetchDelay = 100,
   ...props
 }: PrefetchLinkProps) {

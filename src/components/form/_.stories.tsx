@@ -36,53 +36,20 @@ const meta: Meta<typeof Form> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A comprehensive form system built on React Hook Form with Zod validation for creating accessible, type-safe forms with excellent developer experience.
+        component: `Form system with React Hook Form and Zod validation.
+
+## Components
+- **Form**: Root provider
+- **FormField**: Field wrapper with validation
+- **FormItem**: Container for elements
+- **FormLabel**: Label component
+- **FormControl**: Input wrapper
+- **FormDescription**: Help text
+- **FormMessage**: Error messages
 
 ## Features
-- Type-safe form validation with Zod schema integration
-- Automatic error handling and display
-- Built-in accessibility with proper ARIA attributes
-- Consistent styling across all form elements
-- Real-time validation feedback
-- Composable form field components
-- Integration with all form input components
-- Screen reader compatible with error announcements
-
-## Composition
-Forms are composed of multiple components:
-- **Form**: Root form provider with React Hook Form context
-- **FormField**: Individual field wrapper with validation
-- **FormItem**: Container for form field elements
-- **FormLabel**: Accessible label component
-- **FormControl**: Input wrapper for proper form integration
-- **FormDescription**: Help text for form fields
-- **FormMessage**: Error and validation message display
-
-## Usage
-Use forms for:
-- User registration and authentication
-- Settings and configuration panels
-- Data entry and editing interfaces
-- Contact forms and feedback collection
-- Any structured data input requirements
-
-## Validation
-Forms support comprehensive validation with:
-- Required field validation
-- Type validation (email, URL, etc.)
-- Custom validation rules
-- Cross-field validation
-- Async validation support
-
-## Best Practices
-- Always provide clear labels and descriptions
-- Use appropriate input types for better UX
-- Provide immediate validation feedback
-- Group related fields logically
-- Include clear success and error states
-
-## Accessibility
-Forms provide full accessibility with proper labeling, error announcements, and keyboard navigation support.`,
+- Type-safe Zod validation
+- Real-time validation feedback`,
       },
     },
   },

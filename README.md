@@ -7,9 +7,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Storybook](https://img.shields.io/badge/Storybook-Docs-ff4785.svg)](https://passportui.com)
 
-A sleek, compact and customizable UI component library with motion primitives and theme support built with React, TypeScript, Tailwind CSS v4, and shadcn/ui components.
+A React UI component library with motion primitives and theme support built with TypeScript, Tailwind CSS v4, and shadcn/ui components.
 
-Access Storybook via [passportui.com](https://passportui.com) to play with the available components and composables. For help on installing Passport UI libary, checkout [install.passportui.com](https://install.passportui.com).
+View components and documentation at [passportui.com](https://passportui.com). Installation guide available at [install.passportui.com](https://install.passportui.com).
 
 ## Installation
 

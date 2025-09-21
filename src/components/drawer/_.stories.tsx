@@ -19,38 +19,20 @@ const meta: Meta<typeof Drawer> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A mobile-optimized drawer component built on Vaul that provides smooth sliding panels from any screen edge.
+        component: `Mobile-optimized drawer with sliding panels from screen edges.
+
+## Components
+- **Drawer**: Root container
+- **DrawerTrigger**: Opens drawer
+- **DrawerContent**: Main container with slide animation
+- **DrawerClose**: Closes drawer
+- **DrawerFooter**: Footer for actions
 
 ## Features
-- Smooth slide animations from all four directions
-- Touch-friendly drag interactions for mobile
-- Modal and non-modal modes
-- Automatic snap points and gesture handling
-- Built-in accessibility with proper ARIA attributes
-- Focus management and keyboard navigation
-- Portal-based rendering for proper layering
-
-## Composition
-Drawers are composed of multiple components:
-- **Drawer**: Root container with state and gesture management
-- **DrawerTrigger**: Element that opens the drawer
-- **DrawerContent**: The main drawer container with slide animation
-- **DrawerClose**: Elements that close the drawer
-- **DrawerFooter**: Footer area for actions
-
-## Usage
-Use drawers for:
-- Mobile navigation menus
-- Bottom action sheets
-- Confirmation dialogs on mobile
-- Touch-friendly form panels
-- Mobile-optimized overlays
-
-## Mobile Optimization
-Drawers are specifically designed for mobile interfaces with touch gestures, drag-to-close, and appropriate sizing for mobile screens.
-
-## Accessibility
-Drawers provide full keyboard navigation and screen reader support with proper focus management.`,
+- Slide animations from four directions
+- Touch-friendly drag interactions
+- Modal/non-modal modes
+- Snap points and gesture handling`,
       },
     },
   },

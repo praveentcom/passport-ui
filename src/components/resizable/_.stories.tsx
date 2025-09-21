@@ -11,39 +11,18 @@ const meta: Meta<typeof ResizablePanelGroup> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A flexible resizable panel system that allows users to dynamically adjust panel sizes with intuitive drag handles.
+        component: `Resizable panel system with drag handles.
+
+## Components
+- **ResizablePanelGroup**: Root container
+- **ResizablePanel**: Individual panels
+- **ResizableHandle**: Drag handles between panels
 
 ## Features
-- Smooth drag-and-drop resizing with visual feedback
-- Horizontal and vertical panel arrangements
-- Configurable minimum and maximum panel sizes
-- Persistent panel sizes across sessions
-- Touch-friendly resizing for mobile devices
-- Keyboard navigation support
-- Built-in accessibility with proper ARIA attributes
-
-## Composition
-Resizable panels are composed of multiple components:
-- **ResizablePanelGroup**: Root container that manages panel layout and resizing
-- **ResizablePanel**: Individual resizable panel containers
-- **ResizableHandle**: Interactive drag handles between panels
-
-## Usage
-Use resizable panels for:
-- Split-pane layouts and editors
-- Dashboard layouts with adjustable widgets
-- File explorers and code editors
-- Sidebar layouts with user-controlled widths
-- Any interface where users benefit from customizable space allocation
-
-## Best Practices
-- Set reasonable minimum sizes to prevent unusable panels
-- Provide visual feedback during resize operations
-- Consider saving panel sizes to user preferences
-- Ensure touch targets are adequately sized for mobile
-
-## Accessibility
-Resizable panels provide keyboard navigation and screen reader support with proper panel and handle announcements.`,
+- Drag-and-drop resizing
+- Horizontal/vertical arrangements
+- Configurable min/max sizes
+- Touch-friendly for mobile`,
       },
     },
   },

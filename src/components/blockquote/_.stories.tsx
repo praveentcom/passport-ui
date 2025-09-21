@@ -10,29 +10,13 @@ const meta: Meta<typeof Blockquote> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A semantic blockquote component for displaying quoted content with proper visual hierarchy and typography.
+        component: `Semantic blockquote for quoted content.
 
 ## Features
-- Semantic HTML blockquote element for accessibility
-- Consistent typography and visual styling
-- Support for nested blockquotes with adjusted styling
-- Proper quote attribution handling
-- Integration with theme typography system
-- Screen reader compatible with quote semantics
-
-## Usage
-Use blockquotes for:
-- Customer testimonials and reviews
-- Quoted text from articles or sources
-- Pull quotes and highlighted content
-- Citation and reference content
-- Any content that represents a quotation
-
-## Nesting
-Blockquotes support nesting for complex quote structures, with automatic styling adjustments for visual hierarchy.
-
-## Accessibility
-Blockquotes use semantic HTML and provide proper context for screen readers to announce quoted content.`,
+- Semantic HTML blockquote element
+- Consistent typography
+- Nested blockquotes support
+- Quote attribution handling`,
       },
     },
   },

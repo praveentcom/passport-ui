@@ -12,18 +12,11 @@ const meta: Meta<typeof Input> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A flexible and accessible input component for forms and user input with comprehensive styling and validation support.
+        component: `Input component for forms and user input.
 
 ## Features
-- Multiple input types (text, email, password, number, tel, url, search)
-- Built-in accessibility with proper ARIA attributes
-- Focus management and keyboard navigation
-- Consistent styling with theme integration
-- Form validation support with error states
-- Responsive design with proper mobile adaptations
-
-## Usage
-Use inputs for collecting user data in forms. Always pair with proper labels for accessibility and consider validation states for better user experience.`,
+- Input types: text, email, password, number, tel, url, search
+- Form validation with error states`,
       },
     },
   },

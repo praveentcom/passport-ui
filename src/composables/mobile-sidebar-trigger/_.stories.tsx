@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
 import { SettingsIcon } from "lucide-react";
 
 import { SidebarProvider } from "../../components/sidebar";

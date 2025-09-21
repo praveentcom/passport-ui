@@ -60,7 +60,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "deploy-storybook": "npm run build-storybook && cp cloudflare/_headers cloudflare/_redirects storybook-static/",
-    "install-site:dev": "cd install-site && npm run dev",
+    "install-site:dev": "cd install-site && NODE_ENV=development npm run dev",
     "install-site:build": "cd install-site && npm run build",
     "install-site:install": "cd install-site && npm install",
     "install-site:deploy": "npm run install-site:build && cd install-site && cp _headers _redirects out/ && wrangler pages deploy out --project-name install-passportui"

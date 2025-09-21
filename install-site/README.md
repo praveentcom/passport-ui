@@ -1,10 +1,10 @@
-# Install Passport UI Site
+# Passport UI - Installation Site
 
 This is the installation documentation site for Passport UI, built with Next.js and using the actual Passport UI components as a test bed.
 
 ## Development
 
-From the root of the passport-ui repo:
+From the root of the passport-ui repository:
 
 ```bash
 # Install dependencies

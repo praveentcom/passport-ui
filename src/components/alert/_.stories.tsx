@@ -16,17 +16,11 @@ const meta: Meta<typeof Alert> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A flexible alert component for displaying important messages to users with various severity levels.
+        component: `Alert for important messages.
 
 ## Features
-- Multiple semantic variants (info, warning, success, destructive)
-- Optional icon support with automatic positioning
-- Built-in accessibility with proper ARIA roles
-- Consistent styling with theme integration
-- Responsive design with proper text scaling
-
-## Usage
-Use alerts to communicate important information that requires user attention. Choose the appropriate variant based on the message type and severity.`,
+- Variants: info, warning, success, destructive
+- Optional icon support`,
       },
     },
   },

@@ -19,43 +19,21 @@ const meta: Meta<typeof Table> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A semantic table component for displaying structured tabular data with proper accessibility and responsive design.
+        component: `Semantic table for structured tabular data.
+
+## Components
+- **Table**: Root container
+- **TableCaption**: Table caption
+- **TableHeader**: Header rows
+- **TableBody**: Data rows
+- **TableFooter**: Footer rows
+- **TableRow**: Individual rows
+- **TableHead**: Header cells
+- **TableCell**: Data cells
 
 ## Features
-- Semantic HTML table structure for accessibility
-- Responsive design with horizontal scrolling on mobile
-- Consistent styling with theme integration
-- Support for headers, body, footer, and captions
-- Proper table cell alignment and spacing
-- Screen reader compatible with table semantics
-
-## Composition
-Tables are composed of multiple semantic components:
-- **Table**: Root table container with styling
-- **TableCaption**: Descriptive caption for the table
-- **TableHeader**: Container for table header rows
-- **TableBody**: Container for table data rows
-- **TableFooter**: Container for table footer/summary rows
-- **TableRow**: Individual table rows
-- **TableHead**: Header cell components
-- **TableCell**: Data cell components
-
-## Usage
-Use tables for:
-- Displaying structured data in rows and columns
-- Financial data, invoices, and reports
-- User lists and data management interfaces
-- Comparison data and specifications
-- Any tabular information that benefits from column organization
-
-## Best Practices
-- Always provide meaningful table captions
-- Use proper header cells for column identification
-- Consider responsive behavior for mobile devices
-- Align numeric data appropriately (usually right-aligned)
-
-## Accessibility
-Tables provide full semantic structure for screen readers with proper table navigation and cell relationships.`,
+- Responsive with horizontal scrolling
+- Theme integration`,
       },
     },
   },

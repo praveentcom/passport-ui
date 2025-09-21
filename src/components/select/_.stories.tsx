@@ -19,25 +19,20 @@ const meta: Meta<typeof Select> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A dropdown selection component that displays a list of options for users to choose from, built on Radix UI Select primitives.
+        component: `Dropdown selection with list of options.
+
+## Components
+- **Select**: Root container
+- **SelectTrigger**: Opens dropdown
+- **SelectValue**: Displays selected value
+- **SelectContent**: Dropdown container
+- **SelectItem**: Individual options
+- **SelectGroup/SelectLabel**: Labeled groups
 
 ## Features
-- Full keyboard navigation with arrow keys and type-ahead search
-- Controlled and uncontrolled modes for flexible state management
-- Grouping support with labeled sections
-- Built-in accessibility with ARIA attributes and screen reader support
-- Smooth animations and visual feedback
-- Consistent styling with theme integration
-- Portal-based dropdown positioning for proper layering
-
-## Composition
-Select components work together:
-- **Select**: Root container with state management
-- **SelectTrigger**: Button that opens the dropdown
-- **SelectValue**: Displays the selected value with placeholder support
-- **SelectContent**: Dropdown container with positioning
-- **SelectItem**: Individual selectable options
-- **SelectGroup/SelectLabel**: For organizing options into labeled groups`,
+- Keyboard navigation with arrows and type-ahead
+- Controlled/uncontrolled modes
+- Grouping support`,
       },
     },
   },

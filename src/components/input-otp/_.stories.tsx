@@ -12,41 +12,19 @@ const meta: Meta<typeof InputOTP> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A specialized one-time password (OTP) input component optimized for authentication flows and verification codes, built on input-otp.
+        component: `One-time password (OTP) input for authentication.
+
+## Components
+- **InputOTP**: Root container
+- **InputOTPGroup**: Grouped slots
+- **InputOTPSlot**: Individual slots
+- **InputOTPSeparator**: Visual separators
 
 ## Features
-- Individual character slots with automatic focus progression
-- Paste support with intelligent text distribution
-- Customizable slot count and grouping
-- Built-in validation and completion detection
-- Password manager compatibility strategies
-- Keyboard navigation between slots
-- Built-in accessibility with proper ARIA attributes
-- Mobile-optimized input behavior
-
-## Composition
-OTP inputs are composed of multiple components:
-- **InputOTP**: Root container with state management
-- **InputOTPGroup**: Grouped slots for visual organization
-- **InputOTPSlot**: Individual character input slots
-- **InputOTPSeparator**: Visual separators between groups
-
-## Usage
-Use OTP inputs for:
-- Two-factor authentication codes
-- Email and SMS verification
-- Account activation codes
-- Password reset verification
-- Any multi-digit security codes
-
-## Best Practices
-- Group digits logically (e.g., 3-3 for 6-digit codes)
-- Provide clear instructions about code source
-- Auto-submit when complete for better UX
-- Support paste for user convenience
-
-## Accessibility
-OTP inputs provide proper keyboard navigation and screen reader support with individual slot announcements.`,
+- Individual character slots
+- Paste support
+- Customizable slot count
+- Validation and completion detection`,
       },
     },
   },

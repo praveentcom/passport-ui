@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
@@ -50,41 +48,16 @@ const meta: Meta<typeof Combobox> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A searchable combobox component that combines input and dropdown functionality with autocomplete and filtering capabilities.
+        component: `Searchable combobox combining input and dropdown with autocomplete.
 
 ## Features
-- Real-time search and filtering of options
-- Keyboard navigation with arrow keys and Enter selection
-- Type-ahead search with instant filtering
-- Customizable placeholder and empty state messages
-- Built-in accessibility with proper ARIA attributes
-- Portal-based dropdown for proper layering
-- Smooth animations and visual feedback
-- Support for large option lists with virtual scrolling
-
-## Usage
-Use comboboxes for:
-- Searchable dropdowns with many options
-- Autocomplete inputs for forms
-- Command palettes and quick actions
-- Location, category, or tag selection
-- Any selection that benefits from search filtering
+- Real-time search and filtering
+- Keyboard navigation with arrows and Enter
+- Type-ahead search
+- Virtual scrolling for large lists
 
 ## Interaction
-- Click to open dropdown
-- Type to filter options
-- Arrow keys to navigate
-- Enter to select
-- Escape to close
-
-## Best Practices
-- Provide clear placeholder text
-- Use descriptive labels for options
-- Consider grouping for large option sets
-- Provide helpful empty state messages
-
-## Accessibility
-Comboboxes provide full keyboard navigation, screen reader support, and proper option announcements for accessible selection.`,
+Click to open, type to filter, arrows to navigate, Enter to select, Escape to close.`,
       },
     },
   },

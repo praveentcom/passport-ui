@@ -23,7 +23,7 @@ export type ThemeButtonProps = {
 export function ThemeButton({
   minimal = false,
   align = "end",
-  variant = "ghost",
+  variant = "outline",
   size = "regular",
 }: ThemeButtonProps) {
   const { theme, setTheme } = useTheme();

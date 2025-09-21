@@ -11,36 +11,20 @@ const meta: Meta<typeof ThemeButton> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A streamlined theme switching button component with dropdown menu for theme selection, built with next-themes integration.
-
-## Features
-- Quick theme switching with dropdown menu
-- Three theme options: light, dark, and system
-- Minimal and full display modes
-- Multiple button variants and styling options
-- Built-in accessibility with proper ARIA labels
-- Automatic system theme detection
-- Persistent theme preferences
-- Smooth transitions between themes
+        component: `Theme switching button with dropdown menu.
 
 ## Variants
-- **Minimal**: Icon-only button for compact layouts
-- **Full**: Button with text labels for clarity
+- **Minimal**: Icon-only
+- **Full**: With text labels
 
-## Usage
-Use theme buttons for:
-- Header navigation and toolbars
-- Settings panels and user preferences
-- Quick access theme switching
-- Any location where users need theme control
-
-The component automatically syncs with system preferences when "system" is selected.
+## Features
+- Theme switching with dropdown
+- Three options: light, dark, system
+- Multiple button variants
+- System theme detection
 
 ## Dependencies
-Requires \`next-themes\` ThemeProvider to be configured in your app root with \`attribute="class"\` and \`enableSystem\` props.
-
-## Accessibility
-Theme buttons provide full keyboard navigation and screen reader support with clear theme option announcements.`,
+Requires \`next-themes\` ThemeProvider with \`attribute="class"\` and \`enableSystem\`.`,
       },
     },
   },

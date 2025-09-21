@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
   name: "Passport UI",
   title: "Passport UI - Setup Guide",
   description:
-    "Complete installation guide and documentation for Passport UI - a sleek and compact React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
+    "Installation guide for Passport UI - a React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
   author: {
     name: "Praveen Thirumurugan",
     url: "https://github.com/praveentcom",
@@ -24,7 +24,7 @@ export const BASE_SOFTWARE_APPLICATION = {
   "@type": "SoftwareApplication",
   name: "Passport UI",
   description:
-    "Sleek and compact UI component library built with Tailwind CSS, Radix UI, and Framer Motion. Comprehensive collection of accessible components for Next.js applications.",
+    "React UI component library built with Tailwind CSS, Radix UI, and Framer Motion. Collection of accessible components for Next.js applications.",
   url: SITE_CONFIG.mainSite,
   author: {
     "@type": "Person",
@@ -51,8 +51,7 @@ export const BASE_SOFTWARE_APPLICATION = {
   downloadUrl: SITE_CONFIG.npm,
   codeRepository: SITE_CONFIG.repository,
   softwareVersion: "latest",
-  releaseNotes:
-    "Sleek and compact React UI component library with comprehensive accessibility support",
+  releaseNotes: "React UI component library with accessibility support",
 } as const;
 
 // Structured data generators
@@ -93,7 +92,7 @@ export const createPageStructuredData = (pageData: {
 export const INSTALLATION_PAGE_DATA = createPageStructuredData({
   name: "Passport UI - Installation",
   description:
-    "Complete installation guide for Passport UI - a sleek and compact React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
+    "Installation guide for Passport UI - a React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
   url: SITE_CONFIG.baseUrl + "/",
   breadcrumbName: "Installation",
   breadcrumbUrl: SITE_CONFIG.baseUrl + "/",
@@ -102,7 +101,7 @@ export const INSTALLATION_PAGE_DATA = createPageStructuredData({
 export const COLORS_PAGE_DATA = createPageStructuredData({
   name: "Passport UI - Color System",
   description:
-    "Complete color system documentation for Passport UI component library. Explore design colors, semantic colors, component colors, and chart colors with automatic light/dark theme support.",
+    "Color system documentation for Passport UI component library with automatic light/dark theme support.",
   url: SITE_CONFIG.baseUrl + "/colors/",
   breadcrumbName: "Color System",
   breadcrumbUrl: SITE_CONFIG.baseUrl + "/colors/",
@@ -110,7 +109,7 @@ export const COLORS_PAGE_DATA = createPageStructuredData({
     "@type": "Article",
     headline: "Passport UI - Color System",
     description:
-      "Comprehensive guide to Passport UI's color system built on OKLCH color space for better color management and automatic light/dark theme support.",
+      "Guide to Passport UI's color system with automatic light/dark theme support.",
     author: {
       "@type": "Person",
       name: SITE_CONFIG.author.name,
@@ -140,7 +139,7 @@ export const COLORS_PAGE_DATA = createPageStructuredData({
 export const FONTS_PAGE_DATA = createPageStructuredData({
   name: "Passport UI - Font & Typography",
   description:
-    "Complete font system documentation for Passport UI component library. Explore font weights, font sizes, and font families with automatic light/dark theme support.",
+    "Font system documentation for Passport UI component library with font weights, sizes, and families.",
   url: SITE_CONFIG.baseUrl + "/fonts/",
   breadcrumbName: "Font & Typography",
   breadcrumbUrl: SITE_CONFIG.baseUrl + "/fonts/",

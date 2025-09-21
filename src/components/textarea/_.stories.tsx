@@ -10,19 +10,12 @@ const meta: Meta<typeof Textarea> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A flexible textarea component for multi-line text input with consistent styling and accessibility features.
+        component: `Textarea for multi-line text input.
 
 ## Features
-- Multi-line text input with resizable height
-- Consistent styling with theme integration
-- Built-in accessibility with proper ARIA attributes
-- Focus management and keyboard navigation
-- Form integration with validation support
-- Responsive design with proper mobile adaptations
+- Resizable height
 - Configurable rows and columns
-
-## Usage
-Use textareas for longer text input such as comments, descriptions, messages, or any multi-line content. Always pair with descriptive labels for accessibility.`,
+- Form integration`,
       },
     },
   },

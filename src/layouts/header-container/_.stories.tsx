@@ -28,49 +28,14 @@ const meta: Meta<typeof HeaderContainer> = {
     layout: "fullscreen",
     docs: {
       description: {
-        component: `A flexible header container component designed to complement ContentContainer inside SidebarInset. Provides consistent header styling with advanced positioning and visual effects.
+        component: `Header container with positioning and visual effects.
 
 ## Features
-- Responsive width variants (compact, relaxed, broad, full)
-- Optional sticky positioning for persistent header visibility
-- Backdrop blur effect for enhanced visual hierarchy
-- Show on scroll option for progressive header appearance
-- Seamless integration with the layout system
-- Built-in accessibility with proper semantic markup
-- Consistent spacing and styling with other layout components
-- Uses sidebar background colors for visual consistency
-
-## Sticky Positioning
-When \`sticky={true}\`, the header remains visible at the top of the viewport during scroll, providing persistent navigation or key information access.
-
-## Blur Effect
-When \`blurred={true}\`, the header gains a backdrop blur effect with semi-transparent background, creating visual depth while maintaining content visibility underneath.
-
-## Show on Scroll
-When \`revealStylesOnScroll={true}\`, the header starts with a transparent background and no border. As the user scrolls, the header smoothly transitions to show its background color and border, creating a clean and modern effect. This is particularly effective when combined with \`sticky={true}\` and \`blurred={true}\` for a glass-morphism appearance that reveals itself on scroll.
-
-## Variants
-- **compact**: Maximum width of 384px (24rem) with centered alignment
-- **relaxed**: Maximum width of 768px (48rem) with centered alignment  
-- **broad**: Maximum width of 1152px (72rem) with centered alignment
-- **full**: Full width spanning the entire container
-
-## Usage
-Use HeaderContainer for:
-- Page titles and navigation
-- Action bars and toolbar areas
-- Breadcrumb navigation
-- Search interfaces
-- Any header content that needs consistent styling
-
-## Best Practices
-- Use sticky headers sparingly to avoid overwhelming the interface
-- Combine blur effects with sticky positioning for modern glass-morphism aesthetics
-- Ensure header content remains accessible and doesn't obstruct main content
-- Consider mobile responsiveness when using compact variants
-
-## Integration
-HeaderContainer is designed to work seamlessly with PageLayout and ContentContainer, providing a complete layout solution for modern web applications.`,
+- Width variants: compact, relaxed, broad, full
+- Optional sticky positioning
+- Backdrop blur effect
+- Show on scroll option
+- Sidebar background colors`,
       },
     },
   },

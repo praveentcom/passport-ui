@@ -24,41 +24,26 @@ const meta: Meta<typeof ContextMenu> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A context menu component that displays contextual actions triggered by right-clicking, built on Radix UI ContextMenu primitives.
+        component: `Context menu with contextual actions triggered by right-click.
+
+## Components
+- **ContextMenu**: Root container
+- **ContextMenuTrigger**: Triggers context menu
+- **ContextMenuContent**: Menu container
+- **ContextMenuItem**: Menu actions
+- **ContextMenuCheckboxItem**: Checkable items
+- **ContextMenuRadioGroup/RadioItem**: Radio groups
+- **ContextMenuSub**: Nested submenus
+- **ContextMenuSeparator**: Dividers
+- **ContextMenuLabel**: Section labels
+- **ContextMenuShortcut**: Keyboard shortcuts
 
 ## Features
-- Right-click triggered contextual menus
-- Full keyboard navigation with arrow keys
-- Nested submenus with hover and keyboard support
-- Multiple item types: regular, checkbox, radio, separator
-- Keyboard shortcuts display and handling
-- Built-in accessibility with proper ARIA attributes
-- Portal-based rendering for proper layering
-- Automatic positioning with collision detection
-
-## Composition
-Context menus are composed of multiple components:
-- **ContextMenu**: Root container with trigger detection
-- **ContextMenuTrigger**: Element that triggers the context menu
-- **ContextMenuContent**: The menu container with positioning
-- **ContextMenuItem**: Individual menu actions
-- **ContextMenuCheckboxItem**: Checkable menu items
-- **ContextMenuRadioGroup/RadioItem**: Radio button groups
-- **ContextMenuSub**: Nested submenu containers
-- **ContextMenuSeparator**: Visual dividers
-- **ContextMenuLabel**: Section labels
-- **ContextMenuShortcut**: Keyboard shortcut display
-
-## Usage
-Use context menus for:
-- Right-click actions on elements
-- Contextual operations and shortcuts
-- File and item management actions
-- Quick access to relevant commands
-- Alternative to dropdown menus for specific contexts
-
-## Accessibility
-Context menus provide full keyboard navigation and screen reader support with proper menu semantics.`,
+- Right-click triggered
+- Keyboard navigation with arrows
+- Nested submenus
+- Item types: regular, checkbox, radio, separator
+- Keyboard shortcuts display`,
       },
     },
   },
@@ -128,7 +113,7 @@ export const Advanced: Story = {
     <div className="flex w-sm h-24 items-center justify-center">
       <ContextMenu {...args}>
         <ContextMenuTrigger className="flex w-full h-full items-center justify-center rounded-sm border border-dashed text-sm">
-          Right click for advanced menu
+          Right click for menu
         </ContextMenuTrigger>
         <ContextMenuContent className="w-56">
           <ContextMenuItem inset>

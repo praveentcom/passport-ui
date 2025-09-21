@@ -6,7 +6,7 @@ import { ClientLayout } from "../components/client-layout";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Install Passport UI - Setup Guide & Documentation",
+  title: "Passport UI - Setup Guide & Documentation",
   description:
     "Complete installation guide and documentation for Passport UI - a sleek and compact React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
   keywords: [
@@ -36,11 +36,11 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Install Passport UI - Setup Guide & Documentation",
+    title: "Passport UI - Setup Guide & Documentation",
     description:
       "Complete installation guide and documentation for Passport UI - a sleek and compact React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
     url: "https://install.passportui.com",
-    siteName: "Install Passport UI",
+    siteName: "Passport UI",
     images: [
       {
         url: "https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Install Passport UI - Setup Guide & Documentation",
+    title: "Passport UI - Setup Guide & Documentation",
     description:
       "Complete installation guide and documentation for Passport UI component library.",
     images: [

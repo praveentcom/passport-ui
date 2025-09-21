@@ -685,7 +685,7 @@ function SidebarMenuSubButton({
       data-sidebar="menu-sub-button"
       data-active={isActive}
       className={cn(
-        "text-muted-foreground ring-ring hover:bg-border hover:text-foreground active:bg-border/75 active:hover:bg-border active:text-foreground [&>svg]:text-muted-foreground flex h-7 min-w-0 -translate-x-px items-center gap-y-1.5 gap-x-2 overflow-hidden rounded-sm px-2 outline-hidden focus-visible:ring-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0",
+        "text-muted-foreground ring-ring hover:bg-border hover:text-foreground active:bg-border/75 active:hover:bg-border active:text-foreground [&>svg]:text-muted-foreground flex min-w-0 -translate-x-px items-center gap-y-1.5 gap-x-2 overflow-hidden rounded-sm px-2 outline-hidden focus-visible:ring-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0",
         "data-[active=true]:bg-border/75 data-[active=true]:hover:bg-border data-[active=true]:text-foreground",
         size === "sm" && "text-xs",
         size === "md" && "text-sm",

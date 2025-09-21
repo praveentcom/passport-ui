@@ -11,31 +11,15 @@ const meta: Meta<typeof Separator> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A visual separator component for dividing content sections, built on Radix UI Separator primitives.
+        component: `Visual separator for dividing content sections.
 
 ## Features
-- Horizontal and vertical orientation support
-- Semantic separation with proper ARIA attributes
-- Decorative and non-decorative modes for accessibility
-- Consistent styling with theme integration
-- Flexible positioning and sizing
-- Screen reader compatibility with role management
-
-## Usage
-Use separators to:
-- Visually divide content sections
-- Create clear boundaries between related groups
-- Improve content organization and readability
-- Provide semantic structure for assistive technologies
-
-## Accessibility
-- **Decorative**: Purely visual, hidden from screen readers (default)
-- **Non-decorative**: Semantic separator announced to screen readers
-- Choose based on whether the separation has meaning beyond visual presentation
+- Horizontal/vertical orientation
+- Decorative/non-decorative modes
 
 ## Orientation
-- **Horizontal**: Divides content vertically (most common)
-- **Vertical**: Divides content horizontally (for side-by-side layouts)`,
+- **Horizontal**: Divides content vertically
+- **Vertical**: Divides content horizontally`,
       },
     },
   },

@@ -10,18 +10,13 @@ const meta: Meta<typeof Switch> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A toggle switch component for binary on/off states with semantic color variants and smooth animations.
+        component: `Toggle switch for binary on/off states.
 
 ## Features
-- Semantic color variants (default, success, warning, destructive, info)
-- Smooth toggle animations with visual feedback
-- Built-in accessibility with proper ARIA attributes
-- Keyboard navigation support (Space to toggle)
-- Form integration with controlled and uncontrolled modes
-- Consistent styling with theme integration
-
-## Usage
-Use switches for settings, preferences, or any binary toggle functionality. Switches are ideal for immediate state changes that don't require form submission, unlike checkboxes which are better for form selections.`,
+- Variants: default, success, warning, destructive, info
+- Toggle animations
+- Keyboard navigation (Space to toggle)
+- Form integration`,
       },
     },
   },

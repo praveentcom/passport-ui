@@ -19,19 +19,9 @@ const meta: Meta<typeof Pagination> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A comprehensive pagination component for navigating through multiple pages of content with accessible controls and flexible layouts.
+        component: `A pagination component for navigating through multiple pages of content.
 
-## Features
-- Previous and next navigation with disabled states
-- Numbered page links with active state indication
-- Ellipsis for truncated page ranges
-- Built-in accessibility with proper ARIA labels
-- Keyboard navigation support
-- Responsive design with mobile adaptations
-- Consistent styling with theme integration
-
-## Composition
-Pagination components work together:
+## Components
 - **Pagination**: Root navigation container
 - **PaginationContent**: Content wrapper for pagination items
 - **PaginationItem**: Individual pagination elements
@@ -40,13 +30,15 @@ Pagination components work together:
 - **PaginationNext**: Next page navigation
 - **PaginationEllipsis**: Visual indicator for truncated pages
 
+## Features
+- Previous and next navigation with disabled states
+- Numbered page links with active state indication
+- Ellipsis for truncated page ranges
+- Built-in accessibility with ARIA labels
+- Keyboard navigation support
+
 ## Usage
-Use pagination for:
-- Large data sets and search results
-- Blog posts and article lists
-- Product catalogs and listings
-- Any content split across multiple pages
-- Table data with row limits
+Use for large data sets, search results, blog posts, product catalogs, and content split across multiple pages.
 
 ## Best Practices
 - Clearly indicate the current page

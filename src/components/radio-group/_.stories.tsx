@@ -12,28 +12,18 @@ const meta: Meta<typeof RadioGroup> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A radio group component for single-selection from multiple options, built on Radix UI RadioGroup primitives.
+        component: `Radio group for single-selection from multiple options.
+
+## Components
+- **RadioGroup**: Root container
+- **RadioGroupItem**: Individual radio options
+- **Label**: Associated labels
 
 ## Features
-- Single selection from multiple mutually exclusive options
-- Full keyboard navigation with arrow keys
-- Built-in accessibility with proper ARIA attributes and roles
-- Controlled and uncontrolled modes for flexible state management
+- Single selection from mutually exclusive options
+- Keyboard navigation with arrow keys
 - Individual item disable support
-- Form integration with proper value handling
-- Screen reader compatible with group labeling
-
-## Composition
-Radio groups are composed of multiple components:
-- **RadioGroup**: Root container with state management and keyboard navigation
-- **RadioGroupItem**: Individual radio button options
-- **Label**: Associated labels for each option (recommended for accessibility)
-
-## Usage
-Use radio groups when users need to select exactly one option from a list. Each option should be mutually exclusive. Always provide clear labels for each option and consider the logical order of options.
-
-## Accessibility
-Radio groups provide built-in keyboard navigation and screen reader support. Always associate labels with radio items for the best accessibility experience.`,
+- Form integration`,
       },
     },
   },

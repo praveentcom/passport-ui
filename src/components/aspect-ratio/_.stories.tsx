@@ -11,33 +11,18 @@ const meta: Meta<typeof AspectRatio> = {
     layout: "centered",
     docs: {
       description: {
-        component: `An aspect ratio container that maintains consistent proportions for content, built on Radix UI AspectRatio primitives.
-
-## Features
-- Maintains consistent aspect ratios regardless of container size
-- Responsive design with automatic scaling
-- Perfect for images, videos, and embedded content
-- Prevents layout shift during content loading
-- CSS-based implementation for optimal performance
-- Works with any content type
-
-## Usage
-Use aspect ratios for:
-- Image galleries and media content
-- Video players and embedded content
-- Card layouts with consistent proportions
-- Responsive design patterns
-- Preventing cumulative layout shift (CLS)
+        component: `Aspect ratio container that maintains proportions.
 
 ## Common Ratios
-- **16:9** (1.78): Widescreen video, modern displays
-- **4:3** (1.33): Traditional video, older displays
-- **1:1** (1.0): Square images, profile pictures
-- **3:2** (1.5): Photography standard
-- **21:9** (2.33): Ultra-wide displays
+- **16:9** (1.78): Widescreen video
+- **4:3** (1.33): Traditional video
+- **1:1** (1.0): Square images
+- **3:2** (1.5): Photography
+- **21:9** (2.33): Ultra-wide
 
-## Accessibility
-Aspect ratio containers preserve content accessibility and work seamlessly with screen readers.`,
+## Features
+- Maintains ratios regardless of container size
+- Prevents layout shift`,
       },
     },
   },

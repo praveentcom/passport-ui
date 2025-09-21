@@ -9,35 +9,15 @@ const meta: Meta<typeof TypewriterText> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A sophisticated text animation component that creates engaging text reveal effects with multiple animation modes, powered by Framer Motion.
+        component: `Text animation with typewriter, fade-in-words, and slide-in-chars effects.
 
 ## Features
-- **Multiple Animation Modes**: Typewriter, fade-in-words, and slide-in-chars
-- **Rich Text Support**: Handle single strings or arrays for sequential text
-- **Customizable Cursor**: Blinking cursor with custom characters and styling
-- **Looping Support**: Continuous animation cycles with configurable pauses
-- **Speed Control**: Adjustable typing speeds and delays
-- **Word/Character Splitting**: Flexible text segmentation options
-- **Accessibility First**: Respects reduced motion preferences
-- **Callback Support**: onStart and onComplete event handlers
-
-## Animation Modes
-1. **Typewriter**: Classic typewriter effect that reveals text character by character with a blinking cursor.
-2. **Fade-in-words**: Words appear one by one with a smooth fade and slide-up animation.
-3. **Slide-in-chars**: Characters slide in individually with a 3D rotation effect for dynamic reveals.
-
-## Performance
-Optimized for smooth animations with proper cleanup of timers and intervals. Uses hardware acceleration for transform-based animations.
-
-## Use Cases
-Perfect for:
-- Hero headlines and taglines
-- Loading states with personality
-- Interactive storytelling interfaces
-- Code demonstrations and tutorials
-- Dynamic content reveals
-- Marketing copy animations
-- Onboarding sequences`,
+- Animation modes: typewriter, fade-in-words, slide-in-chars
+- Single strings or arrays
+- Customizable cursor
+- Looping support
+- Adjustable speeds and delays
+- Respects reduced motion`,
       },
     },
   },
@@ -162,7 +142,7 @@ export const Default: Story = {
 
 export const FadeInWordsMode: Story = {
   args: {
-    text: "Every word appears with elegant fade animation with Passport UI",
+    text: "Every word appears with fade animation with Passport UI",
     mode: "fade-in-words",
     speed: 150,
     showCursor: false,

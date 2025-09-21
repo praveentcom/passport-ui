@@ -13,32 +13,17 @@ const meta: Meta<typeof Popover> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A popover component that displays rich content in a portal, triggered by user interaction, built on Radix UI Popover primitives.
+        component: `Popover that displays content triggered by user interaction.
+
+## Components
+- **Popover**: Root container
+- **PopoverTrigger**: Triggers popover (usually button)
+- **PopoverContent**: Content container
 
 ## Features
-- Click-triggered content display with positioning
-- Portal-based rendering for proper layering
-- Automatic positioning with collision detection
-- Modal and non-modal modes
-- Focus management and keyboard navigation
-- Smooth animations and visual feedback
-- Built-in accessibility with ARIA attributes
-
-## Composition
-Popovers are composed of multiple components:
-- **Popover**: Root container with state management
-- **PopoverTrigger**: Element that triggers the popover (usually a button)
-- **PopoverContent**: The popover content container with positioning
-
-## Usage
-Use popovers for:
-- Additional options and controls
-- Form inputs and filters
-- Contextual information and help
-- Settings panels and configuration
-- Rich content that doesn't warrant a full modal
-
-Popovers are less intrusive than dialogs and work well for supplementary content.`,
+- Click-triggered display
+- Modal/non-modal modes
+- Focus management`,
       },
     },
   },

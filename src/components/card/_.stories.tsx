@@ -11,21 +11,14 @@ const meta: Meta<typeof Card> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A flexible card container component with optional animated border trail effect.
+        component: `Card container with optional animated border trail.
+
+## Components
+- **CardContent**: Main content area
 
 ## Features
-- Clean, accessible card layout with proper semantic structure
-- Optional animated border trail on hover using Framer Motion
-- Flexible content composition with CardContent component
-- Consistent spacing and styling with theme integration
-- Responsive design with proper mobile adaptations
-
-## Composition
-Cards are designed to be composed with child components:
-- **CardContent**: Main content area with proper padding and spacing
-
-## Border Trail
-The optional border trail creates an engaging hover effect with customizable animations, perfect for highlighting interactive cards.`,
+- Optional animated border trail on hover
+- Customizable animations`,
       },
     },
   },

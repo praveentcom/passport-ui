@@ -2,6 +2,7 @@
 
 import React, { ReactNode, useEffect, useMemo, useState } from "react";
 
+import { PrefetchLink } from "../../components/prefetch-link";
 import {
   Sidebar,
   SidebarContent,
@@ -273,10 +274,10 @@ export function SidebarContainer({
                         }
                       >
                         {!hasSubItems && item.href && state === "expanded" ? (
-                          <a href={item.href}>
+                          <PrefetchLink href={item.href}>
                             {item.icon && <item.icon className="size-3.5" />}
                             {item.title}
-                          </a>
+                          </PrefetchLink>
                         ) : (
                           <>
                             {item.icon && <item.icon className="size-3.5" />}
@@ -318,7 +319,9 @@ export function SidebarContainer({
                                 }}
                               >
                                 {subItem.href ? (
-                                  <a href={subItem.href}>{subItem.title}</a>
+                                  <PrefetchLink href={subItem.href}>
+                                    {subItem.title}
+                                  </PrefetchLink>
                                 ) : (
                                   subItem.title
                                 )}

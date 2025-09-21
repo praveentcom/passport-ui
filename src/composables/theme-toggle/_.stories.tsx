@@ -12,21 +12,15 @@ const meta: Meta<typeof ThemeToggle> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A sophisticated theme toggle component that allows users to switch between light, dark, and system theme preferences with smooth animated transitions.
+        component: `Theme toggle for light, dark, and system preferences.
 
 ## Features
-- Three theme options: light, dark, and system (follows OS preference)
-- Smooth animated background transitions between selections
-- Built with next-themes for robust theme management
-- Accessible button controls with proper ARIA labels
-- Responsive design with consistent styling
-- Automatic system theme detection and updates
-
-## Usage
-Place this component in your app's navigation or settings area. It automatically syncs with the user's system preferences when "system" is selected and persists the choice across sessions.
+- Three options: light, dark, system
+- Animated background transitions
+- System theme detection
 
 ## Dependencies
-Requires \`next-themes\` ThemeProvider to be configured in your app root with \`attribute="class"\` and \`enableSystem\` props.`,
+Requires \`next-themes\` ThemeProvider with \`attribute="class"\` and \`enableSystem\`.`,
       },
     },
   },

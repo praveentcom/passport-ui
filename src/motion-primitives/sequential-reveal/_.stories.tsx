@@ -18,35 +18,19 @@ const meta: Meta<typeof SequentialReveal> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A motion primitive that orchestrates the entrance of multiple child elements with customizable stagger timing and animation patterns, powered by Framer Motion.
-
-## Features
-- Multiple animation patterns: cascade, wave, spiral, and random
-- Configurable stagger delays for perfect timing control
-- Intersection Observer integration for scroll-triggered animations
-- Reverse animations support with triggerOnce control
-- Accessibility-first with reduced motion support
-- Performance optimized with hardware acceleration
-- Flexible threshold and delay configurations
+        component: `Motion primitive for animating multiple child elements with staggered timing.
 
 ## Animation Patterns
-1. **Cascade**: Sequential left-to-right or top-to-bottom animation
-2. **Wave**: Sine wave-based animation timing for organic flow
-3. **Spiral**: Square root-based delays creating spiral-like reveals
-4. **Random**: Randomized timing for organic, natural feel
+1. **Cascade**: Sequential left-to-right or top-to-bottom
+2. **Wave**: Sine wave-based timing
+3. **Spiral**: Square root-based delays
+4. **Random**: Randomized timing
 
-## Performance
-Uses CSS transforms and opacity for smooth 60fps animations. Intersection Observer ensures animations only trigger when elements are visible, optimizing performance for long pages.
-
-## Use Cases
-Perfect for:
-- Feature lists and benefits sections
-- Card grids and galleries
-- Navigation menu reveals
-- Dashboard widget animations
-- Product showcase grids
-- Testimonial carousels
-- Sequential content loading effects`,
+## Features
+- Configurable stagger delays
+- Scroll-triggered animations
+- Reverse animations
+- Reduced motion support`,
       },
     },
   },
@@ -136,12 +120,12 @@ const featureCards = [
   },
   {
     title: "Highly Customizable",
-    description: "Multiple patterns and extensive configuration options",
+    description: "Multiple patterns and configuration options",
     icon: "🎨",
   },
   {
     title: "Developer Friendly",
-    description: "TypeScript native with excellent IntelliSense support",
+    description: "TypeScript native with IntelliSense support",
     icon: "👨‍💻",
   },
 ];

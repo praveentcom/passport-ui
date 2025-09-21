@@ -24,37 +24,23 @@ const meta: Meta<typeof Sheet> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A sheet component that extends Dialog to display complementary content from screen edges, built on Radix UI Dialog primitives.
+        component: `Sheet that displays content from screen edges.
+
+## Components
+- **Sheet**: Root container
+- **SheetTrigger**: Opens sheet
+- **SheetContent**: Main container with slide animation
+- **SheetHeader**: Header with title/description
+- **SheetTitle**: Sheet title
+- **SheetDescription**: Optional description
+- **SheetFooter**: Footer for actions
+- **SheetClose**: Closes sheet
 
 ## Features
-- Slides in from screen edges (top, right, bottom, left)
-- Modal and non-modal modes with backdrop overlay
-- Focus management with focus trap and restoration
-- Keyboard navigation (Escape to close, Tab cycling)
-- Portal-based rendering for proper layering
-- Built-in accessibility with ARIA attributes
-- Scroll lock when modal is open
-
-## Composition
-Sheets are composed of multiple components:
-- **Sheet**: Root container with state management
-- **SheetTrigger**: Element that opens the sheet
-- **SheetContent**: The main sheet container with slide animation
-- **SheetHeader**: Header area with title and description
-- **SheetTitle**: Accessible title for the sheet
-- **SheetDescription**: Optional description text
-- **SheetFooter**: Footer area for actions
-- **SheetClose**: Elements that close the sheet
-
-## Usage
-Use sheets for:
-- Side navigation menus
-- Form panels and settings
-- Filters and search options
-- Additional content that complements the main view
-- Mobile-friendly overlay content
-
-Sheets work well for content that doesn't need full attention like dialogs.`,
+- Slides from edges: top, right, bottom, left
+- Modal/non-modal modes
+- Focus trap
+- Keyboard navigation (Escape, Tab)`,
       },
     },
   },

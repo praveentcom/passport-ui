@@ -13,18 +13,12 @@ const meta: Meta<typeof Checkbox> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A binary control that allows users to toggle between checked and unchecked states, built on Radix UI primitives.
+        component: `Binary control for checked/unchecked states.
 
 ## Features
-- Three states: checked, unchecked, and indeterminate
-- Full keyboard navigation and accessibility support
-- Smooth animations and visual feedback
-- Consistent styling with theme integration
-- Form integration with proper value handling
-- Screen reader compatible with ARIA attributes
-
-## Usage
-Use checkboxes for binary choices, multiple selections, or to indicate agreement. Always pair with descriptive labels and consider grouping related options.`,
+- Three states: checked, unchecked, indeterminate
+- Keyboard navigation
+- Form integration`,
       },
     },
   },

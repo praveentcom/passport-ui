@@ -5,14 +5,14 @@ import Link from "next/link";
 import { Button } from "../../components/button";
 import { Card, CardContent } from "../../components/card";
 
-export interface EmptyStateCardProps {
+export interface EmptyStateProps {
   title?: string;
   subtitle?: string;
   children?: ReactNode;
   className?: string;
 }
 
-export function EmptyStateCard({
+export function EmptyState({
   title = "Section not found.",
   subtitle = "This section is currently unavailable.",
   children = (
@@ -21,7 +21,7 @@ export function EmptyStateCard({
     </Link>
   ),
   className,
-}: EmptyStateCardProps) {
+}: EmptyStateProps) {
   return (
     <Card data-slot="empty-placeholder-card" className={className}>
       <CardContent className="text-center px-8 py-3 md:px-12">
@@ -39,4 +39,4 @@ export function EmptyStateCard({
   );
 }
 
-export default EmptyStateCard;
+export default EmptyState;

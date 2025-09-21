@@ -11,33 +11,13 @@ const meta: Meta<typeof Breadcrumb> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A navigation breadcrumb component that shows the current page location within a hierarchical structure.
+        component: `Navigation breadcrumb showing current page location.
 
 ## Features
-- Hierarchical navigation with clickable path segments
-- Automatic path truncation for long breadcrumbs
-- Dropdown overflow handling for mobile optimization
-- Customizable separators and styling
-- Built-in accessibility with proper navigation semantics
-- Support for back button integration
-- Responsive design with mobile adaptations
-
-## Usage
-Use breadcrumbs for:
-- Website navigation and wayfinding
-- Multi-level category browsing
-- Documentation and help systems
-- E-commerce product navigation
-- Any hierarchical content structure
-
-## Best Practices
-- Keep breadcrumb labels concise and descriptive
-- Use consistent naming conventions
-- Ensure all segments except current are clickable
-- Consider mobile truncation for long paths
-
-## Accessibility
-Breadcrumbs provide semantic navigation structure with proper ARIA attributes and keyboard navigation support.`,
+- Hierarchical navigation with clickable segments
+- Path truncation for long breadcrumbs
+- Dropdown overflow for mobile
+- Customizable separators`,
       },
     },
   },

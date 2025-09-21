@@ -11,33 +11,16 @@ const meta: Meta<typeof AnimatedBackground> = {
     layout: "centered",
     docs: {
       description: {
-        component: `An animated background component that creates smooth highlighting effects for interactive elements, powered by Framer Motion.
+        component: `Animated background that highlights active elements.
 
 ## Features
-- Smooth animated background that follows active elements
-- Support for both hover and click interactions
-- Automatic size and position calculation
-- Customizable transition timing and easing
-- Zero-config setup with intelligent defaults
-- Accessible interaction patterns
-
-## Animation Details
-The AnimatedBackground creates a moving highlight that:
-1. **Tracks**: Automatically follows the active element
-2. **Sizes**: Matches the dimensions of the target element
-3. **Transitions**: Smoothly animates between positions and sizes
-4. **Responds**: To both hover and click interactions
+- Follows active elements
+- Hover and click interactions
+- Automatic size/position calculation
+- Customizable timing
 
 ## Implementation
-Each child element must have a unique \`data-id\` attribute for the component to track and animate between elements.
-
-## Use Cases
-Perfect for:
-- Tab navigation with active indicators
-- Toggle switches and radio button groups
-- Menu item highlighting
-- Segmented controls
-- Any multi-option selector interface`,
+Each child needs unique \`data-id\` attribute.`,
       },
     },
   },

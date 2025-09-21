@@ -441,7 +441,7 @@ const meta: Meta<typeof ColorsDocs> = {
     layout: "fullscreen",
     docs: {
       description: {
-        component: `Comprehensive guide to Passport UI's color system, built on OKLCH color space for better color management and automatic light/dark theme support. Use this documentation to understand when and how to use different color approaches in your Passport UI applications.`,
+        component: `Guide to Passport UI's color system with automatic light/dark theme support.`,
       },
     },
   },

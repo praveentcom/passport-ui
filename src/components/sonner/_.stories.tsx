@@ -11,49 +11,21 @@ const meta: Meta<typeof Toaster> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A modern toast notification system built on Sonner for displaying temporary messages and alerts with rich customization options.
+        component: `Toast notification system built on Sonner.
 
 ## Features
-- Multiple toast types (default, success, error, warning, info)
-- Configurable positioning (6 screen positions)
-- Rich content support with actions and descriptions
-- Automatic dismissal with customizable timing
-- Stack management with hover expansion
-- Built-in accessibility with proper ARIA announcements
-- Smooth animations and visual feedback
-- Promise-based toasts for async operations
+- Toast types: default, success, error, warning, info
+- Configurable positioning (6 positions)
+- Rich content with actions
+- Automatic dismissal
+- Promise-based toasts
 
 ## Setup
-Add the Toaster component to your app root and use the toast function throughout your application:
-
 \`\`\`tsx
-// In your app root
 <Toaster />
-
-// Anywhere in your app
 toast("Hello world")
-toast.success("Success message")
-toast.error("Error occurred")
-\`\`\`
-
-## Toast Types
-- **Default**: General notifications
-- **Success**: Positive confirmations
-- **Error**: Error messages and failures
-- **Warning**: Important warnings
-- **Info**: Informational messages
-- **Promise**: Loading states with resolution
-
-## Usage
-Use toasts for:
-- Form submission confirmations
-- Error and success notifications
-- Background process updates
-- User action feedback
-- System status messages
-
-## Accessibility
-Toasts provide proper screen reader announcements and respect user motion preferences.`,
+toast.success("Success")
+\`\`\``,
       },
     },
   },

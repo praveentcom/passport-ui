@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
@@ -16,38 +14,22 @@ const meta: Meta<typeof Calendar> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A comprehensive calendar component for date selection with multiple modes and full customization, built on React DayPicker.
-
-## Features
-- Multiple selection modes: single date, multiple dates, or date ranges
-- Full keyboard navigation with arrow keys
-- Customizable month/year navigation with dropdown options
-- Disabled dates and date matching functions
-- Outside day display and navigation
-- Flexible styling and theming support
-- Built-in accessibility with proper ARIA attributes
-- Responsive design with mobile optimization
+        component: `Calendar for date selection with multiple modes.
 
 ## Selection Modes
-- **Single**: Select one date at a time
-- **Multiple**: Select multiple individual dates
-- **Range**: Select a continuous date range with start and end
+- **Single**: One date
+- **Multiple**: Multiple dates
+- **Range**: Date range
 
 ## Navigation
-- **Label**: Simple month/year labels with arrow navigation
-- **Dropdown**: Dropdown selectors for month and year
-- **Dropdown-years**: Enhanced dropdown with year range selection
+- **Label**: Month/year labels with arrows
+- **Dropdown**: Month/year dropdowns
+- **Dropdown-years**: Year range selection
 
-## Usage
-Use calendars for:
-- Date pickers in forms
-- Event scheduling and booking
-- Date range selection for filters
-- Availability and booking systems
-- Any date-based user input
-
-## Accessibility
-Calendars provide full keyboard navigation, screen reader support, and proper date announcements for accessible date selection.`,
+## Features
+- Keyboard navigation
+- Disabled dates
+- Date matching functions`,
       },
     },
   },

@@ -10,18 +10,12 @@ const meta: Meta<typeof Badge> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A versatile badge component for displaying status, labels, and notifications with semantic color variants.
+        component: `Badge for status, labels, and notifications.
 
 ## Features
-- Multiple semantic variants (default, secondary, outline, info, success, warning, destructive)
-- Polymorphic rendering with asChild prop for custom elements
-- Consistent sizing and spacing with icon support
-- Built-in hover states for interactive badges
-- Focus management and accessibility compliance
-- Responsive design with proper text scaling
-
-## Usage
-Use badges to highlight important information, show status, or provide quick visual cues. Choose variants based on the semantic meaning of the content.`,
+- Variants: default, secondary, outline, info, success, warning, destructive
+- asChild prop
+- Icon support`,
       },
     },
   },

@@ -11,25 +11,17 @@ const meta: Meta<typeof Tooltip> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A tooltip component for displaying contextual information when hovering or focusing on an element, built on Radix UI primitives.
+        component: `Tooltip for contextual information on hover/focus.
+
+## Components
+- **Tooltip**: Root container
+- **TooltipTrigger**: Triggers tooltip
+- **TooltipContent**: Tooltip content
 
 ## Features
-- Hover and focus trigger support with customizable delay
-- Multiple positioning options (top, bottom, left, right)
-- Portal-based rendering for proper layering
-- Keyboard navigation and accessibility compliance
-- Configurable hover behavior and timing
-- Smooth animations and visual feedback
-- Screen reader compatible with ARIA attributes
-
-## Composition
-Tooltips are composed of multiple components:
-- **Tooltip**: Root container with behavior configuration
-- **TooltipTrigger**: Element that triggers the tooltip (can be any focusable element)
-- **TooltipContent**: The tooltip content with positioning and styling
-
-## Usage
-Use tooltips to provide additional context or help text for UI elements. Keep content concise and ensure the tooltip doesn't interfere with user interactions.`,
+- Hover and focus triggers with customizable delay
+- Positioning: top, bottom, left, right
+- Configurable timing`,
       },
     },
   },

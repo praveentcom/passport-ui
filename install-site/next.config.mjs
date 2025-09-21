@@ -17,6 +17,7 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["passport-ui"],
   },
+  outputFileTracingRoot: __dirname,
   webpack: (config, _) => {
     config.resolve.alias = {
       ...config.resolve.alias,

@@ -159,7 +159,7 @@ const meta: Meta<typeof IntroductionDocs> = {
     layout: "fullscreen",
     docs: {
       description: {
-        component: `Welcome to Passport UI - a modern, customizable UI component library built for Next.js applications. Built on top of shadcn/ui, Tailwind CSS v4, and Framer Motion, the component library provides compact, minimal components that speed up your development process.`,
+        component: `Passport UI is a React component library for Next.js applications, built on shadcn/ui, Tailwind CSS v4, and Framer Motion.`,
       },
     },
   },

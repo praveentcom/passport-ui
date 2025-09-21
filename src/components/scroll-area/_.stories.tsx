@@ -11,39 +11,17 @@ const meta: Meta<typeof ScrollArea> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A custom scrollable area component with styled scrollbars and smooth scrolling behavior, built on Radix UI ScrollArea primitives.
+        component: `Custom scrollable area with styled scrollbars.
 
 ## Features
-- Custom-styled scrollbars that match your theme
-- Smooth scrolling with momentum on supported devices
-- Horizontal and vertical scrolling support
-- Configurable scrollbar visibility and behavior
-- Built-in accessibility with proper scroll announcements
-- Cross-browser consistent scrollbar appearance
-- Touch-friendly scrolling on mobile devices
+- Custom-styled scrollbars
+- Horizontal/vertical scrolling
+- Configurable scrollbar visibility
+- Cross-browser consistent appearance
 
-## Usage
-Use scroll areas for:
-- Content that exceeds container dimensions
-- Fixed-height containers with overflow content
-- Custom scrollbar styling requirements
-- Consistent scrolling experience across browsers
-- Lists, menus, and content areas with limited space
-
-## Benefits Over Native Scrolling
-- Consistent appearance across all browsers and operating systems
-- Customizable scrollbar styling to match your design
-- Better control over scrollbar behavior and visibility
-- Enhanced accessibility features
-
-## Best Practices
-- Set appropriate container heights for the content
-- Consider content length and user experience
-- Ensure scrollbar visibility when needed
-- Test scrolling behavior on various devices
-
-## Accessibility
-Scroll areas provide proper keyboard navigation and screen reader support with scroll position announcements.`,
+## Benefits Over Native
+- Customizable scrollbar styling
+- Better control over behavior`,
       },
     },
   },

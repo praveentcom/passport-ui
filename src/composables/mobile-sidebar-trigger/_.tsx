@@ -19,7 +19,7 @@ export interface MobileSidebarTriggerProps
 /**
  * A mobile-only sidebar trigger that shows a hamburger menu icon.
  * Only visible on mobile devices and triggers the mobile sidebar sheet.
- * 
+ *
  * @param icon - Optional custom icon (defaults to MenuIcon)
  * @param className - Additional CSS classes
  * @param onClick - Optional click handler (will be called before toggling sidebar)
@@ -37,11 +37,7 @@ export function MobileSidebarTrigger({
       data-slot="mobile-sidebar-trigger"
       variant="ghost"
       size="medium"
-      className={cn(
-        "md:hidden",
-        !isMobile && "invisible",
-        className
-      )}
+      className={cn("md:hidden", !isMobile && "invisible", className)}
       onClick={(event) => {
         onClick?.(event);
         toggleSidebar();

@@ -24,30 +24,26 @@ const meta: Meta<typeof Menubar> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A desktop-style menubar component that provides persistent access to application commands and actions, built on Radix UI MenuBar primitives.
+        component: `Desktop-style menubar for persistent access to commands.
+
+## Components
+- **Menubar**: Root container
+- **MenubarMenu**: Individual sections
+- **MenubarTrigger**: Top-level triggers
+- **MenubarContent**: Dropdown content
+- **MenubarItem**: Menu actions
+- **MenubarCheckboxItem**: Checkable items
+- **MenubarRadioGroup/RadioItem**: Radio groups
+- **MenubarSub**: Nested submenus
+- **MenubarSeparator**: Dividers
+- **MenubarShortcut**: Keyboard shortcuts
 
 ## Features
-- Persistent horizontal menu bar layout
-- Dropdown menus with nested submenus
-- Keyboard shortcuts display and handling
-- Multiple item types: regular, checkbox, radio, separator
-- Full keyboard navigation with arrow keys
-- Built-in accessibility with proper ARIA attributes
-- Portal-based dropdown rendering
-- Consistent styling with theme integration
-
-## Composition
-Menubars are composed of multiple components:
-- **Menubar**: Root container for the menu bar
-- **MenubarMenu**: Individual menu sections
-- **MenubarTrigger**: Top-level menu triggers
-- **MenubarContent**: Dropdown menu content
-- **MenubarItem**: Individual menu actions
-- **MenubarCheckboxItem**: Checkable menu items
-- **MenubarRadioGroup/RadioItem**: Radio button groups
-- **MenubarSub**: Nested submenu containers
-- **MenubarSeparator**: Visual dividers
-- **MenubarShortcut**: Keyboard shortcut display
+- Persistent horizontal layout
+- Nested submenus
+- Keyboard shortcuts
+- Item types: regular, checkbox, radio, separator
+- Keyboard navigation with arrows
 
 ## Usage
 Use menubars for:

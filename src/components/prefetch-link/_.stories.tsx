@@ -14,28 +14,18 @@ const meta: Meta<typeof PrefetchLink> = {
     },
     docs: {
       description: {
-        component: `An intelligent Next.js Link component with advanced prefetching strategies for optimal performance and user experience.
-
-## Features
-- Smart prefetching on hover with configurable delays
-- Intersection observer-based visibility prefetching
-- Configurable prefetching strategies for different use cases
-- Built on Next.js Link with all native functionality
-- Performance optimization to prevent unnecessary requests
-- Automatic cleanup of prefetch requests
-- Support for external and internal links
+        component: `A Next.js Link component with prefetching strategies for performance optimization.
 
 ## Prefetching Strategies
 - **Hover Prefetching**: Prefetches when user hovers over the link
 - **Visibility Prefetching**: Prefetches when link enters viewport
-- **Combined**: Use both strategies for maximum optimization
+- **Combined**: Use both strategies for optimization
 - **Delayed**: Configurable delay prevents accidental prefetching
 
-## Performance Benefits
+## Benefits
 - Faster page transitions with pre-loaded content
 - Reduced perceived loading times
 - Better user experience with instant navigation
-- Intelligent prefetching prevents bandwidth waste
 
 ## Usage
 Use prefetch links for:

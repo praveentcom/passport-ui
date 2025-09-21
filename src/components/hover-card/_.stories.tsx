@@ -11,35 +11,17 @@ const meta: Meta<typeof HoverCard> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A hover card component that displays rich preview content when hovering over trigger elements, built on Radix UI HoverCard primitives.
+        component: `Hover card that displays preview content on hover.
+
+## Components
+- **HoverCard**: Root container
+- **HoverCardTrigger**: Triggers on hover
+- **HoverCardContent**: Preview content
 
 ## Features
-- Hover-triggered content preview with configurable timing
-- Portal-based rendering for proper layering
-- Automatic positioning with collision detection
-- Customizable open and close delays
-- Built-in accessibility with proper ARIA attributes
-- Focus management and keyboard navigation
-- Smooth animations and visual feedback
-
-## Composition
-Hover cards are composed of multiple components:
-- **HoverCard**: Root container with state and timing management
-- **HoverCardTrigger**: Element that triggers the hover card on hover
-- **HoverCardContent**: The preview content container with positioning
-
-## Usage
-Use hover cards for:
-- Link previews and rich tooltips
-- User profile previews
-- Content summaries and metadata
-- Additional context without navigation
-- Progressive disclosure of information
-
-Perfect for providing quick previews without interrupting the user's workflow.
-
-## Accessibility
-Hover cards work with both mouse hover and keyboard focus, ensuring accessibility for all users.`,
+- Configurable timing
+- Customizable delays
+- Works with hover and keyboard focus`,
       },
     },
   },

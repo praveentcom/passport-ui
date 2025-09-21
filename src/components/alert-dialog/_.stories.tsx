@@ -17,41 +17,19 @@ const meta: Meta<typeof AlertDialog> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A critical alert dialog component for important user confirmations and destructive actions, built on Radix UI AlertDialog primitives.
+        component: `Alert dialog for critical confirmations and destructive actions.
+
+## Components
+- **AlertDialog**: Root container
+- **AlertDialogTrigger**: Opens dialog
+- **AlertDialogContent**: Main container
+- **AlertDialogAction**: Primary action (usually destructive)
+- **AlertDialogCancel**: Cancel button
+- **AlertDialogFooter**: Footer for actions
 
 ## Features
-- Modal dialog with focus trap and backdrop
-- Built specifically for critical confirmations
-- Keyboard navigation (Escape to cancel)
-- Accessible with proper ARIA attributes
-- Portal-based rendering for proper layering
-- Automatic focus management
-- Screen reader compatible with alert semantics
-
-## Composition
-Alert dialogs are composed of multiple components:
-- **AlertDialog**: Root container with state management
-- **AlertDialogTrigger**: Element that opens the alert dialog
-- **AlertDialogContent**: The main alert dialog container
-- **AlertDialogAction**: Primary action button (usually destructive)
-- **AlertDialogCancel**: Cancel/dismiss button
-- **AlertDialogFooter**: Footer area for action buttons
-
-## Usage
-Use alert dialogs for:
-- Destructive actions (delete, remove, clear)
-- Critical confirmations that can't be undone
-- Important warnings requiring user acknowledgment
-- Actions with significant consequences
-
-## Best Practices
-- Always provide a clear cancel option
-- Use descriptive action button text
-- Explain consequences clearly
-- Reserve for truly important confirmations
-
-## Accessibility
-Alert dialogs provide enhanced accessibility with alert role and proper focus management for critical user decisions.`,
+- Focus trap
+- Keyboard navigation (Escape to cancel)`,
       },
     },
   },

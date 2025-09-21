@@ -17,39 +17,20 @@ const meta: Meta<typeof Carousel> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A responsive carousel component with touch/swipe support and smooth animations, built on Embla Carousel.
+        component: `Responsive carousel with touch/swipe support.
+
+## Components
+- **Carousel**: Root container
+- **CarouselContent**: Scrollable container
+- **CarouselItem**: Individual slide
+- **CarouselPrevious**: Previous button
+- **CarouselNext**: Next button
 
 ## Features
-- Touch and mouse drag support for mobile and desktop
-- Smooth animations with momentum scrolling
-- Horizontal and vertical orientations
-- Keyboard navigation with arrow keys
-- Loop and autoplay capabilities via options
-- Plugin system for extended functionality
-- Responsive design with flexible item sizing
-- Built-in accessibility with proper ARIA attributes
-
-## Composition
-Carousels are composed of multiple components:
-- **Carousel**: Root container with Embla configuration
-- **CarouselContent**: Scrollable container for carousel items
-- **CarouselItem**: Individual slide/item wrapper
-- **CarouselPrevious**: Previous navigation button
-- **CarouselNext**: Next navigation button
-
-## Usage
-Use carousels for:
-- Image galleries and media showcases
-- Product listings and showcases
-- Testimonials and reviews
-- Feature highlights and promotions
-- Any content that benefits from horizontal scrolling
-
-## Customization
-Extensive customization through Embla options and plugins for advanced features like autoplay, infinite loop, and custom animations.
-
-## Accessibility
-Carousels provide keyboard navigation and screen reader support with proper slide announcements.`,
+- Touch/mouse drag support
+- Horizontal/vertical orientations
+- Keyboard navigation
+- Loop and autoplay options`,
       },
     },
   },

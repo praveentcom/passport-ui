@@ -10,45 +10,24 @@ const meta: Meta<typeof Markdown> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A component that renders markdown content as sanitized HTML with syntax highlighting, tables, and rich formatting support.
+        component: `Renders markdown content as sanitized HTML with syntax highlighting.
 
 ## Features
-- Markdown parsing with support for headers, lists, links, emphasis, code blocks, tables, and blockquotes
-- Syntax highlighting for code blocks using highlight.js
-- Configurable themes for code syntax highlighting
-- XSS protection with DOMPurify sanitization
-- Responsive tables and rich formatting
-- File icons in code block headers
+- Markdown parsing for headers, lists, links, emphasis, code blocks, tables, blockquotes
+- Syntax highlighting with highlight.js
+- XSS protection with DOMPurify
+- File icons in code headers
 
 ## Theme Setup
-For themed syntax highlighting in code blocks, import the theme styles in your CSS:
 \`\`\`css
 @import 'passport-ui/hljs-themes.css';
 \`\`\`
 
-## Available Code Block Themes
-- **GitHub**: Clean, professional GitHub-style (light/dark)
-- **Atom One**: Popular Atom editor theme (light/dark)  
-- **VS**: Visual Studio theme (light/dark)
-- **Monokai**: Classic dark theme with vibrant colors
-- **Dracula**: Popular purple-tinted dark theme
-- **Nord**: Minimalist Arctic-inspired theme
-- **Tokyo Night**: Modern dark theme with blue accents
-- **Default**: Fallback theme with basic colors
+## Themes
+GitHub, Atom One, VS, Monokai, Dracula, Nord, Tokyo Night, Default
 
-## Supported Markdown Elements
-- Headers (H1-H6)
-- Paragraphs and line breaks
-- **Bold** and *italic* text
-- ~~Strikethrough~~ text
-- \`Inline code\`
-- Code blocks with syntax highlighting
-- Unordered and ordered lists
-- Links and images
-- Tables with responsive design
-- Blockquotes
-- Horizontal rules
-- Keyboard shortcuts (\`<kbd>\` tags)`,
+## Supported Elements
+Headers, paragraphs, **bold**, *italic*, ~~strikethrough~~, \`code\`, code blocks, lists, links, images, tables, blockquotes, horizontal rules.`,
       },
     },
   },
@@ -104,7 +83,7 @@ type Story = StoryObj<typeof Markdown>;
 
 const sampleMarkdown = `# Markdown Component Demo
 
-This is a **comprehensive example** of the markdown component featuring various elements.
+This is an **example** of the markdown component featuring various elements.
 
 ## Text Formatting
 

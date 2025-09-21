@@ -13,33 +13,17 @@ const meta: Meta<typeof Collapsible> = {
     layout: "centered",
     docs: {
       description: {
-        component: `An interactive collapsible component that smoothly expands and collapses content panels, built on Radix UI Collapsible primitives.
+        component: `Interactive collapsible that expands/collapses content panels.
+
+## Components
+- **Collapsible**: Root container
+- **CollapsibleTrigger**: Toggles collapsible
+- **CollapsibleContent**: Expandable content
 
 ## Features
-- Smooth expand/collapse animations with height transitions
-- Controlled and uncontrolled modes for flexible state management
-- Built-in accessibility with proper ARIA attributes
-- Keyboard navigation support (Space/Enter to toggle)
-- Customizable trigger elements with any content
-- Automatic content height calculation
-- Screen reader compatible with state announcements
-
-## Composition
-Collapsibles are composed of multiple components:
-- **Collapsible**: Root container with state management
-- **CollapsibleTrigger**: Interactive element that toggles the collapsible
-- **CollapsibleContent**: The expandable content area with smooth animations
-
-## Usage
-Use collapsibles for:
-- FAQ sections and help content
-- Settings panels and advanced options
-- Content organization and space saving
-- Progressive disclosure of information
-- Sidebar navigation sections
-
-## Accessibility
-Collapsibles provide full keyboard navigation and screen reader support with proper state announcements and focus management.`,
+- Smooth expand/collapse animations
+- Controlled/uncontrolled modes
+- Keyboard navigation (Space/Enter)`,
       },
     },
   },

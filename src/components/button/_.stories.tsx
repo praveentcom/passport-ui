@@ -10,20 +10,14 @@ const meta: Meta<typeof Button> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A versatile button component built on Radix UI Slot with comprehensive styling variants and accessibility features.
+        component: `Button with variants, sizes, and loading states.
 
 ## Features
-- Multiple visual variants (primary, destructive, outline, secondary, ghost, link)
-- Three size options (regular, medium, large)
-- Built-in loading state with animated spinner
-- Custom loading text support
-- Built-in focus management and keyboard navigation
-- Icon support with automatic sizing
-- Polymorphic rendering with asChild prop
-- Full accessibility compliance with ARIA attributes
-
-## Usage
-Use buttons for triggering actions, navigation, and form submissions. Choose the appropriate variant based on the action's importance and context within your interface. The loading state automatically disables the button and shows a spinning loader icon to indicate async operations.`,
+- Variants: primary, destructive, outline, secondary, ghost, link
+- Sizes: regular, medium, large
+- Loading state with spinner
+- Icon support
+- asChild prop`,
       },
     },
   },

@@ -69,45 +69,22 @@ const meta: Meta<typeof NavigationMenu> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A sophisticated navigation menu component with dropdown support, hover states, and smooth animations, built on Radix UI NavigationMenu primitives.
+        component: `Navigation menu with dropdown support and animations.
+
+## Components
+- **NavigationMenu**: Root container
+- **NavigationMenuList**: Container for items
+- **NavigationMenuItem**: Individual elements
+- **NavigationMenuTrigger**: Dropdown triggers
+- **NavigationMenuContent**: Dropdown content
+- **NavigationMenuLink**: Navigation links
+- **NavigationMenuIndicator**: Active indicator
+- **NavigationMenuViewport**: Content viewport
 
 ## Features
-- Hierarchical navigation with dropdown submenus
-- Hover and click trigger support
-- Smooth animations between menu states
-- Full keyboard navigation with arrow keys
-- Built-in accessibility with proper ARIA attributes
-- Responsive design with mobile adaptations
-- Portal-based dropdown rendering
-- Active state management and visual feedback
-
-## Composition
-Navigation menus are composed of multiple components:
-- **NavigationMenu**: Root container with state management
-- **NavigationMenuList**: Container for navigation items
-- **NavigationMenuItem**: Individual navigation elements
-- **NavigationMenuTrigger**: Dropdown trigger elements
-- **NavigationMenuContent**: Dropdown content containers
-- **NavigationMenuLink**: Navigation link elements
-- **NavigationMenuIndicator**: Visual active indicator
-- **NavigationMenuViewport**: Content viewport for animations
-
-## Usage
-Use navigation menus for:
-- Primary website navigation
-- Application menu systems
-- Hierarchical content organization
-- Multi-level navigation structures
-- Any navigation requiring dropdown functionality
-
-## Best Practices
-- Keep menu depth reasonable (2-3 levels max)
-- Use clear, descriptive labels
-- Group related items logically
-- Consider mobile navigation patterns
-
-## Accessibility
-Navigation menus provide full keyboard navigation and screen reader support with proper menu semantics and focus management.`,
+- Hierarchical navigation with dropdowns
+- Hover and click triggers
+- Keyboard navigation with arrows`,
       },
     },
   },

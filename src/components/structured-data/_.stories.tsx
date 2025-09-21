@@ -10,51 +10,16 @@ const meta: Meta<typeof StructuredData> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A SEO-optimized component that injects Schema.org structured data as JSON-LD into the page head for enhanced search engine visibility.
+        component: `Injects Schema.org structured data as JSON-LD into page head.
 
 ## Features
-- Automatic JSON-LD script injection into document head
-- Support for all Schema.org structured data types
-- SEO optimization for rich search results
-- Type-safe structured data handling
-- Automatic script cleanup on unmount
-- Zero visual impact (head-only injection)
-- Google Search Console compatible
-
-## Supported Schema Types
-- **Article**: Blog posts, news articles, documentation
-- **Organization**: Company and business information
-- **Person**: Author and profile information
-- **Product**: E-commerce product details
-- **WebSite**: Website and search action markup
-- **BreadcrumbList**: Navigation breadcrumb markup
-- **FAQ**: Frequently asked questions
-- **Event**: Events and meetups
-- And many more Schema.org types
-
-## SEO Benefits
-- Enhanced search result snippets
-- Rich search features (ratings, prices, etc.)
-- Better content understanding by search engines
-- Improved click-through rates
-- Knowledge panel eligibility
+- JSON-LD script injection
+- Schema.org data types support
+- Type-safe data handling
+- No visual impact
 
 ## Usage
-Use structured data for:
-- Blog articles and content pages
-- Product and service pages
-- Organization and contact information
-- Events and announcements
-- Any content that benefits from rich search results
-
-## Best Practices
-- Use appropriate Schema.org types for your content
-- Provide complete and accurate information
-- Test with Google's Rich Results Test tool
-- Include required properties for each schema type
-
-## Implementation
-The component automatically injects JSON-LD scripts into the document head without affecting page rendering.`,
+Add structured data for search engines.`,
       },
     },
   },

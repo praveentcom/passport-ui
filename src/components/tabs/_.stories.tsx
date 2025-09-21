@@ -14,34 +14,19 @@ const meta: Meta<typeof Tabs> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A flexible tabs component built on Radix UI Tabs with multiple visual variants and full keyboard navigation support.
+        component: `Tabs with visual variants and keyboard navigation.
+
+## Components
+- **Tabs**: Root container
+- **TabsList**: Container for triggers
+- **TabsTrigger**: Individual tab buttons
+- **TabsContent**: Content panels
 
 ## Features
-- Three visual variants (default, card, pills)
-- Horizontal and vertical orientation support
-- Full keyboard navigation (arrow keys, home, end)
-- Built-in focus management and ARIA attributes
-- Customizable styling with class-variance-authority
-- Automatic content switching with smooth transitions
-- Support for disabled tabs and controlled/uncontrolled state
-
-## Composition
-Tabs are composed of multiple semantic components:
-- **Tabs**: Root container that manages state and orientation
-- **TabsList**: Container for tab triggers with proper ARIA roles
-- **TabsTrigger**: Individual tab buttons for content switching
-- **TabsContent**: Content panels associated with each tab
-
-## Usage
-Use tabs for:
-- Organizing related content into separate views
-- Settings and configuration panels
-- Dashboard sections and data views
-- Multi-step forms and wizards
-- Feature toggles and view switching
-
-## Accessibility
-Tabs provide full keyboard navigation, screen reader support, and proper focus management with ARIA relationships between triggers and content panels.`,
+- Variants: default, card, pills
+- Horizontal/vertical orientation
+- Keyboard navigation (arrows, home, end)
+- Disabled tabs support`,
       },
     },
   },
@@ -298,7 +283,7 @@ export const AllVariants: Story = {
             </TabsContent>
             <TabsContent value="tab2" variant="pills">
               <p className="text-sm text-muted-foreground">
-                View detailed information and comprehensive data analysis.
+                View detailed information and data analysis.
               </p>
             </TabsContent>
             <TabsContent value="tab3" variant="pills">

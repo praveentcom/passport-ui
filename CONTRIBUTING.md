@@ -1,6 +1,6 @@
 # Contributing to Passport UI
 
-Thank you for your interest in contributing to passport-ui! We welcome contributions from the community and are pleased to have you join us.
+Thank you for your interest in contributing to passport-ui! We welcome contributions from the community.
 
 ## Table of Contents
 
