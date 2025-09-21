@@ -40,6 +40,9 @@ if (window.matchMedia) {
   mediaQuery.addEventListener("change", (e) => {
     addons.setConfig({
       theme: e.matches ? darkTheme : lightTheme,
+      sidebar: {
+        showRoots: true,
+      },
     });
   });
 }
