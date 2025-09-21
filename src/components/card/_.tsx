@@ -57,7 +57,7 @@ function Card({
       aria-describedby={ariaDescribedBy}
       className={cn(
         "text-card-foreground rounded-md relative",
-        "border border-border/85 bg-card",
+        "border border-border bg-card",
         "h-min pt-3.5 pb-4 group",
         "transition-all duration-100",
         interactive &&

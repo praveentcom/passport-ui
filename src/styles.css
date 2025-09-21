@@ -137,7 +137,7 @@
   --destructive-muted: oklch(0.9577 0.023 357.34);
   --destructive-foreground: oklch(0.985 0 0);
   --destructive-muted-foreground: oklch(0.557 0.1974 25.17);
-  --border: oklch(0.92 0.004 286.32);
+  --border: oklch(0.90 0.004 286.32);
   --input: oklch(0.92 0.004 286.32);
   --ring: oklch(0.705 0.015 286.067);
   --chart-1: oklch(0.528 0.225 262.55);
@@ -178,7 +178,7 @@
   --destructive-muted: oklch(0.18 0.0018 286.27);
   --destructive-foreground: oklch(0.985 0 0);
   --destructive-muted-foreground: oklch(0.985 0 0);
-  --border: oklch(0.28 0.002 270);
+  --border: oklch(0.30 0.002 270);
   --input: oklch(0.32 0 0);
   --ring: oklch(0.48 0.016 285.938);
   --chart-1: oklch(0.528 0.225 262.55);
@@ -195,7 +195,7 @@
     @apply border-border outline-ring/50 leading-normal;
   }
   .passport-ui {
-    @apply bg-background text-foreground text-sm font-normal font-sans;
+    @apply text-sm font-normal font-sans;
   }
   .passport-ui h1,
   .passport-ui h2,
