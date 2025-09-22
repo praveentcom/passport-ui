@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Card",
   icon: RectangleHorizontal,
-  description: "Component description",
+  description: "A flexible content container with header, content, and footer sections.",
   category: "components",
   storyId: "components-card--default",
   slug: "card",

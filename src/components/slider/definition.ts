@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Slider",
   icon: SlidersHorizontal,
-  description: "Component description",
+  description: "A control for selecting a value from a range.",
   category: "components",
   storyId: "components-slider--default",
   slug: "slider",

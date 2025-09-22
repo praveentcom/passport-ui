@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Label",
   icon: Tag,
-  description: "Component description",
+  description: "A text label for form inputs, providing context and improving accessibility.",
   category: "components",
   storyId: "components-label--default",
   slug: "label",

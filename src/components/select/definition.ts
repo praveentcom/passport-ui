@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Select",
   icon: ChevronDown,
-  description: "Component description",
+  description: "A dropdown menu for selecting a single option from a list.",
   category: "components",
   storyId: "components-select--default",
   slug: "select",

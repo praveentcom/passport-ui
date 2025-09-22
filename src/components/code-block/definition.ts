@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Code Block",
   icon: Code,
-  description: "Component description",
+  description: "A component for displaying formatted code with syntax highlighting.",
   category: "components",
   storyId: "components-code-block--default",
   slug: "code-block",

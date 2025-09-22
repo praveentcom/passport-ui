@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Sonner",
   icon: Bell,
-  description: "Component description",
+  description: "A toast component for displaying brief, non-intrusive notifications.",
   category: "components",
   storyId: "components-sonner--default",
   slug: "sonner",

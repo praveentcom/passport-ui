@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Sidebar Container",
   icon: SidebarOpen,
-  description: "Component description",
+  description: "A container for the sidebar, managing its state and interactions.",
   category: "layout",
   storyId: "layouts-sidebarcontainer--default",
   slug: "sidebar-container",

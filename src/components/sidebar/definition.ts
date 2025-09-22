@@ -1,13 +1,13 @@
-import { SidebarOpen } from "lucide-react";
+import { PanelLeft } from "lucide-react";
 
 import type { ComponentDefinition } from "../../types/definition";
 
 export const definition: ComponentDefinition = {
   name: "Sidebar",
-  icon: SidebarOpen,
-  description: "Component description",
+  icon: PanelLeft,
+  description: "A vertical navigation panel, typically on the left side of the screen.",
   category: "components",
-  storyId: "",
+  storyId: "components-sidebar--default",
   slug: "sidebar",
   importCode: ``,
   usageCode: ``,

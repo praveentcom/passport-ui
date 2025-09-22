@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Switch",
   icon: ToggleRight,
-  description: "Component description",
+  description: "A control for toggling between two states, such as on or off.",
   category: "components",
   storyId: "components-switch--default",
   slug: "switch",

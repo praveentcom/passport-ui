@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Button",
   icon: MousePointer,
-  description: "Component description",
+  description: "A clickable element that triggers an action.",
   category: "components",
   storyId: "components-button--default",
   slug: "button",

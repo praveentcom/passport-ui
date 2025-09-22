@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Radio Group",
   icon: Circle,
-  description: "Component description",
+  description: "A set of radio buttons where only one option can be selected.",
   category: "components",
   storyId: "components-radio-group--default",
   slug: "radio-group",

@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Progress",
   icon: BarChart3,
-  description: "Component description",
+  description: "A progress bar for displaying the completion status of a task.",
   category: "components",
   storyId: "components-progress--default",
   slug: "progress",

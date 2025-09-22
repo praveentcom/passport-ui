@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Theme Button",
   icon: Sun,
-  description: "Component description",
+  description: "A button for toggling between light and dark themes.",
   category: "composables",
   storyId: "composables-theme-button--default",
   slug: "theme-button",

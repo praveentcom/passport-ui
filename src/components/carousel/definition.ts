@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Carousel",
   icon: Images,
-  description: "Component description",
+  description: "A slideshow component for cycling through images or content.",
   category: "components",
   storyId: "components-carousel--default",
   slug: "carousel",

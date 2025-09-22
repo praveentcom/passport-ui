@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Command",
   icon: Terminal,
-  description: "Component description",
+  description: "A fast, accessible command menu for navigation and actions.",
   category: "components",
   storyId: "components-command--default",
   slug: "command",

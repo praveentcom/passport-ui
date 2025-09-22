@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Collapsible",
   icon: ChevronUp,
-  description: "Component description",
+  description: "A content area that can be expanded and collapsed.",
   category: "components",
   storyId: "components-collapsible--default",
   slug: "collapsible",

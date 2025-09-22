@@ -5,9 +5,9 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Footer Container",
   icon: PanelBottom,
-  description: "Component description",
+  description: "A layout container for the footer section of a page.",
   category: "layout",
-  storyId: "layouts-footercontainer--default",
+  storyId: "layouts-footer-container--default",
   slug: "footer-container",
   importCode: `import { FooterContainer } from "passport-ui";`,
   usageCode: `<FooterContainer

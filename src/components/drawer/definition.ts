@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Drawer",
   icon: PanelBottomOpen,
-  description: "Component description",
+  description: "A panel that slides in from the side, typically for navigation or actions.",
   category: "components",
   storyId: "components-drawer--default",
   slug: "drawer",

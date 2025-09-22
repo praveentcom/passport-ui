@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Popover",
   icon: MessageSquareText,
-  description: "Component description",
+  description: "A pop-up that displays information when an element is clicked.",
   category: "components",
   storyId: "components-popover--default",
   slug: "popover",

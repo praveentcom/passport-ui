@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Navigation Menu",
   icon: Navigation,
-  description: "Component description",
+  description: "A collection of links for navigating a website or application.",
   category: "components",
   storyId: "components-navigation-menu--default",
   slug: "navigation-menu",

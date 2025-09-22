@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Breadcrumb",
   icon: ChevronRight,
-  description: "Component description",
+  description: "A navigation aid that shows the user’s location in a site or app.",
   category: "components",
   storyId: "components-breadcrumb--default",
   slug: "breadcrumb",

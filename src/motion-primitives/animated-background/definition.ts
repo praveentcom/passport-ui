@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Animated Background",
   icon: Waves,
-  description: "Component description",
+  description: "A component for creating animated, gradient backgrounds.",
   category: "motion-primitives",
   storyId: "motion-primitives-animated-background--default",
   slug: "animated-background",

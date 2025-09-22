@@ -5,9 +5,9 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Page Layout",
   icon: Layout,
-  description: "Component description",
+  description: "A comprehensive layout structure for a standard page.",
   category: "layout",
-  storyId: "layouts-pagelayout--default",
+  storyId: "layouts-page-layout--default",
   slug: "page-layout",
   importCode: `import { PageLayout } from "passport-ui";
 import { SidebarContainer } from "passport-ui";

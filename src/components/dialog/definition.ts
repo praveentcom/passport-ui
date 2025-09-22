@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Dialog",
   icon: MessageSquare,
-  description: "Component description",
+  description: "A window overlaid on the primary content, requiring user interaction.",
   category: "components",
   storyId: "components-dialog--default",
   slug: "dialog",

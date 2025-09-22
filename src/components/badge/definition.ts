@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Badge",
   icon: Tag,
-  description: "Component description",
+  description: "A small visual element for labeling, categorizing, or organizing items.",
   category: "components",
   storyId: "components-badge--default",
   slug: "badge",

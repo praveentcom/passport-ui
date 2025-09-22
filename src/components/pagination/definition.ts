@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Pagination",
   icon: ChevronLeft,
-  description: "Component description",
+  description: "A component for navigating between pages of content.",
   category: "components",
   storyId: "components-pagination--default",
   slug: "pagination",

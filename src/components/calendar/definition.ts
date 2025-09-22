@@ -1,11 +1,11 @@
-import { Calendar } from "lucide-react";
+import { CalendarDays } from "lucide-react";
 
 import type { ComponentDefinition } from "../../types/definition";
 
 export const definition: ComponentDefinition = {
   name: "Calendar",
-  icon: Calendar,
-  description: "Component description",
+  icon: CalendarDays,
+  description: "A calendar component for selecting dates and date ranges.",
   category: "components",
   storyId: "components-calendar--default",
   slug: "calendar",

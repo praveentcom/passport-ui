@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Aspect Ratio",
   icon: RectangleHorizontal,
-  description: "Component description",
+  description: "A container that maintains a specific aspect ratio.",
   category: "components",
   storyId: "components-aspect-ratio--default",
   slug: "aspect-ratio",

@@ -506,6 +506,7 @@ function SidebarMenuButton({
   variant = "default",
   tooltip,
   className,
+  onClick,
   ...props
 }: React.ComponentProps<"button"> & {
   asChild?: boolean;
@@ -513,7 +514,7 @@ function SidebarMenuButton({
   tooltip?: string | React.ComponentProps<typeof TooltipContent>;
 } & VariantProps<typeof sidebarMenuButtonVariants>) {
   const Comp = asChild ? Slot : "button";
-  const { isMobile, state } = useSidebar();
+  const { isMobile, state, setOpenMobile } = useSidebar();
 
   const button = (
     <Comp
@@ -521,6 +522,12 @@ function SidebarMenuButton({
       data-sidebar="menu-button"
       data-active={isActive}
       className={cn(sidebarMenuButtonVariants({ variant }), className)}
+      onClick={(event) => {
+        if (isMobile) {
+          setOpenMobile(false);
+        }
+        onClick?.(event);
+      }}
       {...props}
     />
   );
@@ -675,6 +682,7 @@ function SidebarMenuSubButton({
   size = "md",
   isActive = false,
   className,
+  onClick,
   ...props
 }: React.ComponentProps<"a"> & {
   asChild?: boolean;
@@ -682,6 +690,7 @@ function SidebarMenuSubButton({
   isActive?: boolean;
 }) {
   const Comp = asChild ? Slot : "a";
+  const { isMobile, setOpenMobile } = useSidebar();
 
   return (
     <Comp
@@ -696,6 +705,12 @@ function SidebarMenuSubButton({
         "group-data-[collapsible=icon]:hidden",
         className
       )}
+      onClick={(event) => {
+        if (isMobile) {
+          setOpenMobile(false);
+        }
+        onClick?.(event);
+      }}
       {...props}
     />
   );

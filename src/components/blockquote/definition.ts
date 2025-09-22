@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Blockquote",
   icon: Quote,
-  description: "Component description",
+  description: "A component for displaying quoted text with optional citation.",
   category: "components",
   storyId: "components-blockquote--default",
   slug: "blockquote",

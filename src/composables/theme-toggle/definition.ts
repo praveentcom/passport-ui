@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Theme Toggle",
   icon: Sun,
-  description: "Component description",
+  description: "A dropdown for selecting a light, dark, or system theme.",
   category: "composables",
   storyId: "composables-theme-toggle--default",
   slug: "theme-toggle",

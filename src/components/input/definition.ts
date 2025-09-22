@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Input",
   icon: Type,
-  description: "Component description",
+  description: "A standard text input field for form data.",
   category: "components",
   storyId: "components-input--default",
   slug: "input",

@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Blur In",
   icon: Eye,
-  description: "Component description",
+  description: "A component that reveals content with a blur-in animation.",
   category: "motion-primitives",
   storyId: "motion-primitives-blur-in--default",
   slug: "blur-in",

@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Scroll Area",
   icon: ScrollText,
-  description: "Component description",
+  description: "A container with a customizable scrollbar for scrollable content.",
   category: "components",
   storyId: "components-scroll-area--default",
   slug: "scroll-area",

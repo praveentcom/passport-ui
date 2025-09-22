@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Typewriter Text",
   icon: Type,
-  description: "Component description",
+  description: "A component that animates text with a typewriter effect.",
   category: "motion-primitives",
   storyId: "motion-primitives-typewriter-text--default",
   slug: "typewriter-text",

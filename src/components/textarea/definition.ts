@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Textarea",
   icon: AlignLeft,
-  description: "Component description",
+  description: "A multi-line text input for longer form content.",
   category: "components",
   storyId: "components-textarea--default",
   slug: "textarea",

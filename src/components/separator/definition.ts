@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Separator",
   icon: Minus,
-  description: "Component description",
+  description: "A visual divider for separating content sections.",
   category: "components",
   storyId: "components-separator--default",
   slug: "separator",

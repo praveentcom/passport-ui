@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Alert Dialog",
   icon: AlertCircle,
-  description: "Component description",
+  description: "A modal dialog that interrupts the user with important content, requiring action.",
   category: "components",
   storyId: "components-alert-dialog--default",
   slug: "alert-dialog",

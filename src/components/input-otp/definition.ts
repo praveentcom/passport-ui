@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Input OTP",
   icon: KeyRound,
-  description: "Component description",
+  description: "A specialized input field for one-time passwords.",
   category: "components",
   storyId: "components-input-otp--default",
   slug: "input-otp",

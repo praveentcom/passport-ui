@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Toggle Select",
   icon: CheckSquare,
-  description: "Component description",
+  description: "A set of toggle buttons for selecting one or more options.",
   category: "components",
   storyId: "components-toggle-select--default",
   slug: "toggle-select",

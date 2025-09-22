@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Date Picker",
   icon: CalendarDays,
-  description: "Component description",
+  description: "A component for selecting a single date from an interactive calendar.",
   category: "components",
   storyId: "components-date-picker--default",
   slug: "date-picker",

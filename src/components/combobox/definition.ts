@@ -1,11 +1,11 @@
-import { Search } from "lucide-react";
+import { ChevronsUpDown } from "lucide-react";
 
 import type { ComponentDefinition } from "../../types/definition";
 
 export const definition: ComponentDefinition = {
   name: "Combobox",
-  icon: Search,
-  description: "Component description",
+  icon: ChevronsUpDown,
+  description: "An input field that combines a text input with a dropdown list of suggestions.",
   category: "components",
   storyId: "components-combobox--default",
   slug: "combobox",

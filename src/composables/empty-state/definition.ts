@@ -1,11 +1,11 @@
-import { FileX } from "lucide-react";
+import { CircleSlash } from "lucide-react";
 
 import type { ComponentDefinition } from "../../types/definition";
 
 export const definition: ComponentDefinition = {
   name: "Empty State",
-  icon: FileX,
-  description: "Component description",
+  icon: CircleSlash,
+  description: "A placeholder for sections that have no content to display.",
   category: "composables",
   storyId: "composables-empty-state--default",
   slug: "empty-state",

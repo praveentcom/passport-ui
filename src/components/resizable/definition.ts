@@ -1,11 +1,11 @@
-import { Move } from "lucide-react";
+import { StretchHorizontal } from "lucide-react";
 
 import type { ComponentDefinition } from "../../types/definition";
 
 export const definition: ComponentDefinition = {
   name: "Resizable",
-  icon: Move,
-  description: "Component description",
+  icon: StretchHorizontal,
+  description: "A component with resizable panels for flexible layouts.",
   category: "components",
   storyId: "components-resizable--default",
   slug: "resizable",

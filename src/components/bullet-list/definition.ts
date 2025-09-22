@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Bullet List",
   icon: List,
-  description: "Component description",
+  description: "A component for displaying a list of items with bullet points.",
   category: "components",
   storyId: "components-bullet-list--default",
   slug: "bullet-list",

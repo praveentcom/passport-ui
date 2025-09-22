@@ -5,9 +5,9 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Header Container",
   icon: PanelTop,
-  description: "Component description",
+  description: "A layout container for the header section of a page.",
   category: "layout",
-  storyId: "layouts-headercontainer--default",
+  storyId: "layouts-header-container--default",
   slug: "header-container",
   importCode: `import { HeaderContainer } from "passport-ui";
 import { Button } from "passport-ui";

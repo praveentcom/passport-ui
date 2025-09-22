@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Accordion",
   icon: ChevronDown,
-  description: "Component description",
+  description: "A vertically stacked set of interactive headings that reveal sections of content.",
   category: "components",
   storyId: "components-accordion--default",
   slug: "accordion",

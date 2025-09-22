@@ -1,13 +1,13 @@
-import { Container } from "lucide-react";
+import { Box } from "lucide-react";
 
 import type { ComponentDefinition } from "../../types/definition";
 
 export const definition: ComponentDefinition = {
   name: "Content Container",
-  icon: Container,
-  description: "Component description",
+  icon: Box,
+  description: "A layout container for centering and constraining content width.",
   category: "layout",
-  storyId: "layouts-contentcontainer--default",
+  storyId: "layouts-content-container--default",
   slug: "content-container",
   importCode: `import { ContentContainer } from "passport-ui";`,
   usageCode: `<ContentContainer variant="broad">

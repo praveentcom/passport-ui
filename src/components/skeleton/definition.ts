@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Skeleton",
   icon: Loader,
-  description: "Component description",
+  description: "A placeholder component for loading content.",
   category: "components",
   storyId: "components-skeleton--default",
   slug: "skeleton",

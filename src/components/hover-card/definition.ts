@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Hover Card",
   icon: MousePointerClick,
-  description: "Component description",
+  description: "A pop-up card that appears when a user hovers over an element.",
   category: "components",
   storyId: "components-hover-card--default",
   slug: "hover-card",

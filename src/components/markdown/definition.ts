@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Markdown",
   icon: FileText,
-  description: "Component description",
+  description: "A component for rendering Markdown text with styles.",
   category: "components",
   storyId: "components-markdown--default",
   slug: "markdown",

@@ -5,7 +5,7 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Table",
   icon: Table,
-  description: "Component description",
+  description: "A component for displaying data in a tabular format.",
   category: "components",
   storyId: "components-table--default",
   slug: "table",
