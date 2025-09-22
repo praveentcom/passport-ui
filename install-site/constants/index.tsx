@@ -12,7 +12,7 @@ export const SITE_CONFIG = {
   repository: "https://github.com/praveentcom/passport-ui",
   npm: "https://www.npmjs.com/package/passport-ui",
   mainSite: "https://passportui.com/",
-  storybook: "https://storybook.passportui.com/",
+  storybook: "https://storybook.passportui.com/iframe/",
   images: {
     openGraph:
       "https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png",

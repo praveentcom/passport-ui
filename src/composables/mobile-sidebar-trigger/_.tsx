@@ -36,7 +36,6 @@ export function MobileSidebarTrigger({
     <Button
       data-slot="mobile-sidebar-trigger"
       variant="outline"
-      size="medium"
       className={cn("md:hidden", !isMobile && "invisible", className)}
       onClick={(event) => {
         onClick?.(event);
@@ -44,7 +43,7 @@ export function MobileSidebarTrigger({
       }}
       {...props}
     >
-      <Icon className="size-5" />
+      <Icon />
       <span className="sr-only">Open sidebar</span>
     </Button>
   );

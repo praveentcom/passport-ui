@@ -150,7 +150,7 @@ export function PageLayout({
   };
 
   const renderMainContent = () => (
-    <>
+    <div className="flex flex-col min-h-screen">
       {header && (
         <HeaderContainer
           id="header"
@@ -175,7 +175,7 @@ export function PageLayout({
           {footer}
         </FooterContainer>
       )}
-    </>
+    </div>
   );
 
   const renderRightSidebar = () => (
@@ -195,7 +195,7 @@ export function PageLayout({
     </div>
   );
 
-  const contentClasses = `flex flex-col flex-1 max-h-screen overflow-y-auto overflow-x-hidden transition-[padding] duration-200 ${getRightPadding()}`;
+  const contentClasses = `flex-1 transition-[padding] duration-200 ${getRightPadding()}`;
   let layoutStructure: ReactNode;
 
   if (leftSidebar && rightSidebar) {
@@ -224,9 +224,7 @@ export function PageLayout({
         <div id="left-sidebar" role="navigation" aria-label="Left navigation">
           {leftSidebar}
         </div>
-        <SidebarInset className="flex flex-col max-h-screen overflow-y-auto overflow-x-hidden">
-          {renderMainContent()}
-        </SidebarInset>
+        <SidebarInset className="flex">{renderMainContent()}</SidebarInset>
       </SidebarProvider>
     );
   } else if (!leftSidebar && rightSidebar) {
@@ -237,11 +235,7 @@ export function PageLayout({
       </div>
     );
   } else {
-    layoutStructure = (
-      <div className="flex flex-col min-h-screen max-h-screen overflow-y-auto overflow-x-hidden">
-        {renderMainContent()}
-      </div>
-    );
+    layoutStructure = renderMainContent();
   }
 
   return (
@@ -259,7 +253,7 @@ export function PageLayout({
           ))}
         </div>
       )}
-      <div data-slot="page-layout" className="min-h-screen w-full">
+      <div data-slot="page-layout" className="w-full">
         {layoutStructure}
       </div>
     </Fragment>

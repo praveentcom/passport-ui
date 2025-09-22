@@ -271,7 +271,10 @@ function SidebarTrigger({
       data-slot="sidebar-trigger"
       variant="ghost"
       size="medium"
-      className={cn(className, "transition-transform duration-200 ease-linear")}
+      className={cn(
+        className,
+        "transition-transform duration-200 ease-linear m-[0.5px]"
+      )}
       onClick={(event) => {
         onClick?.(event);
         toggleSidebar();
@@ -329,6 +332,7 @@ function SidebarInput({
       <Input
         data-slot="sidebar-input"
         data-sidebar="input"
+        autoFocus={false}
         className={cn("bg-background -mb-1 w-full shadow-none", className)}
         {...props}
       />
@@ -352,7 +356,7 @@ function SidebarFooter({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="sidebar-footer"
       data-sidebar="footer"
-      className={cn("flex flex-col gap-y-1.5 gap-x-2 p-3", className)}
+      className={cn("flex flex-col gap-y-1.5 gap-x-2 px-3 py-2.5", className)}
       {...props}
     />
   );
@@ -378,7 +382,7 @@ function SidebarContent({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="sidebar-content"
       data-sidebar="content"
       className={cn(
-        "flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden",
+        "flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 border-t border-b border-border py-3",
         className
       )}
       {...props}
@@ -412,7 +416,7 @@ function SidebarGroupLabel({
       data-slot="sidebar-group-label"
       data-sidebar="group-label"
       className={cn(
-        "text-foreground/70 ring-ring flex h-8 shrink-0 items-center rounded-sm px-2 text-xs font-medium outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0",
+        "text-muted-foreground/75 ring-ring flex h-8 shrink-0 items-center rounded-sm px-2 text-xxs uppercase tracking-widest font-semibold outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0",
         "group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0",
         className
       )}

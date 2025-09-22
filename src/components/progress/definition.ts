@@ -1,0 +1,25 @@
+import { BarChart3 } from "lucide-react";
+
+import type { ComponentDefinition } from "../../types/definition";
+
+export const definition: ComponentDefinition = {
+  name: "Progress",
+  icon: BarChart3,
+  description: "Component description",
+  category: "components",
+  storyId: "components-progress--default",
+  slug: "progress",
+  importCode: `import { Progress } from "passport-ui";`,
+  usageCode: `<div className="w-sm">
+  <Progress value={60} />
+</div>
+
+{/* Different progress values */}
+<Progress value={25} />
+<Progress value={50} />
+<Progress value={75} />
+<Progress value={100} />
+
+{/* Indeterminate progress */}
+<Progress value={null} />`,
+};

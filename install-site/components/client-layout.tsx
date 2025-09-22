@@ -2,11 +2,9 @@
 
 import React, { useState } from "react";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { MobileSidebarTrigger } from "../../src/composables/mobile-sidebar-trigger";
-import { ThemeToggle } from "../../src/composables/theme-toggle";
+import { PrefetchLink } from "../../src/components/prefetch-link";
 import {
   SidebarGroup,
   SidebarGroupContent,
@@ -14,11 +12,18 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarProvider,
+  useSidebar,
 } from "../../src/components/sidebar";
+import { MobileSidebarTrigger } from "../../src/composables/mobile-sidebar-trigger";
+import { ThemeToggle } from "../../src/composables/theme-toggle";
 import { PageLayout } from "../../src/layouts/page-layout";
 import { SidebarContainer } from "../../src/layouts/sidebar-container";
 import { SITE_CONFIG } from "../constants";
-import { PRIMARY_NAVIGATION_PAGES } from "../constants/components";
+import { PRIMARY_NAVIGATION_PAGES } from "../constants/primary-navigation";
+import { CATEGORY_LABELS, COMPONENTS_BY_CATEGORY } from "../utils";
+import { getPageTitle } from "../utils/breadcrumbs";
+import { filterAndSortNavigation } from "../utils/navigation-sort";
 
 type NavigationGroup = {
   label: string;
@@ -29,31 +34,79 @@ type NavigationGroup = {
   }>;
 };
 
-const NAVIGATION_GROUPS: NavigationGroup[] = [
-  {
-    label: "Getting Started",
-    items: PRIMARY_NAVIGATION_PAGES,
-  },
-];
+const generateNavigationGroups = (
+  searchText: string = ""
+): NavigationGroup[] => {
+  const baseGroups: NavigationGroup[] = [
+    {
+      label: "Getting Started",
+      items: PRIMARY_NAVIGATION_PAGES,
+    },
+  ];
 
-const getPageTitle = (path: string) => {
-  for (const group of NAVIGATION_GROUPS) {
-    const page = group.items.find((page) => page.href === path);
-    if (page) return page.title;
-  }
-  return undefined;
+  const completeComponentsByCategory = Object.entries(
+    COMPONENTS_BY_CATEGORY
+  ).reduce(
+    (acc, [category, components]) => {
+      const completeComponents = components.filter((c) => c.slug && c.storyId);
+      if (completeComponents.length > 0) {
+        acc[category] = completeComponents;
+      }
+      return acc;
+    },
+    {} as Record<string, (typeof COMPONENTS_BY_CATEGORY)[string]>
+  );
+
+  const sortedAndFilteredCategories = filterAndSortNavigation(
+    completeComponentsByCategory,
+    searchText
+  );
+
+  Object.entries(sortedAndFilteredCategories).forEach(
+    ([category, components]) => {
+      baseGroups.push({
+        label:
+          CATEGORY_LABELS[category as keyof typeof CATEGORY_LABELS] ?? category,
+        items: components.map((component) => ({
+          title: component.name,
+          href: `/${category}/${component.slug}`,
+          icon: component.icon,
+        })),
+      });
+    }
+  );
+
+  return baseGroups;
 };
 
-export function ClientLayout({ children }: { children: React.ReactNode }) {
+function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [searchText, setSearchText] = useState("");
+  const { isMobile, setOpenMobile } = useSidebar();
 
-  const filteredGroups = NAVIGATION_GROUPS.map(group => ({
-    ...group,
-    items: group.items.filter(item =>
-      item.title.toLowerCase().includes(searchText.toLowerCase())
-    ),
-  })).filter(group => group.items.length > 0);
+  const pageTitle = getPageTitle(pathname);
+
+  const navigationGroups = generateNavigationGroups(searchText);
+
+  const filteredGroups = navigationGroups
+    .map((group) => {
+      if (group.label === "Getting Started") {
+        return {
+          ...group,
+          items: group.items.filter((item) =>
+            item.title.toLowerCase().includes(searchText.toLowerCase())
+          ),
+        };
+      }
+      return group;
+    })
+    .filter((group) => group.items.length > 0);
+
+  const handleLinkClick = () => {
+    if (isMobile) {
+      setOpenMobile(false);
+    }
+  };
 
   return (
     <PageLayout
@@ -65,12 +118,12 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
             placeholder: "Search…",
           }}
           sidebarHeader={
-            <Link href="/">
+            <PrefetchLink href="/" onClick={handleLinkClick}>
               <div className="meta-container">
                 <h3 className="line-clamp-1">Passport UI</h3>
-                <p className="line-clamp-1">Sleek & Compact UI Library</p>
+                <p className="line-clamp-1">Compact UI Components</p>
               </div>
-            </Link>
+            </PrefetchLink>
           }
         >
           {filteredGroups.map((group) => (
@@ -78,16 +131,25 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
               <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu>
-                  {group.items.map((item) => (
-                    <SidebarMenuItem key={item.href}>
-                      <SidebarMenuButton asChild isActive={pathname === item.href}>
-                        <Link href={item.href}>
-                          <item.icon className="size-4" />
-                          {item.title}
-                        </Link>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  ))}
+                  {group.items.map((item) => {
+                    const normalizedPathname = pathname.replace(/\/$/, "");
+                    const normalizedHref = item.href.replace(/\/$/, "");
+                    const isActive = normalizedPathname === normalizedHref;
+
+                    return (
+                      <SidebarMenuItem key={item.href}>
+                        <SidebarMenuButton asChild isActive={isActive}>
+                          <PrefetchLink
+                            href={item.href}
+                            onClick={handleLinkClick}
+                          >
+                            <item.icon className="size-4" />
+                            {item.title}
+                          </PrefetchLink>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    );
+                  })}
                 </SidebarMenu>
               </SidebarGroupContent>
             </SidebarGroup>
@@ -98,7 +160,7 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
         <div className="flex justify-between items-center gap-4">
           <div className="flex items-center gap-3">
             <MobileSidebarTrigger />
-            <h2>{getPageTitle(pathname)}</h2>
+            <h3>{pageTitle}</h3>
           </div>
           <ThemeToggle />
         </div>
@@ -106,27 +168,27 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
       footer={
         <div className="meta-container">
           <div className="flex gap-4 items-center">
-            <Link
+            <PrefetchLink
               target="_blank"
               href={SITE_CONFIG.npm}
               className="text-primary hover:underline"
             >
               Storybook {"\u2197"}
-            </Link>
-            <Link
+            </PrefetchLink>
+            <PrefetchLink
               target="_blank"
               href={SITE_CONFIG.repository}
               className="text-primary hover:underline"
             >
               GitHub {"\u2197"}
-            </Link>
-            <Link
+            </PrefetchLink>
+            <PrefetchLink
               target="_blank"
               href={SITE_CONFIG.storybook}
               className="text-primary hover:underline"
             >
               npm {"\u2197"}
-            </Link>
+            </PrefetchLink>
           </div>
         </div>
       }
@@ -137,5 +199,13 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
     >
       {children}
     </PageLayout>
+  );
+}
+
+export function ClientLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <SidebarProvider defaultOpen={true}>
+      <ClientLayoutInner>{children}</ClientLayoutInner>
+    </SidebarProvider>
   );
 }

@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
 import { FileText, Home, Plus, Settings, Users } from "lucide-react";
+import { SidebarContainerProps } from "src/layouts/sidebar-container";
 import { action } from "storybook/internal/actions";
 import { InputType } from "storybook/internal/csf";
 
@@ -8,7 +9,6 @@ import { Badge } from "../src/components/badge";
 import { Button } from "../src/components/button";
 import { Card, CardContent } from "../src/components/card";
 import { ContentContainer } from "../src/layouts/content-container";
-import { SidebarContainerProps } from "src/layouts/sidebar-container";
 
 export const COMMON_CONTROLS: Record<string, InputType> = {
   asChild: {
@@ -53,9 +53,7 @@ export const SAMPLE_CONTENT_CONTAINER: ReactNode = (
           <CardContent>
             <div className="meta-container">
               <h3>Accessible Components</h3>
-              <p>
-                Built on Radix UI primitives with accessibility support.
-              </p>
+              <p>Built on Radix UI primitives with accessibility support.</p>
             </div>
           </CardContent>
         </Card>

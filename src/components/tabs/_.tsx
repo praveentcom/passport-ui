@@ -2,6 +2,7 @@ import React from "react";
 
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 import { type VariantProps, cva } from "class-variance-authority";
+import type { LucideIcon } from "lucide-react";
 
 import { cn } from "../../lib/utils";
 import {
@@ -13,7 +14,7 @@ import {
 } from "../select";
 
 const tabsVariants = cva(
-  "flex data-[orientation=horizontal]:flex-col data-[orientation=vertical]:flex-row",
+  "flex data-[orientation=horizontal]:flex-col data-[orientation=vertical]:flex-row min-w-0",
   {
     variants: {
       variant: {
@@ -33,9 +34,9 @@ const tabsListVariants = cva(
     variants: {
       variant: {
         default:
-          "rounded-none border-b bg-transparent p-0 data-[orientation=horizontal]:h-9 data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col data-[orientation=vertical]:border-b-0 data-[orientation=vertical]:border-r data-[orientation=vertical]:w-auto data-[orientation=vertical]:min-w-[120px] data-[orientation=vertical]:h-auto md:flex hidden relative",
+          "rounded-none border-b bg-transparent p-0 data-[orientation=horizontal]:h-8 data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col data-[orientation=vertical]:border-b-0 data-[orientation=vertical]:border-r data-[orientation=vertical]:w-auto data-[orientation=vertical]:min-w-[120px] data-[orientation=vertical]:h-auto md:flex hidden relative",
         pills:
-          "h-auto rounded-none border-0 bg-transparent p-0 gap-1 data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col md:flex hidden",
+          "h-auto rounded-none border-0 bg-transparent p-0 gap-2 data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col md:flex hidden",
       },
     },
     defaultVariants: {
@@ -47,8 +48,8 @@ const tabsListVariants = cva(
 const tabsDropdownVariants = cva("md:hidden block w-full", {
   variants: {
     variant: {
-      default: "mb-2",
-      pills: "mb-3",
+      default: "mb-4",
+      pills: "mb-4",
     },
   },
   defaultVariants: {
@@ -74,14 +75,14 @@ const tabsTriggerVariants = cva(
 );
 
 const tabsContentVariants = cva(
-  "ring-offset-background focus-visible:outline-none focus-visible:ring-ring focus-visible:ring-[3px] focus-visible:ring-offset-2 data-[orientation=horizontal]:mt-2 data-[orientation=vertical]:ml-4",
+  "ring-offset-background focus-visible:outline-none focus-visible:ring-ring focus-visible:ring-[3px] focus-visible:ring-offset-2 data-[orientation=horizontal]:mt-2 data-[orientation=vertical]:ml-4 min-w-0",
   {
     variants: {
       variant: {
         default:
-          "data-[orientation=horizontal]:mt-3 data-[orientation=vertical]:ml-4",
+          "data-[orientation=horizontal]:mt-4 data-[orientation=vertical]:ml-4",
         pills:
-          "data-[orientation=horizontal]:mt-3 data-[orientation=vertical]:ml-4",
+          "data-[orientation=horizontal]:mt-4 data-[orientation=vertical]:ml-4",
       },
     },
     defaultVariants: {
@@ -130,6 +131,7 @@ export interface TabsDropdownProps
     value: string;
     label: string;
     disabled?: boolean;
+    icon?: LucideIcon;
   }>;
 }
 
@@ -140,6 +142,10 @@ export interface TabsTriggerProps
    * The visual style variant of the tab trigger
    */
   variant?: "default" | "pills";
+  /**
+   * Optional Lucide icon to display before the label
+   */
+  icon?: LucideIcon;
 }
 
 export interface TabsContentProps
@@ -195,7 +201,11 @@ const TabsDropdown = React.forwardRef<HTMLDivElement, TabsDropdownProps>(
               value={trigger.value}
               disabled={trigger.disabled}
             >
-              {trigger.label}
+              <div className="flex items-center gap-2">
+                {trigger.icon &&
+                  React.createElement(trigger.icon, { className: "h-4 w-4" })}
+                {trigger.label}
+              </div>
             </SelectItem>
           ))}
         </SelectContent>
@@ -208,13 +218,18 @@ TabsDropdown.displayName = "TabsDropdown";
 const TabsTrigger = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Trigger>,
   TabsTriggerProps
->(({ className, variant, ...props }, ref) => (
+>(({ className, variant, icon, children, ...props }, ref) => (
   <TabsPrimitive.Trigger
     ref={ref}
     data-slot="tabs-trigger"
     className={cn(tabsTriggerVariants({ variant }), className)}
     {...props}
-  />
+  >
+    <div className="flex items-center gap-2">
+      {icon && React.createElement(icon, { className: "h-4 w-4" })}
+      {children}
+    </div>
+  </TabsPrimitive.Trigger>
 ));
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
 

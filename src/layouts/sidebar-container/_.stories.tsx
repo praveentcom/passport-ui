@@ -7,6 +7,7 @@ import { action } from "storybook/actions";
 import { SidebarContainer } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Button } from "../../components/button";
+import { PrefetchLink } from "../../components/prefetch-link";
 import {
   SidebarGroup,
   SidebarGroupContent,
@@ -19,7 +20,6 @@ import {
   SidebarMenuSubItem,
   SidebarProvider,
 } from "../../components/sidebar";
-import { PrefetchLink } from "../../components/prefetch-link";
 
 const meta: Meta<typeof SidebarContainer> = {
   title: "Layouts/SidebarContainer",
@@ -62,14 +62,16 @@ Requires SidebarProvider wrapper.`,
     },
     children: {
       control: false,
-      description: "Main sidebar content - client constructs their own sidebar structure",
+      description:
+        "Main sidebar content - client constructs their own sidebar structure",
       table: {
         type: { summary: "ReactNode" },
       },
     },
     searchConfig: {
       control: false,
-      description: "Search configuration object with searchText, setSearchText, and optional placeholder",
+      description:
+        "Search configuration object with searchText, setSearchText, and optional placeholder",
       table: {
         type: { summary: "SearchConfig" },
       },
@@ -125,19 +127,33 @@ export default meta;
 type Story = StoryObj<typeof SidebarContainer>;
 
 function DefaultSidebar({ searchText = "" }: { searchText?: string }) {
-
   // Sample menu data
   const menuItems = [
     { title: "Dashboard", icon: Home, href: "#dashboard" },
-    { title: "Users", icon: Users, subItems: ["All Users", "Active Users", "Inactive Users"] },
-    { title: "Documents", icon: FileText, subItems: ["Recent", "Shared", "Archived"] },
-    { title: "Settings", icon: Settings, subItems: ["Profile", "Preferences", "Security"] },
+    {
+      title: "Users",
+      icon: Users,
+      subItems: ["All Users", "Active Users", "Inactive Users"],
+    },
+    {
+      title: "Documents",
+      icon: FileText,
+      subItems: ["Recent", "Shared", "Archived"],
+    },
+    {
+      title: "Settings",
+      icon: Settings,
+      subItems: ["Profile", "Preferences", "Security"],
+    },
   ];
 
   // Filter menu items based on search
-  const filteredItems = menuItems.filter(item =>
-    item.title.toLowerCase().includes(searchText.toLowerCase()) ||
-    item.subItems?.some(sub => sub.toLowerCase().includes(searchText.toLowerCase()))
+  const filteredItems = menuItems.filter(
+    (item) =>
+      item.title.toLowerCase().includes(searchText.toLowerCase()) ||
+      item.subItems?.some((sub) =>
+        sub.toLowerCase().includes(searchText.toLowerCase())
+      )
   );
 
   return (
@@ -166,7 +182,9 @@ function DefaultSidebar({ searchText = "" }: { searchText?: string }) {
                     {item.subItems.map((subItem) => (
                       <SidebarMenuSubItem key={subItem}>
                         <SidebarMenuSubButton asChild>
-                          <PrefetchLink href={`#${item.title.toLowerCase()}/${subItem.toLowerCase().replace(' ', '-')}`}>
+                          <PrefetchLink
+                            href={`#${item.title.toLowerCase()}/${subItem.toLowerCase().replace(" ", "-")}`}
+                          >
                             {subItem}
                           </PrefetchLink>
                         </SidebarMenuSubButton>

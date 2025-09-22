@@ -55,8 +55,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Passport UI - Docs",
-    description:
-      "Complete documentation for Passport UI component library.",
+    description: "Complete documentation for Passport UI component library.",
     images: [
       "https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png",
     ],

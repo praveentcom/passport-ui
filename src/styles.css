@@ -98,6 +98,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --text-xs: 0.8rem;
+  --text-xxs: 0.625rem;
   --font-sans:
     "Open Runde", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -137,7 +138,7 @@
   --destructive-muted: oklch(0.9577 0.023 357.34);
   --destructive-foreground: oklch(0.985 0 0);
   --destructive-muted-foreground: oklch(0.557 0.1974 25.17);
-  --border: oklch(0.90 0.004 286.32);
+  --border: oklch(0.9 0.004 286.32);
   --input: oklch(0.92 0.004 286.32);
   --ring: oklch(0.705 0.015 286.067);
   --chart-1: oklch(0.528 0.225 262.55);
@@ -178,7 +179,7 @@
   --destructive-muted: oklch(0.18 0.0018 286.27);
   --destructive-foreground: oklch(0.985 0 0);
   --destructive-muted-foreground: oklch(0.985 0 0);
-  --border: oklch(0.30 0.002 270);
+  --border: oklch(0.3 0.002 270);
   --input: oklch(0.32 0 0);
   --ring: oklch(0.48 0.016 285.938);
   --chart-1: oklch(0.528 0.225 262.55);
@@ -194,8 +195,17 @@
   .passport-ui * {
     @apply border-border outline-ring/50 leading-normal;
   }
+
+  /* Prevent bounce scrolling globally */
+  html,
+  body {
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .passport-ui {
     @apply text-sm font-normal font-sans;
+    overscroll-behavior: none;
   }
   .passport-ui h1,
   .passport-ui h2,
@@ -264,15 +274,19 @@
   /* Prevent Bouncy Scroll on Mobile */
   .passport-ui .no-bounce {
     overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
   .passport-ui .no-bounce-x {
     overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
   }
   .passport-ui .no-bounce-y {
     overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
   }
   .passport-ui .no-bounce-none {
     overscroll-behavior: none;
+    -webkit-overflow-scrolling: auto;
   }
 
   /* Bullet List Styles */

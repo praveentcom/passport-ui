@@ -1,9 +1,12 @@
 import { Metadata } from "next";
+
+import { Breadcrumb } from "../../../src/components/breadcrumb";
 import { Separator } from "../../../src/components/separator";
 import { StructuredData } from "../../../src/components/structured-data";
 import { ContentContainer } from "../../../src/layouts/content-container";
 import { createPageStructuredData } from "../../constants";
 import { SITE_CONFIG } from "../../constants";
+import { generateBreadcrumbs } from "../../utils/breadcrumbs";
 
 /**
  * Color Palette for Passport UI
@@ -295,19 +298,24 @@ const TailwindColorCard = ({ color }: { color: string }) => (
 );
 
 export default function ColorsPage() {
+  const breadcrumbs = generateBreadcrumbs("/colors");
+
   return (
     <ContentContainer variant="broad">
-      <StructuredData data={createPageStructuredData({
-  name: "Passport UI - Color System",
-  description:
-    "Color system documentation for Passport UI component library with automatic light/dark theme support.",
-  url: SITE_CONFIG.baseUrl + "/colors/",
-  breadcrumbName: "Color System",
-  breadcrumbUrl: SITE_CONFIG.baseUrl + "/colors/"
-})} />
+      {breadcrumbs.length > 1 && <Breadcrumb path={breadcrumbs} />}
+      <StructuredData
+        data={createPageStructuredData({
+          name: "Passport UI - Color System",
+          description:
+            "Color system documentation for Passport UI component library with automatic light/dark theme support.",
+          url: SITE_CONFIG.baseUrl + "/colors/",
+          breadcrumbName: "Color System",
+          breadcrumbUrl: SITE_CONFIG.baseUrl + "/colors/",
+        })}
+      />
       <div className="section-container">
         <div className="meta-container">
-          <h3>Overview</h3>
+          <h3>Color System</h3>
           <p className="text-muted-foreground">
             Passport UI uses a comprehensive color system built on OKLCH color
             space, inspired by shadcn/ui, for better color management and

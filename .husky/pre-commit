@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Format registry (auto-updates component definitions)
+npm run format-registry --silent || exit 1
+
+# Format readme (auto-updates component documentation)
+npm run format-readme --silent || exit 1
+
+# Run lint (staged or full)
+npm run lint --silent || exit 1
+

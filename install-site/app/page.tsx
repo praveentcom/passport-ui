@@ -1,7 +1,9 @@
+import { Breadcrumb } from "../../src/components/breadcrumb";
 import { CodeBlock } from "../../src/components/code-block";
 import { StructuredData } from "../../src/components/structured-data";
 import { ContentContainer } from "../../src/layouts/content-container";
-import { createPageStructuredData, SITE_CONFIG } from "../constants";
+import { SITE_CONFIG, createPageStructuredData } from "../constants";
+import { generateBreadcrumbs } from "../utils/breadcrumbs";
 
 const INSTALLATION_CODE = {
   PACKAGE_INSTALL: `npm install passport-ui`,
@@ -41,16 +43,21 @@ function App() {
 };
 
 export default function IntroductionPage() {
+  const breadcrumbs = generateBreadcrumbs("/");
+
   return (
     <ContentContainer variant="broad">
-      <StructuredData data={createPageStructuredData({
-  name: "Passport UI - Installation",
-  description:
-    "Installation guide for Passport UI - a React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
-  url: SITE_CONFIG.baseUrl + "/",
-  breadcrumbName: "Installation",
-  breadcrumbUrl: SITE_CONFIG.baseUrl + "/",
-})} />
+      {breadcrumbs.length > 1 && <Breadcrumb path={breadcrumbs} />}
+      <StructuredData
+        data={createPageStructuredData({
+          name: "Passport UI - Installation",
+          description:
+            "Installation guide for Passport UI - a React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
+          url: SITE_CONFIG.baseUrl + "/",
+          breadcrumbName: "Installation",
+          breadcrumbUrl: SITE_CONFIG.baseUrl + "/",
+        })}
+      />
       <div className="meta-container">
         <h3>Installation</h3>
         <p>

@@ -199,7 +199,7 @@ function CodeBlock({
     <div
       data-slot="code-block"
       className={cn(
-        "relative bg-card border border-border rounded-sm overflow-hidden group w-full break-inside-avoid",
+        "relative bg-card border border-border rounded-sm overflow-hidden group w-full min-w-0 break-inside-avoid",
         `hljs-theme-${theme}`,
         className
       )}
@@ -247,7 +247,7 @@ function CodeBlock({
             const highlightedLine = highlightLine(line);
 
             return (
-              <div key={index} className="flex items-center">
+              <div key={index} className="flex items-center min-w-0">
                 {!hideLineNumbers && (
                   <span
                     className={cn(

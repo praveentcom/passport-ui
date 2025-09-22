@@ -1,6 +1,17 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import {
+  Activity,
+  BarChart3,
+  Bell,
+  FileText,
+  History,
+  Home,
+  Lock,
+  Settings,
+  User,
+} from "lucide-react";
 
 import { Tabs, TabsContent, TabsDropdown, TabsList, TabsTrigger } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
@@ -14,19 +25,22 @@ const meta: Meta<typeof Tabs> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Tabs with visual variants and keyboard navigation.
+        component: `Tabs with visual variants, icon support, and keyboard navigation.
 
 ## Components
 - **Tabs**: Root container
 - **TabsList**: Container for triggers
-- **TabsTrigger**: Individual tab buttons
+- **TabsTrigger**: Individual tab buttons with optional Lucide icons
 - **TabsContent**: Content panels
+- **TabsDropdown**: Mobile dropdown with icon support
 
 ## Features
-- Variants: default, card, pills
+- Variants: default, pills
 - Horizontal/vertical orientation
+- Lucide icon support in triggers and dropdowns
 - Keyboard navigation (arrows, home, end)
-- Disabled tabs support`,
+- Disabled tabs support
+- Responsive mobile dropdown`,
       },
     },
   },
@@ -83,9 +97,9 @@ const meta: Meta<typeof Tabs> = {
     const [activeTab, setActiveTab] = React.useState("overview");
 
     const tabTriggers = [
-      { value: "overview", label: "Overview" },
-      { value: "analytics", label: "Analytics" },
-      { value: "settings", label: "Settings" },
+      { value: "overview", label: "Overview", icon: Home },
+      { value: "analytics", label: "Analytics", icon: BarChart3 },
+      { value: "settings", label: "Settings", icon: Settings },
     ];
 
     return (
@@ -97,13 +111,17 @@ const meta: Meta<typeof Tabs> = {
       >
         {/* Desktop tabs */}
         <TabsList variant={args.variant}>
-          <TabsTrigger value="overview" variant={args.variant}>
+          <TabsTrigger value="overview" variant={args.variant} icon={Home}>
             Overview
           </TabsTrigger>
-          <TabsTrigger value="analytics" variant={args.variant}>
+          <TabsTrigger
+            value="analytics"
+            variant={args.variant}
+            icon={BarChart3}
+          >
             Analytics
           </TabsTrigger>
-          <TabsTrigger value="settings" variant={args.variant}>
+          <TabsTrigger value="settings" variant={args.variant} icon={Settings}>
             Settings
           </TabsTrigger>
         </TabsList>
@@ -199,15 +217,15 @@ export const AllVariants: Story = {
     const [pillsTab, setPillsTab] = React.useState("tab1");
 
     const defaultTriggers = [
-      { value: "tab1", label: "Account" },
-      { value: "tab2", label: "Password" },
-      { value: "tab3", label: "Preferences" },
+      { value: "tab1", label: "Account", icon: User },
+      { value: "tab2", label: "Password", icon: Lock },
+      { value: "tab3", label: "Preferences", icon: Bell },
     ];
 
     const pillsTriggers = [
-      { value: "tab1", label: "Overview" },
-      { value: "tab2", label: "Details" },
-      { value: "tab3", label: "History" },
+      { value: "tab1", label: "Overview", icon: Home },
+      { value: "tab2", label: "Details", icon: FileText },
+      { value: "tab3", label: "History", icon: History },
     ];
 
     return (
@@ -221,13 +239,13 @@ export const AllVariants: Story = {
             className="w-full"
           >
             <TabsList variant="default">
-              <TabsTrigger value="tab1" variant="default">
+              <TabsTrigger value="tab1" variant="default" icon={User}>
                 Account
               </TabsTrigger>
-              <TabsTrigger value="tab2" variant="default">
+              <TabsTrigger value="tab2" variant="default" icon={Lock}>
                 Password
               </TabsTrigger>
-              <TabsTrigger value="tab3" variant="default">
+              <TabsTrigger value="tab3" variant="default" icon={Bell}>
                 Preferences
               </TabsTrigger>
             </TabsList>
@@ -260,13 +278,13 @@ export const AllVariants: Story = {
           <h4 className="text-sm font-medium mb-4">Pills</h4>
           <Tabs value={pillsTab} onValueChange={setPillsTab} className="w-full">
             <TabsList variant="pills">
-              <TabsTrigger value="tab1" variant="pills">
+              <TabsTrigger value="tab1" variant="pills" icon={Home}>
                 Overview
               </TabsTrigger>
-              <TabsTrigger value="tab2" variant="pills">
+              <TabsTrigger value="tab2" variant="pills" icon={FileText}>
                 Details
               </TabsTrigger>
-              <TabsTrigger value="tab3" variant="pills">
+              <TabsTrigger value="tab3" variant="pills" icon={History}>
                 History
               </TabsTrigger>
             </TabsList>
@@ -312,13 +330,13 @@ export const VerticalOrientation: Story = {
           className="w-full"
         >
           <TabsList variant="default">
-            <TabsTrigger value="tab1" variant="default">
+            <TabsTrigger value="tab1" variant="default" icon={Home}>
               Dashboard
             </TabsTrigger>
-            <TabsTrigger value="tab2" variant="default">
+            <TabsTrigger value="tab2" variant="default" icon={Activity}>
               Analytics
             </TabsTrigger>
-            <TabsTrigger value="tab3" variant="default">
+            <TabsTrigger value="tab3" variant="default" icon={Settings}>
               Settings
             </TabsTrigger>
           </TabsList>
@@ -353,6 +371,147 @@ export const VerticalOrientation: Story = {
             </Card>
           </TabsContent>
         </Tabs>
+      </div>
+    );
+  },
+};
+
+export const WithIcons: Story = {
+  render: () => {
+    const [activeTab, setActiveTab] = React.useState("dashboard");
+
+    const iconTriggers = [
+      { value: "dashboard", label: "Dashboard", icon: Home },
+      { value: "analytics", label: "Analytics", icon: BarChart3 },
+      { value: "settings", label: "Settings", icon: Settings },
+      { value: "profile", label: "Profile", icon: User },
+    ];
+
+    return (
+      <div className="w-lg space-y-8">
+        {/* Default variant with icons */}
+        <div>
+          <h4 className="text-sm font-medium mb-4">Default with Icons</h4>
+          <Tabs
+            value={activeTab}
+            onValueChange={setActiveTab}
+            className="w-full"
+          >
+            <TabsList variant="default">
+              <TabsTrigger value="dashboard" variant="default" icon={Home}>
+                Dashboard
+              </TabsTrigger>
+              <TabsTrigger value="analytics" variant="default" icon={BarChart3}>
+                Analytics
+              </TabsTrigger>
+              <TabsTrigger value="settings" variant="default" icon={Settings}>
+                Settings
+              </TabsTrigger>
+              <TabsTrigger value="profile" variant="default" icon={User}>
+                Profile
+              </TabsTrigger>
+            </TabsList>
+            <TabsDropdown
+              variant="default"
+              value={activeTab}
+              onValueChange={setActiveTab}
+              triggers={iconTriggers}
+            />
+            <TabsContent value="dashboard" variant="default">
+              <Card>
+                <CardContent>
+                  <h3 className="text-lg font-semibold">Dashboard Overview</h3>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    Your main dashboard with key metrics and recent activity.
+                  </p>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            <TabsContent value="analytics" variant="default">
+              <Card>
+                <CardContent>
+                  <h3 className="text-lg font-semibold">Analytics & Reports</h3>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    Detailed analytics and performance insights.
+                  </p>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            <TabsContent value="settings" variant="default">
+              <Card>
+                <CardContent>
+                  <h3 className="text-lg font-semibold">
+                    Application Settings
+                  </h3>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    Configure your preferences and application settings.
+                  </p>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            <TabsContent value="profile" variant="default">
+              <Card>
+                <CardContent>
+                  <h3 className="text-lg font-semibold">User Profile</h3>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    Manage your personal information and account details.
+                  </p>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
+        </div>
+
+        {/* Pills variant with icons */}
+        <div>
+          <h4 className="text-sm font-medium mb-4">Pills with Icons</h4>
+          <Tabs
+            value={activeTab}
+            onValueChange={setActiveTab}
+            className="w-full"
+          >
+            <TabsList variant="pills">
+              <TabsTrigger value="dashboard" variant="pills" icon={Home}>
+                Dashboard
+              </TabsTrigger>
+              <TabsTrigger value="analytics" variant="pills" icon={BarChart3}>
+                Analytics
+              </TabsTrigger>
+              <TabsTrigger value="settings" variant="pills" icon={Settings}>
+                Settings
+              </TabsTrigger>
+              <TabsTrigger value="profile" variant="pills" icon={User}>
+                Profile
+              </TabsTrigger>
+            </TabsList>
+            <TabsDropdown
+              variant="pills"
+              value={activeTab}
+              onValueChange={setActiveTab}
+              triggers={iconTriggers}
+            />
+            <TabsContent value="dashboard" variant="pills">
+              <p className="text-sm text-muted-foreground">
+                Dashboard content with pills variant styling.
+              </p>
+            </TabsContent>
+            <TabsContent value="analytics" variant="pills">
+              <p className="text-sm text-muted-foreground">
+                Analytics content with pills variant styling.
+              </p>
+            </TabsContent>
+            <TabsContent value="settings" variant="pills">
+              <p className="text-sm text-muted-foreground">
+                Settings content with pills variant styling.
+              </p>
+            </TabsContent>
+            <TabsContent value="profile" variant="pills">
+              <p className="text-sm text-muted-foreground">
+                Profile content with pills variant styling.
+              </p>
+            </TabsContent>
+          </Tabs>
+        </div>
       </div>
     );
   },

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { CodeBlock } from "../components/code-block";
+import { PrefetchLink } from "../components/prefetch-link";
 import { ThemeToggle } from "../composables/theme-toggle";
 import { ContentContainer } from "../layouts/content-container";
 import { PageLayout } from "../layouts/page-layout";
-import { PrefetchLink } from "../components/prefetch-link";
 
 const INSTALLATION_CODE = {
   PACKAGE_INSTALL: `npm install passport-ui`,

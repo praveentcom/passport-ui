@@ -1,13 +1,19 @@
+import { Metadata } from "next";
+
+import { Breadcrumb } from "../../../src/components/breadcrumb";
 import { Button } from "../../../src/components/button";
 import { CodeBlock } from "../../../src/components/code-block";
+import { PrefetchLink } from "../../../src/components/prefetch-link";
 import { Separator } from "../../../src/components/separator";
 import { StructuredData } from "../../../src/components/structured-data";
 import { ContentContainer } from "../../../src/layouts/content-container";
-import { PrefetchLink } from "../../../src/components/prefetch-link";
+import {
+  FontWeightsSection,
+  TypographyScaleSection,
+} from "../../components/font";
 import { createPageStructuredData } from "../../constants";
 import { SITE_CONFIG } from "../../constants";
-import { FontWeightsSection, TypographyScaleSection } from "../../components/font";
-import { Metadata } from "next";
+import { generateBreadcrumbs } from "../../utils/breadcrumbs";
 
 const FONT_CUSTOMIZATION_CODE = {
   CSS_OVERRIDE: `/* In your main CSS file (e.g., app/globals.css) */
@@ -38,17 +44,21 @@ const FONT_CUSTOMIZATION_CODE = {
 };
 
 export default function FontsPage() {
+  const breadcrumbs = generateBreadcrumbs("/fonts");
 
   return (
     <ContentContainer variant="broad">
-      <StructuredData data={createPageStructuredData({
-        name: "Passport UI - Font & Typography",
-        description:
-          "Font system documentation for Passport UI component library with font weights, sizes, and families.",
-        url: SITE_CONFIG.baseUrl + "/fonts/",
-        breadcrumbName: "Font & Typography",
-        breadcrumbUrl: SITE_CONFIG.baseUrl + "/fonts/",
-      })} />
+      {breadcrumbs.length > 1 && <Breadcrumb path={breadcrumbs} />}
+      <StructuredData
+        data={createPageStructuredData({
+          name: "Passport UI - Font & Typography",
+          description:
+            "Font system documentation for Passport UI component library with font weights, sizes, and families.",
+          url: SITE_CONFIG.baseUrl + "/fonts/",
+          breadcrumbName: "Font & Typography",
+          breadcrumbUrl: SITE_CONFIG.baseUrl + "/fonts/",
+        })}
+      />
       <div className="section-container">
         <div className="meta-container">
           <h3>Default Typography</h3>
