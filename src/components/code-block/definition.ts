@@ -11,5 +11,9 @@ export const definition: ComponentDefinition = {
   storyId: "components-codeblock--default",
   slug: "code-block",
   importCode: `import { CodeBlock } from "passport-ui";`,
-  usageCode: `const sampleCode = \`\`\``,
+  usageCode: `const sampleCode = \`function greet(name) {
+  console.log(\`Hello, \${name}!\`);
+}\`;
+
+<CodeBlock code={sampleCode} language="javascript" />;`,
 };

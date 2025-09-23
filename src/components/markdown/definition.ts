@@ -10,5 +10,18 @@ export const definition: ComponentDefinition = {
   storyId: "components-markdown--default",
   slug: "markdown",
   importCode: `import { Markdown } from "passport-ui";`,
-  usageCode: `const markdownContent = \`\`\``,
+  usageCode: `const markdownContent = \`
+# Hello, Markdown!
+
+This is a paragraph.
+
+- List item 1
+- List item 2
+
+\`\`\`javascript
+console.log("Hello, from a code block!");
+\`\`\`
+\`;
+
+<Markdown content={markdownContent} />;`,
 };
