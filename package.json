@@ -64,7 +64,6 @@
     "install-site:dev": "cd install-site && NODE_ENV=development npm run dev",
     "install-site:build": "cd install-site && npm run build",
     "install-site:install": "cd install-site && npm install",
-    "install-site:deploy": "npm run install-site:build && cd install-site && cp _headers _redirects out/ && wrangler pages deploy out --project-name install-passportui",
     "validate:components-list": "node scripts/validate-components-list.mjs"
   },
   "peerDependencies": {
