@@ -33,19 +33,6 @@ export interface GoogleAnalyticsConfig {
 }
 
 /**
- * Vercel Analytics configuration
- * Note: For production use, consider using @vercel/analytics package instead
- */
-export interface VercelAnalyticsConfig {
-  /** Whether to enable debug mode */
-  debug?: boolean;
-  /** Custom API endpoint */
-  endpoint?: string;
-  /** Whether to disable beacon API */
-  disableBeacon?: boolean;
-}
-
-/**
  * Mixpanel configuration
  */
 export interface MixpanelConfig {
@@ -182,8 +169,6 @@ export interface PlausibleConfig {
 export interface AnalyticsProviders {
   /** Google Analytics configuration */
   googleAnalytics?: GoogleAnalyticsConfig;
-  /** Vercel Analytics configuration */
-  vercelAnalytics?: VercelAnalyticsConfig;
   /** Mixpanel configuration */
   mixpanel?: MixpanelConfig;
   /** Amplitude configuration */
@@ -247,47 +232,6 @@ const GoogleAnalyticsScript: React.FC<{
       <script
         dangerouslySetInnerHTML={{
           __html: gtagScript,
-        }}
-        nonce={nonce}
-      />
-    </>
-  );
-};
-
-/**
- * Vercel Analytics Script Component
- * Note: Vercel Analytics is typically used via @vercel/analytics package
- * This script-based approach provides basic integration
- */
-const VercelAnalyticsScript: React.FC<{
-  config: VercelAnalyticsConfig;
-  nonce?: string;
-}> = ({ config, nonce }) => {
-  const { debug = false, endpoint, disableBeacon = false } = config;
-
-  const vercelScript = `
-    // Vercel Analytics stub - typically you'd use @vercel/analytics package
-    window.va = window.va || function(event, properties) {
-      if (typeof event === 'string' && ['event', 'pageview', 'beforeSend'].includes(event)) {
-        console.log('[Vercel Analytics]', event, properties);
-        // In production, this would send data to Vercel's analytics endpoint
-      }
-    };
-    
-    // Initialize with config
-    window.va('beforeSend', {
-      debug: ${debug},
-      ${endpoint ? `endpoint: '${endpoint}',` : ''}
-      disableBeacon: ${disableBeacon}
-    });
-  `.trim();
-
-  return (
-    <>
-      {/* Note: /_vercel/insights/script.js is only available on Vercel deployments */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: vercelScript,
         }}
         nonce={nonce}
       />
@@ -490,10 +434,7 @@ const PlausibleScript: React.FC<{
  * Analytics Component
  *
  * A flexible analytics component that supports multiple providers.
- * Supports Google Analytics, Vercel Analytics, Mixpanel, Amplitude, Segment, PostHog, and Plausible.
- *
- * Note: For Vercel Analytics, consider using @vercel/analytics package for production use.
- * This component provides a script-based approach for consistency with other providers.
+ * Supports Google Analytics, Mixpanel, Amplitude, Segment, PostHog, and Plausible.
  *
  * @example
  * ```tsx
@@ -515,9 +456,6 @@ const PlausibleScript: React.FC<{
  *         anonymize_ip: true,
  *         cookie_domain: 'auto'
  *       }
- *     },
- *     vercelAnalytics: {
- *       debug: false
  *     },
  *     mixpanel: {
  *       token: 'your-mixpanel-token'
@@ -544,14 +482,6 @@ export const Analytics: React.FC<AnalyticsProps> = ({
       {providers.googleAnalytics && (
         <GoogleAnalyticsScript
           config={providers.googleAnalytics}
-          nonce={nonce}
-        />
-      )}
-
-      {/* Vercel Analytics */}
-      {providers.vercelAnalytics && (
-        <VercelAnalyticsScript
-          config={providers.vercelAnalytics}
           nonce={nonce}
         />
       )}
@@ -612,13 +542,6 @@ export const useAnalytics = () => {
         window.gtag("event", action, parameters);
       }
 
-      // Vercel Analytics
-      if (window.va) {
-        // Vercel Analytics only supports specific event types
-        // For custom events, we use 'event' type with the action as a property
-        window.va('event', { name: action, ...parameters });
-      }
-
       // Mixpanel
       if (window.mixpanel) {
         window.mixpanel.track(action, parameters);
@@ -657,12 +580,7 @@ export const useAnalytics = () => {
       if (window.gtag) {
         window.gtag("event", "page_view", pageData);
       }
-
-      // Vercel Analytics (automatically tracks page views)
-      if (window.va) {
-        window.va("pageview", pageData);
-      }
-
+    
       // Mixpanel
       if (window.mixpanel) {
         window.mixpanel.track("Page View", pageData);
@@ -775,10 +693,6 @@ declare global {
     // Google Analytics
     dataLayer: unknown[];
     gtag: (...args: unknown[]) => void;
-    
-    // Vercel Analytics
-    va: (event: 'beforeSend' | 'event' | 'pageview', properties?: Record<string, unknown>) => void;
-    vaq: unknown[];
     
     // Mixpanel
     mixpanel: {

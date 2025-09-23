@@ -74,9 +74,6 @@ export const MultipleProviders: Story = {
           cookie_domain: "auto",
         },
       },
-      vercelAnalytics: {
-        debug: true,
-      },
       mixpanel: {
         token: "demo-mixpanel-token",
         config: {
@@ -89,21 +86,6 @@ export const MultipleProviders: Story = {
         config: {
           trackPageview: true,
         },
-      },
-    },
-    enabled: false,
-  },
-};
-
-/**
- * Vercel Analytics only setup.
- */
-export const VercelOnly: Story = {
-  args: {
-    providers: {
-      vercelAnalytics: {
-        debug: false,
-        disableBeacon: false,
       },
     },
     enabled: false,

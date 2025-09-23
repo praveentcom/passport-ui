@@ -6,7 +6,7 @@ export const definition: ComponentDefinition = {
   name: "Analytics",
   icon: BarChart,
   description:
-    "A comprehensive analytics component supporting multiple providers: Google Analytics, Vercel Analytics, Mixpanel, Amplitude, Segment, PostHog, and Plausible.",
+    "A comprehensive analytics component supporting multiple providers: Google Analytics, Mixpanel, Amplitude, Segment, PostHog, and Plausible.",
   category: "components",
   storyId: "components-analytics--default",
   slug: "analytics",
@@ -16,9 +16,6 @@ export const definition: ComponentDefinition = {
   providers={{
     googleAnalytics: {
       trackingId: "G-XXXXXXXXXX",
-    },
-    vercelAnalytics: {
-      debug: false,
     },
     mixpanel: {
       token: "your-mixpanel-token",
@@ -75,16 +72,6 @@ function TrackingExample() {
       events: [
         { action: "page_view", category: "engagement" }
       ]
-    }
-  }}
-/>
-
-{/* Vercel Analytics - Note: Consider @vercel/analytics package for production */}
-<Analytics
-  providers={{
-    vercelAnalytics: {
-      debug: false,
-      disableBeacon: false,
     }
   }}
 />
