@@ -44,6 +44,13 @@ export interface FooterOptions {
   blurred?: boolean;
 }
 
+export interface SidebarOptions {
+  /**
+   * Whether the sidebar should have a blurred background effect
+   */
+  blurred?: boolean;
+}
+
 export interface PageLayoutProps
   extends VariantProps<typeof pageLayoutVariants> {
   /**
@@ -79,6 +86,10 @@ export interface PageLayoutProps
    */
   footerOptions?: FooterOptions;
   /**
+   * Sidebar configuration options
+   */
+  sidebarOptions?: SidebarOptions;
+  /**
    * Whether to show skip links for accessibility
    * @default true
    */
@@ -104,6 +115,7 @@ export interface PageLayoutProps
  * @param footer - The footer content (will be wrapped in FooterContainer)
  * @param headerOptions - Header configuration options (variant, sticky, blurred, revealStylesOnScroll)
  * @param footerOptions - Footer configuration options (variant, sticky, blurred)
+ * @param sidebarOptions - Sidebar configuration options (blurred)
  * @param showSkipLinks - Whether to show skip links for accessibility
  * @param skipLinks - Custom skip link configuration
  * @returns The complete page layout
@@ -126,11 +138,27 @@ export function PageLayout({
     sticky: false,
     blurred: false,
   },
+  sidebarOptions = {
+    blurred: false,
+  },
   showSkipLinks = true,
   skipLinks,
 }: PageLayoutProps): ReactNode {
   const [leftSidebarOpen, setLeftSidebarOpen] = useState(true);
   const [rightSidebarOpen, setRightSidebarOpen] = useState(true);
+
+  const leftSidebarWithProps =
+    leftSidebar && sidebarOptions.blurred
+      ? React.cloneElement(leftSidebar as React.ReactElement, {
+          blurred: sidebarOptions.blurred,
+        })
+      : leftSidebar;
+  const rightSidebarWithProps =
+    rightSidebar && sidebarOptions.blurred
+      ? React.cloneElement(rightSidebar as React.ReactElement, {
+          blurred: sidebarOptions.blurred,
+        })
+      : rightSidebar;
 
   const defaultSkipLinks = [
     { href: "#main-content", label: "Skip to main content" },
@@ -190,7 +218,7 @@ export function PageLayout({
         open={rightSidebarOpen}
         onOpenChange={setRightSidebarOpen}
       >
-        {rightSidebar}
+        {rightSidebarWithProps}
       </SidebarProvider>
     </div>
   );
@@ -206,7 +234,7 @@ export function PageLayout({
         onOpenChange={setLeftSidebarOpen}
       >
         <div id="left-sidebar" role="navigation" aria-label="Left navigation">
-          {leftSidebar}
+          {leftSidebarWithProps}
         </div>
         <SidebarInset className="flex min-h-screen">
           <div className={contentClasses}>{renderMainContent()}</div>
@@ -222,7 +250,7 @@ export function PageLayout({
         onOpenChange={setLeftSidebarOpen}
       >
         <div id="left-sidebar" role="navigation" aria-label="Left navigation">
-          {leftSidebar}
+          {leftSidebarWithProps}
         </div>
         <SidebarInset className="flex">{renderMainContent()}</SidebarInset>
       </SidebarProvider>

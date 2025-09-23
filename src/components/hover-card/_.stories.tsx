@@ -101,7 +101,7 @@ const meta: Meta<typeof HoverCard> = {
           </Avatar>
           <div className="meta-container">
             <h4>{AUTHOR.name}</h4>
-            <p className="text-sm">
+            <p>
               <a href={AUTHOR.url}>@{AUTHOR.url.split("/").pop()}</a>
             </p>
             <div className="flex items-center pt-2">

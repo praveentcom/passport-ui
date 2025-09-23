@@ -108,7 +108,7 @@ export default async function CategoryComponentPage({
               <div className="space-y-4">
                 <div className="meta-container">
                   <h4>Interactive Example</h4>
-                  <p className="text-sm">
+                  <p>
                     Try out the component with different props and
                     configurations.
                   </p>
@@ -122,9 +122,7 @@ export default async function CategoryComponentPage({
                 <div className="space-y-4">
                   <div className="meta-container">
                     <h4>Installation</h4>
-                    <p className="text-sm">
-                      Import the component from the passport-ui package.
-                    </p>
+                    <p>Import the component from the passport-ui package.</p>
                   </div>
                   <CodeBlock
                     language="typescript"
@@ -136,9 +134,7 @@ export default async function CategoryComponentPage({
                 <div className="space-y-4">
                   <div className="meta-container">
                     <h4>Usage</h4>
-                    <p className="text-sm">
-                      Basic example showing how to use the component.
-                    </p>
+                    <p>Basic example showing how to use the component.</p>
                   </div>
                   <CodeBlock
                     language="tsx"

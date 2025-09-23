@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { Button } from ".";
@@ -186,6 +188,26 @@ export const LargeSize: Story = {
       </Button>
     </div>
   ),
+};
+
+export const Interactive: Story = {
+  render: () => {
+    const [count, setCount] = useState(0);
+    return (
+      <div className="flex items-center gap-4">
+        <Button
+          variant="primary"
+          size="medium"
+          onClick={() => setCount(count + 1)}
+        >
+          Click me
+        </Button>
+        <span className="text-muted-foreground tabular-nums">
+          Clicked: {count} times
+        </span>
+      </div>
+    );
+  },
 };
 
 export const LoadingState: Story = {

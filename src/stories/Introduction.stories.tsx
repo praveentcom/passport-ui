@@ -91,8 +91,8 @@ const IntroductionDocs = () => (
           </p>
         </div>
       </div>
-      <div className="meta-container">
-        <p className="text-sm">
+      <div className="meta-container gap-y-0.5">
+        <p>
           <span className="font-medium">Step 1:</span>{" "}
           <span className="font-normal">Install the passport-ui package</span>
         </p>
@@ -102,8 +102,8 @@ const IntroductionDocs = () => (
           code={INSTALLATION_CODE.PACKAGE_INSTALL}
         />
       </div>
-      <div className="meta-container">
-        <p className="text-sm">
+      <div className="meta-container gap-y-0.5">
+        <p>
           <span className="font-medium">Step 2:</span>{" "}
           <span className="font-normal">
             Configure PostCSS to use tailwindcss
@@ -115,8 +115,8 @@ const IntroductionDocs = () => (
           code={INSTALLATION_CODE.POSTCSS_SETUP}
         />
       </div>
-      <div className="meta-container">
-        <p className="text-sm">
+      <div className="meta-container gap-y-0.5">
+        <p>
           <span className="font-medium">Step 3:</span>{" "}
           <span className="font-normal">
             Import passport-ui styles in your main stylesheet
@@ -128,8 +128,8 @@ const IntroductionDocs = () => (
           code={INSTALLATION_CODE.CSS_IMPORT}
         />
       </div>
-      <div className="meta-container">
-        <p className="text-sm">
+      <div className="meta-container gap-y-0.5">
+        <p>
           <span className="font-medium">Step 4:</span>{" "}
           <span className="font-normal">
             Wrap your app with the theme provider
@@ -141,8 +141,8 @@ const IntroductionDocs = () => (
           code={INSTALLATION_CODE.THEME_PROVIDER}
         />
       </div>
-      <div className="meta-container">
-        <p className="text-sm">
+      <div className="meta-container gap-y-0.5">
+        <p>
           <span className="font-medium">Step 5:</span>{" "}
           <span className="font-normal">
             Use the components (example: Button, Card, etc.)

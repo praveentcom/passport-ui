@@ -6,6 +6,7 @@ import React, {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 
@@ -32,6 +33,18 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../tooltip";
+
+const sidebarVariants = cva("text-foreground", {
+  variants: {
+    blurred: {
+      true: "bg-sidebar/80 backdrop-blur-md",
+      false: "bg-sidebar",
+    },
+  },
+  defaultVariants: {
+    blurred: false,
+  },
+});
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state";
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -162,6 +175,7 @@ function Sidebar({
   side = "left",
   variant = "sidebar",
   collapsible = false,
+  blurred = false,
   className,
   children,
   ...props
@@ -169,6 +183,7 @@ function Sidebar({
   side?: "left" | "right";
   variant?: "sidebar" | "floating" | "inset";
   collapsible?: boolean;
+  blurred?: boolean;
 }) {
   const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
 
@@ -177,7 +192,8 @@ function Sidebar({
       <div
         data-slot="sidebar"
         className={cn(
-          "bg-sidebar text-foreground flex h-full w-(--sidebar-width) flex-col",
+          sidebarVariants({ blurred }),
+          "flex h-full w-[--sidebar-width] flex-col",
           className
         )}
         {...props}
@@ -194,7 +210,10 @@ function Sidebar({
           data-sidebar="sidebar"
           data-slot="sidebar"
           data-mobile="true"
-          className="bg-sidebar text-foreground w-(--sidebar-width) p-0 [&>button]:hidden"
+          className={cn(
+            sidebarVariants({ blurred }),
+            "w-[--sidebar-width] p-0 [&>button]:hidden"
+          )}
           style={
             {
               "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
@@ -214,7 +233,7 @@ function Sidebar({
 
   return (
     <div
-      className="group peer text-foreground hidden md:block bg-sidebar"
+      className="group peer hidden md:block"
       data-state={state}
       data-collapsible={
         state === "collapsed" ? (collapsible ? "icon" : false) : false
@@ -249,7 +268,10 @@ function Sidebar({
         <div
           data-sidebar="sidebar"
           data-slot="sidebar-inner"
-          className="bg-sidebar group-data-[variant=floating]:border-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-xs"
+          className={cn(
+            sidebarVariants({ blurred }),
+            "group-data-[variant=floating]:border-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-xs"
+          )}
         >
           {children}
         </div>
@@ -377,12 +399,43 @@ function SidebarSeparator({
 }
 
 function SidebarContent({ className, ...props }: React.ComponentProps<"div">) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [showTopBorder, setShowTopBorder] = useState(false);
+
+  const handleScroll = useCallback(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const { scrollTop } = el;
+
+    setShowTopBorder(scrollTop > 0);
+  }, []);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    handleScroll();
+
+    el.addEventListener("scroll", handleScroll);
+
+    const resizeObserver = new ResizeObserver(handleScroll);
+    resizeObserver.observe(el);
+
+    return () => {
+      el.removeEventListener("scroll", handleScroll);
+      resizeObserver.unobserve(el);
+    };
+  }, [handleScroll]);
+
   return (
     <div
+      ref={ref}
       data-slot="sidebar-content"
       data-sidebar="content"
       className={cn(
-        "flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 border-t border-b border-border py-3",
+        "flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto overflow-x-hidden py-0.5 border-b border-border",
+        showTopBorder && "border-t",
         className
       )}
       {...props}

@@ -192,15 +192,34 @@
 
 /* Base Layer */
 @layer base {
+  /* Prevent bounce scrolling globally */
+  html {
+    scrollbar-gutter: stable;
+    overflow-y: scroll;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    @apply min-h-screen font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
   .passport-ui * {
     @apply border-border outline-ring/50 leading-normal;
   }
 
-  /* Prevent bounce scrolling globally */
-  html,
-  body {
-    overscroll-behavior: none;
-    -webkit-overflow-scrolling: touch;
+  .passport-ui ::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+  .passport-ui ::-webkit-scrollbar-thumb,
+  body::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  .passport-ui ::-webkit-scrollbar-track,
+  body::-webkit-scrollbar-track {
+    @apply bg-transparent;
   }
 
   .passport-ui {

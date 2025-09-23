@@ -4,6 +4,7 @@ import React, { useState } from "react";
 
 import { usePathname } from "next/navigation";
 
+import pkg from "../../package.json";
 import { PrefetchLink } from "../../src/components/prefetch-link";
 import {
   SidebarGroup,
@@ -124,6 +125,11 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
                 <p className="line-clamp-1">Compact UI Components</p>
               </div>
             </PrefetchLink>
+          }
+          sidebarFooter={
+            <div className="meta-container">
+              <h6 className="font-medium lowercase">v{pkg.version}</h6>
+            </div>
           }
         >
           {filteredGroups.map((group) => (

@@ -183,13 +183,13 @@ const meta: Meta<typeof Tabs> = {
             </p>
             <div className="mt-4 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-sm">Email notifications</span>
+                <span>Email notifications</span>
                 <Button size="regular" variant="outline">
                   Enable
                 </Button>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm">Auto-save changes</span>
+                <span>Auto-save changes</span>
                 <Button size="regular" variant="outline">
                   Configure
                 </Button>

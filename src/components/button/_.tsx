@@ -75,50 +75,59 @@ export interface ButtonProps
   "aria-pressed"?: boolean | "true" | "false" | "mixed";
 }
 
-function Button({
-  className,
-  variant,
-  size,
-  asChild = false,
-  loading = false,
-  loadingText,
-  children,
-  disabled,
-  "aria-label": ariaLabel,
-  "aria-labelledby": ariaLabelledBy,
-  "aria-describedby": ariaDescribedBy,
-  "aria-expanded": ariaExpanded,
-  "aria-controls": ariaControls,
-  "aria-pressed": ariaPressed,
-  ...props
-}: ButtonProps) {
-  const Comp = asChild ? Slot : "button";
+const Button = React.memo(
+  React.forwardRef<HTMLButtonElement, ButtonProps>(
+    (
+      {
+        className,
+        variant,
+        size,
+        asChild = false,
+        loading = false,
+        loadingText,
+        children,
+        disabled,
+        "aria-label": ariaLabel,
+        "aria-labelledby": ariaLabelledBy,
+        "aria-describedby": ariaDescribedBy,
+        "aria-expanded": ariaExpanded,
+        "aria-controls": ariaControls,
+        "aria-pressed": ariaPressed,
+        ...props
+      },
+      ref
+    ) => {
+      const Comp = asChild ? Slot : "button";
 
-  const buttonContent = (
-    <>
-      {loading && <Loader2 className="animate-spin" aria-hidden="true" />}
-      {loading && loadingText ? loadingText : children}
-    </>
-  );
+      const buttonContent = (
+        <>
+          {loading && <Loader2 className="animate-spin" aria-hidden="true" />}
+          {loading && loadingText ? loadingText : children}
+        </>
+      );
 
-  return (
-    <Comp
-      data-slot="button"
-      aria-label={ariaLabel}
-      aria-labelledby={ariaLabelledBy}
-      aria-describedby={ariaDescribedBy}
-      aria-expanded={ariaExpanded}
-      aria-controls={ariaControls}
-      aria-pressed={ariaPressed}
-      aria-busy={loading}
-      disabled={disabled || loading}
-      aria-disabled={disabled || loading}
-      className={cn(buttonVariants({ variant, size, className }))}
-      {...props}
-    >
-      {asChild ? <span>{buttonContent}</span> : buttonContent}
-    </Comp>
-  );
-}
+      return (
+        <Comp
+          data-slot="button"
+          aria-label={ariaLabel}
+          aria-labelledby={ariaLabelledBy}
+          aria-describedby={ariaDescribedBy}
+          aria-expanded={ariaExpanded}
+          aria-controls={ariaControls}
+          aria-pressed={ariaPressed}
+          aria-busy={loading}
+          disabled={disabled || loading}
+          aria-disabled={disabled || loading}
+          className={cn(buttonVariants({ variant, size, className }))}
+          ref={ref}
+          {...props}
+        >
+          {asChild ? <span>{buttonContent}</span> : buttonContent}
+        </Comp>
+      );
+    }
+  )
+);
+Button.displayName = "Button";
 
 export { Button, buttonVariants };

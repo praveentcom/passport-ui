@@ -73,6 +73,10 @@ export interface SidebarContainerProps {
    * Additional class names for the provider wrapper
    */
   className?: string;
+  /**
+   * Blurred background
+   */
+  blurred?: boolean;
 }
 
 /**
@@ -88,6 +92,7 @@ export interface SidebarContainerProps {
  * @param side - Sidebar side (left, right)
  * @param collapsible - Whether the sidebar can collapse to icon-only mode (true) or remain fixed (false)
  * @param className - Additional class names for the sidebar
+ * @param blurred - Whether the sidebar should be blurred
  * @returns The sidebar component (without provider wrapper)
  */
 export function SidebarContainer({
@@ -98,6 +103,7 @@ export function SidebarContainer({
   variant = "sidebar",
   side = "left",
   collapsible = true,
+  blurred = false,
   className,
 }: Omit<
   SidebarContainerProps,
@@ -111,6 +117,7 @@ export function SidebarContainer({
       variant={variant}
       side={side}
       collapsible={collapsible}
+      blurred={blurred}
       className={className}
     >
       {sidebarHeader && (

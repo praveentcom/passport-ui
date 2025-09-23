@@ -1,8 +1,10 @@
+import type { ComponentDefinition } from "./types/definition";
+
 // Auto-generated component definitions - DO NOT EDIT MANUALLY
 // Run 'npm run generate-registry' to update this file
 import { definition as accordionDefinition } from "./components/accordion/definition";
-import { definition as alertDialogDefinition } from "./components/alert-dialog/definition";
 import { definition as alertDefinition } from "./components/alert/definition";
+import { definition as alertDialogDefinition } from "./components/alert-dialog/definition";
 import { definition as analyticsDefinition } from "./components/analytics/definition";
 import { definition as aspectRatioDefinition } from "./components/aspect-ratio/definition";
 import { definition as avatarDefinition } from "./components/avatar/definition";
@@ -26,8 +28,8 @@ import { definition as drawerDefinition } from "./components/drawer/definition";
 import { definition as dropdownMenuDefinition } from "./components/dropdown-menu/definition";
 import { definition as formDefinition } from "./components/form/definition";
 import { definition as hoverCardDefinition } from "./components/hover-card/definition";
-import { definition as inputOtpDefinition } from "./components/input-otp/definition";
 import { definition as inputDefinition } from "./components/input/definition";
+import { definition as inputOtpDefinition } from "./components/input-otp/definition";
 import { definition as labelDefinition } from "./components/label/definition";
 import { definition as liveRegionDefinition } from "./components/live-region/definition";
 import { definition as markdownDefinition } from "./components/markdown/definition";
@@ -52,15 +54,12 @@ import { definition as switchDefinition } from "./components/switch/definition";
 import { definition as tableDefinition } from "./components/table/definition";
 import { definition as tabsDefinition } from "./components/tabs/definition";
 import { definition as textareaDefinition } from "./components/textarea/definition";
-import { definition as toggleSelectDefinition } from "./components/toggle-select/definition";
 import { definition as toggleDefinition } from "./components/toggle/definition";
+import { definition as toggleSelectDefinition } from "./components/toggle-select/definition";
 import { definition as tooltipDefinition } from "./components/tooltip/definition";
 import { definition as visuallyHiddenDefinition } from "./components/visually-hidden/definition";
-// Composable definitions
-import { definition as emptyStateDefinition } from "./composables/empty-state/definition";
-import { definition as mobileSidebarTriggerDefinition } from "./composables/mobile-sidebar-trigger/definition";
-import { definition as themeButtonDefinition } from "./composables/theme-button/definition";
-import { definition as themeToggleDefinition } from "./composables/theme-toggle/definition";
+// Provider definitions
+import { definition as themeProviderDefinition } from "./providers/theme-provider/definition";
 // Hook definitions
 import { definition as useMobileDefinition } from "./hooks/use-mobile/definition";
 import { definition as useScrollDefinition } from "./hooks/use-scroll/definition";
@@ -70,14 +69,16 @@ import { definition as footerContainerDefinition } from "./layouts/footer-contai
 import { definition as headerContainerDefinition } from "./layouts/header-container/definition";
 import { definition as pageLayoutDefinition } from "./layouts/page-layout/definition";
 import { definition as sidebarContainerDefinition } from "./layouts/sidebar-container/definition";
+// Composable definitions
+import { definition as emptyStateDefinition } from "./composables/empty-state/definition";
+import { definition as mobileSidebarTriggerDefinition } from "./composables/mobile-sidebar-trigger/definition";
+import { definition as themeButtonDefinition } from "./composables/theme-button/definition";
+import { definition as themeToggleDefinition } from "./composables/theme-toggle/definition";
 // Motion primitives definitions
 import { definition as animatedBackgroundDefinition } from "./motion-primitives/animated-background/definition";
 import { definition as blurInDefinition } from "./motion-primitives/blur-in/definition";
 import { definition as sequentialRevealDefinition } from "./motion-primitives/sequential-reveal/definition";
 import { definition as typewriterTextDefinition } from "./motion-primitives/typewriter-text/definition";
-// Provider definitions
-import { definition as themeProviderDefinition } from "./providers/theme-provider/definition";
-import type { ComponentDefinition } from "./types/definition";
 
 export const definitions: ComponentDefinition[] = [
   accordionDefinition,

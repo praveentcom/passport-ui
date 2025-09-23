@@ -10,6 +10,7 @@ import {
   SAMPLE_FOOTER_CONTENT,
   SAMPLE_HEADER_CONTENT,
 } from "../../../.storybook/constants";
+import pkg from "../../../package.json";
 import { Button } from "../../components/button";
 import { PrefetchLink } from "../../components/prefetch-link";
 import {
@@ -153,7 +154,7 @@ function SampleLeftSidebar() {
       sidebarHeader={
         <div className="meta-container">
           <h3>Passport UI</h3>
-          <p>Version 1.1.0</p>
+          <p>Version {pkg.version}</p>
         </div>
       }
       sidebarFooter={

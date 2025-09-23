@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 
 import { FileText, Home, Plus, Settings, Users } from "lucide-react";
-import { SidebarContainerProps } from "src/layouts/sidebar-container";
 import { action } from "storybook/internal/actions";
 import { InputType } from "storybook/internal/csf";
 
+import pkg from "../package.json";
 import { Badge } from "../src/components/badge";
 import { Button } from "../src/components/button";
 import { Card, CardContent } from "../src/components/card";
@@ -194,8 +194,8 @@ export const SAMPLE_FOOTER_CONTENT: ReactNode = (
     </div>
     <div className="flex items-center gap-4">
       <div className="flex items-center gap-2">
-        <Badge variant="secondary">v1.0.0</Badge>
-        <Badge variant="outline">Beta</Badge>
+        <Badge variant="secondary">v{pkg.version}</Badge>
+        <Badge variant="outline">Released</Badge>
       </div>
       <div className="flex items-center gap-2 text-xs text-muted-foreground">
         <button className="hover:text-foreground transition-colors">

@@ -2,6 +2,7 @@ import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
+import pkg from "../../../package.json";
 import { PrefetchLink } from "../prefetch-link";
 import {
   Sidebar,
@@ -63,7 +64,7 @@ export const Default: Story = {
         </SidebarContent>
         <SidebarFooter>
           <p className="p-4 text-xs text-muted-foreground">
-            © 2024 Your Company
+            Version {pkg.version}
           </p>
         </SidebarFooter>
       </Sidebar>
