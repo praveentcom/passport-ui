@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 import hljs from "highlight.js/lib/core";
 import bash from "highlight.js/lib/languages/bash";
@@ -151,6 +151,17 @@ function CodeBlock({
 }: CodeBlockProps) {
   const lines = code.split("\n");
   const totalLines = lines.length;
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(code);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy code: ', err);
+    }
+  };
 
   /**
    * Get the width class for line numbers based on total lines
@@ -198,22 +209,102 @@ function CodeBlock({
       )}
       {...props}
     >
+      {!filename && (
+        <button
+          onClick={copyToClipboard}
+          className="absolute top-2 right-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:text-foreground p-1.5 rounded hover:bg-muted/80 bg-card/80 backdrop-blur-sm border border-border/50"
+          title={copied ? "Copied!" : "Copy code"}
+          aria-label={copied ? "Copied!" : "Copy code"}
+        >
+          {copied ? (
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20 6L9 17L4 12"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          ) : (
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect
+                x="9"
+                y="9"
+                width="13"
+                height="13"
+                rx="2"
+                ry="2"
+                stroke="currentColor"
+                strokeWidth="2"
+                fill="none"
+              />
+              <path
+                d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"
+                stroke="currentColor"
+                strokeWidth="2"
+                fill="none"
+              />
+            </svg>
+          )}
+        </button>
+      )}
       {filename && (
         <div
           data-slot="code-block-header"
           className="flex font-mono justify-between items-center gap-2 px-2.5 py-1 bg-sidebar border-b border-border text-xs text-muted-foreground/80"
         >
           <>{filename}</>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: `${getFileIcon(filename)}`,
-            }}
-          />
+          <div className="flex items-center gap-2">
+            <button
+              onClick={copyToClipboard}
+              className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:text-foreground p-1 rounded hover:bg-muted/50"
+              title={copied ? "Copied!" : "Copy code"}
+              aria-label={copied ? "Copied!" : "Copy code"}
+            >
+              {copied ? (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 6L9 17L4 12"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              ) : (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect
+                    x="9"
+                    y="9"
+                    width="13"
+                    height="13"
+                    rx="2"
+                    ry="2"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    fill="none"
+                  />
+                  <path
+                    d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    fill="none"
+                  />
+                </svg>
+              )}
+            </button>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `${getFileIcon(filename)}`,
+              }}
+            />
+          </div>
         </div>
       )}
       <pre
         data-slot="code-block-pre"
-        className="overflow-x-auto p-0 m-0 bg-transparent w-full"
+        className="overflow-x-auto p-0 m-0 bg-card w-full"
       >
         <code data-slot="code-block-code" className="hljs block">
           {lines.map((line, index) => {

@@ -11,7 +11,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Passport UI - Docs",
   description:
-    "Complete documentation for Passport UI - a React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
+    "Complete documentation for Passport UI - a React UI component library built on top of shadcn/ui with Tailwind CSS, Radix UI, and Framer Motion.",
   keywords: [
     "Passport UI",
     "React Components",
@@ -39,9 +39,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Passport UI - Docs",
     description:
-      "Complete documentation for Passport UI - a React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
+      "Complete documentation for Passport UI - a React UI component library built on top of shadcn/ui with Tailwind CSS, Radix UI, and Framer Motion.",
     url: "https://passportui.com",
     siteName: "Passport UI",
+    logo: "https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png",
     images: [
       {
         url: "https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png",
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Passport UI - Docs",
-    description: "Complete documentation for Passport UI component library.",
+    description: "Complete documentation for Passport UI - a React UI component library built on top of shadcn/ui.",
     images: [
       "https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png",
     ],
