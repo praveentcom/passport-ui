@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A container for the sidebar, managing its state and interactions.",
   category: "layouts",
-  storyId: "layouts-sidebarcontainer--default",
+  storyId: "layout-containers-sidebarcontainer--default",
   slug: "sidebar-container",
   importCode: `import { SidebarContainer } from "passport-ui";
 import {

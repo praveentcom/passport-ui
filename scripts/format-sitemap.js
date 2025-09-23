@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const rootDir = join(__dirname, "..");
 const srcDir = join(rootDir, "src");
-const sitemapPath = join(rootDir, "install-site/app/sitemap.ts");
+const sitemapPath = join(rootDir, "docs/app/sitemap.ts");
 
 const categories = [
   { dir: "layouts", name: "Layout Containers" },

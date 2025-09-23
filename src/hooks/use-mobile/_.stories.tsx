@@ -1,8 +1,9 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
+
 import { useIsMobile } from "./";
+import { definition } from "./definition";
 
 const meta: Meta = {
   title: "Hooks/useIsMobile",

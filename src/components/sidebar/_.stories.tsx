@@ -1,7 +1,7 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
+
 import pkg from "../../../package.json";
 import { PrefetchLink } from "../prefetch-link";
 import {
@@ -13,6 +13,7 @@ import {
   SidebarMenuItem,
   SidebarProvider,
 } from "./_";
+import { definition } from "./definition";
 
 const meta: Meta<typeof Sidebar> = {
   title: "Components/Sidebar",

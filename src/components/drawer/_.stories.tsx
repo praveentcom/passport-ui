@@ -1,7 +1,6 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import {
@@ -12,6 +11,7 @@ import {
   DrawerTrigger,
 } from ".";
 import { Button } from "../button";
+import { definition } from "./definition";
 
 const meta: Meta<typeof Drawer> = {
   title: "Components/Drawer",

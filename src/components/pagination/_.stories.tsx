@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import {
@@ -12,6 +11,7 @@ import {
   PaginationPrevious,
 } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
+import { definition } from "./definition";
 
 const meta: Meta<typeof Pagination> = {
   title: "Components/Pagination",

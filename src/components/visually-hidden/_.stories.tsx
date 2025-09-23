@@ -1,13 +1,13 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
 import { AlertCircle } from "lucide-react";
 
 import { Button } from "../button";
 import { Input } from "../input";
 import { Label } from "../label";
 import { VisuallyHidden } from "./_";
+import { definition } from "./definition";
 
 const meta: Meta<typeof VisuallyHidden> = {
   title: "Components/VisuallyHidden",

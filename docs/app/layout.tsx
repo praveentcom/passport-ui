@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
-import { Analytics as VercelAnalytics } from "@vercel/analytics/next"
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+
 import { Analytics } from "../../src/components/analytics";
 import { ThemeProvider } from "../../src/providers/theme-provider";
 import { ClientLayout } from "../components/client-layout";

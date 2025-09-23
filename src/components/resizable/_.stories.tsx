@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
+
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Card } from "../card";
+import { definition } from "./definition";
 
 const meta: Meta<typeof ResizablePanelGroup> = {
   title: "Components/Resizable",

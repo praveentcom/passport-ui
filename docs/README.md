@@ -8,10 +8,10 @@ From the root of the passport-ui repository:
 
 ```bash
 # Install dependencies
-npm run install-site:install
+npm run docs:install
 
 # Start development server
-npm run install-site:dev
+npm run docs:dev
 ```
 
 The site will be available at http://localhost:3000
@@ -20,5 +20,5 @@ The site will be available at http://localhost:3000
 
 ```bash
 # Build for production
-npm run install-site:build
+npm run docs:build
 ```

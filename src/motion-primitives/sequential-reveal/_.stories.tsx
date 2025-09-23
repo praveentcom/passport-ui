@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
+
 import { SequentialReveal } from ".";
 import { Badge } from "../../components/badge";
 import { Button } from "../../components/button";
@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../../components/card";
+import { definition } from "./definition";
 
 const meta: Meta<typeof SequentialReveal> = {
   title: "Motion Primitives/SequentialReveal",

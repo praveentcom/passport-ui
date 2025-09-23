@@ -1,7 +1,6 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
 import {
   Activity,
   BarChart3,
@@ -18,6 +17,7 @@ import { Tabs, TabsContent, TabsDropdown, TabsList, TabsTrigger } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Button } from "../button";
 import { Card, CardContent } from "../card";
+import { definition } from "./definition";
 
 const meta: Meta<typeof Tabs> = {
   title: "Components/Tabs",

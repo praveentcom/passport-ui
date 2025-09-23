@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -9,6 +9,7 @@ import {
   AlertDialogTrigger,
 } from ".";
 import { Button } from "../button";
+import { definition } from "./definition";
 
 const meta: Meta<typeof AlertDialog> = {
   title: "Components/AlertDialog",

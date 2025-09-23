@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
+
 import { PrefetchLink } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Button } from "../button";
+import { definition } from "./definition";
 
 const meta: Meta<typeof PrefetchLink> = {
   title: "Components/PrefetchLink",

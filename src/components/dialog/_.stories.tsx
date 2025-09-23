@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import {
@@ -13,6 +12,7 @@ import {
 } from ".";
 import { Button } from "../button";
 import { Separator } from "../separator";
+import { definition } from "./definition";
 
 const meta: Meta<typeof Dialog> = {
   title: "Components/Dialog",

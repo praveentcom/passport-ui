@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
 import { toast } from "sonner";
 
 import { Toaster } from ".";
 import { Button } from "../button";
+import { definition } from "./definition";
 
 const meta: Meta<typeof Toaster> = {
   title: "Components/Sonner",

@@ -1,13 +1,13 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import { HoverCard, HoverCardContent, HoverCardTrigger } from ".";
 import { AUTHOR } from "../../constants";
 import { Avatar, AvatarFallback, AvatarImage } from "../avatar";
 import { Button } from "../button";
+import { definition } from "./definition";
 
 const meta: Meta<typeof HoverCard> = {
   title: "Components/HoverCard",

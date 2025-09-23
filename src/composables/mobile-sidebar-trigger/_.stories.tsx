@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
 import { SettingsIcon } from "lucide-react";
 
 import { SidebarProvider } from "../../components/sidebar";
 import { MobileSidebarTrigger } from "./_";
+import { definition } from "./definition";
 
 const meta: Meta<typeof MobileSidebarTrigger> = {
   title: "Composables/MobileSidebarTrigger",

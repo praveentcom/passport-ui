@@ -1,8 +1,9 @@
 import { ThemeProvider } from "next-themes";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
+
 import { ThemeButton } from ".";
+import { definition } from "./definition";
 
 const meta: Meta<typeof ThemeButton> = {
   title: "Composables/ThemeButton",

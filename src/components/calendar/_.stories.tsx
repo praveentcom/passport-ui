@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
 import { DateRange } from "react-day-picker";
 import { action } from "storybook/actions";
 
 import { Calendar } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
+import { definition } from "./definition";
 
 const meta: Meta<typeof Calendar> = {
   title: "Components/Calendar",

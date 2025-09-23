@@ -1,7 +1,6 @@
 import { ReactNode, useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
 import { FileText, Home, Mail, Settings, Users } from "lucide-react";
 
 import { PageLayout } from ".";
@@ -26,6 +25,7 @@ import {
   SidebarMenuSubItem,
 } from "../../components/sidebar";
 import { SidebarContainer } from "../sidebar-container";
+import { definition } from "./definition";
 
 const meta: Meta<typeof PageLayout> = {
   title: "Layout Containers/PageLayout",

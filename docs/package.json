@@ -1,0 +1,14 @@
+{
+  "name": "passport-ui-docs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "devDependencies": {
+    "eslint-config-next": "^15.5.2"
+  }
+}

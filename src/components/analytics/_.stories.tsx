@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
+
 import { Analytics } from ".";
+import { definition } from "./definition";
 
 const meta = {
   title: "Components/Analytics",

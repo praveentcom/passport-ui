@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
 import { FileText, Home, Mail, Settings, Users } from "lucide-react";
 import { action } from "storybook/actions";
 
@@ -22,6 +21,7 @@ import {
   SidebarMenuSubItem,
   SidebarProvider,
 } from "../../components/sidebar";
+import { definition } from "./definition";
 
 const meta: Meta<typeof SidebarContainer> = {
   title: "Layout Containers/SidebarContainer",

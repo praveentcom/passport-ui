@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
+
 import { ContentContainer } from ".";
 import { SAMPLE_CONTENT_CONTAINER } from "../../../.storybook/constants";
+import { definition } from "./definition";
 
 const meta: Meta<typeof ContentContainer> = {
   title: "Layout Containers/ContentContainer",

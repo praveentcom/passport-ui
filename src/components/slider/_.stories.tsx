@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import { Slider } from ".";
 import { Label } from "../label";
+import { definition } from "./definition";
 
 const meta: Meta<typeof Slider> = {
   title: "Components/Slider",

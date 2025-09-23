@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
+
 import { Button } from "../button";
 import { LiveRegion } from "./_";
+import { definition } from "./definition";
 
 const meta: Meta<typeof LiveRegion> = {
   title: "Components/LiveRegion",

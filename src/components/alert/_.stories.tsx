@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
 import {
   AlertCircleIcon,
   AlertTriangleIcon,
@@ -9,6 +8,7 @@ import {
 
 import { Alert } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
+import { definition } from "./definition";
 
 const meta: Meta<typeof Alert> = {
   title: "Components/Alert",

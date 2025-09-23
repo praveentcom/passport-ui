@@ -1,6 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { action } from "storybook/actions";
@@ -29,6 +28,7 @@ import {
 import { Separator } from "../separator";
 import { Switch } from "../switch";
 import { Textarea } from "../textarea";
+import { definition } from "./definition";
 
 const meta: Meta<typeof Form> = {
   title: "Components/Form",

@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import {
@@ -17,6 +16,7 @@ import {
   ContextMenuSubTrigger,
   ContextMenuTrigger,
 } from ".";
+import { definition } from "./definition";
 
 const meta: Meta<typeof ContextMenu> = {
   title: "Components/ContextMenu",

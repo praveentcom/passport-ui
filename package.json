@@ -69,9 +69,9 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "deploy-storybook": "npm run build-storybook && cp cloudflare/_headers cloudflare/_redirects storybook-static/",
-    "install-site:dev": "cd install-site && NODE_ENV=development npm run dev",
-    "install-site:build": "cd install-site && npm run build",
-    "install-site:install": "cd install-site && npm install",
+    "docs:dev": "cd docs && NODE_ENV=development npm run dev",
+    "docs:build": "cd docs && npm run build",
+    "docs:install": "cd docs && npm install",
     "validate:components-list": "node scripts/validate-components-list.mjs"
   },
   "peerDependencies": {
@@ -111,6 +111,7 @@
     "@radix-ui/react-toggle": "^1.1.9",
     "@radix-ui/react-tooltip": "^1.2.8",
     "@storybook/nextjs": "^9.1.5",
+    "@vercel/analytics": "^1.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -133,6 +134,7 @@
     "zod": "^4.1.8"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^15.5.4",
     "@storybook/addon-a11y": "^9.1.5",
     "@storybook/addon-docs": "^9.1.5",
     "@storybook/addon-webpack5-compiler-swc": "^4.0.1",

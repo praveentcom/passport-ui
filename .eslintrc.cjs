@@ -7,11 +7,12 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:storybook/recommended",
+    "plugin:@next/next/recommended",
   ],
   ignorePatterns: [
     "dist",
     ".eslintrc.cjs",
-    "install-site",
+    "docs",
     "cloudflare/_headers",
     "cloudflare/_redirects",
     "storybook-static",

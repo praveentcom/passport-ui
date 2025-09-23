@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
+
 import { useScroll } from "./";
+import { definition } from "./definition";
 
 const meta: Meta = {
   title: "Hooks/useScroll",

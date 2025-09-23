@@ -1,7 +1,6 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import {
@@ -18,6 +17,7 @@ import { AUTHOR } from "../../constants";
 import { Button } from "../button";
 import { Input } from "../input";
 import { Label } from "../label";
+import { definition } from "./definition";
 
 const meta: Meta<typeof Sheet> = {
   title: "Components/Sheet",

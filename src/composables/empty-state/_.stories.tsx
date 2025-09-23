@@ -1,10 +1,11 @@
 import Link from "next/link";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
+
 import { EmptyState } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Button } from "../../components/button";
+import { definition } from "./definition";
 
 const meta: Meta<typeof EmptyState> = {
   title: "Composables/EmptyState",

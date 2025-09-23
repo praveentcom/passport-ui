@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
 import { MenuIcon, XIcon } from "lucide-react";
 
 import { HeaderContainer } from ".";
@@ -22,6 +21,7 @@ import {
 } from "../../components/navigation-menu";
 import { ThemeButton } from "../../composables/theme-button";
 import { AUTHOR } from "../../constants";
+import { definition } from "./definition";
 
 const meta: Meta<typeof HeaderContainer> = {
   title: "Layout Containers/HeaderContainer",

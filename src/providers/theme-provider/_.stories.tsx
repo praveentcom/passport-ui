@@ -1,9 +1,10 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { definition } from "./definition";
+
 import { ThemeButton } from "../../composables/theme-button";
 import { ThemeProvider } from "./_";
+import { definition } from "./definition";
 
 const meta: Meta<typeof ThemeProvider> = {
   title: "Providers/ThemeProvider",
