@@ -155,7 +155,7 @@
     "autoprefixer": "^10.4.21",
     "eslint": "^8.0.0",
     "eslint-plugin-react": "^7.0.0",
-    "eslint-plugin-react-hooks": "^4.0.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-storybook": "^9.1.5",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
