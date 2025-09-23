@@ -5,7 +5,8 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Context Menu",
   icon: MousePointerClick,
-  description: "A menu that appears on right-click, offering context-specific actions.",
+  description:
+    "A menu that appears on right-click, offering context-specific actions.",
   category: "components",
   storyId: "components-context-menu--default",
   slug: "context-menu",

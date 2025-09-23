@@ -5,7 +5,8 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Content Container",
   icon: Box,
-  description: "A layout container for centering and constraining content width.",
+  description:
+    "A layout container for centering and constraining content width.",
   category: "layout",
   storyId: "layouts-content-container--default",
   slug: "content-container",

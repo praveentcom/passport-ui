@@ -5,7 +5,8 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Tabs",
   icon: LayoutList,
-  description: "A set of layered sections of content, known as tab panels, that display one panel of content at a time.",
+  description:
+    "A set of layered sections of content, known as tab panels, that display one panel of content at a time.",
   category: "components",
   storyId: "components-tabs--default",
   slug: "tabs",

@@ -5,7 +5,8 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Dropdown Menu",
   icon: ChevronDown,
-  description: "A menu of actions or links that appears when a trigger is clicked.",
+  description:
+    "A menu of actions or links that appears when a trigger is clicked.",
   category: "components",
   storyId: "components-dropdown-menu--default",
   slug: "dropdown-menu",

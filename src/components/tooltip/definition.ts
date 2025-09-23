@@ -5,7 +5,8 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Tooltip",
   icon: MessageCircle,
-  description: "A pop-up that displays information when a user hovers over an element.",
+  description:
+    "A pop-up that displays information when a user hovers over an element.",
   category: "components",
   storyId: "components-tooltip--default",
   slug: "tooltip",

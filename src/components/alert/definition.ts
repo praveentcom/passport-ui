@@ -5,7 +5,8 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Alert",
   icon: AlertTriangle,
-  description: "Displays a short, important message in a way that attracts the user's attention.",
+  description:
+    "Displays a short, important message in a way that attracts the user's attention.",
   category: "components",
   storyId: "components-alert--default",
   slug: "alert",

@@ -5,7 +5,8 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Mobile Sidebar Trigger",
   icon: Menu,
-  description: "A button for opening and closing the sidebar on mobile devices.",
+  description:
+    "A button for opening and closing the sidebar on mobile devices.",
   category: "composables",
   storyId: "composables-mobile-sidebar-trigger--default",
   slug: "mobile-sidebar-trigger",

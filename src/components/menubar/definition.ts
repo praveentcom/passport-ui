@@ -5,7 +5,8 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Menubar",
   icon: MenuSquare,
-  description: "A horizontal menu of commands, typically at the top of an application.",
+  description:
+    "A horizontal menu of commands, typically at the top of an application.",
   category: "components",
   storyId: "components-menubar--default",
   slug: "menubar",

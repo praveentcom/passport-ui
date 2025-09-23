@@ -5,7 +5,8 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Structured Data",
   icon: Database,
-  description: "A component for embedding structured data (like JSON-LD) for SEO.",
+  description:
+    "A component for embedding structured data (like JSON-LD) for SEO.",
   category: "components",
   storyId: "components-structured-data--default",
   slug: "structured-data",

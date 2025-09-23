@@ -5,7 +5,8 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Analytics",
   icon: BarChart,
-  description: "A component to easily add analytics providers like Vercel and Google Analytics.",
+  description:
+    "A component to easily add analytics providers like Vercel and Google Analytics.",
   category: "components",
   storyId: "components-analytics--default",
   slug: "analytics",

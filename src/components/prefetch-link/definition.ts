@@ -5,7 +5,8 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Prefetch Link",
   icon: ExternalLink,
-  description: "A link component that prefetches page content for faster navigation.",
+  description:
+    "A link component that prefetches page content for faster navigation.",
   category: "components",
   storyId: "components-prefetch-link--default",
   slug: "prefetch-link",

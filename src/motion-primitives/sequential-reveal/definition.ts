@@ -5,7 +5,8 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Sequential Reveal",
   icon: Layers,
-  description: "A component that reveals content sequentially with a staggered animation.",
+  description:
+    "A component that reveals content sequentially with a staggered animation.",
   category: "motion-primitives",
   storyId: "motion-primitives-sequential-reveal--default",
   slug: "sequential-reveal",

@@ -5,7 +5,8 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Form",
   icon: FileText,
-  description: "A set of components for building accessible and reusable forms.",
+  description:
+    "A set of components for building accessible and reusable forms.",
   category: "components",
   storyId: "components-form--default",
   slug: "form",

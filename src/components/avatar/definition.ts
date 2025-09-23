@@ -5,7 +5,8 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Avatar",
   icon: User,
-  description: "An image element with a fallback for representing a user or entity.",
+  description:
+    "An image element with a fallback for representing a user or entity.",
   category: "components",
   storyId: "components-avatar--default",
   slug: "avatar",

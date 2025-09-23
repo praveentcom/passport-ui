@@ -5,7 +5,8 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Checkbox",
   icon: Check,
-  description: "A control that allows the user to select one or more options from a set.",
+  description:
+    "A control that allows the user to select one or more options from a set.",
   category: "components",
   storyId: "components-checkbox--default",
   slug: "checkbox",
