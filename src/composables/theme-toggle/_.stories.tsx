@@ -1,7 +1,7 @@
 import { ThemeProvider } from "next-themes";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { ThemeToggle } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 
@@ -12,15 +12,20 @@ const meta: Meta<typeof ThemeToggle> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Theme toggle for light, dark, and system preferences.
+        component: `${definition.description}
 
-## Features
-- Three options: light, dark, system
-- Animated background transitions
-- System theme detection
+## Components
+- **ThemeToggle**: Dropdown for selecting theme preferences
 
-## Dependencies
-Requires \`next-themes\` ThemeProvider with \`attribute="class"\` and \`enableSystem\`.`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

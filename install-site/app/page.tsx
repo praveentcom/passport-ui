@@ -42,7 +42,7 @@ function App() {
 }`,
 };
 
-export default function IntroductionPage() {
+export default function InstallationPage() {
   const breadcrumbs = generateBreadcrumbs("/");
 
   return (

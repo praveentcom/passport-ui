@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -17,7 +17,7 @@ const meta: Meta<typeof AlertDialog> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Alert dialog for critical confirmations and destructive actions.
+        component: `${definition.description}
 
 ## Components
 - **AlertDialog**: Root container
@@ -27,9 +27,15 @@ const meta: Meta<typeof AlertDialog> = {
 - **AlertDialogCancel**: Cancel button
 - **AlertDialogFooter**: Footer for actions
 
-## Features
-- Focus trap
-- Keyboard navigation (Escape to cancel)`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

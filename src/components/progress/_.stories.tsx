@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { Progress } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 
@@ -10,12 +10,20 @@ const meta: Meta<typeof Progress> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Progress indicator for task completion status.
+        component: `${definition.description}
 
-## Features
-- Percentage-based value system (0-100)
-- Indeterminate state for unknown progress
-- Smooth animations`,
+## Components
+- **Progress**: Progress bar for task completion status
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

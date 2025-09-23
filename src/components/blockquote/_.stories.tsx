@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { Blockquote } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 
@@ -10,13 +10,20 @@ const meta: Meta<typeof Blockquote> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Semantic blockquote for quoted content.
+        component: `${definition.description}
 
-## Features
-- Semantic HTML blockquote element
-- Consistent typography
-- Nested blockquotes support
-- Quote attribution handling`,
+## Components
+- **Blockquote**: Semantic blockquote element for quoted text
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

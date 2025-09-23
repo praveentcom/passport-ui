@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { TypewriterText } from ".";
 
 const meta: Meta<typeof TypewriterText> = {
@@ -9,15 +9,20 @@ const meta: Meta<typeof TypewriterText> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Text animation with typewriter, fade-in-words, and slide-in-chars effects.
+        component: `${definition.description}
 
-## Features
-- Animation modes: typewriter, fade-in-words, slide-in-chars
-- Single strings or arrays
-- Customizable cursor
-- Looping support
-- Adjustable speeds and delays
-- Respects reduced motion`,
+## Components
+- **TypewriterText**: Text animation with typewriter effect
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },
@@ -131,7 +136,7 @@ export const Default: Story = {
     mode: "typewriter",
     speed: 30,
     showCursor: true,
-    className: "text-xl font-medium text-foreground",
+    className: "font-medium text-foreground",
   },
   render: (args) => (
     <div className="max-w-2xl text-center">
@@ -146,7 +151,7 @@ export const FadeInWordsMode: Story = {
     mode: "fade-in-words",
     speed: 150,
     showCursor: false,
-    className: "text-xl font-medium text-foreground",
+    className: "font-medium text-foreground",
   },
   render: (args) => (
     <div className="max-w-2xl text-center">
@@ -161,7 +166,7 @@ export const SlideInCharsMode: Story = {
     mode: "slide-in-chars",
     speed: 80,
     showCursor: false,
-    className: "text-xl font-medium text-foreground",
+    className: "font-medium text-foreground",
   },
   render: (args) => (
     <div className="max-w-2xl text-center">
@@ -181,7 +186,7 @@ export const MultipleTexts: Story = {
     speed: 30,
     pauseTime: 1500,
     showCursor: true,
-    className: "text-xl font-medium text-foreground",
+    className: "font-medium text-foreground",
   },
   render: (args) => (
     <div className="max-w-2xl text-center">
@@ -198,7 +203,7 @@ export const CustomCursor: Story = {
     showCursor: true,
     cursorChar: "▋",
     cursorClassName: "text-blue-500 font-bold",
-    className: "text-lg font-medium text-foreground",
+    className: "font-medium text-foreground",
   },
   render: (args) => (
     <div className="max-w-2xl text-center">

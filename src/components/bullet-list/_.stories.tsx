@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { BulletList } from ".";
 
 const meta: Meta<typeof BulletList> = {
@@ -9,12 +9,20 @@ const meta: Meta<typeof BulletList> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Styled bullet list with custom bullet points.
+        component: `${definition.description}
 
-## Features
-- Custom bullet styling
-- Consistent spacing
-- Flexible content support (strings, arrays)`,
+## Components
+- **BulletList**: List component with custom bullet styling
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

@@ -1,6 +1,7 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { AlertCircle } from "lucide-react";
 
 import { Button } from "../button";
@@ -13,6 +14,24 @@ const meta: Meta<typeof VisuallyHidden> = {
   component: VisuallyHidden,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: `${definition.description}
+
+## Components
+- **VisuallyHidden**: Hides content visually while keeping it accessible
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
+      },
+    },
   },
   tags: ["autodocs"],
   argTypes: {

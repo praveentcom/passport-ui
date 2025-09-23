@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { StructuredData } from ".";
 import { Card, CardContent } from "../card";
 
@@ -10,16 +10,20 @@ const meta: Meta<typeof StructuredData> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Injects Schema.org structured data as JSON-LD into page head.
+        component: `${definition.description}
 
-## Features
-- JSON-LD script injection
-- Schema.org data types support
-- Type-safe data handling
-- No visual impact
+## Components
+- **StructuredData**: Embeds structured data for SEO
 
-## Usage
-Add structured data for search engines.`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

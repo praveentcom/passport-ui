@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import {
   Calculator,
   Calendar,
@@ -32,7 +33,7 @@ const meta: Meta<typeof Command> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Command menu with search and keyboard navigation.
+        component: `${definition.description}
 
 ## Components
 - **Command**: Root container with search and filtering
@@ -43,7 +44,16 @@ const meta: Meta<typeof Command> = {
 - **CommandItem**: Individual selectable commands
 - **CommandSeparator**: Visual dividers between sections
 - **CommandShortcut**: Keyboard shortcut display
-- **CommandDialog**: Modal command palette mode`,
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

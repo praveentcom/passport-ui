@@ -1,7 +1,6 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
 import { CodeBlock } from "../components/code-block";
 import { PrefetchLink } from "../components/prefetch-link";
 import { ThemeToggle } from "../composables/theme-toggle";
@@ -46,7 +45,7 @@ function App() {
 }`,
 };
 
-const IntroductionDocs = () => (
+const InstallationDocs = () => (
   <PageLayout
     header={
       <div className="flex justify-between items-center gap-4">
@@ -158,9 +157,9 @@ const IntroductionDocs = () => (
   </PageLayout>
 );
 
-const meta: Meta<typeof IntroductionDocs> = {
-  title: "Introduction",
-  component: IntroductionDocs,
+const meta: Meta<typeof InstallationDocs> = {
+  title: "Installation",
+  component: InstallationDocs,
   parameters: {
     layout: "fullscreen",
     docs: {

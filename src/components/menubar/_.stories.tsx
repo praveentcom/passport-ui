@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import {
   Menubar,
   MenubarCheckboxItem,
@@ -24,43 +24,27 @@ const meta: Meta<typeof Menubar> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Desktop-style menubar for persistent access to commands.
+        component: `${definition.description}
 
 ## Components
 - **Menubar**: Root container
-- **MenubarMenu**: Individual sections
-- **MenubarTrigger**: Top-level triggers
-- **MenubarContent**: Dropdown content
-- **MenubarItem**: Menu actions
-- **MenubarCheckboxItem**: Checkable items
-- **MenubarRadioGroup/RadioItem**: Radio groups
-- **MenubarSub**: Nested submenus
-- **MenubarSeparator**: Dividers
+- **MenubarMenu**: Individual menu sections
+- **MenubarTrigger**: Menu triggers
+- **MenubarContent**: Menu dropdown content
+- **MenubarItem**: Individual menu items
+- **MenubarSeparator**: Visual separators
 - **MenubarShortcut**: Keyboard shortcuts
+- **MenubarSub**: Nested submenus
 
-## Features
-- Persistent horizontal layout
-- Nested submenus
-- Keyboard shortcuts
-- Item types: regular, checkbox, radio, separator
-- Keyboard navigation with arrows
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
 
-## Usage
-Use menubars for:
-- Desktop application interfaces
-- Complex web applications with many features
-- Professional tools and editors
-- Admin panels and management interfaces
-- Any interface requiring persistent command access
-
-## Best Practices
-- Organize commands logically by category
-- Use standard menu conventions (File, Edit, View, etc.)
-- Include keyboard shortcuts for power users
-- Keep menu depth reasonable for usability
-
-## Accessibility
-Menubars provide full keyboard navigation and screen reader support with proper menu semantics and focus management.`,
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

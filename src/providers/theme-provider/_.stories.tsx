@@ -1,7 +1,7 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { ThemeButton } from "../../composables/theme-button";
 import { ThemeProvider } from "./_";
 
@@ -10,6 +10,24 @@ const meta: Meta<typeof ThemeProvider> = {
   component: ThemeProvider,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: `${definition.description}
+
+## Components
+- **ThemeProvider**: Provider for managing theme switching
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
+      },
+    },
   },
   tags: ["autodocs"],
   argTypes: {

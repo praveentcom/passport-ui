@@ -194,8 +194,6 @@
 @layer base {
   /* Prevent bounce scrolling globally */
   html {
-    scrollbar-gutter: stable;
-    overflow-y: scroll;
     overscroll-behavior: none;
     -webkit-overflow-scrolling: touch;
   }
@@ -219,13 +217,18 @@
   }
   .passport-ui ::-webkit-scrollbar-track,
   body::-webkit-scrollbar-track {
-    @apply bg-transparent;
+    @apply bg-sidebar;
   }
 
   .passport-ui {
     @apply text-sm font-normal font-sans;
     overscroll-behavior: none;
   }
+
+  .page-layout {
+    @apply h-full w-full max-h-screen overflow-y-auto;
+  }
+
   .passport-ui h1,
   .passport-ui h2,
   .passport-ui h3,

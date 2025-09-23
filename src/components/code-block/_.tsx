@@ -126,14 +126,7 @@ export interface CodeBlockProps extends React.ComponentProps<"div"> {
 
 /**
  * A syntax-highlighted code block component with optional filename header and line numbers
- *
- * Features:
- * - Syntax highlighting with highlight.js
- * - Configurable themes (GitHub, Atom One, VS, Monokai, Dracula, Nord, Tokyo Night, Default)
- * - Automatic light/dark mode support for compatible themes
- * - Line numbers with smart width calculation
- * - File icons in header based on filename extension
- *
+ * 
  * Theme Setup:
  * For themed syntax highlighting, import the theme styles in your CSS:
  * ```css

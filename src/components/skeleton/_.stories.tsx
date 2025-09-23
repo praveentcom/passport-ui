@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { Skeleton } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 
@@ -10,12 +10,20 @@ const meta: Meta<typeof Skeleton> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Skeleton loading placeholder while data is fetched.
+        component: `${definition.description}
 
-## Features
-- Animated shimmer effect
-- Flexible sizing via CSS classes
-- Composable for complex layouts`,
+## Components
+- **Skeleton**: Placeholder component for loading content
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

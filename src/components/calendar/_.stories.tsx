@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { DateRange } from "react-day-picker";
 import { action } from "storybook/actions";
 
@@ -14,22 +15,20 @@ const meta: Meta<typeof Calendar> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Calendar for date selection with multiple modes.
+        component: `${definition.description}
 
-## Selection Modes
-- **Single**: One date
-- **Multiple**: Multiple dates
-- **Range**: Date range
+## Components
+- **Calendar**: Interactive calendar for date selection
 
-## Navigation
-- **Label**: Month/year labels with arrows
-- **Dropdown**: Month/year dropdowns
-- **Dropdown-years**: Year range selection
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
 
-## Features
-- Keyboard navigation
-- Disabled dates
-- Date matching functions`,
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

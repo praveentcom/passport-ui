@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { FooterContainer } from ".";
 import { SAMPLE_FOOTER_CONTENT } from "../../../.storybook/constants";
 
@@ -10,20 +10,20 @@ const meta: Meta<typeof FooterContainer> = {
     layout: "fullscreen",
     docs: {
       description: {
-        component: `Footer container with width variants, sticky positioning, and visual effects.
+        component: `${definition.description}
 
-## Variants
-- **compact**: Max width 384px
-- **relaxed**: Max width 768px
-- **broad**: Max width 1152px
-- **full**: Full width
+## Components
+- **FooterContainer**: Layout container for footer sections
 
-## Features
-- Optional sticky positioning
-- Backdrop blur effect
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
 
-## Usage
-Use for copyright, navigation, contact info, social links.`,
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

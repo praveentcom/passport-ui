@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { Menu } from "lucide-react";
 import { action } from "storybook/actions";
 
@@ -21,22 +22,27 @@ const meta: Meta<typeof DropdownMenu> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Dropdown menu with list of actions triggered by button.
+        component: `${definition.description}
 
 ## Components
 - **DropdownMenu**: Root container
 - **DropdownMenuTrigger**: Opens menu
 - **DropdownMenuContent**: Menu container
-- **DropdownMenuItem**: Menu actions
-- **DropdownMenuCheckboxItem**: Checkable items
-- **DropdownMenuGroup**: Grouped sections
+- **DropdownMenuItem**: Individual menu items
 - **DropdownMenuLabel**: Section labels
-- **DropdownMenuSeparator**: Dividers
+- **DropdownMenuSeparator**: Visual separators
+- **DropdownMenuGroup**: Groups related items
+- **DropdownMenuCheckboxItem**: Checkbox menu items
 
-## Features
-- Keyboard navigation with arrows and type-ahead
-- Item types: regular, checkbox, radio, separator
-- Icons, shortcuts, destructive actions`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

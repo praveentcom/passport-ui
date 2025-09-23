@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import {
@@ -24,26 +25,25 @@ const meta: Meta<typeof ContextMenu> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Context menu with contextual actions triggered by right-click.
+        component: `${definition.description}
 
 ## Components
 - **ContextMenu**: Root container
 - **ContextMenuTrigger**: Triggers context menu
 - **ContextMenuContent**: Menu container
 - **ContextMenuItem**: Menu actions
-- **ContextMenuCheckboxItem**: Checkable items
-- **ContextMenuRadioGroup/RadioItem**: Radio groups
-- **ContextMenuSub**: Nested submenus
 - **ContextMenuSeparator**: Dividers
-- **ContextMenuLabel**: Section labels
 - **ContextMenuShortcut**: Keyboard shortcuts
 
-## Features
-- Right-click triggered
-- Keyboard navigation with arrows
-- Nested submenus
-- Item types: regular, checkbox, radio, separator
-- Keyboard shortcuts display`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

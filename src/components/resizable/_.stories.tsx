@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Card } from "../card";
@@ -11,18 +11,22 @@ const meta: Meta<typeof ResizablePanelGroup> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Resizable panel system with drag handles.
+        component: `${definition.description}
 
 ## Components
 - **ResizablePanelGroup**: Root container
 - **ResizablePanel**: Individual panels
 - **ResizableHandle**: Drag handles between panels
 
-## Features
-- Drag-and-drop resizing
-- Horizontal/vertical arrangements
-- Configurable min/max sizes
-- Touch-friendly for mobile`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

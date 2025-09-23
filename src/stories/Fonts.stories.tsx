@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
 import { Button } from "../components/button";
 import { CodeBlock } from "../components/code-block";
 import { Input } from "../components/input";

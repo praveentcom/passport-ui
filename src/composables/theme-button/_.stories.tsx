@@ -1,7 +1,7 @@
 import { ThemeProvider } from "next-themes";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { ThemeButton } from ".";
 
 const meta: Meta<typeof ThemeButton> = {
@@ -11,20 +11,20 @@ const meta: Meta<typeof ThemeButton> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Theme switching button with dropdown menu.
+        component: `${definition.description}
 
-## Variants
-- **Minimal**: Icon-only
-- **Full**: With text labels
+## Components
+- **ThemeButton**: Button for toggling between themes
 
-## Features
-- Theme switching with dropdown
-- Three options: light, dark, system
-- Multiple button variants
-- System theme detection
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
 
-## Dependencies
-Requires \`next-themes\` ThemeProvider with \`attribute="class"\` and \`enableSystem\`.`,
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { Avatar, AvatarFallback, AvatarImage } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 
@@ -10,17 +10,22 @@ const meta: Meta<typeof Avatar> = {
     layout: "centered",
     docs: {
       description: {
-        component: `User avatar with automatic fallback support.
+        component: `${definition.description}
 
 ## Components
 - **Avatar**: Root container
 - **AvatarImage**: Primary image
 - **AvatarFallback**: Fallback content (usually initials)
 
-## Features
-- Automatic fallback when image fails
-- Circular styling
-- Optional monochrome mode`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

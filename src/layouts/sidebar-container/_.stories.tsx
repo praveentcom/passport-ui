@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { FileText, Home, Mail, Settings, Users } from "lucide-react";
 import { action } from "storybook/actions";
 
@@ -29,17 +30,20 @@ const meta: Meta<typeof SidebarContainer> = {
     layout: "fullscreen",
     docs: {
       description: {
-        component: `Sidebar navigation with collapsible states, search, and nested menu items.
+        component: `${definition.description}
 
-## Features
-- Collapsible with icon-only mode
-- Search with real-time filtering
-- Nested menu items
-- Variants: sidebar, floating, inset
-- Left/right positioning
+## Components
+- **SidebarContainer**: Layout container for sidebar navigation
 
-## Usage
-Requires SidebarProvider wrapper.`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

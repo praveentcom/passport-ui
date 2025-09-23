@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import {
@@ -19,7 +20,7 @@ const meta: Meta<typeof Select> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Dropdown selection with list of options.
+        component: `${definition.description}
 
 ## Components
 - **Select**: Root container
@@ -27,12 +28,18 @@ const meta: Meta<typeof Select> = {
 - **SelectValue**: Displays selected value
 - **SelectContent**: Dropdown container
 - **SelectItem**: Individual options
-- **SelectGroup/SelectLabel**: Labeled groups
+- **SelectGroup**: Groups related items
+- **SelectLabel**: Group labels
 
-## Features
-- Keyboard navigation with arrows and type-ahead
-- Controlled/uncontrolled modes
-- Grouping support`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

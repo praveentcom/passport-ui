@@ -1,13 +1,31 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { useIsMobile } from "./";
 
 const meta: Meta = {
   title: "Hooks/useIsMobile",
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: `${definition.description}
+
+## Components
+- **useIsMobile**: Hook for detecting mobile viewport
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
+      },
+    },
   },
   tags: ["autodocs"],
 };

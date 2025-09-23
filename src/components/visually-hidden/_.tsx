@@ -20,23 +20,6 @@ export interface VisuallyHiddenProps {
 
 /**
  * A component that hides content visually but keeps it available to screen readers.
- *
- * ## Features
- * - Hides content visually using CSS
- * - Keeps content accessible to screen readers
- * - Maintains proper focus behavior
- * - Can render as span or div
- *
- * ## Usage
- * Use for:
- * - Skip links
- * - Additional context for screen readers
- * - Form labels that are visually represented by icons
- * - Status messages that don't need visual representation
- *
- * ## Accessibility
- * This component ensures that important information remains available to assistive technologies
- * while maintaining a clean visual design.
  */
 function VisuallyHidden({
   className,

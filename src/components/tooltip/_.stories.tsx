@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import { Tooltip, TooltipContent, TooltipTrigger } from ".";
@@ -11,17 +12,22 @@ const meta: Meta<typeof Tooltip> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Tooltip for contextual information on hover/focus.
+        component: `${definition.description}
 
 ## Components
 - **Tooltip**: Root container
 - **TooltipTrigger**: Triggers tooltip
 - **TooltipContent**: Tooltip content
 
-## Features
-- Hover and focus triggers with customizable delay
-- Positioning: top, bottom, left, right
-- Configurable timing`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

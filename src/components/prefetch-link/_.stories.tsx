@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { PrefetchLink } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Button } from "../button";
@@ -14,34 +14,20 @@ const meta: Meta<typeof PrefetchLink> = {
     },
     docs: {
       description: {
-        component: `A Next.js Link component with prefetching strategies for performance optimization.
+        component: `${definition.description}
 
-## Prefetching Strategies
-- **Hover Prefetching**: Prefetches when user hovers over the link
-- **Visibility Prefetching**: Prefetches when link enters viewport
-- **Combined**: Use both strategies for optimization
-- **Delayed**: Configurable delay prevents accidental prefetching
+## Components
+- **PrefetchLink**: Enhanced link component with prefetching
 
-## Benefits
-- Faster page transitions with pre-loaded content
-- Reduced perceived loading times
-- Better user experience with instant navigation
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
 
-## Usage
-Use prefetch links for:
-- Critical navigation paths in your application
-- Links that users are likely to follow
-- High-traffic pages and common destinations
-- Any link where faster navigation improves UX
-
-## Best Practices
-- Use hover prefetching for likely destinations
-- Use visibility prefetching for above-the-fold links
-- Adjust delays based on your application's needs
-- Consider bandwidth implications for mobile users
-
-## Accessibility
-Prefetch links maintain all standard link accessibility features while adding performance optimizations.`,
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

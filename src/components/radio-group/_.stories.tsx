@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import { RadioGroup, RadioGroupItem } from ".";
@@ -12,18 +13,21 @@ const meta: Meta<typeof RadioGroup> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Radio group for single-selection from multiple options.
+        component: `${definition.description}
 
 ## Components
 - **RadioGroup**: Root container
 - **RadioGroupItem**: Individual radio options
-- **Label**: Associated labels
 
-## Features
-- Single selection from mutually exclusive options
-- Keyboard navigation with arrow keys
-- Individual item disable support
-- Form integration`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

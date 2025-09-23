@@ -8,6 +8,7 @@ All Storybook story files should follow this comprehensive documentation pattern
 
 ```typescript
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { ComponentName } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 
@@ -42,12 +43,6 @@ Use this template for the component description in the `docs.description.compone
 ```markdown
 A [brief description] component for [primary use case] with [key features].
 
-## Features
-- [Feature 1 with brief explanation]
-- [Feature 2 with brief explanation]
-- [Feature 3 with brief explanation]
-- [Additional features...]
-
 ## Composition (for complex components only)
 [Component name] is composed of multiple components:
 - **SubComponent1**: [Purpose and usage]
@@ -61,14 +56,8 @@ Use [component name] for:
 - [Use case 3]
 - [Additional use cases...]
 
-## Best Practices (optional)
-- [Best practice 1]
-- [Best practice 2]
-- [Best practice 3]
-
-## Accessibility
-[Component name] provides [accessibility features] with [specific ARIA attributes, keyboard navigation, screen reader support, etc.].
-```
+## Code
+Show the code usage sample using the definition file.
 
 ### ArgTypes Categories
 
@@ -83,7 +72,6 @@ Organize argTypes into these standard categories:
 - **Events**: Event handlers and callbacks
 - **Form**: Form-specific attributes (name, value, etc.)
 - **Association**: Props that associate with other elements (htmlFor, etc.)
-- **Accessibility**: ARIA attributes and accessibility props
 
 ### ArgTypes Template
 

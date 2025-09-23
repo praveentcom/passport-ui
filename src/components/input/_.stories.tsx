@@ -4,6 +4,7 @@ import { action } from "storybook/actions";
 import { Input } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Label } from "../label";
+import { definition } from "./definition";
 
 const meta: Meta<typeof Input> = {
   title: "Components/Input",
@@ -12,11 +13,20 @@ const meta: Meta<typeof Input> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Input component for forms and user input.
+        component: `${definition.description}
 
-## Features
-- Input types: text, email, password, number, tel, url, search
-- Form validation with error states`,
+## Components
+- **Input**: Standard text input field for forms
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

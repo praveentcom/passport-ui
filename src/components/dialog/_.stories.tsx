@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import {
@@ -20,19 +21,24 @@ const meta: Meta<typeof Dialog> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Modal dialog for important content that expects a response.
+        component: `${definition.description}
 
 ## Components
 - **Dialog**: Root container
 - **DialogTrigger**: Opens dialog
 - **DialogContent**: Main container
 - **DialogClose**: Closes dialog
-- **DialogFooter**: Footer for actions
+- **DialogFooter**: Footer section
 
-## Features
-- Modal/non-modal modes
-- Focus trap
-- Keyboard navigation (Escape, Tab)`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

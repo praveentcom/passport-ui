@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { Button } from "../button";
 import { LiveRegion } from "./_";
 
@@ -10,6 +10,24 @@ const meta: Meta<typeof LiveRegion> = {
   component: LiveRegion,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: `${definition.description}
+
+## Components
+- **LiveRegion**: Announces dynamic content changes to screen readers
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
+      },
+    },
   },
   tags: ["autodocs"],
   argTypes: {

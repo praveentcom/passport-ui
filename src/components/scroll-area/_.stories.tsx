@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { ScrollArea } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Card, CardContent } from "../card";
@@ -11,17 +11,20 @@ const meta: Meta<typeof ScrollArea> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Custom scrollable area with styled scrollbars.
+        component: `${definition.description}
 
-## Features
-- Custom-styled scrollbars
-- Horizontal/vertical scrolling
-- Configurable scrollbar visibility
-- Cross-browser consistent appearance
+## Components
+- **ScrollArea**: Container with customizable scrollbars
 
-## Benefits Over Native
-- Customizable scrollbar styling
-- Better control over behavior`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

@@ -38,13 +38,6 @@ export interface MarkdownProps {
 /**
  * A component that renders markdown content as sanitized HTML with syntax highlighting support
  *
- * Features:
- * - Markdown parsing with support for headers, lists, links, emphasis, code blocks, tables, and blockquotes
- * - Syntax highlighting for code blocks using highlight.js
- * - Configurable themes for code syntax highlighting
- * - XSS protection with DOMPurify sanitization
- * - Responsive tables and rich formatting
- *
  * Theme Setup:
  * For themed syntax highlighting in code blocks, import the theme styles in your CSS:
  * ```css

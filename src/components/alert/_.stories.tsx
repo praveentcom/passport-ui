@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import {
   AlertCircleIcon,
   AlertTriangleIcon,
@@ -16,11 +17,20 @@ const meta: Meta<typeof Alert> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Alert for important messages.
+        component: `${definition.description}
 
-## Features
-- Variants: info, warning, success, destructive
-- Optional icon support`,
+## Components
+- **Alert**: Displays alert messages with optional icons
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

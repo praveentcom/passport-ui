@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { SequentialReveal } from ".";
 import { Badge } from "../../components/badge";
 import { Button } from "../../components/button";
@@ -18,19 +18,20 @@ const meta: Meta<typeof SequentialReveal> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Motion primitive for animating multiple child elements with staggered timing.
+        component: `${definition.description}
 
-## Animation Patterns
-1. **Cascade**: Sequential left-to-right or top-to-bottom
-2. **Wave**: Sine wave-based timing
-3. **Spiral**: Square root-based delays
-4. **Random**: Randomized timing
+## Components
+- **SequentialReveal**: Reveals content with staggered animations
 
-## Features
-- Configurable stagger delays
-- Scroll-triggered animations
-- Reverse animations
-- Reduced motion support`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

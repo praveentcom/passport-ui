@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { toast } from "sonner";
 
 import { Toaster } from ".";
@@ -11,21 +12,20 @@ const meta: Meta<typeof Toaster> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Toast notification system built on Sonner.
+        component: `${definition.description}
 
-## Features
-- Toast types: default, success, error, warning, info
-- Configurable positioning (6 positions)
-- Rich content with actions
-- Automatic dismissal
-- Promise-based toasts
+## Components
+- **Toaster**: Toast notification container
 
-## Setup
-\`\`\`tsx
-<Toaster />
-toast("Hello world")
-toast.success("Success")
-\`\`\``,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

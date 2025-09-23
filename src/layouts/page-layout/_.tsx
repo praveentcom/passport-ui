@@ -281,7 +281,7 @@ export function PageLayout({
           ))}
         </div>
       )}
-      <div data-slot="page-layout" className="w-full">
+      <div data-slot="page-layout" className="page-layout">
         {layoutStructure}
       </div>
     </Fragment>

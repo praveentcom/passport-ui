@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { Analytics } from ".";
 
 const meta = {
@@ -9,24 +9,20 @@ const meta = {
     layout: "centered",
     docs: {
       description: {
-        component: `Analytics component supporting multiple providers.
+        component: `${definition.description}
 
-## Features
-- Multiple providers: Google Analytics, Facebook Pixel, Mixpanel
-- TypeScript support
-- CSP compliance with nonce
-- Can be disabled during development
-- \`useAnalytics\` hook
+## Components
+- **Analytics**: Analytics provider component with hook support
 
-## useAnalytics Hook
-\`\`\`typescript
-const { trackEvent, trackPageView, setUserProperties } = useAnalytics()
-trackEvent('button_click', { category: 'ui' })
-trackPageView('/demo-page')
+## Code
+\`\`\`tsx import
+${definition.importCode}
 \`\`\`
 
-## Usage
-Place once in app root. Disabled by default in Storybook.`,
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

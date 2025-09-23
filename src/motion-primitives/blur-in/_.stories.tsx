@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { BlurIn } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Button } from "../../components/button";
@@ -12,16 +12,20 @@ const meta: Meta<typeof BlurIn> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Motion primitive with blur and fade entrance effects.
+        component: `${definition.description}
 
-## Features
-- Blur-to-clear transition
-- Configurable Y-axis movement
-- Customizable timing and delay
-- Staggered animation support
+## Components
+- **BlurIn**: Component that reveals content with blur-in animation
 
-## Animation Properties
-Animates blur (amount to 0), opacity (0 to 1), and Y position.`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

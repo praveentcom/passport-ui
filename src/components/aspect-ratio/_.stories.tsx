@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { AspectRatio } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Card, CardContent } from "../card";
@@ -11,18 +11,22 @@ const meta: Meta<typeof AspectRatio> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Aspect ratio container that maintains proportions.
+        component: `${definition.description}
 
-## Common Ratios
-- **16:9** (1.78): Widescreen video
-- **4:3** (1.33): Traditional video
-- **1:1** (1.0): Square images
-- **3:2** (1.5): Photography
-- **21:9** (2.33): Ultra-wide
+## Components
+- **AspectRatio**: Container that maintains specific aspect ratios
 
-## Features
-- Maintains ratios regardless of container size
-- Prevents layout shift`,
+// Guidelines: Common ratios - 16:9 (1.78), 4:3 (1.33), 1:1 (1.0), 3:2 (1.5), 21:9 (2.33)
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

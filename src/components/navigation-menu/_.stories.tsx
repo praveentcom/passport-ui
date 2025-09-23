@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react";
 
 import {
@@ -69,7 +70,7 @@ const meta: Meta<typeof NavigationMenu> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Navigation menu with dropdown support and animations.
+        component: `${definition.description}
 
 ## Components
 - **NavigationMenu**: Root container
@@ -78,13 +79,16 @@ const meta: Meta<typeof NavigationMenu> = {
 - **NavigationMenuTrigger**: Dropdown triggers
 - **NavigationMenuContent**: Dropdown content
 - **NavigationMenuLink**: Navigation links
-- **NavigationMenuIndicator**: Active indicator
-- **NavigationMenuViewport**: Content viewport
 
-## Features
-- Hierarchical navigation with dropdowns
-- Hover and click triggers
-- Keyboard navigation with arrows`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },
@@ -108,7 +112,7 @@ const meta: Meta<typeof NavigationMenu> = {
           <NavigationMenuTrigger>Home</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="list-container grid-cols-2 w-sm">
-              <ListItem href="/docs" title="Introduction">
+              <ListItem href="/docs" title="About">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
               <ListItem href="/docs/installation" title="Installation">

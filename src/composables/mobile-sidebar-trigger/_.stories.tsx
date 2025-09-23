@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { SettingsIcon } from "lucide-react";
 
 import { SidebarProvider } from "../../components/sidebar";
@@ -9,6 +10,24 @@ const meta: Meta<typeof MobileSidebarTrigger> = {
   component: MobileSidebarTrigger,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: `${definition.description}
+
+## Components
+- **MobileSidebarTrigger**: Button for opening sidebar on mobile
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
+      },
+    },
   },
   tags: ["autodocs"],
   decorators: [

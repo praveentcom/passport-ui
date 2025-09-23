@@ -1,13 +1,31 @@
 import React, { useRef } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { useScroll } from "./";
 
 const meta: Meta = {
   title: "Hooks/useScroll",
   parameters: {
     layout: "fullscreen",
+    docs: {
+      description: {
+        component: `${definition.description}
+
+## Components
+- **useScroll**: Hook for detecting scroll events
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
+      },
+    },
   },
   tags: ["autodocs"],
 };

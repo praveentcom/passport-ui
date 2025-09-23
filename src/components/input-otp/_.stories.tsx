@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from ".";
@@ -12,7 +13,7 @@ const meta: Meta<typeof InputOTP> = {
     layout: "centered",
     docs: {
       description: {
-        component: `One-time password (OTP) input for authentication.
+        component: `${definition.description}
 
 ## Components
 - **InputOTP**: Root container
@@ -20,11 +21,15 @@ const meta: Meta<typeof InputOTP> = {
 - **InputOTPSlot**: Individual slots
 - **InputOTPSeparator**: Visual separators
 
-## Features
-- Individual character slots
-- Paste support
-- Customizable slot count
-- Validation and completion detection`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

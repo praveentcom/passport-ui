@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { MenuIcon, XIcon } from "lucide-react";
 
 import { HeaderContainer } from ".";
@@ -29,14 +30,20 @@ const meta: Meta<typeof HeaderContainer> = {
     layout: "fullscreen",
     docs: {
       description: {
-        component: `Header container with positioning and visual effects.
+        component: `${definition.description}
 
-## Features
-- Width variants: compact, relaxed, broad, full
-- Optional sticky positioning
-- Backdrop blur effect
-- Show on scroll option
-- Sidebar background colors`,
+## Components
+- **HeaderContainer**: Layout container for header sections
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

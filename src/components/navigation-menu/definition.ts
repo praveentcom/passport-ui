@@ -29,7 +29,7 @@ import Link from "next/link";`,
               <Link href="/docs">
                 <div className="passport-ui p-1">
                   <div>
-                    <h3>Introduction</h3>
+                    <h3>Installation</h3>
                     <p className="line-clamp-2">
                       Re-usable components built using Radix UI and Tailwind CSS.
                     </p>

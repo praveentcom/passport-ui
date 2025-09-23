@@ -1,7 +1,7 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { ToggleSelect, ToggleSelectItem } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 
@@ -12,24 +12,23 @@ const meta: Meta<typeof ToggleSelect> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Toggle-based selection for multiple exclusive options.
+        component: `${definition.description}
 
 ## Components
 - **ToggleSelect**: Root container
 - **ToggleSelectItem**: Individual toggle options
 
-## Features
-- Single selection from multiple options
-- Visual feedback with pressed/unpressed states
-- Keyboard navigation with arrows and Enter
+// Guidelines: Use ToggleSelect for button-like appearance, RadioGroup for traditional radio styling
 
-## Toggle Select vs Radio Group
-- **ToggleSelect**: Button-like appearance
-- **Radio Group**: Traditional radio appearance
-- **RadioGroup**: Traditional radio button styling for forms
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
 
-## Accessibility
-Toggle selects provide full keyboard navigation and screen reader support with proper selection announcements.`,
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

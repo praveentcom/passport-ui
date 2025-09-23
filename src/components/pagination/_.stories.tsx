@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import {
@@ -19,7 +20,7 @@ const meta: Meta<typeof Pagination> = {
     layout: "centered",
     docs: {
       description: {
-        component: `A pagination component for navigating through multiple pages of content.
+        component: `${definition.description}
 
 ## Components
 - **Pagination**: Root navigation container
@@ -28,26 +29,17 @@ const meta: Meta<typeof Pagination> = {
 - **PaginationLink**: Clickable page number links
 - **PaginationPrevious**: Previous page navigation
 - **PaginationNext**: Next page navigation
-- **PaginationEllipsis**: Visual indicator for truncated pages
+- **PaginationEllipsis**: Ellipsis for skipped pages
 
-## Features
-- Previous and next navigation with disabled states
-- Numbered page links with active state indication
-- Ellipsis for truncated page ranges
-- Built-in accessibility with ARIA labels
-- Keyboard navigation support
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
 
-## Usage
-Use for large data sets, search results, blog posts, product catalogs, and content split across multiple pages.
-
-## Best Practices
-- Clearly indicate the current page
-- Provide context about total pages when possible
-- Use ellipsis appropriately for large page counts
-- Ensure navigation controls are easily accessible
-
-## Accessibility
-Pagination provides full keyboard navigation and screen reader support with proper page announcements and navigation semantics.`,
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

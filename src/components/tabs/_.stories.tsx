@@ -1,6 +1,7 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import {
   Activity,
   BarChart3,
@@ -25,22 +26,24 @@ const meta: Meta<typeof Tabs> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Tabs with visual variants, icon support, and keyboard navigation.
+        component: `${definition.description}
 
 ## Components
 - **Tabs**: Root container
 - **TabsList**: Container for triggers
-- **TabsTrigger**: Individual tab buttons with optional Lucide icons
+- **TabsTrigger**: Individual tab buttons with optional icons
 - **TabsContent**: Content panels
 - **TabsDropdown**: Mobile dropdown with icon support
 
-## Features
-- Variants: default, pills
-- Horizontal/vertical orientation
-- Lucide icon support in triggers and dropdowns
-- Keyboard navigation (arrows, home, end)
-- Disabled tabs support
-- Responsive mobile dropdown`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

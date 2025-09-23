@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { Slash } from "lucide-react";
 
 import { Breadcrumb } from ".";
@@ -11,13 +12,20 @@ const meta: Meta<typeof Breadcrumb> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Navigation breadcrumb showing current page location.
+        component: `${definition.description}
 
-## Features
-- Hierarchical navigation with clickable segments
-- Path truncation for long breadcrumbs
-- Dropdown overflow for mobile
-- Customizable separators`,
+## Components
+- **Breadcrumb**: Navigation component showing hierarchical path
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

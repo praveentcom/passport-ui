@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { Switch } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 
@@ -10,13 +10,20 @@ const meta: Meta<typeof Switch> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Toggle switch for binary on/off states.
+        component: `${definition.description}
 
-## Features
-- Variants: default, success, warning, destructive, info
-- Toggle animations
-- Keyboard navigation (Space to toggle)
-- Form integration`,
+## Components
+- **Switch**: Toggle control for binary states
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

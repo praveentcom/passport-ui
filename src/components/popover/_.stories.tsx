@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import { Popover, PopoverContent, PopoverTrigger } from ".";
@@ -13,17 +14,22 @@ const meta: Meta<typeof Popover> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Popover that displays content triggered by user interaction.
+        component: `${definition.description}
 
 ## Components
 - **Popover**: Root container
 - **PopoverTrigger**: Triggers popover (usually button)
 - **PopoverContent**: Content container
 
-## Features
-- Click-triggered display
-- Modal/non-modal modes
-- Focus management`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

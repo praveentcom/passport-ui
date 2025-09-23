@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { ContentContainer } from ".";
 import { SAMPLE_CONTENT_CONTAINER } from "../../../.storybook/constants";
 
@@ -10,12 +10,20 @@ const meta: Meta<typeof ContentContainer> = {
     layout: "fullscreen",
     docs: {
       description: {
-        component: `Page wrapper with layout, structured data injection, and animations.
+        component: `${definition.description}
 
-## Features
-- Schema.org structured data injection
-- Consistent layout with spacing
-- Optional entrance animations`,
+## Components
+- **ContentContainer**: Layout container for centering content
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

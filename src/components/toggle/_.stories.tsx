@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import { Toggle } from ".";
@@ -11,19 +12,22 @@ const meta: Meta<typeof Toggle> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Toggle button for binary on/off states.
+        component: `${definition.description}
 
-## Features
-- Binary pressed/unpressed states
-- Variants: transparent, outline
-- Sizes: regular, medium, large
-- Keyboard navigation (Space/Enter)
-- Controlled/uncontrolled modes
+## Components
+- **Toggle**: Two-state button for on/off states
 
-## Toggle vs Switch vs Checkbox
-- **Toggle**: Button-like for immediate actions
-- **Switch**: Slider-like for settings
-- **Checkbox**: For form selections`,
+// Guidelines: Use Toggle for immediate actions, Switch for settings, Checkbox for form selections
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

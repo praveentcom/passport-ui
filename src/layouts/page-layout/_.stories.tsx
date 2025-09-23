@@ -1,6 +1,7 @@
 import { ReactNode, useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { FileText, Home, Mail, Settings, Users } from "lucide-react";
 
 import { PageLayout } from ".";
@@ -33,13 +34,20 @@ const meta: Meta<typeof PageLayout> = {
     layout: "fullscreen",
     docs: {
       description: {
-        component: `Page layout combining sidebar, header, footer, and content with SEO optimization.
+        component: `${definition.description}
 
-## Features
-- Integrated sidebar
-- Optional sticky header/footer
-- Content container with width variants
-- Schema.org structured data injection`,
+## Components
+- **PageLayout**: Comprehensive layout structure for pages
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

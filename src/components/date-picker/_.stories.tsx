@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { DateRange } from "react-day-picker";
 import { action } from "storybook/actions";
 
@@ -14,17 +15,21 @@ const meta: Meta<typeof DatePicker> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Date picker combining input field with popover calendar.
+        component: `${definition.description}
 
-## Variants
-- **DatePicker**: Single date selection
-- **DateRangePicker**: Date range selection
+## Components
+- **DatePicker**: Single date selection with input field
+- **DateRangePicker**: Date range selection with input field
 
-## Features
-- Click-to-open popover calendar
-- Keyboard navigation within calendar
-- Date formatting in input field
-- Single date and range modes`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

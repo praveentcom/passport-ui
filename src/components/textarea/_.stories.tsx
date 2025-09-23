@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { Textarea } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 
@@ -10,12 +10,20 @@ const meta: Meta<typeof Textarea> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Textarea for multi-line text input.
+        component: `${definition.description}
 
-## Features
-- Resizable height
-- Configurable rows and columns
-- Form integration`,
+## Components
+- **Textarea**: Multi-line text input for longer content
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

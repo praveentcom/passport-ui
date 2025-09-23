@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
 import { Button } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
+import { definition } from "./definition";
 
 const meta: Meta<typeof Button> = {
   title: "Components/Button",
@@ -12,14 +12,20 @@ const meta: Meta<typeof Button> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Button with variants, sizes, and loading states.
+        component: `${definition.description}
 
-## Features
-- Variants: primary, destructive, outline, secondary, ghost, link
-- Sizes: regular, medium, large
-- Loading state with spinner
-- Icon support
-- asChild prop`,
+## Components
+- **Button**: Clickable element with multiple variants and states
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

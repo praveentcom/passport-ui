@@ -1,5 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { action } from "storybook/actions";
@@ -36,7 +37,7 @@ const meta: Meta<typeof Form> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Form system with React Hook Form and Zod validation.
+        component: `${definition.description}
 
 ## Components
 - **Form**: Root provider
@@ -47,9 +48,15 @@ const meta: Meta<typeof Form> = {
 - **FormDescription**: Help text
 - **FormMessage**: Error messages
 
-## Features
-- Type-safe Zod validation
-- Real-time validation feedback`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

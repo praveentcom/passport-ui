@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import {
@@ -16,7 +17,7 @@ const meta: Meta<typeof Accordion> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Vertically stacked interactive headings that reveal content sections.
+        component: `${definition.description}
 
 ## Components
 - **Accordion**: Root container
@@ -24,10 +25,15 @@ const meta: Meta<typeof Accordion> = {
 - **AccordionTrigger**: Clickable header with chevron
 - **AccordionContent**: Expandable content
 
-## Features
-- Keyboard navigation with arrow keys
-- Single or multiple expansion modes
-- Smooth animations`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { Separator } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Card, CardContent } from "../card";
@@ -11,15 +11,20 @@ const meta: Meta<typeof Separator> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Visual separator for dividing content sections.
+        component: `${definition.description}
 
-## Features
-- Horizontal/vertical orientation
-- Decorative/non-decorative modes
+## Components
+- **Separator**: Visual divider for separating content sections
 
-## Orientation
-- **Horizontal**: Divides content vertically
-- **Vertical**: Divides content horizontally`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

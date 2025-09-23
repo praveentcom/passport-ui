@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { Markdown } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 
@@ -10,24 +10,20 @@ const meta: Meta<typeof Markdown> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Renders markdown content as sanitized HTML with syntax highlighting.
+        component: `${definition.description}
 
-## Features
-- Markdown parsing for headers, lists, links, emphasis, code blocks, tables, blockquotes
-- Syntax highlighting with highlight.js
-- XSS protection with DOMPurify
-- File icons in code headers
+## Components
+- **Markdown**: Renders markdown content with syntax highlighting
 
-## Theme Setup
-\`\`\`css
-@import 'passport-ui/hljs-themes.css';
+## Code
+\`\`\`tsx import
+${definition.importCode}
 \`\`\`
 
-## Themes
-GitHub, Atom One, VS, Monokai, Dracula, Nord, Tokyo Night, Default
-
-## Supported Elements
-Headers, paragraphs, **bold**, *italic*, ~~strikethrough~~, \`code\`, code blocks, lists, links, images, tables, blockquotes, horizontal rules.`,
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

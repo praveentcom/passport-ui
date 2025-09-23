@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { Badge } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
+import { definition } from "./definition";
 
 const meta: Meta<typeof Badge> = {
   title: "Components/Badge",
@@ -10,12 +11,20 @@ const meta: Meta<typeof Badge> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Badge for status, labels, and notifications.
+        component: `${definition.description}
 
-## Features
-- Variants: default, secondary, outline, info, success, warning, destructive
-- asChild prop
-- Icon support`,
+## Components
+- **Badge**: Small visual element for labeling and categorizing
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

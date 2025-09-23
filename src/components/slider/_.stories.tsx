@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import { Slider } from ".";
@@ -13,21 +14,22 @@ const meta: Meta<typeof Slider> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Slider for selecting numeric values within a range.
+        component: `${definition.description}
 
-## Features
-- Single or multi-value (range) support
-- Keyboard navigation with arrows and page up/down
-- Touch and mouse interaction
-- Customizable min, max, step values
-- Horizontal/vertical orientations
+## Components
+- **Slider**: Control for selecting values from a range
 
-## Single vs Range
-- Single: \`[50]\`
-- Range: \`[20, 80]\`
+// Guidelines: Single value: [50], Range values: [20, 80]
 
-## Accessibility
-Sliders provide full keyboard navigation and screen reader support with proper value announcements.`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import { AnimatedBackground } from ".";
@@ -11,16 +12,20 @@ const meta: Meta<typeof AnimatedBackground> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Animated background that highlights active elements.
+        component: `${definition.description}
 
-## Features
-- Follows active elements
-- Hover and click interactions
-- Automatic size/position calculation
-- Customizable timing
+## Components
+- **AnimatedBackground**: Component for creating animated backgrounds
 
-## Implementation
-Each child needs unique \`data-id\` attribute.`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import {
   Table,
   TableBody,
@@ -19,7 +19,7 @@ const meta: Meta<typeof Table> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Semantic table for structured tabular data.
+        component: `${definition.description}
 
 ## Components
 - **Table**: Root container
@@ -31,9 +31,15 @@ const meta: Meta<typeof Table> = {
 - **TableHead**: Header cells
 - **TableCell**: Data cells
 
-## Features
-- Responsive with horizontal scrolling
-- Theme integration`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

@@ -1,6 +1,7 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import {
@@ -19,7 +20,7 @@ const meta: Meta<typeof Drawer> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Mobile-optimized drawer with sliding panels from screen edges.
+        component: `${definition.description}
 
 ## Components
 - **Drawer**: Root container
@@ -28,11 +29,15 @@ const meta: Meta<typeof Drawer> = {
 - **DrawerClose**: Closes drawer
 - **DrawerFooter**: Footer for actions
 
-## Features
-- Slide animations from four directions
-- Touch-friendly drag interactions
-- Modal/non-modal modes
-- Snap points and gesture handling`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

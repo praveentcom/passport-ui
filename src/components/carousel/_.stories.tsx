@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import {
   Carousel,
   CarouselContent,
@@ -17,7 +17,7 @@ const meta: Meta<typeof Carousel> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Responsive carousel with touch/swipe support.
+        component: `${definition.description}
 
 ## Components
 - **Carousel**: Root container
@@ -26,11 +26,15 @@ const meta: Meta<typeof Carousel> = {
 - **CarouselPrevious**: Previous button
 - **CarouselNext**: Next button
 
-## Features
-- Touch/mouse drag support
-- Horizontal/vertical orientations
-- Keyboard navigation
-- Loop and autoplay options`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

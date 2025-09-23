@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
 import { Separator } from "../components/separator";
 import { ThemeToggle } from "../composables/theme-toggle";
 import { ContentContainer } from "../layouts/content-container";

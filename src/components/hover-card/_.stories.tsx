@@ -1,6 +1,7 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import { HoverCard, HoverCardContent, HoverCardTrigger } from ".";
@@ -15,17 +16,22 @@ const meta: Meta<typeof HoverCard> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Hover card that displays preview content on hover.
+        component: `${definition.description}
 
 ## Components
 - **HoverCard**: Root container
 - **HoverCardTrigger**: Triggers on hover
 - **HoverCardContent**: Preview content
 
-## Features
-- Configurable timing
-- Customizable delays
-- Works with hover and keyboard focus`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

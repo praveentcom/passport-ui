@@ -1,7 +1,7 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import pkg from "../../../package.json";
 import { PrefetchLink } from "../prefetch-link";
 import {
@@ -26,6 +26,30 @@ const meta: Meta<typeof Sidebar> = {
   ],
   parameters: {
     layout: "fullscreen",
+    docs: {
+      description: {
+        component: `${definition.description}
+
+## Components
+- **Sidebar**: Main sidebar container
+- **SidebarProvider**: Context provider for sidebar state
+- **SidebarHeader**: Header section
+- **SidebarContent**: Main content area
+- **SidebarMenu**: Menu container
+- **SidebarMenuItem**: Individual menu items
+- **SidebarFooter**: Footer section
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
+      },
+    },
   },
   tags: ["autodocs"],
   argTypes: {

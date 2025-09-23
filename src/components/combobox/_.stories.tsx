@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import { Combobox } from ".";
@@ -48,16 +49,20 @@ const meta: Meta<typeof Combobox> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Searchable combobox combining input and dropdown with autocomplete.
+        component: `${definition.description}
 
-## Features
-- Real-time search and filtering
-- Keyboard navigation with arrows and Enter
-- Type-ahead search
-- Virtual scrolling for large lists
+## Components
+- **Combobox**: Input field with dropdown suggestions
 
-## Interaction
-Click to open, type to filter, arrows to navigate, Enter to select, Escape to close.`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

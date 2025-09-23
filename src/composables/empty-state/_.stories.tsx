@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { EmptyState } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Button } from "../../components/button";
@@ -13,12 +13,20 @@ const meta: Meta<typeof EmptyState> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Placeholder card for empty states, errors, and onboarding.
+        component: `${definition.description}
 
-## Features
-- Title and subtitle support
-- Customizable action buttons
-- Default fallback content`,
+## Components
+- **EmptyState**: Placeholder component for empty content states
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

@@ -1,6 +1,7 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { action } from "storybook/actions";
 
 import {
@@ -25,23 +26,27 @@ const meta: Meta<typeof Sheet> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Sheet that displays content from screen edges.
+        component: `${definition.description}
 
 ## Components
 - **Sheet**: Root container
-- **SheetTrigger**: Opens sheet
-- **SheetContent**: Main container with slide animation
-- **SheetHeader**: Header with title/description
+- **SheetTrigger**: Triggers sheet
+- **SheetContent**: Main content container
+- **SheetHeader**: Header section with title and description
 - **SheetTitle**: Sheet title
-- **SheetDescription**: Optional description
-- **SheetFooter**: Footer for actions
-- **SheetClose**: Closes sheet
+- **SheetDescription**: Sheet description
+- **SheetFooter**: Footer section for actions
+- **SheetClose**: Close button
 
-## Features
-- Slides from edges: top, right, bottom, left
-- Modal/non-modal modes
-- Focus trap
-- Keyboard navigation (Escape, Tab)`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

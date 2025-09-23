@@ -34,22 +34,6 @@ export interface LiveRegionProps extends React.ComponentProps<"div"> {
 
 /**
  * A live region component for announcing dynamic content changes to screen readers.
- *
- * ## Features
- * - Announces content changes to assistive technologies
- * - Configurable politeness levels (polite, assertive, off)
- * - Option to be visually hidden or visible
- * - Atomic announcements support
- *
- * ## Usage
- * Use live regions to announce:
- * - Form validation errors
- * - Loading states and completion
- * - Dynamic content updates
- * - Status messages
- *
- * ## Accessibility
- * Live regions provide crucial feedback for screen reader users about dynamic content changes.
  */
 function LiveRegion({
   className,

@@ -5,6 +5,7 @@ import { Checkbox } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Card } from "../card";
 import { Label } from "../label";
+import { definition } from "./definition";
 
 const meta: Meta<typeof Checkbox> = {
   title: "Components/Checkbox",
@@ -13,12 +14,20 @@ const meta: Meta<typeof Checkbox> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Binary control for checked/unchecked states.
+        component: `${definition.description}
 
-## Features
-- Three states: checked, unchecked, indeterminate
-- Keyboard navigation
-- Form integration`,
+## Components
+- **Checkbox**: Control for selecting one or more options
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

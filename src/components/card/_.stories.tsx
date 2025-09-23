@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs";
 import { Card, CardContent } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Progress } from "../progress";
+import { definition } from "./definition";
 
 const meta: Meta<typeof Card> = {
   title: "Components/Card",
@@ -11,14 +12,21 @@ const meta: Meta<typeof Card> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Card container with optional animated border trail.
+        component: `${definition.description}
 
 ## Components
+- **Card**: Flexible content container
 - **CardContent**: Main content area
 
-## Features
-- Optional animated border trail on hover
-- Customizable animations`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

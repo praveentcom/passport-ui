@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { CodeBlock } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 
@@ -10,21 +10,20 @@ const meta: Meta<typeof CodeBlock> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Syntax-highlighted code block with optional filename and line numbers.
+        component: `${definition.description}
 
-## Features
-- Syntax highlighting for 30+ languages
-- Configurable themes with light/dark mode
-- Line numbers
-- File icons in header
+## Components
+- **CodeBlock**: Syntax-highlighted code display component
 
-## Theme Setup
-\`\`\`css
-@import 'passport-ui/hljs-themes.css';
+## Code
+\`\`\`tsx import
+${definition.importCode}
 \`\`\`
 
-## Themes
-GitHub, Atom One, VS, Monokai, Dracula, Nord, Tokyo Night, Default`,
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

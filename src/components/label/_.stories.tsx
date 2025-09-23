@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
+import { definition } from "./definition";
 import { Label } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 
@@ -10,11 +10,20 @@ const meta: Meta<typeof Label> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Semantic label for form elements.
+        component: `${definition.description}
 
-## Features
-- Association with form controls via htmlFor
-- Click-to-focus behavior`,
+## Components
+- **Label**: Text label for form inputs
+
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },

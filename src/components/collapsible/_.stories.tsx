@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { definition } from "./definition";
 import { ChevronsUpDown } from "lucide-react";
 import { action } from "storybook/actions";
 
@@ -13,17 +14,22 @@ const meta: Meta<typeof Collapsible> = {
     layout: "centered",
     docs: {
       description: {
-        component: `Interactive collapsible that expands/collapses content panels.
+        component: `${definition.description}
 
 ## Components
 - **Collapsible**: Root container
 - **CollapsibleTrigger**: Toggles collapsible
 - **CollapsibleContent**: Expandable content
 
-## Features
-- Smooth expand/collapse animations
-- Controlled/uncontrolled modes
-- Keyboard navigation (Space/Enter)`,
+## Code
+\`\`\`tsx import
+${definition.importCode}
+\`\`\`
+
+\`\`\`tsx usage
+${definition.usageCode}
+\`\`\`
+`,
       },
     },
   },
