@@ -165,6 +165,24 @@ function CodeBlock({
     }
   };
 
+  const CopyButton = ({ className }: { className?: string }) => (
+    <button
+      onClick={copyToClipboard}
+      className={cn(
+        "opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:text-foreground p-1 rounded hover:bg-muted/50",
+        className
+      )}
+      title={copied ? "Copied!" : "Copy code"}
+      aria-label={copied ? "Copied!" : "Copy code"}
+    >
+      {copied ? (
+        <Check size={14} />
+      ) : (
+        <Copy size={14} />
+      )}
+    </button>
+  );
+
   /**
    * Get the width class for line numbers based on total lines
    */
@@ -212,18 +230,7 @@ function CodeBlock({
       {...props}
     >
       {!filename && (
-        <button
-          onClick={copyToClipboard}
-          className="absolute top-2 right-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:text-foreground p-1.5 rounded hover:bg-muted/80 bg-card/80 backdrop-blur-sm border border-border/50"
-          title={copied ? "Copied!" : "Copy code"}
-          aria-label={copied ? "Copied!" : "Copy code"}
-        >
-          {copied ? (
-            <Check size={14} />
-          ) : (
-            <Copy size={14} />
-          )}
-        </button>
+        <CopyButton className="absolute top-2 right-2 z-10 p-1.5 bg-card/80 backdrop-blur-sm border border-border/50" />
       )}
       {filename && (
         <div
@@ -232,18 +239,7 @@ function CodeBlock({
         >
           <>{filename}</>
           <div className="flex gap-2 items-center">
-            <button
-              onClick={copyToClipboard}
-              className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:text-foreground p-1 rounded hover:bg-muted/50"
-              title={copied ? "Copied!" : "Copy code"}
-              aria-label={copied ? "Copied!" : "Copy code"}
-            >
-              {copied ? (
-                <Check size={14} />
-              ) : (
-                <Copy size={14} />
-              )}
-            </button>
+            <CopyButton />
             <div
               dangerouslySetInnerHTML={{
                 __html: `${getFileIcon(filename)}`,
