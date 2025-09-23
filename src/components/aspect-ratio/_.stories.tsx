@@ -4,6 +4,7 @@ import { AspectRatio } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Card, CardContent } from "../card";
 import { definition } from "./definition";
+import Image from "next/image";
 
 const meta: Meta<typeof AspectRatio> = {
   title: "Components/AspectRatio",
@@ -96,13 +97,16 @@ export const Square: Story = {
   },
 };
 
-export const Image: Story = {
+export const ExampleImage: Story = {
   args: {
     ratio: 16 / 9,
     children: (
-      <img
+      <Image
         src="https://placehold.co/1600x900"
         className="h-full w-full rounded-lg object-cover"
+        alt="Example Image"
+        width={1600}
+        height={900}
       />
     ),
   },
