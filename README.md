@@ -9,7 +9,7 @@
 
 A React UI component library with motion primitives and theme support built with TypeScript, Tailwind CSS v4, and shadcn/ui components.
 
-View components and documentation at [storybook.passportui.com](https://storybook.passportui.com). Installation guide available at [passportui.com](https://passportui.com).
+View documentation at [passportui.com](https://passportui.com). If you're someone who loves Storybook, you can view the components at [storybook.passportui.com](https://storybook.passportui.com).
 
 ## Installation
 

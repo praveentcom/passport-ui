@@ -1,0 +1,66 @@
+version: 2
+updates:
+  # Main package dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    # Reduce noise by limiting updates
+    open-pull-requests-limit: 5
+    # Group minor and patch updates to reduce PR count
+    groups:
+      minor-and-patch:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+    # Only auto-update security vulnerabilities and major versions separately
+    ignore:
+      # Ignore patch updates for these common dev dependencies that update frequently
+      - dependency-name: "@types/*"
+        update-types: ["version-update:semver-patch"]
+      - dependency-name: "eslint*"
+        update-types: ["version-update:semver-patch"]
+      - dependency-name: "prettier*"
+        update-types: ["version-update:semver-patch"]
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-patch"]
+      - dependency-name: "@typescript-eslint/*"
+        update-types: ["version-update:semver-patch"]
+    # Allow security updates always
+    allow:
+      - dependency-type: "all"
+
+  # Documentation site dependencies (docs folder)
+  - package-ecosystem: "npm"
+    directory: "/docs"
+    schedule:
+      interval: "monthly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 3
+    # Group all updates for docs
+    groups:
+      docs-dependencies:
+        patterns:
+          - "*"
+    # More restrictive for docs - only security and minor updates
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-patch"]
+    allow:
+      - dependency-type: "all"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 2
+    groups:
+      github-actions:
+        patterns:
+          - "*"
