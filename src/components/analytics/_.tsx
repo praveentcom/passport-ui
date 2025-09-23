@@ -714,12 +714,12 @@ export const useAnalytics = () => {
 
       // Segment
       if (window.analytics) {
-        window.analytics.identify(properties);
+        window.analytics.identify(undefined, properties);
       }
 
       // PostHog
       if (window.posthog) {
-        window.posthog.people.set(properties);
+        window.posthog.setPersonProperties(properties);
       }
     },
     []
@@ -805,7 +805,7 @@ declare global {
       load: (writeKey: string, config?: Record<string, unknown>) => void;
       track: (event: string, properties?: Record<string, unknown>) => void;
       page: (name?: string, path?: string, properties?: Record<string, unknown>) => void;
-      identify: (userId?: string, traits?: Record<string, unknown>) => void;
+      identify: (userId?: string | undefined, traits?: Record<string, unknown>) => void;
     };
     
     // PostHog
@@ -813,9 +813,7 @@ declare global {
       init: (apiKey: string, config?: Record<string, unknown>) => void;
       capture: (event: string, properties?: Record<string, unknown>) => void;
       identify: (userId: string, properties?: Record<string, unknown>) => void;
-      people: {
-        set: (properties: Record<string, unknown>) => void;
-      };
+      setPersonProperties: (properties: Record<string, unknown>) => void;
     };
     
     // Plausible
