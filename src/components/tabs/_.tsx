@@ -34,7 +34,7 @@ const tabsListVariants = cva(
     variants: {
       variant: {
         default:
-          "rounded-none border-b bg-transparent p-0 data-[orientation=horizontal]:h-8 data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col data-[orientation=vertical]:border-b-0 data-[orientation=vertical]:border-r data-[orientation=vertical]:w-auto data-[orientation=vertical]:min-w-[120px] data-[orientation=vertical]:h-auto md:flex hidden relative",
+          "rounded-none border-b bg-transparent p-0 data-[orientation=horizontal]:h-9 data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col data-[orientation=vertical]:border-b-0 data-[orientation=vertical]:border-r data-[orientation=vertical]:w-auto data-[orientation=vertical]:min-w-[120px] data-[orientation=vertical]:h-auto md:flex hidden relative",
         pills:
           "h-auto rounded-none border-0 bg-transparent p-0 gap-2 data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col md:flex hidden",
       },
@@ -63,7 +63,7 @@ const tabsTriggerVariants = cva(
     variants: {
       variant: {
         default:
-          "rounded-none bg-transparent px-3 py-1.5 hover:text-foreground relative data-[state=active]:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[orientation=horizontal]:border-b-2 data-[orientation=horizontal]:border-transparent data-[orientation=horizontal]:data-[state=active]:border-primary data-[orientation=horizontal]:-mb-px data-[orientation=vertical]:border-r-2 data-[orientation=vertical]:border-transparent data-[orientation=vertical]:data-[state=active]:border-primary data-[orientation=vertical]:justify-start data-[orientation=vertical]:w-full data-[orientation=vertical]:-mr-px",
+          "rounded-none bg-transparent px-3 py-1 hover:text-foreground relative data-[state=active]:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[orientation=horizontal]:border-b-2 data-[orientation=horizontal]:border-transparent data-[orientation=horizontal]:data-[state=active]:border-primary data-[orientation=horizontal]:-mb-px data-[orientation=vertical]:border-r-2 data-[orientation=vertical]:border-transparent data-[orientation=vertical]:data-[state=active]:border-primary data-[orientation=vertical]:justify-start data-[orientation=vertical]:w-full data-[orientation=vertical]:-mr-px",
         pills:
           "rounded-sm border border-transparent bg-transparent px-2.5 py-1 data-[state=active]:border-border data-[state=active]:bg-background data-[state=active]:shadow-xs hover:text-foreground hover:bg-border/50",
       },
@@ -203,7 +203,7 @@ const TabsDropdown = React.forwardRef<HTMLDivElement, TabsDropdownProps>(
             >
               <div className="flex items-center gap-2">
                 {trigger.icon &&
-                  React.createElement(trigger.icon, { className: "h-4 w-4" })}
+                  React.createElement(trigger.icon, { className: "size-4" })}
                 {trigger.label}
               </div>
             </SelectItem>
@@ -226,7 +226,7 @@ const TabsTrigger = React.forwardRef<
     {...props}
   >
     <div className="flex items-center gap-2">
-      {icon && React.createElement(icon, { className: "h-4 w-4" })}
+      {icon && React.createElement(icon, { className: "size-4" })}
       {children}
     </div>
   </TabsPrimitive.Trigger>
