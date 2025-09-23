@@ -608,7 +608,7 @@ export const useAnalytics = () => {
 
       // Vercel Analytics
       if (window.va) {
-        window.va("track", action, parameters);
+        window.va(action, parameters);
       }
 
       // Mixpanel
@@ -652,7 +652,7 @@ export const useAnalytics = () => {
 
       // Vercel Analytics (automatically tracks page views)
       if (window.va) {
-        window.va("track", "pageview", pageData);
+        window.va("pageview", pageData);
       }
 
       // Mixpanel
@@ -769,7 +769,7 @@ declare global {
     gtag: (...args: unknown[]) => void;
     
     // Vercel Analytics
-    va: (action: string, ...args: unknown[]) => void;
+    va: (event: string, properties?: Record<string, unknown>) => void;
     vaq: unknown[];
     
     // Mixpanel
