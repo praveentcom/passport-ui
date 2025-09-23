@@ -29,6 +29,10 @@
   "exports": {
     "./package.json": "./package.json"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
   "files": [
     "dist",
     "src",
@@ -62,6 +66,8 @@
     "format-sitemap": "node scripts/format-sitemap.js",
     "format": "npm run format-readme && npm run format-registry && npm run format-sitemap",
     "release": "npm run clean && npm run build:full && npm publish",
+    "release:github": "npm run clean && npm run build:full && node scripts/publish-github.js",
+    "release:all": "npm run clean && npm run build:full && npm publish && node scripts/publish-github.js",
     "version:patch": "npm version patch",
     "version:minor": "npm version minor",
     "version:major": "npm version major",
