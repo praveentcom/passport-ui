@@ -86,7 +86,7 @@ const FontsDocs = () => {
       }
       footer={
         <div className="meta-container">
-          <h3>Font System Documentation</h3>
+          <h3>Font & Typography</h3>
           <p>Open Runde is the default typeface with customization options</p>
         </div>
       }

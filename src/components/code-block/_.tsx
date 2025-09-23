@@ -169,14 +169,14 @@ function CodeBlock({
     <button
       onClick={copyToClipboard}
       className={cn(
-        "opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:text-foreground p-1 rounded hover:bg-muted/50",
+        "opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:text-foreground rounded hover:bg-muted/50",
         className
       )}
       title={copied ? "Copied!" : "Copy code"}
       aria-label={copied ? "Copied!" : "Copy code"}
     >
       {copied ? (
-        <Check size={14} />
+        <Check className="text-success" size={14} />
       ) : (
         <Copy size={14} />
       )}
@@ -219,6 +219,8 @@ function CodeBlock({
     }
   };
 
+  const fileIcon = filename ? getFileIcon(filename) : "";
+
   return (
     <div
       data-slot="code-block"
@@ -240,11 +242,15 @@ function CodeBlock({
           <>{filename}</>
           <div className="flex gap-2 items-center">
             <CopyButton />
-            <div
-              dangerouslySetInnerHTML={{
-                __html: `${getFileIcon(filename)}`,
-              }}
-            />
+            {
+              fileIcon && (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: `${fileIcon}`,
+                  }}
+                />
+              )
+            }
           </div>
         </div>
       )}

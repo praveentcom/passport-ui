@@ -11,7 +11,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Passport UI - Docs",
   description:
-    "Complete documentation for Passport UI - a React UI component library built on top of shadcn/ui with Tailwind CSS, Radix UI, and Framer Motion.",
+    "Docs for Passport UI - a React UI component library built on top of shadcn/ui with Tailwind CSS, Radix UI, and Framer Motion.",
   keywords: [
     "Passport UI",
     "React Components",
@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     "Component Library",
     "Design System",
     "Installation Guide",
+    "Docs",
     "Documentation",
   ],
   authors: [{ name: SITE_CONFIG.author.name, url: SITE_CONFIG.author.url }],
@@ -39,16 +40,22 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Passport UI - Docs",
     description:
-      "Complete documentation for Passport UI - a React UI component library built on top of shadcn/ui with Tailwind CSS, Radix UI, and Framer Motion.",
+      "Docs for Passport UI - a React UI component library built on top of shadcn/ui with Tailwind CSS, Radix UI, and Framer Motion.",
     url: "https://passportui.com",
     siteName: "Passport UI",
-    logo: "https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png",
     images: [
       {
         url: "https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png",
         width: 1200,
         height: 630,
         alt: "Passport UI - Docs",
+      },
+      {
+        url: "https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_dark%401x.png",
+        width: 512,
+        height: 512,
+        alt: "Passport UI - Logo",
+        type: "image/png",
       },
     ],
     locale: "en_US",
@@ -57,7 +64,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Passport UI - Docs",
-    description: "Complete documentation for Passport UI - a React UI component library built on top of shadcn/ui.",
+    description: "Docs for Passport UI - a React UI component library built on top of shadcn/ui.",
     images: [
       "https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png",
     ],

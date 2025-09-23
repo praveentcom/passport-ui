@@ -307,7 +307,7 @@ export default function ColorsPage() {
         data={createPageStructuredData({
           name: "Passport UI - Color System",
           description:
-            "Color system documentation for Passport UI component library with automatic light/dark theme support.",
+            "Color system docs for Passport UI component library with automatic light/dark theme support.",
           url: SITE_CONFIG.baseUrl + "/colors/",
           breadcrumbName: "Color System",
           breadcrumbUrl: SITE_CONFIG.baseUrl + "/colors/",
@@ -449,5 +449,5 @@ export default function ColorsPage() {
 export const metadata: Metadata = {
   title: "Passport UI - Color System",
   description:
-    "Color system documentation for Passport UI component library with automatic light/dark theme support.",
+    "Color system docs for Passport UI component library with automatic light/dark theme support.",
 };
