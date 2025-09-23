@@ -4,7 +4,7 @@ import { ContentContainer } from ".";
 import { SAMPLE_CONTENT_CONTAINER } from "../../../.storybook/constants";
 
 const meta: Meta<typeof ContentContainer> = {
-  title: "Layouts/ContentContainer",
+  title: "Layout Containers/ContentContainer",
   component: ContentContainer,
   parameters: {
     layout: "fullscreen",

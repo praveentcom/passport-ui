@@ -87,6 +87,7 @@ export function ToggleSelect({
   const [selectedValue, setSelectedValue] = useState<string | null>(
     value ?? defaultValue
   );
+  const [isMounted, setIsMounted] = useState(false);
   const uniqueId = useId();
 
   useEffect(() => {
@@ -94,6 +95,10 @@ export function ToggleSelect({
       setSelectedValue(value);
     }
   }, [value]);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleSetSelectedValue = (newValue: string | null) => {
     if (value === undefined) {
@@ -106,7 +111,7 @@ export function ToggleSelect({
     selectedValue: value !== undefined ? value : selectedValue,
     setSelectedValue: handleSetSelectedValue,
     uniqueId,
-    transition,
+    transition: isMounted ? transition : { duration: 0 },
   };
 
   return (

@@ -36,7 +36,7 @@ const preview: Preview = {
           "Introduction",
           "Installation",
           "Color System",
-          "Layouts",
+          "Layout Containers",
           [
             "PageLayout",
             "SidebarContainer",
@@ -46,6 +46,7 @@ const preview: Preview = {
           ],
           "Providers",
           "Components",
+          "Hooks",
           "Composables",
           "Motion Primitives",
         ],

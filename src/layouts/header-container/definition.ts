@@ -6,7 +6,7 @@ export const definition: ComponentDefinition = {
   name: "Header Container",
   icon: PanelTop,
   description: "A layout container for the header section of a page.",
-  category: "layout",
+  category: "layouts",
   storyId: "layouts-headercontainer--default",
   slug: "header-container",
   importCode: `import { HeaderContainer } from "passport-ui";

@@ -100,7 +100,7 @@ const meta: Meta<typeof HoverCard> = {
             <AvatarFallback>{AUTHOR.name.charAt(0)}</AvatarFallback>
           </Avatar>
           <div className="meta-container">
-            <h4 className="text-sm font-semibold">{AUTHOR.name}</h4>
+            <h4>{AUTHOR.name}</h4>
             <p className="text-sm">
               <a href={AUTHOR.url}>@{AUTHOR.url.split("/").pop()}</a>
             </p>

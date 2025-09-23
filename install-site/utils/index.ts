@@ -28,7 +28,7 @@ export const CATEGORIES = [
 ];
 
 export const CATEGORY_LABELS = {
-  layouts: "Layout",
+  layouts: "Layout Containers",
   providers: "Providers",
   components: "Components",
   hooks: "Hooks",

@@ -26,7 +26,7 @@ import {
 import { SidebarContainer } from "../sidebar-container";
 
 const meta: Meta<typeof PageLayout> = {
-  title: "Layouts/PageLayout",
+  title: "Layout Containers/PageLayout",
   component: PageLayout,
   parameters: {
     layout: "fullscreen",

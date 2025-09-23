@@ -61,7 +61,7 @@ export default function FontsPage() {
       />
       <div className="section-container">
         <div className="meta-container">
-          <h3>Default Typography</h3>
+          <h1>Font & Typography</h1>
           <p>
             Passport UI uses &quot;Open Runde&quot; as the default typeface, a
             modern sans-serif font optimized for digital interfaces.

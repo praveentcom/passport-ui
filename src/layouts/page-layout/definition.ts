@@ -6,7 +6,7 @@ export const definition: ComponentDefinition = {
   name: "Page Layout",
   icon: Layout,
   description: "A comprehensive layout structure for a standard page.",
-  category: "layout",
+  category: "layouts",
   storyId: "layouts-pagelayout--default",
   slug: "page-layout",
   importCode: `import { PageLayout } from "passport-ui";

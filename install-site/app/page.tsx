@@ -59,7 +59,7 @@ export default function IntroductionPage() {
         })}
       />
       <div className="meta-container">
-        <h3>Installation</h3>
+        <h1>Installation</h1>
         <p>
           To get started, install the library and its dependencies by following
           the steps below.

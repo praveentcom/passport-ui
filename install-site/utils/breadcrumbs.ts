@@ -34,8 +34,9 @@ export function generateBreadcrumbs(pathname: string): BreadcrumbPath[] {
     ];
   }
 
-  const matchingCategory = CATEGORIES.find((category) =>
-    cleanPath.startsWith(`/${category}/`)
+  const matchingCategory = CATEGORIES.find(
+    (category) =>
+      cleanPath === `/${category}` || cleanPath.startsWith(`/${category}/`)
   );
 
   if (matchingCategory) {
@@ -54,14 +55,7 @@ export function generateBreadcrumbs(pathname: string): BreadcrumbPath[] {
     } else if (segments.length === 2) {
       const slug = segments[1];
 
-      const categoryComponents =
-        COMPONENTS_BY_CATEGORY[
-          matchingCategory === "components"
-            ? "component"
-            : matchingCategory === "composables"
-              ? "composable"
-              : matchingCategory
-        ];
+      const categoryComponents = COMPONENTS_BY_CATEGORY[matchingCategory];
       const component = categoryComponents?.find((c) => c.slug === slug);
 
       if (component) {
@@ -119,8 +113,9 @@ export function getPageTitle(pathname: string): string | undefined {
     return primaryPage.title;
   }
 
-  const matchingCategory = CATEGORIES.find((category) =>
-    cleanPath.startsWith(`/${category}/`)
+  const matchingCategory = CATEGORIES.find(
+    (category) =>
+      cleanPath === `/${category}` || cleanPath.startsWith(`/${category}/`)
   );
 
   if (matchingCategory) {
@@ -134,14 +129,7 @@ export function getPageTitle(pathname: string): string | undefined {
     } else if (segments.length === 2) {
       const slug = segments[1];
 
-      const categoryComponents =
-        COMPONENTS_BY_CATEGORY[
-          matchingCategory === "components"
-            ? "component"
-            : matchingCategory === "composables"
-              ? "composable"
-              : matchingCategory
-        ];
+      const categoryComponents = COMPONENTS_BY_CATEGORY[matchingCategory];
       const component = categoryComponents?.find((c) => c.slug === slug);
 
       if (component) {

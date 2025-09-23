@@ -7,11 +7,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const rootDir = join(__dirname, "..");
 const srcDir = join(rootDir, "src");
-const readmePath = join(rootDir, "README.md");
+const sitemapPath = join(rootDir, "install-site/app/sitemap.ts");
 
-/**
- * List of categories to scan
- */
 const categories = [
   { dir: "layouts", name: "Layout Containers" },
   { dir: "providers", name: "Providers" },
@@ -21,13 +18,9 @@ const categories = [
   { dir: "motion-primitives", name: "Motion Primitives" },
 ];
 
-/**
- * Extract title from storybook stories and generate documentation link
- */
 function extractStoryInfo(filePath) {
   try {
     const content = readFileSync(filePath, "utf8");
-
     const titleMatch = content.match(/title:\s*["']([^"']+)["']/);
     if (!titleMatch) return null;
 
@@ -49,7 +42,6 @@ function extractStoryInfo(filePath) {
 
 function scanCategory(categoryDir, categoryName) {
   const categoryPath = join(srcDir, categoryDir);
-
   try {
     const components = [];
     const componentDirs = readdirSync(categoryPath);
@@ -69,7 +61,7 @@ function scanCategory(categoryDir, categoryName) {
             info.category.toLowerCase().replace(/\s+/g, " ") ===
               categoryName.toLowerCase()
           ) {
-            const docUrl = `https://passportui.com/${categoryDir}/${componentDir}/`;
+            const docUrl = `/${categoryDir}/${componentDir}/`;
             components.push({
               name: info.componentName,
               docUrl,
@@ -82,7 +74,6 @@ function scanCategory(categoryDir, categoryName) {
     }
 
     components.sort((a, b) => a.name.localeCompare(b.name));
-
     return components;
   } catch (error) {
     console.warn(`Could not scan category ${categoryDir}:`, error.message);
@@ -90,54 +81,57 @@ function scanCategory(categoryDir, categoryName) {
   }
 }
 
-function generateComponentsSection() {
-  let output = "## Available Components\n\n";
-
+function generateSitemap() {
+  const componentUrls = [];
   for (const { dir, name } of categories) {
     const components = scanCategory(dir, name);
-
     if (components.length > 0) {
-      output += `### ${name}\n\n`;
-
-      for (const { name: componentName, docUrl } of components) {
-        output += `- [\`${componentName}\`](${docUrl})\n`;
+      for (const { docUrl } of components) {
+        componentUrls.push(`{
+      url: \`\${baseUrl}${docUrl}\`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    }`);
       }
-
-      output += "\n";
     }
   }
 
-  return output.trim();
+  const sitemapContent = `import { MetadataRoute } from "next";
+import { SITE_CONFIG } from "../constants";
+
+export const dynamic = "force-static";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = SITE_CONFIG.baseUrl;
+
+  return [
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+    {
+      url: \`\${baseUrl}/colors\`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: \`\${baseUrl}/fonts\`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    ${componentUrls.join(",\n    ")}
+  ];
+}
+`;
+
+  writeFileSync(sitemapPath, sitemapContent);
+  console.log("✅ Sitemap generated successfully.");
 }
 
-function updateReadme() {
-  try {
-    const readmeContent = readFileSync(readmePath, "utf8"),
-      availableComponentsIndex = readmeContent.indexOf(
-        "## Available Components"
-      );
-
-    if (availableComponentsIndex === -1) {
-      console.error(
-        'Could not find "## Available Components" section in README.md'
-      );
-      return;
-    }
-
-    const beforeComponents = readmeContent.substring(
-        0,
-        availableComponentsIndex
-      ),
-      componentsSection = generateComponentsSection(),
-      newReadmeContent = beforeComponents + componentsSection + "\n";
-
-    writeFileSync(readmePath, newReadmeContent);
-
-    console.log("✅ README.md updated successfully.");
-  } catch (error) {
-    console.error("Error updating README: ", error.message);
-  }
-}
-
-console.log("ℹ️  Updating README.md with available components...");
-updateReadme();
+console.log("ℹ️  Generating sitemap...");
+generateSitemap();

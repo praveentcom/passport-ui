@@ -4,7 +4,7 @@ import { FooterContainer } from ".";
 import { SAMPLE_FOOTER_CONTENT } from "../../../.storybook/constants";
 
 const meta: Meta<typeof FooterContainer> = {
-  title: "Layouts/FooterContainer",
+  title: "Layout Containers/FooterContainer",
   component: FooterContainer,
   parameters: {
     layout: "fullscreen",

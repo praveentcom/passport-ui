@@ -23,7 +23,7 @@ import { ThemeButton } from "../../composables/theme-button";
 import { AUTHOR } from "../../constants";
 
 const meta: Meta<typeof HeaderContainer> = {
-  title: "Layouts/HeaderContainer",
+  title: "Layout Containers/HeaderContainer",
   component: HeaderContainer,
   parameters: {
     layout: "fullscreen",

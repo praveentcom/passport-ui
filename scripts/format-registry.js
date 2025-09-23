@@ -52,9 +52,6 @@ async function generateRegistry() {
         }
 
         allDefinitions.push(...validItems);
-        console.log(
-          `📁 Found ${validItems.length} ${category.name}: ${validItems.map((item) => item.name).join(", ")}`
-        );
       } catch (error) {
         console.log(`⚠️  Category ${category.name} not found or inaccessible`);
       }
@@ -270,21 +267,6 @@ ${allArrayItems}
       `✅ Registry generated with ${allDefinitions.length} total definitions`
     );
 
-    // Log summary by category
-    categories.forEach((category) => {
-      const categoryCount = allDefinitions.filter(
-        (item) => item.category === category.path
-      ).length;
-      if (categoryCount > 0) {
-        const items = allDefinitions
-          .filter((item) => item.category === category.path)
-          .map((item) => item.name);
-        console.log(
-          `📁 ${category.name}: ${categoryCount} items (${items.join(", ")})`
-        );
-      }
-    });
-
     // If running in git hooks context, stage the updated registry file
     if (process.env.HUSKY || process.env.GIT_HOOKS) {
       const { exec } = await import("child_process");
@@ -304,4 +286,5 @@ ${allArrayItems}
   }
 }
 
+console.log("ℹ️  Generating component registry...");
 generateRegistry();

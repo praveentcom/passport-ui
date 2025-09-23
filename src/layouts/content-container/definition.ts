@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: Box,
   description:
     "A layout container for centering and constraining content width.",
-  category: "layout",
+  category: "layouts",
   storyId: "layouts-contentcontainer--default",
   slug: "content-container",
   importCode: `import { ContentContainer } from "passport-ui";`,

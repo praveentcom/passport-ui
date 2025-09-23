@@ -22,7 +22,7 @@ import {
 } from "../../components/sidebar";
 
 const meta: Meta<typeof SidebarContainer> = {
-  title: "Layouts/SidebarContainer",
+  title: "Layout Containers/SidebarContainer",
   component: SidebarContainer,
   parameters: {
     layout: "fullscreen",

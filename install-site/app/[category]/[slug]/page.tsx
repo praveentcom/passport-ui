@@ -88,7 +88,10 @@ export default async function CategoryComponentPage({
         {breadcrumbs.length > 1 && <Breadcrumb path={breadcrumbs} />}
         <div className="section-container">
           <div className="meta-container">
-            <h3>{component.name}</h3>
+            <div className="flex items-center gap-2">
+              <IconComponent className="size-6" />
+              <h1>{component.name}</h1>
+            </div>
             <p>{component.description}</p>
           </div>
           <Tabs defaultValue="code" className="w-full">

@@ -64,7 +64,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
         <div className="section-container">
           <div className="meta-container">
-            <h3>{categoryLabel}</h3>
+            <h1>{categoryLabel}</h1>
             <p>
               Browse all {categoryLabel.toLowerCase()} available in the Passport
               UI library. Click on any component to view examples,
@@ -80,16 +80,13 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 <PrefetchLink
                   key={component.slug}
                   href={`/${category}/${component.slug}`}
-                  className="block transition-transform md:hover:scale-[1.01]"
                 >
-                  <Card className="h-full hover:border-border transition-colors">
+                  <Card className="h-full hover:border-muted-foreground/40 transition-colors">
                     <CardContent>
                       <div className="flex gap-3">
                         <IconComponent className="size-5 mt-0.5 text-foreground" />
                         <div className="meta-container">
-                          <h4 className="font-medium text-foreground">
-                            {component.name}
-                          </h4>
+                          <h4>{component.name}</h4>
                           <p className="text-sm text-muted-foreground line-clamp-2">
                             {component.description}
                           </p>

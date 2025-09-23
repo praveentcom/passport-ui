@@ -16,18 +16,30 @@ This is **passport-ui**, a modern React UI component library published on npm. I
 
 ## Key Components Categories
 
-1. **UI Components** ([src/components/](mdc:src/components/))
+1. **Layout Containers** ([src/layouts/](mdc:src/layouts/))
+   - Higher-level components for common page patterns
+   - Includes PageLayout, ContentContainer, SidebarContainer etc.
+
+2. **Providers** ([src/providers/](mdc:src/providers/))
+   - Providers for theme, etc.
+
+3. **UI Components** ([src/components/](mdc:src/components/))
    - Atomic components like Button, Card, Badge, etc.
    - Built on Radix UI primitives
    - Fully accessible and customizable
 
-2. **Composables** ([src/composables/](mdc:src/composables/))
+4. **Hooks** ([src/hooks/](mdc:src/hooks/))
+   - Custom React hooks for common use cases
+   - Includes useMobile, useScroll, etc.
+
+5. **Composables** ([src/composables/](mdc:src/composables/))
    - Higher-level components for common composables
    - Usually made with combination of components and utilities
+   - Includes EmptyState, MobileSidebarTrigger, ThemeButton, ThemeToggle, etc.
 
-3. **Layouts** ([src/layouts/](mdc:src/layouts/))
-   - Higher-level components for common page patterns
-   - Includes PageLayout, ContentContainer, SidebarContainer etc.
+6. **Motion Primitives** ([src/motion-primitives/](mdc:src/motion-primitives/))
+   - Motion primitives for animations using Framer Motion
+   - Includes AnimatedBackground, BlurIn, SequentialReveal, TypewriterText, etc.
 
 ## Entry Points
 

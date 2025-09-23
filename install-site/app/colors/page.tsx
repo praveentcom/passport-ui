@@ -315,7 +315,7 @@ export default function ColorsPage() {
       />
       <div className="section-container">
         <div className="meta-container">
-          <h3>Color System</h3>
+          <h1>Color System</h1>
           <p className="text-muted-foreground">
             Passport UI uses a comprehensive color system built on OKLCH color
             space, inspired by shadcn/ui, for better color management and

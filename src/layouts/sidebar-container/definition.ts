@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: SidebarOpen,
   description:
     "A container for the sidebar, managing its state and interactions.",
-  category: "layout",
+  category: "layouts",
   storyId: "layouts-sidebarcontainer--default",
   slug: "sidebar-container",
   importCode: `import { SidebarContainer } from "passport-ui";

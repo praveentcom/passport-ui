@@ -231,8 +231,8 @@ export const AllVariants: Story = {
     return (
       <div className="w-lg space-y-8">
         {/* Default Variant */}
-        <div>
-          <h4 className="text-sm font-medium mb-4">Default</h4>
+        <div className="meta-container">
+          <h4>Default</h4>
           <Tabs
             value={defaultTab}
             onValueChange={setDefaultTab}
@@ -274,8 +274,8 @@ export const AllVariants: Story = {
         </div>
 
         {/* Pills Variant */}
-        <div>
-          <h4 className="text-sm font-medium mb-4">Pills</h4>
+        <div className="meta-container">
+          <h4>Pills</h4>
           <Tabs value={pillsTab} onValueChange={setPillsTab} className="w-full">
             <TabsList variant="pills">
               <TabsTrigger value="tab1" variant="pills" icon={Home}>
@@ -322,7 +322,7 @@ export const VerticalOrientation: Story = {
 
     return (
       <div className="w-lg">
-        <h4 className="text-sm font-medium mb-4">Vertical Orientation</h4>
+        <h4>Vertical Orientation</h4>
         <Tabs
           value={activeTab}
           onValueChange={setActiveTab}
@@ -390,8 +390,8 @@ export const WithIcons: Story = {
     return (
       <div className="w-lg space-y-8">
         {/* Default variant with icons */}
-        <div>
-          <h4 className="text-sm font-medium mb-4">Default with Icons</h4>
+        <div className="meta-container">
+          <h4>Default with Icons</h4>
           <Tabs
             value={activeTab}
             onValueChange={setActiveTab}
@@ -463,8 +463,8 @@ export const WithIcons: Story = {
         </div>
 
         {/* Pills variant with icons */}
-        <div>
-          <h4 className="text-sm font-medium mb-4">Pills with Icons</h4>
+        <div className="meta-container">
+          <h4>Pills with Icons</h4>
           <Tabs
             value={activeTab}
             onValueChange={setActiveTab}

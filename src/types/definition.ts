@@ -15,7 +15,7 @@ export interface ComponentDefinition {
     | "hooks"
     | "composables"
     | "motion-primitives";
-  /** Storybook story ID (e.g., "layout-pagelayout--default") */
+  /** Storybook story ID (e.g., "layouts-pagelayout--default") */
   storyId?: string;
   /** Import statement for the component */
   importCode?: string;
