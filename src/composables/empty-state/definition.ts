@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: CircleSlash,
   description: "A placeholder for sections that have no content to display.",
   category: "composables",
-  storyId: "composables-empty-state--default",
+  storyId: "composables-emptystate--default",
   slug: "empty-state",
   importCode: `import { EmptyState } from "passport-ui";`,
   usageCode: `<EmptyState
