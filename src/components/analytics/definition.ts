@@ -79,7 +79,7 @@ function TrackingExample() {
   }}
 />
 
-{/* Vercel Analytics */}
+{/* Vercel Analytics - Note: Consider @vercel/analytics package for production */}
 <Analytics
   providers={{
     vercelAnalytics: {

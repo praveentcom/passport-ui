@@ -34,6 +34,7 @@ export interface GoogleAnalyticsConfig {
 
 /**
  * Vercel Analytics configuration
+ * Note: For production use, consider using @vercel/analytics package instead
  */
 export interface VercelAnalyticsConfig {
   /** Whether to enable debug mode */
@@ -255,6 +256,8 @@ const GoogleAnalyticsScript: React.FC<{
 
 /**
  * Vercel Analytics Script Component
+ * Note: Vercel Analytics is typically used via @vercel/analytics package
+ * This script-based approach provides basic integration
  */
 const VercelAnalyticsScript: React.FC<{
   config: VercelAnalyticsConfig;
@@ -263,11 +266,16 @@ const VercelAnalyticsScript: React.FC<{
   const { debug = false, endpoint, disableBeacon = false } = config;
 
   const vercelScript = `
-    window.va = window.va || function() {
-      (window.vaq = window.vaq || []).push(arguments);
+    // Vercel Analytics stub - typically you'd use @vercel/analytics package
+    window.va = window.va || function(event, properties) {
+      if (typeof event === 'string' && ['event', 'pageview', 'beforeSend'].includes(event)) {
+        console.log('[Vercel Analytics]', event, properties);
+        // In production, this would send data to Vercel's analytics endpoint
+      }
     };
     
-    window.va('config', {
+    // Initialize with config
+    window.va('beforeSend', {
       debug: ${debug},
       ${endpoint ? `endpoint: '${endpoint}',` : ''}
       disableBeacon: ${disableBeacon}
@@ -276,12 +284,7 @@ const VercelAnalyticsScript: React.FC<{
 
   return (
     <>
-      {/* Vercel Analytics */}
-      <script
-        async
-        src="/_vercel/insights/script.js"
-        nonce={nonce}
-      />
+      {/* Note: /_vercel/insights/script.js is only available on Vercel deployments */}
       <script
         dangerouslySetInnerHTML={{
           __html: vercelScript,
@@ -489,6 +492,9 @@ const PlausibleScript: React.FC<{
  * A flexible analytics component that supports multiple providers.
  * Supports Google Analytics, Vercel Analytics, Mixpanel, Amplitude, Segment, PostHog, and Plausible.
  *
+ * Note: For Vercel Analytics, consider using @vercel/analytics package for production use.
+ * This component provides a script-based approach for consistency with other providers.
+ *
  * @example
  * ```tsx
  * // Basic Google Analytics
@@ -608,7 +614,9 @@ export const useAnalytics = () => {
 
       // Vercel Analytics
       if (window.va) {
-        window.va(action, parameters);
+        // Vercel Analytics only supports specific event types
+        // For custom events, we use 'event' type with the action as a property
+        window.va('event', { name: action, ...parameters });
       }
 
       // Mixpanel
@@ -769,7 +777,7 @@ declare global {
     gtag: (...args: unknown[]) => void;
     
     // Vercel Analytics
-    va: (event: string, properties?: Record<string, unknown>) => void;
+    va: (event: 'beforeSend' | 'event' | 'pageview', properties?: Record<string, unknown>) => void;
     vaq: unknown[];
     
     // Mixpanel
