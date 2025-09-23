@@ -8,8 +8,8 @@ export interface ComponentDefinition {
   /** Lucide icon for visual representation */
   icon: LucideIcon;
   /** Component category for organization */
-  category: "components" | "composables" | "motion-primitives" | "layout";
-  /** Storybook story ID (e.g., "components-accordion--default") */
+  category: "layout" | "components" | "composables" | "motion-primitives";
+  /** Storybook story ID (e.g., "layout-pagelayout--default") */
   storyId?: string;
   /** Import statement for the component */
   importCode?: string;

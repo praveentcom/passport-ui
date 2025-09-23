@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A container with a customizable scrollbar for scrollable content.",
   category: "components",
-  storyId: "components-scroll-area--default",
+  storyId: "components-scrollarea--default",
   slug: "scroll-area",
   importCode: `import { ScrollArea } from "passport-ui";
 import { Card, CardContent } from "passport-ui";`,

@@ -11,7 +11,6 @@ import {
   SAMPLE_HEADER_CONTENT,
 } from "../../../.storybook/constants";
 import { Button } from "../../components/button";
-import { Card, CardContent } from "../../components/card";
 import { PrefetchLink } from "../../components/prefetch-link";
 import {
   SidebarGroup,
@@ -24,7 +23,6 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "../../components/sidebar";
-import { ContentContainer } from "../content-container";
 import { SidebarContainer } from "../sidebar-container";
 
 const meta: Meta<typeof PageLayout> = {
@@ -329,72 +327,6 @@ export const DualSidebars: Story = {
 export const NoSidebar: Story = {
   args: {
     children: SAMPLE_CONTENT_CONTAINER,
-    header: SAMPLE_HEADER_CONTENT,
-    footer: SAMPLE_FOOTER_CONTENT,
-    headerOptions: {
-      variant: "full",
-      sticky: true,
-      blurred: true,
-      revealStylesOnScroll: false,
-    },
-    footerOptions: {
-      variant: "full",
-      sticky: false,
-      blurred: false,
-    },
-  },
-};
-
-// Short content to test footer sticking to bottom
-const shortContent: ReactNode = (
-  <ContentContainer variant="broad">
-    <div className="section-container">
-      <div className="meta-container">
-        <h3>Short Page Content</h3>
-        <p>This page has minimal content to test footer positioning.</p>
-      </div>
-      <div className="list-container">
-        <Card>
-          <CardContent>
-            <div className="meta-container">
-              <h3>Single Card</h3>
-              <p>
-                The footer should stick to the bottom of the viewport when there
-                isn&apos;t enough content to fill the screen.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
-  </ContentContainer>
-);
-
-export const ShortContentFooterTest: Story = {
-  name: "Short Content - Footer Positioning Test",
-  args: {
-    children: shortContent,
-    header: SAMPLE_HEADER_CONTENT,
-    footer: SAMPLE_FOOTER_CONTENT,
-    headerOptions: {
-      variant: "full",
-      sticky: true,
-      blurred: true,
-      revealStylesOnScroll: false,
-    },
-    footerOptions: {
-      variant: "full",
-      sticky: false,
-      blurred: false,
-    },
-  },
-};
-
-export const ShortContentWithLeftSidebar: Story = {
-  name: "Short Content + Left Sidebar - Footer Test",
-  args: {
-    children: shortContent,
-    leftSidebar: sampleLeftSidebar,
     header: SAMPLE_HEADER_CONTENT,
     footer: SAMPLE_FOOTER_CONTENT,
     headerOptions: {

@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A button for opening and closing the sidebar on mobile devices.",
   category: "composables",
-  storyId: "composables-mobile-sidebar-trigger--default",
+  storyId: "composables-mobilesidebartrigger--default",
   slug: "mobile-sidebar-trigger",
   importCode: `import { MobileSidebarTrigger } from "passport-ui";`,
   usageCode: `<MobileSidebarTrigger />`,
