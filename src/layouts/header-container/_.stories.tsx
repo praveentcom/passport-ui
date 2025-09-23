@@ -20,6 +20,7 @@ import {
   NavigationMenuList,
 } from "../../components/navigation-menu";
 import { ThemeButton } from "../../composables/theme-button";
+import { AUTHOR } from "../../constants";
 
 const meta: Meta<typeof HeaderContainer> = {
   title: "Layouts/HeaderContainer",
@@ -150,9 +151,9 @@ export const ProfileHeader: Story = {
       ];
 
       const profile = {
-        fullName: "Praveen Thirumurugan",
-        initials: "PT",
-        displayPicture: "https://github.com/praveentcom.png",
+        fullName: AUTHOR.name,
+        initials: AUTHOR.name.charAt(0),
+        displayPicture: `${AUTHOR.url}.png`,
       };
 
       return (

@@ -1,8 +1,11 @@
+import React from "react";
+
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { CodeBlock } from "../components/code-block";
 import { PrefetchLink } from "../components/prefetch-link";
 import { ThemeToggle } from "../composables/theme-toggle";
+import { AUTHOR } from "../constants";
 import { ContentContainer } from "../layouts/content-container";
 import { PageLayout } from "../layouts/page-layout";
 
@@ -53,7 +56,9 @@ const IntroductionDocs = () => (
     }
     footer={
       <div className="meta-container">
-        <h3>Maintained by Praveen Thirumurugan</h3>
+        <h3>
+          Maintained by <a href={AUTHOR.url}>{AUTHOR.name}</a>
+        </h3>
         <div className="flex gap-2 items-center">
           <PrefetchLink
             href="https://github.com/praveentcom/passport-ui"

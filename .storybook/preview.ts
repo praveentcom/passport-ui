@@ -34,6 +34,7 @@ const preview: Preview = {
       storySort: {
         order: [
           "Introduction",
+          "Installation",
           "Color System",
           "Layouts",
           [
@@ -43,6 +44,7 @@ const preview: Preview = {
             "HeaderContainer",
             "FooterContainer",
           ],
+          "Providers",
           "Components",
           "Composables",
           "Motion Primitives",

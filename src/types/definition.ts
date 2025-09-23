@@ -8,7 +8,13 @@ export interface ComponentDefinition {
   /** Lucide icon for visual representation */
   icon: LucideIcon;
   /** Component category for organization */
-  category: "layout" | "components" | "composables" | "motion-primitives";
+  category:
+    | "layouts"
+    | "providers"
+    | "components"
+    | "hooks"
+    | "composables"
+    | "motion-primitives";
   /** Storybook story ID (e.g., "layout-pagelayout--default") */
   storyId?: string;
   /** Import statement for the component */

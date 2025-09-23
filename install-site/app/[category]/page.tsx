@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { Breadcrumb } from "../../../src/components/breadcrumb";
@@ -9,8 +8,8 @@ import { StructuredData } from "../../../src/components/structured-data";
 import { ContentContainer } from "../../../src/layouts/content-container";
 import { SITE_CONFIG, createPageStructuredData } from "../../constants";
 import {
+  CATEGORIES,
   CATEGORY_LABELS,
-  COMPONENTS_BY_CATEGORY,
   getAllComponentsByCategory,
 } from "../../utils";
 import { generateBreadcrumbs } from "../../utils/breadcrumbs";
@@ -26,13 +25,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const { category } = await params;
 
   // Validate category exists
-  const validCategories = [
-    "components",
-    "composables",
-    "layout",
-    "motion-primitives",
-  ];
-  if (!validCategories.includes(category)) {
+  if (!CATEGORIES.includes(category)) {
     notFound();
   }
 
@@ -115,15 +108,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 }
 
 export async function generateStaticParams() {
-  const categories = [
-    "components",
-    "composables",
-    "layout",
-    "motion-primitives",
-  ];
-
-  // Only include categories that have complete components
-  const validCategories = categories.filter((category) => {
+  const validCategories = CATEGORIES.filter((category) => {
     const components = getAllComponentsByCategory(category);
     const completeComponents = components.filter((c) => c.slug && c.storyId);
     return completeComponents.length > 0;
@@ -139,13 +124,7 @@ export async function generateMetadata({
 }: CategoryPageProps): Promise<Metadata> {
   const { category } = await params;
 
-  const validCategories = [
-    "components",
-    "composables",
-    "layout",
-    "motion-primitives",
-  ];
-  if (!validCategories.includes(category)) {
+  if (!CATEGORIES.includes(category)) {
     return {
       title: "Category Not Found",
     };

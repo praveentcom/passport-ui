@@ -23,6 +23,12 @@
     "theme",
     "design-system"
   ],
+  "main": "./dist/accordion.cjs",
+  "module": "./dist/accordion.js",
+  "types": "./dist/accordion.d.ts",
+  "exports": {
+    "./package.json": "./package.json"
+  },
   "files": [
     "dist",
     "src",

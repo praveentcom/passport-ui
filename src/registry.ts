@@ -29,6 +29,7 @@ import { definition as hoverCardDefinition } from "./components/hover-card/defin
 import { definition as inputOtpDefinition } from "./components/input-otp/definition";
 import { definition as inputDefinition } from "./components/input/definition";
 import { definition as labelDefinition } from "./components/label/definition";
+import { definition as liveRegionDefinition } from "./components/live-region/definition";
 import { definition as markdownDefinition } from "./components/markdown/definition";
 import { definition as menubarDefinition } from "./components/menubar/definition";
 import { definition as navigationMenuDefinition } from "./components/navigation-menu/definition";
@@ -54,11 +55,15 @@ import { definition as textareaDefinition } from "./components/textarea/definiti
 import { definition as toggleSelectDefinition } from "./components/toggle-select/definition";
 import { definition as toggleDefinition } from "./components/toggle/definition";
 import { definition as tooltipDefinition } from "./components/tooltip/definition";
+import { definition as visuallyHiddenDefinition } from "./components/visually-hidden/definition";
 // Composable definitions
 import { definition as emptyStateDefinition } from "./composables/empty-state/definition";
 import { definition as mobileSidebarTriggerDefinition } from "./composables/mobile-sidebar-trigger/definition";
 import { definition as themeButtonDefinition } from "./composables/theme-button/definition";
 import { definition as themeToggleDefinition } from "./composables/theme-toggle/definition";
+// Hook definitions
+import { definition as useMobileDefinition } from "./hooks/use-mobile/definition";
+import { definition as useScrollDefinition } from "./hooks/use-scroll/definition";
 // Layout definitions
 import { definition as contentContainerDefinition } from "./layouts/content-container/definition";
 import { definition as footerContainerDefinition } from "./layouts/footer-container/definition";
@@ -70,6 +75,8 @@ import { definition as animatedBackgroundDefinition } from "./motion-primitives/
 import { definition as blurInDefinition } from "./motion-primitives/blur-in/definition";
 import { definition as sequentialRevealDefinition } from "./motion-primitives/sequential-reveal/definition";
 import { definition as typewriterTextDefinition } from "./motion-primitives/typewriter-text/definition";
+// Provider definitions
+import { definition as themeProviderDefinition } from "./providers/theme-provider/definition";
 import type { ComponentDefinition } from "./types/definition";
 
 export const definitions: ComponentDefinition[] = [
@@ -102,6 +109,7 @@ export const definitions: ComponentDefinition[] = [
   inputDefinition,
   inputOtpDefinition,
   labelDefinition,
+  liveRegionDefinition,
   markdownDefinition,
   menubarDefinition,
   navigationMenuDefinition,
@@ -127,12 +135,18 @@ export const definitions: ComponentDefinition[] = [
   toggleDefinition,
   toggleSelectDefinition,
   tooltipDefinition,
+  visuallyHiddenDefinition,
   // Layout definitions
   contentContainerDefinition,
   footerContainerDefinition,
   headerContainerDefinition,
   pageLayoutDefinition,
   sidebarContainerDefinition,
+  // Provider definitions
+  themeProviderDefinition,
+  // Hook definitions
+  useMobileDefinition,
+  useScrollDefinition,
   // Composable definitions
   emptyStateDefinition,
   mobileSidebarTriggerDefinition,

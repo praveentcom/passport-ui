@@ -5,9 +5,9 @@ import type { SortConfig } from "../types/sort-config";
  */
 export const NAVIGATION_SORT_CONFIG: SortConfig = {
   order: [
-    "layout",
+    "layouts",
     [
-      "layout",
+      "layouts",
       [
         "Page Layout",
         "Sidebar Container",
@@ -16,7 +16,9 @@ export const NAVIGATION_SORT_CONFIG: SortConfig = {
         "Footer Container",
       ],
     ],
+    "providers",
     "components",
+    "hooks",
     "composables",
     "motion-primitives",
   ],

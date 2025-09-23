@@ -19,6 +19,7 @@ import {
 import { ContentContainer } from "../../../../src/layouts/content-container";
 import { SITE_CONFIG, createPageStructuredData } from "../../../constants";
 import {
+  CATEGORIES,
   getAllComponentsByCategory,
   getComponentBySlugAndCategory,
 } from "../../../utils";
@@ -174,15 +175,7 @@ export default async function CategoryComponentPage({
 export async function generateStaticParams() {
   const allParams: { category: string; slug: string }[] = [];
 
-  // Generate params for all categories
-  const categories = [
-    "components",
-    "composables",
-    "layout",
-    "motion-primitives",
-  ];
-
-  for (const category of categories) {
+  for (const category of CATEGORIES) {
     const components = getAllComponentsByCategory(category);
     for (const component of components) {
       if (component.slug) {
@@ -205,7 +198,7 @@ export async function generateMetadata({
 
   if (!component) {
     return {
-      title: "Component Not Found",
+      title: "Page Not Found",
     };
   }
 

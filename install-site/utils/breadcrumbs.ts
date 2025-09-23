@@ -1,6 +1,6 @@
 import { BreadcrumbPath } from "../../src/components/breadcrumb";
 import { PRIMARY_NAVIGATION_PAGES } from "../constants/primary-navigation";
-import { CATEGORY_LABELS, COMPONENTS_BY_CATEGORY } from "./index";
+import { CATEGORIES, CATEGORY_LABELS, COMPONENTS_BY_CATEGORY } from "./index";
 
 export function generateBreadcrumbs(pathname: string): BreadcrumbPath[] {
   // Always start with home
@@ -34,14 +34,7 @@ export function generateBreadcrumbs(pathname: string): BreadcrumbPath[] {
     ];
   }
 
-  // Handle category-based component pages
-  const categoryRoutes = [
-    "components",
-    "composables",
-    "layout",
-    "motion-primitives",
-  ];
-  const matchingCategory = categoryRoutes.find((category) =>
+  const matchingCategory = CATEGORIES.find((category) =>
     cleanPath.startsWith(`/${category}/`)
   );
 
@@ -126,14 +119,7 @@ export function getPageTitle(pathname: string): string | undefined {
     return primaryPage.title;
   }
 
-  // Handle category-based component pages
-  const categoryRoutes = [
-    "components",
-    "composables",
-    "layout",
-    "motion-primitives",
-  ];
-  const matchingCategory = categoryRoutes.find((category) =>
+  const matchingCategory = CATEGORIES.find((category) =>
     cleanPath.startsWith(`/${category}/`)
   );
 

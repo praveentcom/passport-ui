@@ -36,11 +36,11 @@ import { Label } from "passport-ui";`,
     <div className="section-container px-4">
       <div className="meta-container">
         <Label htmlFor="name">Full Name</Label>
-        <Input id="name" defaultValue="Praveen Thirumurugan" />
+        <Input id="name" defaultValue="John Doe" />
       </div>
       <div className="meta-container">
         <Label htmlFor="username">Username</Label>
-        <Input id="username" defaultValue="@praveentcom" />
+        <Input id="username" defaultValue="@johndoe" />
       </div>
     </div>
     <SheetFooter>

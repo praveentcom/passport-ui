@@ -1,7 +1,11 @@
+import React from "react";
+
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import { action } from "storybook/actions";
 
 import { HoverCard, HoverCardContent, HoverCardTrigger } from ".";
+import { AUTHOR } from "../../constants";
+import { Avatar, AvatarFallback, AvatarImage } from "../avatar";
 import { Button } from "../button";
 
 const meta: Meta<typeof HoverCard> = {
@@ -90,9 +94,22 @@ const meta: Meta<typeof HoverCard> = {
         <Button variant="link">Passport UI</Button>
       </HoverCardTrigger>
       <HoverCardContent className="w-sm">
-        <div className="meta-container">
-          <h3>Maintainer</h3>
-          <p>Praveen Thirumurugan</p>
+        <div className="flex justify-between space-x-4">
+          <Avatar>
+            <AvatarImage src={`${AUTHOR.url}.png`} />
+            <AvatarFallback>{AUTHOR.name.charAt(0)}</AvatarFallback>
+          </Avatar>
+          <div className="meta-container">
+            <h4 className="text-sm font-semibold">{AUTHOR.name}</h4>
+            <p className="text-sm">
+              <a href={AUTHOR.url}>@{AUTHOR.url.split("/").pop()}</a>
+            </p>
+            <div className="flex items-center pt-2">
+              <span className="text-xs text-muted-foreground">
+                Author, Passport UI
+              </span>
+            </div>
+          </div>
         </div>
       </HoverCardContent>
     </HoverCard>

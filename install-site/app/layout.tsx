@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Analytics } from "../../src/components/analytics";
 import { ThemeProvider } from "../../src/providers/theme-provider";
 import { ClientLayout } from "../components/client-layout";
+import { SITE_CONFIG } from "../constants";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,10 +22,8 @@ export const metadata: Metadata = {
     "Installation Guide",
     "Documentation",
   ],
-  authors: [
-    { name: "Praveen Thirumurugan", url: "https://github.com/praveentcom" },
-  ],
-  creator: "Praveen Thirumurugan",
+  authors: [{ name: SITE_CONFIG.author.name, url: SITE_CONFIG.author.url }],
+  creator: SITE_CONFIG.author.name,
   publisher: "Passport UI",
   formatDetection: {
     email: false,

@@ -18,7 +18,7 @@ import { Button } from "passport-ui";`,
   <HoverCardContent className="w-sm">
     <div className="meta-container">
       <h3>Maintainer</h3>
-      <p>Praveen Thirumurugan</p>
+      <p>John Doe</p>
     </div>
   </HoverCardContent>
 </HoverCard>

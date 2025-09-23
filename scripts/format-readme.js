@@ -14,9 +14,11 @@ const readmePath = join(rootDir, "README.md");
  */
 const categories = [
   { dir: "layouts", name: "Layouts" },
-  { dir: "components", name: "Components" },
-  { dir: "composables", name: "Composables" },
   { dir: "providers", name: "Providers" },
+  { dir: "components", name: "Components" },
+  { dir: "hooks", name: "Hooks" },
+  { dir: "composables", name: "Composables" },
+  { dir: "motion-primitives", name: "Motion Primitives" },
 ];
 
 /**
@@ -57,24 +59,32 @@ function scanCategory(categoryDir, categoryName) {
   const categoryPath = join(srcDir, categoryDir);
 
   try {
-    const files = readdirSync(categoryPath);
-    const storyFiles = files.filter((file) => file.endsWith(".stories.tsx"));
-
     const components = [];
+    const componentDirs = readdirSync(categoryPath);
 
-    for (const storyFile of storyFiles) {
-      const storyPath = join(categoryPath, storyFile);
-      const info = extractStoryInfo(storyPath);
+    for (const componentDir of componentDirs) {
+      const componentPath = join(categoryPath, componentDir);
+      try {
+        const files = readdirSync(componentPath);
+        const storyFile = files.find((file) => file.endsWith(".stories.tsx"));
 
-      if (
-        info &&
-        info.category.toLowerCase().replace(/\s+/g, " ") ===
-          categoryName.toLowerCase()
-      ) {
-        components.push({
-          name: info.componentName,
-          docUrl: info.docUrl,
-        });
+        if (storyFile) {
+          const storyPath = join(componentPath, storyFile);
+          const info = extractStoryInfo(storyPath);
+
+          if (
+            info &&
+            info.category.toLowerCase().replace(/\s+/g, " ") ===
+              categoryName.toLowerCase()
+          ) {
+            components.push({
+              name: info.componentName,
+              docUrl: info.docUrl,
+            });
+          }
+        }
+      } catch (e) {
+        // Not a directory, ignore.
       }
     }
 

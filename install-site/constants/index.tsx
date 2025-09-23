@@ -1,3 +1,5 @@
+import { AUTHOR } from "../../src/constants";
+
 // Base URLs and site info
 export const SITE_CONFIG = {
   baseUrl: "https://passportui.com",
@@ -6,8 +8,8 @@ export const SITE_CONFIG = {
   description:
     "Installation guide for Passport UI - a React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
   author: {
-    name: "Praveen Thirumurugan",
-    url: "https://github.com/praveentcom",
+    name: AUTHOR.name,
+    url: AUTHOR.url,
   },
   repository: "https://github.com/praveentcom/passport-ui",
   npm: "https://www.npmjs.com/package/passport-ui",

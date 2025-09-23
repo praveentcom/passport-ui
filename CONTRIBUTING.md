@@ -58,15 +58,16 @@ This project and everyone participating in it is governed by our [Code of Conduc
 passport-ui/
 ├── src/
 │   ├── components/          # UI components
-│   ├── motion-primitives/   # Animation components
 │   ├── composables/         # Higher-level composable components
-│   ├── containers/          # Page-level containers
-│   ├── theme/              # Theme components and utilities
-│   ├── lib/                # Utility functions
-│   ├── index.ts            # Main exports
-│   └── styles.css          # Global styles and theme
-├── .storybook/             # Storybook configuration
-└── dist/                   # Build output
+│   ├── hooks/               # Custom React hooks
+│   ├── layouts/             # Page-level layout components
+│   ├── motion-primitives/   # Animation components
+│   ├── providers/           # App-level providers (e.g. ThemeProvider)
+│   ├── lib/                 # Utility functions
+│   ├── index.ts             # Main exports
+│   └── styles.css           # Global styles and theme
+├── .storybook/              # Storybook configuration
+└── dist/                    # Build output
 ```
 
 ## Contributing Guidelines

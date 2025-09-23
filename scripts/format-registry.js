@@ -13,8 +13,10 @@ async function generateRegistry() {
 
   // Define all categories to scan
   const categories = [
-    { name: "components", path: "components" },
     { name: "layouts", path: "layouts" },
+    { name: "providers", path: "providers" },
+    { name: "components", path: "components" },
+    { name: "hooks", path: "hooks" },
     { name: "composables", path: "composables" },
     { name: "motion-primitives", path: "motion-primitives" },
   ];
@@ -59,6 +61,19 @@ async function generateRegistry() {
     }
 
     // Generate imports grouped by category
+    const layoutImports = allDefinitions
+      .filter((item) => item.category === "layouts")
+      .map((item) => {
+        const camelCaseName = item.name
+          .split("-")
+          .map((word, index) =>
+            index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+          )
+          .join("");
+
+        return `import { definition as ${camelCaseName}Definition } from "./layouts/${item.name}/definition";`;
+      })
+      .join("\n");
     const componentImports = allDefinitions
       .filter((item) => item.category === "components")
       .map((item) => {
@@ -73,8 +88,8 @@ async function generateRegistry() {
       })
       .join("\n");
 
-    const layoutImports = allDefinitions
-      .filter((item) => item.category === "layouts")
+    const providerImports = allDefinitions
+      .filter((item) => item.category === "providers")
       .map((item) => {
         const camelCaseName = item.name
           .split("-")
@@ -83,7 +98,21 @@ async function generateRegistry() {
           )
           .join("");
 
-        return `import { definition as ${camelCaseName}Definition } from "./layouts/${item.name}/definition";`;
+        return `import { definition as ${camelCaseName}Definition } from "./providers/${item.name}/definition";`;
+      })
+      .join("\n");
+
+    const hookImports = allDefinitions
+      .filter((item) => item.category === "hooks")
+      .map((item) => {
+        const camelCaseName = item.name
+          .split("-")
+          .map((word, index) =>
+            index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+          )
+          .join("");
+
+        return `import { definition as ${camelCaseName}Definition } from "./hooks/${item.name}/definition";`;
       })
       .join("\n");
 
@@ -130,8 +159,36 @@ async function generateRegistry() {
       })
       .join("\n");
 
+    const hookArrayItems = allDefinitions
+      .filter((item) => item.category === "hooks")
+      .map((item) => {
+        const camelCaseName = item.name
+          .split("-")
+          .map((word, index) =>
+            index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+          )
+          .join("");
+
+        return `  ${camelCaseName}Definition,`;
+      })
+      .join("\n");
+
     const layoutArrayItems = allDefinitions
       .filter((item) => item.category === "layouts")
+      .map((item) => {
+        const camelCaseName = item.name
+          .split("-")
+          .map((word, index) =>
+            index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+          )
+          .join("");
+
+        return `  ${camelCaseName}Definition,`;
+      })
+      .join("\n");
+
+    const providerArrayItems = allDefinitions
+      .filter((item) => item.category === "providers")
       .map((item) => {
         const camelCaseName = item.name
           .split("-")
@@ -175,6 +232,8 @@ async function generateRegistry() {
     // Generate the complete registry file
     const allImports = [
       componentImports,
+      providerImports && `\n// Provider definitions\n${providerImports}`,
+      hookImports && `\n// Hook definitions\n${hookImports}`,
       layoutImports && `\n// Layout definitions\n${layoutImports}`,
       composableImports && `\n// Composable definitions\n${composableImports}`,
       motionImports && `\n// Motion primitives definitions\n${motionImports}`,
@@ -185,6 +244,8 @@ async function generateRegistry() {
     const allArrayItems = [
       componentArrayItems,
       layoutArrayItems && `  // Layout definitions\n${layoutArrayItems}`,
+      providerArrayItems && `  // Provider definitions\n${providerArrayItems}`,
+      hookArrayItems && `  // Hook definitions\n${hookArrayItems}`,
       composableArrayItems &&
         `  // Composable definitions\n${composableArrayItems}`,
       motionArrayItems &&

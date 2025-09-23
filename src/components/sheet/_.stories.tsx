@@ -13,6 +13,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from ".";
+import { AUTHOR } from "../../constants";
 import { Button } from "../button";
 import { Input } from "../input";
 import { Label } from "../label";
@@ -110,11 +111,14 @@ const meta: Meta<typeof Sheet> = {
         <div className="section-container px-4">
           <div className="meta-container">
             <Label htmlFor="name">Full Name</Label>
-            <Input id="name" defaultValue="Praveen Thirumurugan" />
+            <Input id="name" defaultValue={AUTHOR.name} />
           </div>
           <div className="meta-container">
             <Label htmlFor="username">Username</Label>
-            <Input id="username" defaultValue="@praveentcom" />
+            <Input
+              id="username"
+              defaultValue={`@${AUTHOR.url.split("/").pop()}`}
+            />
           </div>
         </div>
         <SheetFooter>

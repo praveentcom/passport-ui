@@ -11,12 +11,12 @@ function generateEntryPoints() {
   const entryPoints = {};
 
   const directories = [
-    { path: "src/components", prefix: "" },
-    { path: "src/composables", prefix: "" },
-    { path: "src/motion-primitives", prefix: "" },
     { path: "src/layouts", prefix: "" },
     { path: "src/providers", prefix: "" },
+    { path: "src/components", prefix: "" },
     { path: "src/hooks", prefix: "" },
+    { path: "src/composables", prefix: "" },
+    { path: "src/motion-primitives", prefix: "" },
   ];
 
   directories.forEach(({ path, prefix }) => {

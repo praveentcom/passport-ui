@@ -15,12 +15,12 @@ function getClientFiles() {
   const clientFiles = new Set();
 
   const directories = [
-    "src/components",
-    "src/composables",
-    "src/motion-primitives",
     "src/layouts",
     "src/providers",
+    "src/components",
     "src/hooks",
+    "src/composables",
+    "src/motion-primitives",
   ];
 
   directories.forEach((dir) => {
