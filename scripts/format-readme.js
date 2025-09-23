@@ -22,7 +22,7 @@ const categories = [
 ];
 
 /**
- * Extract title from storybook stories and generate documentation link
+ * Extract title from storybook stories and generate docs link
  */
 function extractStoryInfo(filePath) {
   try {

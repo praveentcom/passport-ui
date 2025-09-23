@@ -5,6 +5,7 @@ import React, {
   ReactElement,
   cloneElement,
   useId,
+  useRef,
   useState,
 } from "react";
 
@@ -33,6 +34,10 @@ export function AnimatedBackground({
 }: AnimatedBackgroundProps) {
   const [activeId, setActiveId] = useState<string | null>(defaultValue);
   const uniqueId = useId();
+  const stableUniqueId = useRef(uniqueId);
+
+  // Use the stable ref to prevent layout ID changes on re-renders
+  const layoutId = `background-${stableUniqueId.current}`;
 
   const handleSetActiveId = (id: string | null) => {
     setActiveId(id);
@@ -67,7 +72,7 @@ export function AnimatedBackground({
         <AnimatePresence initial={false}>
           {activeId === id && (
             <motion.div
-              layoutId={`background-${uniqueId}`}
+              layoutId={layoutId}
               className={cn("absolute inset-0", className)}
               transition={transition}
               initial={{ opacity: 0 }}

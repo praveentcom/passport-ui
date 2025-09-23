@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 import hljs from "highlight.js/lib/core";
 import bash from "highlight.js/lib/languages/bash";
@@ -33,6 +33,8 @@ import swift from "highlight.js/lib/languages/swift";
 import typescript from "highlight.js/lib/languages/typescript";
 import xml from "highlight.js/lib/languages/xml";
 import yaml from "highlight.js/lib/languages/yaml";
+
+import { Check, Copy } from "lucide-react";
 
 import getFileIcon from "../../lib/markdown/getFileIcon";
 import { cn } from "../../lib/utils";
@@ -151,6 +153,35 @@ function CodeBlock({
 }: CodeBlockProps) {
   const lines = code.split("\n");
   const totalLines = lines.length;
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(code);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy code: ', err);
+    }
+  };
+
+  const CopyButton = ({ className }: { className?: string }) => (
+    <button
+      onClick={copyToClipboard}
+      className={cn(
+        "opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:text-foreground rounded hover:bg-muted/50",
+        className
+      )}
+      title={copied ? "Copied!" : "Copy code"}
+      aria-label={copied ? "Copied!" : "Copy code"}
+    >
+      {copied ? (
+        <Check className="text-success" size={14} />
+      ) : (
+        <Copy size={14} />
+      )}
+    </button>
+  );
 
   /**
    * Get the width class for line numbers based on total lines
@@ -188,6 +219,8 @@ function CodeBlock({
     }
   };
 
+  const fileIcon = filename ? getFileIcon(filename) : "";
+
   return (
     <div
       data-slot="code-block"
@@ -198,22 +231,32 @@ function CodeBlock({
       )}
       {...props}
     >
+      {!filename && (
+        <CopyButton className="absolute top-2 right-2 z-10 p-1.5 bg-card/80 backdrop-blur-sm border border-border/50" />
+      )}
       {filename && (
         <div
           data-slot="code-block-header"
           className="flex font-mono justify-between items-center gap-2 px-2.5 py-1 bg-sidebar border-b border-border text-xs text-muted-foreground/80"
         >
           <>{filename}</>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: `${getFileIcon(filename)}`,
-            }}
-          />
+          <div className="flex gap-2 items-center">
+            <CopyButton />
+            {
+              fileIcon && (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: `${fileIcon}`,
+                  }}
+                />
+              )
+            }
+          </div>
         </div>
       )}
       <pre
         data-slot="code-block-pre"
-        className="overflow-x-auto p-0 m-0 bg-transparent w-full"
+        className="overflow-x-auto p-0 m-0 bg-card w-full"
       >
         <code data-slot="code-block-code" className="hljs block">
           {lines.map((line, index) => {

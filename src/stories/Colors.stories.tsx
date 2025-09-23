@@ -304,7 +304,7 @@ const ColorsDocs = () => (
     }
     footer={
       <div className="meta-container">
-        <h3>Color System Documentation</h3>
+        <h3>Color System</h3>
         <p>All colors support automatic light/dark theme switching</p>
       </div>
     }

@@ -53,7 +53,7 @@ export default function FontsPage() {
         data={createPageStructuredData({
           name: "Passport UI - Font & Typography",
           description:
-            "Font system documentation for Passport UI component library with font weights, sizes, and families.",
+            "Font system docs for Passport UI component library with font weights, sizes, and families.",
           url: SITE_CONFIG.baseUrl + "/fonts/",
           breadcrumbName: "Font & Typography",
           breadcrumbUrl: SITE_CONFIG.baseUrl + "/fonts/",
@@ -174,5 +174,5 @@ export default function FontsPage() {
 export const metadata: Metadata = {
   title: "Passport UI - Font & Typography",
   description:
-    "Font system documentation for Passport UI component library with font weights, sizes, and families.",
+    "Font system docs for Passport UI component library with font weights, sizes, and families.",
 };
