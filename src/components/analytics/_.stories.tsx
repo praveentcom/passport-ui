@@ -60,3 +60,171 @@ export const Default: Story = {
     enabled: false,
   },
 };
+
+/**
+ * Multiple providers configured together.
+ */
+export const MultipleProviders: Story = {
+  args: {
+    providers: {
+      googleAnalytics: {
+        trackingId: "G-DEMO123456",
+        config: {
+          anonymize_ip: true,
+          cookie_domain: "auto",
+        },
+      },
+      vercelAnalytics: {
+        debug: true,
+      },
+      mixpanel: {
+        token: "demo-mixpanel-token",
+        config: {
+          track_pageview: true,
+          persistence: "localStorage",
+        },
+      },
+      segment: {
+        writeKey: "demo-segment-write-key",
+        config: {
+          trackPageview: true,
+        },
+      },
+    },
+    enabled: false,
+  },
+};
+
+/**
+ * Vercel Analytics only setup.
+ */
+export const VercelOnly: Story = {
+  args: {
+    providers: {
+      vercelAnalytics: {
+        debug: false,
+        disableBeacon: false,
+      },
+    },
+    enabled: false,
+  },
+};
+
+/**
+ * Mixpanel configuration with custom events.
+ */
+export const MixpanelWithEvents: Story = {
+  args: {
+    providers: {
+      mixpanel: {
+        token: "demo-mixpanel-token",
+        config: {
+          api_host: "api.mixpanel.com",
+          track_pageview: true,
+          persistence: "cookie",
+        },
+        events: [
+          {
+            name: "Component Loaded",
+            properties: {
+              component: "Analytics",
+              version: "1.0",
+            },
+          },
+        ],
+      },
+    },
+    enabled: false,
+  },
+};
+
+/**
+ * Amplitude configuration.
+ */
+export const AmplitudeSetup: Story = {
+  args: {
+    providers: {
+      amplitude: {
+        apiKey: "demo-amplitude-api-key",
+        config: {
+          serverZone: "US",
+          trackSessions: true,
+          sessionTimeout: 1800000,
+        },
+        events: [
+          {
+            eventType: "Analytics Initialized",
+            eventProperties: {
+              provider: "Amplitude",
+            },
+          },
+        ],
+      },
+    },
+    enabled: false,
+  },
+};
+
+/**
+ * PostHog configuration with session recording.
+ */
+export const PostHogSetup: Story = {
+  args: {
+    providers: {
+      posthog: {
+        apiKey: "demo-posthog-api-key",
+        apiHost: "https://app.posthog.com",
+        config: {
+          capture_pageview: true,
+          capture_pageleave: true,
+          session_recording: {
+            maskAllInputs: true,
+          },
+        },
+      },
+    },
+    enabled: false,
+  },
+};
+
+/**
+ * Plausible Analytics configuration.
+ */
+export const PlausibleSetup: Story = {
+  args: {
+    providers: {
+      plausible: {
+        domain: "example.com",
+        config: {
+          trackOutboundLinks: true,
+          hashMode: false,
+        },
+      },
+    },
+    enabled: false,
+  },
+};
+
+/**
+ * Privacy-focused setup with minimal tracking.
+ */
+export const PrivacyFocused: Story = {
+  args: {
+    providers: {
+      googleAnalytics: {
+        trackingId: "G-DEMO123456",
+        config: {
+          anonymize_ip: true,
+          cookie_expires: 86400, // 24 hours
+        },
+      },
+      plausible: {
+        domain: "example.com",
+        config: {
+          trackOutboundLinks: false,
+        },
+      },
+    },
+    enabled: false,
+  },
+};
