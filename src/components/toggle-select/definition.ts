@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: CheckSquare,
   description: "A set of toggle buttons for selecting one or more options.",
   category: "components",
-  storyId: "components-toggleselect--default",
+  storyId: "components-toggleselect",
   slug: "toggle-select",
   importCode: `import { ToggleSelect } from "passport-ui";`,
   usageCode: `<ToggleSelect>

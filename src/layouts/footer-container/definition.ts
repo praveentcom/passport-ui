@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: PanelBottom,
   description: "A layout container for the footer section of a page.",
   category: "layouts",
-  storyId: "layout-containers-footercontainer--default",
+  storyId: "layout-containers-footercontainer",
   slug: "footer-container",
   importCode: `import { FooterContainer } from "passport-ui";`,
   usageCode: `<FooterContainer

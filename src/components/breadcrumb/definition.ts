@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A navigation aid that shows the user’s location in a site or app.",
   category: "components",
-  storyId: "components-breadcrumb--default",
+  storyId: "components-breadcrumb",
   slug: "breadcrumb",
   importCode: `import { Breadcrumb } from "passport-ui";`,
   usageCode: `<Breadcrumb

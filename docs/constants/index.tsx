@@ -6,7 +6,7 @@ export const SITE_CONFIG = {
   name: "Passport UI",
   title: "Passport UI - Docs",
   description:
-    "Installation guide for Passport UI - a React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
+    "Installation guide for Passport UI - 75+ elegant UI components composed with Tailwind CSS, Radix UI, and Framer Motion.",
   author: {
     name: AUTHOR.name,
     url: AUTHOR.url,
@@ -14,7 +14,7 @@ export const SITE_CONFIG = {
   repository: "https://github.com/praveentcom/passport-ui",
   npm: "https://www.npmjs.com/package/passport-ui",
   mainSite: "https://passportui.com/",
-  storybook: "https://storybook.passportui.com/iframe/",
+  storybook: "https://storybook.passportui.com",
   images: {
     openGraph:
       "https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png",

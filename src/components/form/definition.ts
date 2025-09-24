@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A set of components for building accessible and reusable forms.",
   category: "components",
-  storyId: "components-form--default",
+  storyId: "components-form",
   slug: "form",
   importCode: `import {
   Form,

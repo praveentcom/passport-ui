@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: Images,
   description: "A slideshow component for cycling through images or content.",
   category: "components",
-  storyId: "components-carousel--default",
+  storyId: "components-carousel",
   slug: "carousel",
   importCode: `import {
   Carousel,

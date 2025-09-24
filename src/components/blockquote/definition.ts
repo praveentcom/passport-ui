@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: Quote,
   description: "A component for displaying quoted text with optional citation.",
   category: "components",
-  storyId: "components-blockquote--default",
+  storyId: "components-blockquote",
   slug: "blockquote",
   importCode: `import { Blockquote } from "passport-ui";`,
   usageCode: `<div className="w-sm">

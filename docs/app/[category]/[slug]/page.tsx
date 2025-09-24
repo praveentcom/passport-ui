@@ -33,11 +33,8 @@ interface CategoryComponentPageProps {
 }
 
 function StorybookEmbed({ storyId }: { storyId: string }) {
-  const isDevelopment = process.env.NODE_ENV === "development";
-  const storybookHost = isDevelopment
-    ? "http://localhost:6006/iframe.html"
-    : SITE_CONFIG.storybook;
-  const embedUrl = `${storybookHost}?globals=&args=&id=${storyId}&viewMode=story`;
+  const storybookHost = SITE_CONFIG.storybook;
+  const embedUrl = `${storybookHost}/iframe?globals=&args=&id=${storyId}--default&viewMode=story`;
 
   return (
     <div className="w-full border rounded-sm overflow-hidden bg-background">
@@ -67,10 +64,7 @@ export default async function CategoryComponentPage({
   }
 
   const IconComponent = component.icon;
-  const isDevelopment = process.env.NODE_ENV === "development";
-  const storybookHost = isDevelopment
-    ? "http://localhost:6006"
-    : SITE_CONFIG.storybook;
+  const storybookHost = SITE_CONFIG.storybook;
   const breadcrumbs = generateBreadcrumbs(`/${category}/${slug}`);
 
   const pageStructuredData = createPageStructuredData({
@@ -157,7 +151,7 @@ export default async function CategoryComponentPage({
           <div className="meta-container flex">
             <Button asChild>
               <PrefetchLink
-                href={`${storybookHost}/?path=/docs/${component.storyId.replace("--", "-")}`}
+                href={`${storybookHost}/?path=/docs/${component.storyId}--docs`}
                 target="_blank"
                 rel="noopener noreferrer"
               >

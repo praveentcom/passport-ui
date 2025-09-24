@@ -52,7 +52,7 @@ export default function InstallationPage() {
         data={createPageStructuredData({
           name: "Passport UI - Installation",
           description:
-            "Installation guide for Passport UI - a React UI component library built with Tailwind CSS, Radix UI, and Framer Motion.",
+            "Installation guide for Passport UI - 75+ elegant UI components composed with Tailwind CSS, Radix UI, and Framer Motion.",
           url: SITE_CONFIG.baseUrl + "/",
           breadcrumbName: "Installation",
           breadcrumbUrl: SITE_CONFIG.baseUrl + "/",

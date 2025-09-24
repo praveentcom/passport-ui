@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "An image element with a fallback for representing a user or entity.",
   category: "components",
-  storyId: "components-avatar--default",
+  storyId: "components-avatar",
   slug: "avatar",
   importCode: `import { Avatar, AvatarFallback, AvatarImage } from "passport-ui";`,
   usageCode: `<Avatar>

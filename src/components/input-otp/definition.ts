@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: KeyRound,
   description: "A specialized input field for one-time passwords.",
   category: "components",
-  storyId: "components-inputotp--default",
+  storyId: "components-inputotp",
   slug: "input-otp",
   importCode: `import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "passport-ui";
 import { Label } from "passport-ui";`,

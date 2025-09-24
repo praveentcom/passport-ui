@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: SunMoon,
   description: "A provider that manages theme switching for the application.",
   category: "providers",
-  storyId: "providers-themeprovider--default",
+  storyId: "providers-themeprovider",
   slug: "theme-provider",
   importCode: `import { ThemeProvider } from "passport-ui";`,
   usageCode: `<ThemeProvider attribute="class" defaultTheme="system" enableSystem>

@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A layout component with a collapsible sidebar and main content area.",
   category: "components",
-  storyId: "components-sidebar--default",
+  storyId: "components-sidebar",
   slug: "sidebar",
   importCode: `import {
   Sidebar,

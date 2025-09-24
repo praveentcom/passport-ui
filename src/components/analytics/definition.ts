@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A comprehensive analytics component supporting multiple providers: Google Analytics, Mixpanel, Amplitude, Segment, PostHog, and Plausible.",
   category: "components",
-  storyId: "components-analytics--default",
+  storyId: "components-analytics",
   slug: "analytics",
   importCode: `import { Analytics, useAnalytics } from "passport-ui";`,
   usageCode: `{/* Place once in your app root */}

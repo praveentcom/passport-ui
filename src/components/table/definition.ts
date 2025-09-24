@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: Table,
   description: "A component for displaying data in a tabular format.",
   category: "components",
-  storyId: "components-table--default",
+  storyId: "components-table",
   slug: "table",
   importCode: `import {
   Table,

@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: Eye,
   description: "A component that reveals content with a blur-in animation.",
   category: "motion-primitives",
-  storyId: "motion-primitives-blurin--default",
+  storyId: "motion-primitives-blurin",
   slug: "blur-in",
   importCode: `import { BlurIn } from "passport-ui";`,
   usageCode: `<BlurIn>

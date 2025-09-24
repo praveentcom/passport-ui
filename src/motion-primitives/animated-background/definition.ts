@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: Waves,
   description: "A component for creating animated, gradient backgrounds.",
   category: "motion-primitives",
-  storyId: "motion-primitives-animatedbackground--default",
+  storyId: "motion-primitives-animatedbackground",
   slug: "animated-background",
   importCode: `import { AnimatedBackground } from "passport-ui";`,
   usageCode: `<AnimatedBackground

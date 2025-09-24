@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: MousePointerClick,
   description: "A pop-up card that appears when a user hovers over an element.",
   category: "components",
-  storyId: "components-hovercard--default",
+  storyId: "components-hovercard",
   slug: "hover-card",
   importCode: `import { HoverCard, HoverCardContent, HoverCardTrigger } from "passport-ui";
 import { Button } from "passport-ui";`,

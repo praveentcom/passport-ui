@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A component that reveals content sequentially with a staggered animation.",
   category: "motion-primitives",
-  storyId: "motion-primitives-sequentialreveal--default",
+  storyId: "motion-primitives-sequentialreveal",
   slug: "sequential-reveal",
   importCode: `import { SequentialReveal } from "passport-ui";`,
   usageCode: `<SequentialReveal>

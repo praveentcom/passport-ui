@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: Loader,
   description: "A placeholder component for loading content.",
   category: "components",
-  storyId: "components-skeleton--default",
+  storyId: "components-skeleton",
   slug: "skeleton",
   importCode: `import { Skeleton } from "passport-ui";`,
   usageCode: `<Skeleton className="size-12" />

@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Storybook](https://img.shields.io/badge/Storybook-Docs-ff4785.svg)](https://passportui.com)
 
-A React UI component library with motion primitives and theme support built with TypeScript, Tailwind CSS v4, and shadcn/ui components.
+75+ elegant UI components with motion primitives and theme support composed on top of shadcn/ui components.
 
 View documentation at [passportui.com](https://passportui.com). If you're someone who loves Storybook, you can view the components at [storybook.passportui.com](https://storybook.passportui.com).
 

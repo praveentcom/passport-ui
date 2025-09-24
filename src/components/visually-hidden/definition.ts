@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A component that hides content visually but keeps it accessible to screen readers.",
   category: "components",
-  storyId: "components-visuallyhidden--default",
+  storyId: "components-visuallyhidden",
   slug: "visually-hidden",
   importCode: `import { VisuallyHidden } from "passport-ui";`,
   usageCode: `<Button>

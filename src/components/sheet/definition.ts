@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: PanelRight,
   description: "A side panel that slides in to display supplementary content.",
   category: "components",
-  storyId: "components-sheet--default",
+  storyId: "components-sheet",
   slug: "sheet",
   importCode: `import {
   Sheet,

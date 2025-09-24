@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: Type,
   description: "A component that animates text with a typewriter effect.",
   category: "motion-primitives",
-  storyId: "motion-primitives-typewritertext--default",
+  storyId: "motion-primitives-typewritertext",
   slug: "typewriter-text",
   importCode: `import { TypewriterText } from "passport-ui";`,
   usageCode: `<TypewriterText

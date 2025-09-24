@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: Type,
   description: "A standard text input field for form data.",
   category: "components",
-  storyId: "components-input--default",
+  storyId: "components-input",
   slug: "input",
   importCode: `import { Input } from "passport-ui";
 import { Label } from "passport-ui";`,

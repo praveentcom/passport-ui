@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A set of layered sections of content, known as tab panels, that display one panel of content at a time.",
   category: "components",
-  storyId: "components-tabs--default",
+  storyId: "components-tabs",
   slug: "tabs",
   importCode: `import { Tabs, TabsContent, TabsList, TabsTrigger } from "passport-ui";
 import { Card, CardContent } from "passport-ui";

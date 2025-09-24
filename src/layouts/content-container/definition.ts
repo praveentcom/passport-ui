@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A layout container for centering and constraining content width.",
   category: "layouts",
-  storyId: "layout-containers-contentcontainer--default",
+  storyId: "layout-containers-contentcontainer",
   slug: "content-container",
   importCode: `import { ContentContainer } from "passport-ui";`,
   usageCode: `<ContentContainer variant="broad">

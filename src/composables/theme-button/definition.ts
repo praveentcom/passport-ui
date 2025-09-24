@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: Sun,
   description: "A button for toggling between light and dark themes.",
   category: "composables",
-  storyId: "composables-themebutton--default",
+  storyId: "composables-themebutton",
   slug: "theme-button",
   importCode: `import { ThemeButton } from "passport-ui";`,
   usageCode: `<ThemeButton />`,

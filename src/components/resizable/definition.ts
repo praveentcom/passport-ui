@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: StretchHorizontal,
   description: "A component with resizable panels for flexible layouts.",
   category: "components",
-  storyId: "components-resizable--default",
+  storyId: "components-resizable",
   slug: "resizable",
   importCode: `import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "passport-ui";
 import { Card } from "passport-ui";`,
