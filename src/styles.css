@@ -110,11 +110,11 @@
 /* Light Mode Colors for Custom Properties */
 :root {
   --radius: 0.625rem;
-  --background: oklch(0.99 0.002 270);
+  --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(1 0 0);
+  --card: oklch(0.99 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
-  --popover: oklch(1 0 0);
+  --popover: oklch(0.99 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823);
   --primary: oklch(0.2649 0.0018 286.27);
   --primary-foreground: oklch(0.985 0 0);
@@ -146,7 +146,7 @@
   --chart-3: oklch(0.6877 0.208 40.13);
   --chart-4: oklch(0.557 0.1974 25.17);
   --chart-5: oklch(0.6877 0.208 40.13);
-  --sidebar: oklch(0.98 0.003 270);
+  --sidebar: oklch(1 0 0);
 }
 
 /* Dark Mode Colors for Custom Properties */
