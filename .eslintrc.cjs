@@ -29,4 +29,12 @@ module.exports = {
       version: "detect",
     },
   },
+  overrides: [
+    {
+      files: ["**/shaders/**/*.tsx"],
+      rules: {
+        "react/no-unknown-property": "off",
+      },
+    },
+  ],
 };

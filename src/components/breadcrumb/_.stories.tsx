@@ -107,11 +107,6 @@ export const CustomSeparator: Story = {
       { href: "/docs", label: "Documentation" },
       { href: "/docs/getting-started", label: "Getting Started" },
       { href: "/docs/getting-started/installation", label: "Installation" },
-      { href: "/docs/getting-started/installation/nextjs", label: "Next.js" },
-      {
-        href: "/docs/getting-started/installation/nextjs/app-router",
-        label: "App Router",
-      },
     ],
   },
 };

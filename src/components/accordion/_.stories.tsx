@@ -137,7 +137,7 @@ ${definition.usageCode}
         <AccordionContent className="flex flex-col gap-4 text-balance">
           <p>
             Our flagship product combines modern technology with sleek design.
-            Built with premium materials, it offers unparalleled performance and
+            Built with materials, it offers unparalleled performance and
             reliability.
           </p>
           <p>

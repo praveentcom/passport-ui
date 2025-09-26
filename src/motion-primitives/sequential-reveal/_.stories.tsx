@@ -229,7 +229,7 @@ export const RandomPattern: Story = {
         "React",
         "TypeScript",
         "Tailwind",
-        "Framer Motion",
+        "Motion",
         "Storybook",
         "Vite",
         "ESLint",

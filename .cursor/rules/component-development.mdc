@@ -15,7 +15,7 @@ description: Component development guidelines and patterns
 - Follow shadcn/ui patterns and conventions
 
 ### Motion Primitives ([src/motion-primitives/](mdc:src/motion-primitives/))
-- Use Framer Motion (`motion` package) for animations
+- Use Motion (`motion` package) for animations
 - Export TypeScript props interfaces
 - Provide sensible animation defaults
 - Make animations configurable through props

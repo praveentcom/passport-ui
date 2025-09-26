@@ -15,8 +15,8 @@ const footerContainerVariants = cva(
         false: "relative",
       },
       blurred: {
-        true: "backdrop-blur-md bg-sidebar/75",
-        false: "bg-sidebar",
+        true: "bg-background/80 backdrop-blur-md",
+        false: "bg-background",
       },
     },
     defaultVariants: {

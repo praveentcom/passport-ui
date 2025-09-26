@@ -11,23 +11,23 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-card text-card-foreground shadow-xs hover:bg-card/85",
+        primary: "bg-primary text-primary-foreground shadow-xs hover:bg-primary/85 font-normal dark:font-medium",
         destructive:
           "bg-destructive text-destructive-foreground shadow-xs hover:bg-destructive/85",
         outline:
           "border border-input bg-background shadow-xs hover:bg-border/50 text-muted-foreground hover:text-foreground",
         secondary:
-          "bg-card text-secondary-foreground shadow-xs hover:bg-secondary",
+          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/85",
         ghost: "hover:bg-border text-muted-foreground hover:text-foreground",
         link: "!px-0 text-primary hover:underline underline-offset-4 decoration-muted-foreground/50",
       },
       size: {
         regular:
-          "h-7 rounded-xs px-2.5 py-1 has-[>svg]:px-2 text-xs [&_svg:not([class*='size-'])]:size-3.5",
+          "h-7 rounded-xs px-2.5 py-1 has-[>svg]:px-2 text-xs [&_svg:not([class*='size-'])]:size-3.5 [&>*_svg:not([class*='size-'])]:size-3.5",
         medium:
-          "h-8 rounded-xs px-2.5 py-2 has-[>svg]:px-2 text-sm [&_svg:not([class*='size-'])]:size-4",
+          "h-8 rounded-xs px-2.5 py-2 has-[>svg]:px-2 text-sm [&_svg:not([class*='size-'])]:size-4 [&>*_svg:not([class*='size-'])]:size-4",
         large:
-          "h-9 rounded-sm gap-1.5 px-3 has-[>svg]:px-2.5 text-sm [&_svg:not([class*='size-'])]:size-5",
+          "h-9 rounded-sm gap-1.5 px-3 has-[>svg]:px-2.5 text-sm [&_svg:not([class*='size-'])]:size-5 [&>*_svg:not([class*='size-'])]:size-5",
       },
     },
     defaultVariants: {
@@ -98,13 +98,26 @@ const Button = React.memo(
       ref
     ) => {
       const Comp = asChild ? Slot : "button";
+      const buttonClasses = cn(buttonVariants({ variant, size, className }));
 
-      const buttonContent = (
-        <>
-          {loading && <Loader2 className="animate-spin" aria-hidden="true" />}
-          {loading && loadingText ? loadingText : children}
-        </>
-      );
+      if (asChild) {
+        return (
+          <Comp
+            data-slot="button"
+            aria-label={ariaLabel}
+            aria-labelledby={ariaLabelledBy}
+            aria-describedby={ariaDescribedBy}
+            aria-expanded={ariaExpanded}
+            aria-controls={ariaControls}
+            aria-pressed={ariaPressed}
+            className={buttonClasses}
+            ref={ref}
+            {...props}
+          >
+            {children}
+          </Comp>
+        );
+      }
 
       return (
         <Comp
@@ -118,11 +131,12 @@ const Button = React.memo(
           aria-busy={loading}
           disabled={disabled || loading}
           aria-disabled={disabled || loading}
-          className={cn(buttonVariants({ variant, size, className }))}
+          className={buttonClasses}
           ref={ref}
           {...props}
         >
-          {asChild ? <span>{buttonContent}</span> : buttonContent}
+          {loading && <Loader2 className="animate-spin" aria-hidden="true" />}
+          {loading && loadingText ? loadingText : children}
         </Comp>
       );
     }

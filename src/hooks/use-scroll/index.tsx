@@ -90,8 +90,8 @@ export function useScroll(
     listenTargets.push(document);
 
     /**
-     * Add common scrollable containers found in Next.js apps
-     * to ensure scroll detection works in various layouts
+     * Add common scrollable containers to ensure scroll
+     * detection works in various layouts.
      */
     const scrollableSelectors = [
       '[data-slot="page-layout"]',

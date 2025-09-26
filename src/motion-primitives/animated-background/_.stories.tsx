@@ -53,7 +53,7 @@ ${definition.usageCode}
     transition: {
       control: { type: "object" },
       description:
-        "Framer Motion transition configuration for the background animation",
+        "Motion transition configuration for the background animation",
       table: {
         type: { summary: "Transition" },
         category: "Animation",

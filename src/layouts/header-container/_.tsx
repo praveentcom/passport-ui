@@ -18,8 +18,8 @@ const headerContainerVariants = cva(
         false: "relative",
       },
       blurred: {
-        true: "backdrop-blur-md bg-sidebar/80",
-        false: "bg-sidebar",
+        true: "bg-background/80 backdrop-blur-md",
+        false: "bg-background",
       },
       bordered: {
         true: "border-border",

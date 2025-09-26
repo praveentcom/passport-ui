@@ -11,13 +11,13 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Passport UI - Docs",
   description:
-    "Docs for Passport UI - 75+ elegant UI components composed on top of shadcn/ui with Tailwind CSS, Radix UI, and Framer Motion.",
+    "Docs for Passport UI - 75+ elegant UI components composed on top of shadcn/ui with Tailwind CSS, Radix UI, and Motion.",
   keywords: [
     "Passport UI",
     "React Components",
     "Tailwind CSS",
     "Radix UI",
-    "Framer Motion",
+    "Motion",
     "Next.js",
     "Component Library",
     "Design System",
@@ -40,18 +40,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Passport UI - Docs",
     description:
-      "Docs for Passport UI - 75+ elegant UI components composed on top of shadcn/ui with Tailwind CSS, Radix UI, and Framer Motion.",
+      "Docs for Passport UI - 75+ elegant UI components composed on top of shadcn/ui with Tailwind CSS, Radix UI, and Motion.",
     url: "https://passportui.com",
     siteName: "Passport UI",
     images: [
       {
-        url: "https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png",
+        url: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph%402x.png",
         width: 1200,
         height: 630,
         alt: "Passport UI - Docs",
       },
       {
-        url: "https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_dark%401x.png",
+        url: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_external_dark%401x.png",
         width: 512,
         height: 512,
         alt: "Passport UI - Logo",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "Passport UI - Docs",
     description: "Docs for Passport UI - 75+ elegant UI components composed on top of shadcn/ui.",
     images: [
-      "https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png",
+      "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph%402x.png",
     ],
   },
   robots: {
@@ -81,11 +81,11 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png",
+    icon: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_external_light%401x.png",
     shortcut:
-      "https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png",
+      "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_external_light%401x.png",
     apple:
-      "https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png",
+      "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_external_light%401x.png",
   },
 };
 

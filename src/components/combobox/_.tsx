@@ -65,7 +65,7 @@ export function Combobox({
           aria-expanded={open}
           data-slot="combobox"
           className={cn(
-            "border-input data-[placeholder]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 dark:bg-input/30 bg-card flex h-8 w-full items-center justify-between gap-2 rounded-sm border px-2 py-1 text-sm shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50",
+            "data-[placeholder]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 border-input bg-card dark:bg-input/10 hover:bg-input/20 focus:bg-input/20 flex h-8 w-full items-center justify-between gap-2 rounded-sm border px-2 py-1 text-sm shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50",
             !selectedOption && "text-muted-foreground",
             className
           )}
