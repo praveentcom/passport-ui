@@ -28,24 +28,25 @@ export default function HomePage() {
       <div className="relative h-[calc(100vh-100px)] w-full">
         <HoverDotsGL />
         <div className="absolute inset-0 flex items-center justify-center">
-          <Card className="w-max pt-10 pb-14 px-12 md:px-14 mb-12 mx-8">
-          <SequentialReveal className="section-container text-center">
-              <div className="meta-container gap-y-2.5 pb-4">
+          <Card className="w-max pt-10 pb-14 px-8 md:px-12 mb-12 mx-8">
+            <SequentialReveal className="section-container text-center">
+              <div className="list-container pb-4">
                 <h1 className="tracking-tight leading-normal">
-                  Build UI Faster. Ship Effortlessly ⚡️
+                  Build Faster. <br className="md:hidden" /> Ship Effortlessly.
                 </h1>
                 <p className="max-w-lg mx-auto text-muted-foreground">
                   Built on top of shadcn/ui's excellent foundation, but as a complete library solution.
                   Explore the collection of 75+ premium components, composed with Tailwind CSS, Radix UI, and Motion.
                 </p>
               </div>
-              <div className="flex gap-3 justify-center items-center">
+              <div className="grid md:flex gap-3 justify-center items-center">
                 <Button variant="primary" asChild>
                   <Link href="/installation">
                     Get Started →
                   </Link>
                 </Button>
                 
+                <div className="flex gap-3 justify-center items-center">
                 <Button asChild>
                   <Link href={SITE_CONFIG.storybook} target="_blank" rel="noopener noreferrer">
                     Storybook {"\u2197"}
@@ -58,6 +59,7 @@ export default function HomePage() {
                     GitHub {"\u2197"}
                   </Link>
                 </Button>
+              </div>
               </div>
               <div className="flex gap-3 justify-center items-center opacity-60">
                 <Link href={`${SITE_CONFIG.repository}/blob/main/LICENSE.md`} target="_blank" rel="noopener noreferrer">
@@ -75,7 +77,7 @@ export default function HomePage() {
                     </TooltipContent>
                   </Tooltip>
                 </Link>
-                <span className="flex items-center gap-3 before:block before:content-['•']">Fully Typed</span>
+                <span className="hidden md:flex items-center gap-3 before:block before:content-['•']">Fully Typed</span>
               </div>
               </SequentialReveal>
           </Card>

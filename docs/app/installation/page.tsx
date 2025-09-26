@@ -5,18 +5,37 @@ import { ContentContainer } from "../../../src/layouts/content-container";
 import { SITE_CONFIG, createPageStructuredData } from "../../constants";
 import { generateBreadcrumbs } from "../../utils/breadcrumbs";
 
-const INSTALLATION_CODE = {
-  PACKAGE_INSTALL: `npm install passport-ui`,
-  POSTCSS_SETUP: `export default {
+const INSTALLATION_STEPS = [
+  {
+    title: "Install the passport-ui package",
+    code: `npm install passport-ui`,
+    filename: "zsh/bash",
+    hideLineNumbers: true,
+    language: "shell",
+  },
+  {
+    title: "Configure PostCSS to use tailwindcss",
+    code: `export default {
   plugins: ["@tailwindcss/postcss"],
 };`,
-  CSS_IMPORT: `@source '../../node_modules/passport-ui/src';
+    filename: "postcss.config.mjs",
+    hideLineNumbers: false,
+    language: "javascript",
+  },
+  {
+    title: "Import passport-ui styles in your main stylesheet",
+    code: `@source '../../node_modules/passport-ui/src';
 @import 'passport-ui/styles.css';
 
-/* Optional styles based on requirement */
-@import 'passport-ui/hljs-themes.css'; /* for code highlighting */
-@import 'passport-ui/tailwind-colors.css'; /* for runtime usage */`,
-  THEME_PROVIDER: `import { ThemeProvider } from "passport-ui";
+/* Optional: for code highlighting */
+@import 'passport-ui/hljs-themes.css';`,
+    filename: "styles.css",
+    hideLineNumbers: false,
+    language: "css",
+  },
+  {
+    title: "Wrap your app with the theme provider",
+    code: `import { ThemeProvider } from "passport-ui";
 
 function App() {
   return (
@@ -25,7 +44,13 @@ function App() {
     </ThemeProvider>
   );
 }`,
-  COMPONENTS_IMPORT: `import {
+    filename: "app.tsx",
+    hideLineNumbers: false,
+    language: "typescript",
+  },
+  {
+    title: "Use the components (example: Button, Card, etc.)",
+    code: `import {
   Button,
   Card,
   CardContent
@@ -40,7 +65,11 @@ function App() {
     </Card>
   );
 }`,
-};
+    filename: "app.tsx",
+    hideLineNumbers: false,
+    language: "typescript",
+  }
+]
 
 export default function InstallationPage() {
   const breadcrumbs = generateBreadcrumbs("/");
@@ -65,69 +94,20 @@ export default function InstallationPage() {
           the steps below.
         </p>
       </div>
-      <div className="meta-container gap-y-0.5">
-        <p>
-          <span className="font-medium">Step 1:</span>{" "}
-          <span className="font-normal">Install the passport-ui package</span>
-        </p>
+      {INSTALLATION_STEPS.map((step, index) => (
+        <div className="list-container" key={index}>
+          <div className="meta-container gap-0">
+            <p className="text-md font-medium">Step {index + 1}</p>
+            <span>{step.title}</span>
+          </div>
         <CodeBlock
-          filename="zsh/bash"
-          hideLineNumbers
-          code={INSTALLATION_CODE.PACKAGE_INSTALL}
+          filename={step.filename}
+          language={step.language || "typescript"}
+          code={step.code}
+          hideLineNumbers={step.hideLineNumbers}
         />
-      </div>
-      <div className="meta-container gap-y-0.5">
-        <p>
-          <span className="font-medium">Step 2:</span>{" "}
-          <span className="font-normal">
-            Configure PostCSS to use tailwindcss
-          </span>
-        </p>
-        <CodeBlock
-          filename="postcss.config.mjs"
-          language="javascript"
-          code={INSTALLATION_CODE.POSTCSS_SETUP}
-        />
-      </div>
-      <div className="meta-container gap-y-0.5">
-        <p>
-          <span className="font-medium">Step 3:</span>{" "}
-          <span className="font-normal">
-            Import passport-ui styles in your main stylesheet
-          </span>
-        </p>
-        <CodeBlock
-          filename="styles.css"
-          language="css"
-          code={INSTALLATION_CODE.CSS_IMPORT}
-        />
-      </div>
-      <div className="meta-container gap-y-0.5">
-        <p>
-          <span className="font-medium">Step 4:</span>{" "}
-          <span className="font-normal">
-            Wrap your app with the theme provider
-          </span>
-        </p>
-        <CodeBlock
-          filename="app.tsx"
-          language="typescript"
-          code={INSTALLATION_CODE.THEME_PROVIDER}
-        />
-      </div>
-      <div className="meta-container gap-y-0.5">
-        <p>
-          <span className="font-medium">Step 5:</span>{" "}
-          <span className="font-normal">
-            Use the components (example: Button, Card, etc.)
-          </span>
-        </p>
-        <CodeBlock
-          filename="app.tsx"
-          language="typescript"
-          code={INSTALLATION_CODE.COMPONENTS_IMPORT}
-        />
-      </div>
+        </div>
+      ))}
     </ContentContainer>
   );
 }

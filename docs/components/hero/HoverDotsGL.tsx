@@ -67,7 +67,7 @@ export function HoverDotsGL({
   maxOpacity = 0.5,
   hoverRadius = 150,
   zoomFactor = 3.0,
-  color = { default: "#565656", dark: "#646464" },
+  color = { default: "#525252", dark: "#454545" },
   className,
 }: HoverDotsGLProps) {
   return (

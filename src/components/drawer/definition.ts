@@ -23,7 +23,7 @@ import { Button } from "passport-ui";`,
     <Button variant="outline">Open Drawer</Button>
   </DrawerTrigger>
   <DrawerContent>
-    <div className="mx-auto w-full max-w-sm section-container">
+    <div className="mx-auto w-full max-w-md section-container">
       <div className="meta-container">
         <h3>Drawer component</h3>
         <p>
