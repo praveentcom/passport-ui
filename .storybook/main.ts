@@ -42,7 +42,7 @@ const config: StorybookConfig = {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Passport UI - React Component Library designed for building apps blazingly fast" />
     <meta name="twitter:description" content="Built on top of shadcn/ui's excellent foundation, but designed as a complete library solution. Explore the collection of 75+ premium components, composed with Tailwind CSS, Radix UI, and Motion." />
-    <meta name="twitter:image" content="https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph_light%402x.png" />
+    <meta name="twitter:image" content="https://storage.googleapis.com/praveentcom-public/projects/passport-ui/twitter_light%402x.png" />
     <meta name="twitter:image:alt" content="Passport UI - React Component Library designed for building apps blazingly fast" />
     
     <!-- Additional Meta Tags -->
