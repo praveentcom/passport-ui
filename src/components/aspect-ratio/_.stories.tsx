@@ -18,8 +18,6 @@ const meta: Meta<typeof AspectRatio> = {
 ## Components
 - **AspectRatio**: Container that maintains specific aspect ratios
 
-// Guidelines: Common ratios - 16:9 (1.78), 4:3 (1.33), 1:1 (1.0), 3:2 (1.5), 21:9 (2.33)
-
 ## Code
 \`\`\`tsx import
 ${definition.importCode}

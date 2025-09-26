@@ -1,6 +1,6 @@
-# Passport UI - Installation Site
+# Passport UI - Docs
 
-This is the installation documentation site for Passport UI, built with Next.js and using the actual Passport UI components as a test bed.
+This is the documentation site for Passport UI, built with Next.js and using the actual Passport UI components as a test bed.
 
 ## Development
 

@@ -16,7 +16,7 @@ export function generateBreadcrumbs(pathname: string): BreadcrumbPath[] {
 
   // Handle root path
   if (cleanPath === "/") {
-    return [{ href: "/", label: "Installation" }];
+    return [{ href: "/", label: "Introduction" }];
   }
 
   // Handle primary navigation pages
@@ -101,7 +101,7 @@ export function getPageTitle(pathname: string): string | undefined {
 
   // Handle root path
   if (cleanPath === "/") {
-    return "Installation";
+    return "Introduction";
   }
 
   // Handle primary navigation pages

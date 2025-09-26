@@ -37,8 +37,8 @@ import {
 const sidebarVariants = cva("text-foreground", {
   variants: {
     blurred: {
-      true: "bg-sidebar/80 backdrop-blur-md",
-      false: "bg-sidebar",
+      true: "bg-background/80 backdrop-blur-md",
+      false: "bg-background",
     },
   },
   defaultVariants: {
@@ -159,7 +159,7 @@ function SidebarProvider({
             } as React.CSSProperties
           }
           className={cn(
-            "group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-full w-full",
+            "group/sidebar-wrapper has-data-[variant=inset]:bg-background flex min-h-full w-full",
             className
           )}
           {...props}
@@ -355,7 +355,7 @@ function SidebarInput({
         data-slot="sidebar-input"
         data-sidebar="input"
         autoFocus={false}
-        className={cn("bg-background -mb-1 w-full shadow-none", className)}
+        className={cn("-mb-1 w-full shadow-none", className)}
         {...props}
       />
     </div>
@@ -473,7 +473,7 @@ function SidebarGroupLabel({
       data-sidebar="group-label"
       className={cn(
         "text-muted-foreground/75 ring-ring flex h-8 shrink-0 items-center rounded-sm px-2 text-xxs uppercase tracking-widest font-semibold outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0",
-        "group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0",
+        "-mt-1 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0",
         className
       )}
       {...props}

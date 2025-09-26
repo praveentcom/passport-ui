@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { usePathname } from "next/navigation";
 
@@ -25,6 +25,7 @@ import { PRIMARY_NAVIGATION_PAGES } from "../constants/primary-navigation";
 import { CATEGORY_LABELS, COMPONENTS_BY_CATEGORY } from "../utils";
 import { getPageTitle } from "../utils/breadcrumbs";
 import { filterAndSortNavigation } from "../utils/navigation-sort";
+import { Home } from "lucide-react";
 
 type NavigationGroup = {
   label: string;
@@ -39,6 +40,14 @@ const generateNavigationGroups = (
   searchText: string = ""
 ): NavigationGroup[] => {
   const baseGroups: NavigationGroup[] = [
+    {
+      label: '',
+      items: [{
+        title: "Introduction",
+        href: "/",
+        icon: Home,
+      }],
+    },
     {
       label: "Getting Started",
       items: PRIMARY_NAVIGATION_PAGES,
@@ -122,7 +131,7 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
             <PrefetchLink href="/" onClick={handleLinkClick}>
               <div className="meta-container">
                 <h3 className="line-clamp-1">Passport UI</h3>
-                <p className="line-clamp-1">Compact UI Components</p>
+                <p className="line-clamp-1">Compose with elegance</p>
               </div>
             </PrefetchLink>
           }
@@ -133,8 +142,12 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
           }
         >
           {filteredGroups.map((group) => (
-            <SidebarGroup key={group.label}>
-              <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
+            <SidebarGroup key={group.label ?? "default"}>
+              {
+                group.label && (
+                  <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
+                )
+              }
               <SidebarGroupContent>
                 <SidebarMenu>
                   {group.items.map((item) => {

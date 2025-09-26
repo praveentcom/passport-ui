@@ -3,10 +3,10 @@ import { AUTHOR } from "../../src/constants";
 // Base URLs and site info
 export const SITE_CONFIG = {
   baseUrl: "https://passportui.com",
-  name: "Passport UI",
-  title: "Passport UI - Docs",
+  name: "Passport UI - React Component Library designed for building apps blazingly fast",
+  title: "Passport UI - React Component Library designed for building apps blazingly fast",
   description:
-    "Installation guide for Passport UI - 75+ elegant UI components composed with Tailwind CSS, Radix UI, and Framer Motion.",
+    "Built on top of shadcn/ui's excellent foundation, but designed as a complete library solution. Explore the collection of 75+ premium components, composed with Tailwind CSS, Radix UI, and Motion.",
   author: {
     name: AUTHOR.name,
     url: AUTHOR.url,
@@ -17,17 +17,21 @@ export const SITE_CONFIG = {
   storybook: "https://storybook.passportui.com",
   images: {
     openGraph:
-      "https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png",
-    logo: "https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png",
+      "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph%402x.png",
+    logo: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_external_light%401x.png",
+    logoSquareDark: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_square_dark%401x.png",
+    logoSquareLight: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_square_light%401x.png",
+    logoHorizontalDark: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_horizontal_dark%401x.png",
+    logoHorizontalLight: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_horizontal_light%401x.png",
   },
 } as const;
 
 // Base structured data for the software application
 export const BASE_SOFTWARE_APPLICATION = {
   "@type": "SoftwareApplication",
-  name: "Passport UI",
+  name: "Passport UI - React Component Library designed for building apps blazingly fast",
   description:
-    "React UI component library built with Tailwind CSS, Radix UI, and Framer Motion. Collection of accessible components for Next.js applications.",
+    "Built on top of shadcn/ui's excellent foundation, but designed as a complete library solution. Explore the collection of 75+ premium components, composed with Tailwind CSS, Radix UI, and Motion.",
   url: SITE_CONFIG.mainSite,
   author: {
     "@type": "Person",
@@ -54,7 +58,7 @@ export const BASE_SOFTWARE_APPLICATION = {
   downloadUrl: SITE_CONFIG.npm,
   codeRepository: SITE_CONFIG.repository,
   softwareVersion: "latest",
-  releaseNotes: "React UI component library with accessibility support",
+  releaseNotes: "https://github.com/praveentcom/passport-ui/releases",
 } as const;
 
 // Structured data generators

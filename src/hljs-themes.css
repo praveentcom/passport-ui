@@ -74,7 +74,7 @@
 .passport-ui.hljs-theme-vs .hljs,
 .passport-ui .hljs-theme-vs .hljs {
   --hljs-bg: #ffffff;
-  --hljs-color: #000000;
+  --hljs-color: #0b0b0b;
   --hljs-comment: #008000;
   --hljs-keyword: #0000ff;
   --hljs-string: #a31515;
@@ -87,7 +87,7 @@
 
 .dark .passport-ui.hljs-theme-vs .hljs,
 .dark .passport-ui .hljs-theme-vs .hljs {
-  --hljs-bg: #1e1e1e;
+  --hljs-bg: #0b0b0b;
   --hljs-color: #d4d4d4;
   --hljs-comment: #6a9955;
   --hljs-keyword: #569cd6;
@@ -147,7 +147,7 @@
 /* Tokyo Night Theme */
 .passport-ui.hljs-theme-tokyo-night .hljs,
 .passport-ui .hljs-theme-tokyo-night .hljs {
-  --hljs-bg: #1a1b26;
+  --hljs-bg: #0b0b0b;
   --hljs-color: #c0caf5;
   --hljs-comment: #565f89;
   --hljs-keyword: #bb9af7;

@@ -18,37 +18,37 @@ const config: StorybookConfig = {
     </script>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png" />
-    <link rel="shortcut icon" type="image/png" href="https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png" />
-    <link rel="apple-touch-icon" href="https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png" />
+    <link rel="icon" type="image/png" href="https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_external_light%401x.png" />
+    <link rel="shortcut icon" type="image/png" href="https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_external_light%401x.png" />
+    <link rel="apple-touch-icon" href="https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_external_light%401x.png" />
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Passport UI - Sleek and compact UI component library" />
-    <meta property="og:description" content="Sleek and compact UI component library built with Tailwind CSS, Radix UI, and Framer Motion. Comprehensive collection of accessible components for Next.js applications." />
+    <meta property="og:title" content="Passport UI - React Component Library designed for building apps blazingly fast" />
+    <meta property="og:description" content="Built on top of shadcn/ui's excellent foundation, but designed as a complete library solution. Explore the collection of 75+ premium components, composed with Tailwind CSS, Radix UI, and Motion." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://passportui.com/" />
-    <meta property="og:image" content="https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png" />
+    <meta property="og:image" content="https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph%402x.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Passport UI - Sleek and compact UI component library" />
-    <meta property="og:site_name" content="Passport UI" />
+    <meta property="og:image:alt" content="Passport UI - React Component Library designed for building apps blazingly fast" />
+    <meta property="og:site_name" content="Passport UI - React Component Library designed for building apps blazingly fast" />
     <meta property="og:locale" content="en_US" />
     
     <!-- GitHub Repository Link -->
     <meta property="article:author" content="https://github.com/praveentcom/passport-ui" />
-    <link rel="alternate" type="application/rss+xml" title="Passport UI Repository" href="https://github.com/praveentcom/passport-ui" />
+    <link rel="alternate" type="application/rss+xml" title="Passport UI - GitHub Repository" href="https://github.com/praveentcom/passport-ui" />
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Passport UI - Sleek and compact UI component library" />
-    <meta name="twitter:description" content="Sleek and compact UI component library built with Tailwind CSS, Radix UI, and Framer Motion." />
-    <meta name="twitter:image" content="https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png" />
-    <meta name="twitter:image:alt" content="Passport UI Component Library" />
+    <meta name="twitter:title" content="Passport UI - React Component Library designed for building apps blazingly fast" />
+    <meta name="twitter:description" content="Built on top of shadcn/ui's excellent foundation, but designed as a complete library solution. Explore the collection of 75+ premium components, composed with Tailwind CSS, Radix UI, and Motion." />
+    <meta name="twitter:image" content="https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph%402x.png" />
+    <meta name="twitter:image:alt" content="Passport UI - React Component Library designed for building apps blazingly fast" />
     
     <!-- Additional Meta Tags -->
-    <meta name="description" content="Sleek and compact UI component library built with Tailwind CSS, Radix UI, and Framer Motion. Comprehensive collection of accessible components for Next.js applications." />
-    <meta name="keywords" content="React, UI Components, Tailwind CSS, Radix UI, Framer Motion, Next.js, Component Library, Design System, Sleek, Compact" />
-    <meta name="author" content="Passport UI Team" />
+    <meta name="description" content="Built on top of shadcn/ui's excellent foundation, but designed as a complete library solution. Explore the collection of 75+ premium components, composed with Tailwind CSS, Radix UI, and Motion." />
+    <meta name="keywords" content="React, UI Components, Tailwind CSS, Radix UI, Motion, Next.js, Component Library, Design System, Sleek, Compact" />
+    <meta name="author" content="Praveen Thirumurugan" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://passportui.com/" />
     
@@ -57,12 +57,12 @@ const config: StorybookConfig = {
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "Passport UI",
-      "description": "Sleek and compact UI component library built with Tailwind CSS, Radix UI, and Framer Motion. Comprehensive collection of accessible components for Next.js applications.",
+      "name": "Passport UI - React Component Library designed for building apps blazingly fast",
+      "description": "Built on top of shadcn/ui's excellent foundation, but designed as a complete library solution. Explore the collection of 75+ premium components, composed with Tailwind CSS, Radix UI, and Motion.",
       "url": "https://passportui.com/",
       "author": {
         "@type": "Organization",
-        "name": "Passport UI Team",
+        "name": "Praveen Thirumurugan",
         "url": "https://github.com/praveentcom/passport-ui"
       },
       "applicationCategory": "DeveloperApplication",
@@ -85,8 +85,8 @@ const config: StorybookConfig = {
       "downloadUrl": "https://www.npmjs.com/package/passport-ui",
       "codeRepository": "https://github.com/praveentcom/passport-ui",
       "softwareVersion": "latest",
-      "releaseNotes": "Sleek and compact React UI component library with comprehensive accessibility support",
-      "screenshot": "https://storage.googleapis.com/praveentcom-projects/passport-ui/open_graph%402x.png"
+      "releaseNotes": "https://github.com/praveentcom/passport-ui/releases",
+      "screenshot": "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph%402x.png"
     }
     </script>
   `,
@@ -103,10 +103,10 @@ const config: StorybookConfig = {
     </script>
     
     <!-- Favicon for preview iframe -->
-    <link rel="icon" type="image/png" href="https://storage.googleapis.com/praveentcom-projects/passport-ui/logo_external_light%401x.png" />
+    <link rel="icon" type="image/png" href="https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_external_light%401x.png" />
     
     <!-- Preview-specific meta tags -->
-    <meta name="description" content="Passport UI Component Library - Interactive component preview" />
+    <meta name="description" content="Passport UI - React Component Library designed for building apps blazingly fast" />
     <meta name="robots" content="index, follow" />
   `,
   framework: {

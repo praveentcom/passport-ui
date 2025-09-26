@@ -1,133 +1,90 @@
-import { Breadcrumb } from "../../src/components/breadcrumb";
-import { CodeBlock } from "../../src/components/code-block";
+import Link from "next/link";
+import { Github } from "lucide-react";
+
+import { Button } from "../../src/components/button";
+import { Card } from "../../src/components/card";
 import { StructuredData } from "../../src/components/structured-data";
 import { ContentContainer } from "../../src/layouts/content-container";
 import { SITE_CONFIG, createPageStructuredData } from "../constants";
-import { generateBreadcrumbs } from "../utils/breadcrumbs";
+import { Separator } from "../../src/components/separator";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../../src/components/tooltip";
+import { HoverDotsGL } from "../components/hero/HoverDotsGL";
+import { SequentialReveal } from "../../src/motion-primitives/sequential-reveal";
 
-const INSTALLATION_CODE = {
-  PACKAGE_INSTALL: `npm install passport-ui`,
-  POSTCSS_SETUP: `export default {
-  plugins: ["@tailwindcss/postcss"],
-};`,
-  CSS_IMPORT: `@source '../../node_modules/passport-ui/src';
-@import 'passport-ui/styles.css';
-
-/* Optional styles based on requirement */
-@import 'passport-ui/hljs-themes.css'; /* Optional: for code highlighting */
-@import 'passport-ui/tailwind-colors.css'; /* Optional: dynamic usage of tailwind colors */`,
-  THEME_PROVIDER: `import { ThemeProvider } from "passport-ui";
-
-function App() {
+export default function HomePage() {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      {/* Your app content */}
-    </ThemeProvider>
-  );
-}`,
-  COMPONENTS_IMPORT: `import {
-  Button,
-  Card,
-  CardContent
-} from "passport-ui";
-
-function App() {
-  return (
-    <Card>
-      <CardContent>
-        <Button>Click me</Button>
-      </CardContent>
-    </Card>
-  );
-}`,
-};
-
-export default function InstallationPage() {
-  const breadcrumbs = generateBreadcrumbs("/");
-
-  return (
-    <ContentContainer variant="broad">
-      {breadcrumbs.length > 1 && <Breadcrumb path={breadcrumbs} />}
+    <>
       <StructuredData
         data={createPageStructuredData({
-          name: "Passport UI - Installation",
+          name: "Passport UI - React Component Library",
           description:
-            "Installation guide for Passport UI - 75+ elegant UI components composed with Tailwind CSS, Radix UI, and Framer Motion.",
-          url: SITE_CONFIG.baseUrl + "/",
-          breadcrumbName: "Installation",
-          breadcrumbUrl: SITE_CONFIG.baseUrl + "/",
+            "75+ elegant UI components with motion primitives and theme support. Built with React, TypeScript, Tailwind CSS, and Radix UI.",
+          url: SITE_CONFIG.baseUrl,
+          breadcrumbName: "Home",
+          breadcrumbUrl: SITE_CONFIG.baseUrl,
         })}
       />
-      <div className="meta-container">
-        <h1>Installation</h1>
-        <p>
-          To get started, install the library and its dependencies by following
-          the steps below.
-        </p>
+
+      <div className="relative h-[calc(100vh-100px)] w-full">
+        <HoverDotsGL />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Card className="w-max pt-10 pb-14 px-12 md:px-14 mb-12 mx-8">
+          <SequentialReveal className="section-container text-center">
+              <div className="meta-container gap-y-2.5 pb-4">
+                <h1 className="tracking-tight leading-normal">
+                  Build UI Faster. Ship Effortlessly ⚡️
+                </h1>
+                <p className="max-w-lg mx-auto text-muted-foreground">
+                  Built on top of shadcn/ui's excellent foundation, but as a complete library solution.
+                  Explore the collection of 75+ premium components, composed with Tailwind CSS, Radix UI, and Motion.
+                </p>
+              </div>
+              <div className="flex gap-3 justify-center items-center">
+                <Button variant="primary" asChild>
+                  <Link href="/installation">
+                    Get Started →
+                  </Link>
+                </Button>
+                
+                <Button asChild>
+                  <Link href={SITE_CONFIG.storybook} target="_blank" rel="noopener noreferrer">
+                    Storybook {"\u2197"}
+                  </Link>
+                </Button>
+                
+                <Button asChild>
+                  <Link href={SITE_CONFIG.repository} target="_blank" rel="noopener noreferrer">
+                    <Github />
+                    GitHub {"\u2197"}
+                  </Link>
+                </Button>
+              </div>
+              <div className="flex gap-3 justify-center items-center opacity-60">
+                <Link href={`${SITE_CONFIG.repository}/blob/main/LICENSE.md`} target="_blank" rel="noopener noreferrer">
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <span className="flex items-center gap-3 underline-offset-4 cursor-pointer underline decoration-muted-foreground/50 hover:decoration-muted-foreground">
+                        100% Open Source
+                      </span>
+                    </TooltipTrigger>
+                    <TooltipContent
+                      side="bottom"
+                      align="center"
+                    >
+                      <span className="text-xs">Covered under MIT License</span>
+                    </TooltipContent>
+                  </Tooltip>
+                </Link>
+                <span className="flex items-center gap-3 before:block before:content-['•']">Fully Typed</span>
+              </div>
+              </SequentialReveal>
+          </Card>
+        </div>
       </div>
-      <div className="meta-container gap-y-0.5">
-        <p>
-          <span className="font-medium">Step 1:</span>{" "}
-          <span className="font-normal">Install the passport-ui package</span>
-        </p>
-        <CodeBlock
-          filename="zsh/bash"
-          hideLineNumbers
-          code={INSTALLATION_CODE.PACKAGE_INSTALL}
-        />
-      </div>
-      <div className="meta-container gap-y-0.5">
-        <p>
-          <span className="font-medium">Step 2:</span>{" "}
-          <span className="font-normal">
-            Configure PostCSS to use tailwindcss
-          </span>
-        </p>
-        <CodeBlock
-          filename="postcss.config.mjs"
-          language="javascript"
-          code={INSTALLATION_CODE.POSTCSS_SETUP}
-        />
-      </div>
-      <div className="meta-container gap-y-0.5">
-        <p>
-          <span className="font-medium">Step 3:</span>{" "}
-          <span className="font-normal">
-            Import passport-ui styles in your main stylesheet
-          </span>
-        </p>
-        <CodeBlock
-          filename="styles.css"
-          language="css"
-          code={INSTALLATION_CODE.CSS_IMPORT}
-        />
-      </div>
-      <div className="meta-container gap-y-0.5">
-        <p>
-          <span className="font-medium">Step 4:</span>{" "}
-          <span className="font-normal">
-            Wrap your app with the theme provider
-          </span>
-        </p>
-        <CodeBlock
-          filename="app.tsx"
-          language="typescript"
-          code={INSTALLATION_CODE.THEME_PROVIDER}
-        />
-      </div>
-      <div className="meta-container gap-y-0.5">
-        <p>
-          <span className="font-medium">Step 5:</span>{" "}
-          <span className="font-normal">
-            Use the components (example: Button, Card, etc.)
-          </span>
-        </p>
-        <CodeBlock
-          filename="app.tsx"
-          language="typescript"
-          code={INSTALLATION_CODE.COMPONENTS_IMPORT}
-        />
-      </div>
-    </ContentContainer>
+      
+      <ContentContainer variant="broad">
+        <Separator fadedEdges className="mt-12 mb-8" />
+      </ContentContainer>
+    </>
   );
 }

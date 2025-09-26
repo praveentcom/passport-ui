@@ -169,15 +169,6 @@ const interfaceColors = [
     border: true,
   },
   {
-    name: "Popover",
-    variable: "popover",
-    bg: "bg-popover",
-    text: "text-popover-foreground",
-    class: "bg-popover",
-    description: "Overlay backgrounds",
-    border: true,
-  },
-  {
     name: "Input",
     variable: "input",
     bg: "bg-input",
@@ -232,18 +223,6 @@ const chartColors = [
     bg: "bg-chart-5",
     text: "text-white",
     class: "bg-chart-5",
-  },
-];
-
-const sidebarColors = [
-  {
-    name: "Sidebar",
-    variable: "sidebar",
-    bg: "bg-sidebar",
-    text: "text-foreground",
-    class: "bg-sidebar",
-    description: "Sidebar background",
-    border: true,
   },
 ];
 
@@ -383,22 +362,6 @@ const ColorsDocs = () => (
         <div className="list-container">
           <div className="grid grid-cols-5 gap-4">
             {chartColors.map((color) => (
-              <ColorCard key={color.name} color={color} />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <Separator />
-
-      <div className="section-container">
-        <div className="meta-container">
-          <h3>Sidebar Colors</h3>
-          <p>Specialized colors for sidebar and navigation components.</p>
-        </div>
-        <div className="list-container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-8">
-            {sidebarColors.map((color) => (
               <ColorCard key={color.name} color={color} />
             ))}
           </div>

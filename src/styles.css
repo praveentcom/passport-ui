@@ -57,7 +57,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-sidebar: var(--sidebar);
   --color-chart-5: var(--chart-5);
   --color-chart-4: var(--chart-4);
   --color-chart-3: var(--chart-3);
@@ -88,8 +87,6 @@
   --color-destructive-muted: var(--destructive-muted);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-destructive-muted-foreground: var(--destructive-muted-foreground);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
   --radius-xs: 0.225rem;
@@ -111,83 +108,77 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(0.99 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
-  --popover: oklch(0.99 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.2649 0.0018 286.27);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.9 0.001 286.375);
-  --secondary-foreground: oklch(0.2649 0.0018 286.27);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.3 0.016 285.938);
-  --info: oklch(0.528 0.225 262.55);
-  --info-muted: oklch(0.964 0.0141 268.49);
-  --info-foreground: oklch(0.985 0 0);
-  --info-muted-foreground: oklch(0.528 0.225 262.55);
-  --success: oklab(51.976% -0.14032 0.10763);
-  --success-muted: oklch(0.9733 0.0454 145.22);
-  --success-foreground: oklch(0.985 0 0);
-  --success-muted-foreground: oklab(51.976% -0.14032 0.10763);
-  --warning: oklch(0.6877 0.208 40.13);
-  --warning-muted: oklch(0.9741 0.0143 50.81);
-  --warning-foreground: oklch(0.985 0 0);
-  --warning-muted-foreground: oklch(0.6877 0.208 40.13);
-  --destructive: oklch(0.557 0.1974 25.17);
-  --destructive-muted: oklch(0.9577 0.023 357.34);
-  --destructive-foreground: oklch(0.985 0 0);
-  --destructive-muted-foreground: oklch(0.557 0.1974 25.17);
-  --border: oklch(0.9 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.705 0.015 286.067);
-  --chart-1: oklch(0.528 0.225 262.55);
-  --chart-2: oklch(0.5198 0.176858 142.4953);
-  --chart-3: oklch(0.6877 0.208 40.13);
-  --chart-4: oklch(0.557 0.1974 25.17);
-  --chart-5: oklch(0.6877 0.208 40.13);
-  --sidebar: oklch(1 0 0);
+  --foreground: oklch(0.05 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.05 0 0);
+  --primary: oklch(0.2 0 0);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.9 0 0);
+  --secondary-foreground: oklch(0.2 0 0);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.36 0 0);
+  --info: oklch(0.53 0.22 262);
+  --info-muted: oklch(0.96 0.02 268);
+  --info-foreground: oklch(0.98 0 0);
+  --info-muted-foreground: oklch(0.53 0.22 262);
+  --success: oklab(51.97% -0.14 0.10);
+  --success-muted: oklch(0.97 0.05 145);
+  --success-foreground: oklch(0.98 0 0);
+  --success-muted-foreground: oklab(51.97% -0.14 0.10);
+  --warning: oklch(0.68 0.20 40);
+  --warning-muted: oklch(0.97 0.01 50);
+  --warning-foreground: oklch(0.98 0 0);
+  --warning-muted-foreground: oklch(0.68 0.20 40);
+  --destructive: oklch(0.55 0.19 25);
+  --destructive-muted: oklch(0.95 0.02 357);
+  --destructive-foreground: oklch(0.98 0 0);
+  --destructive-muted-foreground: oklch(0.55 0.19 25);
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.9 0 0);
+  --ring: oklch(0.76 0 0);
+  --chart-1: oklch(0.53 0.22 262);
+  --chart-2: oklch(0.51 0.17 142);
+  --chart-3: oklch(0.68 0.20 40);
+  --chart-4: oklch(0.55 0.19 25);
+  --chart-5: oklch(0.68 0.20 40);
 }
 
 /* Dark Mode Colors for Custom Properties */
 .dark {
-  --background: oklch(0.18 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.2 0.0018 286.27);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.2 0.0018 286.27);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.92 0.004 286.32);
-  --primary-foreground: oklch(0.2 0.0018 286.27);
-  --secondary: oklch(0.24 0.0018 286.27);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.24 0.0018 286.27);
-  --muted-foreground: oklch(0.8 0.015 286.067);
-  --info: oklch(0.528 0.225 262.55);
-  --info-muted: oklch(0.18 0.0018 286.27);
-  --info-foreground: oklch(0.985 0 0);
-  --info-muted-foreground: oklch(0.985 0 0);
+  --background: oklch(0.15 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.15 0 0);
+  --card-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.92 0 0);
+  --primary-foreground: oklch(0.2 0 0);
+  --secondary: oklch(0.24 0 0);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.24 0 0);
+  --muted-foreground: oklch(0.82 0 0);
+  --info: oklch(0.53 0.22 262);
+  --info-muted: oklch(0.18 0 0);
+  --info-foreground: oklch(0.98 0 0);
+  --info-muted-foreground: oklch(0.98 0 0);
   --success: oklch(0.45 0.11 164);
-  --success-muted: oklch(0.18 0.0018 286.27);
-  --success-foreground: oklch(0.985 0 0);
-  --success-muted-foreground: oklch(0.985 0 0);
+  --success-muted: oklch(0.18 0 0);
+  --success-foreground: oklch(0.98 0 0);
+  --success-muted-foreground: oklch(0.98 0 0);
   --warning: oklch(0.57 0.19 33);
-  --warning-muted: oklch(0.18 0.0018 286.27);
-  --warning-foreground: oklch(0.985 0 0);
-  --warning-muted-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.6256 0.1933 23.03);
-  --destructive-muted: oklch(0.18 0.0018 286.27);
-  --destructive-foreground: oklch(0.985 0 0);
-  --destructive-muted-foreground: oklch(0.985 0 0);
-  --border: oklch(0.3 0.002 270);
-  --input: oklch(0.32 0 0);
-  --ring: oklch(0.48 0.016 285.938);
-  --chart-1: oklch(0.528 0.225 262.55);
+  --warning-muted: oklch(0.18 0 0);
+  --warning-foreground: oklch(0.98 0 0);
+  --warning-muted-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.52 0.19 23);
+  --destructive-muted: oklch(0.18 0 0);
+  --destructive-foreground: oklch(0.98 0 0);
+  --destructive-muted-foreground: oklch(0.98 0 0);
+  --border: oklch(0.24 0 0);
+  --input: oklch(0.30 0 0);
+  --ring: oklch(0.42 0 0);
+  --chart-1: oklch(0.53 0.22 262);
   --chart-2: oklch(0.45 0.11 164);
   --chart-3: oklch(0.57 0.19 33);
-  --chart-4: oklch(0.6256 0.1933 23.03);
+  --chart-4: oklch(0.62 0.19 23);
   --chart-5: oklch(0.56 0.19 33);
-  --sidebar: oklch(0.2 0.0018 286.27);
 }
 
 /* Base Layer */
@@ -199,8 +190,7 @@
   }
 
   body {
-    @apply min-h-screen font-sans antialiased;
-    text-rendering: optimizeLegibility;
+    @apply min-h-screen font-sans dark:antialiased;
   }
 
   .passport-ui * {
@@ -217,7 +207,7 @@
   }
   .passport-ui ::-webkit-scrollbar-track,
   body::-webkit-scrollbar-track {
-    @apply bg-sidebar;
+    @apply bg-background;
   }
 
   .passport-ui {
@@ -273,16 +263,16 @@
     @apply mx-auto pt-3 md:pt-5 pb-8 px-4 grid gap-y-6 md:gap-y-8 gap-x-6 md:gap-x-8;
   }
   .passport-ui .section-container {
-    @apply grid gap-y-4 md:gap-y-5 gap-x-4 md:gap-x-5;
+    @apply grid gap-y-6 gap-x-6;
   }
   .passport-ui .list-container {
-    @apply grid gap-y-3.5 gap-x-4;
+    @apply grid gap-y-4 gap-x-4;
   }
   .passport-ui .card-container {
-    @apply grid gap-y-2.5 gap-x-3;
+    @apply grid gap-y-2.5 gap-x-4;
   }
   .passport-ui .meta-container {
-    @apply grid gap-y-0.25 gap-x-2 text-muted-foreground h-min text-sm w-full;
+    @apply grid gap-y-0.25 gap-x-2.5 text-muted-foreground h-min text-sm w-full;
   }
 }
 
@@ -338,7 +328,7 @@
     @apply bg-transparent text-xs font-mono;
   }
   .passport-ui .line-number {
-    @apply text-xs text-muted-foreground/80 font-mono select-none pr-2 text-right border-r border-border bg-sidebar flex-shrink-0;
+    @apply text-xs text-muted-foreground/80 font-mono select-none pr-2 text-right border-r border-border bg-background flex-shrink-0;
   }
   .passport-ui .line-content {
     @apply text-xs px-2.5 flex-1 min-w-0;
@@ -347,14 +337,4 @@
   .passport-ui .line-content pre {
     @apply text-xs;
   }
-
-  /*
-   * Highlight.js Theme Styles
-   * 
-   * For syntax highlighting themes in CodeBlock components, import the separate theme file:
-   * @import 'passport-ui/hljs-themes.css';
-   * 
-   * This provides themed colors for GitHub, Atom One, VS, Monokai, Dracula, Nord, 
-   * Tokyo Night, and Default themes with automatic light/dark mode support.
-   */
 }

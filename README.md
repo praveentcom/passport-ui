@@ -36,8 +36,8 @@ Import the library styles in your main CSS file:
 @import "passport-ui/styles.css";
 
 /* Optional styles based on requirement */
-@import "passport-ui/hljs-themes.css"; /* Optional: for code highlighting */
-@import "passport-ui/tailwind-colors.css"; /* Optional: dynamic usage of tailwind colors */
+@import "passport-ui/hljs-themes.css"; /* for code highlighting */
+@import "passport-ui/tailwind-colors.css"; /* for runtime usage */
 ```
 
 - For themed syntax highlighting in `CodeBlock` and `Markdown` components, import the theme styles.

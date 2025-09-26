@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { Code } from "lucide-react";
+import { CodeXml } from "lucide-react";
 import { Eye } from "lucide-react";
 
 import { Breadcrumb } from "../../../../src/components/breadcrumb";
@@ -90,7 +90,7 @@ export default async function CategoryComponentPage({
           </div>
           <Tabs defaultValue="code" className="w-full">
             <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="code" icon={Code}>
+              <TabsTrigger value="code" icon={CodeXml}>
                 Code
               </TabsTrigger>
               <TabsTrigger value="preview" icon={Eye}>

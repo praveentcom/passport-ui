@@ -46,7 +46,7 @@ export const SAMPLE_CONTENT_CONTAINER: ReactNode = (
     <div className="section-container">
       <div className="meta-container">
         <h3>Welcome to Passport UI</h3>
-        <p>A modern React component library for Next.js applications</p>
+        <p>A modern React component library for building apps blazingly fast</p>
       </div>
       <div className="list-container md:grid-cols-2">
         <Card>
@@ -69,7 +69,7 @@ export const SAMPLE_CONTENT_CONTAINER: ReactNode = (
           <CardContent>
             <div className="meta-container">
               <h3>Motion Primitives</h3>
-              <p>Beautiful animations powered by Framer Motion.</p>
+              <p>Beautiful animations powered by Motion.</p>
             </div>
           </CardContent>
         </Card>

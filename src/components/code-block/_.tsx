@@ -232,25 +232,30 @@ function CodeBlock({
       {...props}
     >
       {!filename && (
-        <CopyButton className="absolute top-2 right-2 z-10 p-1.5 bg-card/80 backdrop-blur-sm border border-border/50" />
+        <CopyButton className="absolute top-2 right-2 z-10 p-1.5 backdrop-blur-md border border-border/50" />
       )}
       {filename && (
         <div
           data-slot="code-block-header"
-          className="flex font-mono justify-between items-center gap-2 px-2.5 py-1 bg-sidebar border-b border-border text-xs text-muted-foreground/80"
+          className="flex justify-between items-center gap-2 px-2.5 py-1 dark:bg-background bg-border/10 border-b border-border text-muted-foreground"
         >
-          <>{filename}</>
           <div className="flex gap-2 items-center">
-            <CopyButton />
             {
               fileIcon && (
                 <div
+                  className="opacity-85"
                   dangerouslySetInnerHTML={{
                     __html: `${fileIcon}`,
                   }}
                 />
               )
             }
+            <span className="dark:font-medium tracking-tight">
+              {filename}
+            </span>
+          </div>
+          <div className="flex gap-2 items-center">
+            <CopyButton />
           </div>
         </div>
       )}

@@ -1,13 +1,9 @@
-import React from "react";
-
-import type { Meta, StoryObj } from "@storybook/nextjs";
-
-import { CodeBlock } from "../components/code-block";
-import { PrefetchLink } from "../components/prefetch-link";
-import { ThemeToggle } from "../composables/theme-toggle";
-import { AUTHOR } from "../constants";
-import { ContentContainer } from "../layouts/content-container";
-import { PageLayout } from "../layouts/page-layout";
+import { Breadcrumb } from "../../../src/components/breadcrumb";
+import { CodeBlock } from "../../../src/components/code-block";
+import { StructuredData } from "../../../src/components/structured-data";
+import { ContentContainer } from "../../../src/layouts/content-container";
+import { SITE_CONFIG, createPageStructuredData } from "../../constants";
+import { generateBreadcrumbs } from "../../utils/breadcrumbs";
 
 const INSTALLATION_CODE = {
   PACKAGE_INSTALL: `npm install passport-ui`,
@@ -19,7 +15,7 @@ const INSTALLATION_CODE = {
 
 /* Optional styles based on requirement */
 @import 'passport-ui/hljs-themes.css'; /* for code highlighting */
-@import 'passport-ui/tailwind-colors.css'; /* for dynamic construction of colors */`,
+@import 'passport-ui/tailwind-colors.css'; /* for runtime usage */`,
   THEME_PROVIDER: `import { ThemeProvider } from "passport-ui";
 
 function App() {
@@ -46,50 +42,28 @@ function App() {
 }`,
 };
 
-const InstallationDocs = () => (
-  <PageLayout
-    header={
-      <div className="flex justify-between items-center gap-4">
-        <h2>Passport UI</h2>
-        <ThemeToggle />
-      </div>
-    }
-    footer={
-      <div className="meta-container">
-        <h3>
-          Maintained by <a href={AUTHOR.url}>{AUTHOR.name}</a>
-        </h3>
-        <div className="flex gap-2 items-center">
-          <PrefetchLink
-            href="https://github.com/praveentcom/passport-ui"
-            className="text-primary hover:underline"
-          >
-            GitHub
-          </PrefetchLink>
-          <span>•</span>
-          <PrefetchLink
-            href="https://www.npmjs.com/package/passport-ui"
-            className="text-primary hover:underline"
-          >
-            npm
-          </PrefetchLink>
-        </div>
-      </div>
-    }
-    footerOptions={{
-      sticky: true,
-      blurred: true,
-    }}
-  >
+export default function InstallationPage() {
+  const breadcrumbs = generateBreadcrumbs("/");
+
+  return (
     <ContentContainer variant="broad">
+      {breadcrumbs.length > 1 && <Breadcrumb path={breadcrumbs} />}
+      <StructuredData
+        data={createPageStructuredData({
+          name: "Passport UI - Installation",
+          description:
+            "Installation guide for Passport UI - 75+ elegant UI components composed with Tailwind CSS, Radix UI, and Motion.",
+          url: SITE_CONFIG.baseUrl + "/",
+          breadcrumbName: "Installation",
+          breadcrumbUrl: SITE_CONFIG.baseUrl + "/",
+        })}
+      />
       <div className="meta-container">
-        <div className="grid">
-          <h3>Installation</h3>
-          <p>
-            To get started, install the library and its dependencies by
-            following the steps below.
-          </p>
-        </div>
+        <h1>Installation</h1>
+        <p>
+          To get started, install the library and its dependencies by following
+          the steps below.
+        </p>
       </div>
       <div className="meta-container gap-y-0.5">
         <p>
@@ -155,26 +129,5 @@ const InstallationDocs = () => (
         />
       </div>
     </ContentContainer>
-  </PageLayout>
-);
-
-const meta: Meta<typeof InstallationDocs> = {
-  title: "Installation",
-  component: InstallationDocs,
-  parameters: {
-    layout: "fullscreen",
-    docs: {
-      description: {
-        component: `Built on top of shadcn/ui's excellent foundation, but designed as a complete library solution. Explore the collection of 75+ premium components, composed with Tailwind CSS, Radix UI, and Motion.`,
-      },
-    },
-  },
-  tags: ["autodocs"],
-};
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {
-  tags: ["!dev"],
-};
+  );
+}

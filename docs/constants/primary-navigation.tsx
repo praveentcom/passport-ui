@@ -1,10 +1,10 @@
-import { Home, Palette, Text } from "lucide-react";
+import { CodeXml, Palette, Text } from "lucide-react";
 
 export const PRIMARY_NAVIGATION_PAGES = [
   {
     title: "Installation",
-    href: "/",
-    icon: Home,
+    href: "/installation/",
+    icon: CodeXml,
   },
   {
     title: "Color System",
