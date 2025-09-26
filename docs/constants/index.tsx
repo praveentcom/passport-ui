@@ -17,7 +17,7 @@ export const SITE_CONFIG = {
   storybook: "https://storybook.passportui.com",
   images: {
     openGraph:
-      "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph%402x.png",
+      "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph_light%402x.png",
     logo: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_external_light%401x.png",
     logoSquareDark: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_square_dark%401x.png",
     logoSquareLight: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_square_light%401x.png",

@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "Passport UI",
     images: [
       {
-        url: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph%402x.png",
+        url: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph_light%402x.png",
         width: 1200,
         height: 630,
         alt: "Passport UI - Docs",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "Passport UI - Docs",
     description: "Docs for Passport UI - 75+ elegant UI components composed on top of shadcn/ui.",
     images: [
-      "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph%402x.png",
+      "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph_light%402x.png",
     ],
   },
   robots: {

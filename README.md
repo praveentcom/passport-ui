@@ -1,6 +1,6 @@
 # Passport UI
 
-![Passport UI](./src/images/open_graph@2x.png)
+![Passport UI](https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph_dark%402x.png)
 
 [![npm version](https://badge.fury.io/js/passport-ui.svg)](https://badge.fury.io/js/passport-ui)
 [![npm downloads](https://img.shields.io/npm/dm/passport-ui.svg)](https://www.npmjs.com/package/passport-ui)

@@ -27,7 +27,7 @@ const config: StorybookConfig = {
     <meta property="og:description" content="Built on top of shadcn/ui's excellent foundation, but designed as a complete library solution. Explore the collection of 75+ premium components, composed with Tailwind CSS, Radix UI, and Motion." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://passportui.com/" />
-    <meta property="og:image" content="https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph%402x.png" />
+    <meta property="og:image" content="https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph_light%402x.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Passport UI - React Component Library designed for building apps blazingly fast" />
@@ -42,7 +42,7 @@ const config: StorybookConfig = {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Passport UI - React Component Library designed for building apps blazingly fast" />
     <meta name="twitter:description" content="Built on top of shadcn/ui's excellent foundation, but designed as a complete library solution. Explore the collection of 75+ premium components, composed with Tailwind CSS, Radix UI, and Motion." />
-    <meta name="twitter:image" content="https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph%402x.png" />
+    <meta name="twitter:image" content="https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph_light%402x.png" />
     <meta name="twitter:image:alt" content="Passport UI - React Component Library designed for building apps blazingly fast" />
     
     <!-- Additional Meta Tags -->
@@ -86,7 +86,7 @@ const config: StorybookConfig = {
       "codeRepository": "https://github.com/praveentcom/passport-ui",
       "softwareVersion": "latest",
       "releaseNotes": "https://github.com/praveentcom/passport-ui/releases",
-      "screenshot": "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph%402x.png"
+      "screenshot": "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph_light%402x.png"
     }
     </script>
   `,
