@@ -60,7 +60,7 @@ function NavigationMenuItem({
 }
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex w-max items-center justify-center rounded-xs px-2 py-1 text-sm text-muted-foreground font-medium hover:bg-border hover:text-foreground focus:bg-border focus:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-[state=open]:hover:bg-border data-[state=open]:text-foreground data-[state=open]:focus:bg-border data-[state=open]:bg-border/50 focus-visible:ring-ring/50 outline-none transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1"
+  "group inline-flex w-max items-center justify-center rounded-xs px-2 py-1 text-sm text-muted-foreground font-medium hover:bg-border/50 hover:text-foreground focus:bg-border/50 focus:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-[state=open]:hover:bg-border/50 data-[state=open]:text-foreground data-[state=open]:focus:bg-border/50 data-[state=open]:bg-border/50 focus-visible:ring-ring/50 outline-none transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1"
 );
 
 function NavigationMenuTrigger({
@@ -91,7 +91,7 @@ function NavigationMenuContent({
     <NavigationMenuPrimitive.Content
       data-slot="navigation-menu-content"
       className={cn(
-        "data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 top-0 left-0 w-full p-1.5 pr-2 md:absolute md:w-auto",
+        "data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out top-0 left-0 w-full p-1.5 md:absolute md:w-auto",
         "group-data-[viewport=false]/navigation-menu:bg-card group-data-[viewport=false]/navigation-menu:text-foreground group-data-[viewport=false]/navigation-menu:data-[state=open]:animate-in group-data-[viewport=false]/navigation-menu:data-[state=closed]:animate-out group-data-[viewport=false]/navigation-menu:data-[state=closed]:zoom-out-95 group-data-[viewport=false]/navigation-menu:data-[state=open]:zoom-in-95 group-data-[viewport=false]/navigation-menu:data-[state=open]:fade-in-0 group-data-[viewport=false]/navigation-menu:data-[state=closed]:fade-out-0 group-data-[viewport=false]/navigation-menu:top-full group-data-[viewport=false]/navigation-menu:mt-1.5 group-data-[viewport=false]/navigation-menu:overflow-hidden group-data-[viewport=false]/navigation-menu:rounded-xs group-data-[viewport=false]/navigation-menu:border group-data-[viewport=false]/navigation-menu:shadow group-data-[viewport=false]/navigation-menu:duration-200 **:data-[slot=navigation-menu-link]:focus:ring-0 **:data-[slot=navigation-menu-link]:focus:outline-none",
         className
       )}
@@ -130,7 +130,7 @@ function NavigationMenuLink({
     <NavigationMenuPrimitive.Link
       data-slot="navigation-menu-link"
       className={cn(
-        "data-[active=true]:focus:bg-border data-[active=true]:hover:bg-border data-[active=true]:bg-border/50 data-[active=true]:text-foreground hover:bg-border hover:text-foreground focus:bg-border focus:text-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground hover:[&_svg:not([class*='text-'])]:text-foreground focus:[&_svg:not([class*='text-'])]:text-foreground data-[active=true]:[&_svg:not([class*='text-'])]:text-foreground text-muted-foreground inline-flex items-center justify-center gap-1 rounded-xs px-2 py-1 text-sm font-medium transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
+        "hover:bg-border/50 focus:bg-border/50 data-[active=true]:focus:bg-border/50 data-[active=true]:hover:bg-border/50 data-[active=true]:bg-border/50 data-[active=true]:text-foreground hover:text-foreground focus:text-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground hover:[&_svg:not([class*='text-'])]:text-foreground focus:[&_svg:not([class*='text-'])]:text-foreground data-[active=true]:[&_svg:not([class*='text-'])]:text-foreground text-muted-foreground inline-flex items-center justify-center gap-1 rounded-xs px-2 py-1 text-sm font-medium transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}

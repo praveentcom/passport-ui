@@ -49,13 +49,11 @@ function ListItem({
 }: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
   return (
     <li {...props}>
-      <NavigationMenuLink className="bg-transparent" asChild>
+      <NavigationMenuLink asChild>
         <Link href={href}>
-          <div className="passport-ui p-1">
-            <div>
-              <h3>{title}</h3>
-              <p className="line-clamp-2">{children}</p>
-            </div>
+          <div className="meta-container p-1">
+            <h4>{title}</h4>
+            <p className="line-clamp-2 font-normal">{children}</p>
           </div>
         </Link>
       </NavigationMenuLink>
@@ -124,7 +122,7 @@ ${definition.usageCode}
         <NavigationMenuItem>
           <NavigationMenuTrigger>Components</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="list-container grid-cols-2 w-sm">
+            <ul className="meta-container grid-cols-2 w-sm">
               {components.map((component) => (
                 <ListItem
                   key={component.title}

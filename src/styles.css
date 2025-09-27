@@ -272,7 +272,7 @@
     @apply grid gap-y-2.5 gap-x-4;
   }
   .passport-ui .meta-container {
-    @apply grid gap-y-0.25 gap-x-2.5 text-muted-foreground h-min text-sm w-full;
+    @apply grid gap-y-0.25 gap-x-0.5 text-muted-foreground h-min text-sm w-full;
   }
 }
 
