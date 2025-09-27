@@ -1,13 +1,17 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef } from "react";
+
 import { Canvas, useThree } from "@react-three/fiber";
 import * as THREE from "three";
+
 import { cn } from "../../../src/lib/utils";
 
 function hexToRgb(hex: string): [number, number, number] {
   const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return m ? [parseInt(m[1], 16), parseInt(m[2], 16), parseInt(m[3], 16)] : [0, 0, 0];
+  return m
+    ? [parseInt(m[1], 16), parseInt(m[2], 16), parseInt(m[3], 16)]
+    : [0, 0, 0];
 }
 
 function isDarkMode(): boolean {
@@ -16,37 +20,37 @@ function isDarkMode(): boolean {
 }
 
 export interface HoverDotsGLProps {
-  /* 
+  /*
    * px between dots (CSS pixels)
    */
   gap?: number;
 
-  /* 
+  /*
    * base dot diameter in px
    */
   size?: number;
 
-  /* 
+  /*
    * base opacity (0..1)
    */
   baseOpacity?: number;
 
-  /* 
+  /*
    * max opacity on hover (0..1)
    */
   maxOpacity?: number;
 
-  /* 
+  /*
    * hover radius in px
    */
   hoverRadius?: number;
 
-  /* 
+  /*
    * hover zoom factor (>=1)
    */
   zoomFactor?: number;
 
-  /* 
+  /*
    * hex colors for light/dark
    */
   color?: {
@@ -54,7 +58,7 @@ export interface HoverDotsGLProps {
     /* dark mode color */ dark: string;
   };
 
-  /* 
+  /*
    * wrapper className
    */
   className?: string;
@@ -75,7 +79,11 @@ export function HoverDotsGL({
       <Canvas
         orthographic
         dpr={[1, 3]}
-        gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+        gl={{
+          antialias: true,
+          alpha: true,
+          powerPreference: "high-performance",
+        }}
         onCreated={({ gl }) => gl.setClearAlpha(0)}
       >
         <FullscreenQuad
@@ -108,7 +116,10 @@ function FullscreenQuad(props: {
 
   useEffect(() => {
     const observer = new MutationObserver(() => setIsDark(isDarkMode()));
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
     return () => observer.disconnect();
   }, []);
 
@@ -130,7 +141,8 @@ function FullscreenQuad(props: {
     uPixelRatio: {
       value: Math.min(
         3,
-        gl.getPixelRatio?.() ?? (typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1)
+        gl.getPixelRatio?.() ??
+          (typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1)
       ),
     },
   }).current;
@@ -142,7 +154,15 @@ function FullscreenQuad(props: {
     uniforms.uMaxOpacity.value = props.maxOpacity;
     uniforms.uHoverRadius.value = props.hoverRadius;
     uniforms.uZoom.value = props.zoomFactor;
-  }, [props.gap, props.size, props.baseOpacity, props.maxOpacity, props.hoverRadius, props.zoomFactor, uniforms]);
+  }, [
+    props.gap,
+    props.size,
+    props.baseOpacity,
+    props.maxOpacity,
+    props.hoverRadius,
+    props.zoomFactor,
+    uniforms,
+  ]);
 
   useEffect(() => {
     uniforms.uColor.value.copy(colorVec3);
@@ -153,11 +173,11 @@ function FullscreenQuad(props: {
       // Get the canvas element's bounding rectangle
       const canvas = gl.domElement;
       const rect = canvas.getBoundingClientRect();
-      
+
       // Calculate mouse position relative to the canvas
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      
+
       // Convert to shader coordinates (Y is flipped)
       uniforms.uMouse.value.set(x, viewport.height - y);
     };

@@ -4,7 +4,8 @@ import { AUTHOR } from "../../src/constants";
 export const SITE_CONFIG = {
   baseUrl: "https://passportui.com",
   name: "Passport UI - React Component Library designed for building apps blazingly fast",
-  title: "Passport UI - React Component Library designed for building apps blazingly fast",
+  title:
+    "Passport UI - React Component Library designed for building apps blazingly fast",
   description:
     "Built on top of shadcn/ui's excellent foundation, but designed as a complete library solution. Explore the collection of 75+ premium components, composed with Tailwind CSS, Radix UI, and Motion.",
   author: {
@@ -19,19 +20,22 @@ export const SITE_CONFIG = {
     openGraph:
       "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph_light%402x.png",
     logo: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_external_light%401x.png",
-    logoSquareDark: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_square_dark%401x.png",
-    logoSquareLight: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_square_light%401x.png",
-    logoHorizontalDark: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_horizontal_dark%401x.png",
-    logoHorizontalLight: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_horizontal_light%401x.png",
+    logoSquareDark:
+      "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_square_dark%401x.png",
+    logoSquareLight:
+      "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_square_light%401x.png",
+    logoHorizontalDark:
+      "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_horizontal_dark%401x.png",
+    logoHorizontalLight:
+      "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_horizontal_light%401x.png",
   },
 } as const;
 
 // Base structured data for the software application
 export const BASE_SOFTWARE_APPLICATION = {
   "@type": "SoftwareApplication",
-  name: "Passport UI - React Component Library designed for building apps blazingly fast",
-  description:
-    "Built on top of shadcn/ui's excellent foundation, but designed as a complete library solution. Explore the collection of 75+ premium components, composed with Tailwind CSS, Radix UI, and Motion.",
+  name: SITE_CONFIG.title,
+  description: SITE_CONFIG.description,
   url: SITE_CONFIG.mainSite,
   author: {
     "@type": "Person",
@@ -63,8 +67,8 @@ export const BASE_SOFTWARE_APPLICATION = {
 
 // Structured data generators
 export const createPageStructuredData = (pageData: {
-  name: string;
-  description: string;
+  name?: string;
+  description?: string;
   url: string;
   breadcrumbName: string;
   breadcrumbUrl: string;
@@ -72,8 +76,10 @@ export const createPageStructuredData = (pageData: {
 }) => ({
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: pageData.name,
-  description: pageData.description,
+  name: pageData.name ? pageData.name : SITE_CONFIG.title,
+  description: pageData.description
+    ? pageData.description
+    : SITE_CONFIG.description,
   url: pageData.url,
   mainEntity: pageData.mainEntity || BASE_SOFTWARE_APPLICATION,
   breadcrumb: {

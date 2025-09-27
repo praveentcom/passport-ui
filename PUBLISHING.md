@@ -64,7 +64,7 @@ Create or update your `~/.npmrc` file:
 # Publish only to npm
 npm run release
 
-# Publish only to GitHub Packages  
+# Publish only to GitHub Packages
 npm run release:github
 
 # Publish to both registries
@@ -95,16 +95,19 @@ npm install passport-ui
 ### From GitHub Packages
 
 1. Configure `.npmrc` in your project:
+
 ```bash
 @praveentcom:registry=https://npm.pkg.github.com
 ```
 
 2. Install the scoped package:
+
 ```bash
 npm install @praveentcom/passport-ui
 ```
 
 3. Import in your code:
+
 ```typescript
 // Both packages have identical APIs
 import { Button, Card } from 'passport-ui'

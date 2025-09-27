@@ -47,7 +47,7 @@ export interface MixpanelConfig {
     /** Whether to respect Do Not Track */
     ignore_dnt?: boolean;
     /** Whether to use localStorage */
-    persistence?: 'localStorage' | 'cookie' | 'none';
+    persistence?: "localStorage" | "cookie" | "none";
     /** Additional config options */
     [key: string]: unknown;
   };
@@ -67,7 +67,7 @@ export interface AmplitudeConfig {
   /** Configuration options */
   config?: {
     /** Server zone (US or EU) */
-    serverZone?: 'US' | 'EU';
+    serverZone?: "US" | "EU";
     /** Whether to track sessions */
     trackSessions?: boolean;
     /** Session timeout in milliseconds */
@@ -342,14 +342,21 @@ const PostHogScript: React.FC<{
   config: PostHogConfig;
   nonce?: string;
 }> = ({ config, nonce }) => {
-  const { apiKey, apiHost = 'https://app.posthog.com', config: posthogConfig = {}, events = [] } = config;
+  const {
+    apiKey,
+    apiHost = "https://app.posthog.com",
+    config: posthogConfig = {},
+    events = [],
+  } = config;
 
   const posthogScript = `
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]);t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     
     posthog.init('${apiKey}', {
       api_host: '${apiHost}',
-      ${Object.entries(posthogConfig).map(([key, value]) => `${key}: ${JSON.stringify(value)}`).join(',\n      ')}
+      ${Object.entries(posthogConfig)
+        .map(([key, value]) => `${key}: ${JSON.stringify(value)}`)
+        .join(",\n      ")}
     });
     
     ${events
@@ -377,25 +384,32 @@ const PlausibleScript: React.FC<{
   config: PlausibleConfig;
   nonce?: string;
 }> = ({ config, nonce }) => {
-  const { domain, apiHost = 'https://plausible.io', config: plausibleConfig = {}, events = [] } = config;
+  const {
+    domain,
+    apiHost = "https://plausible.io",
+    config: plausibleConfig = {},
+    events = [],
+  } = config;
 
   const scriptSrc = `${apiHost}/js/script.js`;
   const scriptAttrs: Record<string, string> = {
-    'data-domain': domain,
+    "data-domain": domain,
   };
 
   // Add optional attributes based on config
   if (plausibleConfig.trackOutboundLinks) {
-    scriptAttrs['data-api'] = `${apiHost}/api/event`;
+    scriptAttrs["data-api"] = `${apiHost}/api/event`;
   }
   if (plausibleConfig.exclude) {
-    scriptAttrs['data-exclude'] = plausibleConfig.exclude as string;
+    scriptAttrs["data-exclude"] = plausibleConfig.exclude as string;
   }
   if (plausibleConfig.hashMode) {
-    scriptSrc.replace('/js/script.js', '/js/script.hash.js');
+    scriptSrc.replace("/js/script.js", "/js/script.hash.js");
   }
 
-  const plausibleScript = events.length > 0 ? `
+  const plausibleScript =
+    events.length > 0
+      ? `
     window.plausible = window.plausible || function() { 
       (window.plausible.q = window.plausible.q || []).push(arguments) 
     };
@@ -406,15 +420,20 @@ const PlausibleScript: React.FC<{
           `plausible('${event.name}', { props: ${JSON.stringify(event.props || {})} });`
       )
       .join("\n    ")}
-  `.trim() : '';
+  `.trim()
+      : "";
 
   return (
     <>
       <script
         defer
         data-domain={domain}
-        {...(plausibleConfig.trackOutboundLinks && { 'data-api': `${apiHost}/api/event` })}
-        {...(plausibleConfig.exclude && { 'data-exclude': plausibleConfig.exclude as string })}
+        {...(plausibleConfig.trackOutboundLinks && {
+          "data-api": `${apiHost}/api/event`,
+        })}
+        {...(plausibleConfig.exclude && {
+          "data-exclude": plausibleConfig.exclude as string,
+        })}
         src={scriptSrc}
         nonce={nonce}
       />
@@ -488,42 +507,27 @@ export const Analytics: React.FC<AnalyticsProps> = ({
 
       {/* Mixpanel */}
       {providers.mixpanel && (
-        <MixpanelScript
-          config={providers.mixpanel}
-          nonce={nonce}
-        />
+        <MixpanelScript config={providers.mixpanel} nonce={nonce} />
       )}
 
       {/* Amplitude */}
       {providers.amplitude && (
-        <AmplitudeScript
-          config={providers.amplitude}
-          nonce={nonce}
-        />
+        <AmplitudeScript config={providers.amplitude} nonce={nonce} />
       )}
 
       {/* Segment */}
       {providers.segment && (
-        <SegmentScript
-          config={providers.segment}
-          nonce={nonce}
-        />
+        <SegmentScript config={providers.segment} nonce={nonce} />
       )}
 
       {/* PostHog */}
       {providers.posthog && (
-        <PostHogScript
-          config={providers.posthog}
-          nonce={nonce}
-        />
+        <PostHogScript config={providers.posthog} nonce={nonce} />
       )}
 
       {/* Plausible */}
       {providers.plausible && (
-        <PlausibleScript
-          config={providers.plausible}
-          nonce={nonce}
-        />
+        <PlausibleScript config={providers.plausible} nonce={nonce} />
       )}
     </>
   );
@@ -580,7 +584,7 @@ export const useAnalytics = () => {
       if (window.gtag) {
         window.gtag("event", "page_view", pageData);
       }
-    
+
       // Mixpanel
       if (window.mixpanel) {
         window.mixpanel.track("Page View", pageData);
@@ -693,7 +697,7 @@ declare global {
     // Google Analytics
     dataLayer: unknown[];
     gtag: (...args: unknown[]) => void;
-    
+
     // Mixpanel
     mixpanel: {
       init: (token: string, config?: Record<string, unknown>) => void;
@@ -703,25 +707,39 @@ declare global {
         set: (properties: Record<string, unknown>) => void;
       };
     };
-    
+
     // Amplitude
     amplitude: {
       getInstance: () => {
-        init: (apiKey: string, userId?: string, config?: Record<string, unknown>) => void;
-        logEvent: (eventType: string, eventProperties?: Record<string, unknown>) => void;
+        init: (
+          apiKey: string,
+          userId?: string,
+          config?: Record<string, unknown>
+        ) => void;
+        logEvent: (
+          eventType: string,
+          eventProperties?: Record<string, unknown>
+        ) => void;
         setUserId: (userId: string) => void;
         setUserProperties: (properties: Record<string, unknown>) => void;
       };
     };
-    
+
     // Segment
     analytics: {
       load: (writeKey: string, config?: Record<string, unknown>) => void;
       track: (event: string, properties?: Record<string, unknown>) => void;
-      page: (name?: string, path?: string, properties?: Record<string, unknown>) => void;
-      identify: (userId?: string | undefined, traits?: Record<string, unknown>) => void;
+      page: (
+        name?: string,
+        path?: string,
+        properties?: Record<string, unknown>
+      ) => void;
+      identify: (
+        userId?: string | undefined,
+        traits?: Record<string, unknown>
+      ) => void;
     };
-    
+
     // PostHog
     posthog: {
       init: (apiKey: string, config?: Record<string, unknown>) => void;
@@ -729,8 +747,11 @@ declare global {
       identify: (userId: string, properties?: Record<string, unknown>) => void;
       setPersonProperties: (properties: Record<string, unknown>) => void;
     };
-    
+
     // Plausible
-    plausible: (event: string, options?: { props?: Record<string, unknown> }) => void;
+    plausible: (
+      event: string,
+      options?: { props?: Record<string, unknown> }
+    ) => void;
   }
 }

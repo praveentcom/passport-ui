@@ -284,9 +284,7 @@ export default function ColorsPage() {
       {breadcrumbs.length > 1 && <Breadcrumb path={breadcrumbs} />}
       <StructuredData
         data={createPageStructuredData({
-          name: "Passport UI - Color System",
-          description:
-            "Color system docs for Passport UI component library with automatic light/dark theme support.",
+          name: SITE_CONFIG.title + " - Color System",
           url: SITE_CONFIG.baseUrl + "/colors/",
           breadcrumbName: "Color System",
           breadcrumbUrl: SITE_CONFIG.baseUrl + "/colors/",
@@ -410,7 +408,6 @@ export default function ColorsPage() {
 }
 
 export const metadata: Metadata = {
-  title: "Passport UI - Color System",
-  description:
-    "Color system docs for Passport UI component library with automatic light/dark theme support.",
+  title: SITE_CONFIG.title + " - Color System",
+  description: SITE_CONFIG.description,
 };

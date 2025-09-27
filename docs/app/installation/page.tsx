@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 import { Breadcrumb } from "../../../src/components/breadcrumb";
 import { CodeBlock } from "../../../src/components/code-block";
 import { StructuredData } from "../../../src/components/structured-data";
@@ -68,23 +70,21 @@ function App() {
     filename: "app.tsx",
     hideLineNumbers: false,
     language: "typescript",
-  }
-]
+  },
+];
 
 export default function InstallationPage() {
-  const breadcrumbs = generateBreadcrumbs("/");
+  const breadcrumbs = generateBreadcrumbs("/installation");
 
   return (
     <ContentContainer variant="broad">
       {breadcrumbs.length > 1 && <Breadcrumb path={breadcrumbs} />}
       <StructuredData
         data={createPageStructuredData({
-          name: "Passport UI - Installation",
-          description:
-            "Installation guide for Passport UI - 75+ elegant UI components composed with Tailwind CSS, Radix UI, and Motion.",
-          url: SITE_CONFIG.baseUrl + "/",
+          name: SITE_CONFIG.title + " - Installation",
+          url: SITE_CONFIG.baseUrl + "/installation",
           breadcrumbName: "Installation",
-          breadcrumbUrl: SITE_CONFIG.baseUrl + "/",
+          breadcrumbUrl: SITE_CONFIG.baseUrl + "/installation",
         })}
       />
       <div className="meta-container">
@@ -100,14 +100,19 @@ export default function InstallationPage() {
             <p className="text-md font-medium">Step {index + 1}</p>
             <span>{step.title}</span>
           </div>
-        <CodeBlock
-          filename={step.filename}
-          language={step.language || "typescript"}
-          code={step.code}
-          hideLineNumbers={step.hideLineNumbers}
-        />
+          <CodeBlock
+            filename={step.filename}
+            language={step.language || "typescript"}
+            code={step.code}
+            hideLineNumbers={step.hideLineNumbers}
+          />
         </div>
       ))}
     </ContentContainer>
   );
 }
+
+export const metadata: Metadata = {
+  title: SITE_CONFIG.title + " - Installation",
+  description: SITE_CONFIG.description,
+};

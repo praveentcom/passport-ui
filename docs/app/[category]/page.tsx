@@ -49,8 +49,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const breadcrumbs = generateBreadcrumbs(`/${category}`);
 
   const pageStructuredData = createPageStructuredData({
-    name: `${categoryLabel} - Passport UI`,
-    description: `Browse all ${categoryLabel.toLowerCase()} components in the Passport UI library. View examples, documentation, and code snippets.`,
+    name: `${categoryLabel} - ${SITE_CONFIG.title}`,
+    description: `Browse all ${categoryLabel.toLowerCase()} components in the ${SITE_CONFIG.title} library. View examples, documentation, and code snippets.`,
     url: `${SITE_CONFIG.baseUrl}/${category}/`,
     breadcrumbName: categoryLabel,
     breadcrumbUrl: `${SITE_CONFIG.baseUrl}/${category}/`,
@@ -66,9 +66,10 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           <div className="meta-container">
             <h1>{categoryLabel}</h1>
             <p>
-              Browse all {categoryLabel.toLowerCase()} available in the Passport
-              UI library. Click on any component to view examples,
-              documentation, and code snippets.
+              Browse all {categoryLabel.toLowerCase()} available in the{" "}
+              {SITE_CONFIG.title}
+              library. Click on any component to view examples, documentation,
+              and code snippets.
             </p>
           </div>
 
@@ -123,7 +124,7 @@ export async function generateMetadata({
 
   if (!CATEGORIES.includes(category)) {
     return {
-      title: "Category Not Found",
+      title: `Invalid Category - ${SITE_CONFIG.title}`,
     };
   }
 
@@ -134,7 +135,7 @@ export async function generateMetadata({
   ).length;
 
   return {
-    title: `${categoryLabel} - Passport UI`,
-    description: `Browse all ${componentCount} ${categoryLabel.toLowerCase()} components in the Passport UI library. View examples, documentation, and code snippets.`,
+    title: `${categoryLabel} - ${SITE_CONFIG.title}`,
+    description: `Browse all ${componentCount} ${categoryLabel.toLowerCase()} components in the ${SITE_CONFIG.title} library. View examples, documentation, and code snippets.`,
   };
 }

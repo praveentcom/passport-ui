@@ -68,7 +68,7 @@ export default async function CategoryComponentPage({
   const breadcrumbs = generateBreadcrumbs(`/${category}/${slug}`);
 
   const pageStructuredData = createPageStructuredData({
-    name: `${component.name} - Passport UI`,
+    name: `${component.name} - ${SITE_CONFIG.title}`,
     description: `${component.description}. View examples, API documentation, and code snippets.`,
     url: `${SITE_CONFIG.baseUrl}/${category}/${component.slug}/`,
     breadcrumbName: component.name,
@@ -191,12 +191,12 @@ export async function generateMetadata({
 
   if (!component) {
     return {
-      title: "Page Not Found",
+      title: `Invalid Component - ${SITE_CONFIG.title}`,
     };
   }
 
   return {
-    title: `${component.name} - Passport UI`,
+    title: `${component.name} - ${SITE_CONFIG.title}`,
     description: `${component.description}. View examples, API documentation, and code snippets.`,
   };
 }

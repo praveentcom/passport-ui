@@ -9,9 +9,8 @@ import { SITE_CONFIG } from "../constants";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Passport UI - Docs",
-  description:
-    "Docs for Passport UI - 75+ elegant UI components composed on top of shadcn/ui foundation.",
+  title: SITE_CONFIG.title,
+  description: SITE_CONFIG.description,
   keywords: [
     "Passport UI",
     "React Components",
@@ -38,9 +37,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Passport UI - Docs",
-    description:
-      "Passport UI - 75+ elegant UI components composed on top of shadcn/ui foundation.",
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.description,
     url: "https://passportui.com",
     siteName: "Passport UI",
     images: [
@@ -48,13 +46,13 @@ export const metadata: Metadata = {
         url: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/open_graph_light%402x.png",
         width: 1200,
         height: 630,
-        alt: "Passport UI - Docs",
+        alt: SITE_CONFIG.description,
       },
       {
         url: "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/logo_external_dark%401x.png",
         width: 512,
         height: 512,
-        alt: "Passport UI - Logo",
+        alt: SITE_CONFIG.title,
         type: "image/png",
       },
     ],
@@ -63,8 +61,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Passport UI - Docs",
-    description: "Passport UI - 75+ elegant UI components composed on top of shadcn/ui foundation.",
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.description,
     images: [
       "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/twitter_light%402x.png",
     ],

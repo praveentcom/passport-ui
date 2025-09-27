@@ -1,10 +1,11 @@
+import Image from "next/image";
+
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { AspectRatio } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Card, CardContent } from "../card";
 import { definition } from "./definition";
-import Image from "next/image";
 
 const meta: Meta<typeof AspectRatio> = {
   title: "Components/AspectRatio",

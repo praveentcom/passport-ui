@@ -51,9 +51,7 @@ export default function FontsPage() {
       {breadcrumbs.length > 1 && <Breadcrumb path={breadcrumbs} />}
       <StructuredData
         data={createPageStructuredData({
-          name: "Passport UI - Font & Typography",
-          description:
-            "Font system docs for Passport UI component library with font weights, sizes, and families.",
+          name: SITE_CONFIG.title + " - Font & Typography",
           url: SITE_CONFIG.baseUrl + "/fonts/",
           breadcrumbName: "Font & Typography",
           breadcrumbUrl: SITE_CONFIG.baseUrl + "/fonts/",
@@ -172,7 +170,6 @@ export default function FontsPage() {
 }
 
 export const metadata: Metadata = {
-  title: "Passport UI - Font & Typography",
-  description:
-    "Font system docs for Passport UI component library with font weights, sizes, and families.",
+  title: SITE_CONFIG.title + " - Font & Typography",
+  description: SITE_CONFIG.description,
 };

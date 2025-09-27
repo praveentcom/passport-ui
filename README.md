@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Storybook](https://img.shields.io/badge/Storybook-Docs-ff4785.svg)](https://passportui.com)
 
-75+ elegant UI components with motion primitives and theme support composed on top of shadcn/ui components.
+Built on top of shadcn/ui's excellent foundation, but designed as a complete library solution. Explore the collection of 75+ premium components, composed with Tailwind CSS, Radix UI, and Motion.
 
 View documentation at [passportui.com](https://passportui.com). If you're someone who loves Storybook, you can view the components at [storybook.passportui.com](https://storybook.passportui.com).
 

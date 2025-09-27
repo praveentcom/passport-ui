@@ -33,7 +33,6 @@ import swift from "highlight.js/lib/languages/swift";
 import typescript from "highlight.js/lib/languages/typescript";
 import xml from "highlight.js/lib/languages/xml";
 import yaml from "highlight.js/lib/languages/yaml";
-
 import { Check, Copy } from "lucide-react";
 
 import getFileIcon from "../../lib/markdown/getFileIcon";
@@ -161,7 +160,7 @@ function CodeBlock({
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error('Failed to copy code: ', err);
+      console.error("Failed to copy code: ", err);
     }
   };
 
@@ -240,19 +239,15 @@ function CodeBlock({
           className="flex justify-between items-center gap-2 px-2.5 py-1 dark:bg-background bg-border/10 border-b border-border text-muted-foreground"
         >
           <div className="flex gap-2 items-center">
-            {
-              fileIcon && (
-                <div
-                  className="opacity-85"
-                  dangerouslySetInnerHTML={{
-                    __html: `${fileIcon}`,
-                  }}
-                />
-              )
-            }
-            <span className="dark:font-medium tracking-tight">
-              {filename}
-            </span>
+            {fileIcon && (
+              <div
+                className="opacity-85"
+                dangerouslySetInnerHTML={{
+                  __html: `${fileIcon}`,
+                }}
+              />
+            )}
+            <span className="dark:font-medium tracking-tight">{filename}</span>
           </div>
           <div className="flex gap-2 items-center">
             <CopyButton />

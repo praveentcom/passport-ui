@@ -121,14 +121,14 @@
   --info-muted: oklch(0.96 0.02 268);
   --info-foreground: oklch(0.98 0 0);
   --info-muted-foreground: oklch(0.53 0.22 262);
-  --success: oklab(51.97% -0.14 0.10);
+  --success: oklab(51.97% -0.14 0.1);
   --success-muted: oklch(0.97 0.05 145);
   --success-foreground: oklch(0.98 0 0);
-  --success-muted-foreground: oklab(51.97% -0.14 0.10);
-  --warning: oklch(0.68 0.20 40);
+  --success-muted-foreground: oklab(51.97% -0.14 0.1);
+  --warning: oklch(0.68 0.2 40);
   --warning-muted: oklch(0.97 0.01 50);
   --warning-foreground: oklch(0.98 0 0);
-  --warning-muted-foreground: oklch(0.68 0.20 40);
+  --warning-muted-foreground: oklch(0.68 0.2 40);
   --destructive: oklch(0.55 0.19 25);
   --destructive-muted: oklch(0.95 0.02 357);
   --destructive-foreground: oklch(0.98 0 0);
@@ -138,9 +138,9 @@
   --ring: oklch(0.76 0 0);
   --chart-1: oklch(0.53 0.22 262);
   --chart-2: oklch(0.51 0.17 142);
-  --chart-3: oklch(0.68 0.20 40);
+  --chart-3: oklch(0.68 0.2 40);
   --chart-4: oklch(0.55 0.19 25);
-  --chart-5: oklch(0.68 0.20 40);
+  --chart-5: oklch(0.68 0.2 40);
 }
 
 /* Dark Mode Colors for Custom Properties */
@@ -172,7 +172,7 @@
   --destructive-foreground: oklch(0.98 0 0);
   --destructive-muted-foreground: oklch(0.98 0 0);
   --border: oklch(0.24 0 0);
-  --input: oklch(0.30 0 0);
+  --input: oklch(0.3 0 0);
   --ring: oklch(0.42 0 0);
   --chart-1: oklch(0.53 0.22 262);
   --chart-2: oklch(0.45 0.11 164);
