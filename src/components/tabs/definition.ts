@@ -57,11 +57,11 @@ import { Home, BarChart3, Settings } from "lucide-react";`,
         </p>
         <div className="mt-4 grid grid-cols-2 gap-4 text-center">
           <div>
-            <div className="text-2xl font-bold">2.4k</div>
+            <div>2.4k</div>
             <div className="text-xs text-muted-foreground">Users</div>
           </div>
           <div>
-            <div className="text-2xl font-bold">18%</div>
+            <div>18%</div>
             <div className="text-xs text-muted-foreground">Growth</div>
           </div>
         </div>

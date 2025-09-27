@@ -68,7 +68,7 @@ export const Default: Story = {
     <ThemeProvider {...args}>
       <div className="flex min-h-screen min-w-96 items-center justify-center bg-background text-foreground">
         <div className="flex flex-col items-center gap-4">
-          <h1 className="text-2xl font-bold">Theme Provider</h1>
+          <h1>Theme Provider</h1>
           <p>Click the button to toggle the theme.</p>
           <ThemeButton />
         </div>

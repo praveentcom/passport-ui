@@ -43,17 +43,19 @@ function UseScrollComponent({ target }: { target?: "window" | "element" }) {
   );
 
   return (
-    <div className="flex h-screen flex-col items-center gap-4 p-4 text-center">
-      <h1 className="text-2xl font-bold">useScroll Hook</h1>
-      <p>
-        Scroll{" "}
-        {target === "element"
-          ? "the element below"
-          : "the window to see the value change."}
-      </p>
+    <div className="flex h-screen flex-col items-center section-container text-center">
+      <div className="meta-container">
+        <h3>useScroll Hook</h3>
+        <p>
+          Scroll{" "}
+          {target === "element"
+            ? "the element below"
+            : "the window to see the value change."}
+        </p>
+      </div>
       <div
-        className={`fixed top-4 rounded-md p-4 ${
-          hasScrolled ? "bg-red-500 text-white" : "bg-gray-300 text-black"
+        className={`rounded-sm px-2 py-1 ${
+          hasScrolled ? "bg-info text-info-foreground" : "bg-success text-success-foreground"
         }`}
       >
         {hasScrolled
@@ -63,7 +65,7 @@ function UseScrollComponent({ target }: { target?: "window" | "element" }) {
       {target === "element" ? (
         <div
           ref={scrollRef}
-          className="h-96 w-full overflow-y-scroll rounded-md border"
+          className="h-96 w-full overflow-y-scroll rounded-sm border"
         >
           <div className="h-[1000px] p-4">Scrollable content</div>
         </div>

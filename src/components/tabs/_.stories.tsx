@@ -167,11 +167,11 @@ ${definition.usageCode}
             </p>
             <div className="mt-4 grid grid-cols-2 gap-4">
               <div className="text-center">
-                <div className="text-2xl font-bold">2.4k</div>
+                <div>2.4k</div>
                 <div className="text-xs text-muted-foreground">Total Users</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold">18%</div>
+                <div>18%</div>
                 <div className="text-xs text-muted-foreground">Growth Rate</div>
               </div>
             </div>

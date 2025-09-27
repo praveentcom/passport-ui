@@ -49,7 +49,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: (args) => (
     <div className="flex flex-col items-center gap-4 text-center">
-      <h1 className="text-2xl font-bold">Visually Hidden</h1>
+      <h1>Visually Hidden</h1>
       <p>
         The text &quot;This is visually hidden&quot; is present in the DOM but
         not visible on the screen.
@@ -65,7 +65,7 @@ export const Default: Story = {
 export const WithIconButton: Story = {
   render: (args) => (
     <div className="flex flex-col items-center gap-4 text-center">
-      <h1 className="text-2xl font-bold">Icon Button</h1>
+      <h1>Icon Button</h1>
       <p>This button only has an icon, but its label is accessible.</p>
       <Button variant="outline" size="regular">
         <AlertCircle className="size-4" />
@@ -78,7 +78,7 @@ export const WithIconButton: Story = {
 export const WithFormField: Story = {
   render: (args) => (
     <div className="flex flex-col items-center gap-4 text-center">
-      <h1 className="text-2xl font-bold">Form Field</h1>
+      <h1>Form Field</h1>
       <p>This input field has a visually hidden label.</p>
       <div className="w-64">
         <Label htmlFor="search-input">

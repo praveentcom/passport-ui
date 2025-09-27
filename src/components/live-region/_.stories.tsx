@@ -72,7 +72,7 @@ export const Default: Story = {
 
     return (
       <div className="flex flex-col items-center gap-4">
-        <h1 className="text-2xl font-bold">Live Region</h1>
+        <h1>Live Region</h1>
         <p>
           Click the button to update the message. Screen readers will announce
           the change.
@@ -104,7 +104,7 @@ export const Assertive: Story = {
 
     return (
       <div className="flex flex-col items-center gap-4">
-        <h1 className="text-2xl font-bold">Live Region (Assertive)</h1>
+        <h1>Live Region (Assertive)</h1>
         <p>
           Click the button to send an assertive announcement. This should
           interrupt the user.

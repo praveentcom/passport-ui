@@ -94,7 +94,7 @@ export const Default: Story = {
         </SidebarFooter>
       </Sidebar>
       <main className="flex-1 p-4">
-        <h1 className="text-2xl font-bold">Main Content Area</h1>
+        <h1>Main Content Area</h1>
         <p>This is where the main content of your application will go.</p>
       </main>
     </div>

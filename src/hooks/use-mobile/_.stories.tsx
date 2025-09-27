@@ -39,12 +39,14 @@ function UseMobileComponent() {
   const isMobile = useIsMobile();
 
   return (
-    <div className="flex flex-col items-center gap-4 text-center">
-      <h1 className="text-2xl font-bold">useIsMobile Hook</h1>
-      <p>Resize your browser window to see the value change.</p>
+    <div className="flex flex-col items-center section-container text-center">
+      <div className="meta-container">
+        <h3>useIsMobile Hook</h3>
+        <p>Resize your browser window to see the value change.</p>
+      </div>
       <div
-        className={`mt-4 rounded-md p-4 ${
-          isMobile ? "bg-blue-500 text-white" : "bg-green-500 text-white"
+        className={`rounded-sm px-2 py-1 ${
+          isMobile ? "bg-info text-info-foreground" : "bg-success text-success-foreground"
         }`}
       >
         {isMobile
