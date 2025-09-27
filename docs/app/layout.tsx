@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     title: SITE_CONFIG.title,
     description: SITE_CONFIG.description,
     images: [
-      "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/twitter_light%402x.png",
+      "https://storage.googleapis.com/praveentcom-public/projects/passport-ui/twitter_dark%402x.png",
     ],
   },
   robots: {
