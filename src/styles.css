@@ -145,9 +145,9 @@
 
 /* Dark Mode Colors for Custom Properties */
 .dark {
-  --background: oklch(0.15 0 0);
+  --background: oklch(0.17 0 0);
   --foreground: oklch(0.98 0 0);
-  --card: oklch(0.15 0 0);
+  --card: oklch(0.17 0 0);
   --card-foreground: oklch(0.98 0 0);
   --primary: oklch(0.92 0 0);
   --primary-foreground: oklch(0.2 0 0);

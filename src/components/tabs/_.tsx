@@ -201,7 +201,7 @@ const TabsDropdown = React.forwardRef<HTMLDivElement, TabsDropdownProps>(
               value={trigger.value}
               disabled={trigger.disabled}
             >
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 cursor-pointer">
                 {trigger.icon &&
                   React.createElement(trigger.icon, { className: "size-4" })}
                 {trigger.label}
@@ -225,7 +225,7 @@ const TabsTrigger = React.forwardRef<
     className={cn(tabsTriggerVariants({ variant }), className)}
     {...props}
   >
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 cursor-pointer">
       {icon && React.createElement(icon, { className: "size-4" })}
       {children}
     </div>
