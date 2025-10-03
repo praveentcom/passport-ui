@@ -100,3 +100,52 @@ export const Default: Story = {
     </div>
   ),
 };
+
+export const MobileOnly: Story = {
+  args: {
+    mobileOnly: true,
+  },
+  render: (args) => (
+    <div className="flex h-screen">
+      <Sidebar {...args}>
+        <SidebarHeader>
+          <h2 className="px-4 text-lg font-semibold tracking-tight">
+            Mobile Sidebar
+          </h2>
+        </SidebarHeader>
+        <SidebarContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <PrefetchLink href="#">Dashboard</PrefetchLink>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <PrefetchLink href="#">Analytics</PrefetchLink>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <PrefetchLink href="#">Settings</PrefetchLink>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarContent>
+        <SidebarFooter>
+          <p className="p-4 text-xs text-muted-foreground">
+            This sidebar only shows on mobile devices
+          </p>
+        </SidebarFooter>
+      </Sidebar>
+      <main className="flex-1 p-4">
+        <h1>Main Content Area</h1>
+        <p>
+          This sidebar will only be visible on mobile devices. On desktop, it will not render at all.
+          Try resizing your browser window or viewing this on a mobile device to see the sidebar.
+        </p>
+      </main>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: "When `mobileOnly` is set to `true`, the sidebar will only render on mobile devices and will be completely hidden on desktop.",
+      },
+    },
+  },
+};

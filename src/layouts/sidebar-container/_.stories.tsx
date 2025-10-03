@@ -108,6 +108,14 @@ ${definition.usageCode}
         defaultValue: { summary: "true" },
       },
     },
+    mobileOnly: {
+      control: "boolean",
+      description: "Only render sidebar on mobile devices",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
     className: COMMON_CONTROLS.className,
   },
   render: (args) => {
@@ -247,5 +255,57 @@ export const Default: Story = {
         Support
       </Button>
     ),
+  },
+};
+
+export const MobileOnly: Story = {
+  render: (args) => {
+    const [open, setOpen] = useState(true);
+    const [searchText, setSearchText] = useState("");
+
+    const handleOpenChange = (newOpen: boolean) => {
+      setOpen(newOpen);
+      action("sidebar-toggle")(newOpen);
+    };
+
+    return (
+      <div className="h-screen">
+        <SidebarProvider open={open} onOpenChange={handleOpenChange}>
+          <SidebarContainer
+            {...args}
+            searchConfig={{
+              searchText,
+              setSearchText,
+              placeholder: "Search navigation…",
+            }}
+          >
+            <DefaultSidebar searchText={searchText} />
+          </SidebarContainer>
+        </SidebarProvider>
+      </div>
+    );
+  },
+  args: {
+    mobileOnly: true,
+    collapsible: true,
+    sidebarHeader: (
+      <div className="meta-container">
+        <h3>Mobile Sidebar</h3>
+        <p>Only visible on mobile</p>
+      </div>
+    ),
+    sidebarFooter: (
+      <Button>
+        <Mail />
+        Support
+      </Button>
+    ),
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: "When `mobileOnly` is set to `true`, the sidebar will only render on mobile devices and will be completely hidden on desktop. Try resizing your browser window or viewing this on a mobile device to see the sidebar.",
+      },
+    },
   },
 };

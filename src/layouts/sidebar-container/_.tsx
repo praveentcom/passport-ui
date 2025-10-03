@@ -77,6 +77,10 @@ export interface SidebarContainerProps {
    * Blurred background
    */
   blurred?: boolean;
+  /**
+   * Only render sidebar on mobile devices
+   */
+  mobileOnly?: boolean;
 }
 
 /**
@@ -93,6 +97,7 @@ export interface SidebarContainerProps {
  * @param collapsible - Whether the sidebar can collapse to icon-only mode (true) or remain fixed (false)
  * @param className - Additional class names for the sidebar
  * @param blurred - Whether the sidebar should be blurred
+ * @param mobileOnly - Only render sidebar on mobile devices
  * @returns The sidebar component (without provider wrapper)
  */
 export function SidebarContainer({
@@ -104,6 +109,7 @@ export function SidebarContainer({
   side = "left",
   collapsible = true,
   blurred = false,
+  mobileOnly = false,
   className,
 }: Omit<
   SidebarContainerProps,
@@ -118,6 +124,7 @@ export function SidebarContainer({
       side={side}
       collapsible={collapsible}
       blurred={blurred}
+      mobileOnly={mobileOnly}
       className={className}
     >
       {sidebarHeader && (

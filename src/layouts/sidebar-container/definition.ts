@@ -44,6 +44,7 @@ import { useState } from "react";`,
             Support
           </Button>
         }
+        mobileOnly={false}
       >
         <SidebarGroup>
           <SidebarGroupLabel>Navigation</SidebarGroupLabel>

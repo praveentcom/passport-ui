@@ -176,6 +176,7 @@ function Sidebar({
   variant = "sidebar",
   collapsible = false,
   blurred = false,
+  mobileOnly = false,
   className,
   children,
   ...props
@@ -184,8 +185,13 @@ function Sidebar({
   variant?: "sidebar" | "floating" | "inset";
   collapsible?: boolean;
   blurred?: boolean;
+  mobileOnly?: boolean;
 }) {
   const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
+
+  if (mobileOnly && !isMobile) {
+    return null;
+  }
 
   if (collapsible === false) {
     return (
