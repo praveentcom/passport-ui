@@ -1,6 +1,6 @@
 {
   "name": "passport-ui",
-  "version": "1.0.53",
+  "version": "1.0.54",
   "type": "module",
   "description": "A modern, customizable UI component library with motion primitives and theme support built with React, TypeScript, Tailwind CSS, and shadcn/ui components.",
   "license": "MIT",
