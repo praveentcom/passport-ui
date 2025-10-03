@@ -69,7 +69,6 @@ import { definition as contentContainerDefinition } from "./layouts/content-cont
 import { definition as footerContainerDefinition } from "./layouts/footer-container/definition";
 import { definition as headerContainerDefinition } from "./layouts/header-container/definition";
 import { definition as pageLayoutDefinition } from "./layouts/page-layout/definition";
-import { definition as sidebarContainerDefinition } from "./layouts/sidebar-container/definition";
 // Motion primitives definitions
 import { definition as animatedBackgroundDefinition } from "./motion-primitives/animated-background/definition";
 import { definition as blurInDefinition } from "./motion-primitives/blur-in/definition";
@@ -141,7 +140,6 @@ export const definitions: ComponentDefinition[] = [
   footerContainerDefinition,
   headerContainerDefinition,
   pageLayoutDefinition,
-  sidebarContainerDefinition,
   // Provider definitions
   themeProviderDefinition,
   // Hook definitions

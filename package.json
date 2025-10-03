@@ -351,11 +351,6 @@
       "import": "./dist/sheet.js",
       "require": "./dist/sheet.cjs"
     },
-    "./sidebar-container": {
-      "types": "./dist/sidebar-container.d.ts",
-      "import": "./dist/sidebar-container.js",
-      "require": "./dist/sidebar-container.cjs"
-    },
     "./sidebar": {
       "types": "./dist/sidebar.d.ts",
       "import": "./dist/sidebar.js",

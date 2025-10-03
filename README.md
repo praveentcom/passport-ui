@@ -96,7 +96,6 @@ Use `ThemeProvider` to wrap your app and `ThemeButton` to toggle between themes.
 - [`FooterContainer`](https://passportui.com/layouts/footer-container/)
 - [`HeaderContainer`](https://passportui.com/layouts/header-container/)
 - [`PageLayout`](https://passportui.com/layouts/page-layout/)
-- [`SidebarContainer`](https://passportui.com/layouts/sidebar-container/)
 
 ### Providers
 

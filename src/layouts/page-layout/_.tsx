@@ -51,7 +51,7 @@ export interface PageLayoutProps
    */
   children: ReactNode;
   /**
-   * The sidebar content - should include SidebarContainer
+   * The sidebar content - should use Sidebar component directly
    */
   sidebar?: ReactNode;
   /**
@@ -90,10 +90,10 @@ export interface PageLayoutProps
 
 /**
  * A top-level page layout component that provides structure for any page content.
- * Users can compose SidebarContainer, HeaderContainer, FooterContainer, and ContentContainer as children.
+ * Users can compose Sidebar, HeaderContainer, FooterContainer, and ContentContainer as children.
  *
  * @param className - Additional CSS classes
- * @param children - The page content (can include SidebarContainer, ContentContainer, etc.)
+ * @param children - The page content (can include Sidebar, ContentContainer, etc.)
  * @param sidebar - The sidebar content (will be wrapped in SidebarProvider)
  * @param header - The header content (will be wrapped in HeaderContainer)
  * @param footer - The footer content (will be wrapped in FooterContainer)

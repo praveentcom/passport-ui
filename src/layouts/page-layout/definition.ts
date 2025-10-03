@@ -11,23 +11,49 @@ export const definition: ComponentDefinition = {
   storyId: "layout-containers-pagelayout",
   slug: "page-layout",
   importCode: `import { PageLayout } from "passport-ui";
-import { SidebarContainer } from "passport-ui";
-import { ContentContainer } from "passport-ui";
-import { SidebarProvider } from "passport-ui";`,
+import { 
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarInput,
+  SidebarProvider,
+  SidebarRail,
+  SidebarTrigger
+} from "passport-ui";
+import { ContentContainer } from "passport-ui";`,
   usageCode: `// Place SidebarProvider at app root level
 <SidebarProvider defaultOpen={true}>
   <PageLayout
   sidebar={
-    <SidebarContainer
-      sidebarHeader={
+    <Sidebar
+      variant="sidebar"
+      side="left"
+      collapsible={true}
+      blurred={false}
+      mobileOnly={false}
+    >
+      <SidebarHeader className="group-data-[state=collapsed]:hidden">
         <div className="meta-container">
           <h3>My App</h3>
           <p>Version 1.0.0</p>
         </div>
-      }
-    >
-      {/* Sidebar content */}
-    </SidebarContainer>
+      </SidebarHeader>
+      
+      <SidebarContent>
+        {/* Sidebar content */}
+      </SidebarContent>
+      
+      <SidebarFooter>
+        <div className="flex items-center justify-between group-data-[state=collapsed]:justify-center">
+          <div className="flex-1 group-data-[state=collapsed]:opacity-0 group-data-[state=collapsed]:invisible group-data-[state=collapsed]:w-0 transition-all duration-200">
+            {/* Footer content */}
+          </div>
+          <SidebarTrigger />
+        </div>
+      </SidebarFooter>
+      <SidebarRail />
+    </Sidebar>
   }
   header={
     <div className="flex justify-between items-center">

@@ -14,9 +14,14 @@ import pkg from "../../../package.json";
 import { Button } from "../../components/button";
 import { PrefetchLink } from "../../components/prefetch-link";
 import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
+  SidebarHeader,
+  SidebarInput,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -24,8 +29,9 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarProvider,
+  SidebarRail,
+  SidebarTrigger,
 } from "../../components/sidebar";
-import { SidebarContainer } from "../sidebar-container";
 import { definition } from "./definition";
 
 const meta: Meta<typeof PageLayout> = {
@@ -64,7 +70,7 @@ ${definition.usageCode}
     children: {
       control: false,
       description:
-        "The page content (can include SidebarContainer, ContentContainer, etc.)",
+        "The page content (can include Sidebar, ContentContainer, etc.)",
       table: {
         type: { summary: "ReactNode" },
         category: "Content",
@@ -72,7 +78,7 @@ ${definition.usageCode}
     },
     sidebar: {
       control: false,
-      description: "The sidebar content - should include SidebarContainer",
+      description: "The sidebar content - should use Sidebar component directly",
       table: {
         type: { summary: "ReactNode" },
         category: "Sidebar",
@@ -156,65 +162,83 @@ function SampleSidebar() {
   );
 
   return (
-    <SidebarContainer
-      sidebarHeader={
+    <Sidebar
+      variant="sidebar"
+      side="left"
+      collapsible={true}
+      blurred={false}
+      mobileOnly={false}
+    >
+      <SidebarHeader className="group-data-[state=collapsed]:hidden">
         <div className="meta-container">
           <h3>Passport UI</h3>
           <p>Version {pkg.version}</p>
         </div>
-      }
-      sidebarFooter={
-        <Button>
-          <Mail />
-          Support
-        </Button>
-      }
-      searchConfig={{
-        searchText,
-        setSearchText,
-        placeholder: "Search navigation…",
-      }}
-    >
-      <SidebarGroup>
-        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
-        <SidebarGroupContent>
-          <SidebarMenu>
-            {filteredItems.map((item) => (
-              <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton asChild={!!item.href}>
-                  {item.href ? (
-                    <PrefetchLink href={item.href}>
-                      <item.icon className="size-4" />
-                      {item.title}
-                    </PrefetchLink>
-                  ) : (
-                    <>
-                      <item.icon className="size-4" />
-                      {item.title}
-                    </>
+      </SidebarHeader>
+
+      <SidebarContent>
+        <SidebarInput
+          type="search"
+          placeholder="Search navigation…"
+          value={searchText}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchText(e.target.value)}
+          className="group-data-[state=collapsed]:hidden"
+        />
+
+        <SidebarGroup>
+          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {filteredItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild={!!item.href}>
+                    {item.href ? (
+                      <PrefetchLink href={item.href}>
+                        <item.icon className="size-4" />
+                        {item.title}
+                      </PrefetchLink>
+                    ) : (
+                      <>
+                        <item.icon className="size-4" />
+                        {item.title}
+                      </>
+                    )}
+                  </SidebarMenuButton>
+                  {item.subItems && (
+                    <SidebarMenuSub>
+                      {item.subItems.map((subItem) => (
+                        <SidebarMenuSubItem key={subItem}>
+                          <SidebarMenuSubButton asChild>
+                            <PrefetchLink
+                              href={`#${item.title.toLowerCase()}/${subItem.toLowerCase().replace(" ", "-")}`}
+                            >
+                              {subItem}
+                            </PrefetchLink>
+                          </SidebarMenuSubButton>
+                        </SidebarMenuSubItem>
+                      ))}
+                    </SidebarMenuSub>
                   )}
-                </SidebarMenuButton>
-                {item.subItems && (
-                  <SidebarMenuSub>
-                    {item.subItems.map((subItem) => (
-                      <SidebarMenuSubItem key={subItem}>
-                        <SidebarMenuSubButton asChild>
-                          <PrefetchLink
-                            href={`#${item.title.toLowerCase()}/${subItem.toLowerCase().replace(" ", "-")}`}
-                          >
-                            {subItem}
-                          </PrefetchLink>
-                        </SidebarMenuSubButton>
-                      </SidebarMenuSubItem>
-                    ))}
-                  </SidebarMenuSub>
-                )}
-              </SidebarMenuItem>
-            ))}
-          </SidebarMenu>
-        </SidebarGroupContent>
-      </SidebarGroup>
-    </SidebarContainer>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
+
+      <SidebarFooter>
+        <div className="flex items-center justify-between group-data-[state=collapsed]:justify-center">
+          <div className="flex-1 group-data-[state=collapsed]:opacity-0 group-data-[state=collapsed]:invisible group-data-[state=collapsed]:w-0 transition-all duration-200">
+            <Button>
+              <Mail />
+              Support
+            </Button>
+          </div>
+          <SidebarTrigger />
+        </div>
+      </SidebarFooter>
+      <SidebarRail />
+    </Sidebar>
   );
 }
 

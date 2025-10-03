@@ -9,19 +9,25 @@ import { Home } from "lucide-react";
 import pkg from "../../package.json";
 import { PrefetchLink } from "../../src/components/prefetch-link";
 import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
+  SidebarHeader,
+  SidebarInput,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-  useSidebar,
+  SidebarRail,
+  SidebarTrigger,
+  useSidebar
 } from "../../src/components/sidebar";
 import { MobileSidebarTrigger } from "../../src/composables/mobile-sidebar-trigger";
 import { ThemeToggle } from "../../src/composables/theme-toggle";
 import { PageLayout } from "../../src/layouts/page-layout";
-import { SidebarContainer } from "../../src/layouts/sidebar-container";
 import { SITE_CONFIG } from "../constants";
 import { PRIMARY_NAVIGATION_PAGES } from "../constants/primary-navigation";
 import { CATEGORY_LABELS, COMPONENTS_BY_CATEGORY } from "../utils";
@@ -124,57 +130,75 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   return (
     <PageLayout
       sidebar={
-        <SidebarContainer
-          searchConfig={{
-            searchText,
-            setSearchText,
-            placeholder: "Search…",
-          }}
-          sidebarHeader={
+        <Sidebar
+          variant="sidebar"
+          side="left"
+          collapsible={true}
+          blurred={false}
+          mobileOnly={false}
+        >
+          <SidebarHeader className="group-data-[state=collapsed]:hidden">
             <PrefetchLink href="/" onClick={handleLinkClick}>
               <div className="meta-container">
                 <h3 className="line-clamp-1">Passport UI</h3>
                 <p className="line-clamp-1">Compose with elegance</p>
               </div>
             </PrefetchLink>
-          }
-          sidebarFooter={
-            <div className="meta-container">
-              <h6 className="font-medium lowercase">v{pkg.version}</h6>
-            </div>
-          }
-        >
-          {filteredGroups.map((group) => (
-            <SidebarGroup key={group.label ?? "default"}>
-              {group.label && (
-                <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
-              )}
-              <SidebarGroupContent>
-                <SidebarMenu>
-                  {group.items.map((item) => {
-                    const normalizedPathname = pathname.replace(/\/$/, "");
-                    const normalizedHref = item.href.replace(/\/$/, "");
-                    const isActive = normalizedPathname === normalizedHref;
+          </SidebarHeader>
 
-                    return (
-                      <SidebarMenuItem key={item.href}>
-                        <SidebarMenuButton asChild isActive={isActive}>
-                          <PrefetchLink
-                            href={item.href}
-                            onClick={handleLinkClick}
-                          >
-                            <item.icon className="size-4" />
-                            {item.title}
-                          </PrefetchLink>
-                        </SidebarMenuButton>
-                      </SidebarMenuItem>
-                    );
-                  })}
-                </SidebarMenu>
-              </SidebarGroupContent>
-            </SidebarGroup>
-          ))}
-        </SidebarContainer>
+          <SidebarContent>
+            <SidebarInput
+              type="search"
+              placeholder="Search…"
+              value={searchText}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchText(e.target.value)}
+              className="group-data-[state=collapsed]:hidden"
+            />
+
+            {filteredGroups.map((group) => (
+              <SidebarGroup key={group.label ?? "default"}>
+                {group.label && (
+                  <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
+                )}
+                <SidebarGroupContent>
+                  <SidebarMenu>
+                    {group.items.map((item) => {
+                      const normalizedPathname = pathname.replace(/\/$/, "");
+                      const normalizedHref = item.href.replace(/\/$/, "");
+                      const isActive = normalizedPathname === normalizedHref;
+
+                      return (
+                        <SidebarMenuItem key={item.href}>
+                          <SidebarMenuButton asChild isActive={isActive}>
+                            <PrefetchLink
+                              href={item.href}
+                              onClick={handleLinkClick}
+                            >
+                              <item.icon className="size-4" />
+                              {item.title}
+                            </PrefetchLink>
+                          </SidebarMenuButton>
+                        </SidebarMenuItem>
+                      );
+                    })}
+                  </SidebarMenu>
+                </SidebarGroupContent>
+              </SidebarGroup>
+            ))}
+          </SidebarContent>
+
+          <SidebarFooter>
+            <div className="flex items-center justify-between group-data-[state=collapsed]:justify-center">
+              <div className="flex-1 group-data-[state=collapsed]:opacity-0 group-data-[state=collapsed]:invisible group-data-[state=collapsed]:w-0 transition-all duration-200">
+                <div className="meta-container">
+                  <h6 className="font-medium lowercase">v{pkg.version}</h6>
+                </div>
+              </div>
+              <SidebarTrigger />
+            </div>
+          </SidebarFooter>
+          <SidebarRail />
+        </Sidebar>
       }
       header={
         <div className="flex justify-between items-center gap-4">
