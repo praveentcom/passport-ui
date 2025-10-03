@@ -119,6 +119,19 @@ ${definition.usageCode}
         category: "Footer",
       },
     },
+    sidebarOptions: {
+      control: { type: "object" },
+      description:
+        "Sidebar configuration options (blurred, mobileOnly, variant, side, collapsible)",
+      table: {
+        type: { summary: "SidebarOptions" },
+        defaultValue: {
+          summary:
+            '{ blurred: false, mobileOnly: false, variant: "sidebar", side: "left", collapsible: true }',
+        },
+        category: "Sidebar",
+      },
+    },
     className: COMMON_CONTROLS.className,
   },
   render: (args) => <PageLayout {...args} />,
@@ -348,6 +361,38 @@ export const NoSidebar: Story = {
       variant: "full",
       sticky: false,
       blurred: false,
+    },
+  },
+};
+
+export const MobileOnlySidebar: Story = {
+  args: {
+    children: SAMPLE_CONTENT_CONTAINER,
+    leftSidebar: sampleLeftSidebar,
+    header: SAMPLE_HEADER_CONTENT,
+    footer: SAMPLE_FOOTER_CONTENT,
+    headerOptions: {
+      variant: "full",
+      sticky: true,
+      blurred: true,
+      revealStylesOnScroll: false,
+    },
+    footerOptions: {
+      variant: "full",
+      sticky: false,
+      blurred: false,
+    },
+    sidebarOptions: {
+      blurred: false,
+      mobileOnly: true,
+    },
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "When `sidebarOptions.mobileOnly` is set to `true`, the sidebar will only render on mobile devices and will be completely hidden on desktop. Try resizing your browser window or viewing this on a mobile device to see the sidebar.",
+      },
     },
   },
 };

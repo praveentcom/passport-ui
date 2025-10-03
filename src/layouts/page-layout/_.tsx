@@ -49,6 +49,22 @@ export interface SidebarOptions {
    * Whether the sidebar should have a blurred background effect
    */
   blurred?: boolean;
+  /**
+   * Only render sidebar on mobile devices
+   */
+  mobileOnly?: boolean;
+  /**
+   * Sidebar variant
+   */
+  variant?: "sidebar" | "floating" | "inset";
+  /**
+   * Sidebar side
+   */
+  side?: "left" | "right";
+  /**
+   * Whether the sidebar can collapse to icon-only mode
+   */
+  collapsible?: boolean;
 }
 
 export interface PageLayoutProps
@@ -115,7 +131,7 @@ export interface PageLayoutProps
  * @param footer - The footer content (will be wrapped in FooterContainer)
  * @param headerOptions - Header configuration options (variant, sticky, blurred, revealStylesOnScroll)
  * @param footerOptions - Footer configuration options (variant, sticky, blurred)
- * @param sidebarOptions - Sidebar configuration options (blurred)
+ * @param sidebarOptions - Sidebar configuration options (blurred, mobileOnly, variant, side, collapsible)
  * @param showSkipLinks - Whether to show skip links for accessibility
  * @param skipLinks - Custom skip link configuration
  * @returns The complete page layout
@@ -140,6 +156,10 @@ export function PageLayout({
   },
   sidebarOptions = {
     blurred: false,
+    mobileOnly: false,
+    variant: "sidebar",
+    side: "left",
+    collapsible: true,
   },
   showSkipLinks = true,
   skipLinks,
@@ -147,18 +167,33 @@ export function PageLayout({
   const [leftSidebarOpen, setLeftSidebarOpen] = useState(true);
   const [rightSidebarOpen, setRightSidebarOpen] = useState(true);
 
-  const leftSidebarWithProps =
-    leftSidebar && sidebarOptions.blurred
-      ? React.cloneElement(leftSidebar as React.ReactElement, {
-          blurred: sidebarOptions.blurred,
-        })
-      : leftSidebar;
-  const rightSidebarWithProps =
-    rightSidebar && sidebarOptions.blurred
-      ? React.cloneElement(rightSidebar as React.ReactElement, {
-          blurred: sidebarOptions.blurred,
-        })
-      : rightSidebar;
+  const applySidebarOptions = (sidebar: ReactNode) => {
+    if (!sidebar) return sidebar;
+
+    const hasOptions =
+      sidebarOptions.blurred ||
+      sidebarOptions.mobileOnly ||
+      sidebarOptions.variant ||
+      sidebarOptions.side ||
+      sidebarOptions.collapsible !== undefined;
+
+    if (!hasOptions) return sidebar;
+
+    return React.cloneElement(sidebar as React.ReactElement, {
+      ...(sidebarOptions.blurred && { blurred: sidebarOptions.blurred }),
+      ...(sidebarOptions.mobileOnly && {
+        mobileOnly: sidebarOptions.mobileOnly,
+      }),
+      ...(sidebarOptions.variant && { variant: sidebarOptions.variant }),
+      ...(sidebarOptions.side && { side: sidebarOptions.side }),
+      ...(sidebarOptions.collapsible !== undefined && {
+        collapsible: sidebarOptions.collapsible,
+      }),
+    });
+  };
+
+  const leftSidebarWithProps = applySidebarOptions(leftSidebar);
+  const rightSidebarWithProps = applySidebarOptions(rightSidebar);
 
   const defaultSkipLinks = [
     { href: "#main-content", label: "Skip to main content" },

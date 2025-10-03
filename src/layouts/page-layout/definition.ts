@@ -47,6 +47,13 @@ import { ContentContainer } from "passport-ui";`,
     blurred: false,
     variant: "full"
   }}
+  sidebarOptions={{
+    blurred: false,
+    mobileOnly: false,
+    variant: "sidebar",
+    side: "left",
+    collapsible: true
+  }}
 >
   <ContentContainer variant="broad">
     <div className="section-container">

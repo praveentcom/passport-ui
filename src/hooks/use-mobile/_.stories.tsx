@@ -46,7 +46,9 @@ function UseMobileComponent() {
       </div>
       <div
         className={`rounded-sm px-2 py-1 ${
-          isMobile ? "bg-info text-info-foreground" : "bg-success text-success-foreground"
+          isMobile
+            ? "bg-info text-info-foreground"
+            : "bg-success text-success-foreground"
         }`}
       >
         {isMobile

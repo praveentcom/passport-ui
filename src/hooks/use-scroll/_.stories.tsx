@@ -55,7 +55,9 @@ function UseScrollComponent({ target }: { target?: "window" | "element" }) {
       </div>
       <div
         className={`rounded-sm px-2 py-1 ${
-          hasScrolled ? "bg-info text-info-foreground" : "bg-success text-success-foreground"
+          hasScrolled
+            ? "bg-info text-info-foreground"
+            : "bg-success text-success-foreground"
         }`}
       >
         {hasScrolled

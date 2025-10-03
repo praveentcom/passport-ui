@@ -304,7 +304,8 @@ export const MobileOnly: Story = {
   parameters: {
     docs: {
       description: {
-        story: "When `mobileOnly` is set to `true`, the sidebar will only render on mobile devices and will be completely hidden on desktop. Try resizing your browser window or viewing this on a mobile device to see the sidebar.",
+        story:
+          "When `mobileOnly` is set to `true`, the sidebar will only render on mobile devices and will be completely hidden on desktop. Try resizing your browser window or viewing this on a mobile device to see the sidebar.",
       },
     },
   },

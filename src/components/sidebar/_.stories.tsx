@@ -135,8 +135,9 @@ export const MobileOnly: Story = {
       <main className="flex-1 p-4">
         <h1>Main Content Area</h1>
         <p>
-          This sidebar will only be visible on mobile devices. On desktop, it will not render at all.
-          Try resizing your browser window or viewing this on a mobile device to see the sidebar.
+          This sidebar will only be visible on mobile devices. On desktop, it
+          will not render at all. Try resizing your browser window or viewing
+          this on a mobile device to see the sidebar.
         </p>
       </main>
     </div>
@@ -144,7 +145,8 @@ export const MobileOnly: Story = {
   parameters: {
     docs: {
       description: {
-        story: "When `mobileOnly` is set to `true`, the sidebar will only render on mobile devices and will be completely hidden on desktop.",
+        story:
+          "When `mobileOnly` is set to `true`, the sidebar will only render on mobile devices and will be completely hidden on desktop.",
       },
     },
   },
