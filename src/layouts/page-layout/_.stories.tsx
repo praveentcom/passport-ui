@@ -23,8 +23,8 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
+  SidebarProvider,
 } from "../../components/sidebar";
-import { SidebarProvider } from "../../providers/sidebar-provider";
 import { SidebarContainer } from "../sidebar-container";
 import { definition } from "./definition";
 

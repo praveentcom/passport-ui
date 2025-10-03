@@ -356,11 +356,6 @@
       "import": "./dist/sidebar-container.js",
       "require": "./dist/sidebar-container.cjs"
     },
-    "./sidebar-provider": {
-      "types": "./dist/sidebar-provider.d.ts",
-      "import": "./dist/sidebar-provider.js",
-      "require": "./dist/sidebar-provider.cjs"
-    },
     "./sidebar": {
       "types": "./dist/sidebar.d.ts",
       "import": "./dist/sidebar.js",
