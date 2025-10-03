@@ -1,10 +1,10 @@
 "use client";
 
-import React, { Fragment, ReactNode, useState } from "react";
+import React, { Fragment, ReactNode } from "react";
 
 import { VariantProps, cva } from "class-variance-authority";
 
-import { SidebarInset, SidebarProvider } from "../../components/sidebar";
+import { SidebarInset } from "../../components/sidebar";
 import { FooterContainer, FooterContainerVariant } from "../footer-container";
 import { HeaderContainer, HeaderContainerVariant } from "../header-container";
 
@@ -44,29 +44,6 @@ export interface FooterOptions {
   blurred?: boolean;
 }
 
-export interface SidebarOptions {
-  /**
-   * Whether the sidebar should have a blurred background effect
-   */
-  blurred?: boolean;
-  /**
-   * Only render sidebar on mobile devices
-   */
-  mobileOnly?: boolean;
-  /**
-   * Sidebar variant
-   */
-  variant?: "sidebar" | "floating" | "inset";
-  /**
-   * Sidebar side
-   */
-  side?: "left" | "right";
-  /**
-   * Whether the sidebar can collapse to icon-only mode
-   */
-  collapsible?: boolean;
-}
-
 export interface PageLayoutProps
   extends VariantProps<typeof pageLayoutVariants> {
   /**
@@ -74,13 +51,9 @@ export interface PageLayoutProps
    */
   children: ReactNode;
   /**
-   * The left sidebar content - should include SidebarContainer
+   * The sidebar content - should include SidebarContainer
    */
-  leftSidebar?: ReactNode;
-  /**
-   * The right sidebar content - should include SidebarContainer
-   */
-  rightSidebar?: ReactNode;
+  sidebar?: ReactNode;
   /**
    * The header content - will be wrapped in HeaderContainer
    */
@@ -102,10 +75,6 @@ export interface PageLayoutProps
    */
   footerOptions?: FooterOptions;
   /**
-   * Sidebar configuration options
-   */
-  sidebarOptions?: SidebarOptions;
-  /**
    * Whether to show skip links for accessibility
    * @default true
    */
@@ -125,13 +94,11 @@ export interface PageLayoutProps
  *
  * @param className - Additional CSS classes
  * @param children - The page content (can include SidebarContainer, ContentContainer, etc.)
- * @param leftSidebar - The left sidebar content (will be wrapped in SidebarProvider)
- * @param rightSidebar - The right sidebar content (will be wrapped in SidebarProvider)
+ * @param sidebar - The sidebar content (will be wrapped in SidebarProvider)
  * @param header - The header content (will be wrapped in HeaderContainer)
  * @param footer - The footer content (will be wrapped in FooterContainer)
  * @param headerOptions - Header configuration options (variant, sticky, blurred, revealStylesOnScroll)
  * @param footerOptions - Footer configuration options (variant, sticky, blurred)
- * @param sidebarOptions - Sidebar configuration options (blurred, mobileOnly, variant, side, collapsible)
  * @param showSkipLinks - Whether to show skip links for accessibility
  * @param skipLinks - Custom skip link configuration
  * @returns The complete page layout
@@ -139,8 +106,7 @@ export interface PageLayoutProps
 export function PageLayout({
   className,
   children,
-  leftSidebar,
-  rightSidebar,
+  sidebar,
   header,
   footer,
   headerOptions = {
@@ -154,63 +120,16 @@ export function PageLayout({
     sticky: false,
     blurred: false,
   },
-  sidebarOptions = {
-    blurred: false,
-    mobileOnly: false,
-    variant: "sidebar",
-    side: "left",
-    collapsible: true,
-  },
   showSkipLinks = true,
   skipLinks,
 }: PageLayoutProps): ReactNode {
-  const [leftSidebarOpen, setLeftSidebarOpen] = useState(true);
-  const [rightSidebarOpen, setRightSidebarOpen] = useState(true);
-
-  const applySidebarOptions = (sidebar: ReactNode) => {
-    if (!sidebar) return sidebar;
-
-    const hasOptions =
-      sidebarOptions.blurred ||
-      sidebarOptions.mobileOnly ||
-      sidebarOptions.variant ||
-      sidebarOptions.side ||
-      sidebarOptions.collapsible !== undefined;
-
-    if (!hasOptions) return sidebar;
-
-    return React.cloneElement(sidebar as React.ReactElement, {
-      ...(sidebarOptions.blurred && { blurred: sidebarOptions.blurred }),
-      ...(sidebarOptions.mobileOnly && {
-        mobileOnly: sidebarOptions.mobileOnly,
-      }),
-      ...(sidebarOptions.variant && { variant: sidebarOptions.variant }),
-      ...(sidebarOptions.side && { side: sidebarOptions.side }),
-      ...(sidebarOptions.collapsible !== undefined && {
-        collapsible: sidebarOptions.collapsible,
-      }),
-    });
-  };
-
-  const leftSidebarWithProps = applySidebarOptions(leftSidebar);
-  const rightSidebarWithProps = applySidebarOptions(rightSidebar);
-
   const defaultSkipLinks = [
     { href: "#main-content", label: "Skip to main content" },
-    ...(leftSidebar
-      ? [{ href: "#left-sidebar", label: "Skip to left navigation" }]
-      : []),
-    ...(rightSidebar
-      ? [{ href: "#right-sidebar", label: "Skip to right navigation" }]
-      : []),
+    ...(sidebar ? [{ href: "#sidebar", label: "Skip to sidebar" }] : []),
     ...(header ? [{ href: "#header", label: "Skip to header" }] : []),
     ...(footer ? [{ href: "#footer", label: "Skip to footer" }] : []),
   ];
   const finalSkipLinks = skipLinks || defaultSkipLinks;
-  const getRightPadding = () => {
-    if (!rightSidebar) return "";
-    return rightSidebarOpen ? "md:pr-[16rem]" : "md:pr-[3rem]";
-  };
 
   const renderMainContent = () => (
     <div className="flex flex-col min-h-screen">
@@ -241,60 +160,17 @@ export function PageLayout({
     </div>
   );
 
-  const renderRightSidebar = () => (
-    <div
-      id="right-sidebar"
-      role="navigation"
-      aria-label="Right navigation"
-      className="fixed right-0 top-0 h-full"
-    >
-      <SidebarProvider
-        defaultOpen={true}
-        open={rightSidebarOpen}
-        onOpenChange={setRightSidebarOpen}
-      >
-        {rightSidebarWithProps}
-      </SidebarProvider>
-    </div>
-  );
-
-  const contentClasses = `flex-1 transition-[padding] duration-200 ${getRightPadding()}`;
   let layoutStructure: ReactNode;
 
-  if (leftSidebar && rightSidebar) {
+  if (sidebar) {
     layoutStructure = (
-      <SidebarProvider
-        defaultOpen={true}
-        open={leftSidebarOpen}
-        onOpenChange={setLeftSidebarOpen}
-      >
-        <div id="left-sidebar" role="navigation" aria-label="Left navigation">
-          {leftSidebarWithProps}
+      <div className="flex min-h-screen w-full">
+        <div id="sidebar" role="navigation" aria-label="Sidebar navigation">
+          {sidebar}
         </div>
-        <SidebarInset className="flex min-h-screen">
-          <div className={contentClasses}>{renderMainContent()}</div>
-          {renderRightSidebar()}
+        <SidebarInset className="flex flex-1">
+          {renderMainContent()}
         </SidebarInset>
-      </SidebarProvider>
-    );
-  } else if (leftSidebar && !rightSidebar) {
-    layoutStructure = (
-      <SidebarProvider
-        defaultOpen={true}
-        open={leftSidebarOpen}
-        onOpenChange={setLeftSidebarOpen}
-      >
-        <div id="left-sidebar" role="navigation" aria-label="Left navigation">
-          {leftSidebarWithProps}
-        </div>
-        <SidebarInset className="flex">{renderMainContent()}</SidebarInset>
-      </SidebarProvider>
-    );
-  } else if (!leftSidebar && rightSidebar) {
-    layoutStructure = (
-      <div className="flex min-h-screen">
-        <div className={contentClasses}>{renderMainContent()}</div>
-        {renderRightSidebar()}
       </div>
     );
   } else {

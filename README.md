@@ -100,6 +100,7 @@ Use `ThemeProvider` to wrap your app and `ThemeButton` to toggle between themes.
 
 ### Providers
 
+- [`SidebarProvider`](https://passportui.com/providers/sidebar-provider/)
 - [`ThemeProvider`](https://passportui.com/providers/theme-provider/)
 
 ### Components

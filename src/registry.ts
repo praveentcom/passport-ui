@@ -76,6 +76,7 @@ import { definition as blurInDefinition } from "./motion-primitives/blur-in/defi
 import { definition as sequentialRevealDefinition } from "./motion-primitives/sequential-reveal/definition";
 import { definition as typewriterTextDefinition } from "./motion-primitives/typewriter-text/definition";
 // Provider definitions
+import { definition as sidebarProviderDefinition } from "./providers/sidebar-provider/definition";
 import { definition as themeProviderDefinition } from "./providers/theme-provider/definition";
 import type { ComponentDefinition } from "./types/definition";
 
@@ -143,6 +144,7 @@ export const definitions: ComponentDefinition[] = [
   pageLayoutDefinition,
   sidebarContainerDefinition,
   // Provider definitions
+  sidebarProviderDefinition,
   themeProviderDefinition,
   // Hook definitions
   useMobileDefinition,

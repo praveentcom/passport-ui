@@ -24,12 +24,20 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "../../components/sidebar";
+import { SidebarProvider } from "../../providers/sidebar-provider";
 import { SidebarContainer } from "../sidebar-container";
 import { definition } from "./definition";
 
 const meta: Meta<typeof PageLayout> = {
   title: "Layout Containers/PageLayout",
   component: PageLayout,
+  decorators: [
+    (Story) => (
+      <SidebarProvider defaultOpen={true}>
+        <Story />
+      </SidebarProvider>
+    ),
+  ],
   parameters: {
     layout: "fullscreen",
     docs: {
@@ -62,18 +70,9 @@ ${definition.usageCode}
         category: "Content",
       },
     },
-    leftSidebar: {
+    sidebar: {
       control: false,
-      description: "The left sidebar content - should include SidebarContainer",
-      table: {
-        type: { summary: "ReactNode" },
-        category: "Sidebar",
-      },
-    },
-    rightSidebar: {
-      control: false,
-      description:
-        "The right sidebar content - should include SidebarContainer",
+      description: "The sidebar content - should include SidebarContainer",
       table: {
         type: { summary: "ReactNode" },
         category: "Sidebar",
@@ -119,19 +118,6 @@ ${definition.usageCode}
         category: "Footer",
       },
     },
-    sidebarOptions: {
-      control: { type: "object" },
-      description:
-        "Sidebar configuration options (blurred, mobileOnly, variant, side, collapsible)",
-      table: {
-        type: { summary: "SidebarOptions" },
-        defaultValue: {
-          summary:
-            '{ blurred: false, mobileOnly: false, variant: "sidebar", side: "left", collapsible: true }',
-        },
-        category: "Sidebar",
-      },
-    },
     className: COMMON_CONTROLS.className,
   },
   render: (args) => <PageLayout {...args} />,
@@ -140,7 +126,7 @@ ${definition.usageCode}
 export default meta;
 type Story = StoryObj<typeof PageLayout>;
 
-function SampleLeftSidebar() {
+function SampleSidebar() {
   const [searchText, setSearchText] = useState("");
 
   // Filter menu items based on search
@@ -171,7 +157,6 @@ function SampleLeftSidebar() {
 
   return (
     <SidebarContainer
-      side="left"
       sidebarHeader={
         <div className="meta-container">
           <h3>Passport UI</h3>
@@ -233,62 +218,12 @@ function SampleLeftSidebar() {
   );
 }
 
-const sampleLeftSidebar: ReactNode = <SampleLeftSidebar />;
-
-const sampleRightSidebar: ReactNode = (
-  <SidebarContainer
-    side="right"
-    sidebarHeader={
-      <div className="meta-container">
-        <h3>Tools</h3>
-        <p>Quick Actions</p>
-      </div>
-    }
-    sidebarFooter={
-      <Button>
-        <Mail />
-        Help
-      </Button>
-    }
-  >
-    <SidebarGroup>
-      <SidebarGroupLabel>Quick Actions</SidebarGroupLabel>
-      <SidebarGroupContent>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <PrefetchLink href="#dashboard">
-                <Home className="size-4" />
-                Dashboard
-              </PrefetchLink>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <PrefetchLink href="#users">
-                <Users className="size-4" />
-                Users
-              </PrefetchLink>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <PrefetchLink href="#documents">
-                <FileText className="size-4" />
-                Documents
-              </PrefetchLink>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarGroupContent>
-    </SidebarGroup>
-  </SidebarContainer>
-);
+const sampleSidebar: ReactNode = <SampleSidebar />;
 
 export const Default: Story = {
   args: {
     children: SAMPLE_CONTENT_CONTAINER,
-    leftSidebar: sampleLeftSidebar,
+    sidebar: sampleSidebar,
     header: SAMPLE_HEADER_CONTENT,
     footer: SAMPLE_FOOTER_CONTENT,
     headerOptions: {
@@ -301,47 +236,6 @@ export const Default: Story = {
       variant: "full",
       sticky: true,
       blurred: true,
-    },
-  },
-};
-
-export const RightSidebar: Story = {
-  args: {
-    children: SAMPLE_CONTENT_CONTAINER,
-    rightSidebar: sampleRightSidebar,
-    header: SAMPLE_HEADER_CONTENT,
-    footer: SAMPLE_FOOTER_CONTENT,
-    headerOptions: {
-      variant: "full",
-      sticky: true,
-      blurred: true,
-      revealStylesOnScroll: false,
-    },
-    footerOptions: {
-      variant: "full",
-      sticky: false,
-      blurred: false,
-    },
-  },
-};
-
-export const DualSidebars: Story = {
-  args: {
-    children: SAMPLE_CONTENT_CONTAINER,
-    leftSidebar: sampleLeftSidebar,
-    rightSidebar: sampleRightSidebar,
-    header: SAMPLE_HEADER_CONTENT,
-    footer: SAMPLE_FOOTER_CONTENT,
-    headerOptions: {
-      variant: "full",
-      sticky: true,
-      blurred: true,
-      revealStylesOnScroll: false,
-    },
-    footerOptions: {
-      variant: "full",
-      sticky: false,
-      blurred: false,
     },
   },
 };
@@ -361,38 +255,6 @@ export const NoSidebar: Story = {
       variant: "full",
       sticky: false,
       blurred: false,
-    },
-  },
-};
-
-export const MobileOnlySidebar: Story = {
-  args: {
-    children: SAMPLE_CONTENT_CONTAINER,
-    leftSidebar: sampleLeftSidebar,
-    header: SAMPLE_HEADER_CONTENT,
-    footer: SAMPLE_FOOTER_CONTENT,
-    headerOptions: {
-      variant: "full",
-      sticky: true,
-      blurred: true,
-      revealStylesOnScroll: false,
-    },
-    footerOptions: {
-      variant: "full",
-      sticky: false,
-      blurred: false,
-    },
-    sidebarOptions: {
-      blurred: false,
-      mobileOnly: true,
-    },
-  },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "When `sidebarOptions.mobileOnly` is set to `true`, the sidebar will only render on mobile devices and will be completely hidden on desktop. Try resizing your browser window or viewing this on a mobile device to see the sidebar.",
-      },
     },
   },
 };

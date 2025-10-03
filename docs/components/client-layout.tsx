@@ -123,7 +123,7 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
 
   return (
     <PageLayout
-      leftSidebar={
+      sidebar={
         <SidebarContainer
           searchConfig={{
             searchText,

@@ -5,15 +5,19 @@ import type { ComponentDefinition } from "../../types/definition";
 export const definition: ComponentDefinition = {
   name: "Page Layout",
   icon: Layout,
-  description: "A comprehensive layout structure for a standard page.",
+  description:
+    "A comprehensive layout structure for a standard page. When using sidebars, you must wrap your app with SidebarProvider.",
   category: "layouts",
   storyId: "layout-containers-pagelayout",
   slug: "page-layout",
   importCode: `import { PageLayout } from "passport-ui";
 import { SidebarContainer } from "passport-ui";
-import { ContentContainer } from "passport-ui";`,
-  usageCode: `<PageLayout
-  leftSidebar={
+import { ContentContainer } from "passport-ui";
+import { SidebarProvider } from "passport-ui";`,
+  usageCode: `// Place SidebarProvider at app root level
+<SidebarProvider defaultOpen={true}>
+  <PageLayout
+  sidebar={
     <SidebarContainer
       sidebarHeader={
         <div className="meta-container">
@@ -47,19 +51,13 @@ import { ContentContainer } from "passport-ui";`,
     blurred: false,
     variant: "full"
   }}
-  sidebarOptions={{
-    blurred: false,
-    mobileOnly: false,
-    variant: "sidebar",
-    side: "left",
-    collapsible: true
-  }}
 >
-  <ContentContainer variant="broad">
-    <div className="section-container">
-      <h1>Welcome to the Dashboard</h1>
-      <p>Your main content goes here.</p>
-    </div>
-  </ContentContainer>
-</PageLayout>`,
+    <ContentContainer variant="broad">
+      <div className="section-container">
+        <h1>Welcome to the Dashboard</h1>
+        <p>Your main content goes here.</p>
+      </div>
+    </ContentContainer>
+  </PageLayout>
+</SidebarProvider>`,
 };
