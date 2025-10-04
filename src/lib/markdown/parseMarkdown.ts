@@ -10,12 +10,12 @@ function parseMarkdown(content: string): string {
    * Sequence: Process the headers
    */
   let processedContent = content
-    .replace(/^###### (.*$)/gim, '<h6 class="mb-3 mt-2">$1</h6>')
-    .replace(/^##### (.*$)/gim, '<h5 class="mb-3 mt-2">$1</h5>')
-    .replace(/^#### (.*$)/gim, '<h4 class="mb-3 mt-3">$1</h4>')
-    .replace(/^### (.*$)/gim, '<h3 class="mb-3 mt-4">$1</h3>')
+    .replace(/^###### (.*$)/gim, '<h6 class="mb-3 mt-5">$1</h6>')
+    .replace(/^##### (.*$)/gim, '<h5 class="mb-3 mt-5">$1</h5>')
+    .replace(/^#### (.*$)/gim, '<h4 class="mb-3 mt-5">$1</h4>')
+    .replace(/^### (.*$)/gim, '<h3 class="mb-3 mt-5">$1</h3>')
     .replace(/^## (.*$)/gim, '<h2 class="mb-3 mt-5">$1</h2>')
-    .replace(/^# (.*$)/gim, '<h1 class="mb-3 mt-6">$1</h1>');
+    .replace(/^# (.*$)/gim, '<h1 class="mb-3 mt-5">$1</h1>');
 
   /**
    * Sequence: Process escape characters (before other inline processing)

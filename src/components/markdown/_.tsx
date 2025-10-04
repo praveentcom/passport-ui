@@ -174,7 +174,7 @@ export function Markdown({
     <article
       data-slot="markdown"
       className={cn(
-        "article-base text-sm grid",
+        "article-base text-sm grid [&>:first-child]:mt-0",
         muted && "article-muted",
         className
       )}
