@@ -262,7 +262,7 @@
 
   /* Container Styles */
   .passport-ui .content-container {
-    @apply mx-auto pt-3 md:pt-5 pb-8 px-4 grid gap-y-6 md:gap-y-8 gap-x-6 md:gap-x-8;
+    @apply mx-auto pt-3 md:pt-5 pb-8 px-4 grid gap-8 md:gap-10;
   }
   .passport-ui .section-container {
     @apply grid gap-y-6 gap-x-6;
