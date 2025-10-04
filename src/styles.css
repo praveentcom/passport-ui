@@ -190,11 +190,13 @@
   }
 
   body {
-    @apply min-h-screen font-sans dark:antialiased;
+    @apply min-h-screen font-sans antialiased;
   }
 
   .passport-ui * {
-    @apply border-border outline-ring/50 leading-normal;
+    @apply border-border outline-ring/50;
+    line-height: 1.65;
+    --tw-leading: 1.65;
   }
 
   .passport-ui ::-webkit-scrollbar,

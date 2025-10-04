@@ -58,7 +58,6 @@ import { definition as tooltipDefinition } from "./components/tooltip/definition
 import { definition as visuallyHiddenDefinition } from "./components/visually-hidden/definition";
 // Composable definitions
 import { definition as emptyStateDefinition } from "./composables/empty-state/definition";
-import { definition as mobileSidebarTriggerDefinition } from "./composables/mobile-sidebar-trigger/definition";
 import { definition as themeButtonDefinition } from "./composables/theme-button/definition";
 import { definition as themeToggleDefinition } from "./composables/theme-toggle/definition";
 // Hook definitions
@@ -147,7 +146,6 @@ export const definitions: ComponentDefinition[] = [
   useScrollDefinition,
   // Composable definitions
   emptyStateDefinition,
-  mobileSidebarTriggerDefinition,
   themeButtonDefinition,
   themeToggleDefinition,
   // Motion primitives definitions

@@ -4,9 +4,10 @@ import { useState } from "react";
 
 import { usePathname } from "next/navigation";
 
-import { Home } from "lucide-react";
+import { Home, MenuIcon } from "lucide-react";
 
 import pkg from "../../package.json";
+import { Button } from "../../src/components/button";
 import { PrefetchLink } from "../../src/components/prefetch-link";
 import {
   Sidebar,
@@ -23,11 +24,11 @@ import {
   SidebarProvider,
   SidebarRail,
   SidebarTrigger,
-  useSidebar
+  useSidebar,
 } from "../../src/components/sidebar";
-import { MobileSidebarTrigger } from "../../src/composables/mobile-sidebar-trigger";
 import { ThemeToggle } from "../../src/composables/theme-toggle";
 import { PageLayout } from "../../src/layouts/page-layout";
+import { cn } from "../../src/lib/utils";
 import { SITE_CONFIG } from "../constants";
 import { PRIMARY_NAVIGATION_PAGES } from "../constants/primary-navigation";
 import { CATEGORY_LABELS, COMPONENTS_BY_CATEGORY } from "../utils";
@@ -101,7 +102,7 @@ const generateNavigationGroups = (
 function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [searchText, setSearchText] = useState("");
-  const { isMobile, setOpenMobile } = useSidebar();
+  const { isMobile, setOpenMobile, toggleSidebar } = useSidebar();
 
   const pageTitle = getPageTitle(pathname);
 
@@ -151,7 +152,9 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
               type="search"
               placeholder="Search…"
               value={searchText}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchText(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setSearchText(e.target.value)
+              }
               className="group-data-[state=collapsed]:hidden"
             />
 
@@ -203,7 +206,17 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
       header={
         <div className="flex justify-between items-center gap-4">
           <div className="flex items-center gap-3">
-            <MobileSidebarTrigger />
+            <Button
+              data-slot="mobile-sidebar-trigger"
+              variant="outline"
+              className={cn("md:hidden", !isMobile && "invisible")}
+              onClick={() => {
+                toggleSidebar();
+              }}
+            >
+              <MenuIcon />
+              <span className="sr-only">Open sidebar</span>
+            </Button>
             <h3>{pageTitle}</h3>
           </div>
           <ThemeToggle />

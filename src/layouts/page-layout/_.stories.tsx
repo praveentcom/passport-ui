@@ -78,7 +78,8 @@ ${definition.usageCode}
     },
     sidebar: {
       control: false,
-      description: "The sidebar content - should use Sidebar component directly",
+      description:
+        "The sidebar content - should use Sidebar component directly",
       table: {
         type: { summary: "ReactNode" },
         category: "Sidebar",
@@ -181,7 +182,9 @@ function SampleSidebar() {
           type="search"
           placeholder="Search navigation…"
           value={searchText}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchText(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setSearchText(e.target.value)
+          }
           className="group-data-[state=collapsed]:hidden"
         />
 

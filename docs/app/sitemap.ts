@@ -411,12 +411,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/composables/mobile-sidebar-trigger/`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
       url: `${baseUrl}/composables/theme-button/`,
       lastModified: new Date(),
       changeFrequency: "monthly",

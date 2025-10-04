@@ -167,7 +167,6 @@ Use `ThemeProvider` to wrap your app and `ThemeButton` to toggle between themes.
 ### Composables
 
 - [`EmptyState`](https://passportui.com/composables/empty-state/)
-- [`MobileSidebarTrigger`](https://passportui.com/composables/mobile-sidebar-trigger/)
 - [`ThemeButton`](https://passportui.com/composables/theme-button/)
 - [`ThemeToggle`](https://passportui.com/composables/theme-toggle/)
 

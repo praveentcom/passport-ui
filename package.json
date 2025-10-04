@@ -112,10 +112,6 @@
       "import": "./dist/checkbox.js",
       "require": "./dist/checkbox.cjs"
     },
-    "./chunk-3HNEZ72K": {
-      "import": "./dist/chunk-3HNEZ72K.js",
-      "require": "./dist/chunk-3HNEZ72K.cjs"
-    },
     "./chunk-46YVCT7M": {
       "import": "./dist/chunk-46YVCT7M.js",
       "require": "./dist/chunk-46YVCT7M.cjs"
@@ -124,57 +120,37 @@
       "import": "./dist/chunk-A2DGQUNJ.js",
       "require": "./dist/chunk-A2DGQUNJ.cjs"
     },
-    "./chunk-AENFYL5D": {
-      "import": "./dist/chunk-AENFYL5D.js",
-      "require": "./dist/chunk-AENFYL5D.cjs"
-    },
     "./chunk-ARQQEZR5": {
       "import": "./dist/chunk-ARQQEZR5.js",
       "require": "./dist/chunk-ARQQEZR5.cjs"
     },
-    "./chunk-DUWK7VNT": {
-      "import": "./dist/chunk-DUWK7VNT.js",
-      "require": "./dist/chunk-DUWK7VNT.cjs"
-    },
-    "./chunk-G5BSQIKR": {
-      "import": "./dist/chunk-G5BSQIKR.js",
-      "require": "./dist/chunk-G5BSQIKR.cjs"
-    },
-    "./chunk-JK4WACDJ": {
-      "import": "./dist/chunk-JK4WACDJ.js",
-      "require": "./dist/chunk-JK4WACDJ.cjs"
-    },
-    "./chunk-KEOULEVR": {
-      "import": "./dist/chunk-KEOULEVR.js",
-      "require": "./dist/chunk-KEOULEVR.cjs"
+    "./chunk-GJ2UEY5L": {
+      "import": "./dist/chunk-GJ2UEY5L.js",
+      "require": "./dist/chunk-GJ2UEY5L.cjs"
     },
     "./chunk-KZAVP5HF": {
       "import": "./dist/chunk-KZAVP5HF.js",
       "require": "./dist/chunk-KZAVP5HF.cjs"
     },
-    "./chunk-Q7OLWYHJ": {
-      "import": "./dist/chunk-Q7OLWYHJ.js",
-      "require": "./dist/chunk-Q7OLWYHJ.cjs"
+    "./chunk-MYVX5GBC": {
+      "import": "./dist/chunk-MYVX5GBC.js",
+      "require": "./dist/chunk-MYVX5GBC.cjs"
     },
-    "./chunk-STJ4YIV6": {
-      "import": "./dist/chunk-STJ4YIV6.js",
-      "require": "./dist/chunk-STJ4YIV6.cjs"
+    "./chunk-NPVP5Z73": {
+      "import": "./dist/chunk-NPVP5Z73.js",
+      "require": "./dist/chunk-NPVP5Z73.cjs"
     },
-    "./chunk-TTTAVJJL": {
-      "import": "./dist/chunk-TTTAVJJL.js",
-      "require": "./dist/chunk-TTTAVJJL.cjs"
-    },
-    "./chunk-UIGWSIAZ": {
-      "import": "./dist/chunk-UIGWSIAZ.js",
-      "require": "./dist/chunk-UIGWSIAZ.cjs"
+    "./chunk-RFNQAJP2": {
+      "import": "./dist/chunk-RFNQAJP2.js",
+      "require": "./dist/chunk-RFNQAJP2.cjs"
     },
     "./chunk-VV2YVULU": {
       "import": "./dist/chunk-VV2YVULU.js",
       "require": "./dist/chunk-VV2YVULU.cjs"
     },
-    "./chunk-XH2M3KAC": {
-      "import": "./dist/chunk-XH2M3KAC.js",
-      "require": "./dist/chunk-XH2M3KAC.cjs"
+    "./chunk-WUKKWTSM": {
+      "import": "./dist/chunk-WUKKWTSM.js",
+      "require": "./dist/chunk-WUKKWTSM.cjs"
     },
     "./code-block": {
       "types": "./dist/code-block.d.ts",
@@ -280,11 +256,6 @@
       "types": "./dist/menubar.d.ts",
       "import": "./dist/menubar.js",
       "require": "./dist/menubar.cjs"
-    },
-    "./mobile-sidebar-trigger": {
-      "types": "./dist/mobile-sidebar-trigger.d.ts",
-      "import": "./dist/mobile-sidebar-trigger.js",
-      "require": "./dist/mobile-sidebar-trigger.cjs"
     },
     "./navigation-menu": {
       "types": "./dist/navigation-menu.d.ts",

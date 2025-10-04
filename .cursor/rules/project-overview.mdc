@@ -35,7 +35,7 @@ This is **passport-ui**, a modern React UI component library published on npm. I
 5. **Composables** ([src/composables/](mdc:src/composables/))
    - Higher-level components for common composables
    - Usually made with combination of components and utilities
-   - Includes EmptyState, MobileSidebarTrigger, ThemeButton, ThemeToggle, etc.
+   - Includes EmptyState, ThemeButton, ThemeToggle, etc.
 
 6. **Motion Primitives** ([src/motion-primitives/](mdc:src/motion-primitives/))
    - Motion primitives for animations using Motion
