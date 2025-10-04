@@ -258,7 +258,7 @@
     @apply text-sm;
   }
   .passport-ui h6 {
-    @apply text-xs uppercase tracking-wide;
+    @apply text-xs uppercase tracking-wide leading-none;
   }
 
   /* Container Styles */
