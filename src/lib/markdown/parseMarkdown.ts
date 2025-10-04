@@ -10,12 +10,12 @@ function parseMarkdown(content: string): string {
    * Sequence: Process the headers
    */
   let processedContent = content
-    .replace(/^###### (.*$)/gim, '<h6 class="mb-3 mt-6">$1</h6>')
-    .replace(/^##### (.*$)/gim, '<h5 class="mb-3 mt-6">$1</h5>')
-    .replace(/^#### (.*$)/gim, '<h4 class="mb-3 mt-6">$1</h4>')
-    .replace(/^### (.*$)/gim, '<h3 class="mb-3 mt-6">$1</h3>')
-    .replace(/^## (.*$)/gim, '<h2 class="mb-3 mt-6">$1</h2>')
-    .replace(/^# (.*$)/gim, '<h1 class="mb-3 mt-6">$1</h1>');
+    .replace(/^###### (.*$)/gim, '<h6 class="mb-4 mt-6">$1</h6>')
+    .replace(/^##### (.*$)/gim, '<h5 class="mb-4 mt-6">$1</h5>')
+    .replace(/^#### (.*$)/gim, '<h4 class="mb-4 mt-6">$1</h4>')
+    .replace(/^### (.*$)/gim, '<h3 class="mb-4 mt-6">$1</h3>')
+    .replace(/^## (.*$)/gim, '<h2 class="mb-4 mt-6">$1</h2>')
+    .replace(/^# (.*$)/gim, '<h1 class="mb-4 mt-6">$1</h1>');
 
   /**
    * Sequence: Process escape characters (before other inline processing)
@@ -116,11 +116,11 @@ function parseMarkdown(content: string): string {
    * Sequence: Process the paragraphs
    */
   processedContent = processedContent
-    .replace(/\n\n/g, '</p><p class="mb-3">')
-    .replace(/^(?!<[h|l|p|c|b|i|d|u|t])/gm, '<p class="mb-3">')
+    .replace(/\n\n/g, '</p><p class="mb-4">')
+    .replace(/^(?!<[h|l|p|c|b|i|d|u|t])/gm, '<p class="mb-4">')
     .replace(/(?<!>)$/gm, "</p>")
-    .replace(/<p class="mb-3"><\/p>/g, "")
-    .replace(/<p class="mb-3">(<[h|l|p|c|b|i|d|u|t])/g, "$1");
+    .replace(/<p class="mb-4"><\/p>/g, "")
+    .replace(/<p class="mb-4">(<[h|l|p|c|b|i|d|u|t])/g, "$1");
 
   /**
    * Sequence: Restore code spans
@@ -147,7 +147,7 @@ function parseMarkdown(content: string): string {
    */
   if (footnoteRefs.length > 0) {
     let footnotesHtml =
-      '<div class="footnotes mt-8 pt-4 border-t border-border/50"><h4 class="text-sm font-medium mb-3">Footnotes</h4><ol class="text-xs space-y-2">';
+      '<div class="footnotes mt-8 pt-4 border-t border-border/50"><h4 class="text-sm font-medium mb-4">Footnotes</h4><ol class="text-xs space-y-2">';
 
     footnoteRefs.forEach((id) => {
       const definition = footnotes.get(id);
