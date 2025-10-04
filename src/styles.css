@@ -196,8 +196,8 @@
 
   .passport-ui * {
     @apply border-border outline-ring/50;
-    line-height: 1.65;
-    --tw-leading: 1.65;
+    line-height: 1.66;
+    --tw-leading: 1.66;
   }
 
   .passport-ui ::-webkit-scrollbar,
