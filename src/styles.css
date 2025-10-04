@@ -94,8 +94,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --text-xs: 0.8rem;
-  --text-xxs: 0.625rem;
+  --text-xs: 0.88rem;
+  --text-xxs: 0.66rem;
   --font-sans:
     "Open Runde", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -190,7 +190,7 @@
   }
 
   body {
-    @apply min-h-screen font-sans antialiased;
+    @apply min-h-screen font-sans dark:antialiased;
   }
 
   .passport-ui * {
