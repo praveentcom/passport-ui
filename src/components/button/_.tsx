@@ -24,7 +24,7 @@ const buttonVariants = cva(
       },
       size: {
         regular:
-          "h-7 rounded-xs px-2.5 py-1 has-[>svg]:px-2 text-xs [&_svg:not([class*='size-'])]:size-3.5 [&>*_svg:not([class*='size-'])]:size-3.5",
+          "h-6.5 rounded-xs px-2.5 py-1 has-[>svg]:px-2 text-xs [&_svg:not([class*='size-'])]:size-3.5 [&>*_svg:not([class*='size-'])]:size-3.5",
         medium:
           "h-8 rounded-xs px-2.5 py-2 has-[>svg]:px-2 text-sm [&_svg:not([class*='size-'])]:size-4 [&>*_svg:not([class*='size-'])]:size-4",
         large:

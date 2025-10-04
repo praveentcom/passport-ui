@@ -266,13 +266,13 @@
     @apply mx-auto p-4 pb-8 grid gap-8;
   }
   .passport-ui .section-container {
-    @apply grid gap-y-5.5 gap-x-5.5;
+    @apply grid gap-6;
   }
   .passport-ui .list-container {
-    @apply grid gap-y-3.5 gap-x-3.5;
+    @apply grid gap-4;
   }
   .passport-ui .card-container {
-    @apply grid gap-y-2.5 gap-x-3.5;
+    @apply grid gap-2.5;
   }
   .passport-ui .meta-container {
     @apply grid gap-y-0.25 gap-x-2 text-muted-foreground h-min text-sm w-full;

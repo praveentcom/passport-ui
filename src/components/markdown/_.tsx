@@ -174,7 +174,7 @@ export function Markdown({
     <article
       data-slot="markdown"
       className={cn(
-        "article-base text-sm grid [&>div:first-child_h1:first-of-type]:mt-0 [&>div:first-child_h2:first-of-type]:mt-0 [&>div:first-child_h3:first-of-type]:mt-0 [&>div:first-child_h4:first-of-type]:mt-0 [&>div:first-child_h5:first-of-type]:mt-0 [&>div:first-child_h6:first-of-type]:mt-0",
+        "article-base text-sm grid [&>div:first-child_h1:first-of-type]:mt-0 [&>div:first-child_h2:first-of-type]:mt-0 [&>div:first-child_h3:first-of-type]:mt-0 [&>div:first-child_h4:first-of-type]:mt-0 [&>div:first-child_h5:first-of-type]:mt-0 [&>div:first-child_h6:first-of-type]:mt-0 [&>div:last-child_p:last-of-type]:mb-0",
         muted && "article-muted",
         className
       )}
