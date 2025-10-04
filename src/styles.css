@@ -94,9 +94,9 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --text-sm: 0.885rem;
-  --text-xs: 0.8rem;
-  --text-xxs: 0.64rem;
+  --text-sm: 0.89rem;
+  --text-xs: 0.81rem;
+  --text-xxs: 0.65rem;
   --font-sans:
     "Open Runde", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -196,8 +196,8 @@
 
   .passport-ui * {
     @apply border-border outline-ring/50;
-    line-height: 1.6;
-    --tw-leading: 1.6;
+    line-height: 1.65;
+    --tw-leading: 1.65;
   }
 
   .passport-ui ::-webkit-scrollbar,
@@ -263,10 +263,10 @@
 
   /* Container Styles */
   .passport-ui .content-container {
-    @apply mx-auto pt-3 md:pt-5 pb-8 px-4 grid gap-8 md:gap-10;
+    @apply mx-auto p-4 pb-8 grid gap-8;
   }
   .passport-ui .section-container {
-    @apply grid gap-y-6 gap-x-6;
+    @apply grid gap-y-5.5 gap-x-5.5;
   }
   .passport-ui .list-container {
     @apply grid gap-y-3.5 gap-x-3.5;
