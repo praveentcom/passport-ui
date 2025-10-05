@@ -6,7 +6,7 @@
 function getFileIcon(filename: string): string {
   const extension = filename.split(".").pop()?.toLowerCase() || "";
 
-  const iconClass = "size-3 flex-shrink-0";
+  const iconClass = "size-4 flex-shrink-0";
 
   switch (extension) {
     case "js":

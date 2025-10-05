@@ -13,8 +13,8 @@ function processLists(html: string): string {
     if (currentListType && listItems.length > 0) {
       const listClass =
         currentListType === "ol"
-          ? "list-decimal pl-0 ml-4 [&>li]:pl-1"
-          : "list-disc pl-0 ml-4 [&>li]:pl-1";
+          ? "list-decimal pl-0 ml-4 mb-5 [&>li]:pl-1"
+          : "list-disc pl-0 ml-4 mb-5 [&>li]:pl-1";
       result.push(`<${currentListType} class="${listClass}">`);
       result.push(...listItems);
       result.push(`</${currentListType}>`);
