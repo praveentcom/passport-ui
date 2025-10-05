@@ -172,8 +172,8 @@
   --destructive-muted: oklch(0.18 0 0);
   --destructive-foreground: oklch(0.98 0 0);
   --destructive-muted-foreground: oklch(0.98 0 0);
-  --border: oklch(0.24 0 0);
-  --input: oklch(0.3 0 0);
+  --border: oklch(0.28 0 0);
+  --input: oklch(0.28 0 0);
   --ring: oklch(0.42 0 0);
   --chart-1: oklch(0.53 0.22 262);
   --chart-2: oklch(0.45 0.11 164);
@@ -203,6 +203,10 @@
   .passport-ui ::-webkit-scrollbar,
   body::-webkit-scrollbar {
     @apply w-1.5;
+  }
+  .passport-ui ::-webkit-scrollbar:horizontal,
+  body::-webkit-scrollbar:horizontal {
+    @apply h-1;
   }
   .passport-ui ::-webkit-scrollbar-thumb,
   body::-webkit-scrollbar-thumb {

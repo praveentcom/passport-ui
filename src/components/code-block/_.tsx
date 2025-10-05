@@ -236,7 +236,7 @@ function CodeBlock({
       {filename && (
         <div
           data-slot="code-block-header"
-          className="flex justify-between items-center gap-2 px-2.5 py-1 dark:bg-background bg-border/10 border-b border-border text-muted-foreground"
+          className="flex justify-between items-center gap-2 p-2 dark:bg-background bg-border/10 border-b border-border text-muted-foreground"
         >
           <div className="flex gap-2 items-center">
             {fileIcon && (
@@ -247,63 +247,82 @@ function CodeBlock({
                 }}
               />
             )}
-            <span className="dark:font-medium tracking-tight">{filename}</span>
+            <span className="dark:font-medium leading-none line-clamp-1 tracking-tight">{filename}</span>
           </div>
           <div className="flex gap-2 items-center">
             <CopyButton />
           </div>
         </div>
       )}
-      <pre
-        data-slot="code-block-pre"
-        className="overflow-x-auto p-0 m-0 bg-card w-full"
-      >
-        <code data-slot="code-block-code" className="hljs block">
-          {lines.map((line, index) => {
-            const lineNumber = index + 1;
-            const isFirstLine = index === 0;
-            const isLastLine = index === lines.length - 1;
-            const lineNumberPadding =
-              isFirstLine && isLastLine
-                ? " py-1.5"
-                : isFirstLine
-                  ? " pt-1.5"
-                  : isLastLine
-                    ? " pb-1.5"
-                    : "";
-            const contentPadding =
-              isFirstLine && isLastLine
-                ? " py-1.5"
-                : isFirstLine
-                  ? " pt-1.5"
-                  : isLastLine
-                    ? " pb-1.5"
-                    : "";
+      <div className="flex w-full">
+        {!hideLineNumbers && (
+          <div
+            data-slot="code-block-line-numbers"
+            className="flex-shrink-0 bg-card"
+          >
+            {lines.map((line, index) => {
+              const lineNumber = index + 1;
+              const isFirstLine = index === 0;
+              const isLastLine = index === lines.length - 1;
+              const lineNumberPadding =
+                isFirstLine && isLastLine
+                  ? " py-1.5"
+                  : isFirstLine
+                    ? " pt-1.5"
+                    : isLastLine
+                      ? " pb-1.5"
+                      : "";
 
-            const highlightedLine = highlightLine(line);
+              return (
+                <div
+                  key={index}
+                  className={cn(
+                    "line-number text-muted-foreground text-right select-none",
+                    lineNumberWidth,
+                    lineNumberPadding,
+                    "px-2"
+                  )}
+                >
+                  {lineNumber}
+                </div>
+              );
+            })}
+          </div>
+        )}
+        <div className="flex-1 min-w-0 bg-card overflow-x-auto">
+          <pre
+            data-slot="code-block-pre"
+            className="p-0 m-0"
+            style={{ minWidth: 'max-content' }}
+          >
+            <code data-slot="code-block-code" className="hljs block py-1.5">
+              {lines.map((line, index) => {
+                const isFirstLine = index === 0;
+                const isLastLine = index === lines.length - 1;
+                const contentPadding =
+                  isFirstLine && isLastLine
+                    ? " py-1.5"
+                    : isFirstLine
+                      ? " pt-1.5"
+                      : isLastLine
+                        ? " pb-1.5"
+                        : "";
 
-            return (
-              <div key={index} className="flex items-center min-w-0">
-                {!hideLineNumbers && (
-                  <span
-                    className={cn(
-                      "line-number",
-                      lineNumberWidth,
-                      lineNumberPadding
-                    )}
-                  >
-                    {lineNumber}
-                  </span>
-                )}
-                <span
-                  className={cn("line-content" + contentPadding)}
-                  dangerouslySetInnerHTML={{ __html: highlightedLine }}
-                />
-              </div>
-            );
-          })}
-        </code>
-      </pre>
+                const highlightedLine = highlightLine(line);
+
+                return (
+                  <div key={index} className="block">
+                    <span
+                      className={cn("line-content" + contentPadding)}
+                      dangerouslySetInnerHTML={{ __html: highlightedLine }}
+                    />
+                  </div>
+                );
+              })}
+            </code>
+          </pre>
+        </div>
+      </div>
     </div>
   );
 }
