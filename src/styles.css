@@ -109,15 +109,15 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.05 0 0);
+  --foreground: oklch(0.04 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.05 0 0);
+  --card-foreground: oklch(0.04 0 0);
   --primary: oklch(0.2 0 0);
   --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.9 0 0);
   --secondary-foreground: oklch(0.2 0 0);
   --muted: oklch(0.96 0 0);
-  --muted-foreground: oklch(0.36 0 0);
+  --muted-foreground: oklch(0.38 0 0);
   --info: oklch(0.53 0.22 262);
   --info-muted: oklch(0.96 0.02 268);
   --info-foreground: oklch(0.98 0 0);
