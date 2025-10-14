@@ -1,0 +1,152 @@
+# Passport UI
+
+> Passport UI is a React component library built on top of shadcn/ui's foundation, designed as a complete library solution for building apps blazingly fast. It provides 75+ premium components composed with Tailwind CSS v4, Radix UI primitives, and Motion for animations.
+
+## Key Characteristics
+
+- **Component Library Type**: Complete library solution (not a copy-paste collection)
+- **Installation**: npm package (`passport-ui`)
+- **Framework**: React 18+ with Next.js 15+ support
+- **Styling**: Tailwind CSS v4 with CSS custom properties for theming
+- **Accessibility**: Built on Radix UI primitives following WAI-ARIA patterns
+- **Theme Support**: Built-in light/dark mode with `ThemeProvider`
+- **Motion**: Animations powered by Motion library
+- **TypeScript**: Fully typed with TypeScript
+- **Import Pattern**: Individual component exports for optimal tree-shaking and React Server Components compatibility
+
+## Installation Requirements
+
+Consuming projects must:
+1. Install `passport-ui` package via npm
+2. Configure PostCSS with `@tailwindcss/postcss` plugin
+3. Import `passport-ui/styles.css` in main stylesheet
+4. Wrap app with `ThemeProvider` for theme support
+5. Import components individually (e.g., `import { Button } from "passport-ui/button"`)
+
+## Architecture
+
+The library is organized into several categories:
+
+- **Layout Containers** (4 components): PageLayout, ContentContainer, HeaderContainer, FooterContainer
+- **Providers** (1): ThemeProvider
+- **UI Components** (60+ components): Accordion, Alert, Button, Card, Dialog, Form, Input, Table, etc.
+- **Hooks** (2): useMobile, useScroll
+- **Composables** (3): EmptyState, ThemeButton, ThemeToggle
+- **Motion Primitives** (4): AnimatedBackground, BlurIn, SequentialReveal, TypewriterText
+
+## Getting Started
+
+- [Installation Guide](https://passportui.com/installation): Step-by-step setup instructions including PostCSS configuration and style imports
+- [Components Overview](https://passportui.com/components): Complete list of all available components with live examples
+- [GitHub Repository](https://github.com/praveentcom/passport-ui): Source code, issues, and contribution guidelines
+
+## Reference Apps
+
+- [Passport UI Documentation](https://github.com/praveentcom/passport-ui/docs): Official documentation website
+- [DevCard](https://github.com/praveentcom/devcard): Developer portfolio website
+
+## Layout & Composition
+
+- [PageLayout](https://passportui.com/layouts/page-layout): Full page layout wrapper with header, content, and footer
+- [ContentContainer](https://passportui.com/layouts/content-container): Responsive content width container with variants (tight, normal, broad, full)
+- [ThemeProvider](https://passportui.com/providers/theme-provider): Theme management provider for light/dark mode
+
+## Theming & Customization
+
+- [Colors](https://passportui.com/colors): Complete color system using OKLCH color space with CSS custom properties
+- [Fonts](https://passportui.com/fonts): Typography system and font configuration
+
+## Optional
+
+- [Storybook Documentation](https://storybook.passportui.com): Interactive component playground and documentation
+- [npm Package](https://www.npmjs.com/package/passport-ui): Official npm package page with version history
+
+## List of all available components
+
+### Components
+
+- [Accordion](https://passportui.com/components/accordion/): A vertically stacked set of interactive headings that reveal sections of content.
+- [Alert](https://passportui.com/components/alert/): Displays a short, important message in a way that attracts the user
+- [Alert Dialog](https://passportui.com/components/alert-dialog/): A modal dialog that interrupts the user with important content, requiring action.
+- [Analytics](https://passportui.com/components/analytics/): A comprehensive analytics component supporting multiple providers: Google Analytics, Mixpanel, Amplitude, Segment, PostHog, and Plausible.
+- [Aspect Ratio](https://passportui.com/components/aspect-ratio/): A container that maintains a specific aspect ratio.
+- [Avatar](https://passportui.com/components/avatar/): An image element with a fallback for representing a user or entity.
+- [Badge](https://passportui.com/components/badge/): A small visual element for labeling, categorizing, or organizing items.
+- [Blockquote](https://passportui.com/components/blockquote/): A component for displaying quoted text with optional citation.
+- [Breadcrumb](https://passportui.com/components/breadcrumb/): A navigation aid that shows the user’s location in a site or app.
+- [Bullet List](https://passportui.com/components/bullet-list/): A component for displaying a list of items with bullet points.
+- [Button](https://passportui.com/components/button/): A clickable element that triggers an action.
+- [Calendar](https://passportui.com/components/calendar/): A calendar component for selecting dates and date ranges.
+- [Card](https://passportui.com/components/card/): A flexible content container with header, content, and footer sections.
+- [Carousel](https://passportui.com/components/carousel/): A slideshow component for cycling through images or content.
+- [Checkbox](https://passportui.com/components/checkbox/): A control that allows the user to select one or more options from a set.
+- [Code Block](https://passportui.com/components/code-block/): A component for displaying formatted code with syntax highlighting.
+- [Collapsible](https://passportui.com/components/collapsible/): A content area that can be expanded and collapsed.
+- [Combobox](https://passportui.com/components/combobox/): An input field that combines a text input with a dropdown list of suggestions.
+- [Command](https://passportui.com/components/command/): A fast, accessible command menu for navigation and actions.
+- [Context Menu](https://passportui.com/components/context-menu/): A menu that appears on right-click, offering context-specific actions.
+- [Date Picker](https://passportui.com/components/date-picker/): A component for selecting a single date from an interactive calendar.
+- [Dialog](https://passportui.com/components/dialog/): A window overlaid on the primary content, requiring user interaction.
+- [Drawer](https://passportui.com/components/drawer/): A panel that slides in from the side, typically for navigation or actions.
+- [Dropdown Menu](https://passportui.com/components/dropdown-menu/): A menu of actions or links that appears when a trigger is clicked.
+- [Form](https://passportui.com/components/form/): A set of components for building accessible and reusable forms.
+- [Hover Card](https://passportui.com/components/hover-card/): A pop-up card that appears when a user hovers over an element.
+- [Input](https://passportui.com/components/input/): A standard text input field for form data.
+- [Input OTP](https://passportui.com/components/input-otp/): A specialized input field for one-time passwords.
+- [Label](https://passportui.com/components/label/): A text label for form inputs, providing context and improving accessibility.
+- [LiveRegion](https://passportui.com/components/live-region/): An accessible component that announces dynamic content changes to screen readers.
+- [Markdown](https://passportui.com/components/markdown/): A component for rendering Markdown text with styles.
+- [Menubar](https://passportui.com/components/menubar/): A horizontal menu of commands, typically at the top of an application.
+- [Navigation Menu](https://passportui.com/components/navigation-menu/): A collection of links for navigating a website or application.
+- [Pagination](https://passportui.com/components/pagination/): A component for navigating between pages of content.
+- [Popover](https://passportui.com/components/popover/): A pop-up that displays information when an element is clicked.
+- [Prefetch Link](https://passportui.com/components/prefetch-link/): A link component that prefetches page content for faster navigation.
+- [Progress](https://passportui.com/components/progress/): A progress bar for displaying the completion status of a task.
+- [Radio Group](https://passportui.com/components/radio-group/): A set of radio buttons where only one option can be selected.
+- [Resizable](https://passportui.com/components/resizable/): A component with resizable panels for flexible layouts.
+- [Scroll Area](https://passportui.com/components/scroll-area/): A container with a customizable scrollbar for scrollable content.
+- [Select](https://passportui.com/components/select/): A dropdown menu for selecting a single option from a list.
+- [Separator](https://passportui.com/components/separator/): A visual divider for separating content sections.
+- [Sheet](https://passportui.com/components/sheet/): A side panel that slides in to display supplementary content.
+- [Sidebar](https://passportui.com/components/sidebar/): A layout component with a collapsible sidebar and main content area.
+- [Skeleton](https://passportui.com/components/skeleton/): A placeholder component for loading content.
+- [Slider](https://passportui.com/components/slider/): A control for selecting a value from a range.
+- [Sonner](https://passportui.com/components/sonner/): A toast component for displaying brief, non-intrusive notifications.
+- [Structured Data](https://passportui.com/components/structured-data/): A component for embedding structured data (like JSON-LD) for SEO.
+- [Switch](https://passportui.com/components/switch/): A control for toggling between two states, such as on or off.
+- [Table](https://passportui.com/components/table/): A component for displaying data in a tabular format.
+- [Tabs](https://passportui.com/components/tabs/): A set of layered sections of content, known as tab panels, that display one panel of content at a time.
+- [Textarea](https://passportui.com/components/textarea/): A multi-line text input for longer form content.
+- [Toggle](https://passportui.com/components/toggle/): A two-state button that can be either on or off.
+- [Toggle Select](https://passportui.com/components/toggle-select/): A set of toggle buttons for selecting one or more options.
+- [Tooltip](https://passportui.com/components/tooltip/): A pop-up that displays information when a user hovers over an element.
+- [VisuallyHidden](https://passportui.com/components/visually-hidden/): A component that hides content visually but keeps it accessible to screen readers.
+
+### Layout Containers
+
+- [Content Container](https://passportui.com/layouts/content-container/): A layout container for centering and constraining content width.
+- [Footer Container](https://passportui.com/layouts/footer-container/): A layout container for the footer section of a page.
+- [Header Container](https://passportui.com/layouts/header-container/): A layout container for the header section of a page.
+- [Page Layout](https://passportui.com/layouts/page-layout/): A comprehensive layout structure for a standard page. When using sidebars, you must wrap your app with SidebarProvider.
+
+### Providers
+
+- [ThemeProvider](https://passportui.com/providers/theme-provider/): A provider that manages theme switching for the application.
+
+### Hooks
+
+- [useIsMobile](https://passportui.com/hooks/use-mobile/): A hook to detect if the current viewport is mobile-sized.
+- [useScroll](https://passportui.com/hooks/use-scroll/): A hook to detect if the page or a specific element has been scrolled.
+
+### Composables
+
+- [Empty State](https://passportui.com/composables/empty-state/): A placeholder for sections that have no content to display.
+- [Theme Button](https://passportui.com/composables/theme-button/): A button for toggling between light and dark themes.
+- [Theme Toggle](https://passportui.com/composables/theme-toggle/): A dropdown for selecting a light, dark, or system theme.
+
+### Motion Primitives
+
+- [Animated Background](https://passportui.com/motion-primitives/animated-background/): A component for creating animated, gradient backgrounds.
+- [Blur In](https://passportui.com/motion-primitives/blur-in/): A component that reveals content with a blur-in animation.
+- [Sequential Reveal](https://passportui.com/motion-primitives/sequential-reveal/): A component that reveals content sequentially with a staggered animation.
+- [Typewriter Text](https://passportui.com/motion-primitives/typewriter-text/): A component that animates text with a typewriter effect.

@@ -237,6 +237,18 @@ npm run build
 - Keep installation and usage instructions current
 - Add examples for new features
 
+### Automation Scripts
+
+The project includes several automation scripts to keep documentation and metadata up-to-date:
+
+- **`npm run format-readme`**: Updates the component list in README.md
+- **`npm run format-registry`**: Regenerates the component registry
+- **`npm run format-sitemap`**: Updates the documentation site's sitemap
+- **`npm run format-llms`**: Updates the llms.txt file with current component information
+- **`npm run format`**: Runs all format scripts plus code formatting
+
+When adding or modifying components, run `npm run format` to ensure all documentation is synchronized.
+
 ## Release Process
 
 **Note**: Only maintainers can publish releases. Contributors should not run publishing commands.

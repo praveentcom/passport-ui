@@ -247,7 +247,9 @@ function CodeBlock({
                 }}
               />
             )}
-            <span className="dark:font-medium leading-none line-clamp-1 tracking-tight">{filename}</span>
+            <span className="dark:font-medium leading-none line-clamp-1 tracking-tight">
+              {filename}
+            </span>
           </div>
           <div className="flex gap-2 items-center">
             <CopyButton />
@@ -293,7 +295,7 @@ function CodeBlock({
           <pre
             data-slot="code-block-pre"
             className="p-0 m-0"
-            style={{ minWidth: 'max-content' }}
+            style={{ minWidth: "max-content" }}
           >
             <code data-slot="code-block-code" className="hljs block py-1.5">
               {lines.map((line, index) => {

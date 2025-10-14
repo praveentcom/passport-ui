@@ -9,30 +9,27 @@ import { cn } from "../../lib/utils";
 
 export type HeaderContainerVariant = "compact" | "relaxed" | "broad" | "full";
 
-const headerContainerVariants = cva(
-  "w-full z-50 transition-none border-b",
-  {
-    variants: {
-      sticky: {
-        true: "sticky top-0",
-        false: "relative",
-      },
-      blurred: {
-        true: "bg-background/80 backdrop-blur-md",
-        false: "bg-background",
-      },
-      bordered: {
-        true: "border-border",
-        false: "border-transparent",
-      },
+const headerContainerVariants = cva("w-full z-50 transition-none border-b", {
+  variants: {
+    sticky: {
+      true: "sticky top-0",
+      false: "relative",
     },
-    defaultVariants: {
-      sticky: false,
-      blurred: false,
-      bordered: true,
+    blurred: {
+      true: "bg-background/80 backdrop-blur-md",
+      false: "bg-background",
     },
-  }
-);
+    bordered: {
+      true: "border-border",
+      false: "border-transparent",
+    },
+  },
+  defaultVariants: {
+    sticky: false,
+    blurred: false,
+    bordered: true,
+  },
+});
 
 const headerContentVariants = cva(
   "px-4 py-3 md:py-3.5 mx-auto min-h-14 content-center",

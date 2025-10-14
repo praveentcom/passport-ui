@@ -171,3 +171,6 @@ build-storybook.log
 # Local Netlify folder
 .netlify
 *storybook.log
+
+# Docs
+!docs/public/llms.txt
