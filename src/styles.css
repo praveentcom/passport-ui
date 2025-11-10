@@ -90,9 +90,9 @@
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
   --radius-xs: 0.225rem;
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: calc(var(--radius));
+  --radius-lg: calc(var(--radius) + 2px);
   --radius-xl: calc(var(--radius) + 4px);
   --text-sm: 0.885rem;
   --text-xs: 0.805rem;
@@ -338,7 +338,7 @@
     @apply text-xs text-muted-foreground/80 font-mono select-none pr-2 text-right border-r border-border bg-background flex-shrink-0;
   }
   .passport-ui .line-content {
-    @apply text-xs px-2.5 flex-1 min-w-0;
+    @apply text-xs px-3 flex-1 min-w-0;
   }
   .passport-ui .line-content span,
   .passport-ui .line-content pre {
