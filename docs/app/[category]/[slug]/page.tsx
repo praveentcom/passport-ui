@@ -37,7 +37,7 @@ function StorybookEmbed({ storyId }: { storyId: string }) {
   const embedUrl = `${storybookHost}/iframe?globals=&args=&id=${storyId}--default&viewMode=story`;
 
   return (
-    <div className="w-full border rounded-sm overflow-hidden bg-background">
+    <div className="w-full border rounded-md overflow-hidden bg-background">
       <iframe
         src={embedUrl}
         className="w-full h-96 border-0"

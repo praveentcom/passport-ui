@@ -102,7 +102,7 @@ export const ExampleImage: Story = {
     children: (
       <Image
         src="https://placehold.co/1600x900"
-        className="h-full w-full rounded-lg object-cover"
+        className="h-full w-full rounded-xl object-cover"
         alt="Example Image"
         width={1600}
         height={900}

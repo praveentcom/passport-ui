@@ -255,7 +255,7 @@ const tailwindColors = [
 const ColorCard = ({ color }: { color: Record<string, any> }) => (
   <div className="space-y-1">
     <div
-      className={`w-full h-12 ${color.bg} rounded-xs ${color.border ? "border" : ""} flex items-center justify-center`}
+      className={`w-full h-12 ${color.bg} rounded-sm ${color.border ? "border" : ""} flex items-center justify-center`}
     />
     <div>
       <div className="text-xs font-mono">{color.variable}</div>
@@ -268,7 +268,7 @@ const ColorCard = ({ color }: { color: Record<string, any> }) => (
 
 const TailwindColorCard = ({ color }: { color: string }) => (
   <div className="space-y-1">
-    <div className={`w-full h-12 bg-${color} rounded-xs border`} />
+    <div className={`w-full h-12 bg-${color} rounded-sm border`} />
     <div className="text-xs text-center font-mono">{color}</div>
   </div>
 );

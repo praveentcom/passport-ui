@@ -209,14 +209,14 @@ type Story = StoryObj<typeof Calendar>;
 
 export const Default: Story = {
   args: {
-    className: "border rounded-sm bg-card",
+    className: "border rounded-md bg-card",
   },
 };
 
 export const MultipleSelection: Story = {
   args: {
     mode: "multiple",
-    className: "border rounded-sm bg-card",
+    className: "border rounded-md bg-card",
   },
   parameters: {
     docs: {
@@ -231,7 +231,7 @@ export const MultipleSelection: Story = {
 export const RangeSelection: Story = {
   args: {
     mode: "range",
-    className: "border rounded-sm bg-card",
+    className: "border rounded-md bg-card",
   },
   parameters: {
     docs: {

@@ -98,10 +98,10 @@ function processBlockquoteLines(
      */
     while (currentLevel < level) {
       const isFirst = currentLevel === 0;
-      html += `<blockquote data-slot="blockquote" class="relative pl-4 py-1.5 ${isFirst ? "mb-3" : "mt-1"} bg-primary/5 rounded-xs text-xs leading-relaxed text-muted-foreground">`;
+      html += `<blockquote data-slot="blockquote" class="relative pl-4 py-1.5 ${isFirst ? "mb-3" : "mt-1"} bg-primary/5 rounded-sm text-xs leading-relaxed text-muted-foreground">`;
       if (currentLevel === 0) {
         html +=
-          '<div class="absolute left-1 top-1 bottom-1 w-0.5 bg-primary/40 rounded-xs"></div>';
+          '<div class="absolute left-1 top-1 bottom-1 w-0.5 bg-primary/40 rounded-sm"></div>';
       }
       openTags.push(level);
       currentLevel++;

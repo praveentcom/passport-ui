@@ -24,7 +24,7 @@ function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
   return (
     <thead
       data-slot="table-header"
-      className={cn("bg-border rounded-sm", className)}
+      className={cn("bg-border rounded-md", className)}
       {...props}
     />
   );
@@ -45,7 +45,7 @@ function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
     <tfoot
       data-slot="table-footer"
       className={cn(
-        "bg-border rounded-sm font-medium [&>tr]:last:border-b-0 [&>tr>td:first-child]:rounded-bl-sm [&>tr>td:first-child]:rounded-tl-sm [&>tr>td:last-child]:rounded-br-sm [&>tr>td:last-child]:rounded-tr-sm",
+        "bg-border rounded-md font-medium [&>tr]:last:border-b-0 [&>tr>td:first-child]:rounded-bl-md [&>tr>td:first-child]:rounded-tl-md [&>tr>td:last-child]:rounded-br-md [&>tr>td:last-child]:rounded-tr-md",
         className
       )}
       {...props}
@@ -58,7 +58,7 @@ function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
     <tr
       data-slot="table-row"
       className={cn(
-        "hover:bg-border/75 data-[state=selected]:bg-border border-b transition-colors [thead_&]:border-b-0 [tbody_&>td:first-child]:rounded-l-sm [tbody_&>td:last-child]:rounded-r-sm",
+        "hover:bg-border/75 data-[state=selected]:bg-border border-b transition-colors [thead_&]:border-b-0 [tbody_&>td:first-child]:rounded-l-md [tbody_&>td:last-child]:rounded-r-md",
         className
       )}
       {...props}
@@ -71,7 +71,7 @@ function TableHead({ className, ...props }: React.ComponentProps<"th">) {
     <th
       data-slot="table-head"
       className={cn(
-        "text-foreground h-6.5 px-2 py-1 text-left align-middle text-sm font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] first:rounded-tl-sm first:rounded-bl-sm last:rounded-tr-sm last:rounded-br-sm",
+        "text-foreground h-6.5 px-2 py-1 text-left align-middle text-sm font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] first:rounded-tl-md first:rounded-bl-md last:rounded-tr-md last:rounded-br-md",
         className
       )}
       {...props}

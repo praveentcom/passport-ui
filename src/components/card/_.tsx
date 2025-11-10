@@ -61,7 +61,7 @@ const Card = React.memo(
           aria-labelledby={ariaLabelledBy}
           aria-describedby={ariaDescribedBy}
           className={cn(
-            "text-card-foreground rounded-md relative",
+            "text-card-foreground rounded-lg relative",
             "border border-border bg-card",
             "h-min pt-3.5 pb-4 group",
             "transition-all duration-100",

@@ -20,7 +20,7 @@ export const definition: ComponentDefinition = {
   CommandShortcut,
 } from "passport-ui";
 import { Calendar, User, Settings } from "lucide-react";`,
-  usageCode: `<Command className="rounded-lg border shadow-md">
+  usageCode: `<Command className="rounded-xl border shadow-md">
   <CommandInput placeholder="Type a command or search…" />
   <CommandList>
     <CommandEmpty>No results found.</CommandEmpty>

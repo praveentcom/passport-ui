@@ -82,7 +82,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    className: "bg-border rounded-sm",
+    className: "bg-border rounded-md",
     enableHover: true,
     children: ["One", "Two", "Three"].map((item) => (
       <div key={item} data-id={item} className="px-2 py-1 cursor-pointer">
@@ -94,7 +94,7 @@ export const Default: Story = {
 
 export const Click: Story = {
   args: {
-    className: "bg-border rounded-sm",
+    className: "bg-border rounded-md",
     enableHover: false,
     children: ["Male", "Female"].map((item) => (
       <div key={item} data-id={item} className="px-2 py-1 cursor-pointer">

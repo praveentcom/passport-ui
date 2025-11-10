@@ -92,7 +92,7 @@ export const Default: Story = {
       <div className="h-screen overflow-auto bg-background">
         <div className="p-4 space-y-4">
           {Array.from({ length: 50 }, (_, i) => (
-            <div key={i} className="p-4 border rounded-lg bg-card">
+            <div key={i} className="p-4 border rounded-xl bg-card">
               <h3 className="font-medium">Content Block {i + 1}</h3>
               <p className="text-muted-foreground">
                 This is sample content to demonstrate the sticky footer

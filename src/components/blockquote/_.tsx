@@ -26,13 +26,13 @@ function Blockquote({
     <blockquote
       data-slot="blockquote"
       className={cn(
-        "relative pl-5 py-2 pr-4 bg-border/50 rounded-sm text-sm leading-relaxed text-muted-foreground",
+        "relative pl-5 py-2 pr-4 bg-border/50 rounded-md text-sm leading-relaxed text-muted-foreground",
         className
       )}
       {...props}
     >
       {!nested && (
-        <div className="absolute left-1.5 top-1.5 bottom-1.5 w-1 bg-foreground/50 rounded-xs" />
+        <div className="absolute left-1.5 top-1.5 bottom-1.5 w-1 bg-foreground/50 rounded-sm" />
       )}
       {children}
     </blockquote>

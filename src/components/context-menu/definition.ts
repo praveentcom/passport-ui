@@ -20,7 +20,7 @@ export const definition: ComponentDefinition = {
 } from "passport-ui";`,
   usageCode: `<div className="flex w-sm h-24 items-center justify-center">
   <ContextMenu>
-    <ContextMenuTrigger className="flex w-full h-full items-center justify-center rounded-sm border border-dashed text-sm">
+    <ContextMenuTrigger className="flex w-full h-full items-center justify-center rounded-md border border-dashed text-sm">
       Right click here
     </ContextMenuTrigger>
     <ContextMenuContent className="w-52">

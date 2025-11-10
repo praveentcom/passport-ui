@@ -13,7 +13,7 @@ export const definition: ComponentDefinition = {
   importCode: `import { ScrollArea } from "passport-ui";
 import { Card, CardContent } from "passport-ui";`,
   usageCode: `<div className="w-sm">
-  <ScrollArea className="h-48 rounded-md border">
+  <ScrollArea className="h-48 rounded-lg border">
     <div className="list-container p-4">
       {Array.from({ length: 20 }, (_, i) => (
         <Card key={i}>

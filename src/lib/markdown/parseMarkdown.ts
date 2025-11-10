@@ -90,7 +90,7 @@ function parseMarkdown(content: string): string {
     .replace(/~~(.*?)~~/g, '<del class="line-through opacity-75">$1</del>')
     .replace(
       /!\[([^\]]*)\]\(([^)]+)\)/g,
-      '<img src="$2" alt="$1" class="rounded-sm max-w-full h-auto my-3 border border-border block" />'
+      '<img src="$2" alt="$1" class="rounded-md max-w-full h-auto my-3 border border-border block" />'
     )
     .replace(
       /\[([^\]]+)\]\(([^)]+)\)/g,

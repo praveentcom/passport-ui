@@ -54,7 +54,7 @@ function UseScrollComponent({ target }: { target?: "window" | "element" }) {
         </p>
       </div>
       <div
-        className={`rounded-sm px-2 py-1 ${
+        className={`rounded-md px-2 py-1 ${
           hasScrolled
             ? "bg-info text-info-foreground"
             : "bg-success text-success-foreground"
@@ -67,7 +67,7 @@ function UseScrollComponent({ target }: { target?: "window" | "element" }) {
       {target === "element" ? (
         <div
           ref={scrollRef}
-          className="h-96 w-full overflow-y-scroll rounded-sm border"
+          className="h-96 w-full overflow-y-scroll rounded-md border"
         >
           <div className="h-[1000px] p-4">Scrollable content</div>
         </div>

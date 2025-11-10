@@ -43,7 +43,7 @@ ${definition.usageCode}
   },
   render: (args) => (
     <div className="w-sm">
-      <ScrollArea {...args} className="h-48 rounded-md border">
+      <ScrollArea {...args} className="h-48 rounded-lg border">
         <div className="list-container p-4">
           {Array.from({ length: 20 }, (_, i) => (
             <Card key={i}>

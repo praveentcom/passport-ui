@@ -110,7 +110,7 @@ ${definition.usageCode}
         <Story />
         <div className="p-4 space-y-4">
           {Array.from({ length: 50 }, (_, i) => (
-            <div key={i} className="p-4 border rounded-lg bg-card">
+            <div key={i} className="p-4 border rounded-xl bg-card">
               <h4>Content Block {i + 1}</h4>
               <p className="text-sm text-muted-foreground">
                 This is sample content to demonstrate the sticky header

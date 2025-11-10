@@ -32,8 +32,8 @@ const toggleSelectItemVariants = cva(
         outline: "bg-transparent",
       },
       size: {
-        regular: "h-5 rounded-xs px-2",
-        medium: "h-7 rounded-xs px-2.5",
+        regular: "h-5 rounded-sm px-2",
+        medium: "h-7 rounded-sm px-2.5",
         large: "h-9 rounded-sm px-3",
       },
     },
@@ -122,7 +122,7 @@ export function ToggleSelect({
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
         className={cn(
-          "inline-flex items-center rounded-sm border bg-card p-0.75 relative",
+          "inline-flex items-center rounded-md border bg-card p-0.75 relative",
           className
         )}
       >
@@ -176,7 +176,7 @@ export function ToggleSelectItem({
         {isSelected && (
           <motion.div
             layoutId={`background-${uniqueId}`}
-            className={cn("absolute inset-0", "bg-border rounded-xs")}
+            className={cn("absolute inset-0", "bg-border rounded-sm")}
             transition={transition}
             initial={{ opacity: 0 }}
             animate={{

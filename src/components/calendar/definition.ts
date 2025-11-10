@@ -19,7 +19,7 @@ import { useState } from "react";`,
       mode="single"
       selected={date}
       onSelect={setDate}
-      className="rounded-md border"
+      className="rounded-lg border"
     />
   );
 }

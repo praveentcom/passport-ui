@@ -45,7 +45,7 @@ function UseMobileComponent() {
         <p>Resize your browser window to see the value change.</p>
       </div>
       <div
-        className={`rounded-sm px-2 py-1 ${
+        className={`rounded-md px-2 py-1 ${
           isMobile
             ? "bg-info text-info-foreground"
             : "bg-success text-success-foreground"

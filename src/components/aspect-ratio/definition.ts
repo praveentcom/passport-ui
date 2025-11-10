@@ -41,7 +41,7 @@ import { Card, CardContent } from "passport-ui";`,
   <img
     src="https://placehold.co/1600x900"
     alt="Placeholder"
-    className="rounded-md object-cover"
+    className="rounded-lg object-cover"
   />
 </AspectRatio>`,
 };
