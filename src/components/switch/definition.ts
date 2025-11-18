@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: ToggleRight,
   description: "A control for toggling between two states, such as on or off.",
   category: "components",
-  storyId: "components-switch",
+  storyId: "components-switch--default",
   slug: "switch",
   importCode: `import { Switch } from "passport-ui";`,
   usageCode: `<Switch />

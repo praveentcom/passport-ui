@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A window overlaid on the primary content, requiring user interaction.",
   category: "components",
-  storyId: "components-dialog",
+  storyId: "components-dialog--default",
   slug: "dialog",
   importCode: `import {
   Dialog,

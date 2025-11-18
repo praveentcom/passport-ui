@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "An accessible component that announces dynamic content changes to screen readers.",
   category: "components",
-  storyId: "components-liveregion",
+  storyId: "components-liveregion--default",
   slug: "live-region",
   importCode: `import { LiveRegion } from "passport-ui";`,
   usageCode: `const [message, setMessage] = useState("");

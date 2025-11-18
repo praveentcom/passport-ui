@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A flexible content container with header, content, and footer sections.",
   category: "components",
-  storyId: "components-card",
+  storyId: "components-card--default",
   slug: "card",
   importCode: `import { Card, CardContent } from "passport-ui";`,
   usageCode: `<Card>

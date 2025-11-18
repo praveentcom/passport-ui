@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A control that allows the user to select one or more options from a set.",
   category: "components",
-  storyId: "components-checkbox",
+  storyId: "components-checkbox--default",
   slug: "checkbox",
   importCode: `import { Checkbox } from "passport-ui";
 import { Label } from "passport-ui";`,

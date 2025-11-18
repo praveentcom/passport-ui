@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "An input field that combines a text input with a dropdown list of suggestions.",
   category: "components",
-  storyId: "components-combobox",
+  storyId: "components-combobox--default",
   slug: "combobox",
   importCode: `import { Combobox } from "passport-ui";
 import { useState } from "react";`,

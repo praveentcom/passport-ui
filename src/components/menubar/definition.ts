@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A horizontal menu of commands, typically at the top of an application.",
   category: "components",
-  storyId: "components-menubar",
+  storyId: "components-menubar--default",
   slug: "menubar",
   importCode: `import {
   Menubar,

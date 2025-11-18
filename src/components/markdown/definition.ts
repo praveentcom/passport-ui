@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: FileText,
   description: "A component for rendering Markdown text with styles.",
   category: "components",
-  storyId: "components-markdown",
+  storyId: "components-markdown--default",
   slug: "markdown",
   importCode: `import { Markdown } from "passport-ui";`,
   usageCode: `const markdownContent = \`

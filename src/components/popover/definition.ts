@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: MessageSquareText,
   description: "A pop-up that displays information when an element is clicked.",
   category: "components",
-  storyId: "components-popover",
+  storyId: "components-popover--default",
   slug: "popover",
   importCode: `import { Popover, PopoverContent, PopoverTrigger } from "passport-ui";
 import { Button } from "passport-ui";

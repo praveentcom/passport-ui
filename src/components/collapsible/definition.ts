@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: ChevronUp,
   description: "A content area that can be expanded and collapsed.",
   category: "components",
-  storyId: "components-collapsible",
+  storyId: "components-collapsible--default",
   slug: "collapsible",
   importCode: `import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "passport-ui";
 import { Button } from "passport-ui";

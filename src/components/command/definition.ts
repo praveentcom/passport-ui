@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: Terminal,
   description: "A fast, accessible command menu for navigation and actions.",
   category: "components",
-  storyId: "components-command",
+  storyId: "components-command--default",
   slug: "command",
   importCode: `import {
   Command,

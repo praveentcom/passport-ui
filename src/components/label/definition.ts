@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A text label for form inputs, providing context and improving accessibility.",
   category: "components",
-  storyId: "components-label",
+  storyId: "components-label--default",
   slug: "label",
   importCode: `import { Label } from "passport-ui";`,
   usageCode: `<Label htmlFor="email">Email Address</Label>

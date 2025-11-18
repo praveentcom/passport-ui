@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A menu that appears on right-click, offering context-specific actions.",
   category: "components",
-  storyId: "components-contextmenu",
+  storyId: "components-contextmenu--default",
   slug: "context-menu",
   importCode: `import {
   ContextMenu,

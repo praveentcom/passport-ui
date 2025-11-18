@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: Minus,
   description: "A visual divider for separating content sections.",
   category: "components",
-  storyId: "components-separator",
+  storyId: "components-separator--default",
   slug: "separator",
   importCode: `import { Separator } from "passport-ui";`,
   usageCode: `{/* Horizontal separator */}

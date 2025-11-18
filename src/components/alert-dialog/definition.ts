@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A modal dialog that interrupts the user with important content, requiring action.",
   category: "components",
-  storyId: "components-alertdialog",
+  storyId: "components-alertdialog--default",
   slug: "alert-dialog",
   importCode: `import {
   AlertDialog,

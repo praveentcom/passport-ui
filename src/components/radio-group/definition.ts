@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: Circle,
   description: "A set of radio buttons where only one option can be selected.",
   category: "components",
-  storyId: "components-radiogroup",
+  storyId: "components-radiogroup--default",
   slug: "radio-group",
   importCode: `import { RadioGroup, RadioGroupItem } from "passport-ui";
 import { Label } from "passport-ui";`,

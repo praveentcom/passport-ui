@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A vertically stacked set of interactive headings that reveal sections of content.",
   category: "components",
-  storyId: "components-accordion",
+  storyId: "components-accordion--default",
   slug: "accordion",
   importCode: `import {
   Accordion,

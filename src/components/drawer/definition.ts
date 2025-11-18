@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A panel that slides in from the side, typically for navigation or actions.",
   category: "components",
-  storyId: "components-drawer",
+  storyId: "components-drawer--default",
   slug: "drawer",
   importCode: `import {
   Drawer,

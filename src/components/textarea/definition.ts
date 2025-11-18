@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: AlignLeft,
   description: "A multi-line text input for longer form content.",
   category: "components",
-  storyId: "components-textarea",
+  storyId: "components-textarea--default",
   slug: "textarea",
   importCode: `import { Textarea } from "passport-ui";`,
   usageCode: `<div className="w-sm">

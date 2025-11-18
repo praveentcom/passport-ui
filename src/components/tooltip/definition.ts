@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A pop-up that displays information when a user hovers over an element.",
   category: "components",
-  storyId: "components-tooltip",
+  storyId: "components-tooltip--default",
   slug: "tooltip",
   importCode: `import { Tooltip, TooltipContent, TooltipTrigger } from "passport-ui";
 import { Button } from "passport-ui";`,

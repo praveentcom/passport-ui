@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: CalendarDays,
   description: "A calendar component for selecting dates and date ranges.",
   category: "components",
-  storyId: "components-calendar",
+  storyId: "components-calendar--default",
   slug: "calendar",
   importCode: `import { Calendar } from "passport-ui";
 import { useState } from "react";`,

@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A component for displaying formatted code with syntax highlighting.",
   category: "components",
-  storyId: "components-codeblock",
+  storyId: "components-codeblock--default",
   slug: "code-block",
   importCode: `import { CodeBlock } from "passport-ui";`,
   usageCode: `const sampleCode = \`function greet(name) {

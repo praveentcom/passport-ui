@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: List,
   description: "A component for displaying a list of items with bullet points.",
   category: "components",
-  storyId: "components-bulletlist",
+  storyId: "components-bulletlist--default",
   slug: "bullet-list",
   importCode: `import { BulletList } from "passport-ui";`,
   usageCode: `<BulletList items={["First item", "Second item", "Third item"]} />

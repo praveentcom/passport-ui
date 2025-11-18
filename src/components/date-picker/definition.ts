@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A component for selecting a single date from an interactive calendar.",
   category: "components",
-  storyId: "components-datepicker",
+  storyId: "components-datepicker--default",
   slug: "date-picker",
   importCode: `import { DatePicker, DateRangePicker } from "passport-ui";
 import { useState } from "react";`,

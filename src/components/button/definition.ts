@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: MousePointer,
   description: "A clickable element that triggers an action.",
   category: "components",
-  storyId: "components-button",
+  storyId: "components-button--default",
   slug: "button",
   importCode: `import { Button } from "passport-ui";`,
   usageCode: `<Button variant="outline">Button</Button>

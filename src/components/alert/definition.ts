@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "Displays a short, important message in a way that attracts the user's attention.",
   category: "components",
-  storyId: "components-alert",
+  storyId: "components-alert--default",
   slug: "alert",
   importCode: `import { Alert } from "passport-ui";
 import { InfoIcon } from "lucide-react";`,
