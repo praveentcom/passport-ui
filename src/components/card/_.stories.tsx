@@ -1,6 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
-import { Card, CardContent } from ".";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { Progress } from "../progress";
 import { definition } from "./definition";
@@ -16,7 +23,11 @@ const meta: Meta<typeof Card> = {
 
 ## Components
 - **Card**: Flexible content container
+- **CardHeader**: Header section for title and description
+- **CardTitle**: Title heading (h3) for the card
+- **CardDescription**: Descriptive text for the card
 - **CardContent**: Main content area
+- **CardFooter**: Footer section for actions
 
 ## Code
 \`\`\`tsx import
@@ -62,13 +73,16 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: [
+      <CardHeader key="header">
+        <CardTitle>Card Title</CardTitle>
+        <CardDescription>
+          Card description with additional details about the card content.
+        </CardDescription>
+      </CardHeader>,
       <CardContent key="content">
-        <div className="meta-container">
-          <h3>Card Title</h3>
-          <p>
-            This is the main content of the card. You can put any content here.
-          </p>
-        </div>
+        <p>
+          This is the main content of the card. You can put any content here.
+        </p>
       </CardContent>,
     ],
   },
@@ -77,11 +91,13 @@ export const Default: Story = {
 export const ExampleProject: Story = {
   args: {
     children: [
+      <CardHeader key="header">
+        <CardTitle>Project Alpha</CardTitle>
+        <CardDescription>
+          A modern web application built with React and TypeScript.
+        </CardDescription>
+      </CardHeader>,
       <CardContent key="content">
-        <div className="meta-container">
-          <h3>Project Alpha</h3>
-          <p>A modern web application built with React and TypeScript.</p>
-        </div>
         <div className="meta-container">
           <div className="flex justify-between text-sm">
             <span>Progress</span>
@@ -97,6 +113,10 @@ export const ExampleProject: Story = {
 export const ExampleProfile: Story = {
   args: {
     children: [
+      <CardHeader key="header">
+        <CardTitle>John Doe</CardTitle>
+        <CardDescription>Software Engineer</CardDescription>
+      </CardHeader>,
       <CardContent key="content">
         <div className="meta-container">
           <p>📧 john.doe@example.com</p>
@@ -104,6 +124,27 @@ export const ExampleProfile: Story = {
           <p>🏢 Tech Corp Inc.</p>
         </div>
       </CardContent>,
+    ],
+  },
+};
+
+export const WithFooter: Story = {
+  args: {
+    children: [
+      <CardHeader key="header">
+        <CardTitle>Notifications</CardTitle>
+        <CardDescription>
+          You have 3 unread messages from your team.
+        </CardDescription>
+      </CardHeader>,
+      <CardContent key="content">
+        <div className="meta-container">
+          <p className="text-sm">Your latest updates are ready to review.</p>
+        </div>
+      </CardContent>,
+      <CardFooter key="footer">
+        <button className="text-sm font-medium">Mark all as read</button>
+      </CardFooter>,
     ],
   },
 };
