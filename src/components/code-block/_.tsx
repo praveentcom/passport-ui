@@ -247,7 +247,7 @@ function CodeBlock({
                 }}
               />
             )}
-            <span className="dark:font-medium leading-none line-clamp-1 tracking-tight">
+            <span className="dark:font-medium leading-normal line-clamp-1 tracking-tight">
               {filename}
             </span>
           </div>
