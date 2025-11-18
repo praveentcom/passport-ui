@@ -227,7 +227,7 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
           <div className="flex gap-4 items-center">
             <PrefetchLink
               target="_blank"
-              href={SITE_CONFIG.npm}
+              href={SITE_CONFIG.storybook}
               className="text-primary hover:underline"
             >
               Storybook {"\u2197"}
@@ -241,7 +241,7 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
             </PrefetchLink>
             <PrefetchLink
               target="_blank"
-              href={SITE_CONFIG.storybook}
+              href={SITE_CONFIG.npm}
               className="text-primary hover:underline"
             >
               npm {"\u2197"}
