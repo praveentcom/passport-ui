@@ -80,7 +80,7 @@ export function DatePicker({
         </DatePickerInput>
       </PopoverTrigger>
       <PopoverContent
-        className="w-auto overflow-hidden p-0"
+        className="w-auto max-w-[calc(100vw-2rem)] overflow-auto p-0"
         align="start"
         data-slot="date-picker-dropdown-content"
       >
@@ -146,7 +146,7 @@ export function DateRangePicker({
         </DatePickerInput>
       </PopoverTrigger>
       <PopoverContent
-        className="w-auto overflow-hidden p-0"
+        className="w-auto max-w-[calc(100vw-2rem)] overflow-auto p-0"
         align="start"
         data-slot="date-range-picker-content"
       >
