@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: RectangleHorizontal,
   description: "A container that maintains a specific aspect ratio.",
   category: "components",
-  storyId: "components-aspect-ratio",
+  storyId: "components-aspectratio",
   slug: "aspect-ratio",
   importCode: `import { AspectRatio } from "passport-ui";
 import { Card, CardContent } from "passport-ui";`,

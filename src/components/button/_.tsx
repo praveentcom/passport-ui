@@ -7,7 +7,7 @@ import { Loader2 } from "lucide-react";
 import { cn } from "../../lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center cursor-pointer justify-center gap-1 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 aria-invalid:border-destructive",
+  "inline-flex items-center cursor-pointer justify-center gap-1 whitespace-nowrap font-medium leading-none transition-all disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 aria-invalid:border-destructive",
   {
     variants: {
       variant: {
@@ -24,11 +24,11 @@ const buttonVariants = cva(
       },
       size: {
         regular:
-          "h-6.5 rounded-sm px-2 py-2 has-[>svg]:px-2 text-xs [&_svg:not([class*='size-'])]:size-3.5 [&>*_svg:not([class*='size-'])]:size-3.5",
+          "h-7 rounded-sm px-3 py-2 has-[>svg]:px-3 text-xs [&_svg:not([class*='size-'])]:size-3 [&>*_svg:not([class*='size-'])]:size-3",
         medium:
-          "h-8 rounded-sm px-2.5 py-2.5 has-[>svg]:px-2.5 text-sm [&_svg:not([class*='size-'])]:size-4 [&>*_svg:not([class*='size-'])]:size-4",
+          "h-8 rounded-sm px-4 py-2.5 has-[>svg]:px-4 text-sm [&_svg:not([class*='size-'])]:size-4 [&>*_svg:not([class*='size-'])]:size-4",
         large:
-          "h-9 rounded-sm px-3.5 py-3.5 has-[>svg]:px-3.5 text-sm [&_svg:not([class*='size-'])]:size-5 [&>*_svg:not([class*='size-'])]:size-5",
+          "h-9 rounded-sm px-5 py-3.5 has-[>svg]:px-5 text-sm [&_svg:not([class*='size-'])]:size-5 [&>*_svg:not([class*='size-'])]:size-5",
       },
     },
     defaultVariants: {
