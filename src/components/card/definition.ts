@@ -6,36 +6,39 @@ export const definition: ComponentDefinition = {
   name: "Card",
   icon: RectangleHorizontal,
   description:
-    "A flexible content container with header, content, and footer sections.",
+    "A flexible content container with header, title, description, content, and footer sections.",
   category: "components",
   storyId: "components-card",
   slug: "card",
-  importCode: `import { Card, CardContent } from "passport-ui";`,
+  importCode: `import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "passport-ui";`,
   usageCode: `<Card>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <CardDescription>Card description and details</CardDescription>
+  </CardHeader>
   <CardContent>
-    <div className="meta-container">
-      <h3>Card Title</h3>
-      <p>
-        This is the main content of the card. You can put any content here.
-      </p>
-    </div>
+    <p>This is the main content of the card. You can put any content here.</p>
   </CardContent>
 </Card>
 
-{/* Example with progress */}
+{/* Example with footer */}
 <Card>
+  <CardHeader>
+    <CardTitle>Notifications</CardTitle>
+    <CardDescription>You have 3 unread messages.</CardDescription>
+  </CardHeader>
   <CardContent>
-    <div className="meta-container">
-      <h3>Project Alpha</h3>
-      <p>A modern web application built with React and TypeScript.</p>
-    </div>
-    <div className="meta-container">
-      <div className="flex justify-between text-sm">
-        <span>Progress</span>
-        <span>75%</span>
-      </div>
-      <Progress value={75} />
-    </div>
+    <p>Your latest updates are ready to review.</p>
   </CardContent>
+  <CardFooter>
+    <button>Mark all as read</button>
+  </CardFooter>
 </Card>`,
 };

@@ -141,4 +141,25 @@ const CardContent = React.memo(
 );
 CardContent.displayName = "CardContent";
 
-export { Card, CardHeader, CardTitle, CardDescription, CardContent };
+const CardFooter = React.memo(
+  React.forwardRef<HTMLDivElement, React.ComponentProps<"div">>(
+    ({ className, ...props }, ref) => (
+      <div
+        data-slot="card-footer"
+        className={cn("px-4 flex items-center", className)}
+        ref={ref}
+        {...props}
+      />
+    )
+  )
+);
+CardFooter.displayName = "CardFooter";
+
+export {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+};
