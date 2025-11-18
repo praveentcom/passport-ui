@@ -114,6 +114,119 @@ export function extractBlockquotes(content: string): {
 }
 
 /**
+ * Process inline markdown formatting in text
+ */
+function processInlineMarkdown(text: string): React.ReactNode {
+  if (!text) return text;
+
+  // First, extract and protect code spans
+  const codeSpans: string[] = [];
+  let processedText = text.replace(/`([^`]+)`/g, (_, content) => {
+    const index = codeSpans.length;
+    codeSpans.push(content);
+    return `{{CODE${index}}}`;
+  });
+
+  // Split by markdown patterns while preserving the delimiters
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+
+  // Regex to match bold, italic, strikethrough, and links
+  const regex = /(\*\*[^*]+\*\*|\*[^*]+\*|_[^_]+_|~~[^~]+~~|\[([^\]]+)\]\(([^)]+)\)|{{CODE\d+}})/g;
+  let match;
+
+  while ((match = regex.exec(processedText)) !== null) {
+    // Add text before the match
+    if (match.index > lastIndex) {
+      parts.push(processedText.substring(lastIndex, match.index));
+    }
+
+    const matched = match[0];
+
+    // Handle code spans
+    if (matched.startsWith("{{CODE")) {
+      const codeIndex = parseInt(matched.match(/\d+/)?.[0] || "0");
+      parts.push(
+        <code
+          key={`code-${match.index}`}
+          className="bg-border/50 px-1 py-0.5 rounded border border-border text-xs font-mono"
+        >
+          {codeSpans[codeIndex]}
+        </code>
+      );
+    }
+    // Handle bold
+    else if (matched.startsWith("**") && matched.endsWith("**")) {
+      parts.push(
+        <strong key={`bold-${match.index}`} className="font-medium">
+          {matched.slice(2, -2)}
+        </strong>
+      );
+    }
+    // Handle italic with *
+    else if (matched.startsWith("*") && matched.endsWith("*") && !matched.startsWith("**")) {
+      parts.push(
+        <em key={`italic-${match.index}`} className="italic">
+          {matched.slice(1, -1)}
+        </em>
+      );
+    }
+    // Handle italic with _
+    else if (matched.startsWith("_") && matched.endsWith("_")) {
+      parts.push(
+        <em key={`italic-${match.index}`} className="italic">
+          {matched.slice(1, -1)}
+        </em>
+      );
+    }
+    // Handle strikethrough
+    else if (matched.startsWith("~~") && matched.endsWith("~~")) {
+      parts.push(
+        <del key={`strike-${match.index}`} className="line-through opacity-75">
+          {matched.slice(2, -2)}
+        </del>
+      );
+    }
+    // Handle links
+    else if (match[2] && match[3]) {
+      parts.push(
+        <a
+          key={`link-${match.index}`}
+          href={match[3]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline font-medium inline-flex items-center gap-1"
+        >
+          {match[2]}
+          <svg
+            className="size-3 opacity-70"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+            />
+          </svg>
+        </a>
+      );
+    }
+
+    lastIndex = match.index + matched.length;
+  }
+
+  // Add remaining text
+  if (lastIndex < processedText.length) {
+    parts.push(processedText.substring(lastIndex));
+  }
+
+  return parts.length === 0 ? text : parts.length === 1 ? parts[0] : <>{parts}</>;
+}
+
+/**
  * Process blockquote lines into React content
  */
 function processBlockquoteLines(
@@ -163,7 +276,9 @@ function processBlockquoteLines(
         elements.push(<br key={`br-${i}`} />);
       }
     } else {
-      const contentElement = <span key={`content-${i}`}>{content}</span>;
+      const contentElement = (
+        <span key={`content-${i}`}>{processInlineMarkdown(content)}</span>
+      );
       if (openElements.length > 0) {
         openElements[openElements.length - 1].push(contentElement);
         // Add line break if not the last line
