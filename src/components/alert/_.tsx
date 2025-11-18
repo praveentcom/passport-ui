@@ -66,7 +66,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
       )}
       <div className={icon ? "pl-5.5" : ""}>
         <div className="meta-container">
-          <span className={cn(textVariants({ variant }), "font-medium")}>
+          <span className={cn(textVariants({ variant }), "font-medium leading-none")}>
             {title}
           </span>
           <span className={cn(textVariants({ variant }), "text-xs")}>
