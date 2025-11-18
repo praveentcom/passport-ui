@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A link component that prefetches page content for faster navigation.",
   category: "components",
-  storyId: "components-prefetch-link",
+  storyId: "components-prefetchlink",
   slug: "prefetch-link",
   importCode: `import { PrefetchLink } from "passport-ui";
 import { Button } from "passport-ui";`,
