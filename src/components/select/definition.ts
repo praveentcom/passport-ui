@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: ChevronDown,
   description: "A dropdown menu for selecting a single option from a list.",
   category: "components",
-  storyId: "components-select--default",
+  storyId: "components-select",
   slug: "select",
   importCode: `import {
   Select,

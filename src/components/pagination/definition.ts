@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: ChevronLeft,
   description: "A component for navigating between pages of content.",
   category: "components",
-  storyId: "components-pagination--default",
+  storyId: "components-pagination",
   slug: "pagination",
   importCode: `import {
   Pagination,

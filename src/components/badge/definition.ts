@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A small visual element for labeling, categorizing, or organizing items.",
   category: "components",
-  storyId: "components-badge--default",
+  storyId: "components-badge",
   slug: "badge",
   importCode: `import { Badge } from "passport-ui";`,
   usageCode: `<Badge variant="default">Default</Badge>

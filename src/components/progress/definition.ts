@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: BarChart3,
   description: "A progress bar for displaying the completion status of a task.",
   category: "components",
-  storyId: "components-progress--default",
+  storyId: "components-progress",
   slug: "progress",
   importCode: `import { Progress } from "passport-ui";`,
   usageCode: `<div className="w-sm">

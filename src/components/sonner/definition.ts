@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A toast component for displaying brief, non-intrusive notifications.",
   category: "components",
-  storyId: "components-sonner--default",
+  storyId: "components-sonner",
   slug: "sonner",
   importCode: `import { Toaster } from "passport-ui";
 import { toast } from "sonner";

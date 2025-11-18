@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: ToggleLeft,
   description: "A two-state button that can be either on or off.",
   category: "components",
-  storyId: "components-toggle--default",
+  storyId: "components-toggle",
   slug: "toggle",
   importCode: `import { Toggle } from "passport-ui";`,
   usageCode: `<Toggle variant="outline" size="regular">

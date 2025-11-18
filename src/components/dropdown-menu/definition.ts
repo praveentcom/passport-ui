@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A menu of actions or links that appears when a trigger is clicked.",
   category: "components",
-  storyId: "components-dropdownmenu--default",
+  storyId: "components-dropdownmenu",
   slug: "dropdown-menu",
   importCode: `import {
   DropdownMenu,

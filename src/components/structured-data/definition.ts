@@ -8,7 +8,7 @@ export const definition: ComponentDefinition = {
   description:
     "A component for embedding structured data (like JSON-LD) for SEO.",
   category: "components",
-  storyId: "components-structureddata--default",
+  storyId: "components-structureddata",
   slug: "structured-data",
   importCode: `import { StructuredData } from "passport-ui";`,
   usageCode: `const articleData = {

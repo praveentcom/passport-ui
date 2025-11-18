@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: Navigation,
   description: "A collection of links for navigating a website or application.",
   category: "components",
-  storyId: "components-navigationmenu--default",
+  storyId: "components-navigationmenu",
   slug: "navigation-menu",
   importCode: `import {
   NavigationMenu,

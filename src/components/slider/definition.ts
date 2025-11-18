@@ -7,7 +7,7 @@ export const definition: ComponentDefinition = {
   icon: SlidersHorizontal,
   description: "A control for selecting a value from a range.",
   category: "components",
-  storyId: "components-slider--default",
+  storyId: "components-slider",
   slug: "slider",
   importCode: `import { Slider } from "passport-ui";
 import { Label } from "passport-ui";
