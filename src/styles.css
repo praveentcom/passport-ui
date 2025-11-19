@@ -200,81 +200,66 @@
     --tw-leading: 1.67;
   }
 
-  /* Hide scrollbars by default */
+  /* Scrollbar styling - overlay scrollbars that don't take up space */
+
+  /* Firefox - hide scrollbar by default */
   .passport-ui,
   .passport-ui *,
   body {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
   }
 
+  /* WebKit - configure scrollbar to be overlay */
   .passport-ui ::-webkit-scrollbar,
   .passport-ui *::-webkit-scrollbar,
   body::-webkit-scrollbar {
-    width: 0;
-    height: 0;
+    @apply w-1.5;
+  }
+
+  .passport-ui ::-webkit-scrollbar:horizontal,
+  .passport-ui *::-webkit-scrollbar:horizontal,
+  body::-webkit-scrollbar:horizontal {
+    @apply h-1;
+  }
+
+  /* Hide scrollbar thumb by default */
+  .passport-ui ::-webkit-scrollbar-thumb,
+  .passport-ui *::-webkit-scrollbar-thumb,
+  body::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 9999px;
+  }
+
+  .passport-ui ::-webkit-scrollbar-track,
+  .passport-ui *::-webkit-scrollbar-track,
+  body::-webkit-scrollbar-track {
+    background: transparent;
   }
 
   /* Show scrollbar on hover */
   .passport-ui:hover,
   .passport-ui *:hover,
   body:hover {
-    scrollbar-width: thin; /* Firefox */
-  }
-
-  .passport-ui:hover::-webkit-scrollbar,
-  .passport-ui *:hover::-webkit-scrollbar,
-  body:hover::-webkit-scrollbar {
-    @apply w-1.5;
-  }
-
-  .passport-ui:hover::-webkit-scrollbar:horizontal,
-  .passport-ui *:hover::-webkit-scrollbar:horizontal,
-  body:hover::-webkit-scrollbar:horizontal {
-    @apply h-1;
+    scrollbar-width: thin;
   }
 
   .passport-ui:hover::-webkit-scrollbar-thumb,
   .passport-ui *:hover::-webkit-scrollbar-thumb,
   body:hover::-webkit-scrollbar-thumb {
-    @apply bg-border rounded-full;
-  }
-
-  .passport-ui:hover::-webkit-scrollbar-track,
-  .passport-ui *:hover::-webkit-scrollbar-track,
-  body:hover::-webkit-scrollbar-track {
-    @apply bg-background;
+    @apply bg-border;
   }
 
   /* Show scrollbar when actively scrolling */
   .passport-ui.is-scrolling,
   .passport-ui .is-scrolling,
   body.is-scrolling {
-    scrollbar-width: thin; /* Firefox */
-  }
-
-  .passport-ui.is-scrolling::-webkit-scrollbar,
-  .passport-ui .is-scrolling::-webkit-scrollbar,
-  body.is-scrolling::-webkit-scrollbar {
-    @apply w-1.5;
-  }
-
-  .passport-ui.is-scrolling::-webkit-scrollbar:horizontal,
-  .passport-ui .is-scrolling::-webkit-scrollbar:horizontal,
-  body.is-scrolling::-webkit-scrollbar:horizontal {
-    @apply h-1;
+    scrollbar-width: thin;
   }
 
   .passport-ui.is-scrolling::-webkit-scrollbar-thumb,
   .passport-ui .is-scrolling::-webkit-scrollbar-thumb,
   body.is-scrolling::-webkit-scrollbar-thumb {
-    @apply bg-border rounded-full;
-  }
-
-  .passport-ui.is-scrolling::-webkit-scrollbar-track,
-  .passport-ui .is-scrolling::-webkit-scrollbar-track,
-  body.is-scrolling::-webkit-scrollbar-track {
-    @apply bg-background;
+    @apply bg-border;
   }
 
   .passport-ui {
