@@ -300,6 +300,7 @@ function SidebarTrigger({
       data-slot="sidebar-trigger"
       className={cn(
         "transition-transform duration-200 ease-linear",
+        "border-transparent bg-transparent shadow-none hover:bg-accent hover:text-accent-foreground",
         className
       )}
       onClick={(event) => {
@@ -528,7 +529,7 @@ function SidebarMenu({ className, ...props }: React.ComponentProps<"ul">) {
       data-slot="sidebar-menu"
       data-sidebar="menu"
       className={cn(
-        "flex w-full min-w-0 flex-col gap-1 group-data-[collapsible=icon]:mt-1.5",
+        "flex w-full min-w-0 flex-col group-data-[collapsible=icon]:mt-1.5",
         className
       )}
       {...props}

@@ -85,8 +85,6 @@ export default function PlaygroundPage() {
           </Card>
         </div>
 
-        <div className="col-span-12"><Separator /></div>
-
         {/* Alert */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -110,8 +108,6 @@ export default function PlaygroundPage() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="col-span-12"><Separator /></div>
 
         {/* Alert Dialog */}
         <div className="col-span-12 md:col-span-6">
@@ -144,8 +140,6 @@ export default function PlaygroundPage() {
           </Card>
         </div>
 
-        <div className="col-span-12"><Separator /></div>
-
         {/* Badge */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -163,8 +157,6 @@ export default function PlaygroundPage() {
           </Card>
         </div>
 
-        <div className="col-span-12"><Separator /></div>
-
         {/* Blockquote */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -179,8 +171,6 @@ export default function PlaygroundPage() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="col-span-12"><Separator /></div>
 
         {/* Breadcrumb */}
         <div className="col-span-12 md:col-span-6">
@@ -199,8 +189,6 @@ export default function PlaygroundPage() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="col-span-12"><Separator /></div>
 
         {/* Button */}
         <div className="col-span-12 md:col-span-6">
@@ -221,8 +209,6 @@ export default function PlaygroundPage() {
           </Card>
         </div>
 
-        <div className="col-span-12"><Separator /></div>
-
         {/* Bullet List */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -240,8 +226,6 @@ export default function PlaygroundPage() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="col-span-12"><Separator /></div>
 
         {/* Card */}
         <div className="col-span-12 md:col-span-6">
@@ -266,8 +250,6 @@ export default function PlaygroundPage() {
           </Card>
         </div>
 
-        <div className="col-span-12"><Separator /></div>
-
         {/* Checkbox */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -283,8 +265,6 @@ export default function PlaygroundPage() {
           </Card>
         </div>
 
-        <div className="col-span-12"><Separator /></div>
-
         {/* Code Block */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -296,8 +276,6 @@ export default function PlaygroundPage() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="col-span-12"><Separator /></div>
 
         {/* Collapsible */}
         <div className="col-span-12 md:col-span-6">
@@ -318,8 +296,6 @@ export default function PlaygroundPage() {
           </Card>
         </div>
 
-        <div className="col-span-12"><Separator /></div>
-
         {/* Combobox */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -335,8 +311,6 @@ export default function PlaygroundPage() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="col-span-12"><Separator /></div>
 
         {/* Context Menu */}
         <div className="col-span-12 md:col-span-6">
@@ -359,8 +333,6 @@ export default function PlaygroundPage() {
           </Card>
         </div>
 
-        <div className="col-span-12"><Separator /></div>
-
         {/* Date Picker */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -372,8 +344,6 @@ export default function PlaygroundPage() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="col-span-12"><Separator /></div>
 
         {/* Dialog */}
         <div className="col-span-12 md:col-span-6">
@@ -410,8 +380,6 @@ export default function PlaygroundPage() {
           </Card>
         </div>
 
-        <div className="col-span-12"><Separator /></div>
-
         {/* Drawer */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -443,8 +411,6 @@ export default function PlaygroundPage() {
           </Card>
         </div>
 
-        <div className="col-span-12"><Separator /></div>
-
         {/* Dropdown Menu */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -468,8 +434,6 @@ export default function PlaygroundPage() {
           </Card>
         </div>
 
-        <div className="col-span-12"><Separator /></div>
-
         {/* Hover Card */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -488,8 +452,6 @@ export default function PlaygroundPage() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="col-span-12"><Separator /></div>
 
         {/* Input */}
         <div className="col-span-12 md:col-span-6">
@@ -515,8 +477,6 @@ export default function PlaygroundPage() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="col-span-12"><Separator /></div>
 
         {/* Pagination */}
         <div className="col-span-12 md:col-span-6">
@@ -548,8 +508,6 @@ export default function PlaygroundPage() {
           </Card>
         </div>
 
-        <div className="col-span-12"><Separator /></div>
-
         {/* Popover */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -569,8 +527,6 @@ export default function PlaygroundPage() {
           </Card>
         </div>
 
-        <div className="col-span-12"><Separator /></div>
-
         {/* Progress */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -586,8 +542,6 @@ export default function PlaygroundPage() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="col-span-12"><Separator /></div>
 
         {/* Radio Group */}
         <div className="col-span-12 md:col-span-6">
@@ -610,8 +564,6 @@ export default function PlaygroundPage() {
           </Card>
         </div>
 
-        <div className="col-span-12"><Separator /></div>
-
         {/* Scroll Area */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -629,8 +581,6 @@ export default function PlaygroundPage() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="col-span-12"><Separator /></div>
 
         {/* Select */}
         <div className="col-span-12 md:col-span-6">
@@ -653,8 +603,6 @@ export default function PlaygroundPage() {
           </Card>
         </div>
 
-        <div className="col-span-12"><Separator /></div>
-
         {/* Skeleton */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -670,8 +618,6 @@ export default function PlaygroundPage() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="col-span-12"><Separator /></div>
 
         {/* Slider */}
         <div className="col-span-12 md:col-span-6">
@@ -694,8 +640,6 @@ export default function PlaygroundPage() {
           </Card>
         </div>
 
-        <div className="col-span-12"><Separator /></div>
-
         {/* Switch */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -710,8 +654,6 @@ export default function PlaygroundPage() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="col-span-12"><Separator /></div>
 
         {/* Table */}
         <div className="col-span-12 md:col-span-6">
@@ -749,8 +691,6 @@ export default function PlaygroundPage() {
           </Card>
         </div>
 
-        <div className="col-span-12"><Separator /></div>
-
         {/* Textarea */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -765,8 +705,6 @@ export default function PlaygroundPage() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="col-span-12"><Separator /></div>
 
         {/* Toggle */}
         <div className="col-span-12 md:col-span-6">
@@ -786,8 +724,6 @@ export default function PlaygroundPage() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="col-span-12"><Separator /></div>
 
         {/* Tabs */}
         <div className="col-span-12 md:col-span-6">
@@ -815,8 +751,6 @@ export default function PlaygroundPage() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="col-span-12"><Separator /></div>
 
         {/* Tooltip */}
         <div className="col-span-12 md:col-span-6">

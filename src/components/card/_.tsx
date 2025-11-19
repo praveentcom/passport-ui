@@ -101,7 +101,7 @@ const CardTitle = React.memo(
     ({ className, ...props }, ref) => (
       <h2
         data-slot="card-title"
-        className={cn(className)}
+        className={cn("leading-normal", className)}
         ref={ref}
         {...props}
       />
