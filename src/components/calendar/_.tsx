@@ -75,7 +75,7 @@ function Calendar({
         ),
         month: cn("flex gap-2 flex-col w-full", defaultClassNames.month),
         nav: cn(
-          "flex items-center gap-2 justify-between",
+          "flex items-center gap-2 justify-between w-full",
           defaultClassNames.nav
         ),
         button_previous: cn(
@@ -87,11 +87,11 @@ function Calendar({
           defaultClassNames.button_next
         ),
         month_caption: cn(
-          "flex items-center justify-between w-full h-8 mb-2",
+          "flex items-center justify-center w-full h-8 mb-2 relative",
           defaultClassNames.month_caption
         ),
         dropdowns: cn(
-          "w-full flex items-center text-xs font-medium justify-center gap-2",
+          "flex items-center text-xs font-medium justify-center gap-2",
           defaultClassNames.dropdowns
         ),
         dropdown_root: cn(
@@ -103,7 +103,7 @@ function Calendar({
           defaultClassNames.dropdown
         ),
         caption_label: cn(
-          "select-none font-medium flex-1 text-center",
+          "select-none font-medium",
           captionLayout === "label"
             ? "text-sm"
             : "rounded-md pl-2 pr-1 flex items-center gap-2 text-sm h-8 [&>svg]:text-muted-foreground [&>svg]:size-3.5",
@@ -224,7 +224,16 @@ function CalendarDayButton({
       data-range-end={modifiers.range_end}
       data-range-middle={modifiers.range_middle}
       className={cn(
-        "data-[selected-single=true]:bg-primary data-[selected-single=true]:text-primary-foreground data-[range-middle=true]:bg-border data-[range-middle=true]:text-foreground data-[range-start=true]:bg-primary data-[range-start=true]:text-primary-foreground data-[range-end=true]:bg-primary data-[range-end=true]:text-primary-foreground group-data-[focused=true]/day:border-ring group-data-[focused=true]/day:ring-ring/50 flex h-8 w-full flex-col gap-1 leading-none font-normal group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10 group-data-[focused=true]/day:ring-[3px] data-[range-end=true]:rounded-md data-[range-end=true]:rounded-r-md data-[range-middle=true]:rounded-none data-[range-start=true]:rounded-md data-[range-start=true]:rounded-l-sm [&>span]:text-sm [&>span]:opacity-70",
+        "flex h-8 w-full items-center justify-center px-0 leading-none font-normal border-0 shadow-none hover:bg-border/50 text-sm",
+        "data-[selected-single=true]:bg-secondary data-[selected-single=true]:text-secondary-foreground",
+        "data-[range-middle=true]:bg-border data-[range-middle=true]:text-foreground",
+        "data-[range-start=true]:bg-secondary data-[range-start=true]:text-secondary-foreground",
+        "data-[range-end=true]:bg-secondary data-[range-end=true]:text-secondary-foreground",
+        "group-data-[focused=true]/day:border-ring group-data-[focused=true]/day:ring-ring/50",
+        "group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10 group-data-[focused=true]/day:ring-[3px]",
+        "data-[range-end=true]:rounded-md data-[range-end=true]:rounded-r-md",
+        "data-[range-middle=true]:rounded-none",
+        "data-[range-start=true]:rounded-md data-[range-start=true]:rounded-l-sm",
         !modifiers.outside && "text-foreground hover:text-foreground",
         modifiers.outside &&
           "text-muted-foreground hover:text-muted-foreground",
