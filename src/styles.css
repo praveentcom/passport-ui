@@ -273,7 +273,7 @@
     @apply grid gap-6;
   }
   .passport-ui .list-container {
-    @apply grid gap-3.5;
+    @apply grid gap-4;
   }
   .passport-ui .card-container {
     @apply grid gap-2.5;
