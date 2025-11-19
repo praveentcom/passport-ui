@@ -28,12 +28,7 @@ function DrawerPortal({
 function DrawerClose({
   ...props
 }: React.ComponentProps<typeof DrawerPrimitive.Close>) {
-  return (
-    <DrawerPrimitive.Close
-      data-slot="drawer-close"
-      {...props}
-    />
-  );
+  return <DrawerPrimitive.Close data-slot="drawer-close" {...props} />;
 }
 
 function DrawerTitle({
@@ -92,7 +87,10 @@ function DrawerFooter({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="drawer-footer"
-      className={cn("mt-auto flex flex-col sm:flex-row gap-2 [&>*]:w-full sm:[&>*]:w-auto", className)}
+      className={cn(
+        "mt-auto flex flex-col sm:flex-row gap-2 [&>*]:w-full sm:[&>*]:w-auto",
+        className
+      )}
       {...props}
     />
   );

@@ -181,9 +181,7 @@ export function ToggleSelectItem({
         )}
       </AnimatePresence>
       <div className="relative z-10">
-        <span className={cn(toggleSelectItemTextVariants())}>
-          {children}
-        </span>
+        <span className={cn(toggleSelectItemTextVariants())}>{children}</span>
       </div>
     </TogglePrimitive.Root>
   );

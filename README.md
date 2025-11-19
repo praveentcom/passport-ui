@@ -114,7 +114,6 @@ Use `ThemeProvider` to wrap your app and `ThemeButton` to toggle between themes.
 - [`Breadcrumb`](https://passportui.com/components/breadcrumb/)
 - [`BulletList`](https://passportui.com/components/bullet-list/)
 - [`Button`](https://passportui.com/components/button/)
-- [`Calendar`](https://passportui.com/components/calendar/)
 - [`Card`](https://passportui.com/components/card/)
 - [`Carousel`](https://passportui.com/components/carousel/)
 - [`Checkbox`](https://passportui.com/components/checkbox/)

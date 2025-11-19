@@ -27,7 +27,9 @@ function Tooltip({
   const [uncontrolledOpen, setUncontrolledOpen] = useState(false);
   const isControlled = controlledOpen !== undefined;
   const open = isControlled ? controlledOpen : uncontrolledOpen;
-  const onOpenChange = isControlled ? controlledOnOpenChange : setUncontrolledOpen;
+  const onOpenChange = isControlled
+    ? controlledOnOpenChange
+    : setUncontrolledOpen;
 
   return (
     <TooltipProvider>
@@ -47,7 +49,7 @@ const TooltipTrigger = React.forwardRef<
 >(({ onClick, onPointerDown, ...props }, ref) => {
   const handlePointerDown = (e: React.PointerEvent<HTMLButtonElement>) => {
     // For touch devices, enable click-to-toggle behavior
-    if (e.pointerType === 'touch') {
+    if (e.pointerType === "touch") {
       e.preventDefault();
     }
     onPointerDown?.(e);

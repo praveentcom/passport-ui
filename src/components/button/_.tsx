@@ -10,7 +10,13 @@ export interface ButtonProps extends React.ComponentProps<"button"> {
   /**
    * The visual style variant of the button
    */
-  variant?: "primary" | "ghost" | "secondary" | "outline" | "destructive" | "link";
+  variant?:
+    | "primary"
+    | "ghost"
+    | "secondary"
+    | "outline"
+    | "destructive"
+    | "link";
   /**
    * Whether the button is in a loading state
    */

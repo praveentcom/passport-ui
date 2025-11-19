@@ -13,20 +13,17 @@ import {
   SelectValue,
 } from "../select";
 
-const tabsVariants = cva(
-  "flex flex-col min-w-0",
-  {
-    variants: {
-      variant: {
-        default: "",
-        pills: "",
-      },
+const tabsVariants = cva("flex flex-col min-w-0", {
+  variants: {
+    variant: {
+      default: "",
+      pills: "",
     },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-);
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
 
 const tabsListVariants = cva(
   "inline-flex items-center justify-start text-muted-foreground",
@@ -79,10 +76,8 @@ const tabsContentVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          "mt-4",
-        pills:
-          "mt-4",
+        default: "mt-4",
+        pills: "mt-4",
       },
     },
     defaultVariants: {

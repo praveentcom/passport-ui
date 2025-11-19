@@ -172,11 +172,11 @@ export const SAMPLE_HEADER_CONTENT: ReactNode = (
       <p>Last updated: {new Date().toLocaleDateString()}</p>
     </div>
     <div className="flex items-center gap-2">
-      <Button variant="outline" size="regular">
+      <Button variant="outline">
         <Settings />
         Settings
       </Button>
-      <Button size="regular">
+      <Button>
         <Plus />
         New Project
       </Button>

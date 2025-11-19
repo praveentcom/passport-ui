@@ -76,8 +76,7 @@ The library is organized into several categories:
 - [Breadcrumb](https://passportui.com/components/breadcrumb/): A navigation aid that shows the user’s location in a site or app.
 - [Bullet List](https://passportui.com/components/bullet-list/): A component for displaying a list of items with bullet points.
 - [Button](https://passportui.com/components/button/): A clickable element that triggers an action.
-- [Calendar](https://passportui.com/components/calendar/): A calendar component for selecting dates and date ranges.
-- [Card](https://passportui.com/components/card/): A flexible content container with header, content, and footer sections.
+- [Card](https://passportui.com/components/card/): A flexible content container with header, title, description, content, and footer sections.
 - [Carousel](https://passportui.com/components/carousel/): A slideshow component for cycling through images or content.
 - [Checkbox](https://passportui.com/components/checkbox/): A control that allows the user to select one or more options from a set.
 - [Code Block](https://passportui.com/components/code-block/): A component for displaying formatted code with syntax highlighting.
@@ -85,7 +84,7 @@ The library is organized into several categories:
 - [Combobox](https://passportui.com/components/combobox/): An input field that combines a text input with a dropdown list of suggestions.
 - [Command](https://passportui.com/components/command/): A fast, accessible command menu for navigation and actions.
 - [Context Menu](https://passportui.com/components/context-menu/): A menu that appears on right-click, offering context-specific actions.
-- [Date Picker](https://passportui.com/components/date-picker/): A component for selecting a single date from an interactive calendar.
+- [Date Picker](https://passportui.com/components/date-picker/): A component for selecting a single date using dropdown menus.
 - [Dialog](https://passportui.com/components/dialog/): A window overlaid on the primary content, requiring user interaction.
 - [Drawer](https://passportui.com/components/drawer/): A panel that slides in from the side, typically for navigation or actions.
 - [Dropdown Menu](https://passportui.com/components/dropdown-menu/): A menu of actions or links that appears when a trigger is clicked.

@@ -1,4 +1,4 @@
-import { CodeXml, Palette, Text, Sparkles } from "lucide-react";
+import { CodeXml, Palette, Sparkles, Text } from "lucide-react";
 
 export const PRIMARY_NAVIGATION_PAGES = [
   {

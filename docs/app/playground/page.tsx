@@ -1,46 +1,146 @@
 "use client";
 
 import { useState } from "react";
-import { Metadata } from "next";
-import { CalendarIcon, CheckIcon, ChevronDownIcon, HomeIcon, InfoIcon, Loader2Icon, MailIcon, PlusIcon, SearchIcon, SettingsIcon, UserIcon } from "lucide-react";
 
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "../../../src/components/accordion";
+import { Metadata } from "next";
+
+import {
+  CalendarIcon,
+  CheckIcon,
+  ChevronDownIcon,
+  HomeIcon,
+  InfoIcon,
+  Loader2Icon,
+  MailIcon,
+  PlusIcon,
+  SearchIcon,
+  SettingsIcon,
+  UserIcon,
+} from "lucide-react";
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../../../src/components/accordion";
 import { Alert } from "../../../src/components/alert";
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogFooter, AlertDialogTrigger } from "../../../src/components/alert-dialog";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogFooter,
+  AlertDialogTrigger,
+} from "../../../src/components/alert-dialog";
 import { AspectRatio } from "../../../src/components/aspect-ratio";
 import { Badge } from "../../../src/components/badge";
 import { Blockquote } from "../../../src/components/blockquote";
 import { Breadcrumb } from "../../../src/components/breadcrumb";
 import { BulletList } from "../../../src/components/bullet-list";
 import { Button } from "../../../src/components/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../../src/components/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../../../src/components/card";
 import { Checkbox } from "../../../src/components/checkbox";
 import { CodeBlock } from "../../../src/components/code-block";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../../../src/components/collapsible";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "../../../src/components/collapsible";
 import { Combobox } from "../../../src/components/combobox";
-import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuTrigger } from "../../../src/components/context-menu";
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+} from "../../../src/components/context-menu";
 import { DatePicker } from "../../../src/components/date-picker";
-import { Dialog, DialogContent, DialogTrigger } from "../../../src/components/dialog";
-import { Drawer, DrawerClose, DrawerContent, DrawerTrigger } from "../../../src/components/drawer";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../../../src/components/dropdown-menu";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "../../../src/components/hover-card";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "../../../src/components/dialog";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerTrigger,
+} from "../../../src/components/drawer";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "../../../src/components/dropdown-menu";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "../../../src/components/hover-card";
 import { Input } from "../../../src/components/input";
 import { Label } from "../../../src/components/label";
-import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "../../../src/components/pagination";
-import { Popover, PopoverContent, PopoverTrigger } from "../../../src/components/popover";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "../../../src/components/pagination";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "../../../src/components/popover";
 import { Progress } from "../../../src/components/progress";
-import { RadioGroup, RadioGroupItem } from "../../../src/components/radio-group";
+import {
+  RadioGroup,
+  RadioGroupItem,
+} from "../../../src/components/radio-group";
 import { ScrollArea } from "../../../src/components/scroll-area";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../../src/components/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../../../src/components/select";
 import { Separator } from "../../../src/components/separator";
 import { Skeleton } from "../../../src/components/skeleton";
 import { Slider } from "../../../src/components/slider";
 import { Switch } from "../../../src/components/switch";
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "../../../src/components/table";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../src/components/tabs";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "../../../src/components/table";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../../../src/components/tabs";
 import { Textarea } from "../../../src/components/textarea";
 import { Toggle } from "../../../src/components/toggle";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../../../src/components/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../../../src/components/tooltip";
 import { ContentContainer } from "../../../src/layouts/content-container";
 
 export default function PlaygroundPage() {
@@ -59,7 +159,6 @@ export default function PlaygroundPage() {
     <ContentContainer variant="broad">
       {/* Main Grid Layout */}
       <div className="grid grid-cols-12 gap-6 py-6">
-
         {/* Accordion */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">
@@ -77,7 +176,8 @@ export default function PlaygroundPage() {
                 <AccordionItem value="item-2">
                   <AccordionTrigger>Is it styled?</AccordionTrigger>
                   <AccordionContent>
-                    Yes. It comes with default styles that matches the other components.
+                    Yes. It comes with default styles that matches the other
+                    components.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -123,10 +223,13 @@ export default function PlaygroundPage() {
                 <AlertDialogContent>
                   <div className="space-y-4">
                     <div className="space-y-2">
-                      <h3 className="text-lg font-semibold">Are you absolutely sure?</h3>
+                      <h3 className="text-lg font-semibold">
+                        Are you absolutely sure?
+                      </h3>
                       <p className="text-sm text-muted-foreground">
-                        This action cannot be undone. This will permanently delete your
-                        account and remove your data from our servers.
+                        This action cannot be undone. This will permanently
+                        delete your account and remove your data from our
+                        servers.
                       </p>
                     </div>
                     <AlertDialogFooter>
@@ -183,7 +286,7 @@ export default function PlaygroundPage() {
                 path={[
                   { label: "Home", href: "/" },
                   { label: "Components", href: "/components" },
-                  { label: "Breadcrumb", href: "/components/breadcrumb" }
+                  { label: "Breadcrumb", href: "/components/breadcrumb" },
                 ]}
               />
             </CardContent>
@@ -220,7 +323,7 @@ export default function PlaygroundPage() {
                 items={[
                   "First item in the list",
                   "Second item in the list",
-                  "Third item in the list"
+                  "Third item in the list",
                 ]}
               />
             </CardContent>
@@ -240,7 +343,10 @@ export default function PlaygroundPage() {
                   <CardDescription>Card Description</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p>Card content goes here. This is where the main information is displayed.</p>
+                  <p>
+                    Card content goes here. This is where the main information
+                    is displayed.
+                  </p>
                 </CardContent>
                 <CardFooter>
                   <Button>Action</Button>
@@ -258,7 +364,13 @@ export default function PlaygroundPage() {
             </CardHeader>
             <CardContent>
               <div className="flex items-center space-x-2">
-                <Checkbox id="terms" checked={checkboxChecked} onCheckedChange={(checked) => setCheckboxChecked(checked === true)} />
+                <Checkbox
+                  id="terms"
+                  checked={checkboxChecked}
+                  onCheckedChange={(checked) =>
+                    setCheckboxChecked(checked === true)
+                  }
+                />
                 <Label htmlFor="terms">Accept terms and conditions</Label>
               </div>
             </CardContent>
@@ -272,7 +384,10 @@ export default function PlaygroundPage() {
               <CardTitle>Code Block</CardTitle>
             </CardHeader>
             <CardContent>
-              <CodeBlock language="typescript" code={`const greeting = "Hello, World!";\nconsole.log(greeting);`} />
+              <CodeBlock
+                language="typescript"
+                code={`const greeting = "Hello, World!";\nconsole.log(greeting);`}
+              />
             </CardContent>
           </Card>
         </div>
@@ -361,7 +476,8 @@ export default function PlaygroundPage() {
                     <div className="space-y-2">
                       <h3 className="text-lg font-semibold">Edit Profile</h3>
                       <p className="text-sm text-muted-foreground">
-                        Make changes to your profile here. Click save when you're done.
+                        Make changes to your profile here. Click save when
+                        you're done.
                       </p>
                     </div>
                     <div className="grid gap-4">
@@ -395,7 +511,9 @@ export default function PlaygroundPage() {
                   <div className="p-4 space-y-4">
                     <div className="space-y-2">
                       <h3 className="text-lg font-semibold">Drawer Title</h3>
-                      <p className="text-sm text-muted-foreground">Drawer description goes here.</p>
+                      <p className="text-sm text-muted-foreground">
+                        Drawer description goes here.
+                      </p>
                     </div>
                     <p>Drawer content</p>
                   </div>
@@ -494,7 +612,9 @@ export default function PlaygroundPage() {
                     <PaginationLink href="#">1</PaginationLink>
                   </PaginationItem>
                   <PaginationItem>
-                    <PaginationLink href="#" isActive>2</PaginationLink>
+                    <PaginationLink href="#" isActive>
+                      2
+                    </PaginationLink>
                   </PaginationItem>
                   <PaginationItem>
                     <PaginationLink href="#">3</PaginationLink>
@@ -520,7 +640,9 @@ export default function PlaygroundPage() {
                   <Button>Open Popover</Button>
                 </PopoverTrigger>
                 <PopoverContent>
-                  <p className="text-sm">This is a popover with some content.</p>
+                  <p className="text-sm">
+                    This is a popover with some content.
+                  </p>
                 </PopoverContent>
               </Popover>
             </CardContent>
@@ -634,7 +756,9 @@ export default function PlaygroundPage() {
                   step={1}
                   className="w-full"
                 />
-                <p className="text-sm text-muted-foreground">Value: {sliderValue[0]}</p>
+                <p className="text-sm text-muted-foreground">
+                  Value: {sliderValue[0]}
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -648,7 +772,11 @@ export default function PlaygroundPage() {
             </CardHeader>
             <CardContent>
               <div className="flex items-center space-x-2">
-                <Switch id="airplane-mode" checked={switchChecked} onCheckedChange={setSwitchChecked} />
+                <Switch
+                  id="airplane-mode"
+                  checked={switchChecked}
+                  onCheckedChange={setSwitchChecked}
+                />
                 <Label htmlFor="airplane-mode">Airplane Mode</Label>
               </div>
             </CardContent>
@@ -739,13 +867,19 @@ export default function PlaygroundPage() {
                   <TabsTrigger value="settings">Settings</TabsTrigger>
                 </TabsList>
                 <TabsContent value="account">
-                  <p className="text-sm text-muted-foreground">Make changes to your account here.</p>
+                  <p className="text-sm text-muted-foreground">
+                    Make changes to your account here.
+                  </p>
                 </TabsContent>
                 <TabsContent value="password">
-                  <p className="text-sm text-muted-foreground">Change your password here.</p>
+                  <p className="text-sm text-muted-foreground">
+                    Change your password here.
+                  </p>
                 </TabsContent>
                 <TabsContent value="settings">
-                  <p className="text-sm text-muted-foreground">Update your settings here.</p>
+                  <p className="text-sm text-muted-foreground">
+                    Update your settings here.
+                  </p>
                 </TabsContent>
               </Tabs>
             </CardContent>
@@ -772,7 +906,6 @@ export default function PlaygroundPage() {
             </CardContent>
           </Card>
         </div>
-
       </div>
     </ContentContainer>
   );

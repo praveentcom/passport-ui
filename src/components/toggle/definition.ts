@@ -10,7 +10,7 @@ export const definition: ComponentDefinition = {
   storyId: "components-toggle",
   slug: "toggle",
   importCode: `import { Toggle } from "passport-ui";`,
-  usageCode: `<Toggle variant="outline" size="regular">
+  usageCode: `<Toggle variant="outline">
   Toggle
 </Toggle>
 

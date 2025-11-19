@@ -52,26 +52,6 @@ ${definition.usageCode}
         category: "Appearance",
       },
     },
-    variant: {
-      control: "select",
-      options: [
-        "ghost",
-        "outline",
-        "secondary",
-        "primary",
-        "destructive",
-        "link",
-      ],
-      description: "The visual variant of the theme button",
-      table: {
-        type: {
-          summary:
-            '"ghost" | "outline" | "secondary" | "primary" | "destructive" | "link"',
-        },
-        defaultValue: { summary: '"ghost"' },
-        category: "Appearance",
-      },
-    },
     align: {
       control: "select",
       options: ["start", "end"],
@@ -92,14 +72,12 @@ type Story = StoryObj<typeof ThemeButton>;
 export const Default: Story = {
   args: {
     minimal: false,
-    variant: "ghost",
     align: "end",
   },
   parameters: {
     docs: {
       description: {
-        story:
-          "The default theme button with optional type, variant, and alignment.",
+        story: "The default theme button with optional alignment.",
       },
     },
   },

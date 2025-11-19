@@ -1,7 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { StructuredData } from ".";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../card";
 import { definition } from "./definition";
 
 const meta: Meta<typeof StructuredData> = {

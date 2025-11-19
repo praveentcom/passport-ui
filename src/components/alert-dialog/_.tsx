@@ -68,10 +68,7 @@ function AlertDialogFooter({
   return (
     <div
       data-slot="alert-dialog-footer"
-      className={cn(
-        "flex flex-row gap-2 justify-end",
-        className
-      )}
+      className={cn("flex flex-row gap-2 justify-end", className)}
       {...props}
     />
   );
@@ -82,7 +79,13 @@ export interface AlertDialogActionProps
   /**
    * The visual style variant of the button
    */
-  variant?: "primary" | "ghost" | "secondary" | "outline" | "destructive" | "link";
+  variant?:
+    | "primary"
+    | "ghost"
+    | "secondary"
+    | "outline"
+    | "destructive"
+    | "link";
 }
 
 function AlertDialogAction({
@@ -103,7 +106,13 @@ export interface AlertDialogCancelProps
   /**
    * The visual style variant of the button
    */
-  variant?: "primary" | "ghost" | "secondary" | "outline" | "destructive" | "link";
+  variant?:
+    | "primary"
+    | "ghost"
+    | "secondary"
+    | "outline"
+    | "destructive"
+    | "link";
 }
 
 function AlertDialogCancel({

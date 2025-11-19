@@ -168,7 +168,7 @@ export const ProfileHeader: Story = {
           <div className="flex items-center gap-2">
             <Drawer direction="left" modal onOpenChange={() => {}}>
               <DrawerTrigger asChild>
-                <Button variant="ghost" size="medium" className="md:hidden">
+                <Button variant="ghost" className="md:hidden">
                   <MenuIcon />
                 </Button>
               </DrawerTrigger>
@@ -177,7 +177,7 @@ export const ProfileHeader: Story = {
                   <div className="flex items-center justify-between">
                     <h3>{profile.fullName}</h3>
                     <DrawerClose asChild>
-                      <Button variant="ghost" size="medium">
+                      <Button variant="ghost">
                         <XIcon />
                       </Button>
                     </DrawerClose>
@@ -189,9 +189,7 @@ export const ProfileHeader: Story = {
                           key={`mobile-menu-item-${index}`}
                           href={link.href}
                         >
-                          <Button size="medium" className="w-full">
-                            {link.label}
-                          </Button>
+                          <Button className="w-full">{link.label}</Button>
                         </Link>
                       );
                     })}
@@ -219,7 +217,7 @@ export const ProfileHeader: Story = {
                 })}
               </NavigationMenuList>
             </NavigationMenu>
-            <ThemeButton minimal variant="outline" align="end" size="medium" />
+            <ThemeButton minimal align="end" />
           </div>
         </div>
       );
