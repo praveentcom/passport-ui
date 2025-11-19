@@ -1,3 +1,5 @@
+import { processInlineMarkdown } from "./processInlineMarkdown";
+
 /**
  * Process blockquotes in markdown, including multi-line and nested blockquotes
  * @param content - The content to process
@@ -113,7 +115,7 @@ function processBlockquoteLines(
     if (content.trim() === "") {
       html += "<br>";
     } else {
-      html += content;
+      html += processInlineMarkdown(content);
       const isLastLine = line === lines[lines.length - 1];
       if (!isLastLine) {
         html += "<br>";
