@@ -296,11 +296,11 @@ function SidebarTrigger({
 
   return (
     <Button
-      variant="ghost"
       data-sidebar="trigger"
       data-slot="sidebar-trigger"
       className={cn(
         "transition-transform duration-200 ease-linear",
+        "border-transparent bg-transparent shadow-none hover:bg-accent hover:text-accent-foreground",
         className
       )}
       onClick={(event) => {
