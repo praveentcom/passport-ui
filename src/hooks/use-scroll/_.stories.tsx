@@ -72,7 +72,7 @@ function UseScrollComponent({ target }: { target?: "window" | "element" }) {
           <div className="h-[1000px] p-4">Scrollable content</div>
         </div>
       ) : (
-        <div className="h-[200vh] pt-16">Scroll down the page</div>
+        <div className="h-[200dvh] pt-16">Scroll down the page</div>
       )}
     </div>
   );

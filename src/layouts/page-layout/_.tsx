@@ -8,7 +8,7 @@ import { SidebarInset } from "../../components/sidebar";
 import { FooterContainer, FooterContainerVariant } from "../footer-container";
 import { HeaderContainer, HeaderContainerVariant } from "../header-container";
 
-const pageLayoutVariants = cva("min-h-screen w-full");
+const pageLayoutVariants = cva("min-h-dvh w-full");
 
 export interface HeaderOptions {
   /**
@@ -132,7 +132,7 @@ export function PageLayout({
   const finalSkipLinks = skipLinks || defaultSkipLinks;
 
   const renderMainContent = () => (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-dvh">
       {header && (
         <HeaderContainer
           id="header"
@@ -164,7 +164,7 @@ export function PageLayout({
 
   if (sidebar) {
     layoutStructure = (
-      <div className="flex min-h-screen w-full">
+      <div className="flex min-h-dvh w-full">
         <div id="sidebar" role="navigation" aria-label="Sidebar navigation">
           {sidebar}
         </div>

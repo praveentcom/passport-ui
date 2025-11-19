@@ -63,7 +63,7 @@ const Card = React.memo(
           className={cn(
             "text-card-foreground rounded-lg relative",
             "border border-border bg-card",
-            "h-min pt-3.5 pb-4 group",
+            "h-min py-4 group",
             "transition-all duration-100",
             interactive &&
               "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
@@ -97,14 +97,11 @@ const CardHeader = React.memo(
 CardHeader.displayName = "CardHeader";
 
 const CardTitle = React.memo(
-  React.forwardRef<HTMLHeadingElement, React.ComponentProps<"h3">>(
+  React.forwardRef<HTMLHeadingElement, React.ComponentProps<"h2">>(
     ({ className, ...props }, ref) => (
-      <h3
+      <h2
         data-slot="card-title"
-        className={cn(
-          "text-sm leading-none tracking-tight",
-          className
-        )}
+        className={cn(className)}
         ref={ref}
         {...props}
       />

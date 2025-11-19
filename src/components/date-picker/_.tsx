@@ -97,7 +97,7 @@ export function DatePicker({
 
   const years = useMemo(() => {
     const yearList = [];
-    for (let year = maxYear; year >= minYear; year--) {
+    for (let year = minYear; year <= maxYear; year++) {
       yearList.push(year.toString());
     }
     return yearList;

@@ -208,7 +208,7 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
           <div className="flex items-center gap-3">
             <Button
               data-slot="mobile-sidebar-trigger"
-              className={cn("md:hidden", !isMobile && "invisible")}
+              className={cn("md:!hidden", !isMobile && "invisible")}
               onClick={() => {
                 toggleSidebar();
               }}

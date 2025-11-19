@@ -27,7 +27,7 @@ export default function HomePage() {
         })}
       />
 
-      <div className="relative h-[calc(100vh-100px)] w-full">
+      <div className="relative h-[calc(100dvh-100px)] w-full">
         <HoverDotsGL />
         <div className="absolute inset-0 flex items-center justify-center">
           <Card className="w-max pt-10 pb-14 px-8 md:px-12 mb-12 mx-8">
