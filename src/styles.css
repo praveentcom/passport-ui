@@ -200,21 +200,66 @@
     --tw-leading: 1.67;
   }
 
+  /* Scrollbar styling - overlay scrollbars that don't take up space */
+
+  /* Firefox - hide scrollbar by default */
+  .passport-ui,
+  .passport-ui *,
+  body {
+    scrollbar-width: none;
+  }
+
+  /* WebKit - configure scrollbar to be overlay */
   .passport-ui ::-webkit-scrollbar,
+  .passport-ui *::-webkit-scrollbar,
   body::-webkit-scrollbar {
     @apply w-1.5;
   }
+
   .passport-ui ::-webkit-scrollbar:horizontal,
+  .passport-ui *::-webkit-scrollbar:horizontal,
   body::-webkit-scrollbar:horizontal {
     @apply h-1;
   }
+
+  /* Hide scrollbar thumb by default */
   .passport-ui ::-webkit-scrollbar-thumb,
+  .passport-ui *::-webkit-scrollbar-thumb,
   body::-webkit-scrollbar-thumb {
-    @apply bg-border rounded-full;
+    background: transparent;
+    border-radius: 9999px;
   }
+
   .passport-ui ::-webkit-scrollbar-track,
+  .passport-ui *::-webkit-scrollbar-track,
   body::-webkit-scrollbar-track {
-    @apply bg-background;
+    background: transparent;
+  }
+
+  /* Show scrollbar on hover */
+  .passport-ui:hover,
+  .passport-ui *:hover,
+  body:hover {
+    scrollbar-width: thin;
+  }
+
+  .passport-ui:hover::-webkit-scrollbar-thumb,
+  .passport-ui *:hover::-webkit-scrollbar-thumb,
+  body:hover::-webkit-scrollbar-thumb {
+    @apply bg-border;
+  }
+
+  /* Show scrollbar when actively scrolling */
+  .passport-ui.is-scrolling,
+  .passport-ui .is-scrolling,
+  body.is-scrolling {
+    scrollbar-width: thin;
+  }
+
+  .passport-ui.is-scrolling::-webkit-scrollbar-thumb,
+  .passport-ui .is-scrolling::-webkit-scrollbar-thumb,
+  body.is-scrolling::-webkit-scrollbar-thumb {
+    @apply bg-border;
   }
 
   .passport-ui {

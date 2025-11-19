@@ -410,6 +410,7 @@ function SidebarSeparator({
 function SidebarContent({ className, ...props }: React.ComponentProps<"div">) {
   const ref = useRef<HTMLDivElement>(null);
   const [showTopBorder, setShowTopBorder] = useState(false);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
 
   const handleScroll = useCallback(() => {
     const el = ref.current;
@@ -418,6 +419,19 @@ function SidebarContent({ className, ...props }: React.ComponentProps<"div">) {
     const { scrollTop } = el;
 
     setShowTopBorder(scrollTop > 0);
+
+    // Add is-scrolling class
+    el.classList.add("is-scrolling");
+
+    // Clear existing timeout
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+    }
+
+    // Remove is-scrolling class after scrolling stops
+    scrollTimeoutRef.current = setTimeout(() => {
+      el.classList.remove("is-scrolling");
+    }, 1000);
   }, []);
 
   useEffect(() => {
@@ -434,6 +448,9 @@ function SidebarContent({ className, ...props }: React.ComponentProps<"div">) {
     return () => {
       el.removeEventListener("scroll", handleScroll);
       resizeObserver.unobserve(el);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
     };
   }, [handleScroll]);
 

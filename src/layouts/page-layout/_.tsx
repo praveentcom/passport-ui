@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Fragment, ReactNode } from "react";
+import React, { Fragment, ReactNode, useEffect, useRef } from "react";
 
 import { VariantProps, cva } from "class-variance-authority";
 
@@ -131,6 +131,38 @@ export function PageLayout({
   ];
   const finalSkipLinks = skipLinks || defaultSkipLinks;
 
+  const layoutRef = useRef<HTMLDivElement>(null);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
+
+  useEffect(() => {
+    const layoutElement = layoutRef.current;
+    if (!layoutElement) return;
+
+    const handleScroll = () => {
+      // Add is-scrolling class
+      layoutElement.classList.add("is-scrolling");
+
+      // Clear existing timeout
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+
+      // Remove is-scrolling class after scrolling stops
+      scrollTimeoutRef.current = setTimeout(() => {
+        layoutElement.classList.remove("is-scrolling");
+      }, 1000);
+    };
+
+    layoutElement.addEventListener("scroll", handleScroll);
+
+    return () => {
+      layoutElement.removeEventListener("scroll", handleScroll);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, []);
+
   const renderMainContent = () => (
     <div className="flex flex-col min-h-dvh">
       {header && (
@@ -192,7 +224,7 @@ export function PageLayout({
           ))}
         </div>
       )}
-      <div data-slot="page-layout" className="page-layout">
+      <div ref={layoutRef} data-slot="page-layout" className="page-layout">
         {layoutStructure}
       </div>
     </Fragment>
