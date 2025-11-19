@@ -312,7 +312,7 @@
 
   /* Container Styles */
   .passport-ui .content-container {
-    @apply mx-auto p-4 pb-8 grid gap-8;
+    @apply mx-auto p-4 pb-8 grid gap-10;
   }
   .passport-ui .section-container {
     @apply grid gap-6;
