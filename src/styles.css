@@ -11,7 +11,7 @@
       format("woff");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 
 @font-face {
@@ -23,7 +23,7 @@
       format("woff");
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 
 @font-face {
@@ -35,7 +35,7 @@
       format("woff");
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 
 @font-face {
@@ -47,7 +47,7 @@
       format("woff");
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 
 /* Custom Variant for Dark Mode */
