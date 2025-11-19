@@ -11,7 +11,6 @@ import { definition as blockquoteDefinition } from "./components/blockquote/defi
 import { definition as breadcrumbDefinition } from "./components/breadcrumb/definition";
 import { definition as bulletListDefinition } from "./components/bullet-list/definition";
 import { definition as buttonDefinition } from "./components/button/definition";
-import { definition as calendarDefinition } from "./components/calendar/definition";
 import { definition as cardDefinition } from "./components/card/definition";
 import { definition as carouselDefinition } from "./components/carousel/definition";
 import { definition as checkboxDefinition } from "./components/checkbox/definition";
@@ -89,7 +88,6 @@ export const definitions: ComponentDefinition[] = [
   breadcrumbDefinition,
   bulletListDefinition,
   buttonDefinition,
-  calendarDefinition,
   cardDefinition,
   carouselDefinition,
   checkboxDefinition,

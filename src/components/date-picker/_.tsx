@@ -2,12 +2,9 @@
 
 import React, { useState, useMemo } from "react";
 
-import { format } from "date-fns";
-import { Calendar as CalendarIcon, ChevronDownIcon } from "lucide-react";
-import { DateRange } from "react-day-picker";
+import { ChevronDownIcon } from "lucide-react";
 
 import { cn } from "../../lib/utils";
-import { Calendar } from "../calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "../popover";
 import {
   Select,
@@ -229,72 +226,6 @@ export function DatePicker({
             </button>
           </div>
         </div>
-      </PopoverContent>
-    </Popover>
-  );
-}
-
-export interface DateRangePickerProps {
-  dateRange?: DateRange;
-  onSelect?: (range: DateRange | undefined) => void;
-  placeholder?: string;
-  disabled?: boolean;
-  className?: string;
-}
-
-/**
- * A date range picker component with popover calendar
- * @param dateRange - The selected date range
- * @param onSelect - Callback when date range is selected
- * @param placeholder - Placeholder text when no range is selected
- * @param disabled - Whether the picker is disabled
- * @param className - Additional CSS classes
- * @returns The date range picker component
- */
-export function DateRangePicker({
-  dateRange,
-  onSelect,
-  placeholder = "Pick a date range",
-  disabled = false,
-  className,
-}: DateRangePickerProps) {
-  return (
-    <Popover>
-      <PopoverTrigger asChild>
-        <DatePickerInput
-          disabled={disabled}
-          data-empty={!dateRange?.from}
-          className={cn(className)}
-        >
-          <CalendarIcon className="size-3.5" />
-          {dateRange?.from ? (
-            dateRange.to ? (
-              <>
-                {format(dateRange.from, "LLL dd, y")} -{" "}
-                {format(dateRange.to, "LLL dd, y")}
-              </>
-            ) : (
-              format(dateRange.from, "LLL dd, y")
-            )
-          ) : (
-            placeholder
-          )}
-        </DatePickerInput>
-      </PopoverTrigger>
-      <PopoverContent
-        className="w-auto max-w-[calc(100vw-2rem)] overflow-auto p-0"
-        align="start"
-        data-slot="date-range-picker-content"
-      >
-        <Calendar
-          mode="range"
-          defaultMonth={dateRange?.from}
-          selected={dateRange}
-          onSelect={(selectedDateRange) => {
-            onSelect?.(selectedDateRange);
-          }}
-          numberOfMonths={2}
-        />
       </PopoverContent>
     </Popover>
   );
