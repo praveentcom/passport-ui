@@ -65,7 +65,7 @@ export function Combobox({
           aria-expanded={open}
           data-slot="combobox"
           className={cn(
-            "data-[placeholder]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 border-input bg-card dark:bg-input/10 hover:bg-input/20 focus:bg-input/20 flex h-8 w-full items-center justify-between gap-2 rounded-md border px-2 py-1 text-sm shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50",
+            "passport-input",
             !selectedOption && "text-muted-foreground",
             className
           )}
@@ -79,7 +79,7 @@ export function Combobox({
       </PopoverTrigger>
       <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0">
         <Command>
-          <CommandInput placeholder={searchPlaceholder} className="h-8" />
+          <CommandInput placeholder={searchPlaceholder} className="h-9" />
           <CommandList>
             <CommandEmpty>{emptyText}</CommandEmpty>
             <CommandGroup>

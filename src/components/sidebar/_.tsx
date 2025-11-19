@@ -298,11 +298,9 @@ function SidebarTrigger({
     <Button
       data-sidebar="trigger"
       data-slot="sidebar-trigger"
-      variant="ghost"
-      size="medium"
       className={cn(
-        className,
-        "transition-transform duration-200 ease-linear m-[0.5px]"
+        "transition-transform duration-200 ease-linear m-[0.5px]",
+        className
       )}
       onClick={(event) => {
         onClick?.(event);

@@ -27,6 +27,7 @@ function Blockquote({
       data-slot="blockquote"
       className={cn(
         "relative pl-5 py-2 pr-4 bg-border/50 rounded-md text-sm leading-relaxed text-muted-foreground",
+        nested && "my-2",
         className
       )}
       {...props}

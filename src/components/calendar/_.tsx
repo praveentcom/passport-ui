@@ -15,10 +15,9 @@ import {
 } from "react-day-picker";
 
 import { cn } from "../../lib/utils";
-import { Button, buttonVariants } from "../button";
+import { Button } from "../button";
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker> & {
-  buttonVariant?: React.ComponentProps<typeof Button>["variant"];
   autoNavigateOnOutsideClick?: boolean;
   weekSpacing?: "mt-0" | "mt-0.5" | "mt-1" | "mt-1.5" | "mt-2" | "mt-3";
 };
@@ -28,7 +27,6 @@ function Calendar({
   classNames,
   showOutsideDays = true,
   captionLayout = "label",
-  buttonVariant = "ghost",
   formatters,
   components,
   autoNavigateOnOutsideClick = false,
@@ -81,13 +79,11 @@ function Calendar({
           defaultClassNames.nav
         ),
         button_previous: cn(
-          buttonVariants({ variant: buttonVariant }),
-          "aria-disabled:opacity-50 p-0 select-none",
+          "passport-button aria-disabled:opacity-50 p-0 select-none",
           defaultClassNames.button_previous
         ),
         button_next: cn(
-          buttonVariants({ variant: buttonVariant }),
-          "aria-disabled:opacity-50 p-0 select-none",
+          "passport-button aria-disabled:opacity-50 p-0 select-none",
           defaultClassNames.button_next
         ),
         month_caption: cn(
@@ -217,8 +213,6 @@ function CalendarDayButton({
   return (
     <Button
       ref={ref}
-      variant="ghost"
-      size="regular"
       data-day={day.date.toLocaleDateString()}
       data-selected-single={
         modifiers.selected &&

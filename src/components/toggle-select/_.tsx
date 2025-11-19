@@ -32,8 +32,8 @@ const toggleSelectItemVariants = cva(
         outline: "bg-transparent",
       },
       size: {
-        regular: "h-5 rounded-sm px-2",
-        medium: "h-7 rounded-sm px-2.5",
+        regular: "h-7.5 rounded-sm px-3",
+        medium: "h-8 rounded-sm px-3",
         large: "h-9 rounded-sm px-3",
       },
     },
@@ -122,7 +122,7 @@ export function ToggleSelect({
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
         className={cn(
-          "inline-flex items-center rounded-md border bg-card p-0.75 relative",
+          "inline-flex items-center rounded-md border bg-card p-1 relative",
           className
         )}
       >

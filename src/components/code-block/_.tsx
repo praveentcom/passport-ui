@@ -175,9 +175,9 @@ function CodeBlock({
       aria-label={copied ? "Copied!" : "Copy code"}
     >
       {copied ? (
-        <Check className="text-success" size={14} />
+        <Check className="text-success" size={13.5} />
       ) : (
-        <Copy size={14} />
+        <Copy size={13.5} />
       )}
     </button>
   );
@@ -236,7 +236,7 @@ function CodeBlock({
       {filename && (
         <div
           data-slot="code-block-header"
-          className="flex justify-between items-center gap-2 p-2 dark:bg-background bg-border/10 border-b border-border text-muted-foreground"
+          className="flex justify-between items-center gap-2 px-2 py-1.5 dark:bg-background bg-border/10 border-b border-border text-muted-foreground"
         >
           <div className="flex gap-2 items-center">
             {fileIcon && (

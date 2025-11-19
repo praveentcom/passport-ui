@@ -4,10 +4,9 @@ import React, { useEffect, useState } from "react";
 
 import { useTheme } from "next-themes";
 
-import { type VariantProps } from "class-variance-authority";
 import { Monitor, Moon, Sun } from "lucide-react";
 
-import { Button, buttonVariants } from "../../components/button";
+import { Button } from "../../components/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,13 +17,11 @@ import {
 export type ThemeButtonProps = {
   minimal?: boolean;
   align?: "start" | "end";
-} & VariantProps<typeof buttonVariants>;
+};
 
 export function ThemeButton({
   minimal = false,
   align = "end",
-  variant = "outline",
-  size = "regular",
 }: ThemeButtonProps) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -66,9 +63,7 @@ export function ThemeButton({
       <DropdownMenuTrigger asChild>
         <Button
           data-slot="theme-button"
-          variant={variant}
           title={`Current: ${getLabel()}. Click to change theme.`}
-          size={size}
         >
           {getIcon()}
           {!minimal && <span>{getLabel()}</span>}
