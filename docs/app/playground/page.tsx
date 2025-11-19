@@ -14,7 +14,6 @@ import { Blockquote } from "../../../src/components/blockquote";
 import { Breadcrumb } from "../../../src/components/breadcrumb";
 import { BulletList } from "../../../src/components/bullet-list";
 import { Button } from "../../../src/components/button";
-import { Calendar } from "../../../src/components/calendar";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../../src/components/card";
 import { Checkbox } from "../../../src/components/checkbox";
 import { CodeBlock } from "../../../src/components/code-block";
@@ -28,7 +27,6 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../../../src/components/hover-card";
 import { Input } from "../../../src/components/input";
 import { Label } from "../../../src/components/label";
-import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSeparator, MenubarTrigger } from "../../../src/components/menubar";
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "../../../src/components/pagination";
 import { Popover, PopoverContent, PopoverTrigger } from "../../../src/components/popover";
 import { Progress } from "../../../src/components/progress";
@@ -220,19 +218,6 @@ export default function PlaygroundPage() {
               "Second item in the list",
               "Third item in the list"
             ]}
-          />
-        </div>
-
-        <div className="col-span-12"><Separator /></div>
-
-        {/* Calendar */}
-        <div className="col-span-12">
-          <h2 className="text-xl font-semibold mb-4">Calendar</h2>
-          <Calendar
-            mode="single"
-            selected={date}
-            onSelect={setDate}
-            className="rounded-md border w-fit"
           />
         </div>
 
@@ -437,31 +422,6 @@ export default function PlaygroundPage() {
               <Input id="disabled" placeholder="Disabled input" disabled />
             </div>
           </div>
-        </div>
-
-        <div className="col-span-12"><Separator /></div>
-
-        {/* Menubar */}
-        <div className="col-span-12">
-          <h2 className="text-xl font-semibold mb-4">Menubar</h2>
-          <Menubar>
-            <MenubarMenu>
-              <MenubarTrigger>File</MenubarTrigger>
-              <MenubarContent>
-                <MenubarItem>New Tab</MenubarItem>
-                <MenubarItem>New Window</MenubarItem>
-                <MenubarSeparator />
-                <MenubarItem>Share</MenubarItem>
-              </MenubarContent>
-            </MenubarMenu>
-            <MenubarMenu>
-              <MenubarTrigger>Edit</MenubarTrigger>
-              <MenubarContent>
-                <MenubarItem>Undo</MenubarItem>
-                <MenubarItem>Redo</MenubarItem>
-              </MenubarContent>
-            </MenubarMenu>
-          </Menubar>
         </div>
 
         <div className="col-span-12"><Separator /></div>
