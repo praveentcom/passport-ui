@@ -210,11 +210,26 @@
   }
   .passport-ui ::-webkit-scrollbar-thumb,
   body::-webkit-scrollbar-thumb {
-    @apply bg-border rounded-full;
+    @apply bg-transparent rounded-full;
+    transition: background-color 0.2s ease;
   }
   .passport-ui ::-webkit-scrollbar-track,
   body::-webkit-scrollbar-track {
-    @apply bg-background;
+    @apply bg-transparent;
+  }
+
+  /* Show scrollbar on hover or when scrolling */
+  .passport-ui:hover ::-webkit-scrollbar-thumb,
+  body:hover::-webkit-scrollbar-thumb,
+  .passport-ui *:hover::-webkit-scrollbar-thumb {
+    @apply bg-border;
+  }
+
+  /* Show scrollbar when actively scrolling */
+  .passport-ui.is-scrolling ::-webkit-scrollbar-thumb,
+  body.is-scrolling::-webkit-scrollbar-thumb,
+  .passport-ui .is-scrolling::-webkit-scrollbar-thumb {
+    @apply bg-border;
   }
 
   .passport-ui {
