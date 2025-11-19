@@ -46,7 +46,7 @@ function processLists(html: string): string {
         currentListType = "ul";
       }
       listItems.push(
-        `<li class="ml-1 mb-0.75 text-sm leading-relaxed flex items-center gap-1.5"><input type="checkbox" disabled class="rounded border-border text-primary focus:ring-primary/50" /> ${taskUncheckedMatch[1]}</li>`
+        `<li class="mb-0.75 text-sm leading-relaxed flex items-center gap-1.5"><input type="checkbox" disabled class="rounded border-border text-primary focus:ring-primary/50" /> ${taskUncheckedMatch[1]}</li>`
       );
     } else if (taskCheckedMatch) {
       if (currentListType !== "ul") {
@@ -54,7 +54,7 @@ function processLists(html: string): string {
         currentListType = "ul";
       }
       listItems.push(
-        `<li class="ml-1 mb-0.75 text-sm leading-relaxed flex items-center gap-1.5"><input type="checkbox" checked disabled class="rounded border-border text-primary focus:ring-primary/50" /> ${taskCheckedMatch[1]}</li>`
+        `<li class="mb-0.75 text-sm leading-relaxed flex items-center gap-1.5"><input type="checkbox" checked disabled class="rounded border-border text-primary focus:ring-primary/50" /> ${taskCheckedMatch[1]}</li>`
       );
     } else if (unorderedMatch) {
       if (currentListType !== "ul") {

@@ -93,7 +93,7 @@ function DrawerFooter({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="drawer-footer"
-      className={cn("mt-auto list-container", className)}
+      className={cn("mt-auto flex flex-row gap-2", className)}
       {...props}
     />
   );

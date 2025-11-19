@@ -313,10 +313,10 @@
     @apply space-y-1;
   }
   .passport-ui .bullet-item {
-    @apply flex items-start gap-2.5;
+    @apply flex items-center gap-2.5;
   }
   .passport-ui .bullet-dot {
-    @apply size-1 bg-primary/50 rounded-full mt-2 flex-shrink-0;
+    @apply size-1 bg-primary/50 rounded-full flex-shrink-0;
   }
   .passport-ui .bullet-text {
     @apply text-muted-foreground text-sm;

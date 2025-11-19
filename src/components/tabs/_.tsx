@@ -14,7 +14,7 @@ import {
 } from "../select";
 
 const tabsVariants = cva(
-  "flex data-[orientation=horizontal]:flex-col data-[orientation=vertical]:flex-row min-w-0",
+  "flex flex-col min-w-0",
   {
     variants: {
       variant: {
@@ -34,9 +34,9 @@ const tabsListVariants = cva(
     variants: {
       variant: {
         default:
-          "rounded-none border-b bg-transparent p-0 data-[orientation=horizontal]:h-9 data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col data-[orientation=vertical]:border-b-0 data-[orientation=vertical]:border-r data-[orientation=vertical]:w-auto data-[orientation=vertical]:min-w-[120px] data-[orientation=vertical]:h-auto md:flex hidden relative",
+          "rounded-none border-b bg-transparent p-0 h-9 flex-row md:flex hidden relative",
         pills:
-          "h-auto rounded-none border-0 bg-transparent p-0 gap-2 data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col md:flex hidden",
+          "h-auto rounded-none border-0 bg-transparent p-0 gap-2 flex-row md:flex hidden",
       },
     },
     defaultVariants: {
@@ -63,7 +63,7 @@ const tabsTriggerVariants = cva(
     variants: {
       variant: {
         default:
-          "rounded-none bg-transparent px-3 py-1.5 hover:text-foreground relative data-[state=active]:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[orientation=horizontal]:border-b-2 data-[orientation=horizontal]:border-transparent data-[orientation=horizontal]:data-[state=active]:border-primary data-[orientation=horizontal]:-mb-px data-[orientation=vertical]:border-r-2 data-[orientation=vertical]:border-transparent data-[orientation=vertical]:data-[state=active]:border-primary data-[orientation=vertical]:justify-start data-[orientation=vertical]:w-full data-[orientation=vertical]:-mr-px",
+          "rounded-none bg-transparent px-3 py-1.5 hover:text-foreground relative data-[state=active]:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none border-b-2 border-transparent data-[state=active]:border-primary -mb-px",
         pills:
           "rounded-md border border-transparent bg-transparent px-3 py-1 data-[state=active]:border-border data-[state=active]:bg-background data-[state=active]:shadow-xs hover:text-foreground hover:bg-border/50",
       },
@@ -75,14 +75,14 @@ const tabsTriggerVariants = cva(
 );
 
 const tabsContentVariants = cva(
-  "ring-offset-background focus-visible:outline-none focus-visible:ring-ring focus-visible:ring-[3px] focus-visible:ring-offset-2 data-[orientation=horizontal]:mt-2 data-[orientation=vertical]:ml-4 min-w-0",
+  "ring-offset-background focus-visible:outline-none focus-visible:ring-ring focus-visible:ring-[3px] focus-visible:ring-offset-2 min-w-0",
   {
     variants: {
       variant: {
         default:
-          "data-[orientation=horizontal]:mt-4 data-[orientation=vertical]:ml-4",
+          "mt-4",
         pills:
-          "data-[orientation=horizontal]:mt-4 data-[orientation=vertical]:ml-4",
+          "mt-4",
       },
     },
     defaultVariants: {

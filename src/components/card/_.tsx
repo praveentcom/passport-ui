@@ -87,7 +87,7 @@ const CardHeader = React.memo(
     ({ className, ...props }, ref) => (
       <div
         data-slot="card-header"
-        className={cn("px-4 meta-container", className)}
+        className={cn("px-4 meta-container gap-y-0.5", className)}
         ref={ref}
         {...props}
       />
@@ -102,7 +102,7 @@ const CardTitle = React.memo(
       <h3
         data-slot="card-title"
         className={cn(
-          "text-lg font-semibold leading-none tracking-tight",
+          "text-sm leading-none tracking-tight",
           className
         )}
         ref={ref}
