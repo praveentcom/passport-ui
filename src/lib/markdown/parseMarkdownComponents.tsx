@@ -9,6 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "../../components/table";
+import { processInlineMarkdown } from "./processInlineMarkdown";
 
 interface BlockquoteData {
   type: "blockquote";
@@ -163,7 +164,13 @@ function processBlockquoteLines(
         elements.push(<br key={`br-${i}`} />);
       }
     } else {
-      const contentElement = <span key={`content-${i}`}>{content}</span>;
+      const processedContent = processInlineMarkdown(content);
+      const contentElement = (
+        <span
+          key={`content-${i}`}
+          dangerouslySetInnerHTML={{ __html: processedContent }}
+        />
+      );
       if (openElements.length > 0) {
         openElements[openElements.length - 1].push(contentElement);
         // Add line break if not the last line
