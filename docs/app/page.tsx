@@ -41,7 +41,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="grid md:flex gap-3 justify-center items-center">
-                <Button variant="primary" asChild>
+                <Button asChild>
                   <Link href="/installation">Get Started →</Link>
                 </Button>
 
