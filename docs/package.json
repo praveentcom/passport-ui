@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "devDependencies": {
-    "eslint-config-next": "^16.0.1"
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.6",
+    "eslint-config-next": "^16.0.1",
+    "typescript": "^5.9.3"
   }
 }
