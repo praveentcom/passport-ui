@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { StructuredData } from ".";
-import { Card, CardContent } from "../card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../card";
 import { definition } from "./definition";
 
 const meta: Meta<typeof StructuredData> = {
@@ -86,15 +86,15 @@ export const Article: Story = {
     (Story) => (
       <div className="w-sm">
         <Card>
+          <CardHeader>
+            <CardTitle>Structured Data</CardTitle>
+            <CardDescription>
+              Helps search engines understand article content, author
+              information, publication dates, and enables rich snippets in
+              search results.
+            </CardDescription>
+          </CardHeader>
           <CardContent>
-            <div className="meta-container">
-              <h3>Structured Data</h3>
-              <p>
-                Helps search engines understand article content, author
-                information, publication dates, and enables rich snippets in
-                search results.
-              </p>
-            </div>
             <div className="meta-container">
               <h3>Example</h3>
               <p>

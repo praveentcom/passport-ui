@@ -67,7 +67,7 @@ export const WithIconButton: Story = {
     <div className="flex flex-col items-center gap-4 text-center">
       <h1>Icon Button</h1>
       <p>This button only has an icon, but its label is accessible.</p>
-      <Button variant="outline" size="regular">
+      <Button variant="outline">
         <AlertCircle className="size-4" />
         <VisuallyHidden {...args}>Show Alert</VisuallyHidden>
       </Button>

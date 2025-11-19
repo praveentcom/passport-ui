@@ -187,13 +187,13 @@ ${definition.usageCode}
             <div className="mt-4 space-y-3">
               <div className="flex items-center justify-between">
                 <span>Email notifications</span>
-                <Button size="regular" variant="outline">
+                <Button variant="outline">
                   Enable
                 </Button>
               </div>
               <div className="flex items-center justify-between">
                 <span>Auto-save changes</span>
-                <Button size="regular" variant="outline">
+                <Button variant="outline">
                   Configure
                 </Button>
               </div>

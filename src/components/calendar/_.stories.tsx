@@ -82,26 +82,6 @@ ${definition.usageCode}
         category: "Appearance",
       },
     },
-    buttonVariant: {
-      control: { type: "select" },
-      options: [
-        "default",
-        "destructive",
-        "outline",
-        "secondary",
-        "ghost",
-        "link",
-      ],
-      description: "Button variant for navigation arrows and controls",
-      table: {
-        type: {
-          summary:
-            '"default" | "destructive" | "outline" | "secondary" | "ghost" | "link"',
-        },
-        defaultValue: { summary: '"ghost"' },
-        category: "Appearance",
-      },
-    },
     disabled: {
       control: false,
       description:

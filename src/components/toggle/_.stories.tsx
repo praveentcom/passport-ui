@@ -43,17 +43,6 @@ ${definition.usageCode}
         category: "Appearance",
       },
     },
-    size: {
-      control: { type: "select" },
-      options: ["regular", "medium", "large"],
-      description:
-        "The size variant that controls padding, height, and text size",
-      table: {
-        type: { summary: '"regular" | "medium" | "large"' },
-        defaultValue: { summary: '"regular"' },
-        category: "Appearance",
-      },
-    },
     children: {
       control: { type: "text" },
       description: "The toggle content - text, icons, or other React elements",
@@ -113,7 +102,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     variant: "outline",
-    size: "regular",
     children: "Toggle",
   },
 };
@@ -121,7 +109,6 @@ export const Default: Story = {
 export const Transparent: Story = {
   args: {
     variant: "transparent",
-    size: "regular",
     children: "Toggle",
   },
 };

@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { Button } from ".";
@@ -50,17 +48,6 @@ ${definition.usageCode}
             '"primary" | "destructive" | "outline" | "secondary" | "ghost" | "link"',
         },
         defaultValue: { summary: '"outline"' },
-        category: "Appearance",
-      },
-    },
-    size: {
-      control: { type: "select" },
-      options: ["regular", "medium", "large"],
-      description:
-        "The size variant that controls padding, height, and text size",
-      table: {
-        type: { summary: '"regular" | "medium" | "large"' },
-        defaultValue: { summary: '"regular"' },
         category: "Appearance",
       },
     },
@@ -130,11 +117,10 @@ export const Default: Story = {
   args: {
     children: "Button",
     variant: "outline",
-    size: "regular",
   },
 };
 
-export const RegularSize: Story = {
+export const Variants: Story = {
   render: () => (
     <div className="w-xs list-container grid-cols-2">
       <Button variant="primary">Primary</Button>
@@ -145,76 +131,6 @@ export const RegularSize: Story = {
       <Button variant="link">Link</Button>
     </div>
   ),
-};
-
-export const MediumSize: Story = {
-  render: () => (
-    <div className="w-sm list-container grid-cols-2">
-      <Button variant="primary" size="medium">
-        Primary
-      </Button>
-      <Button variant="destructive" size="medium">
-        Destructive
-      </Button>
-      <Button variant="outline" size="medium">
-        Outline
-      </Button>
-      <Button variant="secondary" size="medium">
-        Secondary
-      </Button>
-      <Button variant="ghost" size="medium">
-        Ghost
-      </Button>
-      <Button variant="link" size="medium">
-        Link
-      </Button>
-    </div>
-  ),
-};
-
-export const LargeSize: Story = {
-  render: () => (
-    <div className="w-sm list-container grid-cols-2">
-      <Button variant="primary" size="large">
-        Primary
-      </Button>
-      <Button variant="destructive" size="large">
-        Destructive
-      </Button>
-      <Button variant="outline" size="large">
-        Outline
-      </Button>
-      <Button variant="secondary" size="large">
-        Secondary
-      </Button>
-      <Button variant="ghost" size="large">
-        Ghost
-      </Button>
-      <Button variant="link" size="large">
-        Link
-      </Button>
-    </div>
-  ),
-};
-
-export const Interactive: Story = {
-  render: () => {
-    const [count, setCount] = useState(0);
-    return (
-      <div className="flex items-center gap-4">
-        <Button
-          variant="primary"
-          size="medium"
-          onClick={() => setCount(count + 1)}
-        >
-          Click me
-        </Button>
-        <span className="text-muted-foreground tabular-nums">
-          Clicked: {count} times
-        </span>
-      </div>
-    );
-  },
 };
 
 export const LoadingState: Story = {
