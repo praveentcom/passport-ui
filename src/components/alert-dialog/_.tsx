@@ -77,25 +77,43 @@ function AlertDialogFooter({
   );
 }
 
+export interface AlertDialogActionProps
+  extends React.ComponentProps<typeof AlertDialogPrimitive.Action> {
+  /**
+   * The visual style variant of the button
+   */
+  variant?: "primary" | "ghost" | "secondary" | "outline" | "destructive" | "link";
+}
+
 function AlertDialogAction({
   className,
+  variant = "outline",
   ...props
-}: React.ComponentProps<typeof AlertDialogPrimitive.Action>) {
+}: AlertDialogActionProps) {
   return (
     <AlertDialogPrimitive.Action
-      className={cn("passport-button", className)}
+      className={cn("passport-button", `passport-button-${variant}`, className)}
       {...props}
     />
   );
 }
 
+export interface AlertDialogCancelProps
+  extends React.ComponentProps<typeof AlertDialogPrimitive.Cancel> {
+  /**
+   * The visual style variant of the button
+   */
+  variant?: "primary" | "ghost" | "secondary" | "outline" | "destructive" | "link";
+}
+
 function AlertDialogCancel({
   className,
+  variant = "outline",
   ...props
-}: React.ComponentProps<typeof AlertDialogPrimitive.Cancel>) {
+}: AlertDialogCancelProps) {
   return (
     <AlertDialogPrimitive.Cancel
-      className={cn("passport-button", className)}
+      className={cn("passport-button", `passport-button-${variant}`, className)}
       {...props}
     />
   );
