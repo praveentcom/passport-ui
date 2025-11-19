@@ -24,38 +24,21 @@ interface ToggleSelectContextType {
 const ToggleSelectContext = createContext<ToggleSelectContextType | null>(null);
 
 const toggleSelectItemVariants = cva(
-  "inline-flex items-center cursor-pointer justify-center gap-1.5 font-medium hover:bg-transparent disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 aria-invalid:border-destructive whitespace-nowrap relative",
+  "inline-flex items-center cursor-pointer justify-center gap-1.5 font-medium hover:bg-transparent disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 aria-invalid:border-destructive whitespace-nowrap relative h-7.5 rounded-sm px-3",
   {
     variants: {
       variant: {
         transparent: "bg-transparent",
         outline: "bg-transparent",
       },
-      size: {
-        regular: "h-7.5 rounded-sm px-3",
-        medium: "h-8 rounded-sm px-3",
-        large: "h-9 rounded-sm px-3",
-      },
     },
     defaultVariants: {
       variant: "transparent",
-      size: "regular",
     },
   }
 );
 
-const toggleSelectItemTextVariants = cva("text-foreground", {
-  variants: {
-    size: {
-      regular: "text-xs",
-      medium: "text-sm",
-      large: "text-sm",
-    },
-  },
-  defaultVariants: {
-    size: "regular",
-  },
-});
+const toggleSelectItemTextVariants = cva("text-foreground text-xs");
 
 export interface ToggleSelectProps {
   children: React.ReactNode;
@@ -144,7 +127,6 @@ export interface ToggleSelectItemProps
 export function ToggleSelectItem({
   className,
   variant,
-  size,
   value,
   children,
   onClick,
@@ -167,7 +149,7 @@ export function ToggleSelectItem({
   return (
     <TogglePrimitive.Root
       data-slot="toggle-select-item"
-      className={cn(toggleSelectItemVariants({ variant, size, className }))}
+      className={cn(toggleSelectItemVariants({ variant, className }))}
       pressed={isSelected}
       onClick={handleClick}
       {...props}
@@ -199,7 +181,7 @@ export function ToggleSelectItem({
         )}
       </AnimatePresence>
       <div className="relative z-10">
-        <span className={cn(toggleSelectItemTextVariants({ size }))}>
+        <span className={cn(toggleSelectItemTextVariants())}>
           {children}
         </span>
       </div>

@@ -6,7 +6,7 @@ import { type VariantProps, cva } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 
 const switchVariants = cva(
-  "peer inline-flex shrink-0 cursor-pointer items-center rounded-full mt-1 border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=unchecked]:bg-input",
+  "peer inline-flex shrink-0 cursor-pointer items-center rounded-full mt-1 border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=unchecked]:bg-input h-6 w-11",
   {
     variants: {
       variant: {
@@ -16,19 +16,15 @@ const switchVariants = cva(
         destructive: "data-[state=checked]:bg-destructive",
         info: "data-[state=checked]:bg-info",
       },
-      size: {
-        regular: "h-6 w-11",
-      },
     },
     defaultVariants: {
       variant: "default",
-      size: "regular",
     },
   }
 );
 
 const switchThumbVariants = cva(
-  "pointer-events-none block rounded-full shadow-xs ring-0 transition-transform data-[state=unchecked]:bg-card",
+  "pointer-events-none block rounded-full shadow-xs ring-0 transition-transform data-[state=unchecked]:bg-card size-5 data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0",
   {
     variants: {
       variant: {
@@ -38,14 +34,9 @@ const switchThumbVariants = cva(
         destructive: "data-[state=checked]:bg-destructive-foreground",
         info: "data-[state=checked]:bg-info-foreground",
       },
-      size: {
-        regular:
-          "size-5 data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0",
-      },
     },
     defaultVariants: {
       variant: "default",
-      size: "regular",
     },
   }
 );
@@ -75,7 +66,6 @@ const Switch = React.forwardRef<
     {
       className,
       variant,
-      size,
       "aria-label": ariaLabel,
       "aria-labelledby": ariaLabelledBy,
       "aria-describedby": ariaDescribedBy,
@@ -88,12 +78,12 @@ const Switch = React.forwardRef<
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
       aria-describedby={ariaDescribedBy}
-      className={cn(switchVariants({ variant, size, className }))}
+      className={cn(switchVariants({ variant, className }))}
       {...props}
       ref={ref}
     >
       <SwitchPrimitives.Thumb
-        className={cn(switchThumbVariants({ variant, size }))}
+        className={cn(switchThumbVariants({ variant }))}
       />
     </SwitchPrimitives.Root>
   )

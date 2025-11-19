@@ -8,7 +8,6 @@ import { DateRange } from "react-day-picker";
 
 import { cn } from "../../lib/utils";
 import { Calendar } from "../calendar";
-import { Label } from "../label";
 import { Popover, PopoverContent, PopoverTrigger } from "../popover";
 import {
   Select,
@@ -169,8 +168,7 @@ export function DatePicker({
       >
         <div className="space-y-4">
           <div className="grid grid-cols-[80px,1fr,100px] gap-2">
-            <div className="space-y-2">
-              <Label className="text-xs">Day</Label>
+            <div>
               <Select value={selectedDay} onValueChange={setSelectedDay}>
                 <SelectTrigger>
                   <SelectValue placeholder="Day" />
@@ -184,8 +182,7 @@ export function DatePicker({
                 </SelectContent>
               </Select>
             </div>
-            <div className="space-y-2">
-              <Label className="text-xs">Month</Label>
+            <div>
               <Select value={selectedMonth} onValueChange={setSelectedMonth}>
                 <SelectTrigger>
                   <SelectValue placeholder="Month" />
@@ -199,8 +196,7 @@ export function DatePicker({
                 </SelectContent>
               </Select>
             </div>
-            <div className="space-y-2">
-              <Label className="text-xs">Year</Label>
+            <div>
               <Select value={selectedYear} onValueChange={setSelectedYear}>
                 <SelectTrigger>
                   <SelectValue placeholder="Year" />
