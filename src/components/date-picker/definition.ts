@@ -6,11 +6,11 @@ export const definition: ComponentDefinition = {
   name: "Date Picker",
   icon: CalendarDays,
   description:
-    "A component for selecting a single date from an interactive calendar.",
+    "A component for selecting a single date using dropdown menus.",
   category: "components",
   storyId: "components-datepicker",
   slug: "date-picker",
-  importCode: `import { DatePicker, DateRangePicker } from "passport-ui";
+  importCode: `import { DatePicker } from "passport-ui";
 import { useState } from "react";`,
   usageCode: `function DatePickerExample() {
   const [date, setDate] = useState<Date | undefined>();
@@ -23,19 +23,6 @@ import { useState } from "react";`,
         placeholder="Pick a date"
       />
     </div>
-  );
-}
-
-{/* Date range picker */}
-function DateRangeExample() {
-  const [dateRange, setDateRange] = useState<DateRange | undefined>();
-
-  return (
-    <DateRangePicker
-      dateRange={dateRange}
-      onSelect={setDateRange}
-      placeholder="Pick a date range"
-    />
   );
 }`,
 };

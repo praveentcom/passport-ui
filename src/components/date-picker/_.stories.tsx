@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { DateRange } from "react-day-picker";
 import { action } from "storybook/actions";
 
-import { DatePicker, DateRangePicker } from ".";
+import { DatePicker } from ".";
 import { COMMON_CONTROLS } from "../../../.storybook/constants";
 import { definition } from "./definition";
 
@@ -19,7 +18,6 @@ const meta: Meta<typeof DatePicker> = {
 
 ## Components
 - **DatePicker**: Single date selection with input field
-- **DateRangePicker**: Date range selection with input field
 
 ## Code
 \`\`\`tsx import
@@ -99,24 +97,4 @@ type Story = StoryObj<typeof DatePicker>;
 
 export const Default: Story = {
   args: {},
-};
-
-export const DropdownRange: Story = {
-  render: () => {
-    const [dateRange, setDateRange] = useState<DateRange | undefined>(
-      undefined
-    );
-
-    return (
-      <div className="w-sm">
-        <DateRangePicker
-          dateRange={dateRange}
-          onSelect={(selectedDateRange) => {
-            setDateRange(selectedDateRange);
-            action("selected")(selectedDateRange);
-          }}
-        />
-      </div>
-    );
-  },
 };
