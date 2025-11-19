@@ -343,11 +343,48 @@
   /* Common Button Styles */
   .passport-ui .passport-button {
     @apply inline-flex h-9 px-2.5 items-center justify-center gap-1 whitespace-nowrap rounded-md text-sm font-medium leading-none transition-all;
-    @apply border border-input bg-background shadow-xs hover:bg-border/50 text-muted-foreground hover:text-foreground;
     @apply disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50;
     @apply outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px];
     @apply aria-invalid:ring-destructive/20 aria-invalid:border-destructive;
     @apply [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4;
+  }
+
+  /* Button Variants */
+  .passport-ui .passport-button-primary {
+    @apply bg-primary text-primary-foreground shadow-sm hover:bg-primary/90;
+  }
+
+  .passport-ui .passport-button-secondary {
+    @apply bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80;
+  }
+
+  .passport-ui .passport-button-destructive {
+    @apply bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90;
+  }
+
+  .passport-ui .passport-button-outline {
+    @apply border border-input bg-background shadow-xs hover:bg-border/50 text-muted-foreground hover:text-foreground;
+  }
+
+  .passport-ui .passport-button-ghost {
+    @apply hover:bg-muted hover:text-foreground;
+  }
+
+  .passport-ui .passport-button-link {
+    @apply text-primary underline-offset-4 hover:underline;
+  }
+
+  /* Button Sizes */
+  .passport-ui .passport-button-regular {
+    @apply h-9 px-2.5 text-sm;
+  }
+
+  .passport-ui .passport-button-medium {
+    @apply h-10 px-3 text-base;
+  }
+
+  .passport-ui .passport-button-large {
+    @apply h-11 px-4 text-base;
   }
 
   /* Code Block Styles */
