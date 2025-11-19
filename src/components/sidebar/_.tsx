@@ -299,7 +299,7 @@ function SidebarTrigger({
       data-sidebar="trigger"
       data-slot="sidebar-trigger"
       className={cn(
-        "transition-transform duration-200 ease-linear m-[0.5px]",
+        "transition-transform duration-200 ease-linear",
         className
       )}
       onClick={(event) => {

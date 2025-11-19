@@ -343,7 +343,8 @@
 
   /* Common Button Styles */
   .passport-ui .passport-button {
-    @apply inline-flex h-10 items-center cursor-pointer justify-center gap-1 whitespace-nowrap rounded-md px-4 text-sm font-medium leading-none transition-all;
+    @apply inline-flex h-10 items-center cursor-pointer justify-center gap-1 whitespace-nowrap rounded-md text-sm font-medium leading-none transition-all;
+    padding-inline: calc(var(--spacing) * 3);
     @apply border border-input bg-background shadow-xs hover:bg-border/50 text-muted-foreground hover:text-foreground;
     @apply disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50;
     @apply outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px];
