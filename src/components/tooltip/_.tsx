@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 
@@ -18,20 +18,50 @@ function TooltipProvider({
 }
 
 function Tooltip({
+  open: controlledOpen,
+  onOpenChange: controlledOnOpenChange,
   ...props
 }: React.ComponentProps<typeof TooltipPrimitive.Root>) {
+  const [uncontrolledOpen, setUncontrolledOpen] = useState(false);
+  const isControlled = controlledOpen !== undefined;
+  const open = isControlled ? controlledOpen : uncontrolledOpen;
+  const onOpenChange = isControlled ? controlledOnOpenChange : setUncontrolledOpen;
+
   return (
     <TooltipProvider>
-      <TooltipPrimitive.Root data-slot="tooltip" {...props} />
+      <TooltipPrimitive.Root
+        data-slot="tooltip"
+        open={open}
+        onOpenChange={onOpenChange}
+        {...props}
+      />
     </TooltipProvider>
   );
 }
 
-function TooltipTrigger({
-  ...props
-}: React.ComponentProps<typeof TooltipPrimitive.Trigger>) {
-  return <TooltipPrimitive.Trigger data-slot="tooltip-trigger" {...props} />;
-}
+const TooltipTrigger = React.forwardRef<
+  React.ElementRef<typeof TooltipPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Trigger>
+>(({ onClick, onPointerDown, ...props }, ref) => {
+  const handlePointerDown = (e: React.PointerEvent<HTMLButtonElement>) => {
+    // For touch devices, enable click-to-toggle behavior
+    if (e.pointerType === 'touch') {
+      e.preventDefault();
+    }
+    onPointerDown?.(e);
+  };
+
+  return (
+    <TooltipPrimitive.Trigger
+      ref={ref}
+      data-slot="tooltip-trigger"
+      onClick={onClick}
+      onPointerDown={handlePointerDown}
+      {...props}
+    />
+  );
+});
+TooltipTrigger.displayName = TooltipPrimitive.Trigger.displayName;
 
 function TooltipContent({
   className,

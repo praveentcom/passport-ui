@@ -332,7 +332,7 @@
 
   /* Common Input Styles */
   .passport-ui .passport-input {
-    @apply flex h-9 w-full items-center justify-between gap-2 rounded-md border border-input bg-card px-2 py-1 text-sm shadow-xs transition-[color,box-shadow] outline-none;
+    @apply flex h-10 w-full items-center justify-between gap-2 rounded-md border border-input bg-card px-2 py-1 text-sm shadow-xs transition-[color,box-shadow] outline-none;
     @apply dark:bg-input/10 hover:bg-input/20 focus:bg-input/20;
     @apply focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px];
     @apply aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive;
@@ -342,7 +342,7 @@
 
   /* Common Button Styles */
   .passport-ui .passport-button {
-    @apply inline-flex h-9 items-center cursor-pointer justify-center gap-1 whitespace-nowrap rounded-md px-4 text-sm font-medium leading-none transition-all;
+    @apply inline-flex h-10 items-center cursor-pointer justify-center gap-1 whitespace-nowrap rounded-md px-4 text-sm font-medium leading-none transition-all;
     @apply border border-input bg-background shadow-xs hover:bg-border/50 text-muted-foreground hover:text-foreground;
     @apply disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50;
     @apply outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px];

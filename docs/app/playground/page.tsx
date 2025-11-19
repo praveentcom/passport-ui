@@ -8,7 +8,6 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "..
 import { Alert } from "../../../src/components/alert";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogFooter, AlertDialogTrigger } from "../../../src/components/alert-dialog";
 import { AspectRatio } from "../../../src/components/aspect-ratio";
-import { Avatar, AvatarFallback, AvatarImage } from "../../../src/components/avatar";
 import { Badge } from "../../../src/components/badge";
 import { Blockquote } from "../../../src/components/blockquote";
 import { Breadcrumb } from "../../../src/components/breadcrumb";
@@ -136,22 +135,6 @@ export default function PlaygroundPage() {
               </div>
             </AlertDialogContent>
           </AlertDialog>
-        </div>
-
-        <div className="col-span-12"><Separator /></div>
-
-        {/* Avatar */}
-        <div className="col-span-12">
-          <h2 className="text-xl font-semibold mb-4">Avatar</h2>
-          <div className="flex gap-4">
-            <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-            <Avatar>
-              <AvatarFallback>AB</AvatarFallback>
-            </Avatar>
-          </div>
         </div>
 
         <div className="col-span-12"><Separator /></div>
@@ -640,6 +623,29 @@ export default function PlaygroundPage() {
               <InfoIcon className="size-4" />
             </Toggle>
           </div>
+        </div>
+
+        <div className="col-span-12"><Separator /></div>
+
+        {/* Tabs */}
+        <div className="col-span-12">
+          <h2 className="text-xl font-semibold mb-4">Tabs</h2>
+          <Tabs defaultValue="account">
+            <TabsList>
+              <TabsTrigger value="account">Account</TabsTrigger>
+              <TabsTrigger value="password">Password</TabsTrigger>
+              <TabsTrigger value="settings">Settings</TabsTrigger>
+            </TabsList>
+            <TabsContent value="account">
+              <p className="text-sm text-muted-foreground">Make changes to your account here.</p>
+            </TabsContent>
+            <TabsContent value="password">
+              <p className="text-sm text-muted-foreground">Change your password here.</p>
+            </TabsContent>
+            <TabsContent value="settings">
+              <p className="text-sm text-muted-foreground">Update your settings here.</p>
+            </TabsContent>
+          </Tabs>
         </div>
 
         <div className="col-span-12"><Separator /></div>

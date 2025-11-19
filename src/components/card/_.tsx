@@ -74,7 +74,7 @@ const Card = React.memo(
           ref={ref}
           {...props}
         >
-          <div className="flex flex-col gap-2">{children}</div>
+          <div className="flex flex-col gap-4">{children}</div>
         </div>
       );
     }
