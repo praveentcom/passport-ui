@@ -30,7 +30,6 @@ function DrawerClose({
 }: React.ComponentProps<typeof DrawerPrimitive.Close>) {
   return (
     <DrawerPrimitive.Close
-      className="cursor-pointer"
       data-slot="drawer-close"
       {...props}
     />
