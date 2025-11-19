@@ -12,10 +12,6 @@ export interface ButtonProps extends React.ComponentProps<"button"> {
    */
   variant?: "primary" | "ghost" | "secondary" | "outline" | "destructive" | "link";
   /**
-   * The size of the button
-   */
-  size?: "regular" | "medium" | "large";
-  /**
    * Whether the button is in a loading state
    */
   loading?: boolean;
@@ -56,7 +52,6 @@ const Button = React.memo(
         className,
         asChild = false,
         variant = "outline",
-        size = "regular",
         loading = false,
         loadingText,
         children,
@@ -75,7 +70,6 @@ const Button = React.memo(
       const buttonClasses = cn(
         "passport-button",
         `passport-button-${variant}`,
-        `passport-button-${size}`,
         className
       );
 

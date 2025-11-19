@@ -374,19 +374,6 @@
     @apply text-primary underline-offset-4 hover:underline;
   }
 
-  /* Button Sizes */
-  .passport-ui .passport-button-regular {
-    @apply h-9 px-2.5 text-sm;
-  }
-
-  .passport-ui .passport-button-medium {
-    @apply h-10 px-3 text-base;
-  }
-
-  .passport-ui .passport-button-large {
-    @apply h-11 px-4 text-base;
-  }
-
   /* Code Block Styles */
   .passport-ui .hljs {
     @apply bg-transparent text-xs font-mono;
