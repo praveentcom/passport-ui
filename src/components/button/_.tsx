@@ -8,6 +8,10 @@ import { cn } from "../../lib/utils";
 export interface ButtonProps extends React.ComponentProps<"button"> {
   asChild?: boolean;
   /**
+   * The visual style variant of the button
+   */
+  variant?: "primary" | "ghost" | "secondary" | "outline" | "destructive" | "link";
+  /**
    * Whether the button is in a loading state
    */
   loading?: boolean;
@@ -47,6 +51,7 @@ const Button = React.memo(
       {
         className,
         asChild = false,
+        variant = "outline",
         loading = false,
         loadingText,
         children,
@@ -62,7 +67,11 @@ const Button = React.memo(
       ref
     ) => {
       const Comp = asChild ? Slot : "button";
-      const buttonClasses = cn("passport-button", className);
+      const buttonClasses = cn(
+        "passport-button",
+        `passport-button-${variant}`,
+        className
+      );
 
       if (asChild) {
         return (
