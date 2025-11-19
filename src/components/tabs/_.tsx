@@ -34,7 +34,7 @@ const tabsListVariants = cva(
     variants: {
       variant: {
         default:
-          "rounded-none border-b bg-transparent p-0 h-9 flex-row hidden md:flex relative",
+          "rounded-none border-b bg-transparent p-0 h-10 flex-row hidden md:flex relative",
         pills:
           "h-auto rounded-none border-0 bg-transparent p-0 gap-2 flex-row hidden md:flex",
       },
