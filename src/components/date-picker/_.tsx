@@ -167,7 +167,7 @@ export function DatePicker({
         data-slot="date-picker-dropdown-content"
       >
         <div className="space-y-4">
-          <div className="grid grid-cols-[80px,1fr,100px] gap-2">
+          <div className="grid grid-cols-1 gap-2 md:grid-cols-[80px,1fr,100px]">
             <div>
               <Select value={selectedDay} onValueChange={setSelectedDay}>
                 <SelectTrigger>

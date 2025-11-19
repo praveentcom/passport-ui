@@ -296,6 +296,7 @@ function SidebarTrigger({
 
   return (
     <Button
+      variant="ghost"
       data-sidebar="trigger"
       data-slot="sidebar-trigger"
       className={cn(
@@ -528,7 +529,7 @@ function SidebarMenu({ className, ...props }: React.ComponentProps<"ul">) {
       data-slot="sidebar-menu"
       data-sidebar="menu"
       className={cn(
-        "flex w-full min-w-0 flex-col gap-1 group-data-[collapsible=icon]:mt-1.5",
+        "flex w-full min-w-0 flex-col group-data-[collapsible=icon]:mt-1.5",
         className
       )}
       {...props}
