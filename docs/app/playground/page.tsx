@@ -751,31 +751,6 @@ export default function PlaygroundPage() {
 
         <div className="col-span-12"><Separator /></div>
 
-        {/* Tabs */}
-        <div className="col-span-12 md:col-span-6">
-          <Card className="h-full">
-            <CardHeader>
-              <CardTitle>Tabs</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Tabs defaultValue="account" className="w-full">
-                <TabsList>
-                  <TabsTrigger value="account">Account</TabsTrigger>
-                  <TabsTrigger value="password">Password</TabsTrigger>
-                </TabsList>
-                <TabsContent value="account">
-                  <p>Make changes to your account here.</p>
-                </TabsContent>
-                <TabsContent value="password">
-                  <p>Change your password here.</p>
-                </TabsContent>
-              </Tabs>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="col-span-12"><Separator /></div>
-
         {/* Textarea */}
         <div className="col-span-12 md:col-span-6">
           <Card className="h-full">

@@ -332,7 +332,8 @@
 
   /* Common Input Styles */
   .passport-ui .passport-input {
-    @apply flex h-10 w-full items-center justify-between gap-2 rounded-md border border-input bg-card px-2 py-1 text-sm shadow-xs transition-[color,box-shadow] outline-none;
+    @apply flex h-10 w-full items-center justify-between gap-2 rounded-md border border-input bg-card py-1 text-sm shadow-xs transition-[color,box-shadow] outline-none;
+    padding-inline: calc(var(--spacing) * 2.5);
     @apply dark:bg-input/10 hover:bg-input/20 focus:bg-input/20;
     @apply focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px];
     @apply aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive;
