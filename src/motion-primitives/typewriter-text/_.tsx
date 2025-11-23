@@ -52,6 +52,14 @@ export function TypewriterText({
 
   const timeoutRef = useRef<NodeJS.Timeout>();
   const intervalRef = useRef<NodeJS.Timeout>();
+  const onCompleteRef = useRef(onComplete);
+  const onStartRef = useRef(onStart);
+
+  // Update refs when callbacks change
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+    onStartRef.current = onStart;
+  }, [onComplete, onStart]);
 
   // Convert text to array format
   const textArray = Array.isArray(text) ? text : [text];
@@ -95,8 +103,8 @@ export function TypewriterText({
     const startTyping = () => {
       setState((prev) => ({ ...prev, displayText: "" }));
 
-      if (onStart) {
-        onStart();
+      if (onStartRef.current) {
+        onStartRef.current();
       }
 
       const typeText = () => {
@@ -155,8 +163,8 @@ export function TypewriterText({
     };
 
     const completeAnimation = () => {
-      if (onComplete) {
-        onComplete();
+      if (onCompleteRef.current) {
+        onCompleteRef.current();
       }
 
       // Handle looping or multiple texts
@@ -192,8 +200,6 @@ export function TypewriterText({
     delay,
     loop,
     pauseTime,
-    onComplete,
-    onStart,
     startOnMount,
     splitByWords,
     state.prefersReducedMotion,

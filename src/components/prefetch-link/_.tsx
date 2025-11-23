@@ -33,15 +33,18 @@ export function PrefetchLink({
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const prefetchRoute = useCallback(() => {
-    if (!isPrefetched && href.startsWith("/")) {
-      router.prefetch(href);
-      setIsPrefetched(true);
+    setIsPrefetched((prev) => {
+      if (!prev && href.startsWith("/")) {
+        router.prefetch(href);
 
-      if (process.env.NODE_ENV === "development") {
-        console.log("🔗 Prefetched:", href);
+        if (process.env.NODE_ENV === "development") {
+          console.log("🔗 Prefetched:", href);
+        }
+        return true;
       }
-    }
-  }, [isPrefetched, href, router]);
+      return prev;
+    });
+  }, [href, router]);
 
   const handleMouseEnter = () => {
     if (prefetchOnHover && !isPrefetched) {
