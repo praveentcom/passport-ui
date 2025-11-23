@@ -189,6 +189,7 @@ function CodeBlock({
     if (total < 10) return "w-7";
     if (total < 100) return "w-9";
     if (total < 1000) return "w-12";
+    return "w-14";
   };
 
   const lineNumberWidth = getLineNumberWidth(totalLines);

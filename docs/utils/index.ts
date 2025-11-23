@@ -39,28 +39,12 @@ export const CATEGORY_LABELS = {
 export function getComponentBySlugAndCategory(slug: string, category: string) {
   return definitions.find(
     (definition) =>
-      definition.slug === slug &&
-      (definition.category === category ||
-        (category === "layouts" && definition.category === "layouts") ||
-        (category === "providers" && definition.category === "providers") ||
-        (category === "components" && definition.category === "components") ||
-        (category === "hooks" && definition.category === "hooks") ||
-        (category === "composables" && definition.category === "composables") ||
-        (category === "motion-primitives" &&
-          definition.category === "motion-primitives"))
+      definition.slug === slug && definition.category === category
   );
 }
 
 export function getAllComponentsByCategory(category: string) {
   return definitions.filter(
-    (definition) =>
-      definition.category === category ||
-      (category === "layouts" && definition.category === "layouts") ||
-      (category === "providers" && definition.category === "providers") ||
-      (category === "components" && definition.category === "components") ||
-      (category === "hooks" && definition.category === "hooks") ||
-      (category === "composables" && definition.category === "composables") ||
-      (category === "motion-primitives" &&
-        definition.category === "motion-primitives")
+    (definition) => definition.category === category
   );
 }
