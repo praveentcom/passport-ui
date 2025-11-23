@@ -117,10 +117,10 @@ function parseMarkdown(content: string): string {
    */
   processedContent = processedContent
     .replace(/\n\n/g, '</p><p class="mb-5">')
-    .replace(/^(?!<[h|l|p|c|b|i|d|u|t])/gm, '<p class="mb-5">')
+    .replace(/^(?!<[hlpcbidut])/gm, '<p class="mb-5">')
     .replace(/(?<!>)$/gm, "</p>")
     .replace(/<p class="mb-5"><\/p>/g, "")
-    .replace(/<p class="mb-5">(<[h|l|p|c|b|i|d|u|t])/g, "$1");
+    .replace(/<p class="mb-5">(<[hlpcbidut])/g, "$1");
 
   /**
    * Sequence: Restore code spans
