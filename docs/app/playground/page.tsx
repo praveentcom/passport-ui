@@ -221,22 +221,17 @@ export default function PlaygroundPage() {
                   <Button>Show Dialog</Button>
                 </AlertDialogTrigger>
                 <AlertDialogContent>
-                  <div className="space-y-4">
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-semibold">
-                        Are you absolutely sure?
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        This action cannot be undone. This will permanently
-                        delete your account and remove your data from our
-                        servers.
-                      </p>
-                    </div>
-                    <AlertDialogFooter>
-                      <AlertDialogCancel>Cancel</AlertDialogCancel>
-                      <AlertDialogAction>Continue</AlertDialogAction>
-                    </AlertDialogFooter>
+                  <div className="meta-container">
+                    <h3>Are you absolutely sure?</h3>
+                    <p>
+                      This action cannot be undone. This will permanently delete your
+                      account and remove your data from our servers.
+                    </p>
                   </div>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    <AlertDialogAction>Continue</AlertDialogAction>
+                  </AlertDialogFooter>
                 </AlertDialogContent>
               </AlertDialog>
             </CardContent>
