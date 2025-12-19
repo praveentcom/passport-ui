@@ -94,9 +94,9 @@
   --radius-md: calc(var(--radius));
   --radius-lg: calc(var(--radius) + 2px);
   --radius-xl: calc(var(--radius) + 4px);
-  --text-sm: 0.885rem;
-  --text-xs: 0.805rem;
-  --text-xxs: 0.645rem;
+  --text-sm: 0.92rem;
+  --text-xs: 0.82rem;
+  --text-xxs: 0.66rem;
   --font-sans:
     "Open Runde", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -196,8 +196,8 @@
 
   .passport-ui * {
     @apply border-border outline-ring/50;
-    line-height: 1.67;
-    --tw-leading: 1.67;
+    line-height: 1.75;
+    --tw-leading: 1.75;
   }
 
   /* Scrollbar styling - overlay scrollbars that don't take up space */
