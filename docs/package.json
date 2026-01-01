@@ -9,6 +9,6 @@
     "lint": "next lint"
   },
   "devDependencies": {
-    "eslint-config-next": "^16.0.1"
+    "eslint-config-next": "^16.1.1"
   }
 }
